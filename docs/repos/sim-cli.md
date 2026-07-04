@@ -1,6 +1,6 @@
 # sim-cli
 
-Published commit: `6499533b117c66d7d71154560b8eb325b9d3163c`.
+Published commit: `1a86eb76384e121b9d1403c0a665b9aeb35b04e8`.
 
 ## Crates
 
