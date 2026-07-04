@@ -1,6 +1,6 @@
 # sim-discrete
 
-Published commit: `93a0b8007797de2ad40460e237a2b18cd1f115ba`.
+Published commit: `afa2705297096ae268c8a9aa46340d4ae4fc8535`.
 
 ## Crates
 

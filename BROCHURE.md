@@ -220,10 +220,10 @@ piece gives you.
 
 ### surface
 
-- **sim-cli** -- The `sim` program you launch from a terminal to start a SIM session.
 - **sim-cli-core** -- The part that reads your command line and sets up the SIM session.
 - **sim-cli-loaders** -- The pieces that let SIM pull in outside plug-ins from files or bundles.
 - **sim-lib-repl** -- The interactive prompt where you type a line and SIM answers back.
+- **sim-run** -- The `sim` program you launch from a terminal to start a SIM session.
 - **sim-view-tty** -- The library that draws SIM in your terminal and reads your keystrokes.
 - **sim** -- the single starting point a developer adds to reach every part of the SIM runtime.
 - **sim-conformance** -- the runnable checklist that proves SIM actually behaves the way its architecture promises.
@@ -439,12 +439,6 @@ Making a type into a proper SIM value takes a fair amount of repetitive support:
 
 ### sim-cli
 
-#### sim-cli
-
-The `sim` program you launch from a terminal to start a SIM session.
-
-This is the small starting program that turns the SIM system on. You run one command, `sim`, and it reads the options you type, then hands control to whatever behavior you asked for. The program itself stays thin on purpose: it bakes in no language surface and no built-in tricks. It simply understands how to bring a library to life and pass your request along. You choose what gets loaded from the outside, so the same starting program serves many jobs. It stays quiet and honest: when you ask for something it cannot find, it tells you plainly instead of guessing. Think of it as the front door to everything else in the system.
-
 #### sim-cli-core
 
 The part that reads your command line and sets up the SIM session.
@@ -462,6 +456,12 @@ This is the set of loading mechanisms the starting program can switch on when yo
 The interactive prompt where you type a line and SIM answers back.
 
 This is the loadable back-and-forth prompt for SIM. You type one line, the system reads it, works it out, and prints the answer, then waits for your next line. It is the hands-on way to explore, try an idea, and see the result right away without setting up a whole program first. The prompt keeps a clear read-then-answer rhythm and stays out of your way. It does not carry a language surface or number handling of its own; instead it expects your session to already have those brought in, so the very same prompt works over whichever surface you loaded. That keeps it honest and small: it drives the conversation and lets the loaded pieces supply the actual meaning of each line you enter.
+
+#### sim-run
+
+The `sim` program you launch from a terminal to start a SIM session.
+
+This is the small starting program that turns the SIM system on. You run one command, `sim`, and it reads the options you type, then hands control to whatever behavior you asked for. The program itself stays thin on purpose: it bakes in no language surface and no built-in tricks. It simply understands how to bring a library to life and pass your request along. You choose what gets loaded from the outside, so the same starting program serves many jobs. It stays quiet and honest: when you ask for something it cannot find, it tells you plainly instead of guessing. Think of it as the front door to everything else in the system.
 
 #### sim-view-tty
 
