@@ -28,12 +28,12 @@ constellation workspace, so you can try everything now and catch bugs.
 SIM ships a single `sim` command -- the bootloader that loads codecs and libraries. Once SIM is published you install it from crates.io; today you build and run it from the workspace.
 
 ```shell
-cargo install sim-cli
+cargo install sim-run
 sim --version
 ```
 ```shell
 # <mockup>
-cargo run --manifest-path .meta-workspace/Cargo.toml -p sim-cli --bin sim -- --version
+cargo run --manifest-path .meta-workspace/Cargo.toml -p sim-run --bin sim -- --version
 ```
 
 [More: sim-sdk](docs/repos/sim-sdk.md)
@@ -84,7 +84,7 @@ sim repl
 # <mockup>
 cargo build --manifest-path .meta-workspace/Cargo.toml -p sim-lib-numbers-f64 --features native-export
 cargo build --manifest-path .meta-workspace/Cargo.toml -p sim-lib-standard-core --features native-export
-printf '(math/add (math/mul 6 7) 0)\n' | cargo run --manifest-path .meta-workspace/Cargo.toml -p sim-cli --features dynamic-native --bin sim -- repl
+printf '(math/add (math/mul 6 7) 0)\n' | cargo run --manifest-path .meta-workspace/Cargo.toml -p sim-run --features dynamic-native --bin sim -- repl
 ```
 
 [More: sim-cli](docs/repos/sim-cli.md)
