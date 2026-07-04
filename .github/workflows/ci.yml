@@ -1,0 +1,20 @@
+# GitHub Actions CI for sim-say -- the generated, code-free front page.
+# No Rust here; this just enforces what sim-say IS: code-free and ASCII-only.
+name: ci
+on:
+  pull_request: {}
+  push:
+    branches: [main]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: stays code-free (no Rust)
+        run: test ! -d crates && test ! -d src && test ! -f Cargo.toml
+      - name: ASCII-only
+        run: |
+          hits=$(git ls-files -z | xargs -0 -r grep -lIP '[^\x00-\x7F]' || true)
+          if [ -n "$hits" ]; then
+            echo "non-ASCII characters found in:"; echo "$hits"; exit 1
+          fi
