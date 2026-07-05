@@ -25,10 +25,11 @@ constellation workspace, so you can try everything now and catch bugs.
 
 ### Install the sim binary
 
-SIM ships a single `sim` command -- the bootloader that loads codecs and libraries. Once SIM is published you install it from crates.io; today you build and run it from the workspace.
+SIM ships a single `sim` command -- the bootloader that loads codecs and libraries. `sim-run` is the thin bootloader; the batteries-included build (`sim-nest` with `serve-cli`) adds the MCP and Web serve surfaces (`sim mcp`, `sim serve`) without a separate wrapper install.
 
 ```shell
-cargo install sim-run
+cargo install sim-run                          # the thin sim bootloader
+cargo install sim-nest --features serve-cli    # sim + mcp/web serve surfaces
 sim --version
 ```
 ```shell
