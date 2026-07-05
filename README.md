@@ -87,7 +87,7 @@ cargo build --manifest-path .meta-workspace/Cargo.toml -p sim-lib-standard-core 
 printf '(math/add (math/mul 6 7) 0)\n' | cargo run --manifest-path .meta-workspace/Cargo.toml -p sim-run --features dynamic-native --bin sim -- repl
 ```
 
-[More: sim-cli](docs/repos/sim-cli.md)
+[More: sim-run](docs/repos/sim-run.md)
 
 From here the trail goes deeper: the tour below shows how SIM works under the
 hood, the repository catalog lists the whole constellation, and `sim-sdk` is the
@@ -171,7 +171,7 @@ generated repository page:
 | Kernel and protocol boundary | [sim-kernel](docs/repos/sim-kernel.md) | Small contracts -- no hardwired parser, number domain, transport, or standard library baked in. |
 | One match engine | [sim-shape](docs/repos/sim-shape.md) | A single `Shape` engine for parsing, checking, binding, dispatch, macro syntax, and projection ranking. |
 | Codecs and round-trip | [sim-codecs](docs/repos/sim-codecs.md) | Lisp, JSON, Algol-style, binary, chat, MCP, and a wasm ABI -- reversible objects over one expression graph. |
-| Runtime, libraries, and the CLI | [sim-runtime](docs/repos/sim-runtime.md), [sim-sdk](docs/repos/sim-sdk.md), [sim-cli](docs/repos/sim-cli.md) | Behavior is loadable libraries; the SDK is the developer entry; the CLI is a bootloader that loads codecs and libs. |
+| Runtime, libraries, and the CLI | [sim-runtime](docs/repos/sim-runtime.md), [sim-sdk](docs/repos/sim-sdk.md), [sim-run](docs/repos/sim-run.md) | Behavior is loadable libraries; the SDK is the developer entry; the CLI is a bootloader that loads codecs and libs. |
 | Values, records, and citizens | [sim-foundation](docs/repos/sim-foundation.md), [sim-citizen](docs/repos/sim-citizen.md) | Values, tables, macros, net contracts, surface cards, and the citizen conformance layer. |
 | Numbers and discrete math | [sim-numbers](docs/repos/sim-numbers.md), [sim-discrete](docs/repos/sim-discrete.md), [sim-femm](docs/repos/sim-femm.md) | Pluggable number domains, tensors, a CAS, exact/discrete tools, and a 2D finite-element domain. |
 | Storage and streams | [sim-storage](docs/repos/sim-storage.md), [sim-stream](docs/repos/sim-stream.md), [sim-stream-host](docs/repos/sim-stream-host.md) | Stored objects, stream graphs, and placement-transparent host execution. |
@@ -204,7 +204,6 @@ The full constellation, generated from each repo's pinned contract files:
 - [sim-agent-net](docs/repos/sim-agent-net.md)
 - [sim-audio-daw](docs/repos/sim-audio-daw.md)
 - [sim-citizen](docs/repos/sim-citizen.md)
-- [sim-cli](docs/repos/sim-cli.md)
 - [sim-codecs](docs/repos/sim-codecs.md)
 - [sim-discrete](docs/repos/sim-discrete.md)
 - [sim-femm](docs/repos/sim-femm.md)
@@ -212,6 +211,7 @@ The full constellation, generated from each repo's pinned contract files:
 - [sim-kernel](docs/repos/sim-kernel.md)
 - [sim-music](docs/repos/sim-music.md)
 - [sim-numbers](docs/repos/sim-numbers.md)
+- [sim-run](docs/repos/sim-run.md)
 - [sim-runtime](docs/repos/sim-runtime.md)
 - [sim-sdk](docs/repos/sim-sdk.md)
 - [sim-shape](docs/repos/sim-shape.md)

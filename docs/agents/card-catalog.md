@@ -5,7 +5,6 @@
 | [sim-agent-net](../repos/sim-agent-net.md) | 190 | [card-index.json](../contracts/sim-agent-net/card-index.json) |
 | [sim-audio-daw](../repos/sim-audio-daw.md) | 62 | [card-index.json](../contracts/sim-audio-daw/card-index.json) |
 | [sim-citizen](../repos/sim-citizen.md) | 0 | [card-index.json](../contracts/sim-citizen/card-index.json) |
-| [sim-cli](../repos/sim-cli.md) | 35 | [card-index.json](../contracts/sim-cli/card-index.json) |
 | [sim-codecs](../repos/sim-codecs.md) | 64 | [card-index.json](../contracts/sim-codecs/card-index.json) |
 | [sim-discrete](../repos/sim-discrete.md) | 30 | [card-index.json](../contracts/sim-discrete/card-index.json) |
 | [sim-femm](../repos/sim-femm.md) | 90 | [card-index.json](../contracts/sim-femm/card-index.json) |
@@ -13,6 +12,7 @@
 | [sim-kernel](../repos/sim-kernel.md) | 0 | [card-index.json](../contracts/sim-kernel/card-index.json) |
 | [sim-music](../repos/sim-music.md) | 313 | [card-index.json](../contracts/sim-music/card-index.json) |
 | [sim-numbers](../repos/sim-numbers.md) | 173 | [card-index.json](../contracts/sim-numbers/card-index.json) |
+| [sim-run](../repos/sim-run.md) | 35 | [card-index.json](../contracts/sim-run/card-index.json) |
 | [sim-runtime](../repos/sim-runtime.md) | 129 | [card-index.json](../contracts/sim-runtime/card-index.json) |
 | [sim-sdk](../repos/sim-sdk.md) | 0 | [card-index.json](../contracts/sim-sdk/card-index.json) |
 | [sim-shape](../repos/sim-shape.md) | 0 | [card-index.json](../contracts/sim-shape/card-index.json) |

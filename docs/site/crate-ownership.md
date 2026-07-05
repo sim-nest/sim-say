@@ -33,11 +33,6 @@
 | `sim-lib-stream-portaudio` | [sim-audio-daw](../repos/sim-audio-daw.md) |
 | `sim-citizen` | [sim-citizen](../repos/sim-citizen.md) |
 | `sim-citizen-derive` | [sim-citizen](../repos/sim-citizen.md) |
-| `sim-run` | [sim-cli](../repos/sim-cli.md) |
-| `sim-cli-core` | [sim-cli](../repos/sim-cli.md) |
-| `sim-cli-loaders` | [sim-cli](../repos/sim-cli.md) |
-| `sim-lib-repl` | [sim-cli](../repos/sim-cli.md) |
-| `sim-view-tty` | [sim-cli](../repos/sim-cli.md) |
 | `sim-codec` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-algol` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-binary` | [sim-codecs](../repos/sim-codecs.md) |
@@ -159,6 +154,11 @@
 | `sim-lib-numbers-tensor-i64` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-tensor-linalg` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-tensor-rat64` | [sim-numbers](../repos/sim-numbers.md) |
+| `sim-run` | [sim-run](../repos/sim-run.md) |
+| `sim-run-core` | [sim-run](../repos/sim-run.md) |
+| `sim-run-loaders` | [sim-run](../repos/sim-run.md) |
+| `sim-lib-repl` | [sim-run](../repos/sim-run.md) |
+| `sim-view-tty` | [sim-run](../repos/sim-run.md) |
 | `sim-lib-binding` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-control` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-core` | [sim-runtime](../repos/sim-runtime.md) |
@@ -180,7 +180,7 @@
 | `sim-lib-pattern` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-sequence` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-standard-core` | [sim-runtime](../repos/sim-runtime.md) |
-| `sim` | [sim-sdk](../repos/sim-sdk.md) |
+| `sim-nest` | [sim-sdk](../repos/sim-sdk.md) |
 | `sim-conformance` | [sim-sdk](../repos/sim-sdk.md) |
 | `sim-shape` | [sim-shape](../repos/sim-shape.md) |
 | `sim-list-cell` | [sim-storage](../repos/sim-storage.md) |

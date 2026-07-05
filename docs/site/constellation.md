@@ -10,7 +10,6 @@
         | sim-agent-net
         | sim-audio-daw
         | sim-citizen
-        | sim-cli
         | sim-codecs
         | sim-discrete
         | sim-femm
@@ -18,6 +17,7 @@
         | sim-kernel
         | sim-music
         | sim-numbers
+        | sim-run
         | sim-runtime
         | sim-sdk
         | sim-shape

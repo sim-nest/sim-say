@@ -220,13 +220,13 @@ piece gives you.
 
 ### surface
 
-- **sim-cli-core** -- The part that reads your command line and sets up the SIM session.
-- **sim-cli-loaders** -- The pieces that let SIM pull in outside plug-ins from files or bundles.
 - **sim-lib-repl** -- The interactive prompt where you type a line and SIM answers back.
 - **sim-run** -- The `sim` program you launch from a terminal to start a SIM session.
+- **sim-run-core** -- The part that reads your command line and sets up the SIM session.
+- **sim-run-loaders** -- The pieces that let SIM pull in outside plug-ins from files or bundles.
 - **sim-view-tty** -- The library that draws SIM in your terminal and reads your keystrokes.
-- **sim** -- the single starting point a developer adds to reach every part of the SIM runtime.
 - **sim-conformance** -- the runnable checklist that proves SIM actually behaves the way its architecture promises.
+- **sim-nest** -- the single starting point a developer adds to reach every part of the SIM runtime.
 
 ### web
 
@@ -436,38 +436,6 @@ A citizen is any value that SIM treats as a proper public thing: it can be read 
 A one-line marker that writes all the wiring needed to make your data type a full SIM value for you.
 
 Making a type into a proper SIM value takes a fair amount of repetitive support: a registry entry, install steps, a conformance check, field handling, and equality comparison. This crate lets you skip writing that by hand. You place a short marker above your type and describe it with a few plain attributes -- its public name, its version, and how its fields behave -- and the marker generates the matching support for you. It also offers a second marker that stamps a type as a deliberate, named exception when it should not be a hosted value at all, so the exemption is explicit and on the record rather than a silent gap.
-
-### sim-cli
-
-#### sim-cli-core
-
-The part that reads your command line and sets up the SIM session.
-
-This is the reasoning behind the starting program. When you type a command, this piece figures out what you meant: which language surface to speak, which extra libraries you want, and where the payload of your request begins. It keeps your handoff details safe, chooses the right first library to bring in, and then passes your whole request across to that library. It also turns the result back into a simple yes-or-no exit signal your shell can read. If you point it at a file, it loads from there. If you seed a local store ahead of time, it can find pieces without ever reaching out over a wire. Nothing is assumed for you; every source is one you named.
-
-#### sim-cli-loaders
-
-The pieces that let SIM pull in outside plug-ins from files or bundles.
-
-This is the set of loading mechanisms the starting program can switch on when you want to bring in behavior that lives outside the base build. One mechanism opens a compiled plug-in file built for your machine. Another opens a portable bundle that runs the same way anywhere. Either way, you get a clean and consistent path from a file on disk to live behavior inside a running session. These loaders stay small and low-level on purpose, so the command surface can add just the loading style you need without dragging in the whole system. When a loaded plug-in offers a placement point for later work, this layer records it as an opaque item the rest of the system can pick up.
-
-#### sim-lib-repl
-
-The interactive prompt where you type a line and SIM answers back.
-
-This is the loadable back-and-forth prompt for SIM. You type one line, the system reads it, works it out, and prints the answer, then waits for your next line. It is the hands-on way to explore, try an idea, and see the result right away without setting up a whole program first. The prompt keeps a clear read-then-answer rhythm and stays out of your way. It does not carry a language surface or number handling of its own; instead it expects your session to already have those brought in, so the very same prompt works over whichever surface you loaded. That keeps it honest and small: it drives the conversation and lets the loaded pieces supply the actual meaning of each line you enter.
-
-#### sim-run
-
-The `sim` program you launch from a terminal to start a SIM session.
-
-This is the small starting program that turns the SIM system on. You run one command, `sim`, and it reads the options you type, then hands control to whatever behavior you asked for. The program itself stays thin on purpose: it bakes in no language surface and no built-in tricks. It simply understands how to bring a library to life and pass your request along. You choose what gets loaded from the outside, so the same starting program serves many jobs. It stays quiet and honest: when you ask for something it cannot find, it tells you plainly instead of guessing. Think of it as the front door to everything else in the system.
-
-#### sim-view-tty
-
-The library that draws SIM in your terminal and reads your keystrokes.
-
-This is the terminal face of SIM. It takes a scene the system wants to show and paints it as plain text that fits your terminal, and it turns the keys you press into clear intentions the system can act on. Both directions are steady and predictable, so what you see and what you type behave the same way every run. It offers two settings: a keyboard-only plain view for a simple terminal, and a richer view that also understands pointer input and a wider palette. The terminal is treated as one kind of display among several, not a special built-in mode, so the starting program stays a plain front door while this piece handles everything about showing and reading in text.
 
 ### sim-codecs
 
@@ -1209,6 +1177,38 @@ It gives you grids of exact fractions, so array math avoids rounding entirely.
 
 When you need a whole grid of values to stay exact, decimals will not do; they round. This provides a grid where every cell is a precise fraction, a top number over a bottom number, kept compact for speed. Each cell is automatically reduced to lowest terms with a tidy, consistent sign, so equal fractions look the same and comparisons behave. It converts cleanly to and from the system's general grid form, staying fully compatible with the rest of the stack. If the count of values does not match the shape you declared, it refuses rather than proceed with mismatched data.
 
+### sim-run
+
+#### sim-lib-repl
+
+The interactive prompt where you type a line and SIM answers back.
+
+This is the loadable back-and-forth prompt for SIM. You type one line, the system reads it, works it out, and prints the answer, then waits for your next line. It is the hands-on way to explore, try an idea, and see the result right away without setting up a whole program first. The prompt keeps a clear read-then-answer rhythm and stays out of your way. It does not carry a language surface or number handling of its own; instead it expects your session to already have those brought in, so the very same prompt works over whichever surface you loaded. That keeps it honest and small: it drives the conversation and lets the loaded pieces supply the actual meaning of each line you enter.
+
+#### sim-run
+
+The `sim` program you launch from a terminal to start a SIM session.
+
+This is the small starting program that turns the SIM system on. You run one command, `sim`, and it reads the options you type, then hands control to whatever behavior you asked for. The program itself stays thin on purpose: it bakes in no language surface and no built-in tricks. It simply understands how to bring a library to life and pass your request along. You choose what gets loaded from the outside, so the same starting program serves many jobs. It stays quiet and honest: when you ask for something it cannot find, it tells you plainly instead of guessing. Think of it as the front door to everything else in the system.
+
+#### sim-run-core
+
+The part that reads your command line and sets up the SIM session.
+
+This is the reasoning behind the starting program. When you type a command, this piece figures out what you meant: which language surface to speak, which extra libraries you want, and where the payload of your request begins. It keeps your handoff details safe, chooses the right first library to bring in, and then passes your whole request across to that library. It also turns the result back into a simple yes-or-no exit signal your shell can read. If you point it at a file, it loads from there. If you seed a local store ahead of time, it can find pieces without ever reaching out over a wire. Nothing is assumed for you; every source is one you named.
+
+#### sim-run-loaders
+
+The pieces that let SIM pull in outside plug-ins from files or bundles.
+
+This is the set of loading mechanisms the starting program can switch on when you want to bring in behavior that lives outside the base build. One mechanism opens a compiled plug-in file built for your machine. Another opens a portable bundle that runs the same way anywhere. Either way, you get a clean and consistent path from a file on disk to live behavior inside a running session. These loaders stay small and low-level on purpose, so the command surface can add just the loading style you need without dragging in the whole system. When a loaded plug-in offers a placement point for later work, this layer records it as an opaque item the rest of the system can pick up.
+
+#### sim-view-tty
+
+The library that draws SIM in your terminal and reads your keystrokes.
+
+This is the terminal face of SIM. It takes a scene the system wants to show and paints it as plain text that fits your terminal, and it turns the keys you press into clear intentions the system can act on. Both directions are steady and predictable, so what you see and what you type behave the same way every run. It offers two settings: a keyboard-only plain view for a simple terminal, and a richer view that also understands pointer input and a wider palette. The terminal is treated as one kind of display among several, not a special built-in mode, so the starting program stays a plain front door while this piece handles everything about showing and reading in text.
+
 ### sim-runtime
 
 #### sim-lib-binding
@@ -1339,17 +1339,17 @@ This library gathers the everyday behaviors most people expect a working system 
 
 ### sim-sdk
 
-#### sim
-
-the single starting point a developer adds to reach every part of the SIM runtime.
-
-This is the one-stop crate you depend on to work with SIM. Instead of hunting down and wiring together the kernel, the codecs, the number domains, the list and table backends, and the behavior libraries one by one, you add this single package and get them all through a tidy set of named modules. It ships the installer that boots a working runtime and the authoring helpers for writing functions, classes, macros, and shapes. You pick how much of the system you want through named feature groups, starting from a small default and widening as your needs grow. It is the front door: the place newcomers begin and the surface everything else hangs behind.
-
 #### sim-conformance
 
 the runnable checklist that proves SIM actually behaves the way its architecture promises.
 
 This is the executable test suite that holds the whole runtime to its stated contract. Every big claim SIM makes about itself becomes a check you can run: that codecs faithfully round-trip every expression, that classes act as callable functions, that number parsing and promotion can be swapped out, that reading input never quietly runs code unless a host allows it, that named evaluation strategies work, that libraries can be installed and cleanly removed, that a boot receipt replays the same way, and that placement across machines behaves. It exercises the public entry crate exactly as an outside developer would, so the promises are tested through the same door you use.
+
+#### sim-nest
+
+the single starting point a developer adds to reach every part of the SIM runtime.
+
+This is the one-stop crate you depend on to work with SIM. Instead of hunting down and wiring together the kernel, the codecs, the number domains, the list and table backends, and the behavior libraries one by one, you add this single package and get them all through a tidy set of named modules. It ships the installer that boots a working runtime and the authoring helpers for writing functions, classes, macros, and shapes. You pick how much of the system you want through named feature groups, starting from a small default and widening as your needs grow. It is the front door: the place newcomers begin and the surface everything else hangs behind.
 
 ### sim-shape
 
