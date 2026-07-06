@@ -116,8 +116,8 @@ developer entry point (its `README.md` quickstart and `DEVELOPING.md`).
 
 ## What you can look at right now
 
-SIM is pre-publish: the libraries are not on crates.io yet, so the
-build-and-run path is still being prepared (see the publishing plan). Today you
+SIM is published: the libraries are on crates.io as `0.1.0`, and the facade
+`sim-nest` (imported as `sim`) pulls the standard distribution together. You
 can:
 
 - **Read the architecture.** Start with the developer overview and the
@@ -132,9 +132,8 @@ can:
   (`cargo test` in a fresh checkout) -- it is the dependency root. The rest of the
   constellation builds together as a workspace; see `sim-sdk`'s `DEVELOPING.md`.
 
-Once the first libraries publish, this section graduates to a one-line
-`cargo add sim` plus a runnable `sim` command. That step is tracked and gated;
-it is not faked here.
+- **Add it to a project.** `cargo add sim-nest` pulls in the batteries-included
+  distribution (imported as `sim`); the `sim` command line ships from `sim-run`.
 
 ## The tour -- how it works
 
