@@ -1,6 +1,6 @@
 # sim-foundation
 
-Published commit: `9e909f75fee11c29b40e1e3f897515f2748cd8c6`.
+Published commit: `d3599f7e6b9afc19dba00caa38a1a8a33b255cf1`.
 
 ## Crates
 
