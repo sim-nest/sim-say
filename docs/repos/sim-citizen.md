@@ -1,6 +1,6 @@
 # sim-citizen
 
-Published commit: `d16b5ad61499061a4935249d9a9323371f107ce8`.
+Published commit: `88054957593461972a7830fbd71e41dd99546bd7`.
 
 ## Crates
 

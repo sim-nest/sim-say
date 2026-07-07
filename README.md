@@ -94,6 +94,23 @@ From here the trail goes deeper: the tour below shows how SIM works under the
 hood, the repository catalog lists the whole constellation, and `sim-sdk` is the
 developer entry point (its `README.md` quickstart and `DEVELOPING.md`).
 
+## Uninstall
+
+Done trying it? Remove whichever binary you installed:
+
+```shell
+cargo uninstall sim-run     # or, if you installed the batteries build: cargo uninstall sim-nest
+```
+
+The `sim` command caches downloaded library artifacts under `sim/libs` in your
+cache directory -- `$SIM_CLI_CACHE_DIR` if you set it, otherwise
+`$XDG_CACHE_HOME/sim/libs`, otherwise `~/.cache/sim/libs`. It writes nothing
+else outside that cache. To remove the cache too:
+
+```shell
+rm -rf "${XDG_CACHE_HOME:-$HOME/.cache}/sim"
+```
+
 ## Why it is interesting
 
 - **One kernel, many libraries.** Behavior lives in libs loaded at runtime, so

@@ -1,6 +1,6 @@
 # sim-femm
 
-Published commit: `04a197441ae160f9c03f820f112efac4dd5969a4`.
+Published commit: `ad66a14e54d0c20a16eaafe50a953380f0002218`.
 
 ## Crates
 
