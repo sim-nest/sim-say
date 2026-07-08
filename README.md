@@ -19,9 +19,10 @@ tokens  ->  checked forms  ->  objects  ->  checked calls  ->  objects  ->  enco
 
 ## Install
 
-Each block below is the command as it will read once SIM is published; the
-`# <mockup>` block under it does the **same thing today** from a local
-constellation workspace, so you can try everything now and catch bugs.
+Each block below is the command as it reads for a published install. Working from
+a local constellation checkout instead? Run any `sim ...` command on this page
+**today** with `sh bin/simctl sim` in place of `sim` -- it drives the `sim`
+binary straight from the workspace, so you can try everything now and catch bugs.
 
 ### Install the sim binary
 
@@ -31,10 +32,6 @@ SIM ships a single `sim` command -- the bootloader that loads codecs and librari
 cargo install sim-run                          # the thin sim bootloader
 cargo install sim-nest --features serve-cli    # sim + mcp/web serve surfaces
 sim --version
-```
-```shell
-# <mockup>
-cargo run --manifest-path .meta-workspace/Cargo.toml -p sim-run --bin sim -- --version
 ```
 
 [More: sim-sdk](docs/repos/sim-sdk.md)
@@ -52,11 +49,6 @@ Spin up the SIM Web-UI shell and open it in a browser -- the cookbook, the Ateli
 ```shell
 sim webui
 ```
-```shell
-# <mockup>
-cargo run --manifest-path .meta-workspace/Cargo.toml -p sim-web-shell
-# then open the URL it prints on startup
-```
 
 [More: sim-web](docs/repos/sim-web.md)
 
@@ -67,10 +59,6 @@ Start a Model Context Protocol server so an MCP client -- an editor, an agent --
 ```shell
 sim serve mcp
 ```
-```shell
-# <mockup>
-cargo run --manifest-path .meta-workspace/Cargo.toml -p sim-mcp-server
-```
 
 [More: sim-agent-net](docs/repos/sim-agent-net.md)
 
@@ -80,12 +68,6 @@ Read-eval-print: pipe or type a Lisp expression and SIM evaluates it through the
 
 ```shell
 sim repl
-```
-```shell
-# <mockup>
-cargo build --manifest-path .meta-workspace/Cargo.toml -p sim-lib-numbers-f64 --features native-export
-cargo build --manifest-path .meta-workspace/Cargo.toml -p sim-lib-standard-core --features native-export
-printf '(math/add (math/mul 6 7) 0)\n' | cargo run --manifest-path .meta-workspace/Cargo.toml -p sim-run --features dynamic-native --bin sim -- repl
 ```
 
 [More: sim-run](docs/repos/sim-run.md)
@@ -155,8 +137,8 @@ can:
 ## The tour -- how it works
 
 A closer look under the hood -- short, runnable examples. Each block is the
-published command; the `# <mockup>` block under it runs the same thing today from
-the workspace, with its output captured and verified.
+published command, with its output captured and verified against the live
+workspace.
 
 ### One expression, every codec
 
@@ -165,10 +147,6 @@ Decode a Lisp string into the shared expression graph, round-trip it through the
 ```shell
 cargo add sim --features codec-lisp,codec-json,codec-binary,numbers-prelude
 cargo run --example codec_roundtrip
-```
-```shell
-# <mockup>
-cargo run --manifest-path .meta-workspace/Cargo.toml -p sim --example codec_roundtrip --features core,shape,codec-lisp,codec-json,codec-binary,numbers-prelude
 ```
 ```text
 lisp source : (+ 1 2)
