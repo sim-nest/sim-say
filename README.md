@@ -26,7 +26,7 @@ binary straight from the workspace, so you can try everything now and catch bugs
 
 ### Install the sim command
 
-SIM is one command: `sim`, the bootloader that loads codecs and libraries. Install the batteries-included build below and you get `sim` plus the MCP and Web serve surfaces -- one install, nothing else to add. (Embedders who want only the thin bootloader can `cargo install sim-run` instead; it installs the SAME `sim` binary, so install just one of the two.)
+SIM is one command: `sim`, the bootloader that loads codecs and libraries. Install the batteries-included build below and you get `sim repl`, `sim webui`, and `sim mcp` -- one install, nothing else to add. (Embedders who want only the thin bootloader can `cargo install sim-run` instead; it installs the SAME `sim` binary, so install just one of the two.)
 
 ```shell
 cargo install sim-nest --features serve-cli   # installs the `sim` command
@@ -43,7 +43,7 @@ your expression through an eval stack `sim` loads at startup, not a built-in.
 
 ### See the Web UI
 
-Spin up the SIM Web-UI shell and open it in a browser -- the cookbook, the Atelier cache view, and the live surface.
+Spin up the SIM Web-UI shell and open it in a browser -- the cookbook, the Atelier cache view, and the live surface. `sim webui` prints a local URL on startup.
 
 ```shell
 sim webui
@@ -56,7 +56,7 @@ sim webui
 Start a Model Context Protocol server so an MCP client -- an editor, an agent -- can call SIM tools over stdio.
 
 ```shell
-sim serve mcp
+sim mcp
 ```
 
 [More: sim-agent-net](docs/repos/sim-agent-net.md)
