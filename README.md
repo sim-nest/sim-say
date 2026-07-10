@@ -24,13 +24,12 @@ a local constellation checkout instead? Run any `sim ...` command on this page
 **today** with `sh bin/simctl sim` in place of `sim` -- it drives the `sim`
 binary straight from the workspace, so you can try everything now and catch bugs.
 
-### Install the sim binary
+### Install the sim command
 
-SIM ships a single `sim` command -- the bootloader that loads codecs and libraries. `sim-run` is the thin bootloader; the batteries-included build (`sim-nest` with `serve-cli`) adds the MCP and Web serve surfaces (`sim mcp`, `sim serve`) without a separate wrapper install.
+SIM is one command: `sim`, the bootloader that loads codecs and libraries. Install the batteries-included build below and you get `sim` plus the MCP and Web serve surfaces -- one install, nothing else to add. (Embedders who want only the thin bootloader can `cargo install sim-run` instead; it installs the SAME `sim` binary, so install just one of the two.)
 
 ```shell
-cargo install sim-run                          # the thin sim bootloader
-cargo install sim-nest --features serve-cli    # sim + mcp/web serve surfaces
+cargo install sim-nest --features serve-cli   # installs the `sim` command
 sim --version
 ```
 
@@ -78,11 +77,15 @@ developer entry point (its `README.md` quickstart and `DEVELOPING.md`).
 
 ## Uninstall
 
-Done trying it? Remove whichever binary you installed:
+Done trying it? Remove the `sim` command by uninstalling the crate you installed:
 
 ```shell
-cargo uninstall sim-run     # or, if you installed the batteries build: cargo uninstall sim-nest
+cargo uninstall sim-nest        # the batteries build from Install above
+# installed only the thin bootloader instead? -> cargo uninstall sim-run
 ```
+
+Uninstall by crate name (not the binary name `sim`), and pass no `--features`. If
+you are unsure which crate owns `sim`, `cargo install --list` shows it.
 
 The `sim` command caches downloaded library artifacts under `sim/libs` in your
 cache directory -- `$SIM_CLI_CACHE_DIR` if you set it, otherwise
@@ -132,7 +135,8 @@ can:
   constellation builds together as a workspace; see `sim-sdk`'s `DEVELOPING.md`.
 
 - **Add it to a project.** `cargo add sim-nest` pulls in the batteries-included
-  distribution (imported as `sim`); the `sim` command line ships from `sim-run`.
+  distribution (imported as `sim`); the `sim` command line is a separate install
+  (see Install above).
 
 ## The tour -- how it works
 
