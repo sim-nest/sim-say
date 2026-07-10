@@ -19,10 +19,8 @@ tokens  ->  checked forms  ->  objects  ->  checked calls  ->  objects  ->  enco
 
 ## Install
 
-Each block below is the command as it reads for a published install. Working from
-a local constellation checkout instead? Run any `sim ...` command on this page
-**today** with `sh bin/simctl sim` in place of `sim` -- it drives the `sim`
-binary straight from the workspace, so you can try everything now and catch bugs.
+`sim` is published on crates.io -- install it, then every command on this page works
+as written.
 
 ### Install the sim command
 
