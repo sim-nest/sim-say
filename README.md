@@ -63,7 +63,7 @@ sim serve mcp
 
 ### Start a REPL
 
-Read-eval-print: pipe or type a Lisp expression and SIM evaluates it through the `sim` bootloader loading the REPL as a library.
+Read-eval-print: pipe or type a Lisp expression and the batteries `sim` evaluates it. The eval stack -- numbers prelude, core runtime, and the Lisp codec -- is linked into the `sim repl` verb, so it works straight from `cargo install sim-nest --features serve-cli` with no extra setup or native dylib bundle.
 
 ```shell
 sim repl
