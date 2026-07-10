@@ -149,7 +149,7 @@ workspace.
 Decode a Lisp string into the shared expression graph, round-trip it through the JSON and binary codecs, and confirm all three decode back to the identical Expr. Codecs are first-class, reversible objects over one graph.
 
 ```shell
-cargo add sim --features codec-lisp,codec-json,codec-binary,numbers-prelude
+cargo add sim-nest --features codec-lisp,codec-json,codec-binary,numbers-prelude
 cargo run --example codec_roundtrip
 ```
 ```text
