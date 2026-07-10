@@ -26,7 +26,7 @@ binary straight from the workspace, so you can try everything now and catch bugs
 
 ### Install the sim command
 
-SIM is one command: `sim`, the bootloader that loads codecs and libraries. Install the batteries-included build below and you get `sim repl`, `sim webui`, and `sim mcp` -- one install, nothing else to add. (Embedders who want only the thin bootloader can `cargo install sim-run` instead; it installs the SAME `sim` binary, so install just one of the two.)
+SIM is one command: `sim`, the bootloader that loads codecs and libraries. Install the batteries-included build below and you get `sim repl`, `sim webui`, and `sim mcp` -- one install, nothing else to add. (Embedders who want only the thin bootloader can `cargo install sim-run` for the separate `sim-run` binary; the `sim` command always comes from `sim-nest`.)
 
 ```shell
 cargo install sim-nest --features serve-cli   # installs the `sim` command
