@@ -1,6 +1,6 @@
 # sim-numbers
 
-Published commit: `2c8b27349db07dd9154533c6b3bf54f116409095`.
+Published commit: `c0d455f8f998ed566785539a6e6cdfaa6cc943fe`.
 
 ## Crates
 
