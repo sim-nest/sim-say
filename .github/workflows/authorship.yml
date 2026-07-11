@@ -93,6 +93,16 @@ jobs:
               print(f"cannot fetch commit {sha}", file=sys.stderr)
               raise SystemExit(1)
 
+          def ensure_origin_branch(branch):
+              if not branch:
+                  return None
+              ref = f"origin/{branch}"
+              if git_ok(["rev-parse", "--verify", ref]):
+                  return ref
+              if git_ok(["fetch", "--no-tags", "--depth=1", "origin", f"{branch}:refs/remotes/{ref}"]):
+                  return ref
+              return None
+
           def scan_commits(args):
               bad = []
               for record in git_log(args).split("\0"):
@@ -139,7 +149,12 @@ jobs:
               after = event.get("after") or ZEROS
               if after == ZEROS:
                   raise SystemExit(0)
-              rev_args = [after, "--not", "--remotes=origin"] if before == ZEROS else [f"{before}..{after}"]
+              if before == ZEROS:
+                  default_branch = (event.get("repository") or {}).get("default_branch")
+                  base = ensure_origin_branch(default_branch)
+                  rev_args = [f"{base}..{after}"] if base else [after]
+              else:
+                  rev_args = [f"{before}..{after}"]
           else:
               rev_args = ["HEAD"]
 
