@@ -15,8 +15,10 @@
         | sim-femm
         | sim-foundation
         | sim-kernel
+        | sim-ledger
         | sim-music
         | sim-numbers
+        | sim-office
         | sim-run
         | sim-runtime
         | sim-sdk

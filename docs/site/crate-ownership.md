@@ -71,6 +71,7 @@
 | `sim-lib-femm-solve` | [sim-femm](../repos/sim-femm.md) |
 | `sim-lib-femm-space` | [sim-femm](../repos/sim-femm.md) |
 | `sim-lib-femm-tape` | [sim-femm](../repos/sim-femm.md) |
+| `sim-config` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-cookbook` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-lib-net-core` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-lib-surface-card` | [sim-foundation](../repos/sim-foundation.md) |
@@ -78,6 +79,7 @@
 | `sim-table-core` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-value` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-kernel` | [sim-kernel](../repos/sim-kernel.md) |
+| `sim-ledger` | [sim-ledger](../repos/sim-ledger.md) |
 | `sim-lib-daw-session` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-synth` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-midi-ble` | [sim-music](../repos/sim-music.md) |
@@ -154,6 +156,7 @@
 | `sim-lib-numbers-tensor-i64` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-tensor-linalg` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-tensor-rat64` | [sim-numbers](../repos/sim-numbers.md) |
+| `sim-lib-doc-core` | [sim-office](../repos/sim-office.md) |
 | `sim-run` | [sim-run](../repos/sim-run.md) |
 | `sim-run-core` | [sim-run](../repos/sim-run.md) |
 | `sim-run-loaders` | [sim-run](../repos/sim-run.md) |

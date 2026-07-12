@@ -112,6 +112,7 @@ piece gives you.
 - **sim-kernel** -- the small, steady center that lets every SIM piece connect.
 - **sim-citizen** -- The layer that lets a domain's own data types show up as first-class, well-behaved values inside SIM.
 - **sim-citizen-derive** -- A one-line marker that writes all the wiring needed to make your data type a full SIM value for you.
+- **sim-config** -- layered SIM settings stay inspectable because every source becomes the same table-shaped data before it is merged.
 - **sim-cookbook** -- The engine behind SIM's built-in, runnable lessons that teach each library from the inside.
 - **sim-lib-net-core** -- The quiet reading room that turns raw web traffic into clean, understandable pieces.
 - **sim-lib-surface-card** -- The shared name-translator that presents SIM's tools cleanly to outside systems and people.
@@ -206,6 +207,7 @@ piece gives you.
 - **sim-table-hash** -- A quick name-to-value lookup store that finds any entry by its key almost instantly.
 - **sim-table-lazy** -- A lookup table whose values are worked out the first time you ask and then remembered.
 - **sim-table-override** -- A stack of lookup tables where the top layers can cover entries in the ones beneath.
+- **sim-ledger** -- clear yearly books with exact money values and balance checks at the center.
 
 ### stream
 
@@ -227,6 +229,7 @@ piece gives you.
 - **sim-view-tty** -- The library that draws SIM in your terminal and reads your keystrokes.
 - **sim-conformance** -- the runnable checklist that proves SIM actually behaves the way its architecture promises.
 - **sim-nest** -- the single starting point a developer adds to reach every part of the SIM runtime.
+- **sim-lib-doc-core** -- the small document spine that office codecs, stores, views, and sites share.
 
 ### web
 
@@ -673,6 +676,12 @@ Solving a model is real effort, and much of that effort is wasted when you solve
 
 ### sim-foundation
 
+#### sim-config
+
+layered SIM settings stay inspectable because every source becomes the same table-shaped data before it is merged.
+
+`sim-config` gives SIM a common base for configuration without inventing a second settings world. Built-in defaults, probed defaults, home files, working-directory files, and explicit overrides all land in one directory of library tables. The merge result carries where each effective field came from, so a loader, command line, report, or agent can show why the current setting has that value.
+
 #### sim-cookbook
 
 The engine behind SIM's built-in, runnable lessons that teach each library from the inside.
@@ -716,6 +725,14 @@ SIM moves information around as compact data forms -- numbers, words, lists, and
 the small, steady center that lets every SIM piece connect.
 
 One dependable place that holds only the shared contracts -- values, expressions, symbols, capabilities, events, libraries, and dispatch records -- so everything else can grow as libraries around it. You get a runtime you can actually keep in your head, where a new codec, number kind, view, or model joins the system without becoming a special case, and where the rules that let those pieces talk to each other are named once, in one place, instead of being re-invented by every part.
+
+### sim-ledger
+
+#### sim-ledger
+
+clear yearly books with exact money values and balance checks at the center.
+
+`sim-ledger` gives SIM a plain model for personal and small-organization accounts: yearly account lists, vouchers, posting lines, and amounts stored as exact hundredths. The pieces are simple enough to inspect directly and strict enough to catch the accounting mistake that matters first, a voucher whose lines do not add back to zero.
 
 ### sim-music
 
@@ -1176,6 +1193,14 @@ This is the toolkit of classic linear-algebra operations that so many fields qui
 It gives you grids of exact fractions, so array math avoids rounding entirely.
 
 When you need a whole grid of values to stay exact, decimals will not do; they round. This provides a grid where every cell is a precise fraction, a top number over a bottom number, kept compact for speed. Each cell is automatically reduced to lowest terms with a tidy, consistent sign, so equal fractions look the same and comparisons behave. It converts cleanly to and from the system's general grid form, staying fully compatible with the rest of the stack. If the count of values does not match the shape you declared, it refuses rather than proceed with mismatched data.
+
+### sim-office
+
+#### sim-lib-doc-core
+
+the small document spine that office codecs, stores, views, and sites share.
+
+`sim-lib-doc-core` gives every office layer the same basic record: what kind of document this is, which stable id names it, what runtime value carries its body, and which outside file or service record it came from. It also gives callers a shape value for a document kind, so selection and validation can stay open instead of depending on a closed list inside the kernel.
 
 ### sim-run
 
