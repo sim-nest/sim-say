@@ -159,6 +159,7 @@
 | `sim-lib-doc-core` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-doc-site` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-doc-store` | [sim-office](../repos/sim-office.md) |
+| `sim-lib-doc-surface` | [sim-office](../repos/sim-office.md) |
 | `sim-run` | [sim-run](../repos/sim-run.md) |
 | `sim-run-core` | [sim-run](../repos/sim-run.md) |
 | `sim-run-loaders` | [sim-run](../repos/sim-run.md) |
