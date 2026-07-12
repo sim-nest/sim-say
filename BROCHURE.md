@@ -231,6 +231,7 @@ piece gives you.
 - **sim-nest** -- the single starting point a developer adds to reach every part of the SIM runtime.
 - **sim-lib-doc-core** -- the small document spine that office codecs, stores, views, and sites share.
 - **sim-lib-doc-site** -- the office bridge that makes external document places loadable without making them the frontend.
+- **sim-lib-doc-store** -- a local office document cache that keeps edits tied to the ledger that produced them.
 
 ### web
 
@@ -1208,6 +1209,12 @@ the small document spine that office codecs, stores, views, and sites share.
 the office bridge that makes external document places loadable without making them the frontend.
 
 This crate gives office integrations one place to register file services, helper processes, and modeled service doubles as document places. A caller can ask for data or preview a write through the same boundary, while the registered place carries its document kinds and required capabilities.
+
+#### sim-lib-doc-store
+
+a local office document cache that keeps edits tied to the ledger that produced them.
+
+This crate gives office work a durable local place to remember document snapshots and the edit projections that came from committed ledger entries. It is useful for offline viewing, undo previews, and tests that need repeatable document state without calling a hosted service.
 
 ### sim-run
 
