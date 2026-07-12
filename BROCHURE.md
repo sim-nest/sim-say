@@ -232,6 +232,7 @@ piece gives you.
 - **sim-lib-doc-core** -- the small document spine that office codecs, stores, views, and sites share.
 - **sim-lib-doc-site** -- the office bridge that makes external document places loadable without making them the frontend.
 - **sim-lib-doc-store** -- a local office document cache that keeps edits tied to the ledger that produced them.
+- **sim-lib-doc-surface** -- a suite-facing document surface that turns office records into renderable panes and checked edits.
 
 ### web
 
@@ -1215,6 +1216,12 @@ This crate gives office integrations one place to register file services, helper
 a local office document cache that keeps edits tied to the ledger that produced them.
 
 This crate gives office work a durable local place to remember document snapshots and the edit projections that came from committed ledger entries. It is useful for offline viewing, undo previews, and tests that need repeatable document state without calling a hosted service.
+
+#### sim-lib-doc-surface
+
+a suite-facing document surface that turns office records into renderable panes and checked edits.
+
+This crate gives office documents a shared scene for screens, decks, tables, and embedded document panes. It makes document previews visible through the existing view stack and turns user intent into clear edit records that a host can inspect before it commits anything.
 
 ### sim-run
 
