@@ -13,7 +13,7 @@
 | [sim-music](../repos/sim-music.md) | 313 | [card-index.json](../contracts/sim-music/card-index.json) |
 | [sim-numbers](../repos/sim-numbers.md) | 179 | [card-index.json](../contracts/sim-numbers/card-index.json) |
 | [sim-run](../repos/sim-run.md) | 35 | [card-index.json](../contracts/sim-run/card-index.json) |
-| [sim-runtime](../repos/sim-runtime.md) | 129 | [card-index.json](../contracts/sim-runtime/card-index.json) |
+| [sim-runtime](../repos/sim-runtime.md) | 132 | [card-index.json](../contracts/sim-runtime/card-index.json) |
 | [sim-sdk](../repos/sim-sdk.md) | 0 | [card-index.json](../contracts/sim-sdk/card-index.json) |
 | [sim-shape](../repos/sim-shape.md) | 0 | [card-index.json](../contracts/sim-shape/card-index.json) |
 | [sim-storage](../repos/sim-storage.md) | 0 | [card-index.json](../contracts/sim-storage/card-index.json) |
