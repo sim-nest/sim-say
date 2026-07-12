@@ -41,6 +41,7 @@
 | `sim-codec-bitwise-base64` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-compare` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-chat` | [sim-codecs](../repos/sim-codecs.md) |
+| `sim-codec-config` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-doc` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-json` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-lisp` | [sim-codecs](../repos/sim-codecs.md) |
