@@ -230,6 +230,7 @@ piece gives you.
 - **sim-conformance** -- the runnable checklist that proves SIM actually behaves the way its architecture promises.
 - **sim-nest** -- the single starting point a developer adds to reach every part of the SIM runtime.
 - **sim-lib-doc-core** -- the small document spine that office codecs, stores, views, and sites share.
+- **sim-lib-doc-site** -- the office bridge that makes external document places loadable without making them the frontend.
 
 ### web
 
@@ -1201,6 +1202,12 @@ When you need a whole grid of values to stay exact, decimals will not do; they r
 the small document spine that office codecs, stores, views, and sites share.
 
 `sim-lib-doc-core` gives every office layer the same basic record: what kind of document this is, which stable id names it, what runtime value carries its body, and which outside file or service record it came from. It also gives callers a shape value for a document kind, so selection and validation can stay open instead of depending on a closed list inside the kernel.
+
+#### sim-lib-doc-site
+
+the office bridge that makes external document places loadable without making them the frontend.
+
+This crate gives office integrations one place to register file services, helper processes, and modeled service doubles as document places. A caller can ask for data or preview a write through the same boundary, while the registered place carries its document kinds and required capabilities.
 
 ### sim-run
 
