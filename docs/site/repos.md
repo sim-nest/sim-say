@@ -2,13 +2,13 @@
 
 | Repository | Commit | Contracts |
 | --- | --- | --- |
-| [sim-agent-net](../repos/sim-agent-net.md) | `eddfa9f2bd0235ac7144a99a23dab037baafcd9c` | [JSON](../contracts/sim-agent-net/repo-contract.json) |
+| [sim-agent-net](../repos/sim-agent-net.md) | `ea52ba527cfa02b823b0495e5bf5569ed6e9dd48` | [JSON](../contracts/sim-agent-net/repo-contract.json) |
 | [sim-audio-daw](../repos/sim-audio-daw.md) | `15b93a595ebe7f0de38ec5d615ebc429d06f8021` | [JSON](../contracts/sim-audio-daw/repo-contract.json) |
 | [sim-citizen](../repos/sim-citizen.md) | `58cc28f7c98a6b7c65f4ff8686c1f72a6752b67d` | [JSON](../contracts/sim-citizen/repo-contract.json) |
 | [sim-codecs](../repos/sim-codecs.md) | `5ef561ecf30048df08e6861f626855afac2d65b5` | [JSON](../contracts/sim-codecs/repo-contract.json) |
 | [sim-discrete](../repos/sim-discrete.md) | `9252839487d8d8b6de55dab38ab4028359490228` | [JSON](../contracts/sim-discrete/repo-contract.json) |
 | [sim-femm](../repos/sim-femm.md) | `2f0ed038f7440a9845d4b33ae068d12c860365c3` | [JSON](../contracts/sim-femm/repo-contract.json) |
-| [sim-foundation](../repos/sim-foundation.md) | `f7c69a3a8a6e798565264cbaa049ab1d0452deb5` | [JSON](../contracts/sim-foundation/repo-contract.json) |
+| [sim-foundation](../repos/sim-foundation.md) | `1b4130cfb0a541a5aa411238eafff6cad21176f2` | [JSON](../contracts/sim-foundation/repo-contract.json) |
 | [sim-kernel](../repos/sim-kernel.md) | `641846d5f667ae0dc09b46d60390126884cdeddc` | [JSON](../contracts/sim-kernel/repo-contract.json) |
 | [sim-ledger](../repos/sim-ledger.md) | `b0f5c25a91a603202f242d021459d529993b4cb4` | [JSON](../contracts/sim-ledger/repo-contract.json) |
 | [sim-music](../repos/sim-music.md) | `a9dce7b3277f945b31ae8fd7fa2362c38cedaf71` | [JSON](../contracts/sim-music/repo-contract.json) |
