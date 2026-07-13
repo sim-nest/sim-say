@@ -13,7 +13,7 @@
 | [sim-ledger](../repos/sim-ledger.md) | 0 | [card-index.json](../contracts/sim-ledger/card-index.json) |
 | [sim-music](../repos/sim-music.md) | 316 | [card-index.json](../contracts/sim-music/card-index.json) |
 | [sim-numbers](../repos/sim-numbers.md) | 179 | [card-index.json](../contracts/sim-numbers/card-index.json) |
-| [sim-office](../repos/sim-office.md) | 53 | [card-index.json](../contracts/sim-office/card-index.json) |
+| [sim-office](../repos/sim-office.md) | 61 | [card-index.json](../contracts/sim-office/card-index.json) |
 | [sim-run](../repos/sim-run.md) | 44 | [card-index.json](../contracts/sim-run/card-index.json) |
 | [sim-runtime](../repos/sim-runtime.md) | 132 | [card-index.json](../contracts/sim-runtime/card-index.json) |
 | [sim-sdk](../repos/sim-sdk.md) | 0 | [card-index.json](../contracts/sim-sdk/card-index.json) |

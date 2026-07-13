@@ -159,6 +159,7 @@
 | `sim-lib-numbers-tensor-i64` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-tensor-linalg` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-tensor-rat64` | [sim-numbers](../repos/sim-numbers.md) |
+| `sim-codec-odf` | [sim-office](../repos/sim-office.md) |
 | `sim-codec-ooxml` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-deck` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-doc-core` | [sim-office](../repos/sim-office.md) |

@@ -1,9 +1,10 @@
 # sim-office
 
-Published commit: `2eb28acc2df0b3c29774811923d859aec50e67b9`.
+Published commit: `97b4ef5dc9bfc800f21acd574c0e852372fb87e0`.
 
 ## Crates
 
+- `sim-codec-odf`
 - `sim-codec-ooxml`
 - `sim-lib-deck`
 - `sim-lib-doc-core`
