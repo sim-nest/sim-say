@@ -82,6 +82,7 @@
 | `sim-kernel` | [sim-kernel](../repos/sim-kernel.md) |
 | `sim-ledger` | [sim-ledger](../repos/sim-ledger.md) |
 | `sim-ledger-cli` | [sim-ledger](../repos/sim-ledger.md) |
+| `sim-lib-ledger-books` | [sim-ledger](../repos/sim-ledger.md) |
 | `sim-ledger-odb` | [sim-ledger](../repos/sim-ledger.md) |
 | `sim-lib-daw-session` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-synth` | [sim-music](../repos/sim-music.md) |
@@ -164,6 +165,7 @@
 | `sim-codec-ooxml` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-deck` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-doc-core` | [sim-office](../repos/sim-office.md) |
+| `sim-lib-doc-ledger` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-gantt` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-doc-markup` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-doc-site` | [sim-office](../repos/sim-office.md) |
