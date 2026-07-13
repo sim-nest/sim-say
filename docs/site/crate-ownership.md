@@ -166,6 +166,7 @@
 | `sim-lib-doc-site` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-doc-store` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-doc-surface` | [sim-office](../repos/sim-office.md) |
+| `sim-lib-mail` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-sheet` | [sim-office](../repos/sim-office.md) |
 | `sim-site-msgraph` | [sim-office](../repos/sim-office.md) |
 | `sim-run` | [sim-run](../repos/sim-run.md) |
