@@ -173,6 +173,7 @@
 | `sim-lib-doc-store` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-doc-surface` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-mail` | [sim-office](../repos/sim-office.md) |
+| `sim-lib-office-pack` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-sheet` | [sim-office](../repos/sim-office.md) |
 | `sim-site-dalux` | [sim-office](../repos/sim-office.md) |
 | `sim-site-libreoffice` | [sim-office](../repos/sim-office.md) |
