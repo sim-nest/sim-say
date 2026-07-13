@@ -232,14 +232,21 @@ piece gives you.
 - **sim-view-tty** -- The library that draws SIM in your terminal and reads your keystrokes.
 - **sim-conformance** -- the runnable checklist that proves SIM actually behaves the way its architecture promises.
 - **sim-nest** -- the single starting point a developer adds to reach every part of the SIM runtime.
-- **sim-codec-ooxml** -- Excel-compatible local files can move through SIM without turning numbers into floats.
+- **sim-codec-mspdi** -- project schedules can cross the Microsoft Project XML boundary with clear loss reporting.
+- **sim-codec-odf** -- LibreOffice files can carry local office documents without hiding what falls outside the portable model.
+- **sim-codec-ooxml** -- Office file packages can move through SIM without hiding what the portable model cannot keep.
+- **sim-lib-deck** -- presentation content stays portable before it enters a slide file or hosted editor.
 - **sim-lib-doc-core** -- the small document spine that office codecs, stores, views, and sites share.
 - **sim-lib-doc-markup** -- article files enter the office document flow through the same markup body.
 - **sim-lib-doc-site** -- the office bridge that makes external document places loadable without making them the frontend.
 - **sim-lib-doc-store** -- a local office document cache that keeps edits tied to the ledger that produced them.
 - **sim-lib-doc-surface** -- a suite-facing document surface that turns office records into renderable panes and checked edits.
+- **sim-lib-gantt** -- local project schedules that can be checked and reopened without a vendor system.
+- **sim-lib-mail** -- mail and calendar records stay useful without carrying private bodies around.
 - **sim-lib-sheet** -- spreadsheets keep exact local values before any vendor file format enters.
+- **sim-site-libreoffice** -- LibreOffice automation stays optional, permissioned, and outside the runtime process.
 - **sim-site-msgraph** -- Microsoft Graph documents can enter SIM through a modeled-first office site.
+- **sim-site-powerproject** -- Powerproject and Project for the web become permissioned places for SIM Gantt plans.
 
 ### web
 
@@ -1224,11 +1231,29 @@ When you need a whole grid of values to stay exact, decimals will not do; they r
 
 ### sim-office
 
+#### sim-codec-mspdi
+
+project schedules can cross the Microsoft Project XML boundary with clear loss reporting.
+
+`sim-codec-mspdi` gives the office family a file exchange path for local Gantt plans. It reads and writes the schedule pieces people need to inspect first: task ids, names, dates, progress, and dependency links.
+
+#### sim-codec-odf
+
+LibreOffice files can carry local office documents without hiding what falls outside the portable model.
+
+`sim-codec-odf` gives the office family local file boundaries for spreadsheets and slide decks. It creates ordinary ODF packages, reads them back into SIM documents, preserves exact sheet values, and keeps slide structure visible as portable document content.
+
 #### sim-codec-ooxml
 
-Excel-compatible local files can move through SIM without turning numbers into floats.
+Office file packages can move through SIM without hiding what the portable model cannot keep.
 
-`sim-codec-ooxml` gives the office family a small `.xlsx` boundary for the exact sheet model. It creates ordinary workbook packages, reads them back into SIM sheet documents, and calls out styling or merge information that does not fit the portable local model.
+`sim-codec-ooxml` gives the office family local file boundaries for spreadsheet and presentation documents. It creates ordinary workbook and slide packages, reads them back into SIM documents, and calls out styling, merged cells, transitions, or media that do not fit the portable local models.
+
+#### sim-lib-deck
+
+presentation content stays portable before it enters a slide file or hosted editor.
+
+`sim-lib-deck` gives the office family a compact presentation model with slide titles, narrative bullets, tables, and external image references. A local deck can be inspected, transformed, archived, or exported through the same document boundary as the rest of the suite.
 
 #### sim-lib-doc-core
 
@@ -1260,17 +1285,41 @@ a suite-facing document surface that turns office records into renderable panes 
 
 This crate gives office documents a shared scene for screens, decks, tables, and embedded document panes. It makes document previews visible through the existing view stack and turns user intent into clear edit records that a host can inspect before it commits anything.
 
+#### sim-lib-gantt
+
+local project schedules that can be checked and reopened without a vendor system.
+
+This crate gives office work a durable Gantt plan model: tasks, dates, dependency links, progress, and a local database for reopening the same plan later. It also identifies the zero-slack tasks that control the schedule, using the shared graph toolkit instead of a private dependency engine.
+
+#### sim-lib-mail
+
+mail and calendar records stay useful without carrying private bodies around.
+
+`sim-lib-mail` gives the office family a compact shape for messages, events, body previews, attendees, and attachment references. A mailbox item can be linked, reviewed, archived, or projected without turning the message body into ambient data.
+
 #### sim-lib-sheet
 
 spreadsheets keep exact local values before any vendor file format enters.
 
 `sim-lib-sheet` gives the office family a small spreadsheet model with sparse cells, exact rational numbers, formulas, and document projection. A local sheet can be inspected and edited as SIM data before Excel, LibreOffice, or service placements appear.
 
+#### sim-site-libreoffice
+
+LibreOffice automation stays optional, permissioned, and outside the runtime process.
+
+`sim-site-libreoffice` gives the office family a helper-process boundary for LibreOffice tasks such as opening a document and exporting a PDF. It keeps UNO automation behind a small command protocol while the ordinary ODF file codec remains the local default.
+
 #### sim-site-msgraph
 
 Microsoft Graph documents can enter SIM through a modeled-first office site.
 
 This crate gives the office family a Microsoft Graph boundary that works with stable recorded answers by default and requires deliberate host permission for live service reads. It keeps the vendor connection outside the kernel while still fitting the shared document site shape.
+
+#### sim-site-powerproject
+
+Powerproject and Project for the web become permissioned places for SIM Gantt plans.
+
+This crate gives schedule work a vendor boundary without changing the local plan model. It names Powerproject as a live desktop placement, names Project for the web as a Dataverse placement, and keeps both paths tied to the same task and dependency records.
 
 ### sim-run
 

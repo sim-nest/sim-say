@@ -173,6 +173,7 @@
 | `sim-lib-sheet` | [sim-office](../repos/sim-office.md) |
 | `sim-site-libreoffice` | [sim-office](../repos/sim-office.md) |
 | `sim-site-msgraph` | [sim-office](../repos/sim-office.md) |
+| `sim-site-powerproject` | [sim-office](../repos/sim-office.md) |
 | `sim-run` | [sim-run](../repos/sim-run.md) |
 | `sim-run-core` | [sim-run](../repos/sim-run.md) |
 | `sim-run-loaders` | [sim-run](../repos/sim-run.md) |
