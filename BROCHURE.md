@@ -232,6 +232,7 @@ piece gives you.
 - **sim-view-tty** -- The library that draws SIM in your terminal and reads your keystrokes.
 - **sim-conformance** -- the runnable checklist that proves SIM actually behaves the way its architecture promises.
 - **sim-nest** -- the single starting point a developer adds to reach every part of the SIM runtime.
+- **sim-codec-ooxml** -- Excel-compatible local files can move through SIM without turning numbers into floats.
 - **sim-lib-doc-core** -- the small document spine that office codecs, stores, views, and sites share.
 - **sim-lib-doc-markup** -- article files enter the office document flow through the same markup body.
 - **sim-lib-doc-site** -- the office bridge that makes external document places loadable without making them the frontend.
@@ -1221,6 +1222,12 @@ It gives you grids of exact fractions, so array math avoids rounding entirely.
 When you need a whole grid of values to stay exact, decimals will not do; they round. This provides a grid where every cell is a precise fraction, a top number over a bottom number, kept compact for speed. Each cell is automatically reduced to lowest terms with a tidy, consistent sign, so equal fractions look the same and comparisons behave. It converts cleanly to and from the system's general grid form, staying fully compatible with the rest of the stack. If the count of values does not match the shape you declared, it refuses rather than proceed with mismatched data.
 
 ### sim-office
+
+#### sim-codec-ooxml
+
+Excel-compatible local files can move through SIM without turning numbers into floats.
+
+`sim-codec-ooxml` gives the office family a small `.xlsx` boundary for the exact sheet model. It creates ordinary workbook packages, reads them back into SIM sheet documents, and calls out styling or merge information that does not fit the portable local model.
 
 #### sim-lib-doc-core
 
