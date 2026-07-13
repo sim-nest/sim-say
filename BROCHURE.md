@@ -211,6 +211,8 @@ piece gives you.
 - **sim-ledger** -- clear yearly books with exact money values and balance checks at the center.
 - **sim-ledger-cli** -- a direct terminal path from exported books to checked yearly reports.
 - **sim-ledger-odb** -- bring LibreOffice Base bookkeeping exports into the ledger model without changing the books by hand.
+- **sim-lib-ledger-books** -- a review desk for bookkeeping drafts before they enter the books.
+- **sim-lib-ledger-close** -- exact year-end statements from local ledger files.
 
 ### stream
 
@@ -237,12 +239,14 @@ piece gives you.
 - **sim-codec-ooxml** -- Office file packages can move through SIM without hiding what the portable model cannot keep.
 - **sim-lib-deck** -- presentation content stays portable before it enters a slide file or hosted editor.
 - **sim-lib-doc-core** -- the small document spine that office codecs, stores, views, and sites share.
+- **sim-lib-doc-ledger** -- a careful handoff from office evidence to accounting reviews.
 - **sim-lib-doc-markup** -- article files enter the office document flow through the same markup body.
 - **sim-lib-doc-site** -- the office bridge that makes external document places loadable without making them the frontend.
 - **sim-lib-doc-store** -- a local office document cache that keeps edits tied to the ledger that produced them.
 - **sim-lib-doc-surface** -- a suite-facing document surface that turns office records into renderable panes and checked edits.
 - **sim-lib-gantt** -- local project schedules that can be checked and reopened without a vendor system.
 - **sim-lib-mail** -- mail and calendar records stay useful without carrying private bodies around.
+- **sim-lib-office-pack** -- It packages a closed ledger year into review-ready office exports without sending anything live.
 - **sim-lib-sheet** -- spreadsheets keep exact local values before any vendor file format enters.
 - **sim-site-dalux** -- Dalux project items become local SIM office records behind API identity gates.
 - **sim-site-libreoffice** -- LibreOffice automation stays optional, permissioned, and outside the runtime process.
@@ -771,6 +775,18 @@ bring LibreOffice Base bookkeeping exports into the ledger model without changin
 
 `sim-ledger-odb` reads the table layout and id counters that LibreOffice Base stores beside a personal ledger, then turns the familiar account, voucher, and posting exports into the shared ledger input format. It keeps the source numbering visible and lets the ledger importer enforce the same balance rules as every other path.
 
+#### sim-lib-ledger-books
+
+a review desk for bookkeeping drafts before they enter the books.
+
+This crate gives ledger workflows a place to check a proposed entry before it is written into a year. It keeps the money exact, makes the supporting references visible, and keeps local tax choices in data so tests and hosts can swap the profile without changing the ledger model.
+
+#### sim-lib-ledger-close
+
+exact year-end statements from local ledger files.
+
+This crate closes a fiscal year without changing the accounting facts. It reads the ledger year, checks that the trial balance nets to zero, groups accounts by their reporting codes, and returns tables that an office workflow can review or export.
+
 ### sim-music
 
 #### sim-lib-daw-session
@@ -1263,6 +1279,12 @@ the small document spine that office codecs, stores, views, and sites share.
 
 `sim-lib-doc-core` gives every office layer the same basic record: what kind of document this is, which stable id names it, what runtime value carries its body, and which outside file or service record it came from. It also gives callers a shape value for a document kind, so selection and validation can stay open instead of depending on a closed list inside the kernel.
 
+#### sim-lib-doc-ledger
+
+a careful handoff from office evidence to accounting reviews.
+
+This crate lets an office workflow review a bookkeeping entry or year-end statement before it touches the books or leaves the local review surface. A message, SharePoint file, task, or issue can support the entry as a reference, while ledger checks supply exact preview data.
+
 #### sim-lib-doc-markup
 
 article files enter the office document flow through the same markup body.
@@ -1298,6 +1320,12 @@ This crate gives office work a durable Gantt plan model: tasks, dates, dependenc
 mail and calendar records stay useful without carrying private bodies around.
 
 `sim-lib-mail` gives the office family a compact shape for messages, events, body previews, attendees, and attachment references. A mailbox item can be linked, reviewed, archived, or projected without turning the message body into ambient data.
+
+#### sim-lib-office-pack
+
+It packages a closed ledger year into review-ready office exports without sending anything live.
+
+Annual statements become a coordinated pack: a spreadsheet, a presentation, a mail draft preview, and an archive preview. The package is built from exact ledger statement values, so the numbers in every output stay tied to the closed year.
 
 #### sim-lib-sheet
 
