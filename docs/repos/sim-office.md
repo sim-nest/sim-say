@@ -4,6 +4,7 @@ Published commit: `3ac453e21229bfda80b4d76a7526fb0d5da2a34b`.
 
 ## Crates
 
+- `sim-codec-mspdi`
 - `sim-codec-odf`
 - `sim-codec-ooxml`
 - `sim-lib-deck`
