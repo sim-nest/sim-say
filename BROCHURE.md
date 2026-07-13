@@ -237,6 +237,7 @@ piece gives you.
 - **sim-lib-doc-site** -- the office bridge that makes external document places loadable without making them the frontend.
 - **sim-lib-doc-store** -- a local office document cache that keeps edits tied to the ledger that produced them.
 - **sim-lib-doc-surface** -- a suite-facing document surface that turns office records into renderable panes and checked edits.
+- **sim-lib-sheet** -- spreadsheets keep exact local values before any vendor file format enters.
 
 ### web
 
@@ -1250,6 +1251,12 @@ This crate gives office work a durable local place to remember document snapshot
 a suite-facing document surface that turns office records into renderable panes and checked edits.
 
 This crate gives office documents a shared scene for screens, decks, tables, and embedded document panes. It makes document previews visible through the existing view stack and turns user intent into clear edit records that a host can inspect before it commits anything.
+
+#### sim-lib-sheet
+
+spreadsheets keep exact local values before any vendor file format enters.
+
+`sim-lib-sheet` gives the office family a small spreadsheet model with sparse cells, exact rational numbers, formulas, and document projection. A local sheet can be inspected and edited as SIM data before Excel, LibreOffice, or service placements appear.
 
 ### sim-run
 
