@@ -1,6 +1,6 @@
 # sim-office
 
-Published commit: `1bf9492eae776948af08e44446327aee7b098a76`.
+Published commit: `87ab3159492e84c2b6ebc095d8d6a3e35684328e`.
 
 ## Crates
 
@@ -11,6 +11,7 @@ Published commit: `1bf9492eae776948af08e44446327aee7b098a76`.
 - `sim-lib-doc-store`
 - `sim-lib-doc-surface`
 - `sim-lib-sheet`
+- `sim-site-msgraph`
 
 ## Contracts
 

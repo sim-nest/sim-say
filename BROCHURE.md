@@ -239,6 +239,7 @@ piece gives you.
 - **sim-lib-doc-store** -- a local office document cache that keeps edits tied to the ledger that produced them.
 - **sim-lib-doc-surface** -- a suite-facing document surface that turns office records into renderable panes and checked edits.
 - **sim-lib-sheet** -- spreadsheets keep exact local values before any vendor file format enters.
+- **sim-site-msgraph** -- Microsoft Graph documents can enter SIM through a modeled-first office site.
 
 ### web
 
@@ -1264,6 +1265,12 @@ This crate gives office documents a shared scene for screens, decks, tables, and
 spreadsheets keep exact local values before any vendor file format enters.
 
 `sim-lib-sheet` gives the office family a small spreadsheet model with sparse cells, exact rational numbers, formulas, and document projection. A local sheet can be inspected and edited as SIM data before Excel, LibreOffice, or service placements appear.
+
+#### sim-site-msgraph
+
+Microsoft Graph documents can enter SIM through a modeled-first office site.
+
+This crate gives the office family a Microsoft Graph boundary that works with stable recorded answers by default and requires deliberate host permission for live service reads. It keeps the vendor connection outside the kernel while still fitting the shared document site shape.
 
 ### sim-run
 
