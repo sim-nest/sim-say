@@ -247,6 +247,7 @@ piece gives you.
 - **sim-site-libreoffice** -- LibreOffice automation stays optional, permissioned, and outside the runtime process.
 - **sim-site-msgraph** -- Microsoft Graph documents can enter SIM through a modeled-first office site.
 - **sim-site-powerproject** -- Powerproject and Project for the web become permissioned places for SIM Gantt plans.
+- **sim-site-sharepoint** -- SharePoint lists and drive folders become reviewable SIM office records.
 
 ### web
 
@@ -1320,6 +1321,12 @@ This crate gives the office family a Microsoft Graph boundary that works with st
 Powerproject and Project for the web become permissioned places for SIM Gantt plans.
 
 This crate gives schedule work a vendor boundary without changing the local plan model. It names Powerproject as a live desktop placement, names Project for the web as a Dataverse placement, and keeps both paths tied to the same task and dependency records.
+
+#### sim-site-sharepoint
+
+SharePoint lists and drive folders become reviewable SIM office records.
+
+This crate turns SharePoint list rows into local sheet documents and drive children into external references that keep their web links and ETags. A host can read the Graph response, inspect the shape, and decide what to do before any write is attempted.
 
 ### sim-run
 
