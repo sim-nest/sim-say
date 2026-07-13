@@ -83,6 +83,7 @@
 | `sim-ledger` | [sim-ledger](../repos/sim-ledger.md) |
 | `sim-ledger-cli` | [sim-ledger](../repos/sim-ledger.md) |
 | `sim-lib-ledger-books` | [sim-ledger](../repos/sim-ledger.md) |
+| `sim-lib-ledger-close` | [sim-ledger](../repos/sim-ledger.md) |
 | `sim-ledger-odb` | [sim-ledger](../repos/sim-ledger.md) |
 | `sim-lib-daw-session` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-synth` | [sim-music](../repos/sim-music.md) |
