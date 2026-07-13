@@ -158,6 +158,7 @@
 | `sim-lib-numbers-tensor-linalg` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-tensor-rat64` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-doc-core` | [sim-office](../repos/sim-office.md) |
+| `sim-lib-doc-markup` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-doc-site` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-doc-store` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-doc-surface` | [sim-office](../repos/sim-office.md) |
