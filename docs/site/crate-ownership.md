@@ -163,6 +163,7 @@
 | `sim-codec-ooxml` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-deck` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-doc-core` | [sim-office](../repos/sim-office.md) |
+| `sim-lib-gantt` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-doc-markup` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-doc-site` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-doc-store` | [sim-office](../repos/sim-office.md) |
