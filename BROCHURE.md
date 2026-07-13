@@ -101,7 +101,7 @@ piece gives you.
 - **sim-codec-chat** -- It reads and writes model conversations -- prompts, replies, and events -- in one neutral, provider-independent form.
 - **sim-codec-compare** -- the honest scoreboard that tells you when the bit-packed wire format
 - **sim-codec-config** -- It turns small SIM configuration files into ordinary runtime maps and writes those maps back as clean text.
-- **sim-codec-doc** -- It turns document text, plain or Markdown, into structured pieces you can work with, and writes it back out.
+- **sim-codec-doc** -- It reads and writes Markdown, Typst, AsciiDoc, and LaTeX as one structured document value.
 - **sim-codec-json** -- It reads and writes any value as JSON, so SIM data flows through the world's most common interchange format.
 - **sim-codec-lisp** -- It reads and writes values in parenthesized s-expression text, the plain nested form where structure is spelled out with brackets.
 - **sim-codec-mcp** -- It reads and writes the message envelopes of the Model Context Protocol, checking each one is well formed.
@@ -262,7 +262,7 @@ piece gives you.
 - **sim-lib-view-agent** -- it lets you wire up and watch a network of agents on a canvas, live, alongside the agents themselves.
 - **sim-lib-view-codec** -- it shows one value written several ways at once and lets you inspect how it matches a shape.
 - **sim-lib-view-daw** -- it brings a full music studio -- timeline, mixer, effects, and synths -- into the browser workspace.
-- **sim-lib-view-doc** -- it is a writing surface for scientific articles where equations, figures, and live results are real parts of the page.
+- **sim-lib-view-doc** -- it is a writing surface where article structure, equations, figures, source text, and live results stay together.
 - **sim-lib-view-math** -- it turns numbers, matrices, and formulas into plots and grids you can see and adjust.
 - **sim-lib-view-wasm-frame** -- it is the local helper that renders a value to a screen picture, folds your gestures into edits, and commits them in place.
 - **sim-lib-web-bridge** -- it is the pipe that carries your edits out and the fresh pictures back, no matter where the runtime actually runs.
@@ -521,9 +521,9 @@ SIM libraries often need a few plain settings: enabled helpers, preferred defaul
 
 #### sim-codec-doc
 
-It turns document text, plain or Markdown, into structured pieces you can work with, and writes it back out.
+It reads and writes Markdown, Typst, AsciiDoc, and LaTeX as one structured document value.
 
-This treats a document as more than a flat wall of text. It reads plain writing or Markdown and turns it into an organized value with real parts -- blocks, sections, and chunks -- that the runtime can hold and hand around. It can write that structure back out as a document again. Along the way it can split a document into chunks while keeping track of where each piece came from, so a passage always remembers its place in the whole. That makes it easy to pull a document apart for review, search, or processing and still trust the origin of every fragment. It sticks to documents and their chunks, and steps aside cleanly for anything outside that job.
+This treats a document as more than a flat wall of text. It reads Markdown, Typst, AsciiDoc, and LaTeX into one organized value with real parts -- blocks, sections, math, tables, source fragments, and chunks -- that the runtime can hold and hand around. It can write that structure back out through the supported markup formats. Along the way it can split a document into chunks while keeping track of where each piece came from, so a passage always remembers its place in the whole. That makes it easy to pull a document apart for review, search, or processing and still trust the origin of every fragment. It names any loss or preserved raw material instead of pretending everything translated cleanly.
 
 #### sim-codec-json
 
@@ -1675,9 +1675,9 @@ This lens family opens the SIM audio stack as a working studio. You arrange clip
 
 #### sim-lib-view-doc
 
-it is a writing surface for scientific articles where equations, figures, and live results are real parts of the page.
+it is a writing surface where article structure, equations, figures, source text, and live results stay together.
 
-This lens gives you a proper authoring workspace for technical writing, not a plain text box. A document is built from meaningful blocks -- sections, prose, equations, figures, tables, citations, and blocks that run live inside the page. You navigate by an outline and arrange blocks on a canvas. You can look at the same article two ways at once: the clean formatted reading view and the underlying source, side by side, each a lens on the one document. Because the document is a single stored value, an embedded live block shows a real computed result right where it belongs in your argument.
+This lens gives you a proper authoring workspace for technical writing, not a plain text box. A document is built from meaningful blocks -- sections, prose, equations, figures, tables, citations, and blocks that run live inside the page. You navigate by an outline and arrange blocks on a canvas. You can look at the same article two ways at once: the clean formatted reading view and the underlying source, side by side, each a lens on the one document. Because the document is one stored markup value, an embedded live block shows a real computed result right where it belongs in your argument.
 
 #### sim-lib-view-math
 
