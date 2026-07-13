@@ -244,6 +244,7 @@ piece gives you.
 - **sim-lib-gantt** -- local project schedules that can be checked and reopened without a vendor system.
 - **sim-lib-mail** -- mail and calendar records stay useful without carrying private bodies around.
 - **sim-lib-sheet** -- spreadsheets keep exact local values before any vendor file format enters.
+- **sim-site-dalux** -- Dalux project items become local SIM office records behind API identity gates.
 - **sim-site-libreoffice** -- LibreOffice automation stays optional, permissioned, and outside the runtime process.
 - **sim-site-msgraph** -- Microsoft Graph documents can enter SIM through a modeled-first office site.
 - **sim-site-powerproject** -- Powerproject and Project for the web become permissioned places for SIM Gantt plans.
@@ -1303,6 +1304,12 @@ mail and calendar records stay useful without carrying private bodies around.
 spreadsheets keep exact local values before any vendor file format enters.
 
 `sim-lib-sheet` gives the office family a small spreadsheet model with sparse cells, exact rational numbers, formulas, and document projection. A local sheet can be inspected and edited as SIM data before Excel, LibreOffice, or service placements appear.
+
+#### sim-site-dalux
+
+Dalux project items become local SIM office records behind API identity gates.
+
+This crate gives construction project data a Dalux boundary that reads items into local office documents and keeps live service access behind a bearer token from an API identity. It gives hosts a small, named place to connect Dalux without changing the document model.
 
 #### sim-site-libreoffice
 
