@@ -100,6 +100,7 @@ piece gives you.
 - **sim-codec-bitwise-base64** -- It carries the canonical minimal bit-packed form as plain text, so it can travel anywhere only text is allowed.
 - **sim-codec-chat** -- It reads and writes model conversations -- prompts, replies, and events -- in one neutral, provider-independent form.
 - **sim-codec-compare** -- the honest scoreboard that tells you when the bit-packed wire format
+- **sim-codec-config** -- It turns small SIM configuration files into ordinary runtime maps and writes those maps back as clean text.
 - **sim-codec-doc** -- It turns document text, plain or Markdown, into structured pieces you can work with, and writes it back out.
 - **sim-codec-json** -- It reads and writes any value as JSON, so SIM data flows through the world's most common interchange format.
 - **sim-codec-lisp** -- It reads and writes values in parenthesized s-expression text, the plain nested form where structure is spelled out with brackets.
@@ -208,6 +209,8 @@ piece gives you.
 - **sim-table-lazy** -- A lookup table whose values are worked out the first time you ask and then remembered.
 - **sim-table-override** -- A stack of lookup tables where the top layers can cover entries in the ones beneath.
 - **sim-ledger** -- clear yearly books with exact money values and balance checks at the center.
+- **sim-ledger-cli** -- a direct terminal path from exported books to checked yearly reports.
+- **sim-ledger-odb** -- bring LibreOffice Base bookkeeping exports into the ledger model without changing the books by hand.
 
 ### stream
 
@@ -230,6 +233,7 @@ piece gives you.
 - **sim-conformance** -- the runnable checklist that proves SIM actually behaves the way its architecture promises.
 - **sim-nest** -- the single starting point a developer adds to reach every part of the SIM runtime.
 - **sim-lib-doc-core** -- the small document spine that office codecs, stores, views, and sites share.
+- **sim-lib-doc-markup** -- article files enter the office document flow through the same markup body.
 - **sim-lib-doc-site** -- the office bridge that makes external document places loadable without making them the frontend.
 - **sim-lib-doc-store** -- a local office document cache that keeps edits tied to the ledger that produced them.
 - **sim-lib-doc-surface** -- a suite-facing document surface that turns office records into renderable panes and checked edits.
@@ -493,6 +497,12 @@ the honest scoreboard that tells you when the bit-packed wire format
 
 A ready-to-run comparison between the two general-purpose SIM wire formats: the byte-oriented one and the bit-packed one. It carries a built-in gallery of sample data shaped like the things a real program stores -- small numbers, big numbers, decimals, names, text, deep trees, wide records, and repeated blocks -- and for each one it reports two plain facts: how many bytes each format takes, and how long each takes to write and read. A single command prints the whole table. A set of built-in checks pins the headline conclusions in place, so if a later change quietly makes the bit-packed format worse, a test fails instead of a promise silently breaking. Here is the shape of a run (size is the packed format against the plain one, so below one is smaller and better; effort is how much longer the packing takes): kind of data size vs plain write effort everyday records 0.6 1.1x lots of small numbers 0.5 1.5x repeated blocks 0.07 (packed) 1.2x plain text 1.0 9x Read left to right that is the whole story: the packed format roughly halves ordinary data for a little more work, shrinks repeated data to a small fraction, and does nothing at all for plain text while costing many times the effort. Run the report yourself for the current numbers on your own machine.
 
+#### sim-codec-config
+
+It turns small SIM configuration files into ordinary runtime maps and writes those maps back as clean text.
+
+SIM libraries often need a few plain settings: enabled helpers, preferred defaults, limits, and load lists. This crate gives those settings a compact text format that decodes into the same map values the rest of the runtime already understands. A library can read its own table, while a launcher can read one shared file that groups many library tables by id.
+
 #### sim-codec-doc
 
 It turns document text, plain or Markdown, into structured pieces you can work with, and writes it back out.
@@ -736,6 +746,18 @@ One dependable place that holds only the shared contracts -- values, expressions
 clear yearly books with exact money values and balance checks at the center.
 
 `sim-ledger` gives SIM a plain model for personal and small-organization accounts: yearly account lists, vouchers, posting lines, and amounts stored as exact hundredths. The pieces are simple enough to inspect directly and strict enough to catch the accounting mistake that matters first, a voucher whose lines do not add back to zero.
+
+#### sim-ledger-cli
+
+a direct terminal path from exported books to checked yearly reports.
+
+`sim-ledger-cli` lets a person create a ledger set, bring in exported books, see which years are present, and print balances without writing a custom importer. It keeps the workflow close to the files on disk, so every step is easy to run again and easy to inspect.
+
+#### sim-ledger-odb
+
+bring LibreOffice Base bookkeeping exports into the ledger model without changing the books by hand.
+
+`sim-ledger-odb` reads the table layout and id counters that LibreOffice Base stores beside a personal ledger, then turns the familiar account, voucher, and posting exports into the shared ledger input format. It keeps the source numbering visible and lets the ledger importer enforce the same balance rules as every other path.
 
 ### sim-music
 
@@ -1204,6 +1226,12 @@ When you need a whole grid of values to stay exact, decimals will not do; they r
 the small document spine that office codecs, stores, views, and sites share.
 
 `sim-lib-doc-core` gives every office layer the same basic record: what kind of document this is, which stable id names it, what runtime value carries its body, and which outside file or service record it came from. It also gives callers a shape value for a document kind, so selection and validation can stay open instead of depending on a closed list inside the kernel.
+
+#### sim-lib-doc-markup
+
+article files enter the office document flow through the same markup body.
+
+`sim-lib-doc-markup` lets Markdown, Typst, AsciiDoc, and LaTeX articles cross the office file boundary as ordinary article documents. The shared markup body stays portable, so one imported article can be exported through another supported markup format without leaving the office document contract.
 
 #### sim-lib-doc-site
 

@@ -81,6 +81,8 @@
 | `sim-value` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-kernel` | [sim-kernel](../repos/sim-kernel.md) |
 | `sim-ledger` | [sim-ledger](../repos/sim-ledger.md) |
+| `sim-ledger-cli` | [sim-ledger](../repos/sim-ledger.md) |
+| `sim-ledger-odb` | [sim-ledger](../repos/sim-ledger.md) |
 | `sim-lib-daw-session` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-synth` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-midi-ble` | [sim-music](../repos/sim-music.md) |

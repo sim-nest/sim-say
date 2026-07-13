@@ -1,10 +1,12 @@
 # sim-ledger
 
-Published commit: `b0f5c25a91a603202f242d021459d529993b4cb4`.
+Published commit: `c186664959175d7cd1f85c7a2caad92f4fca1564`.
 
 ## Crates
 
 - `sim-ledger`
+- `sim-ledger-cli`
+- `sim-ledger-odb`
 
 ## Contracts
 
