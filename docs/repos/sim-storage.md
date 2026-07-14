@@ -1,6 +1,6 @@
 # sim-storage
 
-Published commit: `d9b9c1f8d4a9b28d02246d53350d358be6a18f2f`.
+Published commit: `fcc2da799d848300574c33a955469f611b698670`.
 
 ## Crates
 
