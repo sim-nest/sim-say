@@ -13,7 +13,7 @@ piece gives you.
 
 - **sim-lib-agent** -- The part of SIM that lets an assistant use tools, remember things, and pick which model answers.
 - **sim-lib-agent-runner-core** -- The shared rulebook that lets any model, from any provider, plug into SIM the same way.
-- **sim-lib-agent-runner-http** -- The connector that lets SIM reach models offered over the web, including OpenAI-style and Ollama services.
+- **sim-lib-agent-runner-http** -- The connector that lets SIM reach hosted and local models through provider-shaped HTTP profiles.
 - **sim-lib-agent-runner-local** -- The piece that lets SIM run a model right on your own machine, in the same process.
 - **sim-lib-agent-runner-process** -- The connector that lets SIM use a model or tool that runs as a separate program on your computer.
 - **sim-lib-cookbook** -- A built-in collection of worked recipes you can browse, search, and actually run inside SIM.
@@ -287,9 +287,9 @@ This crate sets the common ground that every model connection in SIM agrees on. 
 
 #### sim-lib-agent-runner-http
 
-The connector that lets SIM reach models offered over the web, including OpenAI-style and Ollama services.
+The connector that lets SIM reach hosted and local models through provider-shaped HTTP profiles.
 
-This crate lets SIM talk to a model that lives behind a web address. You point it at a service, and it handles the back-and-forth: sending your request, reading the reply, and passing along partial text as it streams in so you do not wait for the whole answer. It understands the common shapes used by OpenAI-compatible endpoints and by Ollama, so many popular hosted and self-run model services work without special glue. It also takes care to keep sensitive parts of a request, such as keys and private content, from leaking into logs and traces. From SIM's point of view, a web-hosted model becomes just another runner it can call.
+This crate lets SIM talk to a model that lives behind a web address. You point it at a service, and it handles the back-and-forth: sending your request, reading the reply, and passing along partial text as it streams in so you do not wait for the whole answer. It understands hosted OpenAI and Anthropic services, local Ollama, LM Studio, and Lemonade servers, and other OpenAI-compatible endpoints. It also takes care to keep sensitive parts of a request, such as keys and private content, from leaking into logs and traces. From SIM's point of view, each provider becomes just another runner it can call.
 
 #### sim-lib-agent-runner-local
 
@@ -505,7 +505,7 @@ Some channels only accept plain text -- an email body, a web field, a log line, 
 
 It reads and writes model conversations -- prompts, replies, and events -- in one neutral, provider-independent form.
 
-Conversations with a model come in many shapes: a request you send, the answer that comes back, events along the way, and the record cards that summarize them. This gives all of those a single, tidy text form that does not belong to any one provider. It also understands native provider payloads for services such as OpenAI and local model servers, while keeping the saved conversation in the same neutral record. You can capture a whole exchange, store it, move it, or read it later, and it means the same thing regardless of which service produced it. Because the form is consistent, transcripts from different sources line up the same way, so they can be compared, replayed, or archived without special handling for each origin. It keeps the parts of a conversation clearly separated -- who asked, what answered, what happened -- so the record stays legible.
+Conversations with a model come in many shapes: a request you send, the answer that comes back, events along the way, and the record cards that summarize them. This gives all of those a single, tidy text form that does not belong to any one provider. It also understands native provider payloads for OpenAI, Anthropic, Ollama, LM Studio, Lemonade, and OpenAI-compatible local servers, while keeping the saved conversation in the same neutral record. You can capture a whole exchange, store it, move it, or read it later, and it means the same thing regardless of which service produced it. Because the form is consistent, transcripts from different sources line up the same way, so they can be compared, replayed, or archived without special handling for each origin. It keeps the parts of a conversation clearly separated -- who asked, what answered, what happened -- so the record stays legible.
 
 #### sim-codec-compare
 
@@ -671,7 +671,7 @@ A simulation is only as trustworthy as the physics behind it, and this is where 
 
 It turns a finished solve into the real-world numbers you actually wanted to know.
 
-Solving a model produces a mass of internal values that is not yet an answer to your question. This is the step that reads that finished solution and works out the quantities engineers actually ask for: the energy stored, the force on a part, the flow through a region, the inductance, and field readings at the spots you choose. You point it at a solved model and ask for what you need, and it computes those meaningful figures for you. It bridges the gap between a technically complete solve and the practical numbers that let you make a decision about your design.
+Solving a model produces a mass of internal values before it becomes an answer to your question. This is the step that reads that finished solution and works out the quantities engineers actually ask for: the energy stored, the force on a part, the flow through a region, the inductance, and field readings at the spots you choose. You point it at a solved model and ask for what you need, and it computes those meaningful figures for you. It bridges the gap between a technically complete solve and the practical numbers that let you make a decision about your design.
 
 #### sim-lib-femm-prelude
 
@@ -1227,7 +1227,7 @@ Fields like signal processing and physics work with whole arrays of complex numb
 
 It gives you fast grids of ordinary decimal numbers, the common case for number-heavy work.
 
-Most grid math, from data analysis to simulation, runs on plain decimal numbers. This provides a grid specialized to hold those decimals in a single tight, contiguous block and to run math across them at speed. Because the values sit together in memory rather than scattered, operations sweep through them quickly. It converts cleanly to and from the system's general grid form, so this fast version and the uniform one interchange without friction. If the number of values you supply does not fit the shape you declared, it declines rather than proceed with mismatched data, keeping results sound.
+Most grid math, from data analysis to simulation, runs on plain decimal numbers. This provides a grid specialized to hold those decimals in a single tight, contiguous block and to run math across them at speed. Because the values sit together in memory rather than scattered, operations sweep through them quickly. It converts cleanly to and from the system's general grid form, so this fast version and the uniform one use the same interface. If the number of values you supply does not fit the shape you declared, it declines rather than proceed with mismatched data, keeping results sound.
 
 #### sim-lib-numbers-tensor-i64
 
