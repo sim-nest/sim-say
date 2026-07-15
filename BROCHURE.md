@@ -89,7 +89,6 @@ piece gives you.
 - **sim-lib-stream-bridge** -- Converts flowing streams between MIDI and audio so one kind of stream can feed the other.
 - **sim-lib-stream-file** -- Reads and writes streams to and from files on disk, with each access recorded and permission-checked.
 - **sim-lib-stream-midi** -- Wraps live MIDI sources and sinks so they plug into the SIM streaming pipeline as ordinary packets.
-- **sim-table-fs** -- Turns a folder on disk into a lookup table where each entry is a file and each subfolder is a nested table.
 
 ### codecs
 
@@ -187,6 +186,7 @@ piece gives you.
 - **sim-lib-control** -- It manages how a running program moves -- pausing, resuming, retrying, and recovering when something goes wrong.
 - **sim-lib-core** -- It is the shared plumbing every SIM library uses to announce what it offers and get it installed once, cleanly.
 - **sim-lib-dispatch** -- It picks the right version of an operation based on the kinds of things you hand it.
+- **sim-lib-exec** -- It lets a trusted host run a specific outside process with clear permission and tight limits.
 - **sim-lib-lang-cl** -- It lets you write for SIM in familiar Common Lisp style, with the parentheses and forms Lisp people expect.
 - **sim-lib-lang-clojure** -- It lets you write for SIM in Clojure style, using EDN data notation and an immutable, functional feel.
 - **sim-lib-lang-genconf** -- It generates a steady, repeatable set of test inputs used to confirm the language surfaces behave correctly.
@@ -207,6 +207,7 @@ piece gives you.
 - **sim-list-cell** -- A classic linked-list store that holds items in order so a program can keep and change sequences.
 - **sim-list-lazy** -- A list that figures out its contents only when you ask, so huge or endless sequences cost little until read.
 - **sim-table-db** -- A file-cabinet style store that keeps named values in a tree of folders you reach by path.
+- **sim-table-fs** -- Turns a folder on disk into a lookup table where each entry is a file and each subfolder is a nested table.
 - **sim-table-hash** -- A quick name-to-value lookup store that finds any entry by its key almost instantly.
 - **sim-table-lazy** -- A lookup table whose values are worked out the first time you ask and then remembered.
 - **sim-table-override** -- A stack of lookup tables where the top layers can cover entries in the ones beneath.
@@ -1074,12 +1075,6 @@ Wraps live MIDI sources and sinks so they plug into the SIM streaming pipeline a
 
 This adapts the existing MIDI memory, source, and sink pieces into the stream system's packet form, so MIDI can flow through a streaming pipeline like any other material. It keeps to the shared MIDI contracts rather than adding new device backends, so it works with whatever MIDI plumbing is already in place. It is the connector that lets MIDI join the stream world without changing how MIDI itself behaves.
 
-#### sim-table-fs
-
-Turns a folder on disk into a lookup table where each entry is a file and each subfolder is a nested table.
-
-This exposes a host directory as a SIM table: every table key maps to a file, and nested tables map to subdirectories, so a folder tree becomes a structured store you can read and write by key. Access is gated by the kernel's table capabilities and passes through the configured codec. With its format options enabled, recognised extensions -- for example MIDI, music, tone, and tuning files -- round-trip automatically through their domain shapes.
-
 ### sim-numbers
 
 #### sim-lib-numbers-ad
@@ -1436,6 +1431,12 @@ It picks the right version of an operation based on the kinds of things you hand
 
 This library lets one named operation have many implementations and choose the fitting one automatically. You describe several versions of an operation, each meant for a particular kind of value, and when the operation is called this crate looks at the actual arguments and runs the version that matches best. When more than one version could apply, it settles ties in a clear, stated order rather than by chance. The result is that you can add new behavior for new kinds of data without editing the places that already call the operation, keeping code open to growth.
 
+#### sim-lib-exec
+
+It lets a trusted host run a specific outside process with clear permission and tight limits.
+
+Some useful work belongs outside the runtime: a formatter, a compiler, a small command-line helper, or another tool the host already trusts. This crate gives that work a narrow gate. The caller names the exact program and arguments, the host checks permission first, and the run is bounded by a working directory root, a timeout, and a byte limit on captured output.
+
 #### sim-lib-lang-cl
 
 It lets you write for SIM in familiar Common Lisp style, with the parentheses and forms Lisp people expect.
@@ -1579,6 +1580,12 @@ This backend holds lists that stay unread until someone looks at them. Each step
 A file-cabinet style store that keeps named values in a tree of folders you reach by path.
 
 This backend arranges named values as a directory tree, the way folders hold files on a computer. Each value has a name, and folders can hold more folders, so you reach a value by walking a path from the top. Reading and writing pass through permission checks, so a program only touches the parts it has been allowed to touch. It behaves both as a table of names and as a browsable tree, which suits settings, records, and anything that reads better when grouped and nested. It joins SIM as a loadable part, added when a program needs path-addressed storage under access control.
+
+#### sim-table-fs
+
+Turns a folder on disk into a lookup table where each entry is a file and each subfolder is a nested table.
+
+This exposes a host directory as a SIM table: every table key maps to a file, and nested tables map to subdirectories, so a folder tree becomes a structured store you can read and write by key. Access is gated by the kernel's table capabilities and passes through the configured codec. With its format options enabled, recognised extensions -- for example MIDI, music, tone, and tuning files -- round-trip automatically through their domain shapes.
 
 #### sim-table-hash
 
