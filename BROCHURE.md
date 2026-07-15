@@ -209,6 +209,7 @@ piece gives you.
 - **sim-table-db** -- A file-cabinet style store that keeps named values in a tree of folders you reach by path.
 - **sim-table-fs** -- Turns a folder on disk into a lookup table where each entry is a file and each subfolder is a nested table.
 - **sim-table-hash** -- A quick name-to-value lookup store that finds any entry by its key almost instantly.
+- **sim-table-http** -- It lets a trusted host treat direct HTTP resources as table entries under explicit network permission.
 - **sim-table-lazy** -- A lookup table whose values are worked out the first time you ask and then remembered.
 - **sim-table-override** -- A stack of lookup tables where the top layers can cover entries in the ones beneath.
 - **sim-ledger** -- clear yearly books with exact money values and balance checks at the center.
@@ -1592,6 +1593,12 @@ This exposes a host directory as a SIM table: every table key maps to a file, an
 A quick name-to-value lookup store that finds any entry by its key almost instantly.
 
 This is the plain, fast lookup table for SIM. It keeps entries in memory, each under a symbol key, and finds, adds, or removes one by its name without scanning the rest. Because it uses a hash map underneath, the time to reach an entry stays about the same whether the table holds a handful of names or many thousands. It is the sensible default when a program just needs to associate names with values and get them back quickly. It loads into the runtime as an optional part, present whenever straightforward keyed storage is called for.
+
+#### sim-table-http
+
+It lets a trusted host treat direct HTTP resources as table entries under explicit network permission.
+
+This backend points a table at a base HTTP address. A key becomes one resource under that address: reading performs a bounded request, writing sends a bounded update, and the response body passes through the selected SIM codec. The caller must hold network permission before any socket opens, so local programs can name remote resources without receiving network authority by accident.
 
 #### sim-table-lazy
 
