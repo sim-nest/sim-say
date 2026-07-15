@@ -18,7 +18,7 @@
 | [sim-runtime](../repos/sim-runtime.md) | 137 | [card-index.json](../contracts/sim-runtime/card-index.json) |
 | [sim-sdk](../repos/sim-sdk.md) | 0 | [card-index.json](../contracts/sim-sdk/card-index.json) |
 | [sim-shape](../repos/sim-shape.md) | 0 | [card-index.json](../contracts/sim-shape/card-index.json) |
-| [sim-storage](../repos/sim-storage.md) | 0 | [card-index.json](../contracts/sim-storage/card-index.json) |
+| [sim-storage](../repos/sim-storage.md) | 5 | [card-index.json](../contracts/sim-storage/card-index.json) |
 | [sim-stream](../repos/sim-stream.md) | 48 | [card-index.json](../contracts/sim-stream/card-index.json) |
 | [sim-stream-host](../repos/sim-stream-host.md) | 5 | [card-index.json](../contracts/sim-stream-host/card-index.json) |
 | [sim-tooling](../repos/sim-tooling.md) | 0 | [card-index.json](../contracts/sim-tooling/card-index.json) |
