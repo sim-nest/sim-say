@@ -2,7 +2,7 @@
 
 | Repository | Cards | Contract |
 | --- | ---: | --- |
-| [sim-agent-net](../repos/sim-agent-net.md) | 205 | [card-index.json](../contracts/sim-agent-net/card-index.json) |
+| [sim-agent-net](../repos/sim-agent-net.md) | 210 | [card-index.json](../contracts/sim-agent-net/card-index.json) |
 | [sim-audio-daw](../repos/sim-audio-daw.md) | 62 | [card-index.json](../contracts/sim-audio-daw/card-index.json) |
 | [sim-citizen](../repos/sim-citizen.md) | 0 | [card-index.json](../contracts/sim-citizen/card-index.json) |
 | [sim-codecs](../repos/sim-codecs.md) | 83 | [card-index.json](../contracts/sim-codecs/card-index.json) |
