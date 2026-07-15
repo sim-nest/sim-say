@@ -2,7 +2,7 @@
 
 | Repository | Cards | Contract |
 | --- | ---: | --- |
-| [sim-agent-net](../repos/sim-agent-net.md) | 225 | [card-index.json](../contracts/sim-agent-net/card-index.json) |
+| [sim-agent-net](../repos/sim-agent-net.md) | 228 | [card-index.json](../contracts/sim-agent-net/card-index.json) |
 | [sim-audio-daw](../repos/sim-audio-daw.md) | 62 | [card-index.json](../contracts/sim-audio-daw/card-index.json) |
 | [sim-citizen](../repos/sim-citizen.md) | 0 | [card-index.json](../contracts/sim-citizen/card-index.json) |
 | [sim-codecs](../repos/sim-codecs.md) | 83 | [card-index.json](../contracts/sim-codecs/card-index.json) |
@@ -18,7 +18,7 @@
 | [sim-runtime](../repos/sim-runtime.md) | 137 | [card-index.json](../contracts/sim-runtime/card-index.json) |
 | [sim-sdk](../repos/sim-sdk.md) | 0 | [card-index.json](../contracts/sim-sdk/card-index.json) |
 | [sim-shape](../repos/sim-shape.md) | 0 | [card-index.json](../contracts/sim-shape/card-index.json) |
-| [sim-storage](../repos/sim-storage.md) | 5 | [card-index.json](../contracts/sim-storage/card-index.json) |
+| [sim-storage](../repos/sim-storage.md) | 13 | [card-index.json](../contracts/sim-storage/card-index.json) |
 | [sim-stream](../repos/sim-stream.md) | 48 | [card-index.json](../contracts/sim-stream/card-index.json) |
 | [sim-stream-host](../repos/sim-stream-host.md) | 5 | [card-index.json](../contracts/sim-stream-host/card-index.json) |
 | [sim-tooling](../repos/sim-tooling.md) | 0 | [card-index.json](../contracts/sim-tooling/card-index.json) |
