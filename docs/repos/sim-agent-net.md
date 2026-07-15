@@ -1,6 +1,6 @@
 # sim-agent-net
 
-Published commit: `e6bcb507641236233af1184685c1f7233fec938f`.
+Published commit: `6f47597f293dbcd9adbff429e05bdbd6bd82b690`.
 
 ## Crates
 
