@@ -16,6 +16,7 @@ piece gives you.
 - **sim-lib-agent-runner-http** -- The connector that lets SIM reach hosted and local models through provider-shaped HTTP profiles.
 - **sim-lib-agent-runner-local** -- The piece that lets SIM run a model right on your own machine, in the same process.
 - **sim-lib-agent-runner-process** -- The connector that lets SIM use a model or tool that runs as a separate program on your computer.
+- **sim-lib-bridge** -- It keeps model-facing BRIDGE packets from leaving or entering SIM unless their local checks agree.
 - **sim-lib-cookbook** -- A built-in collection of worked recipes you can browse, search, and actually run inside SIM.
 - **sim-lib-mcp** -- The piece that turns SIM's own tools and skills into safe listings other assistants can discover.
 - **sim-lib-openai-server** -- A gateway that lets tools built for OpenAI's API talk to SIM instead.
@@ -98,6 +99,7 @@ piece gives you.
 - **sim-codec-binary-base64** -- It carries the compact binary form as plain text, so it can travel anywhere only text is allowed.
 - **sim-codec-bitwise** -- It writes any value in the smallest, most predictable string of bits, the same value always giving the same result.
 - **sim-codec-bitwise-base64** -- It carries the canonical minimal bit-packed form as plain text, so it can travel anywhere only text is allowed.
+- **sim-codec-bridge** -- It gives SIM, people, and model seats one checked packet format for requests, replies, reviews, and receipts.
 - **sim-codec-chat** -- It reads and writes model conversations -- prompts, replies, and events -- in one neutral, provider-independent form.
 - **sim-codec-compare** -- the honest scoreboard that tells you when the bit-packed wire format
 - **sim-codec-config** -- It turns small SIM configuration files into ordinary runtime maps and writes those maps back as clean text.
@@ -260,6 +262,7 @@ piece gives you.
 - **sim-lib-scene** -- it is the portable picture of what should appear on screen, saved as plain data you can inspect and share.
 - **sim-lib-view** -- it decides how any value should be shown and edited, and always has a sensible default ready.
 - **sim-lib-view-agent** -- it lets you wire up and watch a network of agents on a canvas, live, alongside the agents themselves.
+- **sim-lib-view-bridge** -- it lets people review and change BRIDGE packets in the same form agents use.
 - **sim-lib-view-codec** -- it shows one value written several ways at once and lets you inspect how it matches a shape.
 - **sim-lib-view-daw** -- it brings a full music studio -- timeline, mixer, effects, and synths -- into the browser workspace.
 - **sim-lib-view-doc** -- it is a writing surface where article structure, equations, figures, source text, and live results stay together.
@@ -302,6 +305,12 @@ This crate installs a model runner that lives inside SIM itself, registered unde
 The connector that lets SIM use a model or tool that runs as a separate program on your computer.
 
 This crate lets SIM drive a model by launching a local program and talking to it through its input and output. SIM sends the request in, the program does its work, and SIM reads the result back. It supports both a plain text conversation and a structured exchange where the request and reply are passed as JSON, and it can read the program's output line by line so streamed answers arrive as they are produced. This is the natural way to wire in a command-line model tool, a script, or any local helper that reads a request and prints a reply, without that tool needing to know anything about SIM.
+
+#### sim-lib-bridge
+
+It keeps model-facing BRIDGE packets from leaving or entering SIM unless their local checks agree.
+
+This crate is the runtime guard around BRIDGE packets. Before a packet is sent, it stamps a stable identity, proves the line form can be read back, checks that every byte belongs to the packet, and runs the same receive checks the other side will use. When an answer comes back, it reads the final model content as another BRIDGE packet and checks the move, parts, capabilities, and declared return contract before accepting it.
 
 #### sim-lib-cookbook
 
@@ -500,6 +509,12 @@ This is the tightest packing in the family. Where the ordinary binary form works
 It carries the canonical minimal bit-packed form as plain text, so it can travel anywhere only text is allowed.
 
 Some channels only accept plain text -- an email body, a web field, a log line, a config value. This lets the smallest canonical form ride along on those channels. It takes the tight bit-packed frame the bitwise format produces and wraps it as an ordinary run of readable characters, and it unwraps that text back into the exact bytes on the other side. Nothing about the value changes; you simply get a text-safe envelope around it. That means you can drop a full value into a place that would otherwise reject raw bytes, then recover it later without loss. Text that is not a valid envelope is refused rather than guessed at.
+
+#### sim-codec-bridge
+
+It gives SIM, people, and model seats one checked packet format for requests, replies, reviews, and receipts.
+
+BRIDGE makes an exchange inspectable from the first byte. A packet names who speaks, who receives it, what move it makes, what context it cites, and what typed parts it carries. This crate reads and writes the strict line form for that packet and checks the book of allowed parts and moves before the packet is trusted. The result is a narrow entry point where collaboration messages have stable identity, clear structure, and no hidden side channel.
 
 #### sim-codec-chat
 
@@ -1660,6 +1675,12 @@ A lens is a matched pair: a way to display a value and a way to edit it back. Th
 it lets you wire up and watch a network of agents on a canvas, live, alongside the agents themselves.
 
 This is the composer where you build a topology by hand: drop nodes, connect their ports, group them, move them around, and delete what you no longer need. The same canvas shows a run as it happens, so you can watch messages flow and replay what occurred. The striking part is that an automated agent can edit the very same graph you are looking at, at the same time, because you both act on one shared model. There is no separate copy that drifts out of step. What you draw is the actual system, and what runs is what you drew.
+
+#### sim-lib-view-bridge
+
+it lets people review and change BRIDGE packets in the same form agents use.
+
+Open a BRIDGE packet and see its sender, move, profile, and parts in a surface-friendly review pane. A person can propose a patch, write a review, cast a scored vote, or record a receipt without leaving the packet model. The edit becomes the same collaboration record an agent reads, so there is one shared object instead of one browser copy and one model copy.
 
 #### sim-lib-view-codec
 
