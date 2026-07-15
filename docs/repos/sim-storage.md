@@ -9,6 +9,7 @@ Published commit: `0768be4e6205055292149ba345c8d6d08ccd27f7`.
 - `sim-table-db`
 - `sim-table-fs`
 - `sim-table-hash`
+- `sim-table-http`
 - `sim-table-lazy`
 - `sim-table-override`
 
