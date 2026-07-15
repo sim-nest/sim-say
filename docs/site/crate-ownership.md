@@ -190,6 +190,7 @@
 | `sim-lib-control` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-core` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-dispatch` | [sim-runtime](../repos/sim-runtime.md) |
+| `sim-lib-exec` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-lang-cl` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-lang-clojure` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-lang-genconf` | [sim-runtime](../repos/sim-runtime.md) |

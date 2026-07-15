@@ -1,6 +1,6 @@
 # sim-runtime
 
-Published commit: `0372589c8147ae99ecc99ae40512327ae1f42134`.
+Published commit: `c8b1879d50306b1faf4de5c134fe08cb4f4b79c8`.
 
 ## Crates
 
@@ -8,6 +8,7 @@ Published commit: `0372589c8147ae99ecc99ae40512327ae1f42134`.
 - `sim-lib-control`
 - `sim-lib-core`
 - `sim-lib-dispatch`
+- `sim-lib-exec`
 - `sim-lib-lang-cl`
 - `sim-lib-lang-clojure`
 - `sim-lib-lang-genconf`
