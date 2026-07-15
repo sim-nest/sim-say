@@ -1,6 +1,6 @@
 # sim-music
 
-Published commit: `23d8a3cd2fc9e3806ee917829093f929c76b7d7d`.
+Published commit: `24762e1315d2a78bdf60e47b9e568057297b87da`.
 
 ## Crates
 
@@ -49,7 +49,6 @@ Published commit: `23d8a3cd2fc9e3806ee917829093f929c76b7d7d`.
 - `sim-lib-stream-bridge`
 - `sim-lib-stream-file`
 - `sim-lib-stream-midi`
-- `sim-table-fs`
 
 ## Contracts
 

@@ -1,12 +1,13 @@
 # sim-storage
 
-Published commit: `fcc2da799d848300574c33a955469f611b698670`.
+Published commit: `4e01f4451aefdce984728850fdedae5f3ff12cd9`.
 
 ## Crates
 
 - `sim-list-cell`
 - `sim-list-lazy`
 - `sim-table-db`
+- `sim-table-fs`
 - `sim-table-hash`
 - `sim-table-lazy`
 - `sim-table-override`

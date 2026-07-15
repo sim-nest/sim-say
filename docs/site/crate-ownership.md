@@ -132,7 +132,6 @@
 | `sim-lib-stream-bridge` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-stream-file` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-stream-midi` | [sim-music](../repos/sim-music.md) |
-| `sim-table-fs` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-numbers-ad` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-arith` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-bigint` | [sim-numbers](../repos/sim-numbers.md) |
@@ -214,6 +213,7 @@
 | `sim-list-cell` | [sim-storage](../repos/sim-storage.md) |
 | `sim-list-lazy` | [sim-storage](../repos/sim-storage.md) |
 | `sim-table-db` | [sim-storage](../repos/sim-storage.md) |
+| `sim-table-fs` | [sim-storage](../repos/sim-storage.md) |
 | `sim-table-hash` | [sim-storage](../repos/sim-storage.md) |
 | `sim-table-lazy` | [sim-storage](../repos/sim-storage.md) |
 | `sim-table-override` | [sim-storage](../repos/sim-storage.md) |
