@@ -1,6 +1,6 @@
 # sim-codecs
 
-Published commit: `7eaae64d16645f84f625e181b65c145a7cd842dc`.
+Published commit: `ad2efd066984bc5ffba19fdc7d5e0b4b30915556`.
 
 ## Crates
 
@@ -10,6 +10,7 @@ Published commit: `7eaae64d16645f84f625e181b65c145a7cd842dc`.
 - `sim-codec-binary-base64`
 - `sim-codec-bitwise`
 - `sim-codec-bitwise-base64`
+- `sim-codec-bridge`
 - `sim-codec-compare`
 - `sim-codec-chat`
 - `sim-codec-config`
