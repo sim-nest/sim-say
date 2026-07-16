@@ -5,6 +5,7 @@
 | `sim-lib-agent` | [sim-agent-net](../repos/sim-agent-net.md) |
 | `sim-lib-agent-runner-core` | [sim-agent-net](../repos/sim-agent-net.md) |
 | `sim-lib-bridge` | [sim-agent-net](../repos/sim-agent-net.md) |
+| `sim-lib-forge` | [sim-agent-net](../repos/sim-agent-net.md) |
 | `sim-lib-agent-runner-http` | [sim-agent-net](../repos/sim-agent-net.md) |
 | `sim-lib-agent-runner-local` | [sim-agent-net](../repos/sim-agent-net.md) |
 | `sim-lib-agent-runner-process` | [sim-agent-net](../repos/sim-agent-net.md) |
