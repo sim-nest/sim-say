@@ -18,6 +18,7 @@ piece gives you.
 - **sim-lib-agent-runner-process** -- The connector that lets SIM use a model or tool that runs as a separate program on your computer.
 - **sim-lib-bridge** -- It keeps model-facing BRIDGE packets from leaving or entering SIM unless their local checks agree.
 - **sim-lib-cookbook** -- A built-in collection of worked recipes you can browse, search, and actually run inside SIM.
+- **sim-lib-forge** -- It turns reusable model tasks into named packet artifacts that can be checked before they are trusted.
 - **sim-lib-mcp** -- The piece that turns SIM's own tools and skills into safe listings other assistants can discover.
 - **sim-lib-openai-server** -- A gateway that lets tools built for OpenAI's API talk to SIM instead.
 - **sim-lib-server** -- The part of SIM that serves evaluation and agents to callers and streams the replies back.
@@ -319,6 +320,12 @@ This crate is the runtime guard around BRIDGE packets. Before a packet is sent, 
 A built-in collection of worked recipes you can browse, search, and actually run inside SIM.
 
 This crate turns SIM's recipe collection into live commands you can use while the system is running. You can list the books and chapters, look up a specific recipe, search across them, and step to the next one in a sequence. Recipes are more than reading material: a recipe can be run, and when it runs SIM reads its setup, carries it out, and checks that the results match what the recipe promised. That makes each recipe a small, self-checking example rather than a snippet you copy by hand and hope works. The same shared collection feeds the command line, the web view, and the help and browse surfaces, so everyone sees one consistent set of examples.
+
+#### sim-lib-forge
+
+It turns reusable model tasks into named packet artifacts that can be checked before they are trusted.
+
+This crate defines the artifact that FORGE stores after plain prose becomes a BRIDGE packet, and it provides the guarded one-shot lift that creates the first candidate. The record keeps the intent name, version, source content, packet content, semantic probes, verifier identities, compiler provenance, and approval state together in one small package. That makes a compiled task something SIM can catalog, inspect, compare, and reuse without asking a model to lift the same prose again.
 
 #### sim-lib-mcp
 
