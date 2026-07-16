@@ -116,9 +116,8 @@ rm -rf "${XDG_CACHE_HOME:-$HOME/.cache}/sim"
 
 ## What you can look at right now
 
-SIM is published: the libraries are on crates.io as `0.1.0`, and the facade
-`sim-nest` (imported as `sim`) pulls the standard distribution together. You
-can:
+SIM is published: the libraries are on crates.io, and the facade `sim-nest`
+(imported as `sim`) pulls the standard distribution together. You can:
 
 - **Read the architecture.** Start with the developer overview and the
   machine-checked architecture contract in `sim-sdk` (its `README.md` and
