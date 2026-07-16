@@ -101,7 +101,7 @@ piece gives you.
 - **sim-codec-bitwise-base64** -- It carries the canonical minimal bit-packed form as plain text, so it can travel anywhere only text is allowed.
 - **sim-codec-bridge** -- It gives SIM, people, and model seats one checked packet format for requests, replies, reviews, and receipts.
 - **sim-codec-chat** -- It reads and writes model conversations -- prompts, replies, and events -- in one neutral, provider-independent form.
-- **sim-codec-compare** -- the honest scoreboard that tells you when the bit-packed wire format
+- **sim-codec-compare** -- the honest scoreboard that tells you when the bit-packed wire format actually beats the plain one, and when it just wastes your time.
 - **sim-codec-config** -- It turns small SIM configuration files into ordinary runtime maps and writes those maps back as clean text.
 - **sim-codec-doc** -- It reads and writes Markdown, Typst, AsciiDoc, and LaTeX as one structured document value.
 - **sim-codec-json** -- It reads and writes any value as JSON, so SIM data flows through the world's most common interchange format.
@@ -190,7 +190,7 @@ piece gives you.
 - **sim-lib-exec** -- It lets a trusted host run a specific outside process with clear permission and tight limits.
 - **sim-lib-lang-cl** -- It lets you write for SIM in familiar Common Lisp style, with the parentheses and forms Lisp people expect.
 - **sim-lib-lang-clojure** -- It lets you write for SIM in Clojure style, using EDN data notation and an immutable, functional feel.
-- **sim-lib-lang-genconf** -- It generates a steady, repeatable set of test inputs used to confirm the language surfaces behave correctly.
+- **sim-lib-lang-genconf** -- It generates a steady, repeatable set of test inputs for confirming that language surfaces behave correctly.
 - **sim-lib-lang-islisp** -- It lets you write for SIM in ISLISP, the small standardized Lisp with a deliberately compact core.
 - **sim-lib-lang-julia** -- It lets you write for SIM in Julia style, the notation favored for technical and numerical work.
 - **sim-lib-lang-lua** -- It lets you write for SIM in Lua style, the small, approachable scripting notation many people already know.
@@ -283,7 +283,7 @@ piece gives you.
 
 The part of SIM that lets an assistant use tools, remember things, and pick which model answers.
 
-This is the home base for agents inside SIM. It brings together the pieces an assistant needs to do real work: the tools it can call, the memory it keeps between turns, the patterns that shape its behavior, and the fixtures used to try things out safely. It also decides where a model request actually runs, choosing from a catalog of placements you have set up, whether that is a model on your own machine or one reached across a network. When a request has been answered once, it can keep that reply and hand back the same result for the same question, so you are not paying to ask twice. Everything stays fair and orderly when many requests arrive at once.
+This is the home base for agents inside SIM. It brings together the pieces an assistant needs to do real work: the tools it can call, the memory it keeps between turns, the patterns that shape its behavior, and the fixtures for trying things out safely. It also decides where a model request actually runs, choosing from a catalog of placements you have set up, whether that is a model on your own machine or one reached across a network. When a request has been answered once, it can keep that reply and hand back the same result for the same question, so you are not paying to ask twice. Everything stays fair and orderly when many requests arrive at once.
 
 #### sim-lib-agent-runner-core
 
@@ -533,7 +533,7 @@ Conversations with a model come in many shapes: a request you send, the answer t
 
 #### sim-codec-compare
 
-the honest scoreboard that tells you when the bit-packed wire format
+the honest scoreboard that tells you when the bit-packed wire format actually beats the plain one, and when it just wastes your time.
 
 A ready-to-run comparison between the two general-purpose SIM wire formats: the byte-oriented one and the bit-packed one. It carries a built-in gallery of sample data shaped like the things a real program stores -- small numbers, big numbers, decimals, names, text, deep trees, wide records, and repeated blocks -- and for each one it reports two plain facts: how many bytes each format takes, and how long each takes to write and read. A single command prints the whole table. A set of built-in checks pins the headline conclusions in place, so if a later change quietly makes the bit-packed format worse, a test fails instead of a promise silently breaking. Here is the shape of a run (size is the packed format against the plain one, so below one is smaller and better; effort is how much longer the packing takes): kind of data size vs plain write effort everyday records 0.6 1.1x lots of small numbers 0.5 1.5x repeated blocks 0.07 (packed) 1.2x plain text 1.0 9x Read left to right that is the whole story: the packed format roughly halves ordinary data for a little more work, shrinks repeated data to a small fraction, and does nothing at all for plain text while costing many times the effort. Run the report yourself for the current numbers on your own machine.
 
@@ -835,7 +835,7 @@ This is the common ground for MIDI across the whole music stack. It defines tick
 
 Fast in-and-out buffers that let live MIDI flow through your setup without stalling when things get busy.
 
-This gives you fixed-size ring buffers that sit between real-time MIDI coming in and the tools that consume it. One buffer acts as both a place to write events and a place to read them back in order; another tags each event with the track it belongs to. If a consumer falls behind and a buffer fills, the oldest event is dropped and counted rather than blocking the live input, so a slow reader never freezes a live player.
+This gives you fixed-size ring buffers that sit between incoming real-time MIDI and the tools that consume it. One buffer acts as both a place to write events and a place to read them back in order; another tags each event with the track it belongs to. If a consumer falls behind and a buffer fills, the oldest event is dropped and counted rather than blocking the live input, so a slow reader never freezes a live player.
 
 #### sim-lib-midi-rtmidi
 
@@ -1459,7 +1459,7 @@ This library gives SIM a Clojure face. You can use the EDN data notation and the
 
 #### sim-lib-lang-genconf
 
-It generates a steady, repeatable set of test inputs used to confirm the language surfaces behave correctly.
+It generates a steady, repeatable set of test inputs for confirming that language surfaces behave correctly.
 
 This library builds the raw material for checking that SIM's language surfaces do what they should. It walks the space of possible expressions in a fixed, orderly way and produces inputs that the conformance checks then feed through each surface. Because the walk is deterministic, the same inputs come out every time, so a result today can be compared against a result later with confidence that only the system changed, not the test set. It concentrates the tricky job of producing thorough, reproducible examples in one place, keeping the checks themselves simple.
 
@@ -1473,7 +1473,7 @@ This library gives SIM an ISLISP face. ISLISP is a trim, standardized member of 
 
 It lets you write for SIM in Julia style, the notation favored for technical and numerical work.
 
-This library gives SIM a Julia face. Julia's notation is popular with people doing calculation-heavy and scientific work, and this profile lets you express your ideas in that familiar shape and run them on SIM. It is a front for reading and writing in the Julia style, not a separate engine copied inside; the meaning of what you write is carried by SIM's shared expression graph underneath. So you keep the clean, math-friendly look you are used to while your code joins the same runtime that every other SIM surface shares, side by side with them.
+This library gives SIM a Julia face. Julia's notation is popular with people doing calculation-heavy and scientific work, and this profile lets you express your ideas in that familiar shape and run them on SIM. It is a front for reading and writing in the Julia style, not a separate engine copied inside; the meaning of what you write is carried by SIM's shared expression graph underneath. So you keep the clean, math-friendly look you already know while your code joins the same runtime that every other SIM surface shares, side by side with them.
 
 #### sim-lib-lang-lua
 
@@ -1695,7 +1695,7 @@ A lens is a matched pair: a way to display a value and a way to edit it back. Th
 
 it lets you wire up and watch a network of agents on a canvas, live, alongside the agents themselves.
 
-This is the composer where you build a topology by hand: drop nodes, connect their ports, group them, move them around, and delete what you no longer need. The same canvas shows a run as it happens, so you can watch messages flow and replay what occurred. The striking part is that an automated agent can edit the very same graph you are looking at, at the same time, because you both act on one shared model. There is no separate copy that drifts out of step. What you draw is the actual system, and what runs is what you drew.
+This is the composer where you build a topology by hand: drop nodes, connect their ports, group them, move them around, and delete the pieces you do not need. The same canvas shows a run as it happens, so you can watch messages flow and replay what occurred. The striking part is that an automated agent can edit the very same graph you are looking at, at the same time, because you both act on one shared model. There is no separate copy that drifts out of step. What you draw is the actual system, and what runs is what you drew.
 
 #### sim-lib-view-bridge
 
