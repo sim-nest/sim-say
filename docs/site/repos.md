@@ -21,5 +21,5 @@
 | [sim-storage](../repos/sim-storage.md) | `6de3c5850061ef58c3aa56be35f1ee691bdec374` | [JSON](../contracts/sim-storage/repo-contract.json) |
 | [sim-stream](../repos/sim-stream.md) | `2c77f4355208f6d6f16eb2bf7307a4a4da0912ac` | [JSON](../contracts/sim-stream/repo-contract.json) |
 | [sim-stream-host](../repos/sim-stream-host.md) | `9d6f65ad3f7f1ae0409ccd22b60474adeddca557` | [JSON](../contracts/sim-stream-host/repo-contract.json) |
-| [sim-tooling](../repos/sim-tooling.md) | `b436dfc118705b69fd6b5f7d60c77825480cc507` | [JSON](../contracts/sim-tooling/repo-contract.json) |
+| [sim-tooling](../repos/sim-tooling.md) | `a48883911f284e1995ed055560fddb3e7e0cb393` | [JSON](../contracts/sim-tooling/repo-contract.json) |
 | [sim-web](../repos/sim-web.md) | `2f1a12f495f9c969f2b5d9fa2d26f1715427473b` | [JSON](../contracts/sim-web/repo-contract.json) |
