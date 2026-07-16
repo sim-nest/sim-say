@@ -21,5 +21,5 @@
 | [sim-storage](../repos/sim-storage.md) | 13 | [card-index.json](../contracts/sim-storage/card-index.json) |
 | [sim-stream](../repos/sim-stream.md) | 48 | [card-index.json](../contracts/sim-stream/card-index.json) |
 | [sim-stream-host](../repos/sim-stream-host.md) | 5 | [card-index.json](../contracts/sim-stream-host/card-index.json) |
-| [sim-tooling](../repos/sim-tooling.md) | 0 | [card-index.json](../contracts/sim-tooling/card-index.json) |
+| [sim-tooling](../repos/sim-tooling.md) | 2 | [card-index.json](../contracts/sim-tooling/card-index.json) |
 | [sim-web](../repos/sim-web.md) | 75 | [card-index.json](../contracts/sim-web/card-index.json) |

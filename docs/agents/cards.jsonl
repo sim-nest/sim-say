@@ -1366,6 +1366,8 @@
 {"card": "recipes/01-basics/fake-backend/recipe.toml", "repo": "sim-stream-host"}
 {"card": "recipes/01-basics/fake-backend/setup.siml", "repo": "sim-stream-host"}
 {"card": "recipes/book.toml", "repo": "sim-stream-host"}
+{"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-tooling"}
+{"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-tooling"}
 {"card": "crates/sim-lib-intent/recipes/01-basics/chapter.toml", "repo": "sim-web"}
 {"card": "crates/sim-lib-intent/recipes/01-basics/select-intent/purpose.md", "repo": "sim-web"}
 {"card": "crates/sim-lib-intent/recipes/01-basics/select-intent/recipe.toml", "repo": "sim-web"}
