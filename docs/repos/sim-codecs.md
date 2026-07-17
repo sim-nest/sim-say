@@ -1,6 +1,6 @@
 # sim-codecs
 
-Published commit: `bfee9819c0fa3814457a787c13c6d611eb04b4d1`.
+Published commit: `250bd420c53f7d0159aaea2d9bda22736ad61f80`.
 
 ## Crates
 
