@@ -1,6 +1,6 @@
 # sim-web
 
-Published commit: `64d942f47f7b2590d5d2cd8911238688760c464a`.
+Published commit: `af16748b9aee0aa894daf3abd9d4f07e33a9d170`.
 
 ## Crates
 
