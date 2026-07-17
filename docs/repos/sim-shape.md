@@ -1,6 +1,6 @@
 # sim-shape
 
-Published commit: `6e2f5c694145f2fcdb1ed2f83007295c2fe55771`.
+Published commit: `d9145232135e7f00413ab4104ad7310b6dc82921`.
 
 ## Crates
 
