@@ -8,7 +8,7 @@
 {"card": {"id": "cookbook/cookbook", "kind": "cookbook-recipe", "owner": "sim-lib-cookbook", "summary": "Cookbook runtime operations and seeded recipe lookup."}, "repo": "sim-agent-net"}
 {"card": {"id": "cookbook/forge", "kind": "cookbook-recipe", "owner": "sim-lib-forge", "summary": "Compiled intent records for reusable BRIDGE packet programs."}, "repo": "sim-agent-net"}
 {"card": {"id": "cookbook/mcp", "kind": "cookbook-recipe", "owner": "sim-lib-mcp", "summary": "MCP JSON-RPC descriptors and cassette replay."}, "repo": "sim-agent-net"}
-{"card": {"id": "cookbook/openai-gateway", "kind": "cookbook-recipe", "owner": "sim-lib-openai-server", "summary": "OpenAI-compatible gateway request descriptors and local replay."}, "repo": "sim-agent-net"}
+{"card": {"id": "cookbook/openai-gateway", "kind": "cookbook-recipe", "owner": "sim-lib-openai-server", "summary": "OpenAI-shaped gateway request descriptors and local replay."}, "repo": "sim-agent-net"}
 {"card": {"id": "cookbook/server", "kind": "cookbook-recipe", "owner": "sim-lib-server", "summary": "Server request descriptors and local route shapes."}, "repo": "sim-agent-net"}
 {"card": {"id": "cookbook/skill", "kind": "cookbook-recipe", "owner": "sim-lib-skill", "summary": "Skill cards, fixture transports, cassette replay, and audit policy."}, "repo": "sim-agent-net"}
 {"card": {"id": "cookbook/stream-fabric", "kind": "cookbook-recipe", "owner": "sim-lib-stream-fabric", "summary": "Content-addressed distributed evaluation for remote stream realization."}, "repo": "sim-agent-net"}
