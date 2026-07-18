@@ -176,6 +176,7 @@ piece gives you.
 - **sim-lib-femm-physics** -- It holds the actual laws of nature the simulation obeys, one set per kind of problem.
 - **sim-lib-femm-post** -- It turns a finished solve into the real-world numbers you actually wanted to know.
 - **sim-lib-femm-prelude** -- It switches on the whole finite-element toolkit in a single step.
+- **sim-lib-femm-query** -- It keeps every FEMM answer path speaking the same model-query language.
 - **sim-lib-femm-sensitiv** -- It tells you how much your result would shift if you nudged each design setting.
 - **sim-lib-femm-solve** -- It takes a described model all the way to a solved answer and hands you proof it was done right.
 - **sim-lib-femm-space** -- It works out the fine geometric details inside each triangle so the solver knows how values vary across it.
@@ -523,7 +524,7 @@ Some channels only accept plain text -- an email body, a web field, a log line, 
 
 It gives SIM, people, and model seats one checked packet format for requests, replies, reviews, and receipts.
 
-BRIDGE makes an exchange inspectable from the first byte. A packet names who speaks, who receives it, what move it makes, what context it cites, and what typed parts it carries. This crate reads and writes the strict line form for that packet and checks the book of allowed parts and moves before the packet is trusted. The result is a narrow entry point where collaboration messages have stable identity, clear structure, and no hidden side channel.
+BRIDGE makes an exchange inspectable from the first byte. A packet names who speaks, who receives it, what move it makes, what parent move evidence it cites, and what typed parts it carries. This crate reads and writes the strict line form for that packet and checks the book of allowed parts, moves, derived profiles, and warrants before the packet is trusted. The result is a narrow entry point where collaboration messages have stable identity, clear structure, and no hidden side channel.
 
 #### sim-codec-chat
 
@@ -702,6 +703,12 @@ Solving a model produces a mass of internal values before it becomes an answer t
 It switches on the whole finite-element toolkit in a single step.
 
 The finite-element domain is made of many separate libraries, each doing one job. Wiring them all into a working session by hand would be tedious and easy to get wrong. This spares you that. It is one entry point that installs the entire stack at once, along with the number tools underneath it, so that geometry, materials, meshing, physics, solving, and reporting are all present and ready together. You bring in this one thing, and everything you need to describe, solve, and inspect a model is set up for you. It is the light switch that brings the whole room on.
+
+#### sim-lib-femm-query
+
+It keeps every FEMM answer path speaking the same model-query language.
+
+FEMM models can be asked for many kinds of answers: a scalar result, a field, or a full solution. This library holds the shared request shape for those questions and the callable wrapper that resolves model inputs the same way every time. That means the function layer and the sensitivity layer both work from the same payload, the same defaults, and the same query meaning instead of carrying separate copies of the rules.
 
 #### sim-lib-femm-sensitiv
 
