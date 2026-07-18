@@ -116,7 +116,7 @@ piece gives you.
 - **sim-citizen** -- The layer that lets a domain's own data types show up as first-class, well-behaved values inside SIM.
 - **sim-citizen-derive** -- A one-line marker that writes all the wiring needed to make your data type a full SIM value for you.
 - **sim-config** -- layered SIM settings stay inspectable because every source becomes the same table-shaped data before it is merged.
-- **sim-cookbook** -- The engine behind SIM's built-in, runnable lessons that teach each library from the inside.
+- **sim-cookbook** -- The engine behind SIM's built-in lessons that teach each library from the inside.
 - **sim-lib-net-core** -- The quiet reading room that turns raw web traffic into clean, understandable pieces.
 - **sim-lib-surface-card** -- The shared name-translator that presents SIM's tools cleanly to outside systems and people.
 - **sim-macros** -- A set of labels that let an author declare SIM building blocks in plain Rust and have the wiring written for them.
@@ -744,9 +744,9 @@ layered SIM settings stay inspectable because every source becomes the same tabl
 
 #### sim-cookbook
 
-The engine behind SIM's built-in, runnable lessons that teach each library from the inside.
+The engine behind SIM's built-in lessons that teach each library from the inside.
 
-Learning a system is easiest when the lessons live next to the thing they explain and actually run. This crate powers exactly that. A lesson -- a small runnable setup paired with a short note on its purpose -- ships inside the library it teaches. When that library loads, its lessons register themselves, and this engine gathers them into books and chapters that any SIM surface can show: the command line, the web view, the in-product help, or an assistant. It reads and checks each lesson collection, embeds them at build time, keeps a searchable store, works out what to read next, and lets a person layer their own notes on top in a steady, repeatable way. The result is one consistent library of hands-on examples drawn from across the whole system.
+Learning a system is easiest when the lessons live next to the thing they explain. This crate powers that library-owned teaching lane. A lesson -- a setup file paired with a short note on its purpose -- ships inside the library it teaches. When that library loads, its lessons register themselves, and this engine gathers them into books and chapters that any SIM surface can show: the command line, the web view, the in-product help, or an assistant. It reads and checks each lesson collection, embeds it at build time, keeps a searchable store, works out what to read next, and lets a person layer their own notes on top in a steady, repeatable way. The result is one consistent library of examples drawn from across the whole system.
 
 #### sim-lib-net-core
 
