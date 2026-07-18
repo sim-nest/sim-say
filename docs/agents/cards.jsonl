@@ -414,6 +414,7 @@
 {"card": {"id": "stream/queue-policy", "kind": "surface-card", "owner": "sim", "summary": "stream"}, "repo": "sim-sdk"}
 {"card": {"id": "stream/stream", "kind": "surface-card", "owner": "sim", "summary": "core"}, "repo": "sim-sdk"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-shape"}
+{"card": {"id": "cookbook/sim-shape", "kind": "cookbook-recipe", "owner": "sim-shape", "summary": "Runnable shape matching examples."}, "repo": "sim-shape"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-shape"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-storage"}
 {"card": {"id": "cookbook/storage/table-fs", "kind": "cookbook-recipe", "owner": "sim-table-fs", "summary": "Host directory reads, writes, edits, and searches through the table surface."}, "repo": "sim-storage"}
