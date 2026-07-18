@@ -42,7 +42,7 @@ piece gives you.
 - **sim-lib-stream-coreaudio** -- A stand-in for Apple's CoreAudio sound system that lets SIM audio run and be tested without a Mac or its frameworks.
 - **sim-lib-stream-cpal** -- A cross-platform sound-card connection for SIM, with a hardware-free default lane and an optional path to real devices.
 - **sim-lib-stream-jack** -- A stand-in for the JACK audio routing system that lets SIM connect and be tested without a running JACK server.
-- **sim-lib-stream-jack-provider** -- A loadable add-on that registers a JACK sound connection for SIM, either modeled by default or wired to real JACK.
+- **sim-lib-stream-jack-provider** -- A registrable JACK sound provider for SIM, modeled by default and hardware-gated when real JACK is available.
 - **sim-lib-stream-pipewire** -- A stand-in for PipeWire, the modern Linux sound server, that lets SIM connect and be tested without a running daemon.
 - **sim-lib-stream-portaudio** -- A stand-in for PortAudio, the portable sound layer, that lets SIM play and be tested without a PortAudio install.
 - **sim-lib-daw-session** -- A recording-studio session you can build, arrange, and bounce to audio without opening any studio software.
@@ -452,9 +452,9 @@ This crate models JACK, the pro-audio routing system that patches sound and MIDI
 
 #### sim-lib-stream-jack-provider
 
-A loadable add-on that registers a JACK sound connection for SIM, either modeled by default or wired to real JACK.
+A registrable JACK sound provider for SIM, modeled by default and hardware-gated when real JACK is available.
 
-This crate packages the JACK sound connection as a loadable provider -- a piece a host can pick up and register on demand. By default it is pure Rust and registers a steady, modeled JACK-shaped audio site through the shared provider registrar, so a project gains a JACK placement without linking to JACK or opening any hardware. Turning on the hardware feature enables the native JACK module and exports the symbol that a loadable plug-in library needs, so an outside host can bring the real thing into play. It is the seam that lets JACK support be added as a separate, swappable unit rather than baked in.
+This crate packages the JACK sound connection as a registrable provider that a host can add on demand. By default it is pure Rust and registers a steady, modeled JACK-shaped audio site through the shared provider registrar, so a project gains a JACK placement without linking to JACK or opening any hardware. The hardware feature enables the native JACK module for hosts that register the Rust provider entry directly. It is the seam that lets JACK support stay separate and swappable rather than baked in.
 
 #### sim-lib-stream-pipewire
 
