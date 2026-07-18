@@ -71,6 +71,7 @@
 | `sim-lib-femm-physics` | [sim-femm](../repos/sim-femm.md) |
 | `sim-lib-femm-post` | [sim-femm](../repos/sim-femm.md) |
 | `sim-lib-femm-prelude` | [sim-femm](../repos/sim-femm.md) |
+| `sim-lib-femm-query` | [sim-femm](../repos/sim-femm.md) |
 | `sim-lib-femm-sensitiv` | [sim-femm](../repos/sim-femm.md) |
 | `sim-lib-femm-solve` | [sim-femm](../repos/sim-femm.md) |
 | `sim-lib-femm-space` | [sim-femm](../repos/sim-femm.md) |

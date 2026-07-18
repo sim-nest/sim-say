@@ -78,6 +78,7 @@
 {"card": {"id": "cookbook/femm-physics", "kind": "cookbook-recipe", "owner": "sim-lib-femm-physics", "summary": "Physics and formulation descriptors."}, "repo": "sim-femm"}
 {"card": {"id": "cookbook/femm-post", "kind": "cookbook-recipe", "owner": "sim-lib-femm-post", "summary": "Post-processing quantity descriptors."}, "repo": "sim-femm"}
 {"card": {"id": "cookbook/femm-prelude", "kind": "cookbook-recipe", "owner": "sim-lib-femm-prelude", "summary": "Default FEMM stack loading descriptors."}, "repo": "sim-femm"}
+{"card": {"id": "cookbook/femm-query", "kind": "cookbook-recipe", "owner": "sim-lib-femm-query", "summary": "Shared FEMM model query callables."}, "repo": "sim-femm"}
 {"card": {"id": "cookbook/femm-sensitiv", "kind": "cookbook-recipe", "owner": "sim-lib-femm-sensitiv", "summary": "Sensitivity path and variable descriptors."}, "repo": "sim-femm"}
 {"card": {"id": "cookbook/femm-solve", "kind": "cookbook-recipe", "owner": "sim-lib-femm-solve", "summary": "Small linear solve descriptors."}, "repo": "sim-femm"}
 {"card": {"id": "cookbook/femm-space", "kind": "cookbook-recipe", "owner": "sim-lib-femm-space", "summary": "Element-space and formulation descriptors."}, "repo": "sim-femm"}
