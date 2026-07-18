@@ -1,6 +1,6 @@
 # sim-audio-daw
 
-Published commit: `259b9d081eeaf2ea81dfb33a1a2ea12c4a3a93bb`.
+Published commit: `f5c8a7d3134400a05c2f44c650bc865301004fde`.
 
 ## Crates
 
