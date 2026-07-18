@@ -20,7 +20,7 @@ piece gives you.
 - **sim-lib-cookbook** -- A built-in collection of worked recipes you can browse, search, and actually run inside SIM.
 - **sim-lib-forge** -- It turns reusable model tasks into named packet artifacts that can be checked before they are trusted.
 - **sim-lib-mcp** -- The piece that turns SIM's own tools and skills into safe listings other assistants can discover.
-- **sim-lib-openai-server** -- A gateway that lets tools built for OpenAI's API talk to SIM instead.
+- **sim-lib-openai-server** -- A gateway that lets OpenAI-shaped clients reach SIM's model and agent surface.
 - **sim-lib-server** -- The part of SIM that serves evaluation and agents to callers and streams the replies back.
 - **sim-lib-skill** -- The system that describes each thing an agent can do and lets it call that ability like any other command.
 - **sim-lib-stream-fabric** -- The layer that lets SIM place work on other machines and share streaming results without minding where they run.
@@ -336,9 +336,9 @@ The Model Context Protocol is a common way for assistants to find out what tools
 
 #### sim-lib-openai-server
 
-A gateway that lets tools built for OpenAI's API talk to SIM instead.
+A gateway that lets OpenAI-shaped clients reach SIM's model and agent surface.
 
-Many programs already know how to speak to OpenAI's web interface. This crate lets SIM answer on that same interface, so those programs can point at SIM without being rewritten. It handles the familiar endpoints for chat and responses, for embeddings, and for audio, image, and vector-store requests, translating between OpenAI's message format and SIM's own. Answers can stream back as they are produced, past responses can be fetched again by their id, and a stored response can be replayed or branched for inspection. The model listing reports the models SIM actually has available, so local, fixture, and remote model entries all show up together when they are installed.
+Many programs already know the request and response shapes used by OpenAI-style model services. This crate gives SIM a gateway in that shape for chat, response, embedding, model listing, streaming, replay, and inspection flows. It also includes SIM fixture and subset routes for file records, audio transcription and speech, image references, and text-vector search, so tests and demos can exercise those object families without pretending to be a full media or multipart provider. Stored responses can be fetched again by id, replayed, or branched for inspection. The model listing reports the models SIM actually has available, so local, fixture, and remote model entries appear together when they are installed.
 
 #### sim-lib-server
 
