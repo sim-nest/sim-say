@@ -4,7 +4,7 @@
 | --- | ---: | --- |
 | [sim-agent-net](../repos/sim-agent-net.md) | 17 | [card-index.json](../contracts/sim-agent-net/card-index.json) |
 | [sim-audio-daw](../repos/sim-audio-daw.md) | 18 | [card-index.json](../contracts/sim-audio-daw/card-index.json) |
-| [sim-auto](../repos/sim-auto.md) | 3 | [card-index.json](../contracts/sim-auto/card-index.json) |
+| [sim-auto](../repos/sim-auto.md) | 4 | [card-index.json](../contracts/sim-auto/card-index.json) |
 | [sim-citizen](../repos/sim-citizen.md) | 2 | [card-index.json](../contracts/sim-citizen/card-index.json) |
 | [sim-codecs](../repos/sim-codecs.md) | 18 | [card-index.json](../contracts/sim-codecs/card-index.json) |
 | [sim-discrete](../repos/sim-discrete.md) | 21 | [card-index.json](../contracts/sim-discrete/card-index.json) |

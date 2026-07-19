@@ -1,11 +1,12 @@
 # sim-auto
 
-Published commit: `9922fb859d2dee5cd8aa5592fe2db9a359b62972`.
+Published commit: `57aced371f394e448e688c6b2641270e5899f8d0`.
 
 ## Crates
 
 - `sim-codec-uds`
 - `sim-lib-auto-core`
+- `sim-lib-auto-diag`
 
 ## Contracts
 
