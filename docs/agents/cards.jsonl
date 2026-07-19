@@ -52,6 +52,7 @@
 {"card": {"id": "cookbook/codec/json", "kind": "cookbook-recipe", "owner": "sim-codec-json", "summary": "Tagged JSON expression forms."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/lisp", "kind": "cookbook-recipe", "owner": "sim-codec-lisp", "summary": "Lisp surface forms for SIM expressions."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/mcp", "kind": "cookbook-recipe", "owner": "sim-codec-mcp", "summary": "MCP JSON-RPC request, response, notification, and error envelopes."}, "repo": "sim-codecs"}
+{"card": {"id": "cookbook/codec/pratt", "kind": "cookbook-recipe", "owner": "sim-codec-pratt", "summary": "Shared Pratt parsing substrate for codec lexers."}, "repo": "sim-codecs"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-codecs"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-discrete"}
 {"card": {"id": "cookbook/discrete", "kind": "cookbook-recipe", "owner": "sim-lib-discrete", "summary": "Runtime-facing discrete matrix, graph, and transform descriptors."}, "repo": "sim-discrete"}

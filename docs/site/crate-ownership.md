@@ -38,6 +38,7 @@
 | `sim-citizen-derive` | [sim-citizen](../repos/sim-citizen.md) |
 | `sim-codec` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-algol` | [sim-codecs](../repos/sim-codecs.md) |
+| `sim-codec-pratt` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-binary` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-binary-base64` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-bitwise` | [sim-codecs](../repos/sim-codecs.md) |
