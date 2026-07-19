@@ -51,6 +51,7 @@
 | `sim-codec-doc` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-json` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-lisp` | [sim-codecs](../repos/sim-codecs.md) |
+| `sim-codec-lua` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-mcp` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-test-support` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-wasm-abi` | [sim-codecs](../repos/sim-codecs.md) |

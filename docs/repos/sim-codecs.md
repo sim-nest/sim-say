@@ -1,6 +1,6 @@
 # sim-codecs
 
-Published commit: `c2b42fa0e194a72b58df76ec34b789e180eb09bf`.
+Published commit: `5f887413676026a4525fe7e0f3136de8b22efe69`.
 
 ## Crates
 
@@ -18,6 +18,7 @@ Published commit: `c2b42fa0e194a72b58df76ec34b789e180eb09bf`.
 - `sim-codec-doc`
 - `sim-codec-json`
 - `sim-codec-lisp`
+- `sim-codec-lua`
 - `sim-codec-mcp`
 - `sim-test-support`
 - `sim-wasm-abi`

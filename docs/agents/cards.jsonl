@@ -52,6 +52,7 @@
 {"card": {"id": "cookbook/codec/doc", "kind": "cookbook-recipe", "owner": "sim-codec-doc", "summary": "Document decoding and provenance-preserving chunk descriptors."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/json", "kind": "cookbook-recipe", "owner": "sim-codec-json", "summary": "Tagged JSON expression forms."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/lisp", "kind": "cookbook-recipe", "owner": "sim-codec-lisp", "summary": "Lisp surface forms for SIM expressions."}, "repo": "sim-codecs"}
+{"card": {"id": "cookbook/codec/lua", "kind": "cookbook-recipe", "owner": "sim-codec-lua", "summary": "Lua expression parsing recipes for SIM codec surfaces."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/mcp", "kind": "cookbook-recipe", "owner": "sim-codec-mcp", "summary": "MCP JSON-RPC request, response, notification, and error envelopes."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/pratt", "kind": "cookbook-recipe", "owner": "sim-codec-pratt", "summary": "Shared Pratt parsing substrate for codec lexers."}, "repo": "sim-codecs"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-codecs"}
