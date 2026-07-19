@@ -388,6 +388,8 @@
 {"card": {"id": "codec/json", "kind": "surface-card", "owner": "sim", "summary": ".simj"}, "repo": "sim-sdk"}
 {"card": {"id": "codec/lisp", "kind": "surface-card", "owner": "sim", "summary": ".siml"}, "repo": "sim-sdk"}
 {"card": {"id": "codec/positions", "kind": "surface-card", "owner": "sim", "summary": "codec position behavior facet"}, "repo": "sim-sdk"}
+{"card": {"id": "cookbook/sim-conformance", "kind": "cookbook-recipe", "owner": "sim-conformance", "summary": "Recipes that show how the executable architecture contract is run."}, "repo": "sim-sdk"}
+{"card": {"id": "cookbook/sim-sdk", "kind": "cookbook-recipe", "owner": "sim-nest", "summary": "Small recipes for booting and checking the umbrella SIM facade."}, "repo": "sim-sdk"}
 {"card": {"id": "core/Card", "kind": "browse-reflection", "owner": "sim", "summary": "Card fixed-field browse envelope"}, "repo": "sim-sdk"}
 {"card": {"id": "core/args", "kind": "browse-reflection", "owner": "sim", "summary": "projects one stable Card field for a subject"}, "repo": "sim-sdk"}
 {"card": {"id": "core/browse", "kind": "browse-reflection", "owner": "sim", "summary": "returns a Card for a subject or the root browse catalog"}, "repo": "sim-sdk"}
