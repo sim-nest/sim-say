@@ -104,9 +104,9 @@
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-ledger"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-music"}
 {"card": {"id": "cookbook/audio-synth", "kind": "cookbook-recipe", "owner": "sim-lib-music-synth", "summary": "Software synth preset, oscillator, envelope, and offline render data."}, "repo": "sim-music"}
-{"card": {"id": "cookbook/audio-synth-ps3300", "kind": "cookbook-recipe", "owner": "recipes", "summary": "PS-3300 wrapper, synthetic polyphonic patch, render fixtures, and pin-matrix metadata."}, "repo": "sim-music"}
-{"card": {"id": "cookbook/audio-synth-system55", "kind": "cookbook-recipe", "owner": "recipes", "summary": "System 55 module ids, synthetic voice fixtures, patch metadata, and S-trigger fit evidence."}, "repo": "sim-music"}
-{"card": {"id": "cookbook/audio-synth-system700", "kind": "cookbook-recipe", "owner": "recipes", "summary": "System 700 module ids, main-console patch rendering, and synthetic fixtures."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/audio-synth-ps3300", "kind": "cookbook-recipe", "owner": "sim-lib-music-synth", "summary": "PS-3300 wrapper, synthetic polyphonic patch, render fixtures, and pin-matrix metadata."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/audio-synth-system55", "kind": "cookbook-recipe", "owner": "sim-lib-music-synth", "summary": "System 55 module ids, synthetic voice fixtures, patch metadata, and S-trigger fit evidence."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/audio-synth-system700", "kind": "cookbook-recipe", "owner": "sim-lib-music-synth", "summary": "System 700 module ids, main-console patch rendering, and synthetic fixtures."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/daw-session", "kind": "cookbook-recipe", "owner": "sim-lib-daw-session", "summary": "Portable DAW session, clip, render, and topology descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/midi-ble", "kind": "cookbook-recipe", "owner": "sim-lib-midi-ble", "summary": "Bluetooth MIDI descriptor fixtures."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/midi-io", "kind": "cookbook-recipe", "owner": "sim-lib-midi-core", "summary": "MIDI event, tempo, and metadata descriptors."}, "repo": "sim-music"}
