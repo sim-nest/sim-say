@@ -206,6 +206,7 @@
 {"card": {"id": "cookbook/office/sheet", "kind": "cookbook-recipe", "owner": "sim-lib-sheet", "summary": "Exact local sheets and open cell edits."}, "repo": "sim-office"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-office"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-run"}
+{"card": {"id": "cookbook/sim-run", "kind": "cookbook-recipe", "owner": "sim-run", "summary": "SIM command-line bootloader recipes."}, "repo": "sim-run"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-run"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/control", "kind": "cookbook-recipe", "owner": "sim-lib-control", "summary": "Prompt, capture, abort, and resume surfaces."}, "repo": "sim-runtime"}
