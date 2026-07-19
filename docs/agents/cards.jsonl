@@ -456,4 +456,5 @@
 {"card": {"id": "cookbook/view/wasm", "kind": "cookbook-recipe", "owner": "sim-lib-view-wasm-frame", "summary": "Browser-side view host descriptors for local Scene and Intent flow."}, "repo": "sim-web"}
 {"card": {"id": "cookbook/web/bridge", "kind": "cookbook-recipe", "owner": "sim-lib-web-bridge", "summary": "Session bus, transports, history, and Scene update descriptors."}, "repo": "sim-web"}
 {"card": {"id": "cookbook/web/layout", "kind": "cookbook-recipe", "owner": "sim-lib-web-layout", "summary": "Workspace, panes, palette, and layout persistence values."}, "repo": "sim-web"}
+{"card": {"id": "cookbook/web/shell", "kind": "cookbook-recipe", "owner": "sim-web-shell", "summary": "Browser shell startup and live session descriptors."}, "repo": "sim-web"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-web"}
