@@ -1,6 +1,6 @@
 # sim-sdk
 
-Published commit: `30f6fdbb67035b214a6d612a02b22ca79db5d1fd`.
+Published commit: `075a138910ff9322542d8593782aa062f74ca284`.
 
 ## Crates
 
