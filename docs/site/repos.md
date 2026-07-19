@@ -14,7 +14,7 @@
 | [sim-music](../repos/sim-music.md) | `8245bcc4c4db71faead6de6bc5fbb13e983a6ad3` | [JSON](../contracts/sim-music/repo-contract.json) |
 | [sim-numbers](../repos/sim-numbers.md) | `080585dcb5844c539563ca1baadc6b59e9565569` | [JSON](../contracts/sim-numbers/repo-contract.json) |
 | [sim-office](../repos/sim-office.md) | `075997b07e828d500947904194ee79480836a13d` | [JSON](../contracts/sim-office/repo-contract.json) |
-| [sim-run](../repos/sim-run.md) | `98fa6578674d7d462c15f701a478304e81db9773` | [JSON](../contracts/sim-run/repo-contract.json) |
+| [sim-run](../repos/sim-run.md) | `b5c53f27bb4e34ff10a16717bc2a87a976b21229` | [JSON](../contracts/sim-run/repo-contract.json) |
 | [sim-runtime](../repos/sim-runtime.md) | `f4a220d8622e5b9d972327a41c24646e91652ae7` | [JSON](../contracts/sim-runtime/repo-contract.json) |
 | [sim-sdk](../repos/sim-sdk.md) | `30f6fdbb67035b214a6d612a02b22ca79db5d1fd` | [JSON](../contracts/sim-sdk/repo-contract.json) |
 | [sim-shape](../repos/sim-shape.md) | `0da246bb38ad1a42ff0b2fc93ce10ff990a95ad1` | [JSON](../contracts/sim-shape/repo-contract.json) |
