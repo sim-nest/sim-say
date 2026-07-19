@@ -33,6 +33,7 @@
 | `sim-lib-stream-jack-provider` | [sim-audio-daw](../repos/sim-audio-daw.md) |
 | `sim-lib-stream-pipewire` | [sim-audio-daw](../repos/sim-audio-daw.md) |
 | `sim-lib-stream-portaudio` | [sim-audio-daw](../repos/sim-audio-daw.md) |
+| `sim-lib-auto-core` | [sim-auto](../repos/sim-auto.md) |
 | `sim-citizen` | [sim-citizen](../repos/sim-citizen.md) |
 | `sim-citizen-derive` | [sim-citizen](../repos/sim-citizen.md) |
 | `sim-codec` | [sim-codecs](../repos/sim-codecs.md) |

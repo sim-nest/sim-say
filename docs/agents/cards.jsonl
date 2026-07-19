@@ -33,6 +33,8 @@
 {"card": {"id": "cookbook/stream-pipewire", "kind": "cookbook-recipe", "owner": "sim-lib-stream-pipewire", "summary": "Command-backed checks for the modeled PipeWire stream adapter."}, "repo": "sim-audio-daw"}
 {"card": {"id": "cookbook/stream-portaudio", "kind": "cookbook-recipe", "owner": "sim-lib-stream-portaudio", "summary": "Command-backed checks for the modeled PortAudio stream adapter."}, "repo": "sim-audio-daw"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-audio-daw"}
+{"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-auto"}
+{"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-auto"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-citizen"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-citizen"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-codecs"}

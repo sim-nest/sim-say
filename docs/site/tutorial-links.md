@@ -2,6 +2,7 @@
 
 - [sim-agent-net human docs](../repos/sim-agent-net.md#tutorial-lane)
 - [sim-audio-daw human docs](../repos/sim-audio-daw.md#tutorial-lane)
+- [sim-auto human docs](../repos/sim-auto.md#tutorial-lane)
 - [sim-citizen human docs](../repos/sim-citizen.md#tutorial-lane)
 - [sim-codecs human docs](../repos/sim-codecs.md#tutorial-lane)
 - [sim-discrete human docs](../repos/sim-discrete.md#tutorial-lane)

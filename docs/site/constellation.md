@@ -9,6 +9,7 @@
         | one entry per repository
         | sim-agent-net
         | sim-audio-daw
+        | sim-auto
         | sim-citizen
         | sim-codecs
         | sim-discrete

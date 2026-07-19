@@ -199,6 +199,7 @@ The full constellation, generated from each repo's pinned contract files:
 
 - [sim-agent-net](docs/repos/sim-agent-net.md)
 - [sim-audio-daw](docs/repos/sim-audio-daw.md)
+- [sim-auto](docs/repos/sim-auto.md)
 - [sim-citizen](docs/repos/sim-citizen.md)
 - [sim-codecs](docs/repos/sim-codecs.md)
 - [sim-discrete](docs/repos/sim-discrete.md)
