@@ -22,4 +22,4 @@
 | [sim-stream](../repos/sim-stream.md) | 9 | [card-index.json](../contracts/sim-stream/card-index.json) |
 | [sim-stream-host](../repos/sim-stream-host.md) | 3 | [card-index.json](../contracts/sim-stream-host/card-index.json) |
 | [sim-tooling](../repos/sim-tooling.md) | 2 | [card-index.json](../contracts/sim-tooling/card-index.json) |
-| [sim-web](../repos/sim-web.md) | 15 | [card-index.json](../contracts/sim-web/card-index.json) |
+| [sim-web](../repos/sim-web.md) | 16 | [card-index.json](../contracts/sim-web/card-index.json) |

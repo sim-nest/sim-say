@@ -237,6 +237,7 @@
 | `sim-lib-view-bridge` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-view-codec` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-view-daw` | [sim-web](../repos/sim-web.md) |
+| `sim-lib-view-device` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-view-doc` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-view-math` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-view-wasm-frame` | [sim-web](../repos/sim-web.md) |

@@ -450,6 +450,7 @@
 {"card": {"id": "cookbook/intent", "kind": "cookbook-recipe", "owner": "sim-lib-intent", "summary": "Gesture and operator intent values for checked UI edits."}, "repo": "sim-web"}
 {"card": {"id": "cookbook/scene", "kind": "cookbook-recipe", "owner": "sim-lib-scene", "summary": "Portable scene values for browser rendering and agent inspection."}, "repo": "sim-web"}
 {"card": {"id": "cookbook/view", "kind": "cookbook-recipe", "owner": "sim-lib-view", "summary": "Lens contracts, view selection, and universal scene rendering."}, "repo": "sim-web"}
+{"card": {"id": "cookbook/view-device", "kind": "cookbook-recipe", "owner": "sim-lib-view-device", "summary": "Device profile envelopes and tier derivation for surface capabilities."}, "repo": "sim-web"}
 {"card": {"id": "cookbook/view/agent", "kind": "cookbook-recipe", "owner": "sim-lib-view-agent", "summary": "Topology composer and live monitor lens descriptors."}, "repo": "sim-web"}
 {"card": {"id": "cookbook/view/bridge", "kind": "cookbook-recipe", "owner": "sim-lib-view-bridge", "summary": "Packet review scenes and collaboration edits."}, "repo": "sim-web"}
 {"card": {"id": "cookbook/view/codec", "kind": "cookbook-recipe", "owner": "sim-lib-view-codec", "summary": "Multi-codec, round-trip, and Shape-aware lens descriptors."}, "repo": "sim-web"}

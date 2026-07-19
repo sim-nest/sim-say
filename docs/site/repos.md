@@ -22,4 +22,4 @@
 | [sim-stream](../repos/sim-stream.md) | `0b49ecd9304b65f2901c31ea7b49ca0890d6ac4b` | [JSON](../contracts/sim-stream/repo-contract.json) |
 | [sim-stream-host](../repos/sim-stream-host.md) | `9c2db55694b0537c6d6b6ef92dd2910e321e8977` | [JSON](../contracts/sim-stream-host/repo-contract.json) |
 | [sim-tooling](../repos/sim-tooling.md) | `d1e9f3ea6861b3b2b1cfd142124c4556de1a0c74` | [JSON](../contracts/sim-tooling/repo-contract.json) |
-| [sim-web](../repos/sim-web.md) | `f03205ed1c34225bc1fd99230ff34f54f75e3acc` | [JSON](../contracts/sim-web/repo-contract.json) |
+| [sim-web](../repos/sim-web.md) | `27052ab382fb1c6c6a1632e45635ef6975728da3` | [JSON](../contracts/sim-web/repo-contract.json) |
