@@ -236,7 +236,7 @@ piece gives you.
 - **sim-lib-repl** -- The interactive prompt where you type a line and SIM answers back.
 - **sim-run** -- The `sim` program you launch from a terminal to start a SIM session.
 - **sim-run-core** -- The part that reads your command line and sets up the SIM session.
-- **sim-run-loaders** -- The pieces that let SIM pull in outside plug-ins from files or bundles.
+- **sim-run-loaders** -- The pieces that let SIM pull in source files, packs, and outside plug-ins.
 - **sim-view-tty** -- The library that draws SIM in your terminal and reads your keystrokes.
 - **sim-conformance** -- the runnable checklist that proves SIM actually behaves the way its architecture promises.
 - **sim-nest** -- the single starting point a developer adds to reach every part of the SIM runtime.
@@ -1410,9 +1410,9 @@ This is the reasoning behind the starting program. When you type a command, this
 
 #### sim-run-loaders
 
-The pieces that let SIM pull in outside plug-ins from files or bundles.
+The pieces that let SIM pull in source files, packs, and outside plug-ins.
 
-This is the set of loading mechanisms the starting program can switch on when you want to bring in behavior that lives outside the base build. One mechanism opens a compiled plug-in file built for your machine. Another opens a portable bundle that runs the same way anywhere. Either way, you get a clean and consistent path from a file on disk to live behavior inside a running session. These loaders stay small and low-level on purpose, so the command surface can add just the loading style you need without dragging in the whole system. When a loaded plug-in offers a placement point for later work, this layer records it as an opaque item the rest of the system can pick up.
+This is the set of loading mechanisms the starting program can switch on when you want to bring behavior in from outside the base build. It handles readable source files, compact library packs, compiled plug-ins built for your machine, and portable bundles that run the same way anywhere. Each path gives the command surface a consistent route from an artifact to registered behavior inside a running session. These loaders stay small and low-level on purpose, so the front door can add just the loading style you need without dragging in the whole system. When a loaded plug-in offers a placement point, this layer records it as an opaque item the rest of the system can pick up.
 
 #### sim-view-tty
 
