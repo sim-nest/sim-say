@@ -430,6 +430,7 @@
 {"card": {"id": "cookbook/topology", "kind": "cookbook-recipe", "owner": "sim-lib-topology", "summary": "Data-authored topology graphs, packages, validation, and replay."}, "repo": "sim-stream"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-stream"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-stream-host"}
+{"card": {"id": "cookbook/stream-host", "kind": "cookbook-recipe", "owner": "sim-lib-stream-host", "summary": "Host backend inventory, callback queues, fake devices, and cassettes."}, "repo": "sim-stream-host"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-stream-host"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-tooling"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-tooling"}
