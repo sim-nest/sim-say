@@ -18,7 +18,7 @@ piece gives you.
 - **sim-lib-agent-runner-process** -- The connector that lets SIM use a model or tool that runs as a separate program on your computer.
 - **sim-lib-bridge** -- It keeps model-facing BRIDGE packets from leaving or entering SIM unless their local checks agree.
 - **sim-lib-cookbook** -- A built-in collection of worked recipes you can browse, search, and actually run inside SIM.
-- **sim-lib-forge** -- It turns reusable model tasks into named packet artifacts that can be checked before they are trusted.
+- **sim-lib-forge** -- It compiles a plain-English task into a reusable, checked model program you can trust and cache instead of re-prompting.
 - **sim-lib-mcp** -- The piece that turns SIM's own tools and skills into safe listings other assistants can discover.
 - **sim-lib-openai-server** -- A gateway that lets OpenAI-shaped clients reach SIM's model and agent surface.
 - **sim-lib-server** -- The part of SIM that serves evaluation and agents to callers and streams the replies back.
@@ -314,7 +314,7 @@ This crate lets SIM drive a model by launching a local program and talking to it
 
 It keeps model-facing BRIDGE packets from leaving or entering SIM unless their local checks agree.
 
-This crate is the runtime guard around BRIDGE packets. Before a packet is sent, it stamps a stable identity, proves the line form can be read back, checks that every byte belongs to the packet, and runs the same receive checks the other side will use. When an answer comes back, it reads the final model content as another BRIDGE packet and checks the move, parts, capabilities, and declared return contract before accepting it.
+This crate is the runtime guard around BRIDGE packets. On send, it stamps a stable identity, proves the line form can be read back, checks that every byte belongs to the packet, and runs the same receive checks the other side will use. When an answer comes back, it reads the final model content as another BRIDGE packet and checks the move, parts, capabilities, and declared return contract before accepting it.
 
 #### sim-lib-cookbook
 
@@ -324,9 +324,9 @@ This crate turns SIM's recipe collection into live commands you can use while th
 
 #### sim-lib-forge
 
-It turns reusable model tasks into named packet artifacts that can be checked before they are trusted.
+It compiles a plain-English task into a reusable, checked model program you can trust and cache instead of re-prompting.
 
-This crate defines the artifact that FORGE stores after plain prose becomes a BRIDGE packet, and it provides the guarded one-shot lift that creates the first candidate. The record keeps the intent name, version, source content, packet content, semantic probes, verifier identities, compiler provenance, and approval state together in one small package. That makes a compiled task something SIM can catalog, inspect, compare, and reuse without asking a model to lift the same prose again.
+FORGE turns prose into a named, verified artifact. You hand it a task in ordinary language; it lifts that prose into a BRIDGE packet, confirms the packet is well-formed and types its own output, then checks the answer contract with real verifiers before the result is trusted. A task that passes becomes a golden artifact with a stable identity, so the next caller fetches the compiled program instead of asking a model to interpret the same words again. It also routes work to a cheap model first and only escalates when a check fails, and it can measure whether compiling actually helped.
 
 #### sim-lib-mcp
 
