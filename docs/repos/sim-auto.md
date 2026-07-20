@@ -1,9 +1,10 @@
 # sim-auto
 
-Published commit: `85ae2f304b0cfb55e5b19c50952af12b7c9f6dfe`.
+Published commit: `666d8706dd2d1b0a42f8f1dfdd08d1c4a58081d2`.
 
 ## Crates
 
+- `sim-auto`
 - `sim-codec-uds`
 - `sim-lib-auto-core`
 - `sim-lib-auto-diag`
@@ -11,6 +12,7 @@ Published commit: `85ae2f304b0cfb55e5b19c50952af12b7c9f6dfe`.
 - `sim-lib-auto-parts`
 - `sim-lib-auto-vehicle`
 - `sim-lib-auto-vendor`
+- `sim-lib-view-bay`
 
 ## Contracts
 

@@ -341,6 +341,7 @@
 {"card": {"id": "citizen/shape/And", "kind": "citizen-class", "owner": "sim-shape", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/shape/Any", "kind": "citizen-class", "owner": "sim-shape", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/shape/Class", "kind": "citizen-class", "owner": "sim-shape", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/shape/Defs", "kind": "citizen-class", "owner": "sim-shape", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/shape/DiscardOnDiagnosticPrefixHook", "kind": "citizen-class", "owner": "sim-shape", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/shape/ExactExpr", "kind": "citizen-class", "owner": "sim-shape", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/shape/ExprKind", "kind": "citizen-class", "owner": "sim-shape", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
@@ -348,6 +349,7 @@
 {"card": {"id": "citizen/shape/List", "kind": "citizen-class", "owner": "sim-shape", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/shape/Not", "kind": "citizen-class", "owner": "sim-shape", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/shape/Or", "kind": "citizen-class", "owner": "sim-shape", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/shape/Ref", "kind": "citizen-class", "owner": "sim-shape", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/shape/Repeat", "kind": "citizen-class", "owner": "sim-shape", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/shape/ScoreFloorHook", "kind": "citizen-class", "owner": "sim-shape", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/shape/Table", "kind": "citizen-class", "owner": "sim-shape", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
