@@ -97,6 +97,7 @@ piece gives you.
 - **sim-lib-auto-core** -- the automotive vocabulary SIM uses to name vehicles, shop lanes, effects, and access rules.
 - **sim-lib-auto-diag** -- a safe diagnostic fabric that lets SIM read modeled vehicle data and replay it exactly.
 - **sim-lib-auto-info** -- a modeled repair-information layer that turns safe workshop fixtures into ranked SIM documents.
+- **sim-lib-auto-parts** -- a modeled parts catalog and ordering layer that keeps supplier effects reviewable.
 - **sim-lib-auto-vehicle** -- a vehicle identity lookup layer that keeps workshop data sources behind explicit network contracts.
 - **sim-lib-auto-vendor** -- a manifest-driven vendor engine that keeps vehicle-side actions behind explicit proof gates.
 
@@ -506,6 +507,12 @@ It gives automotive tools a vehicle-shaped eval target with synthetic ECUs, trou
 a modeled repair-information layer that turns safe workshop fixtures into ranked SIM documents.
 
 It gives automotive workflows a shared way to ask for repair guidance without copying vendor manuals into the public tree. Modeled WIS, ISTA, VIDA, ESI[tronic], HaynesPro, and shop-authored entries are ordinary SIM documents, so they can be selected, inspected, and rendered like other document values.
+
+#### sim-lib-auto-parts
+
+a modeled parts catalog and ordering layer that keeps supplier effects reviewable.
+
+It gives automotive workflows a shared way to find safe, synthetic replacement parts and place modeled supplier orders without reaching into a live account. Catalog data behaves like ordinary SIM directory tables, while ordering uses the same effect gate as other shop operations.
 
 #### sim-lib-auto-vehicle
 
