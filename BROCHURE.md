@@ -91,6 +91,13 @@ piece gives you.
 - **sim-lib-stream-file** -- Reads and writes streams to and from files on disk, with each access recorded and permission-checked.
 - **sim-lib-stream-midi** -- Wraps live MIDI sources and sinks so they plug into the SIM streaming pipeline as ordinary packets.
 
+### auto
+
+- **sim-codec-uds** -- a safe diagnostic byte-frame reader for automotive UDS and OBD-II data.
+- **sim-lib-auto-core** -- the automotive vocabulary SIM uses to name vehicles, shop lanes, effects, and access rules.
+- **sim-lib-auto-diag** -- a safe diagnostic fabric that lets SIM read modeled vehicle data and replay it exactly.
+- **sim-lib-auto-vendor** -- a manifest-driven vendor engine that keeps vehicle-side actions behind explicit proof gates.
+
 ### codecs
 
 - **sim-codec** -- It is the shared workshop that lets every SIM format read text or bytes in and write them back out.
@@ -106,7 +113,9 @@ piece gives you.
 - **sim-codec-doc** -- It reads and writes Markdown, Typst, AsciiDoc, and LaTeX as one structured document value.
 - **sim-codec-json** -- It reads and writes any value as JSON, so SIM data flows through the world's most common interchange format.
 - **sim-codec-lisp** -- It reads and writes values in parenthesized s-expression text, the plain nested form where structure is spelled out with brackets.
+- **sim-codec-lua** -- It gives SIM a bounded Lua chunk reader and writer that keeps source tied to the shared expression graph.
 - **sim-codec-mcp** -- It reads and writes the message envelopes of the Model Context Protocol, checking each one is well formed.
+- **sim-codec-pratt** -- It gives SIM codecs a shared way to group infix tokens into expression trees.
 - **sim-test-support** -- It is the shared set of helpers the SIM formats use to test that they read and write values correctly.
 - **sim-wasm-abi** -- It is the shared handshake that lets SIM pass values to and from sandboxed WebAssembly modules.
 
@@ -269,6 +278,7 @@ piece gives you.
 - **sim-lib-view-bridge** -- it lets people review and change BRIDGE packets in the same form agents use.
 - **sim-lib-view-codec** -- it shows one value written several ways at once and lets you inspect how it matches a shape.
 - **sim-lib-view-daw** -- it brings a full music studio -- timeline, mixer, effects, and synths -- into the browser workspace.
+- **sim-lib-view-device** -- it turns open surface claims into a clear device envelope, so small screens and wearable edges degrade honestly.
 - **sim-lib-view-doc** -- it is a writing surface where article structure, equations, figures, source text, and live results stay together.
 - **sim-lib-view-math** -- it turns numbers, matrices, and formulas into plots and grids you can see and adjust.
 - **sim-lib-view-wasm-frame** -- it is the local helper that renders a value to a screen picture, folds your gestures into edits, and commits them in place.
@@ -468,6 +478,32 @@ A stand-in for PortAudio, the portable sound layer, that lets SIM play and be te
 
 This crate models PortAudio, a widely used portable sound layer that runs across many operating systems, entirely in Rust. It binds to no library and touches no real device; instead it serves a steady, made-up default output that behaves the same every run. It presents PortAudio devices in the shared stream-host shape SIM uses across backends, bridges host callbacks into the audio graph, and records the backend priority the sound bootstrap follows when choosing a device. Because there is nothing to install and no hardware to open, an audio project builds and validates anywhere, while a native adapter can later fill the same model from a real PortAudio installation.
 
+### sim-auto
+
+#### sim-codec-uds
+
+a safe diagnostic byte-frame reader for automotive UDS and OBD-II data.
+
+It turns small diagnostic byte frames into SIM records that tools can inspect, compare, replay, and encode again. Read-DID requests, OBD-II mode requests, and trouble-code responses all become structured data with explicit status bits instead of opaque byte strings.
+
+#### sim-lib-auto-core
+
+the automotive vocabulary SIM uses to name vehicles, shop lanes, effects, and access rules.
+
+It gives automotive work a shared set of names for modeled vehicles, diagnostics, status bits, service channels, shop capabilities, transport endpoints, and diagnostic sessions. That shared vocabulary makes experiments easier to compare and easier to review because every piece describes the same kind of thing in the same way.
+
+#### sim-lib-auto-diag
+
+a safe diagnostic fabric that lets SIM read modeled vehicle data and replay it exactly.
+
+It gives automotive tools a vehicle-shaped eval target with synthetic ECUs, trouble codes, PID values, freeze frames, and replayable diagnostic answers. A session chooses modeled data, a cassette, or a named local bridge, while capability checks decide which operations can actually run.
+
+#### sim-lib-auto-vendor
+
+a manifest-driven vendor engine that keeps vehicle-side actions behind explicit proof gates.
+
+It turns an automotive site manifest into a runnable SIM site without linking a proprietary SDK. A modeled bridge answers requests for tests and fixtures, while the same request shape can point at a host bridge outside the crate.
+
 ### sim-citizen
 
 #### sim-citizen
@@ -562,11 +598,23 @@ It reads and writes values in parenthesized s-expression text, the plain nested 
 
 This is the bracket-and-list surface for SIM. It reads text written as nested parenthesized forms and turns it into a checked value, and it writes any value back out in that same clear, nested style. When it writes, it pays attention to the setting -- whether the value is meant to be run, quoted, kept as plain data, or used as a pattern -- and shapes the text to suit. Because it covers the full range of values rather than one narrow kind, anything the runtime can hold travels through it and comes back with the same meaning. The nested form makes the shape of a value visible right on the page, which is why it doubles as a faithful, readable way to store and inspect data.
 
+#### sim-codec-lua
+
+It gives SIM a bounded Lua chunk reader and writer that keeps source tied to the shared expression graph.
+
+This crate recognizes Lua chunks, preserves the spelling of source-level values, and groups operators with Lua precedence. It covers the statement shapes builders expect in real scripts: local attributes, assignment, conditionals, loops, function declarations, returns, labels, and gotos, while keeping comments and source spans available to located and tree lanes.
+
 #### sim-codec-mcp
 
 It reads and writes the message envelopes of the Model Context Protocol, checking each one is well formed.
 
 The Model Context Protocol is a standard way for tools and models to exchange messages -- requests, notifications, replies, and errors, each wrapped in a JSON-RPC envelope. This reads one such envelope at a time and turns it into a checked value, and writes a value back out as a proper envelope. Its whole job is that envelope: confirming it is complete and correctly shaped, and translating faithfully between the wire message and the runtime's own form. It deliberately leaves the bigger questions -- how a message is routed, how it travels, what it triggers -- to other parts of the system. That narrow focus means you can trust that any envelope passing through has been validated, with mistakes caught at the door.
+
+#### sim-codec-pratt
+
+It gives SIM codecs a shared way to group infix tokens into expression trees.
+
+This crate keeps precedence parsing in one place for text surfaces that use infix operators. A codec supplies its own lexer and operator table, then receives a located expression tree with the same grouping rules, source spans, and resource limits each time. That keeps language-specific crates focused on their syntax while the common parser handles the careful parts of binding, calls, prefixes, postfixes, and nested input.
 
 #### sim-test-support
 
@@ -1721,6 +1769,12 @@ Open a single value and see it rendered side by side in several notations -- a L
 it brings a full music studio -- timeline, mixer, effects, and synths -- into the browser workspace.
 
 This lens family opens the SIM audio stack as a working studio. You arrange clips on a timeline, ride faders on mixer strips, watch live meters move, chain effect plugins in a rack, and shape sounds on synth panels with knobs and sliders. A modulation grid lets one control drive another, and you can read the signal as a waveform or a frequency spectrum. Every twist of a knob and every clip you move is committed as a checked edit against the real session, so the sound you hear reflects the actual saved arrangement. There is no separate audio model hiding behind the panels.
+
+#### sim-lib-view-device
+
+it turns open surface claims into a clear device envelope, so small screens and wearable edges degrade honestly.
+
+Every surface can say what it can show, sense, emit, and refresh without becoming a hard-coded device family. This crate reads those claims into one shared envelope that ranks the surface by what is actually present. A watch, glasses display, phone relay, or desktop pane can all be compared through the same ladder, while still carrying their own open details.
 
 #### sim-lib-view-doc
 
