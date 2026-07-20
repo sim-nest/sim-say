@@ -93,6 +93,7 @@ piece gives you.
 
 ### auto
 
+- **sim-auto** -- A modeled auto-bay command that boots through SIM's loader.
 - **sim-codec-uds** -- a safe diagnostic byte-frame reader for automotive UDS and OBD-II data.
 - **sim-lib-auto-core** -- the automotive vocabulary SIM uses to name vehicles, shop lanes, effects, and access rules.
 - **sim-lib-auto-diag** -- a safe diagnostic fabric that lets SIM read modeled vehicle data and replay it exactly.
@@ -100,6 +101,7 @@ piece gives you.
 - **sim-lib-auto-parts** -- a modeled parts catalog and ordering layer that keeps supplier effects reviewable.
 - **sim-lib-auto-vehicle** -- a vehicle identity lookup layer that keeps workshop data sources behind explicit network contracts.
 - **sim-lib-auto-vendor** -- a manifest-driven vendor engine that keeps vehicle-side actions behind explicit proof gates.
+- **sim-lib-view-bay** -- A modeled repair bay Scene with checked operator actions.
 
 ### codecs
 
@@ -484,6 +486,12 @@ This crate models PortAudio, a widely used portable sound layer that runs across
 
 ### sim-auto
 
+#### sim-auto
+
+A modeled auto-bay command that boots through SIM's loader.
+
+It gives technicians and tests a simple way to open the public modeled bay, read the primary fault, and inspect the available bay actions from a command line. The command is backed by a loaded SIM library instead of a private runtime path, so it follows the same contract as other product commands.
+
 #### sim-codec-uds
 
 a safe diagnostic byte-frame reader for automotive UDS and OBD-II data.
@@ -525,6 +533,12 @@ It gives SIM a safe way to turn a plate label or VIN label into the shared vehic
 a manifest-driven vendor engine that keeps vehicle-side actions behind explicit proof gates.
 
 It turns an automotive site manifest into a runnable SIM site without linking a proprietary SDK. A modeled bridge answers requests for tests and fixtures, while the same request shape can point at a host bridge outside the crate.
+
+#### sim-lib-view-bay
+
+A modeled repair bay Scene with checked operator actions.
+
+It gathers the vehicle, selected site, faults, repair note, parts cart, coding state, flash gate, and job timeline into one value a SIM surface can render. The same package also names the operator actions the bay accepts, so a tablet, TUI, or browser can drive the modeled shop flow through checked Intent values.
 
 ### sim-citizen
 
