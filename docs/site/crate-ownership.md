@@ -36,6 +36,7 @@
 | `sim-codec-uds` | [sim-auto](../repos/sim-auto.md) |
 | `sim-lib-auto-core` | [sim-auto](../repos/sim-auto.md) |
 | `sim-lib-auto-diag` | [sim-auto](../repos/sim-auto.md) |
+| `sim-lib-auto-vehicle` | [sim-auto](../repos/sim-auto.md) |
 | `sim-lib-auto-vendor` | [sim-auto](../repos/sim-auto.md) |
 | `sim-citizen` | [sim-citizen](../repos/sim-citizen.md) |
 | `sim-citizen-derive` | [sim-citizen](../repos/sim-citizen.md) |

@@ -96,6 +96,7 @@ piece gives you.
 - **sim-codec-uds** -- a safe diagnostic byte-frame reader for automotive UDS and OBD-II data.
 - **sim-lib-auto-core** -- the automotive vocabulary SIM uses to name vehicles, shop lanes, effects, and access rules.
 - **sim-lib-auto-diag** -- a safe diagnostic fabric that lets SIM read modeled vehicle data and replay it exactly.
+- **sim-lib-auto-vehicle** -- a vehicle identity lookup layer that keeps workshop data sources behind explicit network contracts.
 - **sim-lib-auto-vendor** -- a manifest-driven vendor engine that keeps vehicle-side actions behind explicit proof gates.
 
 ### codecs
@@ -236,6 +237,7 @@ piece gives you.
 - **sim-lib-stream-clock** -- The part that lines up a stream of data with real time or musical beats.
 - **sim-lib-stream-combinators** -- The building blocks for reshaping and combining streams of data as they flow.
 - **sim-lib-stream-core** -- The shared shape for a run of changing data, so anything that moves can be watched packet by packet.
+- **sim-lib-stream-device** -- A hardware-free device sample lane, so sensors can be modeled and tested before any real device is attached.
 - **sim-lib-stream-prelude** -- The ready-made bundle that makes SIM's whole streaming toolkit available in one install.
 - **sim-lib-topology** -- The part that turns a described network of connected steps into a checked, ready-to-run plan.
 - **sim-lib-stream-host** -- It plugs SIM's live streams into the real audio and MIDI gear on your machine and across your network.
@@ -497,6 +499,12 @@ It gives automotive work a shared set of names for modeled vehicles, diagnostics
 a safe diagnostic fabric that lets SIM read modeled vehicle data and replay it exactly.
 
 It gives automotive tools a vehicle-shaped eval target with synthetic ECUs, trouble codes, PID values, freeze frames, and replayable diagnostic answers. A session chooses modeled data, a cassette, or a named local bridge, while capability checks decide which operations can actually run.
+
+#### sim-lib-auto-vehicle
+
+a vehicle identity lookup layer that keeps workshop data sources behind explicit network contracts.
+
+It gives SIM a safe way to turn a plate label or VIN label into the shared vehicle identity used by diagnostics and vendor sites. Modeled records cover tests and examples, while host-owned bridges can stand in for HaynesPro or biluppgifter.se without putting live endpoints or private vehicle data in the crate.
 
 #### sim-lib-auto-vendor
 
@@ -1705,6 +1713,12 @@ Once data is moving as a stream, you rarely want it untouched. This crate suppli
 The shared shape for a run of changing data, so anything that moves can be watched packet by packet.
 
 A stream in SIM is data that arrives over time -- audio samples, events, diagnostics, model output -- and this crate defines the common container for it. Every stream carries a small header describing what it is and which direction it flows, then delivers its contents as a sequence of packets. Each packet is a self-describing unit you can observe, count, buffer, and read back without guessing its layout. Buffers hold packets under a stated overflow policy, an inspector reports on what passed through, and a cassette captures a whole run so a finished stream can be stored and revisited. It is deliberately small: one honest value surface every other stream part builds on.
+
+#### sim-lib-stream-device
+
+A hardware-free device sample lane, so sensors can be modeled and tested before any real device is attached.
+
+Device work often stalls on access to physical gear. This crate gives each device stream a small shared sample shape with a stable kind tag, a sequence number, and strict round-trip rules. A modeled source produces those samples from a counter, so a glasses, watch, badge, or lab rig can ship tests that never depend on a clock, network, driver, or sensor.
 
 #### sim-lib-stream-prelude
 
