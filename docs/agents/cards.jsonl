@@ -54,7 +54,7 @@
 {"card": {"id": "cookbook/codec/doc", "kind": "cookbook-recipe", "owner": "sim-codec-doc", "summary": "Document decoding and provenance-preserving chunk descriptors."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/json", "kind": "cookbook-recipe", "owner": "sim-codec-json", "summary": "Tagged JSON expression forms."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/lisp", "kind": "cookbook-recipe", "owner": "sim-codec-lisp", "summary": "Lisp surface forms for SIM expressions."}, "repo": "sim-codecs"}
-{"card": {"id": "cookbook/codec/lua", "kind": "cookbook-recipe", "owner": "sim-codec-lua", "summary": "Lua expression parsing recipes for SIM codec surfaces."}, "repo": "sim-codecs"}
+{"card": {"id": "cookbook/codec/lua", "kind": "cookbook-recipe", "owner": "sim-codec-lua", "summary": "Lua expression parsing and round-trip recipes for SIM codec surfaces."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/mcp", "kind": "cookbook-recipe", "owner": "sim-codec-mcp", "summary": "MCP JSON-RPC request, response, notification, and error envelopes."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/pratt", "kind": "cookbook-recipe", "owner": "sim-codec-pratt", "summary": "Shared Pratt parsing substrate for codec lexers."}, "repo": "sim-codecs"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-codecs"}
@@ -223,7 +223,7 @@
 {"card": {"id": "cookbook/lang/genconf", "kind": "cookbook-recipe", "owner": "sim-lib-lang-genconf", "summary": "Shared expression-space generator and codec registry recipes."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/lang/islisp", "kind": "cookbook-recipe", "owner": "sim-lib-lang-islisp", "summary": "ISLISP profile descriptors and dispatch fidelity."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/lang/julia", "kind": "cookbook-recipe", "owner": "sim-lib-lang-julia", "summary": "Julia core profile descriptors and dispatch behavior."}, "repo": "sim-runtime"}
-{"card": {"id": "cookbook/lang/lua", "kind": "cookbook-recipe", "owner": "sim-lib-lang-lua", "summary": "Lua core profile descriptors, tables, and coroutines."}, "repo": "sim-runtime"}
+{"card": {"id": "cookbook/lang/lua", "kind": "cookbook-recipe", "owner": "sim-lib-lang-lua", "summary": "Lua core profile descriptors, source conformance cases, tables, and coroutines."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/lang/matrix", "kind": "cookbook-recipe", "owner": "sim-lib-lang-matrix", "summary": "Shared conformance matrix assembly recipes."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/lang/ruby", "kind": "cookbook-recipe", "owner": "sim-lib-lang-ruby", "summary": "Ruby DSL profile descriptors and block-control behavior."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/lang/scheme", "kind": "cookbook-recipe", "owner": "sim-lib-lang-scheme", "summary": "R7RS-small profile descriptors and reader surface."}, "repo": "sim-runtime"}
