@@ -290,6 +290,7 @@ piece gives you.
 - **sim-lib-view-doc** -- it is a writing surface where article structure, equations, figures, source text, and live results stay together.
 - **sim-lib-view-math** -- it turns numbers, matrices, and formulas into plots and grids you can see and adjust.
 - **sim-lib-view-wasm-frame** -- it is the local helper that renders a value to a screen picture, folds your gestures into edits, and commits them in place.
+- **sim-lib-view-wrist** -- Round watch glance budgets that reuse the shared device glance path for haptic wrist feedback.
 - **sim-lib-web-bridge** -- it is the pipe that carries your edits out and the fresh pictures back, no matter where the runtime actually runs.
 - **sim-lib-web-layout** -- it holds the whole arrangement of your workspace -- panes, tabs, and docks -- as data you can save and restore.
 - **sim-web-shell** -- it is the program you run to open the SIM workspace in a browser.
@@ -1849,6 +1850,12 @@ This lens family makes math visual and hands-on. Numeric series and functions be
 it is the local helper that renders a value to a screen picture, folds your gestures into edits, and commits them in place.
 
 This crate is the plain glue that a browser shell leans on to do the everyday view loop against a value held right here in the process. It renders a value into the shared scene picture, gathers raw gestures and folds them into clear edit requests, applies an accepted edit to the value, and reports back the small difference so the screen can update just the part that changed. It shares the same view, edit, and scene rules the rest of the workspace uses, so its behavior lines up with the browser adapters without carrying any separate display logic of its own.
+
+#### sim-lib-view-wrist
+
+Round watch glance budgets that reuse the shared device glance path for haptic wrist feedback.
+
+Small watch faces need the same semantic card as every other glance device, but with stricter space and a local haptic response. This crate names those wrist limits directly: a compact round-face budget, a larger round-face budget, and the acknowledgement timing used when the wearer taps. The watch path stays a configuration layer over the shared device glance path, so the same reduced card can feed a glasses HUD, a monochrome fixture, or a wrist display without a second reducer.
 
 #### sim-lib-web-bridge
 

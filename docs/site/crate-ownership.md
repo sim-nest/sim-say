@@ -255,6 +255,7 @@
 | `sim-lib-view-doc` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-view-math` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-view-wasm-frame` | [sim-web](../repos/sim-web.md) |
+| `sim-lib-view-wrist` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-web-bridge` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-web-layout` | [sim-web](../repos/sim-web.md) |
 | `sim-web-shell` | [sim-web](../repos/sim-web.md) |
