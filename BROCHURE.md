@@ -119,9 +119,9 @@ piece gives you.
 - **sim-codec-doc** -- It reads and writes Markdown, Typst, AsciiDoc, and LaTeX as one structured document value.
 - **sim-codec-json** -- It reads and writes any value as JSON, so SIM data flows through the world's most common interchange format.
 - **sim-codec-lisp** -- It reads and writes values in parenthesized s-expression text, the plain nested form where structure is spelled out with brackets.
-- **sim-codec-lua** -- It gives SIM a bounded Lua chunk reader and writer that keeps source tied to the shared expression graph.
+- **sim-codec-lua** -- It lets SIM read Lua chunks into shared expression forms with source identity kept nearby.
 - **sim-codec-mcp** -- It reads and writes the message envelopes of the Model Context Protocol, checking each one is well formed.
-- **sim-codec-pratt** -- It gives SIM codecs a shared way to group infix tokens into expression trees.
+- **sim-codec-pratt** -- It gives SIM codecs one shared way to group infix tokens into expression trees.
 - **sim-test-support** -- It is the shared set of helpers the SIM formats use to test that they read and write values correctly.
 - **sim-wasm-abi** -- It is the shared handshake that lets SIM pass values to and from sandboxed WebAssembly modules.
 
@@ -209,7 +209,7 @@ piece gives you.
 - **sim-lib-lang-genconf** -- It generates a steady, repeatable set of test inputs for confirming that language surfaces behave correctly.
 - **sim-lib-lang-islisp** -- It lets you write for SIM in ISLISP, the small standardized Lisp with a deliberately compact core.
 - **sim-lib-lang-julia** -- It lets you write for SIM in Julia style, the notation favored for technical and numerical work.
-- **sim-lib-lang-lua** -- It lets you write for SIM in Lua style, the small, approachable scripting notation many people already know.
+- **sim-lib-lang-lua** -- It lets SIM run Lua-shaped source on the shared runtime with clear boundaries around host effects.
 - **sim-lib-lang-matrix** -- It gathers every language surface and checks them all against one shared standard so they agree.
 - **sim-lib-lang-prolog** -- It lets you write for SIM in Prolog style, stating facts and rules and letting the system find the answers.
 - **sim-lib-lang-ruby** -- It lets you write for SIM in an expressive Ruby style, with the readable, block-friendly flavor Ruby is known for.
@@ -643,9 +643,9 @@ This is the bracket-and-list surface for SIM. It reads text written as nested pa
 
 #### sim-codec-lua
 
-It gives SIM a bounded Lua chunk reader and writer that keeps source tied to the shared expression graph.
+It lets SIM read Lua chunks into shared expression forms with source identity kept nearby.
 
-This crate recognizes Lua chunks, preserves the spelling of source-level values, and groups operators with Lua precedence. It covers the statement shapes builders expect in real scripts: local attributes, assignment, conditionals, loops, function declarations, returns, labels, and gotos, while keeping comments and source spans available to located and tree lanes.
+This crate recognizes Lua chunks, preserves the spelling of source-level values, and groups operators with Lua precedence. It covers the statement shapes builders expect in real scripts: local attributes, assignment, conditionals, loops, function declarations, returns, labels, and gotos. Plain, located, and tree lanes keep comments and source spans available for diagnostics, conformance checks, and faithful replay.
 
 #### sim-codec-mcp
 
@@ -655,9 +655,9 @@ The Model Context Protocol is a standard way for tools and models to exchange me
 
 #### sim-codec-pratt
 
-It gives SIM codecs a shared way to group infix tokens into expression trees.
+It gives SIM codecs one shared way to group infix tokens into expression trees.
 
-This crate keeps precedence parsing in one place for text surfaces that use infix operators. A codec supplies its own lexer and operator table, then receives a located expression tree with the same grouping rules, source spans, and resource limits each time. That keeps language-specific crates focused on their syntax while the common parser handles the careful parts of binding, calls, prefixes, postfixes, and nested input.
+This crate keeps precedence parsing in one place for text surfaces that use infix operators. A codec supplies its own lexer and operator table, then receives a located expression tree with the same grouping rules, source spans, and resource limits each time. That keeps language-specific crates focused on their syntax while the common parser handles binding strength, calls, prefixes, postfixes, and nested input.
 
 #### sim-test-support
 
@@ -1575,9 +1575,9 @@ This library gives SIM a Julia face. Julia's notation is popular with people doi
 
 #### sim-lib-lang-lua
 
-It lets you write for SIM in Lua style, the small, approachable scripting notation many people already know.
+It lets SIM run Lua-shaped source on the shared runtime with clear boundaries around host effects.
 
-This library gives SIM a Lua face. Lua is known for being small, easy to pick up, and pleasant for scripting, and this profile lets you write in that light, readable style and have it run on SIM. It is a front for reading and writing in the Lua manner, not a separate interpreter carried along inside; the meaning is held by SIM's shared expression graph underneath. You get the gentle learning curve and clean look Lua is loved for, while what you write joins the same runtime that every other SIM surface uses.
+This library gives SIM a Lua face that reads source, evaluates ordinary chunks, and shares the same runtime organs as the other language profiles. Tables, closures, metatables, coroutines, string patterns, package lookup, math, and safe debug reporting all land as common SIM behavior instead of a separate embedded interpreter. Host-facing calls are guarded by capabilities, so scripts stay useful without gaining ambient authority.
 
 #### sim-lib-lang-matrix
 
