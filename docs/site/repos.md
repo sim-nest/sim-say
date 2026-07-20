@@ -2,7 +2,7 @@
 
 | Repository | Commit | Contracts |
 | --- | --- | --- |
-| [sim-agent-net](../repos/sim-agent-net.md) | `02149da17de052985b6fe8701188533e54ffc7d9` | [JSON](../contracts/sim-agent-net/repo-contract.json) |
+| [sim-agent-net](../repos/sim-agent-net.md) | `31c1653f5c5c265b5bc984701bd3dcf130ee2387` | [JSON](../contracts/sim-agent-net/repo-contract.json) |
 | [sim-audio-daw](../repos/sim-audio-daw.md) | `cec26448e4c23e0848909a9439d42691251d281b` | [JSON](../contracts/sim-audio-daw/repo-contract.json) |
 | [sim-auto](../repos/sim-auto.md) | `91b4e09e4f7cde9ca8171dc3f246eb7ad40b7e7f` | [JSON](../contracts/sim-auto/repo-contract.json) |
 | [sim-citizen](../repos/sim-citizen.md) | `3e6c292eaca447ada0034293643f1c54f4b1aa26` | [JSON](../contracts/sim-citizen/repo-contract.json) |
@@ -23,4 +23,4 @@
 | [sim-stream](../repos/sim-stream.md) | `4dda4235d6ef91b28035882cd0dcd8d7d721cfb2` | [JSON](../contracts/sim-stream/repo-contract.json) |
 | [sim-stream-host](../repos/sim-stream-host.md) | `1691ccdb5549d21d9339330c4cee20fb010a612e` | [JSON](../contracts/sim-stream-host/repo-contract.json) |
 | [sim-tooling](../repos/sim-tooling.md) | `d1e9f3ea6861b3b2b1cfd142124c4556de1a0c74` | [JSON](../contracts/sim-tooling/repo-contract.json) |
-| [sim-web](../repos/sim-web.md) | `fc6deef8af2472d88009e7f22c1b12b56076ebd3` | [JSON](../contracts/sim-web/repo-contract.json) |
+| [sim-web](../repos/sim-web.md) | `6a77c077262e12fdecb8913f688040e7c4da8575` | [JSON](../contracts/sim-web/repo-contract.json) |
