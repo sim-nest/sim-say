@@ -4,7 +4,7 @@
 | --- | --- | --- |
 | [sim-agent-net](../repos/sim-agent-net.md) | `d32e152dd8a2e58a06df2fec152d846703ef7d67` | [JSON](../contracts/sim-agent-net/repo-contract.json) |
 | [sim-audio-daw](../repos/sim-audio-daw.md) | `cec26448e4c23e0848909a9439d42691251d281b` | [JSON](../contracts/sim-audio-daw/repo-contract.json) |
-| [sim-auto](../repos/sim-auto.md) | `6e8c1dfd59e210e0a6d36a1ae9548a3c26ecc0dc` | [JSON](../contracts/sim-auto/repo-contract.json) |
+| [sim-auto](../repos/sim-auto.md) | `01d16fc54d9ee122ebf3307956cfd74f7e5771f3` | [JSON](../contracts/sim-auto/repo-contract.json) |
 | [sim-citizen](../repos/sim-citizen.md) | `3e6c292eaca447ada0034293643f1c54f4b1aa26` | [JSON](../contracts/sim-citizen/repo-contract.json) |
 | [sim-codecs](../repos/sim-codecs.md) | `6e4ce20155849fe1aa9a2c65fe34acd146333d9a` | [JSON](../contracts/sim-codecs/repo-contract.json) |
 | [sim-discrete](../repos/sim-discrete.md) | `e981955bd984a1e7ce40913fbac7bfd9aa64fc72` | [JSON](../contracts/sim-discrete/repo-contract.json) |

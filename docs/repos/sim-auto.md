@@ -1,6 +1,6 @@
 # sim-auto
 
-Published commit: `6e8c1dfd59e210e0a6d36a1ae9548a3c26ecc0dc`.
+Published commit: `01d16fc54d9ee122ebf3307956cfd74f7e5771f3`.
 
 ## Crates
 
@@ -9,6 +9,7 @@ Published commit: `6e8c1dfd59e210e0a6d36a1ae9548a3c26ecc0dc`.
 - `sim-lib-auto-core`
 - `sim-lib-auto-diag`
 - `sim-lib-auto-info`
+- `sim-lib-auto-order`
 - `sim-lib-auto-parts`
 - `sim-lib-auto-vehicle`
 - `sim-lib-auto-vendor`
