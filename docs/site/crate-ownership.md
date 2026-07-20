@@ -240,6 +240,7 @@
 | `sim-lib-stream-core` | [sim-stream](../repos/sim-stream.md) |
 | `sim-lib-stream-device` | [sim-stream](../repos/sim-stream.md) |
 | `sim-lib-stream-prelude` | [sim-stream](../repos/sim-stream.md) |
+| `sim-lib-stream-wrist` | [sim-stream](../repos/sim-stream.md) |
 | `sim-lib-topology` | [sim-stream](../repos/sim-stream.md) |
 | `sim-lib-stream-host` | [sim-stream-host](../repos/sim-stream-host.md) |
 | `xtask` | [sim-tooling](../repos/sim-tooling.md) |

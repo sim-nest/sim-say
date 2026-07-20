@@ -450,6 +450,7 @@
 {"card": {"id": "cookbook/stream-core-shapes", "kind": "cookbook-recipe", "owner": "sim-lib-stream-core", "summary": "Stream metadata and descriptor shapes."}, "repo": "sim-stream"}
 {"card": {"id": "cookbook/stream-device", "kind": "cookbook-recipe", "owner": "sim-lib-stream-device", "summary": "Hardware-free device sample descriptors and modeled sources."}, "repo": "sim-stream"}
 {"card": {"id": "cookbook/stream-prelude", "kind": "cookbook-recipe", "owner": "sim-lib-stream-prelude", "summary": "Lisp-facing memory stream operations and stream Cards."}, "repo": "sim-stream"}
+{"card": {"id": "cookbook/stream-wrist", "kind": "cookbook-recipe", "owner": "sim-lib-stream-wrist", "summary": "Worn-device sample descriptors and modeled wrist sources."}, "repo": "sim-stream"}
 {"card": {"id": "cookbook/topology", "kind": "cookbook-recipe", "owner": "sim-lib-topology", "summary": "Data-authored topology graphs, packages, validation, and replay."}, "repo": "sim-stream"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-stream"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-stream-host"}
