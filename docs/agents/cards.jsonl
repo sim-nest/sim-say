@@ -373,6 +373,7 @@
 {"card": {"id": "citizen/stream-bridge/LiftMidiOptions", "kind": "citizen-class", "owner": "sim-lib-stream-bridge", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/stream-bridge/RenderOptions", "kind": "citizen-class", "owner": "sim-lib-stream-bridge", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/stream/Clock", "kind": "citizen-class", "owner": "sim-lib-stream-clock", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/stream/DeviceSample", "kind": "citizen-class", "owner": "sim-lib-stream-device", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/stream/Metadata", "kind": "citizen-class", "owner": "sim-lib-stream-core", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/stream/Packet", "kind": "citizen-class", "owner": "sim-lib-stream-core", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/stream/PcmFormat", "kind": "citizen-class", "owner": "sim-lib-stream-audio", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
