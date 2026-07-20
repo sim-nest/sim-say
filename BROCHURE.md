@@ -96,6 +96,7 @@ piece gives you.
 - **sim-codec-uds** -- a safe diagnostic byte-frame reader for automotive UDS and OBD-II data.
 - **sim-lib-auto-core** -- the automotive vocabulary SIM uses to name vehicles, shop lanes, effects, and access rules.
 - **sim-lib-auto-diag** -- a safe diagnostic fabric that lets SIM read modeled vehicle data and replay it exactly.
+- **sim-lib-auto-info** -- a modeled repair-information layer that turns safe workshop fixtures into ranked SIM documents.
 - **sim-lib-auto-vehicle** -- a vehicle identity lookup layer that keeps workshop data sources behind explicit network contracts.
 - **sim-lib-auto-vendor** -- a manifest-driven vendor engine that keeps vehicle-side actions behind explicit proof gates.
 
@@ -499,6 +500,12 @@ It gives automotive work a shared set of names for modeled vehicles, diagnostics
 a safe diagnostic fabric that lets SIM read modeled vehicle data and replay it exactly.
 
 It gives automotive tools a vehicle-shaped eval target with synthetic ECUs, trouble codes, PID values, freeze frames, and replayable diagnostic answers. A session chooses modeled data, a cassette, or a named local bridge, while capability checks decide which operations can actually run.
+
+#### sim-lib-auto-info
+
+a modeled repair-information layer that turns safe workshop fixtures into ranked SIM documents.
+
+It gives automotive workflows a shared way to ask for repair guidance without copying vendor manuals into the public tree. Modeled WIS, ISTA, VIDA, ESI[tronic], HaynesPro, and shop-authored entries are ordinary SIM documents, so they can be selected, inspected, and rendered like other document values.
 
 #### sim-lib-auto-vehicle
 
