@@ -244,6 +244,7 @@ piece gives you.
 - **sim-lib-stream-core** -- The shared shape for a run of changing data, so anything that moves can be watched packet by packet.
 - **sim-lib-stream-device** -- A hardware-free device sample lane, so sensors can be modeled and tested before any real device is attached.
 - **sim-lib-stream-prelude** -- The ready-made bundle that makes SIM's whole streaming toolkit available in one install.
+- **sim-lib-stream-wrist** -- Watch and wearable sensor streams that are strict enough for tests without requiring a real wrist device.
 - **sim-lib-topology** -- The part that turns a described network of connected steps into a checked, ready-to-run plan.
 - **sim-lib-stream-host** -- It plugs SIM's live streams into the real audio and MIDI gear on your machine and across your network.
 
@@ -1760,6 +1761,12 @@ Device work often stalls on access to physical gear. This crate gives each devic
 The ready-made bundle that makes SIM's whole streaming toolkit available in one install.
 
 This is the single package that gathers the streaming parts -- core packets, audio adapters, and combinators -- into one library the runtime can load at once. Installing it registers a set of named, permission-gated operations: open a deterministic in-memory MIDI or PCM source or sink, run a source-to-sink pipeline, apply combinator stages to reshape the flow, and browse any live stream as a card you can read. Each stream you open is tracked through a single handle that threads every operation, so opening, pumping, transforming, and inspecting all speak of the same thing. Because access is capability-gated, a host decides exactly which stream powers a given run may use.
+
+#### sim-lib-stream-wrist
+
+Watch and wearable sensor streams that are strict enough for tests without requiring a real wrist device.
+
+A wearable can report heart rate, motion, GPS, battery, connection state, touch, buttons, and other wrist-side signals. This crate puts those signals into one checked stream event shape with a sensor tag, sequence number, confidence score, and payload. Modeled sources produce repeatable samples from an index, so demos and CI can exercise wrist behavior without a watch, driver, clock, random seed, or network.
 
 #### sim-lib-topology
 
