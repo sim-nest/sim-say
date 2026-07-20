@@ -36,6 +36,7 @@
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-auto"}
 {"card": {"id": "cookbook/auto/diag", "kind": "cookbook-recipe", "owner": "sim-lib-auto-diag", "summary": "Modeled automotive diagnostic sessions as replayable SIM fabric."}, "repo": "sim-auto"}
 {"card": {"id": "cookbook/codec/uds", "kind": "cookbook-recipe", "owner": "sim-codec-uds", "summary": "Automotive diagnostic byte frames as SIM records."}, "repo": "sim-auto"}
+{"card": {"id": "cookbook/sim-auto", "kind": "cookbook-recipe", "owner": "sim-auto", "summary": "Runnable recipes for the modeled automotive lanes, sites, and work-order story."}, "repo": "sim-auto"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-auto"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-citizen"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-citizen"}
