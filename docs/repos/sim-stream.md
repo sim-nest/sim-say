@@ -1,6 +1,6 @@
 # sim-stream
 
-Published commit: `0b49ecd9304b65f2901c31ea7b49ca0890d6ac4b`.
+Published commit: `4dda4235d6ef91b28035882cd0dcd8d7d721cfb2`.
 
 ## Crates
 
@@ -9,6 +9,7 @@ Published commit: `0b49ecd9304b65f2901c31ea7b49ca0890d6ac4b`.
 - `sim-lib-stream-clock`
 - `sim-lib-stream-combinators`
 - `sim-lib-stream-core`
+- `sim-lib-stream-device`
 - `sim-lib-stream-prelude`
 - `sim-lib-topology`
 

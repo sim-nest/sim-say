@@ -232,6 +232,7 @@
 | `sim-lib-stream-clock` | [sim-stream](../repos/sim-stream.md) |
 | `sim-lib-stream-combinators` | [sim-stream](../repos/sim-stream.md) |
 | `sim-lib-stream-core` | [sim-stream](../repos/sim-stream.md) |
+| `sim-lib-stream-device` | [sim-stream](../repos/sim-stream.md) |
 | `sim-lib-stream-prelude` | [sim-stream](../repos/sim-stream.md) |
 | `sim-lib-topology` | [sim-stream](../repos/sim-stream.md) |
 | `sim-lib-stream-host` | [sim-stream-host](../repos/sim-stream-host.md) |

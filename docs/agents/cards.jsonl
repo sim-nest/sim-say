@@ -444,6 +444,7 @@
 {"card": {"id": "cookbook/stream-clock", "kind": "cookbook-recipe", "owner": "sim-lib-stream-clock", "summary": "Clock charts, tick conversion, and tempo descriptors."}, "repo": "sim-stream"}
 {"card": {"id": "cookbook/stream-combinators", "kind": "cookbook-recipe", "owner": "sim-lib-stream-combinators", "summary": "Lazy stream transforms, recording, replay, and event algebra."}, "repo": "sim-stream"}
 {"card": {"id": "cookbook/stream-core-shapes", "kind": "cookbook-recipe", "owner": "sim-lib-stream-core", "summary": "Stream metadata and descriptor shapes."}, "repo": "sim-stream"}
+{"card": {"id": "cookbook/stream-device", "kind": "cookbook-recipe", "owner": "sim-lib-stream-device", "summary": "Hardware-free device sample descriptors and modeled sources."}, "repo": "sim-stream"}
 {"card": {"id": "cookbook/stream-prelude", "kind": "cookbook-recipe", "owner": "sim-lib-stream-prelude", "summary": "Lisp-facing memory stream operations and stream Cards."}, "repo": "sim-stream"}
 {"card": {"id": "cookbook/topology", "kind": "cookbook-recipe", "owner": "sim-lib-topology", "summary": "Data-authored topology graphs, packages, validation, and replay."}, "repo": "sim-stream"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-stream"}
