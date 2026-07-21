@@ -4,5 +4,5 @@
 
 | Route | Title | Steps |
 | --- | --- | --- |
-| `route/check-sim-run-index` | Check the sim-run index fragment | `feature/sim-run/index`, `recipe/sim-run/publish-readiness/package-list` |
+| `route/check-sim-run-index` | Check the sim-run index fragment | `feature/sim-run/index`, `feature/sim-run/runtime-index`, `recipe/sim-run/publish-readiness/package-list` |
 | `route/start-a-sim-session` | Start an interactive SIM session | `feature/sim-run/bootloader`, `feature/sim-run/repl`, `recipe/sim-run/01-basics/version` |

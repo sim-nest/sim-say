@@ -200,6 +200,7 @@
 | `sim-run` | [sim-run](../repos/sim-run.md) |
 | `sim-run-core` | [sim-run](../repos/sim-run.md) |
 | `sim-run-loaders` | [sim-run](../repos/sim-run.md) |
+| `sim-lib-index` | [sim-run](../repos/sim-run.md) |
 | `sim-lib-repl` | [sim-run](../repos/sim-run.md) |
 | `sim-view-tty` | [sim-run](../repos/sim-run.md) |
 | `sim-lib-binding` | [sim-runtime](../repos/sim-runtime.md) |

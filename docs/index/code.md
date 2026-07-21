@@ -33,6 +33,7 @@
 | `crate/sim-lib-bridge` | `crate` | sim-lib-bridge | 1 |
 | `crate/sim-lib-cookbook` | `crate` | sim-lib-cookbook | 1 |
 | `crate/sim-lib-forge` | `crate` | sim-lib-forge | 1 |
+| `crate/sim-lib-index` | `crate` | sim-lib-index | 1 |
 | `crate/sim-lib-intent` | `crate` | sim-lib-intent | 1 |
 | `crate/sim-lib-mcp` | `crate` | sim-lib-mcp | 2 |
 | `crate/sim-lib-net-core` | `crate` | sim-lib-net-core | 0 |
@@ -58,7 +59,7 @@
 | `crate/sim-lib-web-layout` | `crate` | sim-lib-web-layout | 0 |
 | `crate/sim-macros` | `crate` | sim-macros | 0 |
 | `crate/sim-mcp-server` | `crate` | sim-mcp-server | 0 |
-| `crate/sim-run` | `crate` | sim-run | 4 |
+| `crate/sim-run` | `crate` | sim-run | 5 |
 | `crate/sim-run-core` | `crate` | sim-run-core | 0 |
 | `crate/sim-run-loaders` | `crate` | sim-run-loaders | 3 |
 | `crate/sim-shape` | `crate` | sim-shape | 0 |
@@ -88,7 +89,7 @@
 | `repo/sim-agent-net` | `repo` | sim-agent-net | 18 |
 | `repo/sim-codecs` | `repo` | sim-codecs | 21 |
 | `repo/sim-foundation` | `repo` | sim-foundation | 10 |
-| `repo/sim-run` | `repo` | sim-run | 7 |
+| `repo/sim-run` | `repo` | sim-run | 8 |
 | `repo/sim-shape` | `repo` | sim-shape | 5 |
 | `repo/sim-tooling` | `repo` | sim-tooling | 2 |
 | `repo/sim-web` | `repo` | sim-web | 18 |

@@ -7,6 +7,7 @@
 | [`feature/sim-run/bootloader`](features/feature--sim-run--bootloader.md) | `crate/sim-run-core` | 2 |
 | [`feature/sim-run/glasses`](features/feature--sim-run--glasses.md) | `crate/sim-run` | 0 |
 | [`feature/sim-run/index`](features/feature--sim-run--index.md) | `local/sim-run/crate/xtask` | 1 |
-| [`feature/sim-run/repl`](features/feature--sim-run--repl.md) | `crate/sim-lib-repl` | 0 |
+| [`feature/sim-run/repl`](features/feature--sim-run--repl.md) | `crate/sim-lib-repl` | 1 |
+| [`feature/sim-run/runtime-index`](features/feature--sim-run--runtime-index.md) | `crate/sim-lib-index` | 4 |
 | [`feature/sim-run/terminal-surface`](features/feature--sim-run--terminal-surface.md) | `crate/sim-view-tty` | 1 |
 | [`feature/sim-run/watch`](features/feature--sim-run--watch.md) | `crate/sim-run` | 0 |

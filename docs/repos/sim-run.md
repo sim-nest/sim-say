@@ -7,6 +7,7 @@ Published commit: `ea87d4f25d4b4f53ef93914070d09c765dd21eec`.
 - `sim-run`
 - `sim-run-core`
 - `sim-run-loaders`
+- `sim-lib-index`
 - `sim-lib-repl`
 - `sim-view-tty`
 

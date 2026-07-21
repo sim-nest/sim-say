@@ -7,7 +7,8 @@ Generated from `docs/index/index.cards.jsonl`.
 | `feature/sim-run/bootloader` | `crate/sim-run-core` | [features/feature--sim-run--bootloader.md](../index/features/feature--sim-run--bootloader.md) | 2 | Start product commands through the shared bootloader and loaded runtime libraries. |
 | `feature/sim-run/glasses` | `crate/sim-run` | [features/feature--sim-run--glasses.md](../index/features/feature--sim-run--glasses.md) | 0 | Start modeled or hardware-backed glasses plans through the shared command bootloader. |
 | `feature/sim-run/index` | `local/sim-run/crate/xtask` | [features/feature--sim-run--index.md](../index/features/feature--sim-run--index.md) | 1 | Expose generated package, card, surface, and recipe facts as a checked SIM Index fragment. |
-| `feature/sim-run/repl` | `crate/sim-lib-repl` | [features/feature--sim-run--repl.md](../index/features/feature--sim-run--repl.md) | 0 | Run a SIM read-eval-print loop through the loaded REPL library and command surface. |
+| `feature/sim-run/repl` | `crate/sim-lib-repl` | [features/feature--sim-run--repl.md](../index/features/feature--sim-run--repl.md) | 1 | Run a SIM read-eval-print loop through the loaded REPL library and command surface. |
+| `feature/sim-run/runtime-index` | `crate/sim-lib-index` | [features/feature--sim-run--runtime-index.md](../index/features/feature--sim-run--runtime-index.md) | 4 | Explore the merged SIM Index through the bootloader as stable tables and structured query output. |
 | `feature/sim-run/terminal-surface` | `crate/sim-view-tty` | [features/feature--sim-run--terminal-surface.md](../index/features/feature--sim-run--terminal-surface.md) | 1 | Render and interpret terminal view intents through the loaded TTY surface library. |
 | `feature/sim-run/watch` | `crate/sim-run` | [features/feature--sim-run--watch.md](../index/features/feature--sim-run--watch.md) | 0 | Start modeled, imported, or live watch plans through the shared command bootloader. |
 
@@ -18,6 +19,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `cli/atelier` | `cli` | `crate/sim-web-shell` |
 | `cli/browse` | `cli` | `crate/sim-web-shell` |
 | `cli/glasses` | `cli` | `crate/sim-run` |
+| `cli/index` | `cli` | `crate/sim-lib-index` |
 | `cli/mcp` | `cli` | `crate/sim-lib-mcp` |
 | `cli/repl` | `cli` | `crate/sim-lib-repl` |
 | `cli/serve` | `cli` | `crate/sim-web-shell` |

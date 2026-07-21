@@ -33,6 +33,7 @@
 | `crate/sim-lib-bridge` | `crate` | sim-lib-bridge |
 | `crate/sim-lib-cookbook` | `crate` | sim-lib-cookbook |
 | `crate/sim-lib-forge` | `crate` | sim-lib-forge |
+| `crate/sim-lib-index` | `crate` | sim-lib-index |
 | `crate/sim-lib-intent` | `crate` | sim-lib-intent |
 | `crate/sim-lib-mcp` | `crate` | sim-lib-mcp |
 | `crate/sim-lib-net-core` | `crate` | sim-lib-net-core |

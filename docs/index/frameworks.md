@@ -31,6 +31,7 @@
 | `runtime-lib/sim-lib-bridge/bridge-lib` | `runtime-lib` | bridge-lib |
 | `runtime-lib/sim-lib-cookbook/cookbook-lib` | `runtime-lib` | cookbook-lib |
 | `runtime-lib/sim-lib-forge/forge-lib` | `runtime-lib` | forge-lib |
+| `runtime-lib/sim-lib-index/index-lib` | `runtime-lib` | index-lib |
 | `runtime-lib/sim-lib-intent/intent-codec-lib` | `runtime-lib` | intent-codec-lib |
 | `runtime-lib/sim-lib-mcp/mcp-lib` | `runtime-lib` | mcp-lib |
 | `runtime-lib/sim-lib-mcp/mcp-serve-lib` | `runtime-lib` | mcp-serve-lib |
@@ -45,6 +46,7 @@
 | `runtime-lib/sim-run-loaders/source-lib` | `runtime-lib` | source-lib |
 | `runtime-lib/sim-run/glasses-boot-codec` | `runtime-lib` | glasses-boot-codec |
 | `runtime-lib/sim-run/glasses-lib` | `runtime-lib` | glasses-lib |
+| `runtime-lib/sim-run/index-boot-codec` | `runtime-lib` | index-boot-codec |
 | `runtime-lib/sim-run/watch-boot-codec` | `runtime-lib` | watch-boot-codec |
 | `runtime-lib/sim-run/watch-lib` | `runtime-lib` | watch-lib |
 | `runtime-lib/sim-view-tty/tty-view-lib` | `runtime-lib` | tty-view-lib |

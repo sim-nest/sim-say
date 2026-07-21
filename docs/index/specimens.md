@@ -23,6 +23,7 @@
 | `recipe/sim-codecs/crates/sim-codec-lua/01-basics/decode-roundtrip` | `crate/sim-codec-lua` | `recipe` | `crates/sim-codec-lua/recipes/01-basics/decode-roundtrip/recipe.toml` | `false` |
 | `recipe/sim-codecs/crates/sim-codec-mcp/01-basics/envelope-descriptor` | `crate/sim-codec-mcp` | `recipe` | `crates/sim-codec-mcp/recipes/01-basics/envelope-descriptor/recipe.toml` | `false` |
 | `recipe/sim-codecs/crates/sim-codec/01-basics/positions-and-limits` | `crate/sim-codec` | `recipe` | `crates/sim-codec/recipes/01-basics/positions-and-limits/recipe.toml` | `false` |
+| `recipe/sim-run/01-basics/hello` | `crate/sim-run` | `recipe` | `recipes/01-basics/hello/recipe.toml` | `true` |
 | `recipe/sim-run/01-basics/version` | `crate/sim-run` | `recipe` | `recipes/01-basics/version/recipe.toml` | `true` |
 | `recipe/sim-run/02-scenarios/boot-lisp-eval` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/boot-lisp-eval/recipe.toml` | `true` |
 | `recipe/sim-run/02-scenarios/bytes-lib` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/bytes-lib/recipe.toml` | `true` |
@@ -31,6 +32,10 @@
 | `recipe/sim-run/02-scenarios/config-status` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/config-status/recipe.toml` | `true` |
 | `recipe/sim-run/02-scenarios/fake-crates-io` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/fake-crates-io/recipe.toml` | `true` |
 | `recipe/sim-run/02-scenarios/host-verb` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/host-verb/recipe.toml` | `true` |
+| `recipe/sim-run/02-scenarios/index-examples` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/index-examples/recipe.toml` | `true` |
+| `recipe/sim-run/02-scenarios/index-find-codec` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/index-find-codec/recipe.toml` | `true` |
+| `recipe/sim-run/02-scenarios/index-list-languages` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/index-list-languages/recipe.toml` | `true` |
+| `recipe/sim-run/02-scenarios/index-trace-cli` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/index-trace-cli/recipe.toml` | `true` |
 | `recipe/sim-run/02-scenarios/inspect-manifest` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/inspect-manifest/recipe.toml` | `true` |
 | `recipe/sim-run/02-scenarios/loadable-site` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/loadable-site/recipe.toml` | `true` |
 | `recipe/sim-run/02-scenarios/placement-report` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/placement-report/recipe.toml` | `true` |

@@ -28,6 +28,7 @@
 | `specimen` | `rust` | recipes/01-basics/shape-grammar-contract/recipe.toml |
 | `specimen` | `shape` | src/citizen/inventory.rs |
 | `specimen` | `shape` | src/citizen_tests.rs |
+| `specimen` | `shell` | recipes/01-basics/hello/recipe.toml |
 | `specimen` | `shell` | recipes/01-basics/version/recipe.toml |
 | `specimen` | `shell` | recipes/02-scenarios/boot-lisp-eval/recipe.toml |
 | `specimen` | `shell` | recipes/02-scenarios/bytes-lib/recipe.toml |
@@ -36,6 +37,10 @@
 | `specimen` | `shell` | recipes/02-scenarios/config-status/recipe.toml |
 | `specimen` | `shell` | recipes/02-scenarios/fake-crates-io/recipe.toml |
 | `specimen` | `shell` | recipes/02-scenarios/host-verb/recipe.toml |
+| `specimen` | `shell` | recipes/02-scenarios/index-examples/recipe.toml |
+| `specimen` | `shell` | recipes/02-scenarios/index-find-codec/recipe.toml |
+| `specimen` | `shell` | recipes/02-scenarios/index-list-languages/recipe.toml |
+| `specimen` | `shell` | recipes/02-scenarios/index-trace-cli/recipe.toml |
 | `specimen` | `shell` | recipes/02-scenarios/inspect-manifest/recipe.toml |
 | `specimen` | `shell` | recipes/02-scenarios/loadable-site/recipe.toml |
 | `specimen` | `shell` | recipes/02-scenarios/placement-report/recipe.toml |
@@ -118,4 +123,5 @@
 | `subject` | `runtime-lib/sim-lib-intent/intent-codec-lib` | intent-codec-lib |
 | `subject` | `runtime-lib/sim-lib-scene/scene-codec-lib` | scene-codec-lib |
 | `subject` | `runtime-lib/sim-run/glasses-boot-codec` | glasses-boot-codec |
+| `subject` | `runtime-lib/sim-run/index-boot-codec` | index-boot-codec |
 | `subject` | `runtime-lib/sim-run/watch-boot-codec` | watch-boot-codec |
