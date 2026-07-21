@@ -132,6 +132,7 @@ piece gives you.
 - **sim-citizen-derive** -- A one-line marker that writes all the wiring needed to make your data type a full SIM value for you.
 - **sim-config** -- layered SIM settings stay inspectable because every source becomes the same table-shaped data before it is merged.
 - **sim-cookbook** -- The engine behind SIM's built-in lessons that teach each library from the inside.
+- **sim-index-core** -- the checked map that lets every SIM surface describe the same features, examples, and routes.
 - **sim-lib-net-core** -- The quiet reading room that turns raw web traffic into clean, understandable pieces.
 - **sim-lib-surface-card** -- The shared name-translator that presents SIM's tools cleanly to outside systems and people.
 - **sim-macros** -- A set of labels that let an author declare SIM building blocks in plain Rust and have the wiring written for them.
@@ -846,6 +847,12 @@ layered SIM settings stay inspectable because every source becomes the same tabl
 The engine behind SIM's built-in lessons that teach each library from the inside.
 
 Learning a system is easiest when the lessons live next to the thing they explain. This crate powers that library-owned teaching lane. A lesson -- a setup file paired with a short note on its purpose -- ships inside the library it teaches. When that library loads, its lessons register themselves, and this engine gathers them into books and chapters that any SIM surface can show: the command line, the web view, the in-product help, or an assistant. It reads and checks each lesson collection, embeds it at build time, keeps a searchable store, works out what to read next, and lets a person layer their own notes on top in a steady, repeatable way. The result is one consistent library of examples drawn from across the whole system.
+
+#### sim-index-core
+
+the checked map that lets every SIM surface describe the same features, examples, and routes.
+
+A shared home for the SIM Index's facts: what each feature is, where it lives, which surfaces expose it, which runnable specimen proves it, and which route helps a reader reach it. The graph is checked before other tools build pages, cards, or search views from it.
 
 #### sim-lib-net-core
 
