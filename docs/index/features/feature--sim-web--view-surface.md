@@ -10,9 +10,13 @@ Expose view and edit surfaces through sim-lib-view so codecs can render and reve
 
 ## Anchors
 
+- `anchor/crate/sim-lib-intent`
+- `anchor/crate/sim-lib-scene`
 - `anchor/crate/sim-lib-view`
 - `anchor/export/sim-lib-view/surface-default`
 - `anchor/export/sim-lib-view/view-default`
+- `anchor/runtime-lib/sim-lib-intent/intent-codec-lib`
+- `anchor/runtime-lib/sim-lib-scene/scene-codec-lib`
 
 ## Surfaces
 

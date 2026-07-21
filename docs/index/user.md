@@ -4,11 +4,20 @@
 
 | Feature | Subject | Summary | Specimens |
 | --- | --- | --- | ---: |
+| [`feature/sim-agent-net/agent-server-tools`](features/feature--sim-agent-net--agent-server-tools.md) | `crate/sim-lib-server` | Expose agent-facing server, skill, and OpenAI gateway libraries for model-connected hosts. | 0 |
+| [`feature/sim-agent-net/bridge-model-exchange`](features/feature--sim-agent-net--bridge-model-exchange.md) | `crate/sim-lib-agent` | Shape model exchanges as Bridge packets with agent and bridge runtime support. | 0 |
+| [`feature/sim-agent-net/eval-fabric-sites`](features/feature--sim-agent-net--eval-fabric-sites.md) | `crate/sim-lib-agent-runner-local` | Place model and stream work through loadable runner, local model, and content-addressed fleet libraries. | 0 |
+| [`feature/sim-agent-net/forge-intent`](features/feature--sim-agent-net--forge-intent.md) | `crate/sim-lib-forge` | Compile high-level intent records into checked Forge output through the loadable Forge runtime library. | 0 |
 | [`feature/sim-agent-net/mcp-server`](features/feature--sim-agent-net--mcp-server.md) | `crate/sim-lib-mcp` | Serve MCP requests through the loaded sim-lib-mcp command and runtime libraries. | 0 |
-| [`feature/sim-agent-net/model-packet-workflow`](features/feature--sim-agent-net--model-packet-workflow.md) | `crate/sim-lib-agent` | Shape model exchanges as Bridge packets with agent and bridge runtime support. | 0 |
+| [`feature/sim-citizen/citizen-read-constructs`](features/feature--sim-citizen--citizen-read-constructs.md) | `crate/sim-citizen` | Expose Rust values as runtime citizens with class members, registry rows, and read-construct round trips. | 1 |
 | [`feature/sim-codecs/bridge-packet-codec`](features/feature--sim-codecs--bridge-packet-codec.md) | `crate/sim-codec-bridge` | Encode and decode Bridge packet workflow data through the Bridge wire grammar. | 0 |
-| [`feature/sim-codecs/codec-core`](features/feature--sim-codecs--codec-core.md) | `crate/sim-codec` | Define codec positions, limits, and the domain codec runtime library used by concrete codecs. | 0 |
-| [`feature/sim-codecs/pratt-operator-language`](features/feature--sim-codecs--pratt-operator-language.md) | `crate/sim-codec-pratt` | Parse operator-oriented expression languages through the Pratt codec surface. | 0 |
+| [`feature/sim-codecs/codec`](features/feature--sim-codecs--codec.md) | `crate/sim-codec` | Define codec positions, limits, syntax surfaces, wire surfaces, and loadable codec runtime libraries. | 1 |
+| [`feature/sim-codecs/pratt`](features/feature--sim-codecs--pratt.md) | `crate/sim-codec-pratt` | Parse operator-oriented expression languages through the Pratt codec surface. | 0 |
+| [`feature/sim-foundation/cookbook`](features/feature--sim-foundation--cookbook.md) | `crate/sim-cookbook` | Describe reusable recipe metadata and generated cookbook records consumed by public docs and tooling. | 0 |
+| [`feature/sim-foundation/host-primitives`](features/feature--sim-foundation--host-primitives.md) | `crate/sim-lib-net-core` | Provide shared network and surface-card helper crates for host-facing runtime libraries. | 0 |
+| [`feature/sim-foundation/table-dir-core`](features/feature--sim-foundation--table-dir-core.md) | `crate/sim-table-core` | Define shared table and directory contracts used by storage, index, and host-facing libraries. | 0 |
+| [`feature/sim-foundation/value-helpers`](features/feature--sim-foundation--value-helpers.md) | `crate/sim-value` | Provide shared value conversion and table-field helpers for reusable runtime libraries. | 0 |
+| [`feature/sim-numbers/numbers`](features/feature--sim-numbers--numbers.md) | `crate/sim-lib-numbers-core` | Provide arithmetic, exact, floating, symbolic, tensor, and statistics number domains as loadable libraries. | 1 |
 | [`feature/sim-run/bootloader`](features/feature--sim-run--bootloader.md) | `crate/sim-run-core` | Start product commands through the shared bootloader and loaded runtime libraries. | 2 |
 | [`feature/sim-run/glasses`](features/feature--sim-run--glasses.md) | `crate/sim-run` | Start modeled or hardware-backed glasses plans through the shared command bootloader. | 0 |
 | [`feature/sim-run/index`](features/feature--sim-run--index.md) | `local/sim-run/crate/xtask` | Expose generated package, card, surface, and recipe facts as a checked SIM Index fragment. | 1 |
@@ -17,5 +26,15 @@
 | [`feature/sim-run/runtime-index`](features/feature--sim-run--runtime-index.md) | `crate/sim-lib-index` | Explore the merged SIM Index through the bootloader as stable Table/Dir rows and structured query output. | 4 |
 | [`feature/sim-run/terminal-surface`](features/feature--sim-run--terminal-surface.md) | `crate/sim-view-tty` | Render and interpret terminal view intents through the loaded TTY surface library. | 1 |
 | [`feature/sim-run/watch`](features/feature--sim-run--watch.md) | `crate/sim-run` | Start modeled, imported, or live watch plans through the shared command bootloader. | 0 |
+| [`feature/sim-runtime/capabilities-read-eval`](features/feature--sim-runtime--capabilities-read-eval.md) | `crate/sim-lib-core` | Gate diminished read-eval and surface packing through explicit runtime libraries and capability checks. | 1 |
+| [`feature/sim-runtime/host-exec`](features/feature--sim-runtime--host-exec.md) | `crate/sim-lib-exec` | Expose bounded process execution as a capability-gated host primitive outside the kernel. | 0 |
+| [`feature/sim-runtime/library-loading`](features/feature--sim-runtime--library-loading.md) | `crate/sim-lib-standard-core` | Load standard and language-profile runtime libraries through stable export records. | 1 |
+| [`feature/sim-runtime/organs`](features/feature--sim-runtime--organs.md) | `crate/sim-lib-binding` | Provide binding, control, logic, pattern, mutation, and sequence organs as loadable runtime libraries. | 0 |
+| [`feature/sim-shape/shape`](features/feature--sim-shape--shape.md) | `crate/sim-shape` | Define reusable Shape matching, binding, citizen projection, and grammar contracts for runtime values. | 1 |
+| [`feature/sim-storage/host-storage-primitives`](features/feature--sim-storage--host-storage-primitives.md) | `crate/sim-table-fs` | Connect file, database, and HTTP storage crates to the shared Table and Dir backend shape. | 0 |
+| [`feature/sim-storage/table-dir-backends`](features/feature--sim-storage--table-dir-backends.md) | `crate/sim-table-hash` | Provide hash, lazy, override, and list-backed Table/Dir implementations for reusable storage libraries. | 1 |
+| [`feature/sim-stream/stream-protocol-helpers`](features/feature--sim-stream--stream-protocol-helpers.md) | `crate/sim-lib-stream-core` | Provide rank, topology, stream core, device, wrist, and XR helpers as loadable stream libraries. | 1 |
 | [`feature/sim-tooling/generated-docs`](features/feature--sim-tooling--generated-docs.md) | `local/sim-tooling/crate/xtask` | Generate repo contracts, feature maps, card indexes, and index fragments through xtask. | 0 |
+| [`feature/sim-web/device-surfaces`](features/feature--sim-web--device-surfaces.md) | `crate/sim-lib-view` | Rank and project view surfaces against desktop, phone, watch, and glasses device profiles. | 0 |
 | [`feature/sim-web/view-surface`](features/feature--sim-web--view-surface.md) | `crate/sim-lib-view` | Expose view and edit surfaces through sim-lib-view so codecs can render and reverse surface data. | 0 |
+| [`feature/sim-web/web-shell-host`](features/feature--sim-web--web-shell-host.md) | `crate/sim-web-shell` | Serve browser-facing surfaces through loaded web shell runtime libraries and command entry points. | 0 |

@@ -13,32 +13,65 @@
 
 | Route | Title | Audiences | Steps |
 | --- | --- | --- | --- |
-| `route/add-a-codec` | Add a codec | code, framework | `feature/sim-codecs/codec-core` - Start with the shared codec contract and position rules. |
+| `local/sim-run/route/add-table-dir-backend` | Add a Table/Dir backend | code, framework | `feature/sim-run/index-table-dir` - The IndexDir implementation shows a runtime table exposed as an immutable directory.<br>`recipe/sim-run/02-scenarios/index-examples` - The examples recipe exercises table-backed feature-to-specimen lookup. |
+| `local/sim-storage/route/add-table-dir-backend` | Add a Table or Dir backend | code, framework | `feature/sim-storage/table-dir-backends` - The backend row owns reusable Table and Dir implementations.<br>`spec-test/sim-storage/crates/sim-table-override/src/install` - The install test checks a loadable override table backend. |
+| `route/add-a-codec` | Add a codec | code, framework | `feature/sim-codecs/codec` - Start with the shared codec contract and position rules. |
+| `route/add-bridge-packet-codec` | Add a Bridge packet codec | code, framework | `feature/sim-codecs/bridge-packet-codec` - The Bridge packet codec owns the Bridge wire grammar. |
+| `route/add-capability-gated-read-eval` | Add capability-gated read-eval | code, framework | `feature/sim-runtime/capabilities-read-eval` - The core row owns read policy, capability checks, and read-construct evidence.<br>`spec-test/sim-runtime/crates/sim-lib-standard-core/src/read_construct` - The read-construct test checks object round trips through standard core. |
+| `route/add-citizen-read-construct` | Add a citizen read-construct | code, framework | `feature/sim-citizen/citizen-read-constructs` - The citizen row owns runtime members and read-construct projection.<br>`spec-test/sim-citizen/crates/sim-citizen/src/conformance` - The conformance test checks citizen round-trip behavior. |
+| `route/add-cookbook-recipe` | Add a cookbook recipe | code, framework | `feature/sim-foundation/cookbook` - The cookbook row owns reusable recipe metadata. |
+| `route/add-eval-fabric-site` | Add an EvalFabric site | code, framework | `feature/sim-agent-net/eval-fabric-sites` - The EvalFabric row owns runner and fleet placement libraries. |
 | `route/add-generated-doc` | Add a generated doc | code, framework | `feature/sim-tooling/generated-docs` - The xtask documentation row owns generated doc lanes and index fragments. |
-| `route/add-model-facing-packet-workflow` | Add a model-facing packet workflow | code, framework | `feature/sim-agent-net/model-packet-workflow` - The workflow row ties agent model exchange to Bridge packet records. |
-| `route/add-table-dir-backend` | Add a Table/Dir backend | code, framework | `feature/sim-run/index-table-dir` - The IndexDir implementation shows a runtime table exposed as an immutable directory.<br>`recipe/sim-run/02-scenarios/index-examples` - The examples recipe exercises table-backed feature-to-specimen lookup. |
+| `route/add-host-exec-primitive` | Add a host exec primitive | code, framework | `feature/sim-runtime/host-exec` - The exec row keeps host process behavior in a loadable library. |
+| `route/add-host-primitive` | Add a host primitive | code, framework | `feature/sim-foundation/host-primitives` - Host primitives start from shared network and surface-card helpers. |
+| `route/add-host-storage-primitive` | Add a host storage primitive | code, framework | `feature/sim-storage/host-storage-primitives` - The host storage row points to file, database, and HTTP backends. |
+| `route/add-model-facing-packet-workflow` | Add a model-facing packet workflow | code, framework | `feature/sim-agent-net/bridge-model-exchange` - The workflow row ties agent model exchange to Bridge packet records. |
+| `route/add-number-domain` | Add a number domain | code, framework | `feature/sim-numbers/numbers` - The number row owns reusable number domains and their runtime libraries.<br>`spec-test/sim-numbers/crates/sim-lib-numbers-tensor/src/implementation/citizen` - The tensor citizen test checks runtime projection for a number domain. |
+| `route/add-runtime-organ` | Add a runtime organ | code, framework | `feature/sim-runtime/organs` - The organ row groups loadable binding, control, logic, pattern, mutation, and sequence behavior. |
+| `route/add-shape-contract` | Add a Shape contract | code, framework | `feature/sim-shape/shape` - The Shape row owns matching, binding, and citizen projection.<br>`spec-test/sim-shape/src/citizen/inventory` - The inventory test checks the exported shape citizen surface. |
+| `route/add-stream-protocol-helper` | Add a stream protocol helper | code, framework | `feature/sim-stream/stream-protocol-helpers` - The stream row owns reusable stream, rank, topology, and device helpers.<br>`spec-test/sim-stream/crates/sim-lib-stream-core/src/read_construct` - The read-construct test checks stream metadata projection. |
+| `route/add-table-dir-core` | Add a Table or Dir core contract | code, framework | `feature/sim-foundation/table-dir-core` - The table core row owns shared Table and Dir contracts. |
+| `route/add-value-helper` | Add a value helper | code, framework | `feature/sim-foundation/value-helpers` - The value row owns shared runtime value conversion helpers. |
 | `route/check-sim-run-index` | Check the sim-run index fragment | code | `feature/sim-run/index` - The index row owns the generated fragment.<br>`feature/sim-run/runtime-index` - The runtime command reads the merged index.<br>`recipe/sim-run/publish-readiness/package-list` - The recipe exercises package metadata. |
-| `route/expose-view-surface` | Expose a view surface | code, framework | `feature/sim-web/view-surface` - The sim-lib-view row owns the default view and reversible edit surfaces. |
+| `route/compile-agent-intent` | Compile agent intent | code, framework | `feature/sim-agent-net/forge-intent` - The Forge row owns checked intent compilation.<br>`feature/sim-agent-net/agent-server-tools` - Server tool rows expose the host-facing model gateway. |
+| `route/expose-view-surface` | Expose a view surface | code, framework | `feature/sim-web/view-surface` - The sim-lib-view row owns the default view and reversible edit surfaces.<br>`feature/sim-web/device-surfaces` - Device profiles show how projection adapts to concrete surface caps.<br>`feature/sim-web/web-shell-host` - The web shell row shows how a browser host loads those surfaces. |
 | `route/find-code-behind-command` | Find code behind a command | code | `feature/sim-run/bootloader` - The bootloader owns command dispatch into loaded libraries.<br>`feature/sim-run/runtime-index` - The index trace command resolves command surfaces to owning crates and anchors.<br>`recipe/sim-run/02-scenarios/index-trace-cli` - The checked trace recipe follows a CLI surface back to code facts. |
-| `route/parse-operator-language` | Parse an operator language | code, framework | `feature/sim-codecs/pratt-operator-language` - The Pratt codec is the operator-language parser surface. |
+| `route/load-runtime-library` | Load a runtime library | code, framework | `feature/sim-runtime/library-loading` - The loading row owns standard and language-profile runtime libraries. |
+| `route/parse-operator-language` | Parse an operator language | code, framework | `feature/sim-codecs/pratt` - The Pratt codec is the operator-language parser surface. |
 | `route/serve-over-mcp` | Serve over MCP | user, code | `feature/sim-agent-net/mcp-server` - The MCP row owns the command surface and loaded server libraries. |
 
 ## Framework routes
 
 | Route | Title | Audiences | Steps |
 | --- | --- | --- | --- |
-| `route/add-a-codec` | Add a codec | code, framework | `feature/sim-codecs/codec-core` - Start with the shared codec contract and position rules. |
+| `local/sim-run/route/add-table-dir-backend` | Add a Table/Dir backend | code, framework | `feature/sim-run/index-table-dir` - The IndexDir implementation shows a runtime table exposed as an immutable directory.<br>`recipe/sim-run/02-scenarios/index-examples` - The examples recipe exercises table-backed feature-to-specimen lookup. |
+| `local/sim-storage/route/add-table-dir-backend` | Add a Table or Dir backend | code, framework | `feature/sim-storage/table-dir-backends` - The backend row owns reusable Table and Dir implementations.<br>`spec-test/sim-storage/crates/sim-table-override/src/install` - The install test checks a loadable override table backend. |
+| `route/add-a-codec` | Add a codec | code, framework | `feature/sim-codecs/codec` - Start with the shared codec contract and position rules. |
+| `route/add-bridge-packet-codec` | Add a Bridge packet codec | code, framework | `feature/sim-codecs/bridge-packet-codec` - The Bridge packet codec owns the Bridge wire grammar. |
+| `route/add-capability-gated-read-eval` | Add capability-gated read-eval | code, framework | `feature/sim-runtime/capabilities-read-eval` - The core row owns read policy, capability checks, and read-construct evidence.<br>`spec-test/sim-runtime/crates/sim-lib-standard-core/src/read_construct` - The read-construct test checks object round trips through standard core. |
+| `route/add-citizen-read-construct` | Add a citizen read-construct | code, framework | `feature/sim-citizen/citizen-read-constructs` - The citizen row owns runtime members and read-construct projection.<br>`spec-test/sim-citizen/crates/sim-citizen/src/conformance` - The conformance test checks citizen round-trip behavior. |
+| `route/add-cookbook-recipe` | Add a cookbook recipe | code, framework | `feature/sim-foundation/cookbook` - The cookbook row owns reusable recipe metadata. |
+| `route/add-eval-fabric-site` | Add an EvalFabric site | code, framework | `feature/sim-agent-net/eval-fabric-sites` - The EvalFabric row owns runner and fleet placement libraries. |
 | `route/add-generated-doc` | Add a generated doc | code, framework | `feature/sim-tooling/generated-docs` - The xtask documentation row owns generated doc lanes and index fragments. |
-| `route/add-model-facing-packet-workflow` | Add a model-facing packet workflow | code, framework | `feature/sim-agent-net/model-packet-workflow` - The workflow row ties agent model exchange to Bridge packet records. |
-| `route/add-table-dir-backend` | Add a Table/Dir backend | code, framework | `feature/sim-run/index-table-dir` - The IndexDir implementation shows a runtime table exposed as an immutable directory.<br>`recipe/sim-run/02-scenarios/index-examples` - The examples recipe exercises table-backed feature-to-specimen lookup. |
-| `route/expose-view-surface` | Expose a view surface | code, framework | `feature/sim-web/view-surface` - The sim-lib-view row owns the default view and reversible edit surfaces. |
-| `route/parse-operator-language` | Parse an operator language | code, framework | `feature/sim-codecs/pratt-operator-language` - The Pratt codec is the operator-language parser surface. |
+| `route/add-host-exec-primitive` | Add a host exec primitive | code, framework | `feature/sim-runtime/host-exec` - The exec row keeps host process behavior in a loadable library. |
+| `route/add-host-primitive` | Add a host primitive | code, framework | `feature/sim-foundation/host-primitives` - Host primitives start from shared network and surface-card helpers. |
+| `route/add-host-storage-primitive` | Add a host storage primitive | code, framework | `feature/sim-storage/host-storage-primitives` - The host storage row points to file, database, and HTTP backends. |
+| `route/add-model-facing-packet-workflow` | Add a model-facing packet workflow | code, framework | `feature/sim-agent-net/bridge-model-exchange` - The workflow row ties agent model exchange to Bridge packet records. |
+| `route/add-number-domain` | Add a number domain | code, framework | `feature/sim-numbers/numbers` - The number row owns reusable number domains and their runtime libraries.<br>`spec-test/sim-numbers/crates/sim-lib-numbers-tensor/src/implementation/citizen` - The tensor citizen test checks runtime projection for a number domain. |
+| `route/add-runtime-organ` | Add a runtime organ | code, framework | `feature/sim-runtime/organs` - The organ row groups loadable binding, control, logic, pattern, mutation, and sequence behavior. |
+| `route/add-shape-contract` | Add a Shape contract | code, framework | `feature/sim-shape/shape` - The Shape row owns matching, binding, and citizen projection.<br>`spec-test/sim-shape/src/citizen/inventory` - The inventory test checks the exported shape citizen surface. |
+| `route/add-stream-protocol-helper` | Add a stream protocol helper | code, framework | `feature/sim-stream/stream-protocol-helpers` - The stream row owns reusable stream, rank, topology, and device helpers.<br>`spec-test/sim-stream/crates/sim-lib-stream-core/src/read_construct` - The read-construct test checks stream metadata projection. |
+| `route/add-table-dir-core` | Add a Table or Dir core contract | code, framework | `feature/sim-foundation/table-dir-core` - The table core row owns shared Table and Dir contracts. |
+| `route/add-value-helper` | Add a value helper | code, framework | `feature/sim-foundation/value-helpers` - The value row owns shared runtime value conversion helpers. |
+| `route/compile-agent-intent` | Compile agent intent | code, framework | `feature/sim-agent-net/forge-intent` - The Forge row owns checked intent compilation.<br>`feature/sim-agent-net/agent-server-tools` - Server tool rows expose the host-facing model gateway. |
+| `route/expose-view-surface` | Expose a view surface | code, framework | `feature/sim-web/view-surface` - The sim-lib-view row owns the default view and reversible edit surfaces.<br>`feature/sim-web/device-surfaces` - Device profiles show how projection adapts to concrete surface caps.<br>`feature/sim-web/web-shell-host` - The web shell row shows how a browser host loads those surfaces. |
+| `route/load-runtime-library` | Load a runtime library | code, framework | `feature/sim-runtime/library-loading` - The loading row owns standard and language-profile runtime libraries. |
+| `route/parse-operator-language` | Parse an operator language | code, framework | `feature/sim-codecs/pratt` - The Pratt codec is the operator-language parser surface. |
 
 ## Coverage Gaps
 
 | Category | Id | Reason |
 | --- | --- | --- |
-| `frameworks` | `feature/sim-codecs/bridge-packet-codec` | feature exposes framework-facing runtime or surface facts but no route step reaches it |
 | `frameworks` | `feature/sim-run/glasses` | feature exposes framework-facing runtime or surface facts but no route step reaches it |
 | `frameworks` | `feature/sim-run/terminal-surface` | feature exposes framework-facing runtime or surface facts but no route step reaches it |
 | `frameworks` | `feature/sim-run/watch` | feature exposes framework-facing runtime or surface facts but no route step reaches it |
