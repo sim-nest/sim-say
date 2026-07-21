@@ -90,6 +90,7 @@
 | `sim-lib-femm-tape` | [sim-femm](../repos/sim-femm.md) |
 | `sim-config` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-cookbook` | [sim-foundation](../repos/sim-foundation.md) |
+| `sim-index-core` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-lib-net-core` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-lib-surface-card` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-macros` | [sim-foundation](../repos/sim-foundation.md) |
