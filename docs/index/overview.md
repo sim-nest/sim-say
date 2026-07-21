@@ -17,6 +17,7 @@ The SIM Index is the generated constellation graph for public source facts, feat
 | Page | Focus |
 | --- | --- |
 | `user.md` | Feature rows and task-facing descriptions |
+| `features.md` | Feature pages with worked examples |
 | `code.md` | Repositories, crates, and doc sets |
 | `frameworks.md` | Framework-like rows and related surfaces |
 | `surfaces.md` | Invoke, read, write, view, and site surfaces |

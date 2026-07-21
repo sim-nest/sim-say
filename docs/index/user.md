@@ -4,9 +4,9 @@
 
 | Feature | Subject | Summary | Specimens |
 | --- | --- | --- | ---: |
-| `feature/sim-run/bootloader` | `crate/sim-run-core` | Start product commands through the shared bootloader and loaded runtime libraries. | 2 |
-| `feature/sim-run/glasses` | `crate/sim-run` | Start modeled or hardware-backed glasses plans through the shared command bootloader. | 0 |
-| `feature/sim-run/index` | `local/sim-run/crate/xtask` | Expose generated package, card, surface, and recipe facts as a checked SIM Index fragment. | 1 |
-| `feature/sim-run/repl` | `crate/sim-lib-repl` | Run a SIM read-eval-print loop through the loaded REPL library and command surface. | 0 |
-| `feature/sim-run/terminal-surface` | `crate/sim-view-tty` | Render and interpret terminal view intents through the loaded TTY surface library. | 1 |
-| `feature/sim-run/watch` | `crate/sim-run` | Start modeled, imported, or live watch plans through the shared command bootloader. | 0 |
+| [`feature/sim-run/bootloader`](features/feature--sim-run--bootloader.md) | `crate/sim-run-core` | Start product commands through the shared bootloader and loaded runtime libraries. | 2 |
+| [`feature/sim-run/glasses`](features/feature--sim-run--glasses.md) | `crate/sim-run` | Start modeled or hardware-backed glasses plans through the shared command bootloader. | 0 |
+| [`feature/sim-run/index`](features/feature--sim-run--index.md) | `local/sim-run/crate/xtask` | Expose generated package, card, surface, and recipe facts as a checked SIM Index fragment. | 1 |
+| [`feature/sim-run/repl`](features/feature--sim-run--repl.md) | `crate/sim-lib-repl` | Run a SIM read-eval-print loop through the loaded REPL library and command surface. | 0 |
+| [`feature/sim-run/terminal-surface`](features/feature--sim-run--terminal-surface.md) | `crate/sim-view-tty` | Render and interpret terminal view intents through the loaded TTY surface library. | 1 |
+| [`feature/sim-run/watch`](features/feature--sim-run--watch.md) | `crate/sim-run` | Start modeled, imported, or live watch plans through the shared command bootloader. | 0 |
