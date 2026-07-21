@@ -452,6 +452,7 @@
 {"card": {"id": "cookbook/stream-device", "kind": "cookbook-recipe", "owner": "sim-lib-stream-device", "summary": "Hardware-free device sample descriptors and modeled sources."}, "repo": "sim-stream"}
 {"card": {"id": "cookbook/stream-prelude", "kind": "cookbook-recipe", "owner": "sim-lib-stream-prelude", "summary": "Lisp-facing memory stream operations and stream Cards."}, "repo": "sim-stream"}
 {"card": {"id": "cookbook/stream-wrist", "kind": "cookbook-recipe", "owner": "sim-lib-stream-wrist", "summary": "Worn-device sample descriptors and modeled wrist sources."}, "repo": "sim-stream"}
+{"card": {"id": "cookbook/stream-xr", "kind": "cookbook-recipe", "owner": "sim-lib-stream-xr", "summary": "XR glasses sample descriptors and modeled sources."}, "repo": "sim-stream"}
 {"card": {"id": "cookbook/topology", "kind": "cookbook-recipe", "owner": "sim-lib-topology", "summary": "Data-authored topology graphs, packages, validation, and replay."}, "repo": "sim-stream"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-stream"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-stream-host"}
@@ -464,6 +465,7 @@
 {"card": {"id": "cookbook/scene", "kind": "cookbook-recipe", "owner": "sim-lib-scene", "summary": "Portable scene values for browser rendering and agent inspection."}, "repo": "sim-web"}
 {"card": {"id": "cookbook/view", "kind": "cookbook-recipe", "owner": "sim-lib-view", "summary": "Lens contracts, view selection, and universal scene rendering."}, "repo": "sim-web"}
 {"card": {"id": "cookbook/view-device", "kind": "cookbook-recipe", "owner": "sim-lib-view-device", "summary": "Device profile envelopes and tier derivation for surface capabilities."}, "repo": "sim-web"}
+{"card": {"id": "cookbook/view-spatial", "kind": "cookbook-recipe", "owner": "sim-lib-view-spatial", "summary": "Spatial glasses surface encoding over shared Scene and device adapters."}, "repo": "sim-web"}
 {"card": {"id": "cookbook/view-wrist", "kind": "cookbook-recipe", "owner": "sim-lib-view-wrist", "summary": "Round watch glance budgets over the shared device adapter."}, "repo": "sim-web"}
 {"card": {"id": "cookbook/view/agent", "kind": "cookbook-recipe", "owner": "sim-lib-view-agent", "summary": "Topology composer and live monitor lens descriptors."}, "repo": "sim-web"}
 {"card": {"id": "cookbook/view/bridge", "kind": "cookbook-recipe", "owner": "sim-lib-view-bridge", "summary": "Packet review scenes and collaboration edits."}, "repo": "sim-web"}

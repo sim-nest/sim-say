@@ -241,6 +241,7 @@
 | `sim-lib-stream-device` | [sim-stream](../repos/sim-stream.md) |
 | `sim-lib-stream-prelude` | [sim-stream](../repos/sim-stream.md) |
 | `sim-lib-stream-wrist` | [sim-stream](../repos/sim-stream.md) |
+| `sim-lib-stream-xr` | [sim-stream](../repos/sim-stream.md) |
 | `sim-lib-topology` | [sim-stream](../repos/sim-stream.md) |
 | `sim-lib-stream-host` | [sim-stream-host](../repos/sim-stream-host.md) |
 | `sim-lib-stream-wristbridge` | [sim-stream-host](../repos/sim-stream-host.md) |
@@ -255,6 +256,7 @@
 | `sim-lib-view-device` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-view-doc` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-view-math` | [sim-web](../repos/sim-web.md) |
+| `sim-lib-view-spatial` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-view-wasm-frame` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-view-wrist` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-web-bridge` | [sim-web](../repos/sim-web.md) |

@@ -245,6 +245,7 @@ piece gives you.
 - **sim-lib-stream-device** -- A hardware-free device sample lane, so sensors can be modeled and tested before any real device is attached.
 - **sim-lib-stream-prelude** -- The ready-made bundle that makes SIM's whole streaming toolkit available in one install.
 - **sim-lib-stream-wrist** -- Watch and wearable sensor streams that are strict enough for tests without requiring a real wrist device.
+- **sim-lib-stream-xr** -- Repeatable glasses sensor streams for XR work without needing a Viture or Halo device on the test bench.
 - **sim-lib-topology** -- The part that turns a described network of connected steps into a checked, ready-to-run plan.
 - **sim-lib-stream-host** -- It plugs SIM's live streams into the real audio and MIDI gear on your machine and across your network.
 - **sim-lib-stream-wristbridge** -- A local wrist bridge turns watch exports into SIM worn events without cloud accounts.
@@ -290,6 +291,7 @@ piece gives you.
 - **sim-lib-view-device** -- it turns open surface claims into a clear device envelope, so small screens and wearable edges degrade honestly.
 - **sim-lib-view-doc** -- it is a writing surface where article structure, equations, figures, source text, and live results stay together.
 - **sim-lib-view-math** -- it turns numbers, matrices, and formulas into plots and grids you can see and adjust.
+- **sim-lib-view-spatial** -- Glasses surfaces get the right SIM Scene form for stereo panels, mono HUD cards, and simple mirrored displays.
 - **sim-lib-view-wasm-frame** -- it is the local helper that renders a value to a screen picture, folds your gestures into edits, and commits them in place.
 - **sim-lib-view-wrist** -- Round watch glance budgets that reuse the shared device glance path for haptic wrist feedback.
 - **sim-lib-web-bridge** -- it is the pipe that carries your edits out and the fresh pictures back, no matter where the runtime actually runs.
@@ -1770,6 +1772,12 @@ Watch and wearable sensor streams that are strict enough for tests without requi
 
 A wearable can report heart rate, motion, GPS, battery, connection state, touch, buttons, and other wrist-side signals. This crate puts those signals into one checked stream event shape with a sensor tag, sequence number, confidence score, and payload. Modeled sources produce repeatable samples from an index, so demos and CI can exercise wrist behavior without a watch, driver, clock, random seed, or network.
 
+#### sim-lib-stream-xr
+
+Repeatable glasses sensor streams for XR work without needing a Viture or Halo device on the test bench.
+
+XR glasses need more than a screen feed. A rich pair reports pose, cameras, hands, taps, and microphone chunks; a lighter pair reports motion hints, taps, camera references, and audio chunks. This crate puts those inputs into strict stream samples with stable tags and sequence numbers. Modeled sources produce the same Viture-style and Halo-style samples every run, so adapters, demos, and CI can exercise glasses behavior without a driver, clock, random seed, network, or physical hardware.
+
 #### sim-lib-topology
 
 The part that turns a described network of connected steps into a checked, ready-to-run plan.
@@ -1851,6 +1859,12 @@ This lens gives you a proper authoring workspace for technical writing, not a pl
 it turns numbers, matrices, and formulas into plots and grids you can see and adjust.
 
 This lens family makes math visual and hands-on. Numeric series and functions become plots you can read at a glance. Matrices and tensors open as editable grids, so you can change a slice and see the effect. A symbolic formula shows as a tree you can explore. Sliders and knobs let you sweep a parameter and watch the result move, then snapshot a setting and compare it against another. Throughout, the display reads numbers from SIM's own number kinds, while the runtime value stays the single source of truth -- so what you tweak on screen is the same number the system actually holds.
+
+#### sim-lib-view-spatial
+
+Glasses surfaces get the right SIM Scene form for stereo panels, mono HUD cards, and simple mirrored displays.
+
+Different glasses need different shapes of the same information. A stereo pair can hold anchored panels, a mono HUD needs one short card, and display-only lenses should mirror a reduced scene. This crate makes those choices from advertised surface capabilities while keeping the content as ordinary SIM Scene data.
 
 #### sim-lib-view-wasm-frame
 

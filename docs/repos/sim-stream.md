@@ -1,6 +1,6 @@
 # sim-stream
 
-Published commit: `92ecdbcbbe7dd8f5cbe48788c7ebf9b7294e2a05`.
+Published commit: `673529407c09af396b52586fa26a18d40eb14d50`.
 
 ## Crates
 
@@ -12,6 +12,7 @@ Published commit: `92ecdbcbbe7dd8f5cbe48788c7ebf9b7294e2a05`.
 - `sim-lib-stream-device`
 - `sim-lib-stream-prelude`
 - `sim-lib-stream-wrist`
+- `sim-lib-stream-xr`
 - `sim-lib-topology`
 
 ## Contracts
