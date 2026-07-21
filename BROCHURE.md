@@ -247,6 +247,7 @@ piece gives you.
 - **sim-lib-stream-wrist** -- Watch and wearable sensor streams that are strict enough for tests without requiring a real wrist device.
 - **sim-lib-topology** -- The part that turns a described network of connected steps into a checked, ready-to-run plan.
 - **sim-lib-stream-host** -- It plugs SIM's live streams into the real audio and MIDI gear on your machine and across your network.
+- **sim-lib-stream-wristbridge** -- A local wrist bridge turns watch exports into SIM worn events without cloud accounts.
 
 ### surface
 
@@ -1782,6 +1783,12 @@ A topology is a wiring diagram: boxes that do something, joined by lines that sa
 It plugs SIM's live streams into the real audio and MIDI gear on your machine and across your network.
 
 This is the layer that connects SIM to the outside world of sound. When SIM needs to send or receive a stream of audio or musical notes, this part opens the connection to a real device, a software instrument, or a peer computer on your network, then keeps the packets flowing without stutters or dropped notes. It knows which devices and ports exist, picks the right place to run each piece of a stream, and reports honestly when a requested connection cannot be made instead of quietly doing something worse. A built-in stand-in device lets everything be tested and replayed without touching real hardware, so results stay repeatable.
+
+#### sim-lib-stream-wristbridge
+
+A local wrist bridge turns watch exports into SIM worn events without cloud accounts.
+
+The crate gives SIM one watch provider surface for four local routes: Linux BLE, a phone relay, a Zepp companion bridge, and file imports. Each route speaks the same worn-event shape and accepts the same notification, haptic, face, alarm, and privacy commands, so a watch integration can swap transport without changing the rest of the stream host. It also gives test and CI runs a clean hardware-free path. Synthetic imports and scripted link samples produce stable event sequences, while the stub route says plainly that no device is available.
 
 ### sim-web
 
