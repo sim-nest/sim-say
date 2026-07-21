@@ -248,6 +248,7 @@ piece gives you.
 - **sim-lib-stream-xr** -- Repeatable glasses sensor streams for XR work without needing a Viture or Halo device on the test bench.
 - **sim-lib-topology** -- The part that turns a described network of connected steps into a checked, ready-to-run plan.
 - **sim-lib-stream-host** -- It plugs SIM's live streams into the real audio and MIDI gear on your machine and across your network.
+- **sim-lib-stream-viture** -- A local VITURE glasses bridge turns headset pose and display controls into SIM device-stream records.
 - **sim-lib-stream-wristbridge** -- A local wrist bridge turns watch exports into SIM worn events without cloud accounts.
 - **sim-viture-ffi** -- A small boundary crate keeps VITURE glasses SDK loading out of the safe stream host.
 
@@ -1792,6 +1793,12 @@ A topology is a wiring diagram: boxes that do something, joined by lines that sa
 It plugs SIM's live streams into the real audio and MIDI gear on your machine and across your network.
 
 This is the layer that connects SIM to the outside world of sound. When SIM needs to send or receive a stream of audio or musical notes, this part opens the connection to a real device, a software instrument, or a peer computer on your network, then keeps the packets flowing without stutters or dropped notes. It knows which devices and ports exist, picks the right place to run each piece of a stream, and reports honestly when a requested connection cannot be made instead of quietly doing something worse. A built-in stand-in device lets everything be tested and replayed without touching real hardware, so results stay repeatable.
+
+#### sim-lib-stream-viture
+
+A local VITURE glasses bridge turns headset pose and display controls into SIM device-stream records.
+
+It gives SIM a focused glasses route for VITURE hardware. The crate advertises a device profile, opens a local provider session, publishes head-pose records with stable sequence numbers, and accepts display and sensor-control packets in the same device session shape used by the rest of the worn stack.
 
 #### sim-lib-stream-wristbridge
 
