@@ -249,6 +249,7 @@ piece gives you.
 - **sim-lib-topology** -- The part that turns a described network of connected steps into a checked, ready-to-run plan.
 - **sim-lib-stream-host** -- It plugs SIM's live streams into the real audio and MIDI gear on your machine and across your network.
 - **sim-lib-stream-wristbridge** -- A local wrist bridge turns watch exports into SIM worn events without cloud accounts.
+- **sim-viture-ffi** -- A small boundary crate keeps VITURE glasses SDK loading out of the safe stream host.
 
 ### surface
 
@@ -1797,6 +1798,12 @@ This is the layer that connects SIM to the outside world of sound. When SIM need
 A local wrist bridge turns watch exports into SIM worn events without cloud accounts.
 
 The crate gives SIM one watch provider surface for four local routes: Linux BLE, a phone relay, a Zepp companion bridge, and file imports. Each route speaks the same worn-event shape and accepts the same notification, haptic, face, alarm, and privacy commands, so a watch integration can swap transport without changing the rest of the stream host. It also gives test and CI runs a clean hardware-free path. Synthetic imports and scripted link samples produce stable event sequences, while the stub route says plainly that no device is available.
+
+#### sim-viture-ffi
+
+A small boundary crate keeps VITURE glasses SDK loading out of the safe stream host.
+
+The crate gives SIM one narrow place to find and open the VITURE glasses SDK at runtime. It checks explicit local configuration, ordinary dynamic-library lookup, and Linux USB device hints, then reports a clear unavailable result when no SDK is present. It also gives the rest of the stream host a safe surface. Device sessions can ask for poses and device-control setup without carrying raw handles, linking vendor objects at build time, or spreading unsafe code through normal provider logic.
 
 ### sim-web
 
