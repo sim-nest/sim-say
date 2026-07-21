@@ -11,25 +11,3 @@ Expose the embedded SIM Index as immutable Table/Dir collections for loaded runt
 ## Anchors
 
 - `anchor/rustdoc/sim-lib-index/index-dir`
-
-## Specimens
-
-- `recipe/sim-run/02-scenarios/index-examples`
-
-## Worked Example
-
-Specimen `recipe/sim-run/02-scenarios/index-examples` is checked by `xtask check-recipes`.
-
-Source `recipes/02-scenarios/index-examples/recipe.toml`:
-
-```toml
-id = "index-examples"
-title = "Index Feature Examples"
-codec = "shell"
-setup = "setup.sh"
-purpose = "purpose.md"
-order = 73
-tags = ["cli", "index", "examples", "offline", "deterministic"]
-requires = ["sim-run", "sim-lib-index"]
-network = false
-```

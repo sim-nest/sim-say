@@ -10,7 +10,14 @@ Serve browser-facing surfaces through loaded web shell runtime libraries and com
 
 ## Anchors
 
+- `anchor/cli/atelier`
+- `anchor/cli/browse`
+- `anchor/cli/serve`
+- `anchor/cli/sim-web-shell`
 - `anchor/crate/sim-web-shell`
+- `anchor/export/sim-web-shell/cli/main/atelier`
+- `anchor/export/sim-web-shell/cli/main/browse`
+- `anchor/export/sim-web-shell/cli/main/serve`
 - `anchor/runtime-lib/sim-web-shell/atelier-cli-lib`
 - `anchor/runtime-lib/sim-web-shell/browse-cli-lib`
 - `anchor/runtime-lib/sim-web-shell/web-serve-lib`
@@ -20,3 +27,4 @@ Serve browser-facing surfaces through loaded web shell runtime libraries and com
 - `cli/atelier`
 - `cli/browse`
 - `cli/serve`
+- `cli/sim-web-shell`
