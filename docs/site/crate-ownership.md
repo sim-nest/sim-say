@@ -243,6 +243,7 @@
 | `sim-lib-stream-wrist` | [sim-stream](../repos/sim-stream.md) |
 | `sim-lib-topology` | [sim-stream](../repos/sim-stream.md) |
 | `sim-lib-stream-host` | [sim-stream-host](../repos/sim-stream-host.md) |
+| `sim-lib-stream-wristbridge` | [sim-stream-host](../repos/sim-stream-host.md) |
 | `xtask` | [sim-tooling](../repos/sim-tooling.md) |
 | `sim-lib-intent` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-scene` | [sim-web](../repos/sim-web.md) |
