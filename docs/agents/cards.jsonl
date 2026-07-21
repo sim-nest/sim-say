@@ -380,6 +380,7 @@
 {"card": {"id": "citizen/stream/Metadata", "kind": "citizen-class", "owner": "sim-lib-stream-core", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/stream/Packet", "kind": "citizen-class", "owner": "sim-lib-stream-core", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/stream/PcmFormat", "kind": "citizen-class", "owner": "sim-lib-stream-audio", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/stream/WornEvent", "kind": "citizen-class", "owner": "sim-lib-stream-wrist", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/table/DbDir", "kind": "citizen-class", "owner": "sim-table-db", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/table/FsDir", "kind": "citizen-class", "owner": "sim-table-fs", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/table/HashTable", "kind": "citizen-class", "owner": "sim-table-hash", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
