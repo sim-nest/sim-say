@@ -1,0 +1,213 @@
+{"anchors":["anchor/cli/sim-run","anchor/crate/sim-run-core","anchor/rustdoc/sim-run-core/bootloader","anchor/rustdoc/sim-run-core/run_with_session"],"canonical_key":"crate/sim-run-core/feature-sim-run-bootloader","id":"feature/sim-run/bootloader","kind":"feature","specimens":["recipe/sim-run/01-basics/version","recipe/sim-run/02-scenarios/boot-lisp-eval"],"subject":"crate/sim-run-core","summary":"Start product commands through the shared bootloader and loaded runtime libraries.","surfaces":["cli/sim-run","site/sim-run-core"],"title":"Bootloader command dispatch"}
+{"anchors":["anchor/cli/glasses","anchor/export/sim-run/cli/main/glasses","anchor/runtime-lib/sim-run/glasses-boot-codec","anchor/runtime-lib/sim-run/glasses-lib"],"canonical_key":"crate/sim-run/feature-sim-run-glasses","id":"feature/sim-run/glasses","kind":"feature","specimens":[],"subject":"crate/sim-run","summary":"Start modeled or hardware-backed glasses plans through the shared command bootloader.","surfaces":["cli/glasses"],"title":"Glasses command surface"}
+{"anchors":["local/sim-run/anchor/cli/xtask","local/sim-run/anchor/doc/generated/feature-map","local/sim-run/anchor/doc/generated/sim-index-fragment"],"canonical_key":"crate/xtask/feature-sim-run-index","id":"feature/sim-run/index","kind":"feature","specimens":["recipe/sim-run/publish-readiness/package-list"],"subject":"local/sim-run/crate/xtask","summary":"Expose generated package, card, surface, and recipe facts as a checked SIM Index fragment.","surfaces":["docs/sim-run/generated","local/sim-run/cli/xtask"],"title":"Repository index contract"}
+{"anchors":["anchor/cli/repl","anchor/crate/sim-lib-repl","anchor/export/sim-lib-repl/cli/main/repl","anchor/runtime-lib/sim-lib-repl/repl-lib"],"canonical_key":"crate/sim-lib-repl/feature-sim-run-repl","id":"feature/sim-run/repl","kind":"feature","specimens":[],"subject":"crate/sim-lib-repl","summary":"Run a SIM read-eval-print loop through the loaded REPL library and command surface.","surfaces":["cli/repl"],"title":"Interactive REPL"}
+{"anchors":["anchor/crate/sim-view-tty","anchor/export/sim-view-tty/surface/tty/intent","anchor/export/sim-view-tty/surface/tty/render","anchor/runtime-lib/sim-view-tty/tty-view-lib"],"canonical_key":"crate/sim-view-tty/feature-sim-run-terminal-surface","id":"feature/sim-run/terminal-surface","kind":"feature","specimens":["recipe/sim-run/02-scenarios/host-verb"],"subject":"crate/sim-view-tty","summary":"Render and interpret terminal view intents through the loaded TTY surface library.","surfaces":["view/sim-view-tty"],"title":"Terminal view surface"}
+{"anchors":["anchor/cli/watch","anchor/export/sim-run/cli/main/watch","anchor/runtime-lib/sim-run/watch-boot-codec","anchor/runtime-lib/sim-run/watch-lib"],"canonical_key":"crate/sim-run/feature-sim-run-watch","id":"feature/sim-run/watch","kind":"feature","specimens":[],"subject":"crate/sim-run","summary":"Start modeled, imported, or live watch plans through the shared command bootloader.","surfaces":["cli/watch"],"title":"Watch command surface"}
+{"id":"route/check-sim-run-index","kind":"route","steps":["feature/sim-run/index","recipe/sim-run/publish-readiness/package-list"],"title":"Check the sim-run index fragment"}
+{"id":"route/start-a-sim-session","kind":"route","steps":["feature/sim-run/bootloader","feature/sim-run/repl","recipe/sim-run/01-basics/version"],"title":"Start an interactive SIM session"}
+{"checked":false,"checked_by":null,"id":"recipe/sim-codecs/crates/sim-codec-algol/01-basics/algol-arithmetic","kind":"specimen","language":"algol","path":"crates/sim-codec-algol/recipes/01-basics/algol-arithmetic/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-codec-algol"}
+{"checked":false,"checked_by":null,"id":"recipe/sim-codecs/crates/sim-codec-binary-base64/01-basics/text-wrapper","kind":"specimen","language":"lisp","path":"crates/sim-codec-binary-base64/recipes/01-basics/text-wrapper/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-codec-binary-base64"}
+{"checked":false,"checked_by":null,"id":"recipe/sim-codecs/crates/sim-codec-binary/01-basics/frame-descriptor","kind":"specimen","language":"lisp","path":"crates/sim-codec-binary/recipes/01-basics/frame-descriptor/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-codec-binary"}
+{"checked":false,"checked_by":null,"id":"recipe/sim-codecs/crates/sim-codec-bitwise-base64/01-basics/text-wrapper","kind":"specimen","language":"lisp","path":"crates/sim-codec-bitwise-base64/recipes/01-basics/text-wrapper/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-codec-bitwise-base64"}
+{"checked":false,"checked_by":null,"id":"recipe/sim-codecs/crates/sim-codec-bitwise/01-basics/frame-descriptor","kind":"specimen","language":"lisp","path":"crates/sim-codec-bitwise/recipes/01-basics/frame-descriptor/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-codec-bitwise"}
+{"checked":false,"checked_by":null,"id":"recipe/sim-codecs/crates/sim-codec-bridge/01-basics/packet-descriptor","kind":"specimen","language":"bridge","path":"crates/sim-codec-bridge/recipes/01-basics/packet-descriptor/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-codec-bridge"}
+{"checked":false,"checked_by":null,"id":"recipe/sim-codecs/crates/sim-codec-chat/01-basics/provider-codec-profiles","kind":"specimen","language":"lisp","path":"crates/sim-codec-chat/recipes/01-basics/provider-codec-profiles/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-codec-chat"}
+{"checked":false,"checked_by":null,"id":"recipe/sim-codecs/crates/sim-codec-chat/01-basics/transcript-descriptor","kind":"specimen","language":"lisp","path":"crates/sim-codec-chat/recipes/01-basics/transcript-descriptor/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-codec-chat"}
+{"checked":false,"checked_by":null,"id":"recipe/sim-codecs/crates/sim-codec-compare/01-basics/run-report","kind":"specimen","language":"lisp","path":"crates/sim-codec-compare/recipes/01-basics/run-report/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-codec-compare"}
+{"checked":false,"checked_by":null,"id":"recipe/sim-codecs/crates/sim-codec-config/01-basics/per-lib-config","kind":"specimen","language":"config","path":"crates/sim-codec-config/recipes/01-basics/per-lib-config/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-codec-config"}
+{"checked":false,"checked_by":null,"id":"recipe/sim-codecs/crates/sim-codec-doc/01-basics/backend-catalog","kind":"specimen","language":"lisp","path":"crates/sim-codec-doc/recipes/01-basics/backend-catalog/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-codec-doc"}
+{"checked":false,"checked_by":null,"id":"recipe/sim-codecs/crates/sim-codec-doc/01-basics/document-chunks","kind":"specimen","language":"lisp","path":"crates/sim-codec-doc/recipes/01-basics/document-chunks/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-codec-doc"}
+{"checked":false,"checked_by":null,"id":"recipe/sim-codecs/crates/sim-codec-doc/01-basics/markdown-to-typst","kind":"specimen","language":"lisp","path":"crates/sim-codec-doc/recipes/01-basics/markdown-to-typst/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-codec-doc"}
+{"checked":false,"checked_by":null,"id":"recipe/sim-codecs/crates/sim-codec-json/01-basics/tagged-string","kind":"specimen","language":"json","path":"crates/sim-codec-json/recipes/01-basics/tagged-string/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-codec-json"}
+{"checked":false,"checked_by":null,"id":"recipe/sim-codecs/crates/sim-codec-lisp/01-basics/quote-symbol","kind":"specimen","language":"lisp","path":"crates/sim-codec-lisp/recipes/01-basics/quote-symbol/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-codec-lisp"}
+{"checked":false,"checked_by":null,"id":"recipe/sim-codecs/crates/sim-codec-lisp/02-loadable/native-script","kind":"specimen","language":"lisp","path":"crates/sim-codec-lisp/recipes/02-loadable/native-script/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-codec-lisp"}
+{"checked":false,"checked_by":null,"id":"recipe/sim-codecs/crates/sim-codec-lua/01-basics/decode-roundtrip","kind":"specimen","language":"lisp","path":"crates/sim-codec-lua/recipes/01-basics/decode-roundtrip/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-codec-lua"}
+{"checked":false,"checked_by":null,"id":"recipe/sim-codecs/crates/sim-codec-mcp/01-basics/envelope-descriptor","kind":"specimen","language":"mcp","path":"crates/sim-codec-mcp/recipes/01-basics/envelope-descriptor/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-codec-mcp"}
+{"checked":false,"checked_by":null,"id":"recipe/sim-codecs/crates/sim-codec/01-basics/positions-and-limits","kind":"specimen","language":"lisp","path":"crates/sim-codec/recipes/01-basics/positions-and-limits/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-codec"}
+{"checked":true,"checked_by":"xtask check-recipes","id":"recipe/sim-run/01-basics/version","kind":"specimen","language":"shell","path":"recipes/01-basics/version/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-run"}
+{"checked":true,"checked_by":"xtask check-recipes","id":"recipe/sim-run/02-scenarios/boot-lisp-eval","kind":"specimen","language":"shell","path":"recipes/02-scenarios/boot-lisp-eval/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-run"}
+{"checked":true,"checked_by":"xtask check-recipes","id":"recipe/sim-run/02-scenarios/bytes-lib","kind":"specimen","language":"shell","path":"recipes/02-scenarios/bytes-lib/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-run"}
+{"checked":true,"checked_by":"xtask check-recipes","id":"recipe/sim-run/02-scenarios/config-cookbook-override","kind":"specimen","language":"shell","path":"recipes/02-scenarios/config-cookbook-override/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-run"}
+{"checked":true,"checked_by":"xtask check-recipes","id":"recipe/sim-run/02-scenarios/config-effective","kind":"specimen","language":"shell","path":"recipes/02-scenarios/config-effective/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-run"}
+{"checked":true,"checked_by":"xtask check-recipes","id":"recipe/sim-run/02-scenarios/config-status","kind":"specimen","language":"shell","path":"recipes/02-scenarios/config-status/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-run"}
+{"checked":true,"checked_by":"xtask check-recipes","id":"recipe/sim-run/02-scenarios/fake-crates-io","kind":"specimen","language":"shell","path":"recipes/02-scenarios/fake-crates-io/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-run"}
+{"checked":true,"checked_by":"xtask check-recipes","id":"recipe/sim-run/02-scenarios/host-verb","kind":"specimen","language":"shell","path":"recipes/02-scenarios/host-verb/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-run"}
+{"checked":true,"checked_by":"xtask check-recipes","id":"recipe/sim-run/02-scenarios/inspect-manifest","kind":"specimen","language":"shell","path":"recipes/02-scenarios/inspect-manifest/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-run"}
+{"checked":true,"checked_by":"xtask check-recipes","id":"recipe/sim-run/02-scenarios/loadable-site","kind":"specimen","language":"shell","path":"recipes/02-scenarios/loadable-site/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-run"}
+{"checked":true,"checked_by":"xtask check-recipes","id":"recipe/sim-run/02-scenarios/placement-report","kind":"specimen","language":"shell","path":"recipes/02-scenarios/placement-report/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-run"}
+{"checked":true,"checked_by":"xtask check-recipes","id":"recipe/sim-run/02-scenarios/server-verb","kind":"specimen","language":"shell","path":"recipes/02-scenarios/server-verb/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-run"}
+{"checked":true,"checked_by":"xtask check-recipes","id":"recipe/sim-run/publish-readiness/package-list","kind":"specimen","language":"shell","path":"recipes/publish-readiness/package-list/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-run"}
+{"checked":false,"checked_by":null,"id":"recipe/sim-shape/01-basics/exact-bool-shape","kind":"specimen","language":"rust","path":"recipes/01-basics/exact-bool-shape/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-shape"}
+{"checked":false,"checked_by":null,"id":"recipe/sim-shape/01-basics/shape-grammar-contract","kind":"specimen","language":"rust","path":"recipes/01-basics/shape-grammar-contract/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-shape"}
+{"checked":true,"checked_by":"cargo test","id":"spec-test/sim-codecs/crates/sim-codec-doc/tests/conformance","kind":"specimen","language":"doc","path":"crates/sim-codec-doc/tests/conformance.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-codec-doc"}
+{"checked":true,"checked_by":"cargo test","id":"spec-test/sim-shape/src/citizen/inventory","kind":"specimen","language":"shape","path":"src/citizen/inventory.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-shape"}
+{"checked":true,"checked_by":"cargo test","id":"spec-test/sim-shape/src/citizen_tests","kind":"specimen","language":"shape","path":"src/citizen_tests.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-shape"}
+{"id":"crate/sim-codec","kind":"subject","subject_kind":"crate","title":"sim-codec"}
+{"id":"crate/sim-codec-algol","kind":"subject","subject_kind":"crate","title":"sim-codec-algol"}
+{"id":"crate/sim-codec-binary","kind":"subject","subject_kind":"crate","title":"sim-codec-binary"}
+{"id":"crate/sim-codec-binary-base64","kind":"subject","subject_kind":"crate","title":"sim-codec-binary-base64"}
+{"id":"crate/sim-codec-bitwise","kind":"subject","subject_kind":"crate","title":"sim-codec-bitwise"}
+{"id":"crate/sim-codec-bitwise-base64","kind":"subject","subject_kind":"crate","title":"sim-codec-bitwise-base64"}
+{"id":"crate/sim-codec-bridge","kind":"subject","subject_kind":"crate","title":"sim-codec-bridge"}
+{"id":"crate/sim-codec-chat","kind":"subject","subject_kind":"crate","title":"sim-codec-chat"}
+{"id":"crate/sim-codec-compare","kind":"subject","subject_kind":"crate","title":"sim-codec-compare"}
+{"id":"crate/sim-codec-config","kind":"subject","subject_kind":"crate","title":"sim-codec-config"}
+{"id":"crate/sim-codec-doc","kind":"subject","subject_kind":"crate","title":"sim-codec-doc"}
+{"id":"crate/sim-codec-index","kind":"subject","subject_kind":"crate","title":"sim-codec-index"}
+{"id":"crate/sim-codec-json","kind":"subject","subject_kind":"crate","title":"sim-codec-json"}
+{"id":"crate/sim-codec-lisp","kind":"subject","subject_kind":"crate","title":"sim-codec-lisp"}
+{"id":"crate/sim-codec-lua","kind":"subject","subject_kind":"crate","title":"sim-codec-lua"}
+{"id":"crate/sim-codec-mcp","kind":"subject","subject_kind":"crate","title":"sim-codec-mcp"}
+{"id":"crate/sim-codec-pratt","kind":"subject","subject_kind":"crate","title":"sim-codec-pratt"}
+{"id":"crate/sim-config","kind":"subject","subject_kind":"crate","title":"sim-config"}
+{"id":"crate/sim-cookbook","kind":"subject","subject_kind":"crate","title":"sim-cookbook"}
+{"id":"crate/sim-index-core","kind":"subject","subject_kind":"crate","title":"sim-index-core"}
+{"id":"crate/sim-lib-agent","kind":"subject","subject_kind":"crate","title":"sim-lib-agent"}
+{"id":"crate/sim-lib-agent-runner-core","kind":"subject","subject_kind":"crate","title":"sim-lib-agent-runner-core"}
+{"id":"crate/sim-lib-agent-runner-core-recipe-output-contract-repair","kind":"subject","subject_kind":"crate","title":"sim-lib-agent-runner-core-recipe-output-contract-repair"}
+{"id":"crate/sim-lib-agent-runner-http","kind":"subject","subject_kind":"crate","title":"sim-lib-agent-runner-http"}
+{"id":"crate/sim-lib-agent-runner-local","kind":"subject","subject_kind":"crate","title":"sim-lib-agent-runner-local"}
+{"id":"crate/sim-lib-agent-runner-process","kind":"subject","subject_kind":"crate","title":"sim-lib-agent-runner-process"}
+{"id":"crate/sim-lib-bridge","kind":"subject","subject_kind":"crate","title":"sim-lib-bridge"}
+{"id":"crate/sim-lib-cookbook","kind":"subject","subject_kind":"crate","title":"sim-lib-cookbook"}
+{"id":"crate/sim-lib-forge","kind":"subject","subject_kind":"crate","title":"sim-lib-forge"}
+{"id":"crate/sim-lib-intent","kind":"subject","subject_kind":"crate","title":"sim-lib-intent"}
+{"id":"crate/sim-lib-mcp","kind":"subject","subject_kind":"crate","title":"sim-lib-mcp"}
+{"id":"crate/sim-lib-net-core","kind":"subject","subject_kind":"crate","title":"sim-lib-net-core"}
+{"id":"crate/sim-lib-openai-server","kind":"subject","subject_kind":"crate","title":"sim-lib-openai-server"}
+{"id":"crate/sim-lib-repl","kind":"subject","subject_kind":"crate","title":"sim-lib-repl"}
+{"id":"crate/sim-lib-scene","kind":"subject","subject_kind":"crate","title":"sim-lib-scene"}
+{"id":"crate/sim-lib-server","kind":"subject","subject_kind":"crate","title":"sim-lib-server"}
+{"id":"crate/sim-lib-skill","kind":"subject","subject_kind":"crate","title":"sim-lib-skill"}
+{"id":"crate/sim-lib-stream-fabric","kind":"subject","subject_kind":"crate","title":"sim-lib-stream-fabric"}
+{"id":"crate/sim-lib-surface-card","kind":"subject","subject_kind":"crate","title":"sim-lib-surface-card"}
+{"id":"crate/sim-lib-view","kind":"subject","subject_kind":"crate","title":"sim-lib-view"}
+{"id":"crate/sim-lib-view-agent","kind":"subject","subject_kind":"crate","title":"sim-lib-view-agent"}
+{"id":"crate/sim-lib-view-bridge","kind":"subject","subject_kind":"crate","title":"sim-lib-view-bridge"}
+{"id":"crate/sim-lib-view-codec","kind":"subject","subject_kind":"crate","title":"sim-lib-view-codec"}
+{"id":"crate/sim-lib-view-daw","kind":"subject","subject_kind":"crate","title":"sim-lib-view-daw"}
+{"id":"crate/sim-lib-view-device","kind":"subject","subject_kind":"crate","title":"sim-lib-view-device"}
+{"id":"crate/sim-lib-view-doc","kind":"subject","subject_kind":"crate","title":"sim-lib-view-doc"}
+{"id":"crate/sim-lib-view-math","kind":"subject","subject_kind":"crate","title":"sim-lib-view-math"}
+{"id":"crate/sim-lib-view-spatial","kind":"subject","subject_kind":"crate","title":"sim-lib-view-spatial"}
+{"id":"crate/sim-lib-view-wasm-frame","kind":"subject","subject_kind":"crate","title":"sim-lib-view-wasm-frame"}
+{"id":"crate/sim-lib-view-wrist","kind":"subject","subject_kind":"crate","title":"sim-lib-view-wrist"}
+{"id":"crate/sim-lib-web-bridge","kind":"subject","subject_kind":"crate","title":"sim-lib-web-bridge"}
+{"id":"crate/sim-lib-web-layout","kind":"subject","subject_kind":"crate","title":"sim-lib-web-layout"}
+{"id":"crate/sim-macros","kind":"subject","subject_kind":"crate","title":"sim-macros"}
+{"id":"crate/sim-mcp-server","kind":"subject","subject_kind":"crate","title":"sim-mcp-server"}
+{"id":"crate/sim-run","kind":"subject","subject_kind":"crate","title":"sim-run"}
+{"id":"crate/sim-run-core","kind":"subject","subject_kind":"crate","title":"sim-run-core"}
+{"id":"crate/sim-run-loaders","kind":"subject","subject_kind":"crate","title":"sim-run-loaders"}
+{"id":"crate/sim-shape","kind":"subject","subject_kind":"crate","title":"sim-shape"}
+{"id":"crate/sim-shape-recipe-exact-bool-shape","kind":"subject","subject_kind":"crate","title":"sim-shape-recipe-exact-bool-shape"}
+{"id":"crate/sim-shape-recipe-shape-grammar-contract","kind":"subject","subject_kind":"crate","title":"sim-shape-recipe-shape-grammar-contract"}
+{"id":"crate/sim-table-core","kind":"subject","subject_kind":"crate","title":"sim-table-core"}
+{"id":"crate/sim-table-remote","kind":"subject","subject_kind":"crate","title":"sim-table-remote"}
+{"id":"crate/sim-test-support","kind":"subject","subject_kind":"crate","title":"sim-test-support"}
+{"id":"crate/sim-value","kind":"subject","subject_kind":"crate","title":"sim-value"}
+{"id":"crate/sim-view-tty","kind":"subject","subject_kind":"crate","title":"sim-view-tty"}
+{"id":"crate/sim-wasm-abi","kind":"subject","subject_kind":"crate","title":"sim-wasm-abi"}
+{"id":"crate/sim-web-shell","kind":"subject","subject_kind":"crate","title":"sim-web-shell"}
+{"id":"doc-set/sim-agent-net/generated","kind":"subject","subject_kind":"doc-set","title":"sim-agent-net generated docs"}
+{"id":"doc-set/sim-codecs/generated","kind":"subject","subject_kind":"doc-set","title":"sim-codecs generated docs"}
+{"id":"doc-set/sim-foundation/generated","kind":"subject","subject_kind":"doc-set","title":"sim-foundation generated docs"}
+{"id":"doc-set/sim-run/generated","kind":"subject","subject_kind":"doc-set","title":"sim-run generated docs"}
+{"id":"doc-set/sim-shape/generated","kind":"subject","subject_kind":"doc-set","title":"sim-shape generated docs"}
+{"id":"doc-set/sim-tooling/generated","kind":"subject","subject_kind":"doc-set","title":"sim-tooling generated docs"}
+{"id":"doc-set/sim-web/generated","kind":"subject","subject_kind":"doc-set","title":"sim-web generated docs"}
+{"id":"grammar/algol","kind":"subject","subject_kind":"grammar","title":"algol grammar"}
+{"id":"grammar/binary","kind":"subject","subject_kind":"grammar","title":"binary grammar"}
+{"id":"grammar/binary-base64","kind":"subject","subject_kind":"grammar","title":"binary-base64 grammar"}
+{"id":"grammar/bitwise","kind":"subject","subject_kind":"grammar","title":"bitwise grammar"}
+{"id":"grammar/bitwise-base64","kind":"subject","subject_kind":"grammar","title":"bitwise-base64 grammar"}
+{"id":"grammar/bridge","kind":"subject","subject_kind":"grammar","title":"bridge grammar"}
+{"id":"grammar/chat","kind":"subject","subject_kind":"grammar","title":"chat grammar"}
+{"id":"grammar/compare","kind":"subject","subject_kind":"grammar","title":"compare grammar"}
+{"id":"grammar/config","kind":"subject","subject_kind":"grammar","title":"config grammar"}
+{"id":"grammar/doc","kind":"subject","subject_kind":"grammar","title":"doc grammar"}
+{"id":"grammar/index","kind":"subject","subject_kind":"grammar","title":"index grammar"}
+{"id":"grammar/json","kind":"subject","subject_kind":"grammar","title":"json grammar"}
+{"id":"grammar/lisp","kind":"subject","subject_kind":"grammar","title":"lisp grammar"}
+{"id":"grammar/lua","kind":"subject","subject_kind":"grammar","title":"lua grammar"}
+{"id":"grammar/mcp","kind":"subject","subject_kind":"grammar","title":"mcp grammar"}
+{"id":"grammar/pratt","kind":"subject","subject_kind":"grammar","title":"pratt grammar"}
+{"id":"language/algol","kind":"subject","subject_kind":"language","title":"algol"}
+{"id":"language/binary","kind":"subject","subject_kind":"language","title":"binary"}
+{"id":"language/binary-base64","kind":"subject","subject_kind":"language","title":"binary-base64"}
+{"id":"language/bitwise","kind":"subject","subject_kind":"language","title":"bitwise"}
+{"id":"language/bitwise-base64","kind":"subject","subject_kind":"language","title":"bitwise-base64"}
+{"id":"language/bridge","kind":"subject","subject_kind":"language","title":"bridge"}
+{"id":"language/chat","kind":"subject","subject_kind":"language","title":"chat"}
+{"id":"language/compare","kind":"subject","subject_kind":"language","title":"compare"}
+{"id":"language/config","kind":"subject","subject_kind":"language","title":"config"}
+{"id":"language/doc","kind":"subject","subject_kind":"language","title":"doc"}
+{"id":"language/index","kind":"subject","subject_kind":"language","title":"index"}
+{"id":"language/json","kind":"subject","subject_kind":"language","title":"json"}
+{"id":"language/lisp","kind":"subject","subject_kind":"language","title":"lisp"}
+{"id":"language/lua","kind":"subject","subject_kind":"language","title":"lua"}
+{"id":"language/mcp","kind":"subject","subject_kind":"language","title":"mcp"}
+{"id":"language/pratt","kind":"subject","subject_kind":"language","title":"pratt"}
+{"id":"local/sim-agent-net/crate/xtask","kind":"subject","subject_kind":"crate","title":"xtask"}
+{"id":"local/sim-codecs/crate/xtask","kind":"subject","subject_kind":"crate","title":"xtask"}
+{"id":"local/sim-foundation/crate/xtask","kind":"subject","subject_kind":"crate","title":"xtask"}
+{"id":"local/sim-run/crate/xtask","kind":"subject","subject_kind":"crate","title":"xtask"}
+{"id":"local/sim-shape/crate/xtask","kind":"subject","subject_kind":"crate","title":"xtask"}
+{"id":"local/sim-tooling/crate/xtask","kind":"subject","subject_kind":"crate","title":"xtask"}
+{"id":"local/sim-web/crate/xtask","kind":"subject","subject_kind":"crate","title":"xtask"}
+{"id":"repo/sim-agent-net","kind":"subject","subject_kind":"repo","title":"sim-agent-net"}
+{"id":"repo/sim-codecs","kind":"subject","subject_kind":"repo","title":"sim-codecs"}
+{"id":"repo/sim-foundation","kind":"subject","subject_kind":"repo","title":"sim-foundation"}
+{"id":"repo/sim-run","kind":"subject","subject_kind":"repo","title":"sim-run"}
+{"id":"repo/sim-shape","kind":"subject","subject_kind":"repo","title":"sim-shape"}
+{"id":"repo/sim-tooling","kind":"subject","subject_kind":"repo","title":"sim-tooling"}
+{"id":"repo/sim-web","kind":"subject","subject_kind":"repo","title":"sim-web"}
+{"id":"runtime-lib/sim-codec-algol/algol-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"algol-codec-lib"}
+{"id":"runtime-lib/sim-codec-binary-base64/binary-base64-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"binary-base64-codec-lib"}
+{"id":"runtime-lib/sim-codec-binary/binary-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"binary-codec-lib"}
+{"id":"runtime-lib/sim-codec-bitwise-base64/bitwise-base64-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"bitwise-base64-codec-lib"}
+{"id":"runtime-lib/sim-codec-bitwise/bitwise-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"bitwise-codec-lib"}
+{"id":"runtime-lib/sim-codec-bridge/bridge-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"bridge-codec-lib"}
+{"id":"runtime-lib/sim-codec-chat/anthropic-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"anthropic-codec-lib"}
+{"id":"runtime-lib/sim-codec-chat/chat-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"chat-codec-lib"}
+{"id":"runtime-lib/sim-codec-chat/lemonade-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"lemonade-codec-lib"}
+{"id":"runtime-lib/sim-codec-chat/lm-studio-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"lm-studio-codec-lib"}
+{"id":"runtime-lib/sim-codec-chat/ollama-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"ollama-codec-lib"}
+{"id":"runtime-lib/sim-codec-chat/open-ai-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"open-ai-codec-lib"}
+{"id":"runtime-lib/sim-codec-config/config-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"config-codec-lib"}
+{"id":"runtime-lib/sim-codec-doc/doc-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"doc-codec-lib"}
+{"id":"runtime-lib/sim-codec-doc/markup-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"markup-codec-lib"}
+{"id":"runtime-lib/sim-codec-index/index-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"index-codec-lib"}
+{"id":"runtime-lib/sim-codec-json/json-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"json-codec-lib"}
+{"id":"runtime-lib/sim-codec-lisp/lisp-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"lisp-codec-lib"}
+{"id":"runtime-lib/sim-codec-lua/lua-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"lua-codec-lib"}
+{"id":"runtime-lib/sim-codec-mcp/mcp-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"mcp-codec-lib"}
+{"id":"runtime-lib/sim-codec/domain-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"domain-codec-lib"}
+{"id":"runtime-lib/sim-lib-agent-runner-local/local-model-lib","kind":"subject","subject_kind":"runtime-lib","title":"local-model-lib"}
+{"id":"runtime-lib/sim-lib-agent-runner-local/wasm-model-lib","kind":"subject","subject_kind":"runtime-lib","title":"wasm-model-lib"}
+{"id":"runtime-lib/sim-lib-agent/agent-lib","kind":"subject","subject_kind":"runtime-lib","title":"agent-lib"}
+{"id":"runtime-lib/sim-lib-bridge/bridge-lib","kind":"subject","subject_kind":"runtime-lib","title":"bridge-lib"}
+{"id":"runtime-lib/sim-lib-cookbook/cookbook-lib","kind":"subject","subject_kind":"runtime-lib","title":"cookbook-lib"}
+{"id":"runtime-lib/sim-lib-forge/forge-lib","kind":"subject","subject_kind":"runtime-lib","title":"forge-lib"}
+{"id":"runtime-lib/sim-lib-intent/intent-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"intent-codec-lib"}
+{"id":"runtime-lib/sim-lib-mcp/mcp-lib","kind":"subject","subject_kind":"runtime-lib","title":"mcp-lib"}
+{"id":"runtime-lib/sim-lib-mcp/mcp-serve-lib","kind":"subject","subject_kind":"runtime-lib","title":"mcp-serve-lib"}
+{"id":"runtime-lib/sim-lib-openai-server/open-ai-gateway-lib","kind":"subject","subject_kind":"runtime-lib","title":"open-ai-gateway-lib"}
+{"id":"runtime-lib/sim-lib-repl/repl-lib","kind":"subject","subject_kind":"runtime-lib","title":"repl-lib"}
+{"id":"runtime-lib/sim-lib-scene/scene-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"scene-codec-lib"}
+{"id":"runtime-lib/sim-lib-server/server-lib","kind":"subject","subject_kind":"runtime-lib","title":"server-lib"}
+{"id":"runtime-lib/sim-lib-skill/skill-lib","kind":"subject","subject_kind":"runtime-lib","title":"skill-lib"}
+{"id":"runtime-lib/sim-lib-stream-fabric/cadr-fixture-lib","kind":"subject","subject_kind":"runtime-lib","title":"cadr-fixture-lib"}
+{"id":"runtime-lib/sim-run-loaders/loaded-native-lib","kind":"subject","subject_kind":"runtime-lib","title":"loaded-native-lib"}
+{"id":"runtime-lib/sim-run-loaders/reexport-lib","kind":"subject","subject_kind":"runtime-lib","title":"reexport-lib"}
+{"id":"runtime-lib/sim-run-loaders/source-lib","kind":"subject","subject_kind":"runtime-lib","title":"source-lib"}
+{"id":"runtime-lib/sim-run/glasses-boot-codec","kind":"subject","subject_kind":"runtime-lib","title":"glasses-boot-codec"}
+{"id":"runtime-lib/sim-run/glasses-lib","kind":"subject","subject_kind":"runtime-lib","title":"glasses-lib"}
+{"id":"runtime-lib/sim-run/watch-boot-codec","kind":"subject","subject_kind":"runtime-lib","title":"watch-boot-codec"}
+{"id":"runtime-lib/sim-run/watch-lib","kind":"subject","subject_kind":"runtime-lib","title":"watch-lib"}
+{"id":"runtime-lib/sim-view-tty/tty-view-lib","kind":"subject","subject_kind":"runtime-lib","title":"tty-view-lib"}
+{"id":"runtime-lib/sim-wasm-abi/wasm-lib","kind":"subject","subject_kind":"runtime-lib","title":"wasm-lib"}
+{"id":"runtime-lib/sim-web-shell/atelier-cli-lib","kind":"subject","subject_kind":"runtime-lib","title":"atelier-cli-lib"}
+{"id":"runtime-lib/sim-web-shell/browse-cli-lib","kind":"subject","subject_kind":"runtime-lib","title":"browse-cli-lib"}
+{"id":"runtime-lib/sim-web-shell/web-serve-lib","kind":"subject","subject_kind":"runtime-lib","title":"web-serve-lib"}
