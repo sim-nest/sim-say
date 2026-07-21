@@ -4,10 +4,18 @@
 
 | Feature | Subject | Summary | Specimens |
 | --- | --- | --- | ---: |
+| [`feature/sim-agent-net/mcp-server`](features/feature--sim-agent-net--mcp-server.md) | `crate/sim-lib-mcp` | Serve MCP requests through the loaded sim-lib-mcp command and runtime libraries. | 0 |
+| [`feature/sim-agent-net/model-packet-workflow`](features/feature--sim-agent-net--model-packet-workflow.md) | `crate/sim-lib-agent` | Shape model exchanges as Bridge packets with agent and bridge runtime support. | 0 |
+| [`feature/sim-codecs/bridge-packet-codec`](features/feature--sim-codecs--bridge-packet-codec.md) | `crate/sim-codec-bridge` | Encode and decode Bridge packet workflow data through the Bridge wire grammar. | 0 |
+| [`feature/sim-codecs/codec-core`](features/feature--sim-codecs--codec-core.md) | `crate/sim-codec` | Define codec positions, limits, and the domain codec runtime library used by concrete codecs. | 0 |
+| [`feature/sim-codecs/pratt-operator-language`](features/feature--sim-codecs--pratt-operator-language.md) | `crate/sim-codec-pratt` | Parse operator-oriented expression languages through the Pratt codec surface. | 0 |
 | [`feature/sim-run/bootloader`](features/feature--sim-run--bootloader.md) | `crate/sim-run-core` | Start product commands through the shared bootloader and loaded runtime libraries. | 2 |
 | [`feature/sim-run/glasses`](features/feature--sim-run--glasses.md) | `crate/sim-run` | Start modeled or hardware-backed glasses plans through the shared command bootloader. | 0 |
 | [`feature/sim-run/index`](features/feature--sim-run--index.md) | `local/sim-run/crate/xtask` | Expose generated package, card, surface, and recipe facts as a checked SIM Index fragment. | 1 |
+| [`feature/sim-run/index-table-dir`](features/feature--sim-run--index-table-dir.md) | `crate/sim-lib-index` | Expose the embedded SIM Index as immutable Table/Dir collections for loaded runtime code. | 1 |
 | [`feature/sim-run/repl`](features/feature--sim-run--repl.md) | `crate/sim-lib-repl` | Run a SIM read-eval-print loop through the loaded REPL library and command surface. | 1 |
-| [`feature/sim-run/runtime-index`](features/feature--sim-run--runtime-index.md) | `crate/sim-lib-index` | Explore the merged SIM Index through the bootloader as stable tables and structured query output. | 4 |
+| [`feature/sim-run/runtime-index`](features/feature--sim-run--runtime-index.md) | `crate/sim-lib-index` | Explore the merged SIM Index through the bootloader as stable Table/Dir rows and structured query output. | 4 |
 | [`feature/sim-run/terminal-surface`](features/feature--sim-run--terminal-surface.md) | `crate/sim-view-tty` | Render and interpret terminal view intents through the loaded TTY surface library. | 1 |
 | [`feature/sim-run/watch`](features/feature--sim-run--watch.md) | `crate/sim-run` | Start modeled, imported, or live watch plans through the shared command bootloader. | 0 |
+| [`feature/sim-tooling/generated-docs`](features/feature--sim-tooling--generated-docs.md) | `local/sim-tooling/crate/xtask` | Generate repo contracts, feature maps, card indexes, and index fragments through xtask. | 0 |
+| [`feature/sim-web/view-surface`](features/feature--sim-web--view-surface.md) | `crate/sim-lib-view` | Expose view and edit surfaces through sim-lib-view so codecs can render and reverse surface data. | 0 |

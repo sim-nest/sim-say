@@ -4,10 +4,18 @@
 
 | Feature | Subject | Specimens |
 | --- | --- | ---: |
+| [`feature/sim-agent-net/mcp-server`](features/feature--sim-agent-net--mcp-server.md) | `crate/sim-lib-mcp` | 0 |
+| [`feature/sim-agent-net/model-packet-workflow`](features/feature--sim-agent-net--model-packet-workflow.md) | `crate/sim-lib-agent` | 0 |
+| [`feature/sim-codecs/bridge-packet-codec`](features/feature--sim-codecs--bridge-packet-codec.md) | `crate/sim-codec-bridge` | 0 |
+| [`feature/sim-codecs/codec-core`](features/feature--sim-codecs--codec-core.md) | `crate/sim-codec` | 0 |
+| [`feature/sim-codecs/pratt-operator-language`](features/feature--sim-codecs--pratt-operator-language.md) | `crate/sim-codec-pratt` | 0 |
 | [`feature/sim-run/bootloader`](features/feature--sim-run--bootloader.md) | `crate/sim-run-core` | 2 |
 | [`feature/sim-run/glasses`](features/feature--sim-run--glasses.md) | `crate/sim-run` | 0 |
 | [`feature/sim-run/index`](features/feature--sim-run--index.md) | `local/sim-run/crate/xtask` | 1 |
+| [`feature/sim-run/index-table-dir`](features/feature--sim-run--index-table-dir.md) | `crate/sim-lib-index` | 1 |
 | [`feature/sim-run/repl`](features/feature--sim-run--repl.md) | `crate/sim-lib-repl` | 1 |
 | [`feature/sim-run/runtime-index`](features/feature--sim-run--runtime-index.md) | `crate/sim-lib-index` | 4 |
 | [`feature/sim-run/terminal-surface`](features/feature--sim-run--terminal-surface.md) | `crate/sim-view-tty` | 1 |
 | [`feature/sim-run/watch`](features/feature--sim-run--watch.md) | `crate/sim-run` | 0 |
+| [`feature/sim-tooling/generated-docs`](features/feature--sim-tooling--generated-docs.md) | `local/sim-tooling/crate/xtask` | 0 |
+| [`feature/sim-web/view-surface`](features/feature--sim-web--view-surface.md) | `crate/sim-lib-view` | 0 |
