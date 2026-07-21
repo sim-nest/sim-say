@@ -117,6 +117,7 @@ piece gives you.
 - **sim-codec-compare** -- the honest scoreboard that tells you when the bit-packed wire format actually beats the plain one, and when it just wastes your time.
 - **sim-codec-config** -- It turns small SIM configuration files into ordinary runtime maps and writes those maps back as clean text.
 - **sim-codec-doc** -- It reads and writes Markdown, Typst, AsciiDoc, and LaTeX as one structured document value.
+- **sim-codec-index** -- It gives the SIM Index one checked wire surface instead of many ad hoc readers.
 - **sim-codec-json** -- It reads and writes any value as JSON, so SIM data flows through the world's most common interchange format.
 - **sim-codec-lisp** -- It reads and writes values in parenthesized s-expression text, the plain nested form where structure is spelled out with brackets.
 - **sim-codec-lua** -- It lets SIM read Lua chunks into shared expression forms with source identity kept nearby.
@@ -637,6 +638,12 @@ SIM libraries often need a few plain settings: enabled helpers, preferred defaul
 It reads and writes Markdown, Typst, AsciiDoc, and LaTeX as one structured document value.
 
 This treats a document as more than a flat wall of text. It reads Markdown, Typst, AsciiDoc, and LaTeX into one organized value with real parts -- blocks, sections, math, tables, source fragments, and chunks -- that the runtime can hold and hand around. It can write that structure back out through the supported markup formats. Along the way it can split a document into chunks while keeping track of where each piece came from, so a passage always remembers its place in the whole. That makes it easy to pull a document apart for review, search, or processing and still trust the origin of every fragment. It names any loss or preserved raw material instead of pretending everything translated cleanly.
+
+#### sim-codec-index
+
+It gives the SIM Index one checked wire surface instead of many ad hoc readers.
+
+The SIM Index describes features, examples, surfaces, and routes across the whole constellation. This crate gives that graph a single codec that reads the canonical index form, validates every reference through the shared index model, and writes the same facts back as s-expression or JSON text.
 
 #### sim-codec-json
 

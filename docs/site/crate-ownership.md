@@ -57,6 +57,7 @@
 | `sim-codec-chat` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-config` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-doc` | [sim-codecs](../repos/sim-codecs.md) |
+| `sim-codec-index` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-json` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-lisp` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-lua` | [sim-codecs](../repos/sim-codecs.md) |
