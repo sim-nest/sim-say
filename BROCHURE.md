@@ -247,6 +247,7 @@ piece gives you.
 - **sim-lib-stream-wrist** -- Watch and wearable sensor streams that are strict enough for tests without requiring a real wrist device.
 - **sim-lib-stream-xr** -- Repeatable glasses sensor streams for XR work without needing a Viture or Halo device on the test bench.
 - **sim-lib-topology** -- The part that turns a described network of connected steps into a checked, ready-to-run plan.
+- **sim-lib-stream-halo** -- Halo glasses receive compact, timely glance updates while local sensor routes stay private and hardware-independent.
 - **sim-lib-stream-host** -- It plugs SIM's live streams into the real audio and MIDI gear on your machine and across your network.
 - **sim-lib-stream-viture** -- A local VITURE glasses bridge turns headset pose and display controls into SIM device-stream records.
 - **sim-lib-stream-wristbridge** -- A local wrist bridge turns watch exports into SIM worn events without cloud accounts.
@@ -1787,6 +1788,12 @@ The part that turns a described network of connected steps into a checked, ready
 A topology is a wiring diagram: boxes that do something, joined by lines that say what feeds what. This crate lets you author that wiring as plain graph data, short text, a diagram, or a packaged file, then checks it and compiles it into a deterministic runtime plan. It confirms that nodes connect sensibly, carries along the capabilities a topology needs, and can hold small tests that state an input and the output expected from it. The compiled plan lists its nodes in a settled order, so the same description always produces the same shape. You can also present a topology as a readable card, making the structure something a person can browse rather than infer.
 
 ### sim-stream-host
+
+#### sim-lib-stream-halo
+
+Halo glasses receive compact, timely glance updates while local sensor routes stay private and hardware-independent.
+
+It connects Halo glasses through direct Bluetooth, a browser, or a local phone relay. Motion, taps, buttons, microphone chunks, and deliberate camera captures arrive as the same device-stream records used across SIM, while display updates send only the glyph cells that actually changed.
 
 #### sim-lib-stream-host
 
