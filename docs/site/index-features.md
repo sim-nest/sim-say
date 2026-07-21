@@ -4,13 +4,21 @@ Generated from `docs/index/index.cards.jsonl`.
 
 | Feature | Subject | Index page | Specimens | Summary |
 | --- | --- | --- | ---: | --- |
+| `feature/sim-agent-net/mcp-server` | `crate/sim-lib-mcp` | [features/feature--sim-agent-net--mcp-server.md](../index/features/feature--sim-agent-net--mcp-server.md) | 0 | Serve MCP requests through the loaded sim-lib-mcp command and runtime libraries. |
+| `feature/sim-agent-net/model-packet-workflow` | `crate/sim-lib-agent` | [features/feature--sim-agent-net--model-packet-workflow.md](../index/features/feature--sim-agent-net--model-packet-workflow.md) | 0 | Shape model exchanges as Bridge packets with agent and bridge runtime support. |
+| `feature/sim-codecs/bridge-packet-codec` | `crate/sim-codec-bridge` | [features/feature--sim-codecs--bridge-packet-codec.md](../index/features/feature--sim-codecs--bridge-packet-codec.md) | 0 | Encode and decode Bridge packet workflow data through the Bridge wire grammar. |
+| `feature/sim-codecs/codec-core` | `crate/sim-codec` | [features/feature--sim-codecs--codec-core.md](../index/features/feature--sim-codecs--codec-core.md) | 0 | Define codec positions, limits, and the domain codec runtime library used by concrete codecs. |
+| `feature/sim-codecs/pratt-operator-language` | `crate/sim-codec-pratt` | [features/feature--sim-codecs--pratt-operator-language.md](../index/features/feature--sim-codecs--pratt-operator-language.md) | 0 | Parse operator-oriented expression languages through the Pratt codec surface. |
 | `feature/sim-run/bootloader` | `crate/sim-run-core` | [features/feature--sim-run--bootloader.md](../index/features/feature--sim-run--bootloader.md) | 2 | Start product commands through the shared bootloader and loaded runtime libraries. |
 | `feature/sim-run/glasses` | `crate/sim-run` | [features/feature--sim-run--glasses.md](../index/features/feature--sim-run--glasses.md) | 0 | Start modeled or hardware-backed glasses plans through the shared command bootloader. |
 | `feature/sim-run/index` | `local/sim-run/crate/xtask` | [features/feature--sim-run--index.md](../index/features/feature--sim-run--index.md) | 1 | Expose generated package, card, surface, and recipe facts as a checked SIM Index fragment. |
+| `feature/sim-run/index-table-dir` | `crate/sim-lib-index` | [features/feature--sim-run--index-table-dir.md](../index/features/feature--sim-run--index-table-dir.md) | 1 | Expose the embedded SIM Index as immutable Table/Dir collections for loaded runtime code. |
 | `feature/sim-run/repl` | `crate/sim-lib-repl` | [features/feature--sim-run--repl.md](../index/features/feature--sim-run--repl.md) | 1 | Run a SIM read-eval-print loop through the loaded REPL library and command surface. |
-| `feature/sim-run/runtime-index` | `crate/sim-lib-index` | [features/feature--sim-run--runtime-index.md](../index/features/feature--sim-run--runtime-index.md) | 4 | Explore the merged SIM Index through the bootloader as stable tables and structured query output. |
+| `feature/sim-run/runtime-index` | `crate/sim-lib-index` | [features/feature--sim-run--runtime-index.md](../index/features/feature--sim-run--runtime-index.md) | 4 | Explore the merged SIM Index through the bootloader as stable Table/Dir rows and structured query output. |
 | `feature/sim-run/terminal-surface` | `crate/sim-view-tty` | [features/feature--sim-run--terminal-surface.md](../index/features/feature--sim-run--terminal-surface.md) | 1 | Render and interpret terminal view intents through the loaded TTY surface library. |
 | `feature/sim-run/watch` | `crate/sim-run` | [features/feature--sim-run--watch.md](../index/features/feature--sim-run--watch.md) | 0 | Start modeled, imported, or live watch plans through the shared command bootloader. |
+| `feature/sim-tooling/generated-docs` | `local/sim-tooling/crate/xtask` | [features/feature--sim-tooling--generated-docs.md](../index/features/feature--sim-tooling--generated-docs.md) | 0 | Generate repo contracts, feature maps, card indexes, and index fragments through xtask. |
+| `feature/sim-web/view-surface` | `crate/sim-lib-view` | [features/feature--sim-web--view-surface.md](../index/features/feature--sim-web--view-surface.md) | 0 | Expose view and edit surfaces through sim-lib-view so codecs can render and reverse surface data. |
 
 ## Surface Rows
 
