@@ -6,7 +6,7 @@
 - Subject: `local/sim-tooling/crate/xtask`
 - Canonical key: `crate/xtask/feature-sim-index-core`
 
-Generate, query, route, and prove the SIM Index graph as a checked constellation surface.
+Generate, query, route, prove, and check duplicate implementation overlap in the SIM Index graph as a checked constellation surface.
 
 ## Anchors
 
