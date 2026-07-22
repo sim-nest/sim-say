@@ -1,6 +1,6 @@
 # sim-femm
 
-Published commit: `2f0ed038f7440a9845d4b33ae068d12c860365c3`.
+Published commit: `c12ca034fd2230ba3b32eb7e314ef68632dcdd73`.
 
 ## Crates
 
@@ -18,6 +18,7 @@ Published commit: `2f0ed038f7440a9845d4b33ae068d12c860365c3`.
 - `sim-lib-femm-physics`
 - `sim-lib-femm-post`
 - `sim-lib-femm-prelude`
+- `sim-lib-femm-query`
 - `sim-lib-femm-sensitiv`
 - `sim-lib-femm-solve`
 - `sim-lib-femm-space`

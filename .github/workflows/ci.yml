@@ -10,8 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: stays code-free (no Rust)
-        run: test ! -d crates && test ! -d src && test ! -f Cargo.toml
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: stays code-free (no Rust, any depth)
+        run: |
+          hits=$(git ls-files | grep -E '(^|/)(Cargo\.toml|Cargo\.lock)$|\.rs$|(^|/)(src|crates|xtask|tests|benches|examples|fuzz)/' || true)
+          if [ -n "$hits" ]; then
+            echo "Rust/Cargo content found (R1 violation):"; echo "$hits"; exit 1
+          fi
       - name: ASCII-only
         run: |
           hits=$(git ls-files -z | xargs -0 -r grep -lIP '[^\x00-\x7F]' || true)

@@ -1,12 +1,13 @@
 # sim-run
 
-Published commit: `86a0d24a894b401cbb81bd54d5c55a2289719885`.
+Published commit: `b770030572e1e02dc124471f48e3476f96319b45`.
 
 ## Crates
 
 - `sim-run`
 - `sim-run-core`
 - `sim-run-loaders`
+- `sim-lib-index`
 - `sim-lib-repl`
 - `sim-view-tty`
 

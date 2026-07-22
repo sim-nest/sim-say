@@ -1,6 +1,6 @@
 # sim-web
 
-Published commit: `0f3760a080dcda358c1c10e268c0240dc52491db`.
+Published commit: `4b75330483b68df6d83f8b35af4c990d897eb71d`.
 
 ## Crates
 
@@ -8,11 +8,15 @@ Published commit: `0f3760a080dcda358c1c10e268c0240dc52491db`.
 - `sim-lib-scene`
 - `sim-lib-view`
 - `sim-lib-view-agent`
+- `sim-lib-view-bridge`
 - `sim-lib-view-codec`
 - `sim-lib-view-daw`
+- `sim-lib-view-device`
 - `sim-lib-view-doc`
 - `sim-lib-view-math`
+- `sim-lib-view-spatial`
 - `sim-lib-view-wasm-frame`
+- `sim-lib-view-wrist`
 - `sim-lib-web-bridge`
 - `sim-lib-web-layout`
 - `sim-web-shell`

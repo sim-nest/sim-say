@@ -13,12 +13,14 @@ piece gives you.
 
 - **sim-lib-agent** -- The part of SIM that lets an assistant use tools, remember things, and pick which model answers.
 - **sim-lib-agent-runner-core** -- The shared rulebook that lets any model, from any provider, plug into SIM the same way.
-- **sim-lib-agent-runner-http** -- The connector that lets SIM reach models offered over the web, including OpenAI-style and Ollama services.
+- **sim-lib-agent-runner-http** -- The connector that lets SIM reach hosted and local models through provider-shaped HTTP profiles.
 - **sim-lib-agent-runner-local** -- The piece that lets SIM run a model right on your own machine, in the same process.
 - **sim-lib-agent-runner-process** -- The connector that lets SIM use a model or tool that runs as a separate program on your computer.
+- **sim-lib-bridge** -- It keeps model-facing BRIDGE packets from leaving or entering SIM unless their local checks agree.
 - **sim-lib-cookbook** -- A built-in collection of worked recipes you can browse, search, and actually run inside SIM.
+- **sim-lib-forge** -- It compiles a plain-English task into a reusable, checked model program you can trust and cache instead of re-prompting.
 - **sim-lib-mcp** -- The piece that turns SIM's own tools and skills into safe listings other assistants can discover.
-- **sim-lib-openai-server** -- A gateway that lets tools built for OpenAI's API talk to SIM instead.
+- **sim-lib-openai-server** -- A gateway that lets OpenAI-shaped clients reach SIM's model and agent surface.
 - **sim-lib-server** -- The part of SIM that serves evaluation and agents to callers and streams the replies back.
 - **sim-lib-skill** -- The system that describes each thing an agent can do and lets it call that ability like any other command.
 - **sim-lib-stream-fabric** -- The layer that lets SIM place work on other machines and share streaming results without minding where they run.
@@ -40,7 +42,7 @@ piece gives you.
 - **sim-lib-stream-coreaudio** -- A stand-in for Apple's CoreAudio sound system that lets SIM audio run and be tested without a Mac or its frameworks.
 - **sim-lib-stream-cpal** -- A cross-platform sound-card connection for SIM, with a hardware-free default lane and an optional path to real devices.
 - **sim-lib-stream-jack** -- A stand-in for the JACK audio routing system that lets SIM connect and be tested without a running JACK server.
-- **sim-lib-stream-jack-provider** -- A loadable add-on that registers a JACK sound connection for SIM, either modeled by default or wired to real JACK.
+- **sim-lib-stream-jack-provider** -- A registrable JACK sound provider for SIM, modeled by default and hardware-gated when real JACK is available.
 - **sim-lib-stream-pipewire** -- A stand-in for PipeWire, the modern Linux sound server, that lets SIM connect and be tested without a running daemon.
 - **sim-lib-stream-portaudio** -- A stand-in for PortAudio, the portable sound layer, that lets SIM play and be tested without a PortAudio install.
 - **sim-lib-daw-session** -- A recording-studio session you can build, arrange, and bounce to audio without opening any studio software.
@@ -88,7 +90,19 @@ piece gives you.
 - **sim-lib-stream-bridge** -- Converts flowing streams between MIDI and audio so one kind of stream can feed the other.
 - **sim-lib-stream-file** -- Reads and writes streams to and from files on disk, with each access recorded and permission-checked.
 - **sim-lib-stream-midi** -- Wraps live MIDI sources and sinks so they plug into the SIM streaming pipeline as ordinary packets.
-- **sim-table-fs** -- Turns a folder on disk into a lookup table where each entry is a file and each subfolder is a nested table.
+
+### auto
+
+- **sim-auto** -- A modeled auto-bay command that boots through SIM's loader.
+- **sim-codec-uds** -- a safe diagnostic byte-frame reader for automotive UDS and OBD-II data.
+- **sim-lib-auto-core** -- the automotive vocabulary SIM uses to name vehicles, shop lanes, effects, and access rules.
+- **sim-lib-auto-diag** -- a safe diagnostic fabric that lets SIM read modeled vehicle data and replay it exactly.
+- **sim-lib-auto-info** -- a modeled repair-information layer that turns safe workshop fixtures into ranked SIM documents.
+- **sim-lib-auto-order** -- a safe modeled work order that shows a whole automotive job without private shop data.
+- **sim-lib-auto-parts** -- a modeled parts catalog and ordering layer that keeps supplier effects reviewable.
+- **sim-lib-auto-vehicle** -- a vehicle identity lookup layer that keeps workshop data sources behind explicit network contracts.
+- **sim-lib-auto-vendor** -- a manifest-driven vendor engine that keeps vehicle-side actions behind explicit proof gates.
+- **sim-lib-view-bay** -- A modeled repair bay Scene with checked operator actions.
 
 ### codecs
 
@@ -98,12 +112,17 @@ piece gives you.
 - **sim-codec-binary-base64** -- It carries the compact binary form as plain text, so it can travel anywhere only text is allowed.
 - **sim-codec-bitwise** -- It writes any value in the smallest, most predictable string of bits, the same value always giving the same result.
 - **sim-codec-bitwise-base64** -- It carries the canonical minimal bit-packed form as plain text, so it can travel anywhere only text is allowed.
+- **sim-codec-bridge** -- It gives SIM, people, and model seats one checked packet format for requests, replies, reviews, and receipts.
 - **sim-codec-chat** -- It reads and writes model conversations -- prompts, replies, and events -- in one neutral, provider-independent form.
-- **sim-codec-compare** -- the honest scoreboard that tells you when the bit-packed wire format
-- **sim-codec-doc** -- It turns document text, plain or Markdown, into structured pieces you can work with, and writes it back out.
+- **sim-codec-compare** -- the honest scoreboard that tells you when the bit-packed wire format actually beats the plain one, and when it just wastes your time.
+- **sim-codec-config** -- It turns small SIM configuration files into ordinary runtime maps and writes those maps back as clean text.
+- **sim-codec-doc** -- It reads and writes Markdown, Typst, AsciiDoc, and LaTeX as one structured document value.
+- **sim-codec-index** -- It gives the SIM Index one checked wire surface instead of many ad hoc readers.
 - **sim-codec-json** -- It reads and writes any value as JSON, so SIM data flows through the world's most common interchange format.
 - **sim-codec-lisp** -- It reads and writes values in parenthesized s-expression text, the plain nested form where structure is spelled out with brackets.
+- **sim-codec-lua** -- It lets SIM read Lua chunks into shared expression forms with source identity kept nearby.
 - **sim-codec-mcp** -- It reads and writes the message envelopes of the Model Context Protocol, checking each one is well formed.
+- **sim-codec-pratt** -- It gives SIM codecs one shared way to group infix tokens into expression trees.
 - **sim-test-support** -- It is the shared set of helpers the SIM formats use to test that they read and write values correctly.
 - **sim-wasm-abi** -- It is the shared handshake that lets SIM pass values to and from sandboxed WebAssembly modules.
 
@@ -112,7 +131,9 @@ piece gives you.
 - **sim-kernel** -- the small, steady center that lets every SIM piece connect.
 - **sim-citizen** -- The layer that lets a domain's own data types show up as first-class, well-behaved values inside SIM.
 - **sim-citizen-derive** -- A one-line marker that writes all the wiring needed to make your data type a full SIM value for you.
-- **sim-cookbook** -- The engine behind SIM's built-in, runnable lessons that teach each library from the inside.
+- **sim-config** -- layered SIM settings stay inspectable because every source becomes the same table-shaped data before it is merged.
+- **sim-cookbook** -- The engine behind SIM's built-in lessons that teach each library from the inside.
+- **sim-index-core** -- the checked map that lets every SIM surface describe the same features, examples, and routes.
 - **sim-lib-net-core** -- The quiet reading room that turns raw web traffic into clean, understandable pieces.
 - **sim-lib-surface-card** -- The shared name-translator that presents SIM's tools cleanly to outside systems and people.
 - **sim-macros** -- A set of labels that let an author declare SIM building blocks in plain Rust and have the wiring written for them.
@@ -172,6 +193,7 @@ piece gives you.
 - **sim-lib-femm-physics** -- It holds the actual laws of nature the simulation obeys, one set per kind of problem.
 - **sim-lib-femm-post** -- It turns a finished solve into the real-world numbers you actually wanted to know.
 - **sim-lib-femm-prelude** -- It switches on the whole finite-element toolkit in a single step.
+- **sim-lib-femm-query** -- It keeps every FEMM answer path speaking the same model-query language.
 - **sim-lib-femm-sensitiv** -- It tells you how much your result would shift if you nudged each design setting.
 - **sim-lib-femm-solve** -- It takes a described model all the way to a solved answer and hands you proof it was done right.
 - **sim-lib-femm-space** -- It works out the fine geometric details inside each triangle so the solver knows how values vary across it.
@@ -183,12 +205,13 @@ piece gives you.
 - **sim-lib-control** -- It manages how a running program moves -- pausing, resuming, retrying, and recovering when something goes wrong.
 - **sim-lib-core** -- It is the shared plumbing every SIM library uses to announce what it offers and get it installed once, cleanly.
 - **sim-lib-dispatch** -- It picks the right version of an operation based on the kinds of things you hand it.
+- **sim-lib-exec** -- It lets a trusted host run a specific outside process with clear permission and tight limits.
 - **sim-lib-lang-cl** -- It lets you write for SIM in familiar Common Lisp style, with the parentheses and forms Lisp people expect.
 - **sim-lib-lang-clojure** -- It lets you write for SIM in Clojure style, using EDN data notation and an immutable, functional feel.
-- **sim-lib-lang-genconf** -- It generates a steady, repeatable set of test inputs used to confirm the language surfaces behave correctly.
+- **sim-lib-lang-genconf** -- It generates a steady, repeatable set of test inputs for confirming that language surfaces behave correctly.
 - **sim-lib-lang-islisp** -- It lets you write for SIM in ISLISP, the small standardized Lisp with a deliberately compact core.
 - **sim-lib-lang-julia** -- It lets you write for SIM in Julia style, the notation favored for technical and numerical work.
-- **sim-lib-lang-lua** -- It lets you write for SIM in Lua style, the small, approachable scripting notation many people already know.
+- **sim-lib-lang-lua** -- It lets SIM run Lua-shaped source on the shared runtime with clear boundaries around host effects.
 - **sim-lib-lang-matrix** -- It gathers every language surface and checks them all against one shared standard so they agree.
 - **sim-lib-lang-prolog** -- It lets you write for SIM in Prolog style, stating facts and rules and letting the system find the answers.
 - **sim-lib-lang-ruby** -- It lets you write for SIM in an expressive Ruby style, with the readable, block-friendly flavor Ruby is known for.
@@ -203,9 +226,16 @@ piece gives you.
 - **sim-list-cell** -- A classic linked-list store that holds items in order so a program can keep and change sequences.
 - **sim-list-lazy** -- A list that figures out its contents only when you ask, so huge or endless sequences cost little until read.
 - **sim-table-db** -- A file-cabinet style store that keeps named values in a tree of folders you reach by path.
+- **sim-table-fs** -- Turns a folder on disk into a lookup table where each entry is a file and each subfolder is a nested table.
 - **sim-table-hash** -- A quick name-to-value lookup store that finds any entry by its key almost instantly.
+- **sim-table-http** -- It lets a trusted host treat direct HTTP resources as table entries under explicit network permission.
 - **sim-table-lazy** -- A lookup table whose values are worked out the first time you ask and then remembered.
 - **sim-table-override** -- A stack of lookup tables where the top layers can cover entries in the ones beneath.
+- **sim-ledger** -- clear yearly books with exact money values and balance checks at the center.
+- **sim-ledger-cli** -- a direct terminal path from exported books to checked yearly reports.
+- **sim-ledger-odb** -- bring LibreOffice Base bookkeeping exports into the ledger model without changing the books by hand.
+- **sim-lib-ledger-books** -- a review desk for bookkeeping drafts before they enter the books.
+- **sim-lib-ledger-close** -- exact year-end statements from local ledger files.
 
 ### stream
 
@@ -214,19 +244,46 @@ piece gives you.
 - **sim-lib-stream-clock** -- The part that lines up a stream of data with real time or musical beats.
 - **sim-lib-stream-combinators** -- The building blocks for reshaping and combining streams of data as they flow.
 - **sim-lib-stream-core** -- The shared shape for a run of changing data, so anything that moves can be watched packet by packet.
+- **sim-lib-stream-device** -- A hardware-free device sample lane, so sensors can be modeled and tested before any real device is attached.
 - **sim-lib-stream-prelude** -- The ready-made bundle that makes SIM's whole streaming toolkit available in one install.
+- **sim-lib-stream-wrist** -- Watch and wearable sensor streams that are strict enough for tests without requiring a real wrist device.
+- **sim-lib-stream-xr** -- Repeatable glasses sensor streams for XR work without needing a Viture or Halo device on the test bench.
 - **sim-lib-topology** -- The part that turns a described network of connected steps into a checked, ready-to-run plan.
+- **sim-lib-stream-halo** -- Halo glasses receive compact, timely glance updates while local sensor routes stay private and hardware-independent.
 - **sim-lib-stream-host** -- It plugs SIM's live streams into the real audio and MIDI gear on your machine and across your network.
+- **sim-lib-stream-viture** -- A local VITURE glasses bridge turns headset pose and display controls into SIM device-stream records.
+- **sim-lib-stream-wristbridge** -- A local wrist bridge turns watch exports into SIM worn events without cloud accounts.
+- **sim-viture-ffi** -- A small boundary crate keeps VITURE glasses SDK loading out of the safe stream host.
 
 ### surface
 
+- **sim-lib-index** -- sim-lib-index lets the SIM command answer what exists, where it lives, and which examples prove it.
 - **sim-lib-repl** -- The interactive prompt where you type a line and SIM answers back.
 - **sim-run** -- The `sim` program you launch from a terminal to start a SIM session.
 - **sim-run-core** -- The part that reads your command line and sets up the SIM session.
-- **sim-run-loaders** -- The pieces that let SIM pull in outside plug-ins from files or bundles.
+- **sim-run-loaders** -- The pieces that let SIM pull in source files, packs, and outside plug-ins.
 - **sim-view-tty** -- The library that draws SIM in your terminal and reads your keystrokes.
 - **sim-conformance** -- the runnable checklist that proves SIM actually behaves the way its architecture promises.
 - **sim-nest** -- the single starting point a developer adds to reach every part of the SIM runtime.
+- **sim-codec-mspdi** -- project schedules can cross the Microsoft Project XML boundary with clear loss reporting.
+- **sim-codec-odf** -- LibreOffice files can carry local office documents without hiding what falls outside the portable model.
+- **sim-codec-ooxml** -- Office file packages can move through SIM without hiding what the portable model cannot keep.
+- **sim-lib-deck** -- presentation content stays portable before it enters a slide file or hosted editor.
+- **sim-lib-doc-core** -- the small document spine that office codecs, stores, views, and sites share.
+- **sim-lib-doc-ledger** -- a careful handoff from office evidence to accounting reviews.
+- **sim-lib-doc-markup** -- article files enter the office document flow through the same markup body.
+- **sim-lib-doc-site** -- the office bridge that makes external document places loadable without making them the frontend.
+- **sim-lib-doc-store** -- a local office document cache that keeps edits tied to the ledger that produced them.
+- **sim-lib-doc-surface** -- a suite-facing document surface that turns office records into renderable panes and checked edits.
+- **sim-lib-gantt** -- local project schedules that can be checked and reopened without a vendor system.
+- **sim-lib-mail** -- mail and calendar records stay useful without carrying private bodies around.
+- **sim-lib-office-pack** -- It packages a closed ledger year into review-ready office exports without sending anything live.
+- **sim-lib-sheet** -- spreadsheets keep exact local values before any vendor file format enters.
+- **sim-site-dalux** -- Dalux project items become local SIM office records behind API identity gates.
+- **sim-site-libreoffice** -- LibreOffice automation stays optional, permissioned, and outside the runtime process.
+- **sim-site-msgraph** -- Microsoft Graph documents can enter SIM through a modeled-first office site.
+- **sim-site-powerproject** -- Powerproject and Project for the web become permissioned places for SIM Gantt plans.
+- **sim-site-sharepoint** -- SharePoint lists and drive folders become reviewable SIM office records.
 
 ### web
 
@@ -234,11 +291,15 @@ piece gives you.
 - **sim-lib-scene** -- it is the portable picture of what should appear on screen, saved as plain data you can inspect and share.
 - **sim-lib-view** -- it decides how any value should be shown and edited, and always has a sensible default ready.
 - **sim-lib-view-agent** -- it lets you wire up and watch a network of agents on a canvas, live, alongside the agents themselves.
+- **sim-lib-view-bridge** -- it lets people review and change BRIDGE packets in the same form agents use.
 - **sim-lib-view-codec** -- it shows one value written several ways at once and lets you inspect how it matches a shape.
 - **sim-lib-view-daw** -- it brings a full music studio -- timeline, mixer, effects, and synths -- into the browser workspace.
-- **sim-lib-view-doc** -- it is a writing surface for scientific articles where equations, figures, and live results are real parts of the page.
+- **sim-lib-view-device** -- it turns open surface claims into a clear device envelope, so small screens and wearable edges degrade honestly.
+- **sim-lib-view-doc** -- it is a writing surface where article structure, equations, figures, source text, and live results stay together.
 - **sim-lib-view-math** -- it turns numbers, matrices, and formulas into plots and grids you can see and adjust.
+- **sim-lib-view-spatial** -- Glasses surfaces get the right SIM Scene form for stereo panels, mono HUD cards, and simple mirrored displays.
 - **sim-lib-view-wasm-frame** -- it is the local helper that renders a value to a screen picture, folds your gestures into edits, and commits them in place.
+- **sim-lib-view-wrist** -- Round watch glance budgets that reuse the shared device glance path for haptic wrist feedback.
 - **sim-lib-web-bridge** -- it is the pipe that carries your edits out and the fresh pictures back, no matter where the runtime actually runs.
 - **sim-lib-web-layout** -- it holds the whole arrangement of your workspace -- panes, tabs, and docks -- as data you can save and restore.
 - **sim-web-shell** -- it is the program you run to open the SIM workspace in a browser.
@@ -251,7 +312,7 @@ piece gives you.
 
 The part of SIM that lets an assistant use tools, remember things, and pick which model answers.
 
-This is the home base for agents inside SIM. It brings together the pieces an assistant needs to do real work: the tools it can call, the memory it keeps between turns, the patterns that shape its behavior, and the fixtures used to try things out safely. It also decides where a model request actually runs, choosing from a catalog of placements you have set up, whether that is a model on your own machine or one reached across a network. When a request has been answered once, it can keep that reply and hand back the same result for the same question, so you are not paying to ask twice. Everything stays fair and orderly when many requests arrive at once.
+This is the home base for agents inside SIM. It brings together the pieces an assistant needs to do real work: the tools it can call, the memory it keeps between turns, the patterns that shape its behavior, and the fixtures for trying things out safely. It also decides where a model request actually runs, choosing from a catalog of placements you have set up, whether that is a model on your own machine or one reached across a network. When a request has been answered once, it can keep that reply and hand back the same result for the same question, so you are not paying to ask twice. Everything stays fair and orderly when many requests arrive at once.
 
 #### sim-lib-agent-runner-core
 
@@ -261,9 +322,9 @@ This crate sets the common ground that every model connection in SIM agrees on. 
 
 #### sim-lib-agent-runner-http
 
-The connector that lets SIM reach models offered over the web, including OpenAI-style and Ollama services.
+The connector that lets SIM reach hosted and local models through provider-shaped HTTP profiles.
 
-This crate lets SIM talk to a model that lives behind a web address. You point it at a service, and it handles the back-and-forth: sending your request, reading the reply, and passing along partial text as it streams in so you do not wait for the whole answer. It understands the common shapes used by OpenAI-compatible endpoints and by Ollama, so many popular hosted and self-run model services work without special glue. It also takes care to keep sensitive parts of a request, such as keys and private content, from leaking into logs and traces. From SIM's point of view, a web-hosted model becomes just another runner it can call.
+This crate lets SIM talk to a model that lives behind a web address. You point it at a service, and it handles the back-and-forth: sending your request, reading the reply, and passing along partial text as it streams in so you do not wait for the whole answer. It understands hosted OpenAI and Anthropic services, local Ollama, LM Studio, and Lemonade servers, and other OpenAI-compatible endpoints. It also takes care to keep sensitive parts of a request, such as keys and private content, from leaking into logs and traces. From SIM's point of view, each provider becomes just another runner it can call.
 
 #### sim-lib-agent-runner-local
 
@@ -277,11 +338,23 @@ The connector that lets SIM use a model or tool that runs as a separate program 
 
 This crate lets SIM drive a model by launching a local program and talking to it through its input and output. SIM sends the request in, the program does its work, and SIM reads the result back. It supports both a plain text conversation and a structured exchange where the request and reply are passed as JSON, and it can read the program's output line by line so streamed answers arrive as they are produced. This is the natural way to wire in a command-line model tool, a script, or any local helper that reads a request and prints a reply, without that tool needing to know anything about SIM.
 
+#### sim-lib-bridge
+
+It keeps model-facing BRIDGE packets from leaving or entering SIM unless their local checks agree.
+
+This crate is the runtime guard around BRIDGE packets. On send, it stamps a stable identity, proves the line form can be read back, checks that every byte belongs to the packet, and runs the same receive checks the other side will use. When an answer comes back, it reads the final model content as another BRIDGE packet and checks the move, parts, capabilities, and declared return contract before accepting it.
+
 #### sim-lib-cookbook
 
 A built-in collection of worked recipes you can browse, search, and actually run inside SIM.
 
 This crate turns SIM's recipe collection into live commands you can use while the system is running. You can list the books and chapters, look up a specific recipe, search across them, and step to the next one in a sequence. Recipes are more than reading material: a recipe can be run, and when it runs SIM reads its setup, carries it out, and checks that the results match what the recipe promised. That makes each recipe a small, self-checking example rather than a snippet you copy by hand and hope works. The same shared collection feeds the command line, the web view, and the help and browse surfaces, so everyone sees one consistent set of examples.
+
+#### sim-lib-forge
+
+It compiles a plain-English task into a reusable, checked model program you can trust and cache instead of re-prompting.
+
+FORGE turns prose into a named, verified artifact. You hand it a task in ordinary language; it lifts that prose into a BRIDGE packet, confirms the packet is well-formed and types its own output, then checks the answer contract with real verifiers before the result is trusted. A task that passes becomes a golden artifact with a stable identity, so the next caller fetches the compiled program instead of asking a model to interpret the same words again. It also routes work to a cheap model first and only escalates when a check fails, and it can measure whether compiling actually helped.
 
 #### sim-lib-mcp
 
@@ -291,9 +364,9 @@ The Model Context Protocol is a common way for assistants to find out what tools
 
 #### sim-lib-openai-server
 
-A gateway that lets tools built for OpenAI's API talk to SIM instead.
+A gateway that lets OpenAI-shaped clients reach SIM's model and agent surface.
 
-Many programs already know how to speak to OpenAI's web interface. This crate lets SIM answer on that same interface, so those programs can point at SIM without being rewritten. It handles the familiar endpoints for chat and responses, for embeddings, and for audio, image, and vector-store requests, translating between OpenAI's message format and SIM's own. Answers can stream back as they are produced, past responses can be fetched again by their id, and a stored response can be replayed or branched for inspection. The model listing reports the models SIM actually has available, so local, fixture, and remote model entries all show up together when they are installed.
+Many programs already know the request and response shapes used by OpenAI-style model services. This crate gives SIM a gateway in that shape for chat, response, embedding, model listing, streaming, replay, and inspection flows. It also includes SIM fixture and subset routes for file records, audio transcription and speech, image references, and text-vector search, so tests and demos can exercise those object families without pretending to be a full media or multipart provider. Stored responses can be fetched again by id, replayed, or branched for inspection. The model listing reports the models SIM actually has available, so local, fixture, and remote model entries appear together when they are installed.
 
 #### sim-lib-server
 
@@ -407,21 +480,83 @@ This crate models JACK, the pro-audio routing system that patches sound and MIDI
 
 #### sim-lib-stream-jack-provider
 
-A loadable add-on that registers a JACK sound connection for SIM, either modeled by default or wired to real JACK.
+A registrable JACK sound provider for SIM, modeled by default and hardware-gated when real JACK is available.
 
-This crate packages the JACK sound connection as a loadable provider -- a piece a host can pick up and register on demand. By default it is pure Rust and registers a steady, modeled JACK-shaped audio site through the shared provider registrar, so a project gains a JACK placement without linking to JACK or opening any hardware. Turning on the hardware feature enables the native JACK module and exports the symbol that a loadable plug-in library needs, so an outside host can bring the real thing into play. It is the seam that lets JACK support be added as a separate, swappable unit rather than baked in.
+This crate packages the JACK sound connection as a registrable provider that a host can add on demand. By default it is pure Rust and registers a steady, modeled JACK-shaped audio site through the shared provider registrar, so a project gains a JACK placement without linking to JACK or opening any hardware. The hardware feature enables the native JACK module for hosts that register the Rust provider entry directly. It is the seam that lets JACK support stay separate and swappable rather than baked in.
 
 #### sim-lib-stream-pipewire
 
 A stand-in for PipeWire, the modern Linux sound server, that lets SIM connect and be tested without a running daemon.
 
-This crate models PipeWire, the sound and media server behind current Linux desktops, entirely in Rust. It binds to no library and needs no running daemon; instead it serves steady, made-up nodes and ports that behave the same every run. It presents provider-reported PipeWire nodes and the visible SIM client ports, folds quantum, sample-rate, and latency details into the shared stream configuration, and bridges made-up process callbacks into the audio graph and its PCM queues. Because none of this leans on a live PipeWire session, an audio project builds and validates anywhere, and a native adapter can later fill the same model from real PipeWire registry events.
+This crate models PipeWire, the sound and media server behind current Linux desktops, entirely in Rust. It binds to no library and needs no running daemon; instead it serves steady, made-up nodes and ports that behave the same every run. It presents provider-reported PipeWire nodes and the visible SIM client ports, folds quantum, sample-rate, and latency details into the shared stream configuration, and bridges made-up process callbacks into the audio graph and its PCM queues. Because none of this leans on a live PipeWire session, an audio project builds and validates anywhere, while native adapters use the same model for real PipeWire registry events.
 
 #### sim-lib-stream-portaudio
 
 A stand-in for PortAudio, the portable sound layer, that lets SIM play and be tested without a PortAudio install.
 
 This crate models PortAudio, a widely used portable sound layer that runs across many operating systems, entirely in Rust. It binds to no library and touches no real device; instead it serves a steady, made-up default output that behaves the same every run. It presents PortAudio devices in the shared stream-host shape SIM uses across backends, bridges host callbacks into the audio graph, and records the backend priority the sound bootstrap follows when choosing a device. Because there is nothing to install and no hardware to open, an audio project builds and validates anywhere, while a native adapter can later fill the same model from a real PortAudio installation.
+
+### sim-auto
+
+#### sim-auto
+
+A modeled auto-bay command that boots through SIM's loader.
+
+It gives technicians and tests a simple way to open the public modeled bay, read the primary fault, and inspect the available bay actions from a command line. The command is backed by a loaded SIM library instead of a private runtime path, so it follows the same contract as other product commands.
+
+#### sim-codec-uds
+
+a safe diagnostic byte-frame reader for automotive UDS and OBD-II data.
+
+It turns small diagnostic byte frames into SIM records that tools can inspect, compare, replay, and encode again. Read-DID requests, OBD-II mode requests, and trouble-code responses all become structured data with explicit status bits instead of opaque byte strings.
+
+#### sim-lib-auto-core
+
+the automotive vocabulary SIM uses to name vehicles, shop lanes, effects, and access rules.
+
+It gives automotive work a shared set of names for modeled vehicles, diagnostics, status bits, service channels, shop capabilities, transport endpoints, and diagnostic sessions. That shared vocabulary makes experiments easier to compare and easier to review because every piece describes the same kind of thing in the same way.
+
+#### sim-lib-auto-diag
+
+a safe diagnostic fabric that lets SIM read modeled vehicle data and replay it exactly.
+
+It gives automotive tools a vehicle-shaped eval target with synthetic ECUs, trouble codes, PID values, freeze frames, and replayable diagnostic answers. A session chooses modeled data, a cassette, or a named local bridge, while capability checks decide which operations can actually run.
+
+#### sim-lib-auto-info
+
+a modeled repair-information layer that turns safe workshop fixtures into ranked SIM documents.
+
+It gives automotive workflows a shared way to ask for repair guidance without copying vendor manuals into the public tree. Modeled WIS, ISTA, VIDA, ESI[tronic], HaynesPro, and shop-authored entries are ordinary SIM documents, so they can be selected, inspected, and rendered like other document values.
+
+#### sim-lib-auto-order
+
+a safe modeled work order that shows a whole automotive job without private shop data.
+
+It gathers vehicle identity, diagnostics, repair information, parts lookup, supplier ordering, coding review, and flash review into one session record. Every step is modeled and every outcome is written into a small ledger that a tester or reviewer can inspect.
+
+#### sim-lib-auto-parts
+
+a modeled parts catalog and ordering layer that keeps supplier effects reviewable.
+
+It gives automotive workflows a shared way to find safe, synthetic replacement parts and place modeled supplier orders without reaching into a live account. Catalog data behaves like ordinary SIM directory tables, while ordering uses the same effect gate as other shop operations.
+
+#### sim-lib-auto-vehicle
+
+a vehicle identity lookup layer that keeps workshop data sources behind explicit network contracts.
+
+It gives SIM a safe way to turn a plate label or VIN label into the shared vehicle identity used by diagnostics and vendor sites. Modeled records cover tests and examples, while host-owned bridges can stand in for HaynesPro or biluppgifter.se without putting live endpoints or private vehicle data in the crate.
+
+#### sim-lib-auto-vendor
+
+a manifest-driven vendor engine that keeps vehicle-side actions behind explicit proof gates.
+
+It turns an automotive site manifest into a runnable SIM site without linking a proprietary SDK. A modeled bridge answers requests for tests and fixtures, while the same request shape can point at a host bridge outside the crate.
+
+#### sim-lib-view-bay
+
+A modeled repair bay Scene with checked operator actions.
+
+It gathers the vehicle, selected site, faults, repair note, parts cart, coding state, flash gate, and job timeline into one value a SIM surface can render. The same package also names the operator actions the bay accepts, so a tablet, TUI, or browser can drive the modeled shop flow through checked Intent values.
 
 ### sim-citizen
 
@@ -475,23 +610,41 @@ It carries the canonical minimal bit-packed form as plain text, so it can travel
 
 Some channels only accept plain text -- an email body, a web field, a log line, a config value. This lets the smallest canonical form ride along on those channels. It takes the tight bit-packed frame the bitwise format produces and wraps it as an ordinary run of readable characters, and it unwraps that text back into the exact bytes on the other side. Nothing about the value changes; you simply get a text-safe envelope around it. That means you can drop a full value into a place that would otherwise reject raw bytes, then recover it later without loss. Text that is not a valid envelope is refused rather than guessed at.
 
+#### sim-codec-bridge
+
+It gives SIM, people, and model seats one checked packet format for requests, replies, reviews, and receipts.
+
+BRIDGE makes an exchange inspectable from the first byte. A packet names who speaks, who receives it, what move it makes, what parent move evidence it cites, and what typed parts it carries. This crate reads and writes the strict line form for that packet and checks the book of allowed parts, moves, derived profiles, and warrants before the packet is trusted. The result is a narrow entry point where collaboration messages have stable identity, clear structure, and no hidden side channel.
+
 #### sim-codec-chat
 
 It reads and writes model conversations -- prompts, replies, and events -- in one neutral, provider-independent form.
 
-Conversations with a model come in many shapes: a request you send, the answer that comes back, events along the way, and the record cards that summarize them. This gives all of those a single, tidy text form that does not belong to any one provider. You can capture a whole exchange, store it, move it, or read it later, and it means the same thing regardless of which service produced it. Because the form is consistent, transcripts from different sources line up the same way, so they can be compared, replayed, or archived without special handling for each origin. It keeps the parts of a conversation clearly separated -- who asked, what answered, what happened -- so the record stays legible.
+Conversations with a model come in many shapes: a request you send, the answer that comes back, events along the way, and the record cards that summarize them. This gives all of those a single, tidy text form that does not belong to any one provider. It also understands native provider payloads for OpenAI, Anthropic, Ollama, LM Studio, Lemonade, and OpenAI-compatible local servers, while keeping the saved conversation in the same neutral record. You can capture a whole exchange, store it, move it, or read it later, and it means the same thing regardless of which service produced it. Because the form is consistent, transcripts from different sources line up the same way, so they can be compared, replayed, or archived without special handling for each origin. It keeps the parts of a conversation clearly separated -- who asked, what answered, what happened -- so the record stays legible.
 
 #### sim-codec-compare
 
-the honest scoreboard that tells you when the bit-packed wire format
+the honest scoreboard that tells you when the bit-packed wire format actually beats the plain one, and when it just wastes your time.
 
 A ready-to-run comparison between the two general-purpose SIM wire formats: the byte-oriented one and the bit-packed one. It carries a built-in gallery of sample data shaped like the things a real program stores -- small numbers, big numbers, decimals, names, text, deep trees, wide records, and repeated blocks -- and for each one it reports two plain facts: how many bytes each format takes, and how long each takes to write and read. A single command prints the whole table. A set of built-in checks pins the headline conclusions in place, so if a later change quietly makes the bit-packed format worse, a test fails instead of a promise silently breaking. Here is the shape of a run (size is the packed format against the plain one, so below one is smaller and better; effort is how much longer the packing takes): kind of data size vs plain write effort everyday records 0.6 1.1x lots of small numbers 0.5 1.5x repeated blocks 0.07 (packed) 1.2x plain text 1.0 9x Read left to right that is the whole story: the packed format roughly halves ordinary data for a little more work, shrinks repeated data to a small fraction, and does nothing at all for plain text while costing many times the effort. Run the report yourself for the current numbers on your own machine.
 
+#### sim-codec-config
+
+It turns small SIM configuration files into ordinary runtime maps and writes those maps back as clean text.
+
+SIM libraries often need a few plain settings: enabled helpers, preferred defaults, limits, and load lists. This crate gives those settings a compact text format that decodes into the same map values the rest of the runtime already understands. A library can read its own table, while a launcher can read one shared file that groups many library tables by id.
+
 #### sim-codec-doc
 
-It turns document text, plain or Markdown, into structured pieces you can work with, and writes it back out.
+It reads and writes Markdown, Typst, AsciiDoc, and LaTeX as one structured document value.
 
-This treats a document as more than a flat wall of text. It reads plain writing or Markdown and turns it into an organized value with real parts -- blocks, sections, and chunks -- that the runtime can hold and hand around. It can write that structure back out as a document again. Along the way it can split a document into chunks while keeping track of where each piece came from, so a passage always remembers its place in the whole. That makes it easy to pull a document apart for review, search, or processing and still trust the origin of every fragment. It sticks to documents and their chunks, and steps aside cleanly for anything outside that job.
+This treats a document as more than a flat wall of text. It reads Markdown, Typst, AsciiDoc, and LaTeX into one organized value with real parts -- blocks, sections, math, tables, source fragments, and chunks -- that the runtime can hold and hand around. It can write that structure back out through the supported markup formats. Along the way it can split a document into chunks while keeping track of where each piece came from, so a passage always remembers its place in the whole. That makes it easy to pull a document apart for review, search, or processing and still trust the origin of every fragment. It names any loss or preserved raw material instead of pretending everything translated cleanly.
+
+#### sim-codec-index
+
+It gives the SIM Index one checked wire surface instead of many ad hoc readers.
+
+The SIM Index describes features, examples, surfaces, and routes across the whole constellation. This crate gives that graph a single codec that reads the canonical index form, validates every reference through the shared index model, and writes the same facts back as s-expression or JSON text.
 
 #### sim-codec-json
 
@@ -505,11 +658,23 @@ It reads and writes values in parenthesized s-expression text, the plain nested 
 
 This is the bracket-and-list surface for SIM. It reads text written as nested parenthesized forms and turns it into a checked value, and it writes any value back out in that same clear, nested style. When it writes, it pays attention to the setting -- whether the value is meant to be run, quoted, kept as plain data, or used as a pattern -- and shapes the text to suit. Because it covers the full range of values rather than one narrow kind, anything the runtime can hold travels through it and comes back with the same meaning. The nested form makes the shape of a value visible right on the page, which is why it doubles as a faithful, readable way to store and inspect data.
 
+#### sim-codec-lua
+
+It lets SIM read Lua chunks into shared expression forms with source identity kept nearby.
+
+This crate recognizes Lua chunks, preserves the spelling of source-level values, and groups operators with Lua precedence. It covers the statement shapes builders expect in real scripts: local attributes, assignment, conditionals, loops, function declarations, returns, labels, and gotos. Plain, located, and tree lanes keep comments and source spans available for diagnostics, conformance checks, and faithful replay.
+
 #### sim-codec-mcp
 
 It reads and writes the message envelopes of the Model Context Protocol, checking each one is well formed.
 
 The Model Context Protocol is a standard way for tools and models to exchange messages -- requests, notifications, replies, and errors, each wrapped in a JSON-RPC envelope. This reads one such envelope at a time and turns it into a checked value, and writes a value back out as a proper envelope. Its whole job is that envelope: confirming it is complete and correctly shaped, and translating faithfully between the wire message and the runtime's own form. It deliberately leaves the bigger questions -- how a message is routed, how it travels, what it triggers -- to other parts of the system. That narrow focus means you can trust that any envelope passing through has been validated, with mistakes caught at the door.
+
+#### sim-codec-pratt
+
+It gives SIM codecs one shared way to group infix tokens into expression trees.
+
+This crate keeps precedence parsing in one place for text surfaces that use infix operators. A codec supplies its own lexer and operator table, then receives a located expression tree with the same grouping rules, source spans, and resource limits each time. That keeps language-specific crates focused on their syntax while the common parser handles binding strength, calls, prefixes, postfixes, and nested input.
 
 #### sim-test-support
 
@@ -639,13 +804,19 @@ A simulation is only as trustworthy as the physics behind it, and this is where 
 
 It turns a finished solve into the real-world numbers you actually wanted to know.
 
-Solving a model produces a mass of internal values that is not yet an answer to your question. This is the step that reads that finished solution and works out the quantities engineers actually ask for: the energy stored, the force on a part, the flow through a region, the inductance, and field readings at the spots you choose. You point it at a solved model and ask for what you need, and it computes those meaningful figures for you. It bridges the gap between a technically complete solve and the practical numbers that let you make a decision about your design.
+Solving a model produces a mass of internal values before it becomes an answer to your question. This is the step that reads that finished solution and works out the quantities engineers actually ask for: the energy stored, the force on a part, the flow through a region, the inductance, and field readings at the spots you choose. You point it at a solved model and ask for what you need, and it computes those meaningful figures for you. It bridges the gap between a technically complete solve and the practical numbers that let you make a decision about your design.
 
 #### sim-lib-femm-prelude
 
 It switches on the whole finite-element toolkit in a single step.
 
 The finite-element domain is made of many separate libraries, each doing one job. Wiring them all into a working session by hand would be tedious and easy to get wrong. This spares you that. It is one entry point that installs the entire stack at once, along with the number tools underneath it, so that geometry, materials, meshing, physics, solving, and reporting are all present and ready together. You bring in this one thing, and everything you need to describe, solve, and inspect a model is set up for you. It is the light switch that brings the whole room on.
+
+#### sim-lib-femm-query
+
+It keeps every FEMM answer path speaking the same model-query language.
+
+FEMM models can be asked for many kinds of answers: a scalar result, a field, or a full solution. This library holds the shared request shape for those questions and the callable wrapper that resolves model inputs the same way every time. That means the function layer and the sensitivity layer both work from the same payload, the same defaults, and the same query meaning instead of carrying separate copies of the rules.
 
 #### sim-lib-femm-sensitiv
 
@@ -673,11 +844,23 @@ Solving a model is real effort, and much of that effort is wasted when you solve
 
 ### sim-foundation
 
+#### sim-config
+
+layered SIM settings stay inspectable because every source becomes the same table-shaped data before it is merged.
+
+`sim-config` gives SIM a common base for configuration without inventing a second settings world. Built-in defaults, probed defaults, home files, working-directory files, and explicit overrides all land in one directory of library tables. The merge result carries where each effective field came from, so a loader, command line, report, or agent can show why the current setting has that value.
+
 #### sim-cookbook
 
-The engine behind SIM's built-in, runnable lessons that teach each library from the inside.
+The engine behind SIM's built-in lessons that teach each library from the inside.
 
-Learning a system is easiest when the lessons live next to the thing they explain and actually run. This crate powers exactly that. A lesson -- a small runnable setup paired with a short note on its purpose -- ships inside the library it teaches. When that library loads, its lessons register themselves, and this engine gathers them into books and chapters that any SIM surface can show: the command line, the web view, the in-product help, or an assistant. It reads and checks each lesson collection, embeds them at build time, keeps a searchable store, works out what to read next, and lets a person layer their own notes on top in a steady, repeatable way. The result is one consistent library of hands-on examples drawn from across the whole system.
+Learning a system is easiest when the lessons live next to the thing they explain. This crate powers that library-owned teaching lane. A lesson -- a setup file paired with a short note on its purpose -- ships inside the library it teaches. When that library loads, its lessons register themselves, and this engine gathers them into books and chapters that any SIM surface can show: the command line, the web view, the in-product help, or an assistant. It reads and checks each lesson collection, embeds it at build time, keeps a searchable store, works out what to read next, and lets a person layer their own notes on top in a steady, repeatable way. The result is one consistent library of examples drawn from across the whole system.
+
+#### sim-index-core
+
+the checked map that lets every SIM surface describe the same features, examples, and routes.
+
+A shared home for the SIM Index's facts: what each feature is, where it lives, which surfaces expose it, which runnable specimen proves it, and which route helps a reader reach it. The graph is checked before other tools build pages, cards, or search views from it.
 
 #### sim-lib-net-core
 
@@ -717,6 +900,38 @@ the small, steady center that lets every SIM piece connect.
 
 One dependable place that holds only the shared contracts -- values, expressions, symbols, capabilities, events, libraries, and dispatch records -- so everything else can grow as libraries around it. You get a runtime you can actually keep in your head, where a new codec, number kind, view, or model joins the system without becoming a special case, and where the rules that let those pieces talk to each other are named once, in one place, instead of being re-invented by every part.
 
+### sim-ledger
+
+#### sim-ledger
+
+clear yearly books with exact money values and balance checks at the center.
+
+`sim-ledger` gives SIM a plain model for personal and small-organization accounts: yearly account lists, vouchers, posting lines, and amounts stored as exact hundredths. The pieces are simple enough to inspect directly and strict enough to catch the accounting mistake that matters first, a voucher whose lines do not add back to zero.
+
+#### sim-ledger-cli
+
+a direct terminal path from exported books to checked yearly reports.
+
+`sim-ledger-cli` lets a person create a ledger set, bring in exported books, see which years are present, and print balances without writing a custom importer. It keeps the workflow close to the files on disk, so every step is easy to run again and easy to inspect.
+
+#### sim-ledger-odb
+
+bring LibreOffice Base bookkeeping exports into the ledger model without changing the books by hand.
+
+`sim-ledger-odb` reads the table layout and id counters that LibreOffice Base stores beside a personal ledger, then turns the familiar account, voucher, and posting exports into the shared ledger input format. It keeps the source numbering visible and lets the ledger importer enforce the same balance rules as every other path.
+
+#### sim-lib-ledger-books
+
+a review desk for bookkeeping drafts before they enter the books.
+
+This crate gives ledger workflows a place to check a proposed entry before it is written into a year. It keeps the money exact, makes the supporting references visible, and keeps local tax choices in data so tests and hosts can swap the profile without changing the ledger model.
+
+#### sim-lib-ledger-close
+
+exact year-end statements from local ledger files.
+
+This crate closes a fiscal year without changing the accounting facts. It reads the ledger year, checks that the trial balance nets to zero, groups accounts by their reporting codes, and returns tables that an office workflow can review or export.
+
 ### sim-music
 
 #### sim-lib-daw-session
@@ -741,7 +956,7 @@ This is the common ground for MIDI across the whole music stack. It defines tick
 
 Fast in-and-out buffers that let live MIDI flow through your setup without stalling when things get busy.
 
-This gives you fixed-size ring buffers that sit between real-time MIDI coming in and the tools that consume it. One buffer acts as both a place to write events and a place to read them back in order; another tags each event with the track it belongs to. If a consumer falls behind and a buffer fills, the oldest event is dropped and counted rather than blocking the live input, so a slow reader never freezes a live player.
+This gives you fixed-size ring buffers that sit between incoming real-time MIDI and the tools that consume it. One buffer acts as both a place to write events and a place to read them back in order; another tags each event with the track it belongs to. If a consumer falls behind and a buffer fills, the oldest event is dropped and counted rather than blocking the live input, so a slow reader never freezes a live player.
 
 #### sim-lib-midi-rtmidi
 
@@ -989,12 +1204,6 @@ Wraps live MIDI sources and sinks so they plug into the SIM streaming pipeline a
 
 This adapts the existing MIDI memory, source, and sink pieces into the stream system's packet form, so MIDI can flow through a streaming pipeline like any other material. It keeps to the shared MIDI contracts rather than adding new device backends, so it works with whatever MIDI plumbing is already in place. It is the connector that lets MIDI join the stream world without changing how MIDI itself behaves.
 
-#### sim-table-fs
-
-Turns a folder on disk into a lookup table where each entry is a file and each subfolder is a nested table.
-
-This exposes a host directory as a SIM table: every table key maps to a file, and nested tables map to subdirectories, so a folder tree becomes a structured store you can read and write by key. Access is gated by the kernel's table capabilities and passes through the configured codec. With its format options enabled, recognised extensions -- for example MIDI, music, tone, and tuning files -- round-trip automatically through their domain shapes.
-
 ### sim-numbers
 
 #### sim-lib-numbers-ad
@@ -1157,7 +1366,7 @@ Fields like signal processing and physics work with whole arrays of complex numb
 
 It gives you fast grids of ordinary decimal numbers, the common case for number-heavy work.
 
-Most grid math, from data analysis to simulation, runs on plain decimal numbers. This provides a grid specialized to hold those decimals in a single tight, contiguous block and to run math across them at speed. Because the values sit together in memory rather than scattered, operations sweep through them quickly. It converts cleanly to and from the system's general grid form, so this fast version and the uniform one interchange without friction. If the number of values you supply does not fit the shape you declared, it declines rather than proceed with mismatched data, keeping results sound.
+Most grid math, from data analysis to simulation, runs on plain decimal numbers. This provides a grid specialized to hold those decimals in a single tight, contiguous block and to run math across them at speed. Because the values sit together in memory rather than scattered, operations sweep through them quickly. It converts cleanly to and from the system's general grid form, so this fast version and the uniform one use the same interface. If the number of values you supply does not fit the shape you declared, it declines rather than proceed with mismatched data, keeping results sound.
 
 #### sim-lib-numbers-tensor-i64
 
@@ -1177,7 +1386,129 @@ It gives you grids of exact fractions, so array math avoids rounding entirely.
 
 When you need a whole grid of values to stay exact, decimals will not do; they round. This provides a grid where every cell is a precise fraction, a top number over a bottom number, kept compact for speed. Each cell is automatically reduced to lowest terms with a tidy, consistent sign, so equal fractions look the same and comparisons behave. It converts cleanly to and from the system's general grid form, staying fully compatible with the rest of the stack. If the count of values does not match the shape you declared, it refuses rather than proceed with mismatched data.
 
+### sim-office
+
+#### sim-codec-mspdi
+
+project schedules can cross the Microsoft Project XML boundary with clear loss reporting.
+
+`sim-codec-mspdi` gives the office family a file exchange path for local Gantt plans. It reads and writes the schedule pieces people need to inspect first: task ids, names, dates, progress, and dependency links.
+
+#### sim-codec-odf
+
+LibreOffice files can carry local office documents without hiding what falls outside the portable model.
+
+`sim-codec-odf` gives the office family local file boundaries for spreadsheets and slide decks. It creates ordinary ODF packages, reads them back into SIM documents, preserves exact sheet values, and keeps slide structure visible as portable document content.
+
+#### sim-codec-ooxml
+
+Office file packages can move through SIM without hiding what the portable model cannot keep.
+
+`sim-codec-ooxml` gives the office family local file boundaries for spreadsheet and presentation documents. It creates ordinary workbook and slide packages, reads them back into SIM documents, and calls out styling, merged cells, transitions, or media that do not fit the portable local models.
+
+#### sim-lib-deck
+
+presentation content stays portable before it enters a slide file or hosted editor.
+
+`sim-lib-deck` gives the office family a compact presentation model with slide titles, narrative bullets, tables, and external image references. A local deck can be inspected, transformed, archived, or exported through the same document boundary as the rest of the suite.
+
+#### sim-lib-doc-core
+
+the small document spine that office codecs, stores, views, and sites share.
+
+`sim-lib-doc-core` gives every office layer the same basic record: what kind of document this is, which stable id names it, what runtime value carries its body, and which outside file or service record it came from. It also gives callers a shape value for a document kind, so selection and validation can stay open instead of depending on a closed list inside the kernel.
+
+#### sim-lib-doc-ledger
+
+a careful handoff from office evidence to accounting reviews.
+
+This crate lets an office workflow review a bookkeeping entry or year-end statement before it touches the books or leaves the local review surface. A message, SharePoint file, task, or issue can support the entry as a reference, while ledger checks supply exact preview data.
+
+#### sim-lib-doc-markup
+
+article files enter the office document flow through the same markup body.
+
+`sim-lib-doc-markup` lets Markdown, Typst, AsciiDoc, and LaTeX articles cross the office file boundary as ordinary article documents. The shared markup body stays portable, so one imported article can be exported through another supported markup format without leaving the office document contract.
+
+#### sim-lib-doc-site
+
+the office bridge that makes external document places loadable without making them the frontend.
+
+This crate gives office integrations one place to register file services, helper processes, and modeled service doubles as document places. A caller can ask for data or preview a write through the same boundary, while the registered place carries its document kinds and required capabilities.
+
+#### sim-lib-doc-store
+
+a local office document cache that keeps edits tied to the ledger that produced them.
+
+This crate gives office work a durable local place to remember document snapshots and the edit projections that came from committed ledger entries. It is useful for offline viewing, undo previews, and tests that need repeatable document state without calling a hosted service.
+
+#### sim-lib-doc-surface
+
+a suite-facing document surface that turns office records into renderable panes and checked edits.
+
+This crate gives office documents a shared scene for screens, decks, tables, and embedded document panes. It makes document previews visible through the existing view stack and turns user intent into clear edit records that a host can inspect before it commits anything.
+
+#### sim-lib-gantt
+
+local project schedules that can be checked and reopened without a vendor system.
+
+This crate gives office work a durable Gantt plan model: tasks, dates, dependency links, progress, and a local database for reopening the same plan later. It also identifies the zero-slack tasks that control the schedule, using the shared graph toolkit instead of a private dependency engine.
+
+#### sim-lib-mail
+
+mail and calendar records stay useful without carrying private bodies around.
+
+`sim-lib-mail` gives the office family a compact shape for messages, events, body previews, attendees, and attachment references. A mailbox item can be linked, reviewed, archived, or projected without turning the message body into ambient data.
+
+#### sim-lib-office-pack
+
+It packages a closed ledger year into review-ready office exports without sending anything live.
+
+Annual statements become a coordinated pack: a spreadsheet, a presentation, a mail draft preview, and an archive preview. The package is built from exact ledger statement values, so the numbers in every output stay tied to the closed year.
+
+#### sim-lib-sheet
+
+spreadsheets keep exact local values before any vendor file format enters.
+
+`sim-lib-sheet` gives the office family a small spreadsheet model with sparse cells, exact rational numbers, formulas, and document projection. A local sheet can be inspected and edited as SIM data before Excel, LibreOffice, or service placements appear.
+
+#### sim-site-dalux
+
+Dalux project items become local SIM office records behind API identity gates.
+
+This crate gives construction project data a Dalux boundary that reads items into local office documents and keeps live service access behind a bearer token from an API identity. It gives hosts a small, named place to connect Dalux without changing the document model.
+
+#### sim-site-libreoffice
+
+LibreOffice automation stays optional, permissioned, and outside the runtime process.
+
+`sim-site-libreoffice` gives the office family a helper-process boundary for LibreOffice tasks such as opening a document and exporting a PDF. It keeps UNO automation behind a small command protocol while the ordinary ODF file codec remains the local default.
+
+#### sim-site-msgraph
+
+Microsoft Graph documents can enter SIM through a modeled-first office site.
+
+This crate gives the office family a Microsoft Graph boundary that works with stable recorded answers by default and requires deliberate host permission for live service reads. It keeps the vendor connection outside the kernel while still fitting the shared document site shape.
+
+#### sim-site-powerproject
+
+Powerproject and Project for the web become permissioned places for SIM Gantt plans.
+
+This crate gives schedule work a vendor boundary without changing the local plan model. It names Powerproject as a live desktop placement, names Project for the web as a Dataverse placement, and keeps both paths tied to the same task and dependency records.
+
+#### sim-site-sharepoint
+
+SharePoint lists and drive folders become reviewable SIM office records.
+
+This crate turns SharePoint list rows into local sheet documents and drive children into external references that keep their web links and ETags. A host can read the Graph response, inspect the shape, and decide what to do before any write is attempted.
+
 ### sim-run
+
+#### sim-lib-index
+
+sim-lib-index lets the SIM command answer what exists, where it lives, and which examples prove it.
+
+It turns the public SIM Index into an everyday command surface. A reader can look up features, packages, languages, surfaces, and examples from the installed runtime instead of hunting through generated pages.
 
 #### sim-lib-repl
 
@@ -1199,9 +1530,9 @@ This is the reasoning behind the starting program. When you type a command, this
 
 #### sim-run-loaders
 
-The pieces that let SIM pull in outside plug-ins from files or bundles.
+The pieces that let SIM pull in source files, packs, and outside plug-ins.
 
-This is the set of loading mechanisms the starting program can switch on when you want to bring in behavior that lives outside the base build. One mechanism opens a compiled plug-in file built for your machine. Another opens a portable bundle that runs the same way anywhere. Either way, you get a clean and consistent path from a file on disk to live behavior inside a running session. These loaders stay small and low-level on purpose, so the command surface can add just the loading style you need without dragging in the whole system. When a loaded plug-in offers a placement point for later work, this layer records it as an opaque item the rest of the system can pick up.
+This is the set of loading mechanisms the starting program can switch on when you want to bring behavior in from outside the base build. It handles readable source files, compact library packs, compiled plug-ins built for your machine, and portable bundles that run the same way anywhere. Each path gives the command surface a consistent route from an artifact to registered behavior inside a running session. These loaders stay small and low-level on purpose, so the front door can add just the loading style you need without dragging in the whole system. When a loaded plug-in offers a placement point, this layer records it as an opaque item the rest of the system can pick up.
 
 #### sim-view-tty
 
@@ -1235,6 +1566,12 @@ It picks the right version of an operation based on the kinds of things you hand
 
 This library lets one named operation have many implementations and choose the fitting one automatically. You describe several versions of an operation, each meant for a particular kind of value, and when the operation is called this crate looks at the actual arguments and runs the version that matches best. When more than one version could apply, it settles ties in a clear, stated order rather than by chance. The result is that you can add new behavior for new kinds of data without editing the places that already call the operation, keeping code open to growth.
 
+#### sim-lib-exec
+
+It lets a trusted host run a specific outside process with clear permission and tight limits.
+
+Some useful work belongs outside the runtime: a formatter, a compiler, a small command-line helper, or another tool the host already trusts. This crate gives that work a narrow gate. The caller names the exact program and arguments, the host checks permission first, and the run is bounded by a working directory root, a timeout, and a byte limit on captured output.
+
 #### sim-lib-lang-cl
 
 It lets you write for SIM in familiar Common Lisp style, with the parentheses and forms Lisp people expect.
@@ -1249,7 +1586,7 @@ This library gives SIM a Clojure face. You can use the EDN data notation and the
 
 #### sim-lib-lang-genconf
 
-It generates a steady, repeatable set of test inputs used to confirm the language surfaces behave correctly.
+It generates a steady, repeatable set of test inputs for confirming that language surfaces behave correctly.
 
 This library builds the raw material for checking that SIM's language surfaces do what they should. It walks the space of possible expressions in a fixed, orderly way and produces inputs that the conformance checks then feed through each surface. Because the walk is deterministic, the same inputs come out every time, so a result today can be compared against a result later with confidence that only the system changed, not the test set. It concentrates the tricky job of producing thorough, reproducible examples in one place, keeping the checks themselves simple.
 
@@ -1263,13 +1600,13 @@ This library gives SIM an ISLISP face. ISLISP is a trim, standardized member of 
 
 It lets you write for SIM in Julia style, the notation favored for technical and numerical work.
 
-This library gives SIM a Julia face. Julia's notation is popular with people doing calculation-heavy and scientific work, and this profile lets you express your ideas in that familiar shape and run them on SIM. It is a front for reading and writing in the Julia style, not a separate engine copied inside; the meaning of what you write is carried by SIM's shared expression graph underneath. So you keep the clean, math-friendly look you are used to while your code joins the same runtime that every other SIM surface shares, side by side with them.
+This library gives SIM a Julia face. Julia's notation is popular with people doing calculation-heavy and scientific work, and this profile lets you express your ideas in that familiar shape and run them on SIM. It is a front for reading and writing in the Julia style, not a separate engine copied inside; the meaning of what you write is carried by SIM's shared expression graph underneath. So you keep the clean, math-friendly look you already know while your code joins the same runtime that every other SIM surface shares, side by side with them.
 
 #### sim-lib-lang-lua
 
-It lets you write for SIM in Lua style, the small, approachable scripting notation many people already know.
+It lets SIM run Lua-shaped source on the shared runtime with clear boundaries around host effects.
 
-This library gives SIM a Lua face. Lua is known for being small, easy to pick up, and pleasant for scripting, and this profile lets you write in that light, readable style and have it run on SIM. It is a front for reading and writing in the Lua manner, not a separate interpreter carried along inside; the meaning is held by SIM's shared expression graph underneath. You get the gentle learning curve and clean look Lua is loved for, while what you write joins the same runtime that every other SIM surface uses.
+This library gives SIM a Lua face that reads source, evaluates ordinary chunks, and shares the same runtime organs as the other language profiles. Tables, closures, metatables, coroutines, string patterns, package lookup, math, and safe debug reporting all land as common SIM behavior instead of a separate embedded interpreter. Host-facing calls are guarded by capabilities, so scripts stay useful without gaining ambient authority.
 
 #### sim-lib-lang-matrix
 
@@ -1379,11 +1716,23 @@ A file-cabinet style store that keeps named values in a tree of folders you reac
 
 This backend arranges named values as a directory tree, the way folders hold files on a computer. Each value has a name, and folders can hold more folders, so you reach a value by walking a path from the top. Reading and writing pass through permission checks, so a program only touches the parts it has been allowed to touch. It behaves both as a table of names and as a browsable tree, which suits settings, records, and anything that reads better when grouped and nested. It joins SIM as a loadable part, added when a program needs path-addressed storage under access control.
 
+#### sim-table-fs
+
+Turns a folder on disk into a lookup table where each entry is a file and each subfolder is a nested table.
+
+This exposes a host directory as a SIM table: every table key maps to a file, and nested tables map to subdirectories, so a folder tree becomes a structured store you can read and write by key. Access is gated by the kernel's table capabilities and passes through the configured codec. With its format options enabled, recognised extensions -- for example MIDI, music, tone, and tuning files -- round-trip automatically through their domain shapes.
+
 #### sim-table-hash
 
 A quick name-to-value lookup store that finds any entry by its key almost instantly.
 
 This is the plain, fast lookup table for SIM. It keeps entries in memory, each under a symbol key, and finds, adds, or removes one by its name without scanning the rest. Because it uses a hash map underneath, the time to reach an entry stays about the same whether the table holds a handful of names or many thousands. It is the sensible default when a program just needs to associate names with values and get them back quickly. It loads into the runtime as an optional part, present whenever straightforward keyed storage is called for.
+
+#### sim-table-http
+
+It lets a trusted host treat direct HTTP resources as table entries under explicit network permission.
+
+This backend points a table at a base HTTP address. A key becomes one resource under that address: reading performs a bounded request, writing sends a bounded update, and the response body passes through the selected SIM codec. The caller must hold network permission before any socket opens, so local programs can name remote resources without receiving network authority by accident.
 
 #### sim-table-lazy
 
@@ -1429,11 +1778,29 @@ The shared shape for a run of changing data, so anything that moves can be watch
 
 A stream in SIM is data that arrives over time -- audio samples, events, diagnostics, model output -- and this crate defines the common container for it. Every stream carries a small header describing what it is and which direction it flows, then delivers its contents as a sequence of packets. Each packet is a self-describing unit you can observe, count, buffer, and read back without guessing its layout. Buffers hold packets under a stated overflow policy, an inspector reports on what passed through, and a cassette captures a whole run so a finished stream can be stored and revisited. It is deliberately small: one honest value surface every other stream part builds on.
 
+#### sim-lib-stream-device
+
+A hardware-free device sample lane, so sensors can be modeled and tested before any real device is attached.
+
+Device work often stalls on access to physical gear. This crate gives each device stream a small shared sample shape with a stable kind tag, a sequence number, and strict round-trip rules. A modeled source produces those samples from a counter, so a glasses, watch, badge, or lab rig can ship tests that never depend on a clock, network, driver, or sensor.
+
 #### sim-lib-stream-prelude
 
 The ready-made bundle that makes SIM's whole streaming toolkit available in one install.
 
 This is the single package that gathers the streaming parts -- core packets, audio adapters, and combinators -- into one library the runtime can load at once. Installing it registers a set of named, permission-gated operations: open a deterministic in-memory MIDI or PCM source or sink, run a source-to-sink pipeline, apply combinator stages to reshape the flow, and browse any live stream as a card you can read. Each stream you open is tracked through a single handle that threads every operation, so opening, pumping, transforming, and inspecting all speak of the same thing. Because access is capability-gated, a host decides exactly which stream powers a given run may use.
+
+#### sim-lib-stream-wrist
+
+Watch and wearable sensor streams that are strict enough for tests without requiring a real wrist device.
+
+A wearable can report heart rate, motion, GPS, battery, connection state, touch, buttons, and other wrist-side signals. This crate puts those signals into one checked stream event shape with a sensor tag, sequence number, confidence score, and payload. Modeled sources produce repeatable samples from an index, so demos and CI can exercise wrist behavior without a watch, driver, clock, random seed, or network.
+
+#### sim-lib-stream-xr
+
+Repeatable glasses sensor streams for XR work without needing a Viture or Halo device on the test bench.
+
+XR glasses need more than a screen feed. A rich pair reports pose, cameras, hands, taps, and microphone chunks; a lighter pair reports motion hints, taps, camera references, and audio chunks. This crate puts those inputs into strict stream samples with stable tags and sequence numbers. Modeled sources produce the same Viture-style and Halo-style samples every run, so adapters, demos, and CI can exercise glasses behavior without a driver, clock, random seed, network, or physical hardware.
 
 #### sim-lib-topology
 
@@ -1443,11 +1810,35 @@ A topology is a wiring diagram: boxes that do something, joined by lines that sa
 
 ### sim-stream-host
 
+#### sim-lib-stream-halo
+
+Halo glasses receive compact, timely glance updates while local sensor routes stay private and hardware-independent.
+
+It connects Halo glasses through direct Bluetooth, a browser, or a local phone relay. Motion, taps, buttons, microphone chunks, and deliberate camera captures arrive as the same device-stream records used across SIM, while display updates send only the glyph cells that actually changed.
+
 #### sim-lib-stream-host
 
 It plugs SIM's live streams into the real audio and MIDI gear on your machine and across your network.
 
 This is the layer that connects SIM to the outside world of sound. When SIM needs to send or receive a stream of audio or musical notes, this part opens the connection to a real device, a software instrument, or a peer computer on your network, then keeps the packets flowing without stutters or dropped notes. It knows which devices and ports exist, picks the right place to run each piece of a stream, and reports honestly when a requested connection cannot be made instead of quietly doing something worse. A built-in stand-in device lets everything be tested and replayed without touching real hardware, so results stay repeatable.
+
+#### sim-lib-stream-viture
+
+A local VITURE glasses bridge turns headset pose and display controls into SIM device-stream records.
+
+It gives SIM a focused glasses route for VITURE hardware. The crate advertises a device profile, opens a local provider session, publishes head-pose records with stable sequence numbers, and accepts display and sensor-control packets in the same device session shape used by the rest of the worn stack.
+
+#### sim-lib-stream-wristbridge
+
+A local wrist bridge turns watch exports into SIM worn events without cloud accounts.
+
+The crate gives SIM one watch provider surface for four local routes: Linux BLE, a phone relay, a Zepp companion bridge, and file imports. Each route speaks the same worn-event shape and accepts the same notification, haptic, face, alarm, and privacy commands, so a watch integration can swap transport without changing the rest of the stream host. It also gives test and CI runs a clean hardware-free path. Synthetic imports and scripted link samples produce stable event sequences, while the stub route says plainly that no device is available.
+
+#### sim-viture-ffi
+
+A small boundary crate keeps VITURE glasses SDK loading out of the safe stream host.
+
+The crate gives SIM one narrow place to find and open the VITURE glasses SDK at runtime. It checks explicit local configuration, ordinary dynamic-library lookup, and Linux USB device hints, then reports a clear unavailable result when no SDK is present. It also gives the rest of the stream host a safe surface. Device sessions can ask for poses and device-control setup without carrying raw handles, linking vendor objects at build time, or spreading unsafe code through normal provider logic.
 
 ### sim-web
 
@@ -1473,7 +1864,13 @@ A lens is a matched pair: a way to display a value and a way to edit it back. Th
 
 it lets you wire up and watch a network of agents on a canvas, live, alongside the agents themselves.
 
-This is the composer where you build a topology by hand: drop nodes, connect their ports, group them, move them around, and delete what you no longer need. The same canvas shows a run as it happens, so you can watch messages flow and replay what occurred. The striking part is that an automated agent can edit the very same graph you are looking at, at the same time, because you both act on one shared model. There is no separate copy that drifts out of step. What you draw is the actual system, and what runs is what you drew.
+This is the composer where you build a topology by hand: drop nodes, connect their ports, group them, move them around, and delete the pieces you do not need. The same canvas shows a run as it happens, so you can watch messages flow and replay what occurred. The striking part is that an automated agent can edit the very same graph you are looking at, at the same time, because you both act on one shared model. There is no separate copy that drifts out of step. What you draw is the actual system, and what runs is what you drew.
+
+#### sim-lib-view-bridge
+
+it lets people review and change BRIDGE packets in the same form agents use.
+
+Open a BRIDGE packet and see its sender, move, profile, and parts in a surface-friendly review pane. A person can propose a patch, write a review, cast a scored vote, or record a receipt without leaving the packet model. The edit becomes the same collaboration record an agent reads, so there is one shared object instead of one browser copy and one model copy.
 
 #### sim-lib-view-codec
 
@@ -1487,11 +1884,17 @@ it brings a full music studio -- timeline, mixer, effects, and synths -- into th
 
 This lens family opens the SIM audio stack as a working studio. You arrange clips on a timeline, ride faders on mixer strips, watch live meters move, chain effect plugins in a rack, and shape sounds on synth panels with knobs and sliders. A modulation grid lets one control drive another, and you can read the signal as a waveform or a frequency spectrum. Every twist of a knob and every clip you move is committed as a checked edit against the real session, so the sound you hear reflects the actual saved arrangement. There is no separate audio model hiding behind the panels.
 
+#### sim-lib-view-device
+
+it turns open surface claims into a clear device envelope, so small screens and wearable edges degrade honestly.
+
+Every surface can say what it can show, sense, emit, and refresh without becoming a hard-coded device family. This crate reads those claims into one shared envelope that ranks the surface by what is actually present. A watch, glasses display, phone relay, or desktop pane can all be compared through the same ladder, while still carrying their own open details.
+
 #### sim-lib-view-doc
 
-it is a writing surface for scientific articles where equations, figures, and live results are real parts of the page.
+it is a writing surface where article structure, equations, figures, source text, and live results stay together.
 
-This lens gives you a proper authoring workspace for technical writing, not a plain text box. A document is built from meaningful blocks -- sections, prose, equations, figures, tables, citations, and blocks that run live inside the page. You navigate by an outline and arrange blocks on a canvas. You can look at the same article two ways at once: the clean formatted reading view and the underlying source, side by side, each a lens on the one document. Because the document is a single stored value, an embedded live block shows a real computed result right where it belongs in your argument.
+This lens gives you a proper authoring workspace for technical writing, not a plain text box. A document is built from meaningful blocks -- sections, prose, equations, figures, tables, citations, and blocks that run live inside the page. You navigate by an outline and arrange blocks on a canvas. You can look at the same article two ways at once: the clean formatted reading view and the underlying source, side by side, each a lens on the one document. Because the document is one stored markup value, an embedded live block shows a real computed result right where it belongs in your argument.
 
 #### sim-lib-view-math
 
@@ -1499,11 +1902,23 @@ it turns numbers, matrices, and formulas into plots and grids you can see and ad
 
 This lens family makes math visual and hands-on. Numeric series and functions become plots you can read at a glance. Matrices and tensors open as editable grids, so you can change a slice and see the effect. A symbolic formula shows as a tree you can explore. Sliders and knobs let you sweep a parameter and watch the result move, then snapshot a setting and compare it against another. Throughout, the display reads numbers from SIM's own number kinds, while the runtime value stays the single source of truth -- so what you tweak on screen is the same number the system actually holds.
 
+#### sim-lib-view-spatial
+
+Glasses surfaces get the right SIM Scene form for stereo panels, mono HUD cards, and simple mirrored displays.
+
+Different glasses need different shapes of the same information. A stereo pair can hold anchored panels, a mono HUD needs one short card, and display-only lenses should mirror a reduced scene. This crate makes those choices from advertised surface capabilities while keeping the content as ordinary SIM Scene data.
+
 #### sim-lib-view-wasm-frame
 
 it is the local helper that renders a value to a screen picture, folds your gestures into edits, and commits them in place.
 
 This crate is the plain glue that a browser shell leans on to do the everyday view loop against a value held right here in the process. It renders a value into the shared scene picture, gathers raw gestures and folds them into clear edit requests, applies an accepted edit to the value, and reports back the small difference so the screen can update just the part that changed. It shares the same view, edit, and scene rules the rest of the workspace uses, so its behavior lines up with the browser adapters without carrying any separate display logic of its own.
+
+#### sim-lib-view-wrist
+
+Round watch glance budgets that reuse the shared device glance path for haptic wrist feedback.
+
+Small watch faces need the same semantic card as every other glance device, but with stricter space and a local haptic response. This crate names those wrist limits directly: a compact round-face budget, a larger round-face budget, and the acknowledgement timing used when the wearer taps. The watch path stays a configuration layer over the shared device glance path, so the same reduced card can feed a glasses HUD, a monochrome fixture, or a wrist display without a second reducer.
 
 #### sim-lib-web-bridge
 

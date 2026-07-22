@@ -1,10 +1,12 @@
 # sim-foundation
 
-Published commit: `99122faed1259e60ef5b1016a4958f3bbc72fd83`.
+Published commit: `c574a1c0dd0291ff70be9ba4103d22bc4bd9feea`.
 
 ## Crates
 
+- `sim-config`
 - `sim-cookbook`
+- `sim-index-core`
 - `sim-lib-net-core`
 - `sim-lib-surface-card`
 - `sim-macros`

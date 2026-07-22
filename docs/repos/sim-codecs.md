@@ -1,20 +1,25 @@
 # sim-codecs
 
-Published commit: `749edfb45232f8df5d850c6e4754820683525952`.
+Published commit: `76a56005ba036ec060536747a82af3f3f2877075`.
 
 ## Crates
 
 - `sim-codec`
 - `sim-codec-algol`
+- `sim-codec-pratt`
 - `sim-codec-binary`
 - `sim-codec-binary-base64`
 - `sim-codec-bitwise`
 - `sim-codec-bitwise-base64`
+- `sim-codec-bridge`
 - `sim-codec-compare`
 - `sim-codec-chat`
+- `sim-codec-config`
 - `sim-codec-doc`
+- `sim-codec-index`
 - `sim-codec-json`
 - `sim-codec-lisp`
+- `sim-codec-lua`
 - `sim-codec-mcp`
 - `sim-test-support`
 - `sim-wasm-abi`

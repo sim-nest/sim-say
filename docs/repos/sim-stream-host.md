@@ -1,10 +1,14 @@
 # sim-stream-host
 
-Published commit: `21d3c6e918475bb4ca3847246a2be158a39b21b8`.
+Published commit: `802f1da1de8faf904091675a474a41a822cc50a7`.
 
 ## Crates
 
 - `sim-lib-stream-host`
+- `sim-lib-stream-halo`
+- `sim-lib-stream-viture`
+- `sim-lib-stream-wristbridge`
+- `sim-viture-ffi`
 
 ## Contracts
 

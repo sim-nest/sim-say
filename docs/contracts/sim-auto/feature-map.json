@@ -1,0 +1,150 @@
+{
+  "generator": "xtask repo-contract v1",
+  "packages": [
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "auto-core-citizens"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "auto-lane-flash"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "auto-lane-info"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "auto-lane-order"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "auto-lane-parts"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "auto-lane-read"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "auto-lane-service"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "auto-modeled-work-order"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "auto-recipe-support"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "auto-site-autotuner"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "auto-site-biluppgifter-se"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "auto-site-esitronic"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "auto-site-haynespro"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "auto-site-ista"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "auto-site-mekonomen-pro"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "auto-site-odis"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "auto-site-vida"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "auto-site-xentry"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "sim-auto"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "sim-codec-uds"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "sim-lib-auto-core"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "sim-lib-auto-diag"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "sim-lib-auto-info"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "sim-lib-auto-order"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "sim-lib-auto-parts"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "sim-lib-auto-vehicle"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "sim-lib-auto-vendor"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "sim-lib-view-bay"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "xtask"
+    }
+  ]
+}

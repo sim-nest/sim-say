@@ -1,11 +1,13 @@
 # sim-agent-net
 
-Published commit: `791ac7300d9dbc165318f7483cf2a288a232fdb9`.
+Published commit: `f706af6430a7c91012f07343148d3a8dac3bf887`.
 
 ## Crates
 
 - `sim-lib-agent`
 - `sim-lib-agent-runner-core`
+- `sim-lib-bridge`
+- `sim-lib-forge`
 - `sim-lib-agent-runner-http`
 - `sim-lib-agent-runner-local`
 - `sim-lib-agent-runner-process`

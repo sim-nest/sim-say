@@ -116,9 +116,8 @@ rm -rf "${XDG_CACHE_HOME:-$HOME/.cache}/sim"
 
 ## What you can look at right now
 
-SIM is published: the libraries are on crates.io as `0.1.0`, and the facade
-`sim-nest` (imported as `sim`) pulls the standard distribution together. You
-can:
+SIM is published: the libraries are on crates.io, and the facade `sim-nest`
+(imported as `sim`) pulls the standard distribution together. You can:
 
 - **Read the architecture.** Start with the developer overview and the
   machine-checked architecture contract in `sim-sdk` (its `README.md` and
@@ -200,14 +199,17 @@ The full constellation, generated from each repo's pinned contract files:
 
 - [sim-agent-net](docs/repos/sim-agent-net.md)
 - [sim-audio-daw](docs/repos/sim-audio-daw.md)
+- [sim-auto](docs/repos/sim-auto.md)
 - [sim-citizen](docs/repos/sim-citizen.md)
 - [sim-codecs](docs/repos/sim-codecs.md)
 - [sim-discrete](docs/repos/sim-discrete.md)
 - [sim-femm](docs/repos/sim-femm.md)
 - [sim-foundation](docs/repos/sim-foundation.md)
 - [sim-kernel](docs/repos/sim-kernel.md)
+- [sim-ledger](docs/repos/sim-ledger.md)
 - [sim-music](docs/repos/sim-music.md)
 - [sim-numbers](docs/repos/sim-numbers.md)
+- [sim-office](docs/repos/sim-office.md)
 - [sim-run](docs/repos/sim-run.md)
 - [sim-runtime](docs/repos/sim-runtime.md)
 - [sim-sdk](docs/repos/sim-sdk.md)
@@ -218,7 +220,9 @@ The full constellation, generated from each repo's pinned contract files:
 - [sim-tooling](docs/repos/sim-tooling.md)
 - [sim-web](docs/repos/sim-web.md)
 
-See also: [repository map](docs/site/repos.md), [crate ownership](docs/site/crate-ownership.md), [agent-card catalog](docs/site/agent-card-catalog.md), [constellation diagram](docs/site/constellation.md).
+See also: [repository map](docs/site/repos.md), [crate ownership](docs/site/crate-ownership.md), [agent-card catalog](docs/site/agent-card-catalog.md), [SIM Index features](docs/site/index-features.md), [constellation diagram](docs/site/constellation.md).
+
+The SIM Index contributes 85 feature rows and 164 surface rows to this navigation.
 
 The two SIM entry points -- sim-say = this generated public welcome; sim-sdk = the developer entry point and umbrella `sim` crate.
 
