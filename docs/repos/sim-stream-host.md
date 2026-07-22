@@ -1,6 +1,6 @@
 # sim-stream-host
 
-Published commit: `c629d78ff7135ec99a1e66b2980c233e319ee17e`.
+Published commit: `802f1da1de8faf904091675a474a41a822cc50a7`.
 
 ## Crates
 
