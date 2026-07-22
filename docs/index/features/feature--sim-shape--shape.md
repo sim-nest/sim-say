@@ -11,6 +11,30 @@ Define reusable Shape matching, binding, citizen projection, and grammar contrac
 ## Anchors
 
 - `anchor/crate/sim-shape`
+- `anchor/export/sim-shape/citizen/class.rs`
+- `anchor/export/sim-shape/citizen/codec.rs`
+- `anchor/export/sim-shape/citizen/construct.rs`
+- `anchor/export/sim-shape/citizen/inventory.rs`
+- `anchor/export/sim-shape/citizen/recursive_codec.rs`
+- `anchor/export/sim-shape/shape/accept-on-no-diagnostics-hook`
+- `anchor/export/sim-shape/shape/and`
+- `anchor/export/sim-shape/shape/any`
+- `anchor/export/sim-shape/shape/class`
+- `anchor/export/sim-shape/shape/defs`
+- `anchor/export/sim-shape/shape/discard-on-diagnostic-prefix-hook`
+- `anchor/export/sim-shape/shape/exact-expr`
+- `anchor/export/sim-shape/shape/expr-kind`
+- `anchor/export/sim-shape/shape/hooked`
+- `anchor/export/sim-shape/shape/list`
+- `anchor/export/sim-shape/shape/live-hook`
+- `anchor/export/sim-shape/shape/not`
+- `anchor/export/sim-shape/shape/or`
+- `anchor/export/sim-shape/shape/ref`
+- `anchor/export/sim-shape/shape/repeat`
+- `anchor/export/sim-shape/shape/score-floor-hook`
+- `anchor/export/sim-shape/shape/table`
+- `anchor/export/sim-shape/shape/trace-mark-hook`
+- `anchor/export/sim-shape/shape/venn`
 
 ## Specimens
 

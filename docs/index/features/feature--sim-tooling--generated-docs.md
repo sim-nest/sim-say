@@ -10,7 +10,14 @@ Generate repo contracts, feature maps, card indexes, and index fragments through
 
 ## Anchors
 
+- `anchor/export/xtask/browse/catalog`
+- `anchor/export/xtask/codec-lisp`
+- `anchor/export/xtask/codec/json`
+- `anchor/export/xtask/codec/lisp`
+- `anchor/export/xtask/doc/chunk-recursive`
+- `anchor/export/xtask/registry/catalog`
 - `local/sim-tooling/anchor/cli/xtask`
+- `local/sim-tooling/anchor/crate/xtask`
 - `local/sim-tooling/anchor/doc/generated/card-index`
 - `local/sim-tooling/anchor/doc/generated/feature-map`
 - `local/sim-tooling/anchor/doc/generated/repo-contract`

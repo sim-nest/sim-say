@@ -10,4 +10,5 @@ Define shared table and directory contracts used by storage, index, and host-fac
 
 ## Anchors
 
+- `anchor/crate/sim-config`
 - `anchor/crate/sim-table-core`

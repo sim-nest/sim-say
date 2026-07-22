@@ -11,6 +11,14 @@ Encode and decode Bridge packet workflow data through the Bridge wire grammar.
 ## Anchors
 
 - `anchor/crate/sim-codec-bridge`
+- `anchor/export/sim-codec-bridge/bridge/attest`
+- `anchor/export/sim-codec-bridge/bridge/evidence`
+- `anchor/export/sim-codec-bridge/bridge/patch`
+- `anchor/export/sim-codec-bridge/bridge/receipt`
+- `anchor/export/sim-codec-bridge/bridge/review`
+- `anchor/export/sim-codec-bridge/bridge/score`
+- `anchor/export/sim-codec-bridge/bridge/vote`
+- `anchor/export/sim-codec-bridge/bridge/weave-row`
 - `anchor/grammar/wire/bridge`
 - `anchor/runtime-lib/sim-codec-bridge/bridge-codec-lib`
 

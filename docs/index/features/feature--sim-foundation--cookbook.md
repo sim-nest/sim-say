@@ -11,3 +11,5 @@ Describe reusable recipe metadata and generated cookbook records consumed by pub
 ## Anchors
 
 - `anchor/crate/sim-cookbook`
+- `anchor/export/sim-cookbook/codec/lisp`
+- `anchor/export/sim-cookbook/model/defaults`

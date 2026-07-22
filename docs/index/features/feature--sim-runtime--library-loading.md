@@ -12,8 +12,15 @@ Load standard and language-profile runtime libraries through stable export recor
 
 - `anchor/crate/sim-lib-lang-cl`
 - `anchor/crate/sim-lib-lang-clojure`
+- `anchor/crate/sim-lib-lang-genconf`
+- `anchor/crate/sim-lib-lang-islisp`
+- `anchor/crate/sim-lib-lang-julia`
+- `anchor/crate/sim-lib-lang-lua`
+- `anchor/crate/sim-lib-lang-matrix`
 - `anchor/crate/sim-lib-lang-prolog`
+- `anchor/crate/sim-lib-lang-ruby`
 - `anchor/crate/sim-lib-lang-scheme`
+- `anchor/crate/sim-lib-lang-typed-lazy`
 - `anchor/crate/sim-lib-standard-core`
 - `anchor/runtime-lib/sim-lib-lang-cl/cl-lite-reader-codec-lib`
 - `anchor/runtime-lib/sim-lib-lang-clojure/clojure-edn-codec-lib`

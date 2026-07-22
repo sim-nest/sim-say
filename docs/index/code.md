@@ -31,6 +31,7 @@
 | `crate/sim-conformance` | `crate` | sim-conformance | 0 |
 | `crate/sim-cookbook` | `crate` | sim-cookbook | 0 |
 | `crate/sim-index-core` | `crate` | sim-index-core | 0 |
+| `crate/sim-kernel` | `crate` | sim-kernel | 0 |
 | `crate/sim-ledger` | `crate` | sim-ledger | 0 |
 | `crate/sim-ledger-cli` | `crate` | sim-ledger-cli | 0 |
 | `crate/sim-ledger-odb` | `crate` | sim-ledger-odb | 0 |
@@ -194,6 +195,7 @@
 | `doc-set/sim-citizen/generated` | `doc-set` | sim-citizen generated docs | 0 |
 | `doc-set/sim-codecs/generated` | `doc-set` | sim-codecs generated docs | 0 |
 | `doc-set/sim-foundation/generated` | `doc-set` | sim-foundation generated docs | 0 |
+| `doc-set/sim-kernel/generated` | `doc-set` | sim-kernel generated docs | 0 |
 | `doc-set/sim-ledger/generated` | `doc-set` | sim-ledger generated docs | 0 |
 | `doc-set/sim-music/generated` | `doc-set` | sim-music generated docs | 0 |
 | `doc-set/sim-numbers/generated` | `doc-set` | sim-numbers generated docs | 0 |
@@ -222,6 +224,7 @@
 | `local/sim-codecs/crate/sim-codec-mcp` | `crate` | sim-codec-mcp | 1 |
 | `local/sim-codecs/crate/xtask` | `crate` | xtask | 0 |
 | `local/sim-foundation/crate/xtask` | `crate` | xtask | 0 |
+| `local/sim-kernel/crate/xtask` | `crate` | xtask | 0 |
 | `local/sim-ledger/crate/xtask` | `crate` | xtask | 0 |
 | `local/sim-music/crate/sim-lib-daw-session` | `crate` | sim-lib-daw-session | 1 |
 | `local/sim-music/crate/sim-lib-midi-shapes` | `crate` | sim-lib-midi-shapes | 1 |
@@ -322,6 +325,7 @@
 | `repo/sim-citizen` | `repo` | sim-citizen | 5 |
 | `repo/sim-codecs` | `repo` | sim-codecs | 21 |
 | `repo/sim-foundation` | `repo` | sim-foundation | 10 |
+| `repo/sim-kernel` | `repo` | sim-kernel | 3 |
 | `repo/sim-ledger` | `repo` | sim-ledger | 7 |
 | `repo/sim-music` | `repo` | sim-music | 47 |
 | `repo/sim-numbers` | `repo` | sim-numbers | 32 |

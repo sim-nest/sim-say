@@ -29,6 +29,7 @@
 | `docs/sim-citizen/generated` | `docs` | `doc-set/sim-citizen/generated` |
 | `docs/sim-codecs/generated` | `docs` | `doc-set/sim-codecs/generated` |
 | `docs/sim-foundation/generated` | `docs` | `doc-set/sim-foundation/generated` |
+| `docs/sim-kernel/generated` | `docs` | `doc-set/sim-kernel/generated` |
 | `docs/sim-ledger/generated` | `docs` | `doc-set/sim-ledger/generated` |
 | `docs/sim-music/generated` | `docs` | `doc-set/sim-music/generated` |
 | `docs/sim-numbers/generated` | `docs` | `doc-set/sim-numbers/generated` |
@@ -46,6 +47,7 @@
 | `local/sim-citizen/cli/xtask` | `cli` | `local/sim-citizen/crate/xtask` |
 | `local/sim-codecs/cli/xtask` | `cli` | `local/sim-codecs/crate/xtask` |
 | `local/sim-foundation/cli/xtask` | `cli` | `local/sim-foundation/crate/xtask` |
+| `local/sim-kernel/cli/xtask` | `cli` | `local/sim-kernel/crate/xtask` |
 | `local/sim-ledger/cli/xtask` | `cli` | `local/sim-ledger/crate/xtask` |
 | `local/sim-music/cli/xtask` | `cli` | `local/sim-music/crate/xtask` |
 | `local/sim-numbers/cli/xtask` | `cli` | `local/sim-numbers/crate/xtask` |
@@ -92,6 +94,7 @@
 | `model/sim-lib-agent-runner-process` | `model-exchange` | `crate/sim-lib-agent-runner-process` |
 | `model/sim-lib-openai-server` | `model-exchange` | `local/sim-agent-net/crate/sim-lib-openai-server` |
 | `model/sim-lib-view-agent` | `model-exchange` | `crate/sim-lib-view-agent` |
+| `site/sim-kernel` | `site` | `crate/sim-kernel` |
 | `site/sim-lib-agent-runner-local` | `site` | `crate/sim-lib-agent-runner-local` |
 | `site/sim-lib-numbers-f64` | `site` | `crate/sim-lib-numbers-f64` |
 | `site/sim-lib-stream-cpal` | `site` | `crate/sim-lib-stream-cpal` |

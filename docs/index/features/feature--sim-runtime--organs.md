@@ -12,8 +12,10 @@ Provide binding, control, logic, pattern, mutation, and sequence organs as loada
 
 - `anchor/crate/sim-lib-binding`
 - `anchor/crate/sim-lib-control`
+- `anchor/crate/sim-lib-dispatch`
 - `anchor/crate/sim-lib-logic`
 - `anchor/crate/sim-lib-mutation`
+- `anchor/crate/sim-lib-namespace`
 - `anchor/crate/sim-lib-pattern`
 - `anchor/crate/sim-lib-sequence`
 - `anchor/runtime-lib/sim-lib-binding/binding-lib`
