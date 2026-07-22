@@ -11,6 +11,7 @@ Publish generated package, card, recipe, and index facts for the SDK facade and 
 ## Anchors
 
 - `local/sim-sdk/anchor/cli/xtask`
+- `local/sim-sdk/anchor/crate/xtask`
 - `local/sim-sdk/anchor/doc/generated/feature-map`
 - `local/sim-sdk/anchor/doc/generated/sim-index-fragment`
 

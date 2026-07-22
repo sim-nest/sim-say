@@ -11,6 +11,7 @@ Publish generated package, card, recipe, and index facts for agent, bridge, MCP,
 ## Anchors
 
 - `local/sim-agent-net/anchor/cli/xtask`
+- `local/sim-agent-net/anchor/crate/xtask`
 - `local/sim-agent-net/anchor/doc/generated/feature-map`
 - `local/sim-agent-net/anchor/doc/generated/sim-index-fragment`
 

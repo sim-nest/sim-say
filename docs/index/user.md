@@ -5,7 +5,7 @@
 | Feature | Subject | Summary | Specimens |
 | --- | --- | --- | ---: |
 | [`feature/sim-agent-net/agent-server-tools`](features/feature--sim-agent-net--agent-server-tools.md) | `local/sim-agent-net/crate/sim-lib-server` | Expose agent-facing server, skill, and OpenAI gateway libraries for model-connected hosts. | 0 |
-| [`feature/sim-agent-net/bridge-model-exchange`](features/feature--sim-agent-net--bridge-model-exchange.md) | `crate/sim-lib-agent` | Shape model exchanges as Bridge packets with agent and bridge runtime support. | 0 |
+| [`feature/sim-agent-net/bridge-runtime`](features/feature--sim-agent-net--bridge-runtime.md) | `crate/sim-lib-agent` | Transmit, receive, check, and route symmetric human-model packets with agent and bridge runtime support. | 0 |
 | [`feature/sim-agent-net/eval-fabric-sites`](features/feature--sim-agent-net--eval-fabric-sites.md) | `crate/sim-lib-agent-runner-local` | Place model and stream work through loadable runner, local model, and content-addressed fleet libraries. | 0 |
 | [`feature/sim-agent-net/fabric-fixture-cli`](features/feature--sim-agent-net--fabric-fixture-cli.md) | `crate/sim-lib-stream-fabric` | Replay content-addressed stream-fabric fixtures through the loadable fixture command. | 0 |
 | [`feature/sim-agent-net/forge-intent`](features/feature--sim-agent-net--forge-intent.md) | `local/sim-agent-net/crate/sim-lib-forge` | Compile high-level intent records into checked Forge output through the loadable Forge runtime library. | 0 |
@@ -34,6 +34,7 @@
 | [`feature/sim-kernel/kernel-contracts`](features/feature--sim-kernel--kernel-contracts.md) | `crate/sim-kernel` | Define the protocol kernel for values, context, registries, shapes, capabilities, and export records. | 0 |
 | [`feature/sim-ledger/generated-docs`](features/feature--sim-ledger--generated-docs.md) | `local/sim-ledger/crate/xtask` | Publish generated package, card, recipe, and index facts for the ledger crates. | 0 |
 | [`feature/sim-ledger/ledger-command`](features/feature--sim-ledger--ledger-command.md) | `crate/sim-ledger-cli` | Run ledger import, drafting, trial balance, and closing flows through the checked command package. | 0 |
+| [`feature/sim-ledger/ledger-libraries`](features/feature--sim-ledger--ledger-libraries.md) | `crate/sim-ledger` | Provide voucher storage, book construction, and closing libraries for ledger workflows. | 0 |
 | [`feature/sim-music/generated-docs`](features/feature--sim-music--generated-docs.md) | `local/sim-music/crate/xtask` | Publish generated package, card, recipe, and index facts for the music, MIDI, pitch, and sound crates. | 0 |
 | [`feature/sim-music/midi-notation-workflows`](features/feature--sim-music--midi-notation-workflows.md) | `crate/sim-lib-midi-core` | Lift, lower, inspect, and export musical material across MIDI files, live MIDI fixtures, and notation forms. | 0 |
 | [`feature/sim-music/pitch-and-sound-vocabulary`](features/feature--sim-music--pitch-and-sound-vocabulary.md) | `crate/sim-lib-pitch-core` | Name chords, scales, pitch sets, timbres, spectra, and tuning facts through worked musical descriptors. | 0 |
@@ -47,6 +48,7 @@
 | [`feature/sim-run/glasses`](features/feature--sim-run--glasses.md) | `crate/sim-run` | Start modeled or hardware-backed glasses plans through the shared command bootloader. | 0 |
 | [`feature/sim-run/index`](features/feature--sim-run--index.md) | `local/sim-run/crate/xtask` | Expose generated package, card, surface, and recipe facts as a checked SIM Index fragment. | 1 |
 | [`feature/sim-run/index-table-dir`](features/feature--sim-run--index-table-dir.md) | `crate/sim-lib-index` | Expose the embedded SIM Index as immutable Table/Dir collections for loaded runtime code. | 0 |
+| [`feature/sim-run/loaders`](features/feature--sim-run--loaders.md) | `crate/sim-run-loaders` | Load native, source, and re-exported runtime libraries as bootloader inputs. | 0 |
 | [`feature/sim-run/repl`](features/feature--sim-run--repl.md) | `crate/sim-lib-repl` | Run a SIM read-eval-print loop through the loaded REPL library and command surface. | 1 |
 | [`feature/sim-run/runtime-index`](features/feature--sim-run--runtime-index.md) | `crate/sim-lib-index` | Explore the merged SIM Index through the bootloader as stable Table/Dir rows and structured query output. | 4 |
 | [`feature/sim-run/terminal-surface`](features/feature--sim-run--terminal-surface.md) | `crate/sim-view-tty` | Render and interpret terminal view intents through the loaded TTY surface library. | 1 |
@@ -58,7 +60,10 @@
 | [`feature/sim-runtime/organs`](features/feature--sim-runtime--organs.md) | `crate/sim-lib-binding` | Provide binding, control, logic, pattern, mutation, and sequence organs as loadable runtime libraries. | 0 |
 | [`feature/sim-sdk/conformance-contract`](features/feature--sim-sdk--conformance-contract.md) | `crate/sim-conformance` | Run the SDK conformance contract as a checked operational recipe. | 0 |
 | [`feature/sim-sdk/device-recipes`](features/feature--sim-sdk--device-recipes.md) | `crate/sim-nest` | Exercise modeled device, watch, and glasses workflows through SDK-level recipe entry points. | 0 |
+| [`feature/sim-sdk/facade-codecs`](features/feature--sim-sdk--facade-codecs.md) | `crate/sim-nest` | Expose public codec exports through the SDK facade while implementation crates keep the codec behavior. | 0 |
+| [`feature/sim-sdk/facade-model-workflows`](features/feature--sim-sdk--facade-model-workflows.md) | `crate/sim-nest` | Expose model-facing facade exports for answer routing and drafter setup. | 0 |
 | [`feature/sim-sdk/facade-runtime`](features/feature--sim-sdk--facade-runtime.md) | `crate/sim-nest` | Boot the public SIM facade and expose its command plus reversible view surface. | 0 |
+| [`feature/sim-sdk/facade-shapes`](features/feature--sim-sdk--facade-shapes.md) | `crate/sim-nest` | Expose public Shape exports through the SDK facade while shape crates keep the matching behavior. | 0 |
 | [`feature/sim-sdk/generated-docs`](features/feature--sim-sdk--generated-docs.md) | `local/sim-sdk/crate/xtask` | Publish generated package, card, recipe, and index facts for the SDK facade and conformance crate. | 0 |
 | [`feature/sim-shape/contract-emitter`](features/feature--sim-shape--contract-emitter.md) | `local/sim-shape/crate/xtask` | Emit generated repository contract and index fragments for Shape crates. | 0 |
 | [`feature/sim-shape/shape`](features/feature--sim-shape--shape.md) | `local/sim-shape/crate/sim-shape` | Define reusable Shape matching, binding, citizen projection, and grammar contracts for runtime values. | 1 |
@@ -68,6 +73,7 @@
 | [`feature/sim-storage/table-dir-backends`](features/feature--sim-storage--table-dir-backends.md) | `local/sim-storage/crate/sim-table-hash` | Provide hash, lazy, override, and list-backed Table/Dir implementations for reusable storage libraries. | 1 |
 | [`feature/sim-stream/stream-protocol-helpers`](features/feature--sim-stream--stream-protocol-helpers.md) | `local/sim-stream/crate/sim-lib-stream-core` | Provide rank, topology, stream core, device, wrist, and XR helpers as loadable stream libraries. | 1 |
 | [`feature/sim-tooling/generated-docs`](features/feature--sim-tooling--generated-docs.md) | `local/sim-tooling/crate/xtask` | Generate repo contracts, feature maps, card indexes, and index fragments through xtask. | 0 |
+| [`feature/sim-web/daw-view-surfaces`](features/feature--sim-web--daw-view-surfaces.md) | `crate/sim-lib-view-daw` | Expose synth, stream, placement, and component views through the DAW view library. | 0 |
 | [`feature/sim-web/device-surfaces`](features/feature--sim-web--device-surfaces.md) | `local/sim-web/crate/sim-lib-view` | Rank and project view surfaces against desktop, phone, watch, and glasses device profiles. | 0 |
 | [`feature/sim-web/generated-docs`](features/feature--sim-web--generated-docs.md) | `local/sim-web/crate/xtask` | Publish generated package, card, recipe, and index facts for browser and view crates. | 0 |
 | [`feature/sim-web/view-surface`](features/feature--sim-web--view-surface.md) | `local/sim-web/crate/sim-lib-view` | Expose view and edit surfaces so codecs, browser hosts, and device profiles can render and reverse surface data. | 0 |

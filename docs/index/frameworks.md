@@ -5,7 +5,7 @@
 | Feature | Subject | Summary | Framework routes |
 | --- | --- | --- | --- |
 | [`feature/sim-agent-net/agent-server-tools`](features/feature--sim-agent-net--agent-server-tools.md) | `local/sim-agent-net/crate/sim-lib-server` | Expose agent-facing server, skill, and OpenAI gateway libraries for model-connected hosts. | route/compile-agent-intent |
-| [`feature/sim-agent-net/bridge-model-exchange`](features/feature--sim-agent-net--bridge-model-exchange.md) | `crate/sim-lib-agent` | Shape model exchanges as Bridge packets with agent and bridge runtime support. | route/add-model-facing-packet-workflow |
+| [`feature/sim-agent-net/bridge-runtime`](features/feature--sim-agent-net--bridge-runtime.md) | `crate/sim-lib-agent` | Transmit, receive, check, and route symmetric human-model packets with agent and bridge runtime support. | route/add-model-facing-packet-workflow |
 | [`feature/sim-agent-net/eval-fabric-sites`](features/feature--sim-agent-net--eval-fabric-sites.md) | `crate/sim-lib-agent-runner-local` | Place model and stream work through loadable runner, local model, and content-addressed fleet libraries. | route/add-eval-fabric-site |
 | [`feature/sim-agent-net/forge-intent`](features/feature--sim-agent-net--forge-intent.md) | `local/sim-agent-net/crate/sim-lib-forge` | Compile high-level intent records into checked Forge output through the loadable Forge runtime library. | route/compile-agent-intent |
 | [`feature/sim-agent-net/mcp-server`](features/feature--sim-agent-net--mcp-server.md) | `local/sim-agent-net/crate/sim-lib-mcp` | Serve MCP requests through the loaded sim-lib-mcp command and runtime libraries. |  |
@@ -27,6 +27,7 @@
 | [`feature/sim-run/bootloader`](features/feature--sim-run--bootloader.md) | `crate/sim-run-core` | Start product commands through the shared bootloader and loaded runtime libraries. |  |
 | [`feature/sim-run/glasses`](features/feature--sim-run--glasses.md) | `crate/sim-run` | Start modeled or hardware-backed glasses plans through the shared command bootloader. |  |
 | [`feature/sim-run/index-table-dir`](features/feature--sim-run--index-table-dir.md) | `crate/sim-lib-index` | Expose the embedded SIM Index as immutable Table/Dir collections for loaded runtime code. | local/sim-run/route/add-table-dir-backend |
+| [`feature/sim-run/loaders`](features/feature--sim-run--loaders.md) | `crate/sim-run-loaders` | Load native, source, and re-exported runtime libraries as bootloader inputs. |  |
 | [`feature/sim-run/repl`](features/feature--sim-run--repl.md) | `crate/sim-lib-repl` | Run a SIM read-eval-print loop through the loaded REPL library and command surface. |  |
 | [`feature/sim-run/runtime-index`](features/feature--sim-run--runtime-index.md) | `crate/sim-lib-index` | Explore the merged SIM Index through the bootloader as stable Table/Dir rows and structured query output. |  |
 | [`feature/sim-run/terminal-surface`](features/feature--sim-run--terminal-surface.md) | `crate/sim-view-tty` | Render and interpret terminal view intents through the loaded TTY surface library. |  |
@@ -36,6 +37,7 @@
 | [`feature/sim-runtime/host-exec`](features/feature--sim-runtime--host-exec.md) | `crate/sim-lib-exec` | Expose bounded process execution as a capability-gated host primitive outside the kernel. | route/add-host-exec-primitive |
 | [`feature/sim-runtime/library-loading`](features/feature--sim-runtime--library-loading.md) | `local/sim-runtime/crate/sim-lib-standard-core` | Load standard and language-profile runtime libraries through stable export records. | route/load-runtime-library |
 | [`feature/sim-runtime/organs`](features/feature--sim-runtime--organs.md) | `crate/sim-lib-binding` | Provide binding, control, logic, pattern, mutation, and sequence organs as loadable runtime libraries. | route/add-runtime-organ |
+| [`feature/sim-sdk/device-recipes`](features/feature--sim-sdk--device-recipes.md) | `crate/sim-nest` | Exercise modeled device, watch, and glasses workflows through SDK-level recipe entry points. |  |
 | [`feature/sim-sdk/facade-runtime`](features/feature--sim-sdk--facade-runtime.md) | `crate/sim-nest` | Boot the public SIM facade and expose its command plus reversible view surface. |  |
 | [`feature/sim-shape/contract-emitter`](features/feature--sim-shape--contract-emitter.md) | `local/sim-shape/crate/xtask` | Emit generated repository contract and index fragments for Shape crates. | route/add-shape-contract |
 | [`feature/sim-shape/shape`](features/feature--sim-shape--shape.md) | `local/sim-shape/crate/sim-shape` | Define reusable Shape matching, binding, citizen projection, and grammar contracts for runtime values. | route/add-shape-contract |
@@ -44,6 +46,7 @@
 | [`feature/sim-storage/table-dir-backends`](features/feature--sim-storage--table-dir-backends.md) | `local/sim-storage/crate/sim-table-hash` | Provide hash, lazy, override, and list-backed Table/Dir implementations for reusable storage libraries. | local/sim-storage/route/add-table-dir-backend |
 | [`feature/sim-stream/stream-protocol-helpers`](features/feature--sim-stream--stream-protocol-helpers.md) | `local/sim-stream/crate/sim-lib-stream-core` | Provide rank, topology, stream core, device, wrist, and XR helpers as loadable stream libraries. | route/add-stream-protocol-helper |
 | [`feature/sim-tooling/generated-docs`](features/feature--sim-tooling--generated-docs.md) | `local/sim-tooling/crate/xtask` | Generate repo contracts, feature maps, card indexes, and index fragments through xtask. | route/add-generated-doc |
+| [`feature/sim-web/daw-view-surfaces`](features/feature--sim-web--daw-view-surfaces.md) | `crate/sim-lib-view-daw` | Expose synth, stream, placement, and component views through the DAW view library. |  |
 | [`feature/sim-web/device-surfaces`](features/feature--sim-web--device-surfaces.md) | `local/sim-web/crate/sim-lib-view` | Rank and project view surfaces against desktop, phone, watch, and glasses device profiles. | route/expose-view-surface |
 | [`feature/sim-web/view-surface`](features/feature--sim-web--view-surface.md) | `local/sim-web/crate/sim-lib-view` | Expose view and edit surfaces so codecs, browser hosts, and device profiles can render and reverse surface data. | route/expose-view-surface |
 | [`feature/sim-web/web-shell-host`](features/feature--sim-web--web-shell-host.md) | `crate/sim-web-shell` | Serve browser-facing surfaces through loaded web shell runtime libraries and command entry points. | route/expose-view-surface |

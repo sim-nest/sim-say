@@ -11,6 +11,7 @@ Publish generated package, card, recipe, and index facts for office documents, s
 ## Anchors
 
 - `local/sim-office/anchor/cli/xtask`
+- `local/sim-office/anchor/crate/xtask`
 - `local/sim-office/anchor/doc/generated/feature-map`
 - `local/sim-office/anchor/doc/generated/sim-index-fragment`
 

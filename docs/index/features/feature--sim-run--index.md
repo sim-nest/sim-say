@@ -11,6 +11,7 @@ Expose generated package, card, surface, and recipe facts as a checked SIM Index
 ## Anchors
 
 - `local/sim-run/anchor/cli/xtask`
+- `local/sim-run/anchor/crate/xtask`
 - `local/sim-run/anchor/doc/generated/feature-map`
 - `local/sim-run/anchor/doc/generated/sim-index-fragment`
 

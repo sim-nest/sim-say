@@ -11,6 +11,7 @@ Publish generated package, card, recipe, and index facts for the ledger crates.
 ## Anchors
 
 - `local/sim-ledger/anchor/cli/xtask`
+- `local/sim-ledger/anchor/crate/xtask`
 - `local/sim-ledger/anchor/doc/generated/feature-map`
 - `local/sim-ledger/anchor/doc/generated/sim-index-fragment`
 

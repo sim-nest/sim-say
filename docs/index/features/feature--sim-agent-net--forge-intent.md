@@ -11,4 +11,6 @@ Compile high-level intent records into checked Forge output through the loadable
 ## Anchors
 
 - `anchor/crate/sim-lib-forge`
+- `anchor/export/sim-lib-forge/model-forge-frontier`
+- `anchor/export/sim-lib-forge/model-forge-lift`
 - `anchor/runtime-lib/sim-lib-forge/forge-lib`

@@ -10,8 +10,14 @@ Place model and stream work through loadable runner, local model, and content-ad
 
 ## Anchors
 
+- `anchor/crate/sim-lib-agent-runner-core`
+- `anchor/crate/sim-lib-agent-runner-http`
 - `anchor/crate/sim-lib-agent-runner-local`
+- `anchor/crate/sim-lib-agent-runner-process`
 - `anchor/crate/sim-lib-stream-fabric`
+- `anchor/crate/sim-table-remote`
+- `anchor/export/sim-lib-agent-runner-local/model/local`
+- `anchor/export/sim-lib-stream-fabric/codec/binary`
 - `anchor/runtime-lib/sim-lib-agent-runner-local/local-model-lib`
 - `anchor/runtime-lib/sim-lib-agent-runner-local/wasm-model-lib`
 - `anchor/runtime-lib/sim-lib-stream-fabric/cadr-fixture-lib`

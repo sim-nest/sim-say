@@ -8,6 +8,15 @@
 
 Project document, markup, and suite descriptors into view surfaces for review and editing.
 
+## Anchors
+
+- `anchor/crate/sim-lib-deck`
+- `anchor/crate/sim-lib-doc-core`
+- `anchor/crate/sim-lib-doc-ledger`
+- `anchor/crate/sim-lib-doc-surface`
+- `anchor/crate/sim-lib-sheet`
+- `anchor/export/sim-lib-doc-surface/view-default`
+
 ## Surfaces
 
 - `view/sim-lib-doc-core`

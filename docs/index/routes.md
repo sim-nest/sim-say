@@ -38,7 +38,7 @@
 | `route/add-index-graph-record` | Add an index graph record | code | `feature/sim-foundation/index-graph-core` - The index core row owns graph ids, records, edges, and validation. |
 | `route/add-kernel-contract` | Add a kernel contract | code | `feature/sim-kernel/kernel-contracts` - The kernel contract row owns the reusable protocol boundary.<br>`feature/sim-kernel/contract-emitter` - The emitter keeps generated contract evidence current. |
 | `route/add-library-macro` | Add a library macro | code | `feature/sim-foundation/library-macros` - The macro row owns checked Rust declarations for SIM libraries.<br>`feature/sim-foundation/contract-emitter` - The emitter row keeps generated contract evidence current. |
-| `route/add-model-facing-packet-workflow` | Add a model-facing packet workflow | code, framework | `feature/sim-agent-net/bridge-model-exchange` - The workflow row ties agent model exchange to Bridge packet records. |
+| `route/add-model-facing-packet-workflow` | Add a model-facing packet workflow | code, framework | `feature/sim-agent-net/bridge-runtime` - The workflow row ties agent model exchange to BRIDGE packet records. |
 | `route/add-number-domain` | Add a number domain | code, framework | `feature/sim-numbers/numbers` - The number row owns reusable number domains and their runtime libraries.<br>`spec-test/sim-numbers/crates/sim-lib-numbers-tensor/src/implementation/citizen` - The tensor citizen test checks runtime projection for a number domain. |
 | `route/add-runtime-organ` | Add a runtime organ | code, framework | `feature/sim-runtime/organs` - The organ row groups loadable binding, control, logic, pattern, mutation, and sequence behavior.<br>`feature/sim-runtime/contract-emitter` - The emitter row keeps generated runtime contract evidence current. |
 | `route/add-shape-contract` | Add a Shape contract | code, framework | `feature/sim-shape/shape` - The Shape row owns matching, binding, and citizen projection.<br>`feature/sim-shape/contract-emitter` - The emitter row keeps Shape contract evidence current.<br>`spec-test/sim-shape/src/citizen/inventory` - The inventory test checks the exported shape citizen surface. |
@@ -80,7 +80,7 @@
 | `route/add-host-exec-primitive` | Add a host exec primitive | code, framework | `feature/sim-runtime/host-exec` - The exec row keeps host process behavior in a loadable library. |
 | `route/add-host-primitive` | Add a host primitive | code, framework | `feature/sim-foundation/host-primitives` - Host primitives start from shared network and surface-card helpers. |
 | `route/add-host-storage-primitive` | Add a host storage primitive | code, framework | `feature/sim-storage/host-storage-primitives` - The host storage row points to file, database, and HTTP backends. |
-| `route/add-model-facing-packet-workflow` | Add a model-facing packet workflow | code, framework | `feature/sim-agent-net/bridge-model-exchange` - The workflow row ties agent model exchange to Bridge packet records. |
+| `route/add-model-facing-packet-workflow` | Add a model-facing packet workflow | code, framework | `feature/sim-agent-net/bridge-runtime` - The workflow row ties agent model exchange to BRIDGE packet records. |
 | `route/add-number-domain` | Add a number domain | code, framework | `feature/sim-numbers/numbers` - The number row owns reusable number domains and their runtime libraries.<br>`spec-test/sim-numbers/crates/sim-lib-numbers-tensor/src/implementation/citizen` - The tensor citizen test checks runtime projection for a number domain. |
 | `route/add-runtime-organ` | Add a runtime organ | code, framework | `feature/sim-runtime/organs` - The organ row groups loadable binding, control, logic, pattern, mutation, and sequence behavior.<br>`feature/sim-runtime/contract-emitter` - The emitter row keeps generated runtime contract evidence current. |
 | `route/add-shape-contract` | Add a Shape contract | code, framework | `feature/sim-shape/shape` - The Shape row owns matching, binding, and citizen projection.<br>`feature/sim-shape/contract-emitter` - The emitter row keeps Shape contract evidence current.<br>`spec-test/sim-shape/src/citizen/inventory` - The inventory test checks the exported shape citizen surface. |
@@ -98,6 +98,7 @@
 | Category | Id | Reason |
 | --- | --- | --- |
 | `frameworks` | `feature/sim-run/glasses` | feature exposes framework-facing runtime or surface facts but no route step reaches it |
+| `frameworks` | `feature/sim-run/loaders` | feature exposes framework-facing runtime or surface facts but no route step reaches it |
 | `frameworks` | `feature/sim-run/terminal-surface` | feature exposes framework-facing runtime or surface facts but no route step reaches it |
 | `frameworks` | `feature/sim-run/watch` | feature exposes framework-facing runtime or surface facts but no route step reaches it |
 | `major_entrypoints` | `feature/sim-agent-net/generated-docs` | feature claims a CLI entry point but no route step reaches it |

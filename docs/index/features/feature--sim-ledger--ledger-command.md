@@ -11,6 +11,7 @@ Run ledger import, drafting, trial balance, and closing flows through the checke
 ## Anchors
 
 - `anchor/cli/sim-ledger-cli`
+- `anchor/crate/sim-ledger-cli`
 - `anchor/rustdoc/sim-ledger-cli/crate-root`
 - `anchor/rustdoc/sim-ledger-cli/run`
 

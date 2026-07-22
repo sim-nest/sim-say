@@ -11,6 +11,7 @@ Publish generated package, card, recipe, and index facts for browser and view cr
 ## Anchors
 
 - `local/sim-web/anchor/cli/xtask`
+- `local/sim-web/anchor/crate/xtask`
 - `local/sim-web/anchor/doc/generated/feature-map`
 - `local/sim-web/anchor/doc/generated/sim-index-fragment`
 

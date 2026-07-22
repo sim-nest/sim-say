@@ -12,6 +12,9 @@ Boot the public SIM facade and expose its command plus reversible view surface.
 
 - `anchor/card/citizen/view/lens-descriptor`
 - `anchor/cli/sim-nest`
+- `anchor/crate/sim-nest`
+- `anchor/runtime-lib/sim-nest/core-runtime-lib`
+- `anchor/runtime-lib/sim-nest/native-class-lib`
 
 ## Surfaces
 

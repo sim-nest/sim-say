@@ -10,6 +10,20 @@ Round-trip OOXML, ODF, MSPDI, deck, sheet, and markup documents through office c
 
 ## Anchors
 
+- `anchor/crate/sim-codec-mspdi`
+- `anchor/crate/sim-codec-odf`
+- `anchor/crate/sim-codec-ooxml`
+- `anchor/crate/sim-lib-doc-markup`
+- `anchor/crate/sim-lib-office-pack`
+- `anchor/export/sim-codec-mspdi/codec/mspdi`
+- `anchor/export/sim-codec-odf/codec/odf`
+- `anchor/export/sim-codec-ooxml/codec/ooxml-pptx`
+- `anchor/export/sim-codec-ooxml/codec/ooxml-xlsx`
+- `anchor/export/sim-lib-doc-markup/codec/markup-doc/asciidoc`
+- `anchor/export/sim-lib-doc-markup/codec/markup-doc/latex`
+- `anchor/export/sim-lib-doc-markup/codec/markup-doc/markdown`
+- `anchor/export/sim-lib-doc-markup/codec/markup-doc/typst`
+- `anchor/export/sim-lib-doc-markup/codec/markup-doc/unknown`
 - `anchor/grammar/syntax/mspdi`
 - `anchor/grammar/syntax/odf`
 - `anchor/grammar/syntax/ooxml`

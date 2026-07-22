@@ -7,3 +7,8 @@
 - Canonical key: `crate/sim-nest/feature-sim-sdk-device-recipes`
 
 Exercise modeled device, watch, and glasses workflows through SDK-level recipe entry points.
+
+## Anchors
+
+- `anchor/runtime-lib/sim-nest/glasses-stack-lib`
+- `anchor/runtime-lib/sim-nest/watch-stack-lib`

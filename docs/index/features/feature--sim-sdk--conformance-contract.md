@@ -7,3 +7,7 @@
 - Canonical key: `crate/sim-conformance/feature-sim-sdk-conformance-contract`
 
 Run the SDK conformance contract as a checked operational recipe.
+
+## Anchors
+
+- `anchor/crate/sim-conformance`

@@ -15,6 +15,12 @@ Serve MCP requests through the loaded sim-lib-mcp command and runtime libraries.
 - `anchor/crate/sim-lib-mcp`
 - `anchor/crate/sim-mcp-server`
 - `anchor/export/sim-lib-mcp/cli/main/mcp`
+- `anchor/export/sim-lib-mcp/codec/mcp`
+- `anchor/export/sim-lib-mcp/mcp/audit-entry`
+- `anchor/export/sim-lib-mcp/mcp/cassette`
+- `anchor/export/sim-lib-mcp/mcp/cassette-entry`
+- `anchor/export/sim-lib-mcp/mcp/request`
+- `anchor/export/sim-lib-mcp/mcp/sampling-fixture`
 - `anchor/runtime-lib/sim-lib-mcp/mcp-lib`
 - `anchor/runtime-lib/sim-lib-mcp/mcp-serve-lib`
 

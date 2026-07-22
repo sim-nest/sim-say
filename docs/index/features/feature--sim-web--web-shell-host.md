@@ -18,6 +18,7 @@ Serve browser-facing surfaces through loaded web shell runtime libraries and com
 - `anchor/export/sim-web-shell/cli/main/atelier`
 - `anchor/export/sim-web-shell/cli/main/browse`
 - `anchor/export/sim-web-shell/cli/main/serve`
+- `anchor/export/sim-web-shell/codec/lisp`
 - `anchor/runtime-lib/sim-web-shell/atelier-cli-lib`
 - `anchor/runtime-lib/sim-web-shell/browse-cli-lib`
 - `anchor/runtime-lib/sim-web-shell/web-serve-lib`
