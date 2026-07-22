@@ -21,3 +21,18 @@ Boot the public SIM facade and expose its command plus reversible view surface.
 - `cli/sim-nest`
 - `view-edit/sim-nest`
 - `view/sim-nest`
+
+## Specimens
+
+- `spec-test/sim-sdk/crates/sim-conformance/tests/cli_boot`
+
+## Worked Example
+
+Specimen `spec-test/sim-sdk/crates/sim-conformance/tests/cli_boot` is checked by `cargo test`.
+
+Source `crates/sim-conformance/tests/cli_boot.rs`:
+
+```rust
+#[path = "spec/cli_boot.rs"]
+mod cli_boot;
+```

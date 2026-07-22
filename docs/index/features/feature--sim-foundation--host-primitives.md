@@ -12,3 +12,24 @@ Provide shared network and surface-card helper crates for host-facing runtime li
 
 - `anchor/crate/sim-lib-net-core`
 - `anchor/crate/sim-lib-surface-card`
+
+## Specimens
+
+- `recipe/sim-foundation/crates/sim-lib-net-core/01-basics/response-head`
+
+## Worked Example
+
+Specimen `recipe/sim-foundation/crates/sim-lib-net-core/01-basics/response-head` is checked by `xtask check-recipes`.
+
+Source `crates/sim-lib-net-core/recipes/01-basics/response-head/recipe.toml`:
+
+```toml
+id = "response-head"
+title = "Response head descriptor"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 10
+tags = ["net", "http", "parser", "sandbox-descriptor"]
+requires = ["net-core", "codec/lisp"]
+```
