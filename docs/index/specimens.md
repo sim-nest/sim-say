@@ -91,6 +91,23 @@
 | `` | `recipe/sim-audio-daw/crates/sim-lib-stream-jack/01-basics/modeled-jack` | `crate/sim-lib-stream-jack` | `recipe` | `crates/sim-lib-stream-jack/recipes/01-basics/modeled-jack/recipe.toml` | `` | `` | `false` | `false` |
 | `` | `recipe/sim-audio-daw/crates/sim-lib-stream-pipewire/01-basics/modeled-pipewire` | `crate/sim-lib-stream-pipewire` | `recipe` | `crates/sim-lib-stream-pipewire/recipes/01-basics/modeled-pipewire/recipe.toml` | `` | `` | `false` | `false` |
 | `` | `recipe/sim-audio-daw/crates/sim-lib-stream-portaudio/01-basics/modeled-portaudio` | `crate/sim-lib-stream-portaudio` | `recipe` | `crates/sim-lib-stream-portaudio/recipes/01-basics/modeled-portaudio/recipe.toml` | `` | `` | `false` | `false` |
+| `` | `recipe/sim-auto/00-overview/modeled-work-order` | `crate/sim-auto` | `recipe` | `recipes/00-overview/modeled-work-order/recipe.toml` | `rust` | `sh scripts/check-recipes.sh` | `true` | `true` |
+| `` | `recipe/sim-auto/01-lanes/flash-lane` | `crate/sim-auto` | `recipe` | `recipes/01-lanes/flash-lane/recipe.toml` | `rust` | `sh scripts/check-recipes.sh` | `true` | `true` |
+| `` | `recipe/sim-auto/01-lanes/info-lane` | `crate/sim-auto` | `recipe` | `recipes/01-lanes/info-lane/recipe.toml` | `rust` | `sh scripts/check-recipes.sh` | `true` | `true` |
+| `` | `recipe/sim-auto/01-lanes/order-lane` | `crate/sim-auto` | `recipe` | `recipes/01-lanes/order-lane/recipe.toml` | `rust` | `sh scripts/check-recipes.sh` | `true` | `true` |
+| `` | `recipe/sim-auto/01-lanes/parts-lane` | `crate/sim-auto` | `recipe` | `recipes/01-lanes/parts-lane/recipe.toml` | `rust` | `sh scripts/check-recipes.sh` | `true` | `true` |
+| `` | `recipe/sim-auto/01-lanes/read-lane` | `crate/sim-auto` | `recipe` | `recipes/01-lanes/read-lane/recipe.toml` | `rust` | `sh scripts/check-recipes.sh` | `true` | `true` |
+| `` | `recipe/sim-auto/01-lanes/service-lane` | `crate/sim-auto` | `recipe` | `recipes/01-lanes/service-lane/recipe.toml` | `rust` | `sh scripts/check-recipes.sh` | `true` | `true` |
+| `` | `recipe/sim-auto/02-sites/autotuner-site` | `crate/sim-auto` | `recipe` | `recipes/02-sites/autotuner-site/recipe.toml` | `rust` | `sh scripts/check-recipes.sh` | `true` | `true` |
+| `` | `recipe/sim-auto/02-sites/biluppgifter-se-site` | `crate/sim-auto` | `recipe` | `recipes/02-sites/biluppgifter-se-site/recipe.toml` | `rust` | `sh scripts/check-recipes.sh` | `true` | `true` |
+| `` | `recipe/sim-auto/02-sites/esitronic-site` | `crate/sim-auto` | `recipe` | `recipes/02-sites/esitronic-site/recipe.toml` | `rust` | `sh scripts/check-recipes.sh` | `true` | `true` |
+| `` | `recipe/sim-auto/02-sites/haynespro-site` | `crate/sim-auto` | `recipe` | `recipes/02-sites/haynespro-site/recipe.toml` | `rust` | `sh scripts/check-recipes.sh` | `true` | `true` |
+| `` | `recipe/sim-auto/02-sites/ista-site` | `crate/sim-auto` | `recipe` | `recipes/02-sites/ista-site/recipe.toml` | `rust` | `sh scripts/check-recipes.sh` | `true` | `true` |
+| `` | `recipe/sim-auto/02-sites/mekonomen-pro-site` | `crate/sim-auto` | `recipe` | `recipes/02-sites/mekonomen-pro-site/recipe.toml` | `rust` | `sh scripts/check-recipes.sh` | `true` | `true` |
+| `` | `recipe/sim-auto/02-sites/odis-site` | `crate/sim-auto` | `recipe` | `recipes/02-sites/odis-site/recipe.toml` | `rust` | `sh scripts/check-recipes.sh` | `true` | `true` |
+| `` | `recipe/sim-auto/02-sites/vida-site` | `crate/sim-auto` | `recipe` | `recipes/02-sites/vida-site/recipe.toml` | `rust` | `sh scripts/check-recipes.sh` | `true` | `true` |
+| `` | `recipe/sim-auto/02-sites/xentry-site` | `crate/sim-auto` | `recipe` | `recipes/02-sites/xentry-site/recipe.toml` | `rust` | `sh scripts/check-recipes.sh` | `true` | `true` |
+| `` | `recipe/sim-auto/auto-core-citizens` | `crate/sim-auto` | `recipe` | `recipes/auto-core-citizens/recipe.toml` | `rust` | `sh scripts/check-recipes.sh` | `true` | `true` |
 | `` | `recipe/sim-citizen/citizen-roundtrip` | `crate/citizen-roundtrip` | `recipe` | `recipes/citizen-roundtrip/recipe.toml` | `rust` | `` | `false` | `false` |
 | `` | `recipe/sim-codecs/crates/sim-codec-algol/01-basics/algol-arithmetic` | `crate/sim-codec-algol` | `recipe` | `crates/sim-codec-algol/recipes/01-basics/algol-arithmetic/recipe.toml` | `algol` | `` | `false` | `false` |
 | `` | `recipe/sim-codecs/crates/sim-codec-binary-base64/01-basics/text-wrapper` | `crate/sim-codec-binary-base64` | `recipe` | `crates/sim-codec-binary-base64/recipes/01-basics/text-wrapper/recipe.toml` | `lisp` | `` | `false` | `false` |
@@ -384,6 +401,9 @@
 | `feature/sim-agent-net/fabric-fixture-cli` | `spec-test/sim-agent-net/crates/sim-lib-stream-fabric/tests/cassette_replay` | `crate/sim-lib-stream-fabric` | `spec-test` | `crates/sim-lib-stream-fabric/tests/cassette_replay.rs` | `shape` | `cargo test` | `true` | `true` |
 | `feature/sim-audio-daw/audio-graph-workbench` | `spec-test/sim-audio-daw/crates/sim-lib-audio-graph-core/src/tests` | `local/sim-audio-daw/crate/sim-lib-audio-graph-core` | `spec-test` | `crates/sim-lib-audio-graph-core/src/tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-audio-daw/audio-device-providers` | `spec-test/sim-audio-daw/crates/sim-lib-stream-cpal/src/tests` | `crate/sim-lib-stream-cpal` | `spec-test` | `crates/sim-lib-stream-cpal/src/tests.rs` | `` | `cargo test` | `true` | `true` |
+| `` | `spec-test/sim-auto/crates/sim-lib-auto-order/src/conformance` | `crate/sim-lib-auto-order` | `spec-test` | `crates/sim-lib-auto-order/src/conformance.rs` | `shape` | `cargo test` | `true` | `true` |
+| `` | `spec-test/sim-auto/crates/sim-lib-auto-order/src/lib` | `crate/sim-lib-auto-order` | `spec-test` | `crates/sim-lib-auto-order/src/lib.rs` | `shape` | `cargo test` | `true` | `true` |
+| `` | `spec-test/sim-auto/crates/sim-lib-auto-order/tests/conformance` | `crate/sim-lib-auto-order` | `spec-test` | `crates/sim-lib-auto-order/tests/conformance.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-citizen/crates/sim-citizen-derive/src/expand` | `crate/sim-citizen-derive` | `spec-test` | `crates/sim-citizen-derive/src/expand.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-citizen/crates/sim-citizen-derive/tests/ui/support/citizen_shim` | `crate/sim-citizen-derive` | `spec-test` | `crates/sim-citizen-derive/tests/ui/support/citizen_shim.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-citizen/citizen-read-constructs` | `spec-test/sim-citizen/crates/sim-citizen/src/conformance` | `crate/sim-citizen` | `spec-test` | `crates/sim-citizen/src/conformance.rs` | `` | `cargo test` | `true` | `true` |

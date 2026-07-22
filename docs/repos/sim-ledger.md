@@ -1,6 +1,6 @@
 # sim-ledger
 
-Published commit: `d9c9e09cea1a68457999917fed20d41f7f28debf`.
+Published commit: `b298936e4fd2f96a6a5b2dae9786f98c28446c24`.
 
 ## Crates
 

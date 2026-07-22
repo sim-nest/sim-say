@@ -9,4 +9,4 @@
 
 Published repo count: 22.
 Index feature rows: 85.
-Index surface rows: 164.
+Index surface rows: 193.

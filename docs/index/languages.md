@@ -384,8 +384,25 @@
 | `specimen` | `lisp` | recipes/watch/privacy-reaper/recipe.toml |
 | `specimen` | `mcp` | crates/sim-codec-mcp/recipes/01-basics/envelope-descriptor/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-agent-runner-core/recipes/01-basics/output-contract-repair/recipe.toml |
+| `specimen` | `rust` | recipes/00-overview/modeled-work-order/recipe.toml |
 | `specimen` | `rust` | recipes/01-basics/exact-bool-shape/recipe.toml |
 | `specimen` | `rust` | recipes/01-basics/shape-grammar-contract/recipe.toml |
+| `specimen` | `rust` | recipes/01-lanes/flash-lane/recipe.toml |
+| `specimen` | `rust` | recipes/01-lanes/info-lane/recipe.toml |
+| `specimen` | `rust` | recipes/01-lanes/order-lane/recipe.toml |
+| `specimen` | `rust` | recipes/01-lanes/parts-lane/recipe.toml |
+| `specimen` | `rust` | recipes/01-lanes/read-lane/recipe.toml |
+| `specimen` | `rust` | recipes/01-lanes/service-lane/recipe.toml |
+| `specimen` | `rust` | recipes/02-sites/autotuner-site/recipe.toml |
+| `specimen` | `rust` | recipes/02-sites/biluppgifter-se-site/recipe.toml |
+| `specimen` | `rust` | recipes/02-sites/esitronic-site/recipe.toml |
+| `specimen` | `rust` | recipes/02-sites/haynespro-site/recipe.toml |
+| `specimen` | `rust` | recipes/02-sites/ista-site/recipe.toml |
+| `specimen` | `rust` | recipes/02-sites/mekonomen-pro-site/recipe.toml |
+| `specimen` | `rust` | recipes/02-sites/odis-site/recipe.toml |
+| `specimen` | `rust` | recipes/02-sites/vida-site/recipe.toml |
+| `specimen` | `rust` | recipes/02-sites/xentry-site/recipe.toml |
+| `specimen` | `rust` | recipes/auto-core-citizens/recipe.toml |
 | `specimen` | `rust` | recipes/citizen-roundtrip/recipe.toml |
 | `specimen` | `scheme-r7rs-small` | crates/sim-lib-lang-scheme/recipes/01-basics/scheme-arithmetic/recipe.toml |
 | `specimen` | `shape` | crates/sim-citizen/src/tests.rs |
@@ -394,6 +411,8 @@
 | `specimen` | `shape` | crates/sim-conformance/tests/spec/forge_eval.rs |
 | `specimen` | `shape` | crates/sim-conformance/tests/spec/support.rs |
 | `specimen` | `shape` | crates/sim-lib-agent-runner-local/tests/load_register.rs |
+| `specimen` | `shape` | crates/sim-lib-auto-order/src/conformance.rs |
+| `specimen` | `shape` | crates/sim-lib-auto-order/src/lib.rs |
 | `specimen` | `shape` | crates/sim-lib-bridge/src/tests/ask.rs |
 | `specimen` | `shape` | crates/sim-lib-discrete/src/forms.rs |
 | `specimen` | `shape` | crates/sim-lib-lang-prolog/src/conformance.rs |
@@ -453,6 +472,7 @@
 | `subject` | `crate/sim-codec-odf` | sim-codec-odf |
 | `subject` | `crate/sim-codec-ooxml` | sim-codec-ooxml |
 | `subject` | `crate/sim-codec-pratt` | sim-codec-pratt |
+| `subject` | `crate/sim-codec-uds` | sim-codec-uds |
 | `subject` | `crate/sim-lib-numbers-codec` | sim-lib-numbers-codec |
 | `subject` | `crate/sim-lib-view-codec` | sim-lib-view-codec |
 | `subject` | `crate/sim-shape-recipe-shape-grammar-contract` | sim-shape-recipe-shape-grammar-contract |
@@ -476,6 +496,7 @@
 | `subject` | `grammar/odf` | odf grammar |
 | `subject` | `grammar/ooxml` | ooxml grammar |
 | `subject` | `grammar/pratt` | pratt grammar |
+| `subject` | `grammar/uds` | uds grammar |
 | `subject` | `language/algol` | algol |
 | `subject` | `language/binary` | binary |
 | `subject` | `language/binary-base64` | binary-base64 |
@@ -495,6 +516,7 @@
 | `subject` | `language/odf` | odf |
 | `subject` | `language/ooxml` | ooxml |
 | `subject` | `language/pratt` | pratt |
+| `subject` | `language/uds` | uds |
 | `subject` | `local/sim-codecs/crate/sim-codec-mcp` | sim-codec-mcp |
 | `subject` | `local/sim-femm/crate/sim-lib-femm-codec` | sim-lib-femm-codec |
 | `subject` | `local/sim-sdk/crate/sim-codec-mcp` | sim-codec-mcp |
@@ -520,6 +542,7 @@
 | `subject` | `runtime-lib/sim-codec-lisp/lisp-codec-lib` | lisp-codec-lib |
 | `subject` | `runtime-lib/sim-codec-lua/lua-codec-lib` | lua-codec-lib |
 | `subject` | `runtime-lib/sim-codec-mcp/mcp-codec-lib` | mcp-codec-lib |
+| `subject` | `runtime-lib/sim-codec-uds/uds-codec-lib` | uds-codec-lib |
 | `subject` | `runtime-lib/sim-codec/domain-codec-lib` | domain-codec-lib |
 | `subject` | `runtime-lib/sim-lib-intent/intent-codec-lib` | intent-codec-lib |
 | `subject` | `runtime-lib/sim-lib-lang-cl/cl-lite-reader-codec-lib` | cl-lite-reader-codec-lib |
