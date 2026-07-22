@@ -257,6 +257,7 @@ piece gives you.
 
 ### surface
 
+- **sim-lib-index** -- sim-lib-index lets the SIM command answer what exists, where it lives, and which examples prove it.
 - **sim-lib-repl** -- The interactive prompt where you type a line and SIM answers back.
 - **sim-run** -- The `sim` program you launch from a terminal to start a SIM session.
 - **sim-run-core** -- The part that reads your command line and sets up the SIM session.
@@ -1502,6 +1503,12 @@ SharePoint lists and drive folders become reviewable SIM office records.
 This crate turns SharePoint list rows into local sheet documents and drive children into external references that keep their web links and ETags. A host can read the Graph response, inspect the shape, and decide what to do before any write is attempted.
 
 ### sim-run
+
+#### sim-lib-index
+
+sim-lib-index lets the SIM command answer what exists, where it lives, and which examples prove it.
+
+It turns the public SIM Index into an everyday command surface. A reader can look up features, packages, languages, surfaces, and examples from the installed runtime instead of hunting through generated pages.
 
 #### sim-lib-repl
 
