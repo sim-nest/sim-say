@@ -1,6 +1,6 @@
 # sim-kernel
 
-Published commit: `e5bdc1f6e9e42df5fb185e14cedd180695f2e458`.
+Published commit: `d9cc50b71f6af0e64d648c7c7e2de6a4997e29c4`.
 
 ## Crates
 
