@@ -35,6 +35,7 @@
 | [`feature/sim-foundation/library-macros`](features/feature--sim-foundation--library-macros.md) | `crate/sim-macros` | Generate checked Rust declarations for authored SIM libraries and codec markers. | 0 |
 | [`feature/sim-foundation/table-dir-core`](features/feature--sim-foundation--table-dir-core.md) | `crate/sim-table-core` | Define shared table and directory contracts used by storage, index, and host-facing libraries. | 1 |
 | [`feature/sim-foundation/value-helpers`](features/feature--sim-foundation--value-helpers.md) | `crate/sim-value` | Provide shared value conversion and table-field helpers for reusable runtime libraries. | 1 |
+| [`feature/sim-index/core`](features/feature--sim-index--core.md) | `local/sim-tooling/crate/xtask` | Generate, query, route, and prove the SIM Index graph as a checked constellation surface. | 1 |
 | [`feature/sim-kernel/contract-emitter`](features/feature--sim-kernel--contract-emitter.md) | `local/sim-kernel/crate/xtask` | Emit generated repository contract and index fragments for the kernel crate. | 0 |
 | [`feature/sim-kernel/kernel-contracts`](features/feature--sim-kernel--kernel-contracts.md) | `crate/sim-kernel` | Define the protocol kernel for values, context, registries, shapes, capabilities, and export records. | 0 |
 | [`feature/sim-ledger/generated-docs`](features/feature--sim-ledger--generated-docs.md) | `local/sim-ledger/crate/xtask` | Publish generated package, card, recipe, and index facts for the ledger crates. | 0 |

@@ -35,6 +35,7 @@
 | [`feature/sim-foundation/library-macros`](features/feature--sim-foundation--library-macros.md) | `crate/sim-macros` | 0 |
 | [`feature/sim-foundation/table-dir-core`](features/feature--sim-foundation--table-dir-core.md) | `crate/sim-table-core` | 1 |
 | [`feature/sim-foundation/value-helpers`](features/feature--sim-foundation--value-helpers.md) | `crate/sim-value` | 1 |
+| [`feature/sim-index/core`](features/feature--sim-index--core.md) | `local/sim-tooling/crate/xtask` | 1 |
 | [`feature/sim-kernel/contract-emitter`](features/feature--sim-kernel--contract-emitter.md) | `local/sim-kernel/crate/xtask` | 0 |
 | [`feature/sim-kernel/kernel-contracts`](features/feature--sim-kernel--kernel-contracts.md) | `crate/sim-kernel` | 0 |
 | [`feature/sim-ledger/generated-docs`](features/feature--sim-ledger--generated-docs.md) | `local/sim-ledger/crate/xtask` | 0 |

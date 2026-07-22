@@ -16,17 +16,11 @@ Generate repo contracts, feature maps, card indexes, and index fragments through
 - `anchor/export/xtask/codec/lisp`
 - `anchor/export/xtask/doc/chunk-recursive`
 - `anchor/export/xtask/registry/catalog`
-- `local/sim-tooling/anchor/cli/xtask`
 - `local/sim-tooling/anchor/crate/xtask`
 - `local/sim-tooling/anchor/doc/generated/card-index`
 - `local/sim-tooling/anchor/doc/generated/feature-map`
 - `local/sim-tooling/anchor/doc/generated/repo-contract`
 - `local/sim-tooling/anchor/doc/generated/sim-index-fragment`
-
-## Surfaces
-
-- `docs/sim-tooling/generated`
-- `local/sim-tooling/cli/xtask`
 
 ## Specimens
 
@@ -43,7 +37,7 @@ use std::collections::BTreeSet;
 
 use sim_index_core::{
     CanonicalFeatureKey, DiscoveredSpecimen, DiscoveredSurface, FeatureId, FeatureRecord, IndexDoc,
-    SpecimenId, SubjectId, SubjectRecord, SurfaceId, Visibility,
+    RouteId, RouteRecord, RouteStep, SpecimenId, SubjectId, SubjectRecord, SurfaceId, Visibility,
 };
 
 use super::*;
@@ -92,6 +86,26 @@ fn render_emits_named_pages_and_cards() {
             .contents
             .contains("\"kind\":\"surface\"")
     );
+}
+
+#[test]
+fn route_page_keeps_single_trailing_newline_without_coverage_gaps() {
+    let mut doc = fixture_doc();
+    doc.routes.push(RouteRecord {
+        id: RouteId::new("route/open-demo"),
+        title: "Open demo".to_owned(),
+        audiences: vec!["user".to_owned()],
+        steps: vec![RouteStep::Feature {
+            id: FeatureId::new("feature/demo"),
+            why: "The demo feature opens the route.".to_owned(),
+        }],
+        doc_anchor: None,
+    });
+
+    let page = routes_page(&doc);
+
+    assert!(page.ends_with('\n'));
+    assert!(!page.ends_with("\n\n"));
 }
 
 fn fixture_doc() -> IndexDoc {

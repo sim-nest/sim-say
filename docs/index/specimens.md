@@ -471,6 +471,7 @@
 | `` | `spec-test/sim-stream/crates/sim-lib-stream-device/src/citizen` | `local/sim-stream/crate/sim-lib-stream-device` | `spec-test` | `crates/sim-lib-stream-device/src/citizen.rs` | `shape` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-stream/crates/sim-lib-stream-wrist/src/citizen` | `local/sim-stream/crate/sim-lib-stream-wrist` | `spec-test` | `crates/sim-lib-stream-wrist/src/citizen.rs` | `shape` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-stream/crates/sim-lib-stream-xr/src/citizen` | `local/sim-stream/crate/sim-lib-stream-xr` | `spec-test` | `crates/sim-lib-stream-xr/src/citizen.rs` | `shape` | `cargo test` | `true` | `true` |
+| `feature/sim-index/core` | `spec-test/sim-tooling/src/index_fixpoint_tests` | `local/sim-tooling/crate/xtask` | `spec-test` | `src/index_fixpoint_tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-tooling/generated-docs` | `spec-test/sim-tooling/src/index_render_tests` | `local/sim-tooling/crate/xtask` | `spec-test` | `src/index_render_tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-web/daw-view-surfaces` | `spec-test/sim-web/crates/sim-lib-view-daw/src/recipe_tests` | `crate/sim-lib-view-daw` | `spec-test` | `crates/sim-lib-view-daw/src/recipe_tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-web/device-surfaces` | `spec-test/sim-web/crates/sim-lib-view-device/src/profile_tests` | `crate/sim-lib-view-device` | `spec-test` | `crates/sim-lib-view-device/src/profile_tests.rs` | `` | `cargo test` | `true` | `true` |

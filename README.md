@@ -222,7 +222,7 @@ The full constellation, generated from each repo's pinned contract files:
 
 See also: [repository map](docs/site/repos.md), [crate ownership](docs/site/crate-ownership.md), [agent-card catalog](docs/site/agent-card-catalog.md), [SIM Index features](docs/site/index-features.md), [constellation diagram](docs/site/constellation.md).
 
-The SIM Index contributes 84 feature rows and 164 surface rows to this navigation.
+The SIM Index contributes 85 feature rows and 164 surface rows to this navigation.
 
 The two SIM entry points -- sim-say = this generated public welcome; sim-sdk = the developer entry point and umbrella `sim` crate.
 
