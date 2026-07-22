@@ -10,8 +10,14 @@ Publish generated package, card, recipe, and index facts for the music, MIDI, pi
 
 ## Anchors
 
+- `anchor/repo/sim-music`
 - `local/sim-music/anchor/cli/xtask`
+- `local/sim-music/anchor/crate/xtask`
+- `local/sim-music/anchor/doc/generated/card-index`
 - `local/sim-music/anchor/doc/generated/feature-map`
+- `local/sim-music/anchor/doc/generated/provenance`
+- `local/sim-music/anchor/doc/generated/repo-contract`
+- `local/sim-music/anchor/doc/generated/rustdoc-index`
 - `local/sim-music/anchor/doc/generated/sim-index-fragment`
 
 ## Surfaces

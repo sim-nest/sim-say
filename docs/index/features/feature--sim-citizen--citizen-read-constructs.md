@@ -10,7 +10,12 @@ Expose Rust values as runtime citizens with class members, registry rows, and re
 
 ## Anchors
 
+- `anchor/cli/citizen-roundtrip`
+- `anchor/crate/citizen-roundtrip`
 - `anchor/crate/sim-citizen`
+- `anchor/crate/sim-citizen-derive`
+- `anchor/export/sim-citizen/citizen/int`
+- `anchor/export/sim-citizen/doc/point`
 - `anchor/runtime-lib/sim-citizen/citizen-lib`
 - `anchor/runtime-lib/sim-citizen/citizen-registry`
 

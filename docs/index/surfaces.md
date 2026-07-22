@@ -28,6 +28,8 @@
 | `docs/sim-audio-daw/generated` | `docs` | `doc-set/sim-audio-daw/generated` |
 | `docs/sim-citizen/generated` | `docs` | `doc-set/sim-citizen/generated` |
 | `docs/sim-codecs/generated` | `docs` | `doc-set/sim-codecs/generated` |
+| `docs/sim-discrete/generated` | `docs` | `doc-set/sim-discrete/generated` |
+| `docs/sim-femm/generated` | `docs` | `doc-set/sim-femm/generated` |
 | `docs/sim-foundation/generated` | `docs` | `doc-set/sim-foundation/generated` |
 | `docs/sim-kernel/generated` | `docs` | `doc-set/sim-kernel/generated` |
 | `docs/sim-ledger/generated` | `docs` | `doc-set/sim-ledger/generated` |
@@ -39,6 +41,7 @@
 | `docs/sim-sdk/generated` | `docs` | `doc-set/sim-sdk/generated` |
 | `docs/sim-shape/generated` | `docs` | `doc-set/sim-shape/generated` |
 | `docs/sim-storage/generated` | `docs` | `doc-set/sim-storage/generated` |
+| `docs/sim-stream-host/generated` | `docs` | `doc-set/sim-stream-host/generated` |
 | `docs/sim-stream/generated` | `docs` | `doc-set/sim-stream/generated` |
 | `docs/sim-tooling/generated` | `docs` | `doc-set/sim-tooling/generated` |
 | `docs/sim-web/generated` | `docs` | `doc-set/sim-web/generated` |
@@ -46,6 +49,8 @@
 | `local/sim-audio-daw/cli/xtask` | `cli` | `local/sim-audio-daw/crate/xtask` |
 | `local/sim-citizen/cli/xtask` | `cli` | `local/sim-citizen/crate/xtask` |
 | `local/sim-codecs/cli/xtask` | `cli` | `local/sim-codecs/crate/xtask` |
+| `local/sim-discrete/cli/xtask` | `cli` | `local/sim-discrete/crate/xtask` |
+| `local/sim-femm/cli/xtask` | `cli` | `local/sim-femm/crate/xtask` |
 | `local/sim-foundation/cli/xtask` | `cli` | `local/sim-foundation/crate/xtask` |
 | `local/sim-kernel/cli/xtask` | `cli` | `local/sim-kernel/crate/xtask` |
 | `local/sim-ledger/cli/xtask` | `cli` | `local/sim-ledger/crate/xtask` |
@@ -59,6 +64,7 @@
 | `local/sim-sdk/site-device/glasses-luma-ultra` | `site-device` | `crate/sim-nest` |
 | `local/sim-shape/cli/xtask` | `cli` | `local/sim-shape/crate/xtask` |
 | `local/sim-storage/cli/xtask` | `cli` | `local/sim-storage/crate/xtask` |
+| `local/sim-stream-host/cli/xtask` | `cli` | `local/sim-stream-host/crate/xtask` |
 | `local/sim-stream/cli/xtask` | `cli` | `local/sim-stream/crate/xtask` |
 | `local/sim-tooling/cli/xtask` | `cli` | `local/sim-tooling/crate/xtask` |
 | `local/sim-tooling/site-device/desktop` | `site-device` | `local/sim-tooling/crate/xtask` |
@@ -98,6 +104,7 @@
 | `site/sim-lib-agent-runner-local` | `site` | `crate/sim-lib-agent-runner-local` |
 | `site/sim-lib-numbers-f64` | `site` | `crate/sim-lib-numbers-f64` |
 | `site/sim-lib-stream-cpal` | `site` | `crate/sim-lib-stream-cpal` |
+| `site/sim-lib-stream-host` | `site` | `crate/sim-lib-stream-host` |
 | `site/sim-lib-topology` | `site` | `local/sim-stream/crate/sim-lib-topology` |
 | `site/sim-macros` | `site` | `crate/sim-macros` |
 | `site/sim-nest` | `site` | `crate/sim-nest` |

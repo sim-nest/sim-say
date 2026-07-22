@@ -30,8 +30,11 @@
 | `route/add-capability-gated-read-eval` | Add capability-gated read-eval | code, framework | `feature/sim-runtime/capabilities-read-eval` - The core row owns read policy, capability checks, and read-construct evidence.<br>`spec-test/sim-runtime/crates/sim-lib-standard-core/src/read_construct` - The read-construct test checks object round trips through standard core. |
 | `route/add-citizen-read-construct` | Add a citizen read-construct | code, framework | `feature/sim-citizen/citizen-read-constructs` - The citizen row owns runtime members and read-construct projection.<br>`spec-test/sim-citizen/crates/sim-citizen/src/conformance` - The conformance test checks citizen round-trip behavior. |
 | `route/add-cookbook-recipe` | Add a cookbook recipe | code, framework | `feature/sim-foundation/cookbook` - The cookbook row owns reusable recipe metadata. |
+| `route/add-discrete-domain-helper` | Add a discrete domain helper | code, framework | `feature/sim-discrete/discrete-algebra` - The discrete row owns algebra, graph, ranking, and spectral helpers. |
 | `route/add-eval-fabric-site` | Add an EvalFabric site | code, framework | `feature/sim-agent-net/eval-fabric-sites` - The EvalFabric row owns runner and fleet placement libraries. |
+| `route/add-femm-domain-helper` | Add a FEMM domain helper | code, framework | `feature/sim-femm/femm-domain-stack` - The FEMM row owns mesh, field, material, solve, and ODE helpers. |
 | `route/add-generated-doc` | Add a generated doc | code, framework | `feature/sim-tooling/generated-docs` - The xtask documentation row owns generated doc lanes and index fragments. |
+| `route/add-hardware-host-surface` | Add a hardware host surface | code, framework | `feature/sim-stream-host/hardware-host-surfaces` - The host row owns placement, device adapters, and hardware-facing stream surfaces. |
 | `route/add-host-exec-primitive` | Add a host exec primitive | code, framework | `feature/sim-runtime/host-exec` - The exec row keeps host process behavior in a loadable library. |
 | `route/add-host-primitive` | Add a host primitive | code, framework | `feature/sim-foundation/host-primitives` - Host primitives start from shared network and surface-card helpers. |
 | `route/add-host-storage-primitive` | Add a host storage primitive | code, framework | `feature/sim-storage/host-storage-primitives` - The host storage row points to file, database, and HTTP backends. |
@@ -75,8 +78,11 @@
 | `route/add-capability-gated-read-eval` | Add capability-gated read-eval | code, framework | `feature/sim-runtime/capabilities-read-eval` - The core row owns read policy, capability checks, and read-construct evidence.<br>`spec-test/sim-runtime/crates/sim-lib-standard-core/src/read_construct` - The read-construct test checks object round trips through standard core. |
 | `route/add-citizen-read-construct` | Add a citizen read-construct | code, framework | `feature/sim-citizen/citizen-read-constructs` - The citizen row owns runtime members and read-construct projection.<br>`spec-test/sim-citizen/crates/sim-citizen/src/conformance` - The conformance test checks citizen round-trip behavior. |
 | `route/add-cookbook-recipe` | Add a cookbook recipe | code, framework | `feature/sim-foundation/cookbook` - The cookbook row owns reusable recipe metadata. |
+| `route/add-discrete-domain-helper` | Add a discrete domain helper | code, framework | `feature/sim-discrete/discrete-algebra` - The discrete row owns algebra, graph, ranking, and spectral helpers. |
 | `route/add-eval-fabric-site` | Add an EvalFabric site | code, framework | `feature/sim-agent-net/eval-fabric-sites` - The EvalFabric row owns runner and fleet placement libraries. |
+| `route/add-femm-domain-helper` | Add a FEMM domain helper | code, framework | `feature/sim-femm/femm-domain-stack` - The FEMM row owns mesh, field, material, solve, and ODE helpers. |
 | `route/add-generated-doc` | Add a generated doc | code, framework | `feature/sim-tooling/generated-docs` - The xtask documentation row owns generated doc lanes and index fragments. |
+| `route/add-hardware-host-surface` | Add a hardware host surface | code, framework | `feature/sim-stream-host/hardware-host-surfaces` - The host row owns placement, device adapters, and hardware-facing stream surfaces. |
 | `route/add-host-exec-primitive` | Add a host exec primitive | code, framework | `feature/sim-runtime/host-exec` - The exec row keeps host process behavior in a loadable library. |
 | `route/add-host-primitive` | Add a host primitive | code, framework | `feature/sim-foundation/host-primitives` - Host primitives start from shared network and surface-card helpers. |
 | `route/add-host-storage-primitive` | Add a host storage primitive | code, framework | `feature/sim-storage/host-storage-primitives` - The host storage row points to file, database, and HTTP backends. |
@@ -97,16 +103,23 @@
 
 | Category | Id | Reason |
 | --- | --- | --- |
+| `frameworks` | `feature/sim-music/daw-session-runtime` | feature exposes framework-facing runtime or surface facts but no route step reaches it |
 | `frameworks` | `feature/sim-run/glasses` | feature exposes framework-facing runtime or surface facts but no route step reaches it |
 | `frameworks` | `feature/sim-run/loaders` | feature exposes framework-facing runtime or surface facts but no route step reaches it |
 | `frameworks` | `feature/sim-run/terminal-surface` | feature exposes framework-facing runtime or surface facts but no route step reaches it |
 | `frameworks` | `feature/sim-run/watch` | feature exposes framework-facing runtime or surface facts but no route step reaches it |
 | `major_entrypoints` | `feature/sim-agent-net/generated-docs` | feature claims a CLI entry point but no route step reaches it |
 | `major_entrypoints` | `feature/sim-audio-daw/generated-docs` | feature claims a CLI entry point but no route step reaches it |
+| `major_entrypoints` | `feature/sim-citizen/generated-docs` | feature claims a CLI entry point but no route step reaches it |
+| `major_entrypoints` | `feature/sim-discrete/generated-docs` | feature claims a CLI entry point but no route step reaches it |
+| `major_entrypoints` | `feature/sim-femm/generated-docs` | feature claims a CLI entry point but no route step reaches it |
 | `major_entrypoints` | `feature/sim-ledger/generated-docs` | feature claims a CLI entry point but no route step reaches it |
 | `major_entrypoints` | `feature/sim-music/generated-docs` | feature claims a CLI entry point but no route step reaches it |
+| `major_entrypoints` | `feature/sim-numbers/generated-docs` | feature claims a CLI entry point but no route step reaches it |
 | `major_entrypoints` | `feature/sim-office/generated-docs` | feature claims a CLI entry point but no route step reaches it |
 | `major_entrypoints` | `feature/sim-run/glasses` | feature claims a CLI entry point but no route step reaches it |
 | `major_entrypoints` | `feature/sim-run/watch` | feature claims a CLI entry point but no route step reaches it |
 | `major_entrypoints` | `feature/sim-sdk/generated-docs` | feature claims a CLI entry point but no route step reaches it |
+| `major_entrypoints` | `feature/sim-stream-host/generated-docs` | feature claims a CLI entry point but no route step reaches it |
+| `major_entrypoints` | `feature/sim-stream/generated-docs` | feature claims a CLI entry point but no route step reaches it |
 | `major_entrypoints` | `feature/sim-web/generated-docs` | feature claims a CLI entry point but no route step reaches it |

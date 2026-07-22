@@ -16,6 +16,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `feature/sim-audio-daw/audio-graph-workbench` | `local/sim-audio-daw/crate/sim-lib-audio-graph-core` | [features/feature--sim-audio-daw--audio-graph-workbench.md](../index/features/feature--sim-audio-daw--audio-graph-workbench.md) | 0 | Compose offline and live audio graph descriptors with DSP and gain-plugin examples. |
 | `feature/sim-audio-daw/generated-docs` | `local/sim-audio-daw/crate/xtask` | [features/feature--sim-audio-daw--generated-docs.md](../index/features/feature--sim-audio-daw--generated-docs.md) | 0 | Publish generated package, card, recipe, and index facts for the audio and plugin crates. |
 | `feature/sim-citizen/citizen-read-constructs` | `crate/sim-citizen` | [features/feature--sim-citizen--citizen-read-constructs.md](../index/features/feature--sim-citizen--citizen-read-constructs.md) | 1 | Expose Rust values as runtime citizens with class members, registry rows, and read-construct round trips. |
+| `feature/sim-citizen/generated-docs` | `local/sim-citizen/crate/xtask` | [features/feature--sim-citizen--generated-docs.md](../index/features/feature--sim-citizen--generated-docs.md) | 0 | Publish generated package, card, rustdoc, and index facts for the citizen crates and helper command. |
 | `feature/sim-codecs/bridge-packet-codec` | `crate/sim-codec-bridge` | [features/feature--sim-codecs--bridge-packet-codec.md](../index/features/feature--sim-codecs--bridge-packet-codec.md) | 1 | Encode and decode Bridge packet workflow data through the Bridge wire grammar. |
 | `feature/sim-codecs/codec` | `crate/sim-codec` | [features/feature--sim-codecs--codec.md](../index/features/feature--sim-codecs--codec.md) | 0 | Define codec positions, limits, syntax surfaces, wire surfaces, and loadable codec runtime libraries. |
 | `feature/sim-codecs/contract-emitter` | `local/sim-codecs/crate/xtask` | [features/feature--sim-codecs--contract-emitter.md](../index/features/feature--sim-codecs--contract-emitter.md) | 0 | Emit generated repository contract and index fragments for codec crates. |
@@ -23,6 +24,10 @@ Generated from `docs/index/index.cards.jsonl`.
 | `feature/sim-codecs/expression-syntax-grammars` | `crate/sim-codec-lisp` | [features/feature--sim-codecs--expression-syntax-grammars.md](../index/features/feature--sim-codecs--expression-syntax-grammars.md) | 0 | Read and write Lisp, JSON, Algol, Lua, Compare, and Bridge rendered expression grammars. |
 | `feature/sim-codecs/pratt` | `crate/sim-codec-pratt` | [features/feature--sim-codecs--pratt.md](../index/features/feature--sim-codecs--pratt.md) | 0 | Parse operator-oriented expression languages through the Pratt codec surface. |
 | `feature/sim-codecs/wire-protocol-grammars` | `crate/sim-codec` | [features/feature--sim-codecs--wire-protocol-grammars.md](../index/features/feature--sim-codecs--wire-protocol-grammars.md) | 0 | Read and write binary, bitwise, chat, config, document, index, and MCP wire protocols. |
+| `feature/sim-discrete/discrete-algebra` | `local/sim-discrete/crate/sim-lib-discrete` | [features/feature--sim-discrete--discrete-algebra.md](../index/features/feature--sim-discrete--discrete-algebra.md) | 0 | Provide algebra, graph, combinatorics, ranking, and spectral helpers as one reusable discrete-domain stack. |
+| `feature/sim-discrete/generated-docs` | `local/sim-discrete/crate/xtask` | [features/feature--sim-discrete--generated-docs.md](../index/features/feature--sim-discrete--generated-docs.md) | 0 | Publish generated package, card, rustdoc, and index facts for the discrete algebra crates. |
+| `feature/sim-femm/femm-domain-stack` | `crate/sim-lib-femm-core` | [features/feature--sim-femm--femm-domain-stack.md](../index/features/feature--sim-femm--femm-domain-stack.md) | 0 | Collect finite-element mesh, field, material, geometry, solve, post-processing, and ODE helpers into one code-facing domain feature. |
+| `feature/sim-femm/generated-docs` | `local/sim-femm/crate/xtask` | [features/feature--sim-femm--generated-docs.md](../index/features/feature--sim-femm--generated-docs.md) | 0 | Publish generated package, card, rustdoc, and index facts for the FEMM domain crates. |
 | `feature/sim-foundation/contract-emitter` | `local/sim-foundation/crate/xtask` | [features/feature--sim-foundation--contract-emitter.md](../index/features/feature--sim-foundation--contract-emitter.md) | 0 | Emit generated repository contract and index fragments for foundation crates. |
 | `feature/sim-foundation/cookbook` | `crate/sim-cookbook` | [features/feature--sim-foundation--cookbook.md](../index/features/feature--sim-foundation--cookbook.md) | 0 | Describe reusable recipe metadata and generated cookbook records consumed by public docs and tooling. |
 | `feature/sim-foundation/host-primitives` | `crate/sim-lib-net-core` | [features/feature--sim-foundation--host-primitives.md](../index/features/feature--sim-foundation--host-primitives.md) | 0 | Provide shared network and surface-card helper crates for host-facing runtime libraries. |
@@ -35,10 +40,12 @@ Generated from `docs/index/index.cards.jsonl`.
 | `feature/sim-ledger/generated-docs` | `local/sim-ledger/crate/xtask` | [features/feature--sim-ledger--generated-docs.md](../index/features/feature--sim-ledger--generated-docs.md) | 0 | Publish generated package, card, recipe, and index facts for the ledger crates. |
 | `feature/sim-ledger/ledger-command` | `crate/sim-ledger-cli` | [features/feature--sim-ledger--ledger-command.md](../index/features/feature--sim-ledger--ledger-command.md) | 0 | Run ledger import, drafting, trial balance, and closing flows through the checked command package. |
 | `feature/sim-ledger/ledger-libraries` | `crate/sim-ledger` | [features/feature--sim-ledger--ledger-libraries.md](../index/features/feature--sim-ledger--ledger-libraries.md) | 0 | Provide voucher storage, book construction, and closing libraries for ledger workflows. |
+| `feature/sim-music/daw-session-runtime` | `local/sim-music/crate/sim-lib-daw-session` | [features/feature--sim-music--daw-session-runtime.md](../index/features/feature--sim-music--daw-session-runtime.md) | 0 | Represent tracks, clips, instruments, buses, and offline or live schedules as a loadable music session runtime. |
 | `feature/sim-music/generated-docs` | `local/sim-music/crate/xtask` | [features/feature--sim-music--generated-docs.md](../index/features/feature--sim-music--generated-docs.md) | 0 | Publish generated package, card, recipe, and index facts for the music, MIDI, pitch, and sound crates. |
 | `feature/sim-music/midi-notation-workflows` | `crate/sim-lib-midi-core` | [features/feature--sim-music--midi-notation-workflows.md](../index/features/feature--sim-music--midi-notation-workflows.md) | 0 | Lift, lower, inspect, and export musical material across MIDI files, live MIDI fixtures, and notation forms. |
 | `feature/sim-music/pitch-and-sound-vocabulary` | `crate/sim-lib-pitch-core` | [features/feature--sim-music--pitch-and-sound-vocabulary.md](../index/features/feature--sim-music--pitch-and-sound-vocabulary.md) | 0 | Name chords, scales, pitch sets, timbres, spectra, and tuning facts through worked musical descriptors. |
 | `feature/sim-music/synth-performance-workbench` | `local/sim-music/crate/sim-lib-music-synth` | [features/feature--sim-music--synth-performance-workbench.md](../index/features/feature--sim-music--synth-performance-workbench.md) | 0 | Describe synth presets, streaming render fixtures, and placement choices for local or browser-backed performance. |
+| `feature/sim-numbers/generated-docs` | `local/sim-numbers/crate/xtask` | [features/feature--sim-numbers--generated-docs.md](../index/features/feature--sim-numbers--generated-docs.md) | 0 | Publish generated package, card, rustdoc, and index facts for the number-domain crates. |
 | `feature/sim-numbers/numbers` | `crate/sim-lib-numbers-core` | [features/feature--sim-numbers--numbers.md](../index/features/feature--sim-numbers--numbers.md) | 1 | Provide arithmetic, exact, floating, symbolic, tensor, and statistics number domains as loadable libraries. |
 | `feature/sim-office/document-codecs` | `crate/sim-lib-office-pack` | [features/feature--sim-office--document-codecs.md](../index/features/feature--sim-office--document-codecs.md) | 0 | Round-trip OOXML, ODF, MSPDI, deck, sheet, and markup documents through office codec recipes. |
 | `feature/sim-office/document-surfaces` | `crate/sim-lib-doc-surface` | [features/feature--sim-office--document-surfaces.md](../index/features/feature--sim-office--document-surfaces.md) | 0 | Project document, markup, and suite descriptors into view surfaces for review and editing. |
@@ -71,6 +78,9 @@ Generated from `docs/index/index.cards.jsonl`.
 | `feature/sim-storage/contract-emitter` | `local/sim-storage/crate/xtask` | [features/feature--sim-storage--contract-emitter.md](../index/features/feature--sim-storage--contract-emitter.md) | 0 | Emit generated repository contract and index fragments for storage crates. |
 | `feature/sim-storage/host-storage-primitives` | `local/sim-storage/crate/sim-table-fs` | [features/feature--sim-storage--host-storage-primitives.md](../index/features/feature--sim-storage--host-storage-primitives.md) | 0 | Connect file, database, and HTTP storage crates to the shared Table and Dir backend shape. |
 | `feature/sim-storage/table-dir-backends` | `local/sim-storage/crate/sim-table-hash` | [features/feature--sim-storage--table-dir-backends.md](../index/features/feature--sim-storage--table-dir-backends.md) | 1 | Provide hash, lazy, override, and list-backed Table/Dir implementations for reusable storage libraries. |
+| `feature/sim-stream-host/generated-docs` | `local/sim-stream-host/crate/xtask` | [features/feature--sim-stream-host--generated-docs.md](../index/features/feature--sim-stream-host--generated-docs.md) | 0 | Publish generated package, card, rustdoc, and index facts for stream host and hardware bridge crates. |
+| `feature/sim-stream-host/hardware-host-surfaces` | `crate/sim-lib-stream-host` | [features/feature--sim-stream-host--hardware-host-surfaces.md](../index/features/feature--sim-stream-host--hardware-host-surfaces.md) | 0 | Collect stream-host placement, Viture glasses, Halo glasses, watch bridge, and native FFI adapters as one hardware-facing code feature. |
+| `feature/sim-stream/generated-docs` | `local/sim-stream/crate/xtask` | [features/feature--sim-stream--generated-docs.md](../index/features/feature--sim-stream--generated-docs.md) | 0 | Publish generated package, card, rustdoc, and index facts for the stream and topology crates. |
 | `feature/sim-stream/stream-protocol-helpers` | `local/sim-stream/crate/sim-lib-stream-core` | [features/feature--sim-stream--stream-protocol-helpers.md](../index/features/feature--sim-stream--stream-protocol-helpers.md) | 1 | Provide rank, topology, stream core, device, wrist, and XR helpers as loadable stream libraries. |
 | `feature/sim-tooling/generated-docs` | `local/sim-tooling/crate/xtask` | [features/feature--sim-tooling--generated-docs.md](../index/features/feature--sim-tooling--generated-docs.md) | 0 | Generate repo contracts, feature maps, card indexes, and index fragments through xtask. |
 | `feature/sim-web/daw-view-surfaces` | `crate/sim-lib-view-daw` | [features/feature--sim-web--daw-view-surfaces.md](../index/features/feature--sim-web--daw-view-surfaces.md) | 0 | Expose synth, stream, placement, and component views through the DAW view library. |
@@ -107,6 +117,8 @@ Generated from `docs/index/index.cards.jsonl`.
 | `docs/sim-audio-daw/generated` | `docs` | `doc-set/sim-audio-daw/generated` |
 | `docs/sim-citizen/generated` | `docs` | `doc-set/sim-citizen/generated` |
 | `docs/sim-codecs/generated` | `docs` | `doc-set/sim-codecs/generated` |
+| `docs/sim-discrete/generated` | `docs` | `doc-set/sim-discrete/generated` |
+| `docs/sim-femm/generated` | `docs` | `doc-set/sim-femm/generated` |
 | `docs/sim-foundation/generated` | `docs` | `doc-set/sim-foundation/generated` |
 | `docs/sim-kernel/generated` | `docs` | `doc-set/sim-kernel/generated` |
 | `docs/sim-ledger/generated` | `docs` | `doc-set/sim-ledger/generated` |
@@ -118,6 +130,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `docs/sim-sdk/generated` | `docs` | `doc-set/sim-sdk/generated` |
 | `docs/sim-shape/generated` | `docs` | `doc-set/sim-shape/generated` |
 | `docs/sim-storage/generated` | `docs` | `doc-set/sim-storage/generated` |
+| `docs/sim-stream-host/generated` | `docs` | `doc-set/sim-stream-host/generated` |
 | `docs/sim-stream/generated` | `docs` | `doc-set/sim-stream/generated` |
 | `docs/sim-tooling/generated` | `docs` | `doc-set/sim-tooling/generated` |
 | `docs/sim-web/generated` | `docs` | `doc-set/sim-web/generated` |
@@ -125,6 +138,8 @@ Generated from `docs/index/index.cards.jsonl`.
 | `local/sim-audio-daw/cli/xtask` | `cli` | `local/sim-audio-daw/crate/xtask` |
 | `local/sim-citizen/cli/xtask` | `cli` | `local/sim-citizen/crate/xtask` |
 | `local/sim-codecs/cli/xtask` | `cli` | `local/sim-codecs/crate/xtask` |
+| `local/sim-discrete/cli/xtask` | `cli` | `local/sim-discrete/crate/xtask` |
+| `local/sim-femm/cli/xtask` | `cli` | `local/sim-femm/crate/xtask` |
 | `local/sim-foundation/cli/xtask` | `cli` | `local/sim-foundation/crate/xtask` |
 | `local/sim-kernel/cli/xtask` | `cli` | `local/sim-kernel/crate/xtask` |
 | `local/sim-ledger/cli/xtask` | `cli` | `local/sim-ledger/crate/xtask` |
@@ -138,6 +153,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `local/sim-sdk/site-device/glasses-luma-ultra` | `site-device` | `crate/sim-nest` |
 | `local/sim-shape/cli/xtask` | `cli` | `local/sim-shape/crate/xtask` |
 | `local/sim-storage/cli/xtask` | `cli` | `local/sim-storage/crate/xtask` |
+| `local/sim-stream-host/cli/xtask` | `cli` | `local/sim-stream-host/crate/xtask` |
 | `local/sim-stream/cli/xtask` | `cli` | `local/sim-stream/crate/xtask` |
 | `local/sim-tooling/cli/xtask` | `cli` | `local/sim-tooling/crate/xtask` |
 | `local/sim-tooling/site-device/desktop` | `site-device` | `local/sim-tooling/crate/xtask` |
@@ -177,6 +193,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `site/sim-lib-agent-runner-local` | `site` | `crate/sim-lib-agent-runner-local` |
 | `site/sim-lib-numbers-f64` | `site` | `crate/sim-lib-numbers-f64` |
 | `site/sim-lib-stream-cpal` | `site` | `crate/sim-lib-stream-cpal` |
+| `site/sim-lib-stream-host` | `site` | `crate/sim-lib-stream-host` |
 | `site/sim-lib-topology` | `site` | `local/sim-stream/crate/sim-lib-topology` |
 | `site/sim-macros` | `site` | `crate/sim-macros` |
 | `site/sim-nest` | `site` | `crate/sim-nest` |

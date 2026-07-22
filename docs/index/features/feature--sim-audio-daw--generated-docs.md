@@ -10,8 +10,14 @@ Publish generated package, card, recipe, and index facts for the audio and plugi
 
 ## Anchors
 
+- `anchor/repo/sim-audio-daw`
 - `local/sim-audio-daw/anchor/cli/xtask`
+- `local/sim-audio-daw/anchor/crate/xtask`
+- `local/sim-audio-daw/anchor/doc/generated/card-index`
 - `local/sim-audio-daw/anchor/doc/generated/feature-map`
+- `local/sim-audio-daw/anchor/doc/generated/provenance`
+- `local/sim-audio-daw/anchor/doc/generated/repo-contract`
+- `local/sim-audio-daw/anchor/doc/generated/rustdoc-index`
 - `local/sim-audio-daw/anchor/doc/generated/sim-index-fragment`
 
 ## Surfaces

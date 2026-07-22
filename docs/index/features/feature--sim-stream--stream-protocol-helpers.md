@@ -11,12 +11,17 @@ Provide rank, topology, stream core, device, wrist, and XR helpers as loadable s
 ## Anchors
 
 - `anchor/crate/sim-lib-rank`
+- `anchor/crate/sim-lib-stream-audio`
+- `anchor/crate/sim-lib-stream-clock`
+- `anchor/crate/sim-lib-stream-combinators`
 - `anchor/crate/sim-lib-stream-core`
 - `anchor/crate/sim-lib-stream-device`
 - `anchor/crate/sim-lib-stream-prelude`
 - `anchor/crate/sim-lib-stream-wrist`
 - `anchor/crate/sim-lib-stream-xr`
 - `anchor/crate/sim-lib-topology`
+- `anchor/export/sim-lib-stream-core/packet/pcm.rs`
+- `anchor/export/sim-lib-stream-core/shape/structural.rs`
 - `anchor/runtime-lib/sim-lib-rank/rank-lib`
 - `anchor/runtime-lib/sim-lib-stream-core/stream-core-shapes-lib`
 - `anchor/runtime-lib/sim-lib-stream-device/device-stream-base-lib`

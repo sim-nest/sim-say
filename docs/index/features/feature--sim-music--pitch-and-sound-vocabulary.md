@@ -7,3 +7,53 @@
 - Canonical key: `crate/sim-lib-pitch-core/feature-sim-music-pitch-and-sound-vocabulary`
 
 Name chords, scales, pitch sets, timbres, spectra, and tuning facts through worked musical descriptors.
+
+## Anchors
+
+- `anchor/crate/sim-lib-music-analysis`
+- `anchor/crate/sim-lib-music-combinators`
+- `anchor/crate/sim-lib-music-core`
+- `anchor/crate/sim-lib-music-lift`
+- `anchor/crate/sim-lib-music-lower`
+- `anchor/crate/sim-lib-music-notation`
+- `anchor/crate/sim-lib-music-shapes`
+- `anchor/crate/sim-lib-music-transform`
+- `anchor/crate/sim-lib-music-wasm-frame`
+- `anchor/crate/sim-lib-pitch-chord`
+- `anchor/crate/sim-lib-pitch-core`
+- `anchor/crate/sim-lib-pitch-dissonance`
+- `anchor/crate/sim-lib-pitch-namer`
+- `anchor/crate/sim-lib-pitch-namer-forte`
+- `anchor/crate/sim-lib-pitch-namer-jazz`
+- `anchor/crate/sim-lib-pitch-namer-riemann`
+- `anchor/crate/sim-lib-pitch-namer-roman`
+- `anchor/crate/sim-lib-pitch-scale`
+- `anchor/crate/sim-lib-pitch-set`
+- `anchor/crate/sim-lib-pitch-shapes`
+- `anchor/crate/sim-lib-pitch-wasm-frame`
+- `anchor/crate/sim-lib-sound-audio-lift`
+- `anchor/crate/sim-lib-sound-bridge`
+- `anchor/crate/sim-lib-sound-core`
+- `anchor/crate/sim-lib-sound-dissonance`
+- `anchor/crate/sim-lib-sound-gm`
+- `anchor/crate/sim-lib-sound-render`
+- `anchor/crate/sim-lib-sound-shapes`
+- `anchor/crate/sim-lib-sound-spectrum`
+- `anchor/crate/sim-lib-sound-timbre`
+- `anchor/crate/sim-lib-sound-tuning`
+- `anchor/crate/sim-lib-sound-wasm-frame`
+- `anchor/crate/sim-lib-stream-bridge`
+- `anchor/runtime-lib/sim-lib-music-lift/music-lift-lib`
+- `anchor/runtime-lib/sim-lib-music-notation/music-notation-lib`
+- `anchor/runtime-lib/sim-lib-music-shapes/music-shapes-lib`
+- `anchor/runtime-lib/sim-lib-pitch-dissonance/pitch-dissonance-lib`
+- `anchor/runtime-lib/sim-lib-pitch-namer/pitch-namer-lib`
+- `anchor/runtime-lib/sim-lib-pitch-shapes/pitch-shapes-lib`
+- `anchor/runtime-lib/sim-lib-sound-audio-lift/sound-audio-lift-lib`
+- `anchor/runtime-lib/sim-lib-sound-bridge/sound-bridge-lib`
+- `anchor/runtime-lib/sim-lib-sound-dissonance/sound-dissonance-lib`
+- `anchor/runtime-lib/sim-lib-sound-render/sound-render-lib`
+- `anchor/runtime-lib/sim-lib-sound-shapes/sound-shapes-lib`
+- `anchor/runtime-lib/sim-lib-sound-timbre/sound-timbre-lib`
+- `anchor/runtime-lib/sim-lib-sound-tuning/sound-tuning-lib`
+- `anchor/runtime-lib/sim-lib-stream-bridge/stream-bridge-lib`

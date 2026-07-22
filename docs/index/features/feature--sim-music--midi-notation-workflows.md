@@ -7,3 +7,22 @@
 - Canonical key: `crate/sim-lib-midi-core/feature-sim-music-midi-notation-workflows`
 
 Lift, lower, inspect, and export musical material across MIDI files, live MIDI fixtures, and notation forms.
+
+## Anchors
+
+- `anchor/crate/sim-lib-midi-ble`
+- `anchor/crate/sim-lib-midi-core`
+- `anchor/crate/sim-lib-midi-live`
+- `anchor/crate/sim-lib-midi-rtmidi`
+- `anchor/crate/sim-lib-midi-shapes`
+- `anchor/crate/sim-lib-midi-smf`
+- `anchor/crate/sim-lib-midi-sysex`
+- `anchor/crate/sim-lib-midi-wasm-frame`
+- `anchor/crate/sim-lib-stream-file`
+- `anchor/crate/sim-lib-stream-midi`
+- `anchor/runtime-lib/sim-lib-midi-ble/midi-ble-lib`
+- `anchor/runtime-lib/sim-lib-midi-core/midi-digest-lib`
+- `anchor/runtime-lib/sim-lib-midi-core/midi-io-lib`
+- `anchor/runtime-lib/sim-lib-midi-live/midi-live-lib`
+- `anchor/runtime-lib/sim-lib-midi-rtmidi/midi-rtmidi-lib`
+- `anchor/runtime-lib/sim-lib-midi-shapes/midi-shapes-lib`

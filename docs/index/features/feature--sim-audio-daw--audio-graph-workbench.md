@@ -7,3 +7,18 @@
 - Canonical key: `crate/sim-lib-audio-graph-core/feature-sim-audio-daw-audio-graph-workbench`
 
 Compose offline and live audio graph descriptors with DSP and gain-plugin examples.
+
+## Anchors
+
+- `anchor/crate/sim-lib-audio-dsp`
+- `anchor/crate/sim-lib-audio-graph-core`
+- `anchor/crate/sim-lib-audio-graph-live`
+- `anchor/crate/sim-lib-plugin-clap`
+- `anchor/crate/sim-lib-plugin-core`
+- `anchor/crate/sim-lib-plugin-lv2`
+- `anchor/crate/sim-lib-plugin-vst3`
+- `anchor/crate/sim-lib-plugin-wasm`
+- `anchor/runtime-lib/sim-lib-audio-dsp/audio-dsp-lib`
+- `anchor/runtime-lib/sim-lib-audio-graph-live/audio-graph-live-lib`
+- `anchor/runtime-lib/sim-lib-plugin-clap/clap-plugin-lib`
+- `anchor/runtime-lib/sim-lib-plugin-vst3/vst3-plugin-lib`

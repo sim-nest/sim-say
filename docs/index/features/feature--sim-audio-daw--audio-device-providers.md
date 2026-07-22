@@ -7,3 +7,25 @@
 - Canonical key: `crate/sim-lib-stream-cpal/feature-sim-audio-daw-audio-device-providers`
 
 Model host audio devices and load JACK, cpal, PipeWire, ALSA, ASIO, CoreAudio, and PortAudio provider paths.
+
+## Anchors
+
+- `anchor/crate/sim-lib-stream-alsa`
+- `anchor/crate/sim-lib-stream-asio`
+- `anchor/crate/sim-lib-stream-coreaudio`
+- `anchor/crate/sim-lib-stream-cpal`
+- `anchor/crate/sim-lib-stream-jack`
+- `anchor/crate/sim-lib-stream-pipewire`
+- `anchor/crate/sim-lib-stream-portaudio`
+- `anchor/runtime-lib/sim-lib-stream-alsa/alsa-lib`
+- `anchor/runtime-lib/sim-lib-stream-asio/asio-lib`
+- `anchor/runtime-lib/sim-lib-stream-coreaudio/core-audio-lib`
+- `anchor/runtime-lib/sim-lib-stream-cpal/cpal-provider-modeled`
+- `anchor/runtime-lib/sim-lib-stream-jack/fixture-provider-lib`
+- `anchor/runtime-lib/sim-lib-stream-jack/jack-lib`
+- `anchor/runtime-lib/sim-lib-stream-pipewire/pipe-wire-lib`
+- `anchor/runtime-lib/sim-lib-stream-portaudio/port-audio-lib`
+
+## Surfaces
+
+- `site/sim-lib-stream-cpal`

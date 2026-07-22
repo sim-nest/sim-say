@@ -10,4 +10,10 @@ Describe synth presets, streaming render fixtures, and placement choices for loc
 
 ## Anchors
 
+- `anchor/crate/sim-lib-music-synth`
+- `anchor/export/sim-lib-music-synth/view-instrument-dx7-editor`
+- `anchor/export/sim-lib-music-synth/view-instrument-ps3300-editor`
+- `anchor/export/sim-lib-music-synth/view-instrument-system55-editor`
+- `anchor/export/sim-lib-music-synth/view-instrument-system700-editor`
 - `anchor/export/sim-lib-music-synth/view/component`
+- `anchor/runtime-lib/sim-lib-music-synth/audio-synth-lib`

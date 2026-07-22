@@ -16,6 +16,7 @@
 | [`feature/sim-audio-daw/audio-graph-workbench`](features/feature--sim-audio-daw--audio-graph-workbench.md) | `local/sim-audio-daw/crate/sim-lib-audio-graph-core` | 0 |
 | [`feature/sim-audio-daw/generated-docs`](features/feature--sim-audio-daw--generated-docs.md) | `local/sim-audio-daw/crate/xtask` | 0 |
 | [`feature/sim-citizen/citizen-read-constructs`](features/feature--sim-citizen--citizen-read-constructs.md) | `crate/sim-citizen` | 1 |
+| [`feature/sim-citizen/generated-docs`](features/feature--sim-citizen--generated-docs.md) | `local/sim-citizen/crate/xtask` | 0 |
 | [`feature/sim-codecs/bridge-packet-codec`](features/feature--sim-codecs--bridge-packet-codec.md) | `crate/sim-codec-bridge` | 1 |
 | [`feature/sim-codecs/codec`](features/feature--sim-codecs--codec.md) | `crate/sim-codec` | 0 |
 | [`feature/sim-codecs/contract-emitter`](features/feature--sim-codecs--contract-emitter.md) | `local/sim-codecs/crate/xtask` | 0 |
@@ -23,6 +24,10 @@
 | [`feature/sim-codecs/expression-syntax-grammars`](features/feature--sim-codecs--expression-syntax-grammars.md) | `crate/sim-codec-lisp` | 0 |
 | [`feature/sim-codecs/pratt`](features/feature--sim-codecs--pratt.md) | `crate/sim-codec-pratt` | 0 |
 | [`feature/sim-codecs/wire-protocol-grammars`](features/feature--sim-codecs--wire-protocol-grammars.md) | `crate/sim-codec` | 0 |
+| [`feature/sim-discrete/discrete-algebra`](features/feature--sim-discrete--discrete-algebra.md) | `local/sim-discrete/crate/sim-lib-discrete` | 0 |
+| [`feature/sim-discrete/generated-docs`](features/feature--sim-discrete--generated-docs.md) | `local/sim-discrete/crate/xtask` | 0 |
+| [`feature/sim-femm/femm-domain-stack`](features/feature--sim-femm--femm-domain-stack.md) | `crate/sim-lib-femm-core` | 0 |
+| [`feature/sim-femm/generated-docs`](features/feature--sim-femm--generated-docs.md) | `local/sim-femm/crate/xtask` | 0 |
 | [`feature/sim-foundation/contract-emitter`](features/feature--sim-foundation--contract-emitter.md) | `local/sim-foundation/crate/xtask` | 0 |
 | [`feature/sim-foundation/cookbook`](features/feature--sim-foundation--cookbook.md) | `crate/sim-cookbook` | 0 |
 | [`feature/sim-foundation/host-primitives`](features/feature--sim-foundation--host-primitives.md) | `crate/sim-lib-net-core` | 0 |
@@ -35,10 +40,12 @@
 | [`feature/sim-ledger/generated-docs`](features/feature--sim-ledger--generated-docs.md) | `local/sim-ledger/crate/xtask` | 0 |
 | [`feature/sim-ledger/ledger-command`](features/feature--sim-ledger--ledger-command.md) | `crate/sim-ledger-cli` | 0 |
 | [`feature/sim-ledger/ledger-libraries`](features/feature--sim-ledger--ledger-libraries.md) | `crate/sim-ledger` | 0 |
+| [`feature/sim-music/daw-session-runtime`](features/feature--sim-music--daw-session-runtime.md) | `local/sim-music/crate/sim-lib-daw-session` | 0 |
 | [`feature/sim-music/generated-docs`](features/feature--sim-music--generated-docs.md) | `local/sim-music/crate/xtask` | 0 |
 | [`feature/sim-music/midi-notation-workflows`](features/feature--sim-music--midi-notation-workflows.md) | `crate/sim-lib-midi-core` | 0 |
 | [`feature/sim-music/pitch-and-sound-vocabulary`](features/feature--sim-music--pitch-and-sound-vocabulary.md) | `crate/sim-lib-pitch-core` | 0 |
 | [`feature/sim-music/synth-performance-workbench`](features/feature--sim-music--synth-performance-workbench.md) | `local/sim-music/crate/sim-lib-music-synth` | 0 |
+| [`feature/sim-numbers/generated-docs`](features/feature--sim-numbers--generated-docs.md) | `local/sim-numbers/crate/xtask` | 0 |
 | [`feature/sim-numbers/numbers`](features/feature--sim-numbers--numbers.md) | `crate/sim-lib-numbers-core` | 1 |
 | [`feature/sim-office/document-codecs`](features/feature--sim-office--document-codecs.md) | `crate/sim-lib-office-pack` | 0 |
 | [`feature/sim-office/document-surfaces`](features/feature--sim-office--document-surfaces.md) | `crate/sim-lib-doc-surface` | 0 |
@@ -71,6 +78,9 @@
 | [`feature/sim-storage/contract-emitter`](features/feature--sim-storage--contract-emitter.md) | `local/sim-storage/crate/xtask` | 0 |
 | [`feature/sim-storage/host-storage-primitives`](features/feature--sim-storage--host-storage-primitives.md) | `local/sim-storage/crate/sim-table-fs` | 0 |
 | [`feature/sim-storage/table-dir-backends`](features/feature--sim-storage--table-dir-backends.md) | `local/sim-storage/crate/sim-table-hash` | 1 |
+| [`feature/sim-stream-host/generated-docs`](features/feature--sim-stream-host--generated-docs.md) | `local/sim-stream-host/crate/xtask` | 0 |
+| [`feature/sim-stream-host/hardware-host-surfaces`](features/feature--sim-stream-host--hardware-host-surfaces.md) | `crate/sim-lib-stream-host` | 0 |
+| [`feature/sim-stream/generated-docs`](features/feature--sim-stream--generated-docs.md) | `local/sim-stream/crate/xtask` | 0 |
 | [`feature/sim-stream/stream-protocol-helpers`](features/feature--sim-stream--stream-protocol-helpers.md) | `local/sim-stream/crate/sim-lib-stream-core` | 1 |
 | [`feature/sim-tooling/generated-docs`](features/feature--sim-tooling--generated-docs.md) | `local/sim-tooling/crate/xtask` | 0 |
 | [`feature/sim-web/daw-view-surfaces`](features/feature--sim-web--daw-view-surfaces.md) | `crate/sim-lib-view-daw` | 0 |
