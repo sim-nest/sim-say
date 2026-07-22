@@ -5,6 +5,24 @@
 | Surface | Kind | Subject |
 | --- | --- | --- |
 | `cli/atelier` | `cli` | `crate/sim-web-shell` |
+| `cli/auto` | `cli` | `crate/sim-auto` |
+| `cli/auto-core-citizens` | `cli` | `crate/auto-core-citizens` |
+| `cli/auto-lane-flash` | `cli` | `crate/auto-lane-flash` |
+| `cli/auto-lane-info` | `cli` | `crate/auto-lane-info` |
+| `cli/auto-lane-order` | `cli` | `crate/auto-lane-order` |
+| `cli/auto-lane-parts` | `cli` | `crate/auto-lane-parts` |
+| `cli/auto-lane-read` | `cli` | `crate/auto-lane-read` |
+| `cli/auto-lane-service` | `cli` | `crate/auto-lane-service` |
+| `cli/auto-modeled-work-order` | `cli` | `crate/auto-modeled-work-order` |
+| `cli/auto-site-autotuner` | `cli` | `crate/auto-site-autotuner` |
+| `cli/auto-site-biluppgifter-se` | `cli` | `crate/auto-site-biluppgifter-se` |
+| `cli/auto-site-esitronic` | `cli` | `crate/auto-site-esitronic` |
+| `cli/auto-site-haynespro` | `cli` | `crate/auto-site-haynespro` |
+| `cli/auto-site-ista` | `cli` | `crate/auto-site-ista` |
+| `cli/auto-site-mekonomen-pro` | `cli` | `crate/auto-site-mekonomen-pro` |
+| `cli/auto-site-odis` | `cli` | `crate/auto-site-odis` |
+| `cli/auto-site-vida` | `cli` | `crate/auto-site-vida` |
+| `cli/auto-site-xentry` | `cli` | `crate/auto-site-xentry` |
 | `cli/browse` | `cli` | `crate/sim-web-shell` |
 | `cli/citizen-roundtrip` | `cli` | `crate/citizen-roundtrip` |
 | `cli/glasses` | `cli` | `crate/sim-run` |
@@ -12,6 +30,7 @@
 | `cli/mcp` | `cli` | `local/sim-agent-net/crate/sim-lib-mcp` |
 | `cli/repl` | `cli` | `crate/sim-lib-repl` |
 | `cli/serve` | `cli` | `crate/sim-web-shell` |
+| `cli/sim-auto` | `cli` | `crate/sim-auto` |
 | `cli/sim-codec-compare` | `cli` | `crate/sim-codec-compare` |
 | `cli/sim-fabric-cadr-fixture` | `cli` | `crate/sim-lib-stream-fabric` |
 | `cli/sim-ledger-cli` | `cli` | `crate/sim-ledger-cli` |
@@ -26,6 +45,7 @@
 | `cli/watch` | `cli` | `crate/sim-run` |
 | `docs/sim-agent-net/generated` | `docs` | `doc-set/sim-agent-net/generated` |
 | `docs/sim-audio-daw/generated` | `docs` | `doc-set/sim-audio-daw/generated` |
+| `docs/sim-auto/generated` | `docs` | `doc-set/sim-auto/generated` |
 | `docs/sim-citizen/generated` | `docs` | `doc-set/sim-citizen/generated` |
 | `docs/sim-codecs/generated` | `docs` | `doc-set/sim-codecs/generated` |
 | `docs/sim-discrete/generated` | `docs` | `doc-set/sim-discrete/generated` |
@@ -47,6 +67,7 @@
 | `docs/sim-web/generated` | `docs` | `doc-set/sim-web/generated` |
 | `local/sim-agent-net/cli/xtask` | `cli` | `local/sim-agent-net/crate/xtask` |
 | `local/sim-audio-daw/cli/xtask` | `cli` | `local/sim-audio-daw/crate/xtask` |
+| `local/sim-auto/cli/xtask` | `cli` | `local/sim-auto/crate/xtask` |
 | `local/sim-citizen/cli/xtask` | `cli` | `local/sim-citizen/crate/xtask` |
 | `local/sim-codecs/cli/xtask` | `cli` | `local/sim-codecs/crate/xtask` |
 | `local/sim-discrete/cli/xtask` | `cli` | `local/sim-discrete/crate/xtask` |
@@ -92,6 +113,7 @@
 | `local/sim-web/site-device/watch-glance-large` | `site-device` | `local/sim-web/crate/sim-lib-view` |
 | `local/sim-web/site-device/watch-sleep` | `site-device` | `local/sim-web/crate/sim-lib-view` |
 | `local/sim-web/site-device/watch-sport` | `site-device` | `local/sim-web/crate/sim-lib-view` |
+| `model/auto-modeled-work-order` | `model-exchange` | `crate/auto-modeled-work-order` |
 | `model/sim-lib-agent` | `model-exchange` | `crate/sim-lib-agent` |
 | `model/sim-lib-agent-runner-core` | `model-exchange` | `local/sim-agent-net/crate/sim-lib-agent-runner-core` |
 | `model/sim-lib-agent-runner-core-recipe-output-contract-repair` | `model-exchange` | `crate/sim-lib-agent-runner-core-recipe-output-contract-repair` |
@@ -102,6 +124,11 @@
 | `model/sim-lib-view-agent` | `model-exchange` | `crate/sim-lib-view-agent` |
 | `site/sim-kernel` | `site` | `crate/sim-kernel` |
 | `site/sim-lib-agent-runner-local` | `site` | `crate/sim-lib-agent-runner-local` |
+| `site/sim-lib-auto-diag` | `site` | `crate/sim-lib-auto-diag` |
+| `site/sim-lib-auto-info` | `site` | `crate/sim-lib-auto-info` |
+| `site/sim-lib-auto-parts` | `site` | `crate/sim-lib-auto-parts` |
+| `site/sim-lib-auto-vehicle` | `site` | `crate/sim-lib-auto-vehicle` |
+| `site/sim-lib-auto-vendor` | `site` | `crate/sim-lib-auto-vendor` |
 | `site/sim-lib-numbers-f64` | `site` | `crate/sim-lib-numbers-f64` |
 | `site/sim-lib-stream-cpal` | `site` | `crate/sim-lib-stream-cpal` |
 | `site/sim-lib-stream-host` | `site` | `crate/sim-lib-stream-host` |
@@ -131,6 +158,7 @@
 | `syntax/odf` | `syntax` | `language/odf` |
 | `syntax/ooxml` | `syntax` | `language/ooxml` |
 | `syntax/pratt` | `syntax` | `language/pratt` |
+| `syntax/uds` | `syntax` | `language/uds` |
 | `view-edit/sim-lib-view` | `view-edit` | `local/sim-web/crate/sim-lib-view` |
 | `view-edit/sim-lib-view-bridge` | `view-edit` | `crate/sim-lib-view-bridge` |
 | `view-edit/sim-lib-view-device` | `view-edit` | `crate/sim-lib-view-device` |
@@ -145,6 +173,7 @@
 | `view/sim-lib-doc-surface` | `view` | `crate/sim-lib-doc-surface` |
 | `view/sim-lib-view` | `view` | `local/sim-web/crate/sim-lib-view` |
 | `view/sim-lib-view-agent` | `view` | `crate/sim-lib-view-agent` |
+| `view/sim-lib-view-bay` | `view` | `crate/sim-lib-view-bay` |
 | `view/sim-lib-view-bridge` | `view` | `crate/sim-lib-view-bridge` |
 | `view/sim-lib-view-codec` | `view` | `crate/sim-lib-view-codec` |
 | `view/sim-lib-view-daw` | `view` | `crate/sim-lib-view-daw` |

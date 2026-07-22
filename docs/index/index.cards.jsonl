@@ -219,6 +219,23 @@
 {"checked":false,"checked_by":null,"id":"recipe/sim-audio-daw/crates/sim-lib-stream-jack/01-basics/modeled-jack","kind":"specimen","language":null,"path":"crates/sim-lib-stream-jack/recipes/01-basics/modeled-jack/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-lib-stream-jack"}
 {"checked":false,"checked_by":null,"id":"recipe/sim-audio-daw/crates/sim-lib-stream-pipewire/01-basics/modeled-pipewire","kind":"specimen","language":null,"path":"crates/sim-lib-stream-pipewire/recipes/01-basics/modeled-pipewire/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-lib-stream-pipewire"}
 {"checked":false,"checked_by":null,"id":"recipe/sim-audio-daw/crates/sim-lib-stream-portaudio/01-basics/modeled-portaudio","kind":"specimen","language":null,"path":"crates/sim-lib-stream-portaudio/recipes/01-basics/modeled-portaudio/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-lib-stream-portaudio"}
+{"checked":true,"checked_by":"sh scripts/check-recipes.sh","id":"recipe/sim-auto/00-overview/modeled-work-order","kind":"specimen","language":"rust","path":"recipes/00-overview/modeled-work-order/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-auto"}
+{"checked":true,"checked_by":"sh scripts/check-recipes.sh","id":"recipe/sim-auto/01-lanes/flash-lane","kind":"specimen","language":"rust","path":"recipes/01-lanes/flash-lane/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-auto"}
+{"checked":true,"checked_by":"sh scripts/check-recipes.sh","id":"recipe/sim-auto/01-lanes/info-lane","kind":"specimen","language":"rust","path":"recipes/01-lanes/info-lane/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-auto"}
+{"checked":true,"checked_by":"sh scripts/check-recipes.sh","id":"recipe/sim-auto/01-lanes/order-lane","kind":"specimen","language":"rust","path":"recipes/01-lanes/order-lane/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-auto"}
+{"checked":true,"checked_by":"sh scripts/check-recipes.sh","id":"recipe/sim-auto/01-lanes/parts-lane","kind":"specimen","language":"rust","path":"recipes/01-lanes/parts-lane/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-auto"}
+{"checked":true,"checked_by":"sh scripts/check-recipes.sh","id":"recipe/sim-auto/01-lanes/read-lane","kind":"specimen","language":"rust","path":"recipes/01-lanes/read-lane/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-auto"}
+{"checked":true,"checked_by":"sh scripts/check-recipes.sh","id":"recipe/sim-auto/01-lanes/service-lane","kind":"specimen","language":"rust","path":"recipes/01-lanes/service-lane/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-auto"}
+{"checked":true,"checked_by":"sh scripts/check-recipes.sh","id":"recipe/sim-auto/02-sites/autotuner-site","kind":"specimen","language":"rust","path":"recipes/02-sites/autotuner-site/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-auto"}
+{"checked":true,"checked_by":"sh scripts/check-recipes.sh","id":"recipe/sim-auto/02-sites/biluppgifter-se-site","kind":"specimen","language":"rust","path":"recipes/02-sites/biluppgifter-se-site/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-auto"}
+{"checked":true,"checked_by":"sh scripts/check-recipes.sh","id":"recipe/sim-auto/02-sites/esitronic-site","kind":"specimen","language":"rust","path":"recipes/02-sites/esitronic-site/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-auto"}
+{"checked":true,"checked_by":"sh scripts/check-recipes.sh","id":"recipe/sim-auto/02-sites/haynespro-site","kind":"specimen","language":"rust","path":"recipes/02-sites/haynespro-site/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-auto"}
+{"checked":true,"checked_by":"sh scripts/check-recipes.sh","id":"recipe/sim-auto/02-sites/ista-site","kind":"specimen","language":"rust","path":"recipes/02-sites/ista-site/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-auto"}
+{"checked":true,"checked_by":"sh scripts/check-recipes.sh","id":"recipe/sim-auto/02-sites/mekonomen-pro-site","kind":"specimen","language":"rust","path":"recipes/02-sites/mekonomen-pro-site/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-auto"}
+{"checked":true,"checked_by":"sh scripts/check-recipes.sh","id":"recipe/sim-auto/02-sites/odis-site","kind":"specimen","language":"rust","path":"recipes/02-sites/odis-site/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-auto"}
+{"checked":true,"checked_by":"sh scripts/check-recipes.sh","id":"recipe/sim-auto/02-sites/vida-site","kind":"specimen","language":"rust","path":"recipes/02-sites/vida-site/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-auto"}
+{"checked":true,"checked_by":"sh scripts/check-recipes.sh","id":"recipe/sim-auto/02-sites/xentry-site","kind":"specimen","language":"rust","path":"recipes/02-sites/xentry-site/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-auto"}
+{"checked":true,"checked_by":"sh scripts/check-recipes.sh","id":"recipe/sim-auto/auto-core-citizens","kind":"specimen","language":"rust","path":"recipes/auto-core-citizens/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-auto"}
 {"checked":false,"checked_by":null,"id":"recipe/sim-citizen/citizen-roundtrip","kind":"specimen","language":"rust","path":"recipes/citizen-roundtrip/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/citizen-roundtrip"}
 {"checked":false,"checked_by":null,"id":"recipe/sim-codecs/crates/sim-codec-algol/01-basics/algol-arithmetic","kind":"specimen","language":"algol","path":"crates/sim-codec-algol/recipes/01-basics/algol-arithmetic/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-codec-algol"}
 {"checked":false,"checked_by":null,"id":"recipe/sim-codecs/crates/sim-codec-binary-base64/01-basics/text-wrapper","kind":"specimen","language":"lisp","path":"crates/sim-codec-binary-base64/recipes/01-basics/text-wrapper/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-codec-binary-base64"}
@@ -512,6 +529,9 @@
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-agent-net/crates/sim-lib-stream-fabric/tests/cassette_replay","kind":"specimen","language":"shape","path":"crates/sim-lib-stream-fabric/tests/cassette_replay.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-lib-stream-fabric"}
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-audio-daw/crates/sim-lib-audio-graph-core/src/tests","kind":"specimen","language":null,"path":"crates/sim-lib-audio-graph-core/src/tests.rs","runnable":true,"specimen_kind":"spec-test","subject":"local/sim-audio-daw/crate/sim-lib-audio-graph-core"}
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-audio-daw/crates/sim-lib-stream-cpal/src/tests","kind":"specimen","language":null,"path":"crates/sim-lib-stream-cpal/src/tests.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-lib-stream-cpal"}
+{"checked":true,"checked_by":"cargo test","id":"spec-test/sim-auto/crates/sim-lib-auto-order/src/conformance","kind":"specimen","language":"shape","path":"crates/sim-lib-auto-order/src/conformance.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-lib-auto-order"}
+{"checked":true,"checked_by":"cargo test","id":"spec-test/sim-auto/crates/sim-lib-auto-order/src/lib","kind":"specimen","language":"shape","path":"crates/sim-lib-auto-order/src/lib.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-lib-auto-order"}
+{"checked":true,"checked_by":"cargo test","id":"spec-test/sim-auto/crates/sim-lib-auto-order/tests/conformance","kind":"specimen","language":null,"path":"crates/sim-lib-auto-order/tests/conformance.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-lib-auto-order"}
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-citizen/crates/sim-citizen-derive/src/expand","kind":"specimen","language":null,"path":"crates/sim-citizen-derive/src/expand.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-citizen-derive"}
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-citizen/crates/sim-citizen-derive/tests/ui/support/citizen_shim","kind":"specimen","language":null,"path":"crates/sim-citizen-derive/tests/ui/support/citizen_shim.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-citizen-derive"}
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-citizen/crates/sim-citizen/src/conformance","kind":"specimen","language":null,"path":"crates/sim-citizen/src/conformance.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-citizen"}
@@ -606,7 +626,26 @@
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-web/crates/sim-lib-view/src/surface_tests","kind":"specimen","language":"shape","path":"crates/sim-lib-view/src/surface_tests.rs","runnable":true,"specimen_kind":"spec-test","subject":"local/sim-web/crate/sim-lib-view"}
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-web/crates/sim-web-shell/src/tests","kind":"specimen","language":"json","path":"crates/sim-web-shell/src/tests.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-web-shell"}
 {"id":"crate/agents30","kind":"subject","subject_kind":"crate","title":"agents30"}
+{"id":"crate/auto-core-citizens","kind":"subject","subject_kind":"crate","title":"auto-core-citizens"}
+{"id":"crate/auto-lane-flash","kind":"subject","subject_kind":"crate","title":"auto-lane-flash"}
+{"id":"crate/auto-lane-info","kind":"subject","subject_kind":"crate","title":"auto-lane-info"}
+{"id":"crate/auto-lane-order","kind":"subject","subject_kind":"crate","title":"auto-lane-order"}
+{"id":"crate/auto-lane-parts","kind":"subject","subject_kind":"crate","title":"auto-lane-parts"}
+{"id":"crate/auto-lane-read","kind":"subject","subject_kind":"crate","title":"auto-lane-read"}
+{"id":"crate/auto-lane-service","kind":"subject","subject_kind":"crate","title":"auto-lane-service"}
+{"id":"crate/auto-modeled-work-order","kind":"subject","subject_kind":"crate","title":"auto-modeled-work-order"}
+{"id":"crate/auto-recipe-support","kind":"subject","subject_kind":"crate","title":"auto-recipe-support"}
+{"id":"crate/auto-site-autotuner","kind":"subject","subject_kind":"crate","title":"auto-site-autotuner"}
+{"id":"crate/auto-site-biluppgifter-se","kind":"subject","subject_kind":"crate","title":"auto-site-biluppgifter-se"}
+{"id":"crate/auto-site-esitronic","kind":"subject","subject_kind":"crate","title":"auto-site-esitronic"}
+{"id":"crate/auto-site-haynespro","kind":"subject","subject_kind":"crate","title":"auto-site-haynespro"}
+{"id":"crate/auto-site-ista","kind":"subject","subject_kind":"crate","title":"auto-site-ista"}
+{"id":"crate/auto-site-mekonomen-pro","kind":"subject","subject_kind":"crate","title":"auto-site-mekonomen-pro"}
+{"id":"crate/auto-site-odis","kind":"subject","subject_kind":"crate","title":"auto-site-odis"}
+{"id":"crate/auto-site-vida","kind":"subject","subject_kind":"crate","title":"auto-site-vida"}
+{"id":"crate/auto-site-xentry","kind":"subject","subject_kind":"crate","title":"auto-site-xentry"}
 {"id":"crate/citizen-roundtrip","kind":"subject","subject_kind":"crate","title":"citizen-roundtrip"}
+{"id":"crate/sim-auto","kind":"subject","subject_kind":"crate","title":"sim-auto"}
 {"id":"crate/sim-citizen","kind":"subject","subject_kind":"crate","title":"sim-citizen"}
 {"id":"crate/sim-citizen-derive","kind":"subject","subject_kind":"crate","title":"sim-citizen-derive"}
 {"id":"crate/sim-codec","kind":"subject","subject_kind":"crate","title":"sim-codec"}
@@ -628,6 +667,7 @@
 {"id":"crate/sim-codec-odf","kind":"subject","subject_kind":"crate","title":"sim-codec-odf"}
 {"id":"crate/sim-codec-ooxml","kind":"subject","subject_kind":"crate","title":"sim-codec-ooxml"}
 {"id":"crate/sim-codec-pratt","kind":"subject","subject_kind":"crate","title":"sim-codec-pratt"}
+{"id":"crate/sim-codec-uds","kind":"subject","subject_kind":"crate","title":"sim-codec-uds"}
 {"id":"crate/sim-config","kind":"subject","subject_kind":"crate","title":"sim-config"}
 {"id":"crate/sim-conformance","kind":"subject","subject_kind":"crate","title":"sim-conformance"}
 {"id":"crate/sim-cookbook","kind":"subject","subject_kind":"crate","title":"sim-cookbook"}
@@ -642,6 +682,13 @@
 {"id":"crate/sim-lib-agent-runner-local","kind":"subject","subject_kind":"crate","title":"sim-lib-agent-runner-local"}
 {"id":"crate/sim-lib-agent-runner-process","kind":"subject","subject_kind":"crate","title":"sim-lib-agent-runner-process"}
 {"id":"crate/sim-lib-audio-graph-live","kind":"subject","subject_kind":"crate","title":"sim-lib-audio-graph-live"}
+{"id":"crate/sim-lib-auto-core","kind":"subject","subject_kind":"crate","title":"sim-lib-auto-core"}
+{"id":"crate/sim-lib-auto-diag","kind":"subject","subject_kind":"crate","title":"sim-lib-auto-diag"}
+{"id":"crate/sim-lib-auto-info","kind":"subject","subject_kind":"crate","title":"sim-lib-auto-info"}
+{"id":"crate/sim-lib-auto-order","kind":"subject","subject_kind":"crate","title":"sim-lib-auto-order"}
+{"id":"crate/sim-lib-auto-parts","kind":"subject","subject_kind":"crate","title":"sim-lib-auto-parts"}
+{"id":"crate/sim-lib-auto-vehicle","kind":"subject","subject_kind":"crate","title":"sim-lib-auto-vehicle"}
+{"id":"crate/sim-lib-auto-vendor","kind":"subject","subject_kind":"crate","title":"sim-lib-auto-vendor"}
 {"id":"crate/sim-lib-binding","kind":"subject","subject_kind":"crate","title":"sim-lib-binding"}
 {"id":"crate/sim-lib-bridge","kind":"subject","subject_kind":"crate","title":"sim-lib-bridge"}
 {"id":"crate/sim-lib-control","kind":"subject","subject_kind":"crate","title":"sim-lib-control"}
@@ -788,6 +835,7 @@
 {"id":"crate/sim-lib-stream-wristbridge","kind":"subject","subject_kind":"crate","title":"sim-lib-stream-wristbridge"}
 {"id":"crate/sim-lib-surface-card","kind":"subject","subject_kind":"crate","title":"sim-lib-surface-card"}
 {"id":"crate/sim-lib-view-agent","kind":"subject","subject_kind":"crate","title":"sim-lib-view-agent"}
+{"id":"crate/sim-lib-view-bay","kind":"subject","subject_kind":"crate","title":"sim-lib-view-bay"}
 {"id":"crate/sim-lib-view-bridge","kind":"subject","subject_kind":"crate","title":"sim-lib-view-bridge"}
 {"id":"crate/sim-lib-view-codec","kind":"subject","subject_kind":"crate","title":"sim-lib-view-codec"}
 {"id":"crate/sim-lib-view-daw","kind":"subject","subject_kind":"crate","title":"sim-lib-view-daw"}
@@ -819,6 +867,7 @@
 {"id":"crate/sim-web-shell","kind":"subject","subject_kind":"crate","title":"sim-web-shell"}
 {"id":"doc-set/sim-agent-net/generated","kind":"subject","subject_kind":"doc-set","title":"sim-agent-net generated docs"}
 {"id":"doc-set/sim-audio-daw/generated","kind":"subject","subject_kind":"doc-set","title":"sim-audio-daw generated docs"}
+{"id":"doc-set/sim-auto/generated","kind":"subject","subject_kind":"doc-set","title":"sim-auto generated docs"}
 {"id":"doc-set/sim-citizen/generated","kind":"subject","subject_kind":"doc-set","title":"sim-citizen generated docs"}
 {"id":"doc-set/sim-codecs/generated","kind":"subject","subject_kind":"doc-set","title":"sim-codecs generated docs"}
 {"id":"doc-set/sim-discrete/generated","kind":"subject","subject_kind":"doc-set","title":"sim-discrete generated docs"}
@@ -857,6 +906,7 @@
 {"id":"grammar/odf","kind":"subject","subject_kind":"grammar","title":"odf grammar"}
 {"id":"grammar/ooxml","kind":"subject","subject_kind":"grammar","title":"ooxml grammar"}
 {"id":"grammar/pratt","kind":"subject","subject_kind":"grammar","title":"pratt grammar"}
+{"id":"grammar/uds","kind":"subject","subject_kind":"grammar","title":"uds grammar"}
 {"id":"language/algol","kind":"subject","subject_kind":"language","title":"algol"}
 {"id":"language/binary","kind":"subject","subject_kind":"language","title":"binary"}
 {"id":"language/binary-base64","kind":"subject","subject_kind":"language","title":"binary-base64"}
@@ -876,6 +926,7 @@
 {"id":"language/odf","kind":"subject","subject_kind":"language","title":"odf"}
 {"id":"language/ooxml","kind":"subject","subject_kind":"language","title":"ooxml"}
 {"id":"language/pratt","kind":"subject","subject_kind":"language","title":"pratt"}
+{"id":"language/uds","kind":"subject","subject_kind":"language","title":"uds"}
 {"id":"local/sim-agent-net/crate/sim-lib-agent-runner-core","kind":"subject","subject_kind":"crate","title":"sim-lib-agent-runner-core"}
 {"id":"local/sim-agent-net/crate/sim-lib-forge","kind":"subject","subject_kind":"crate","title":"sim-lib-forge"}
 {"id":"local/sim-agent-net/crate/sim-lib-mcp","kind":"subject","subject_kind":"crate","title":"sim-lib-mcp"}
@@ -888,6 +939,7 @@
 {"id":"local/sim-audio-daw/crate/sim-lib-audio-graph-core","kind":"subject","subject_kind":"crate","title":"sim-lib-audio-graph-core"}
 {"id":"local/sim-audio-daw/crate/sim-lib-plugin-core","kind":"subject","subject_kind":"crate","title":"sim-lib-plugin-core"}
 {"id":"local/sim-audio-daw/crate/xtask","kind":"subject","subject_kind":"crate","title":"xtask"}
+{"id":"local/sim-auto/crate/xtask","kind":"subject","subject_kind":"crate","title":"xtask"}
 {"id":"local/sim-citizen/crate/xtask","kind":"subject","subject_kind":"crate","title":"xtask"}
 {"id":"local/sim-codecs/crate/sim-codec-mcp","kind":"subject","subject_kind":"crate","title":"sim-codec-mcp"}
 {"id":"local/sim-codecs/crate/xtask","kind":"subject","subject_kind":"crate","title":"xtask"}
@@ -997,6 +1049,7 @@
 {"id":"local/sim-web/crate/xtask","kind":"subject","subject_kind":"crate","title":"xtask"}
 {"id":"repo/sim-agent-net","kind":"subject","subject_kind":"repo","title":"sim-agent-net"}
 {"id":"repo/sim-audio-daw","kind":"subject","subject_kind":"repo","title":"sim-audio-daw"}
+{"id":"repo/sim-auto","kind":"subject","subject_kind":"repo","title":"sim-auto"}
 {"id":"repo/sim-citizen","kind":"subject","subject_kind":"repo","title":"sim-citizen"}
 {"id":"repo/sim-codecs","kind":"subject","subject_kind":"repo","title":"sim-codecs"}
 {"id":"repo/sim-discrete","kind":"subject","subject_kind":"repo","title":"sim-discrete"}
@@ -1016,6 +1069,7 @@
 {"id":"repo/sim-stream-host","kind":"subject","subject_kind":"repo","title":"sim-stream-host"}
 {"id":"repo/sim-tooling","kind":"subject","subject_kind":"repo","title":"sim-tooling"}
 {"id":"repo/sim-web","kind":"subject","subject_kind":"repo","title":"sim-web"}
+{"id":"runtime-lib/sim-auto/auto-cli-lib","kind":"subject","subject_kind":"runtime-lib","title":"auto-cli-lib"}
 {"id":"runtime-lib/sim-citizen/citizen-lib","kind":"subject","subject_kind":"runtime-lib","title":"citizen-lib"}
 {"id":"runtime-lib/sim-citizen/citizen-registry","kind":"subject","subject_kind":"runtime-lib","title":"citizen-registry"}
 {"id":"runtime-lib/sim-codec-algol/algol-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"algol-codec-lib"}
@@ -1038,12 +1092,20 @@
 {"id":"runtime-lib/sim-codec-lisp/lisp-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"lisp-codec-lib"}
 {"id":"runtime-lib/sim-codec-lua/lua-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"lua-codec-lib"}
 {"id":"runtime-lib/sim-codec-mcp/mcp-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"mcp-codec-lib"}
+{"id":"runtime-lib/sim-codec-uds/uds-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"uds-codec-lib"}
 {"id":"runtime-lib/sim-codec/domain-codec-lib","kind":"subject","subject_kind":"runtime-lib","title":"domain-codec-lib"}
 {"id":"runtime-lib/sim-lib-agent-runner-local/local-model-lib","kind":"subject","subject_kind":"runtime-lib","title":"local-model-lib"}
 {"id":"runtime-lib/sim-lib-agent-runner-local/wasm-model-lib","kind":"subject","subject_kind":"runtime-lib","title":"wasm-model-lib"}
 {"id":"runtime-lib/sim-lib-agent/agent-lib","kind":"subject","subject_kind":"runtime-lib","title":"agent-lib"}
 {"id":"runtime-lib/sim-lib-audio-dsp/audio-dsp-lib","kind":"subject","subject_kind":"runtime-lib","title":"audio-dsp-lib"}
 {"id":"runtime-lib/sim-lib-audio-graph-live/audio-graph-live-lib","kind":"subject","subject_kind":"runtime-lib","title":"audio-graph-live-lib"}
+{"id":"runtime-lib/sim-lib-auto-core/auto-core-lib","kind":"subject","subject_kind":"runtime-lib","title":"auto-core-lib"}
+{"id":"runtime-lib/sim-lib-auto-diag/auto-diag-lib","kind":"subject","subject_kind":"runtime-lib","title":"auto-diag-lib"}
+{"id":"runtime-lib/sim-lib-auto-info/auto-info-lib","kind":"subject","subject_kind":"runtime-lib","title":"auto-info-lib"}
+{"id":"runtime-lib/sim-lib-auto-order/auto-order-lib","kind":"subject","subject_kind":"runtime-lib","title":"auto-order-lib"}
+{"id":"runtime-lib/sim-lib-auto-parts/auto-parts-lib","kind":"subject","subject_kind":"runtime-lib","title":"auto-parts-lib"}
+{"id":"runtime-lib/sim-lib-auto-vehicle/auto-vehicle-lib","kind":"subject","subject_kind":"runtime-lib","title":"auto-vehicle-lib"}
+{"id":"runtime-lib/sim-lib-auto-vendor/auto-vendor-lib","kind":"subject","subject_kind":"runtime-lib","title":"auto-vendor-lib"}
 {"id":"runtime-lib/sim-lib-binding/binding-lib","kind":"subject","subject_kind":"runtime-lib","title":"binding-lib"}
 {"id":"runtime-lib/sim-lib-bridge/bridge-lib","kind":"subject","subject_kind":"runtime-lib","title":"bridge-lib"}
 {"id":"runtime-lib/sim-lib-control/control-lib","kind":"subject","subject_kind":"runtime-lib","title":"control-lib"}
@@ -1164,6 +1226,24 @@
 {"id":"runtime-lib/sim-web-shell/browse-cli-lib","kind":"subject","subject_kind":"runtime-lib","title":"browse-cli-lib"}
 {"id":"runtime-lib/sim-web-shell/web-serve-lib","kind":"subject","subject_kind":"runtime-lib","title":"web-serve-lib"}
 {"id":"cli/atelier","kind":"surface","subject":"crate/sim-web-shell","surface_kind":"cli"}
+{"id":"cli/auto","kind":"surface","subject":"crate/sim-auto","surface_kind":"cli"}
+{"id":"cli/auto-core-citizens","kind":"surface","subject":"crate/auto-core-citizens","surface_kind":"cli"}
+{"id":"cli/auto-lane-flash","kind":"surface","subject":"crate/auto-lane-flash","surface_kind":"cli"}
+{"id":"cli/auto-lane-info","kind":"surface","subject":"crate/auto-lane-info","surface_kind":"cli"}
+{"id":"cli/auto-lane-order","kind":"surface","subject":"crate/auto-lane-order","surface_kind":"cli"}
+{"id":"cli/auto-lane-parts","kind":"surface","subject":"crate/auto-lane-parts","surface_kind":"cli"}
+{"id":"cli/auto-lane-read","kind":"surface","subject":"crate/auto-lane-read","surface_kind":"cli"}
+{"id":"cli/auto-lane-service","kind":"surface","subject":"crate/auto-lane-service","surface_kind":"cli"}
+{"id":"cli/auto-modeled-work-order","kind":"surface","subject":"crate/auto-modeled-work-order","surface_kind":"cli"}
+{"id":"cli/auto-site-autotuner","kind":"surface","subject":"crate/auto-site-autotuner","surface_kind":"cli"}
+{"id":"cli/auto-site-biluppgifter-se","kind":"surface","subject":"crate/auto-site-biluppgifter-se","surface_kind":"cli"}
+{"id":"cli/auto-site-esitronic","kind":"surface","subject":"crate/auto-site-esitronic","surface_kind":"cli"}
+{"id":"cli/auto-site-haynespro","kind":"surface","subject":"crate/auto-site-haynespro","surface_kind":"cli"}
+{"id":"cli/auto-site-ista","kind":"surface","subject":"crate/auto-site-ista","surface_kind":"cli"}
+{"id":"cli/auto-site-mekonomen-pro","kind":"surface","subject":"crate/auto-site-mekonomen-pro","surface_kind":"cli"}
+{"id":"cli/auto-site-odis","kind":"surface","subject":"crate/auto-site-odis","surface_kind":"cli"}
+{"id":"cli/auto-site-vida","kind":"surface","subject":"crate/auto-site-vida","surface_kind":"cli"}
+{"id":"cli/auto-site-xentry","kind":"surface","subject":"crate/auto-site-xentry","surface_kind":"cli"}
 {"id":"cli/browse","kind":"surface","subject":"crate/sim-web-shell","surface_kind":"cli"}
 {"id":"cli/citizen-roundtrip","kind":"surface","subject":"crate/citizen-roundtrip","surface_kind":"cli"}
 {"id":"cli/glasses","kind":"surface","subject":"crate/sim-run","surface_kind":"cli"}
@@ -1171,6 +1251,7 @@
 {"id":"cli/mcp","kind":"surface","subject":"local/sim-agent-net/crate/sim-lib-mcp","surface_kind":"cli"}
 {"id":"cli/repl","kind":"surface","subject":"crate/sim-lib-repl","surface_kind":"cli"}
 {"id":"cli/serve","kind":"surface","subject":"crate/sim-web-shell","surface_kind":"cli"}
+{"id":"cli/sim-auto","kind":"surface","subject":"crate/sim-auto","surface_kind":"cli"}
 {"id":"cli/sim-codec-compare","kind":"surface","subject":"crate/sim-codec-compare","surface_kind":"cli"}
 {"id":"cli/sim-fabric-cadr-fixture","kind":"surface","subject":"crate/sim-lib-stream-fabric","surface_kind":"cli"}
 {"id":"cli/sim-ledger-cli","kind":"surface","subject":"crate/sim-ledger-cli","surface_kind":"cli"}
@@ -1185,6 +1266,7 @@
 {"id":"cli/watch","kind":"surface","subject":"crate/sim-run","surface_kind":"cli"}
 {"id":"docs/sim-agent-net/generated","kind":"surface","subject":"doc-set/sim-agent-net/generated","surface_kind":"docs"}
 {"id":"docs/sim-audio-daw/generated","kind":"surface","subject":"doc-set/sim-audio-daw/generated","surface_kind":"docs"}
+{"id":"docs/sim-auto/generated","kind":"surface","subject":"doc-set/sim-auto/generated","surface_kind":"docs"}
 {"id":"docs/sim-citizen/generated","kind":"surface","subject":"doc-set/sim-citizen/generated","surface_kind":"docs"}
 {"id":"docs/sim-codecs/generated","kind":"surface","subject":"doc-set/sim-codecs/generated","surface_kind":"docs"}
 {"id":"docs/sim-discrete/generated","kind":"surface","subject":"doc-set/sim-discrete/generated","surface_kind":"docs"}
@@ -1206,6 +1288,7 @@
 {"id":"docs/sim-web/generated","kind":"surface","subject":"doc-set/sim-web/generated","surface_kind":"docs"}
 {"id":"local/sim-agent-net/cli/xtask","kind":"surface","subject":"local/sim-agent-net/crate/xtask","surface_kind":"cli"}
 {"id":"local/sim-audio-daw/cli/xtask","kind":"surface","subject":"local/sim-audio-daw/crate/xtask","surface_kind":"cli"}
+{"id":"local/sim-auto/cli/xtask","kind":"surface","subject":"local/sim-auto/crate/xtask","surface_kind":"cli"}
 {"id":"local/sim-citizen/cli/xtask","kind":"surface","subject":"local/sim-citizen/crate/xtask","surface_kind":"cli"}
 {"id":"local/sim-codecs/cli/xtask","kind":"surface","subject":"local/sim-codecs/crate/xtask","surface_kind":"cli"}
 {"id":"local/sim-discrete/cli/xtask","kind":"surface","subject":"local/sim-discrete/crate/xtask","surface_kind":"cli"}
@@ -1251,6 +1334,7 @@
 {"id":"local/sim-web/site-device/watch-glance-large","kind":"surface","subject":"local/sim-web/crate/sim-lib-view","surface_kind":"site-device"}
 {"id":"local/sim-web/site-device/watch-sleep","kind":"surface","subject":"local/sim-web/crate/sim-lib-view","surface_kind":"site-device"}
 {"id":"local/sim-web/site-device/watch-sport","kind":"surface","subject":"local/sim-web/crate/sim-lib-view","surface_kind":"site-device"}
+{"id":"model/auto-modeled-work-order","kind":"surface","subject":"crate/auto-modeled-work-order","surface_kind":"model-exchange"}
 {"id":"model/sim-lib-agent","kind":"surface","subject":"crate/sim-lib-agent","surface_kind":"model-exchange"}
 {"id":"model/sim-lib-agent-runner-core","kind":"surface","subject":"local/sim-agent-net/crate/sim-lib-agent-runner-core","surface_kind":"model-exchange"}
 {"id":"model/sim-lib-agent-runner-core-recipe-output-contract-repair","kind":"surface","subject":"crate/sim-lib-agent-runner-core-recipe-output-contract-repair","surface_kind":"model-exchange"}
@@ -1261,6 +1345,11 @@
 {"id":"model/sim-lib-view-agent","kind":"surface","subject":"crate/sim-lib-view-agent","surface_kind":"model-exchange"}
 {"id":"site/sim-kernel","kind":"surface","subject":"crate/sim-kernel","surface_kind":"site"}
 {"id":"site/sim-lib-agent-runner-local","kind":"surface","subject":"crate/sim-lib-agent-runner-local","surface_kind":"site"}
+{"id":"site/sim-lib-auto-diag","kind":"surface","subject":"crate/sim-lib-auto-diag","surface_kind":"site"}
+{"id":"site/sim-lib-auto-info","kind":"surface","subject":"crate/sim-lib-auto-info","surface_kind":"site"}
+{"id":"site/sim-lib-auto-parts","kind":"surface","subject":"crate/sim-lib-auto-parts","surface_kind":"site"}
+{"id":"site/sim-lib-auto-vehicle","kind":"surface","subject":"crate/sim-lib-auto-vehicle","surface_kind":"site"}
+{"id":"site/sim-lib-auto-vendor","kind":"surface","subject":"crate/sim-lib-auto-vendor","surface_kind":"site"}
 {"id":"site/sim-lib-numbers-f64","kind":"surface","subject":"crate/sim-lib-numbers-f64","surface_kind":"site"}
 {"id":"site/sim-lib-stream-cpal","kind":"surface","subject":"crate/sim-lib-stream-cpal","surface_kind":"site"}
 {"id":"site/sim-lib-stream-host","kind":"surface","subject":"crate/sim-lib-stream-host","surface_kind":"site"}
@@ -1290,6 +1379,7 @@
 {"id":"syntax/odf","kind":"surface","subject":"language/odf","surface_kind":"syntax"}
 {"id":"syntax/ooxml","kind":"surface","subject":"language/ooxml","surface_kind":"syntax"}
 {"id":"syntax/pratt","kind":"surface","subject":"language/pratt","surface_kind":"syntax"}
+{"id":"syntax/uds","kind":"surface","subject":"language/uds","surface_kind":"syntax"}
 {"id":"view-edit/sim-lib-view","kind":"surface","subject":"local/sim-web/crate/sim-lib-view","surface_kind":"view-edit"}
 {"id":"view-edit/sim-lib-view-bridge","kind":"surface","subject":"crate/sim-lib-view-bridge","surface_kind":"view-edit"}
 {"id":"view-edit/sim-lib-view-device","kind":"surface","subject":"crate/sim-lib-view-device","surface_kind":"view-edit"}
@@ -1304,6 +1394,7 @@
 {"id":"view/sim-lib-doc-surface","kind":"surface","subject":"crate/sim-lib-doc-surface","surface_kind":"view"}
 {"id":"view/sim-lib-view","kind":"surface","subject":"local/sim-web/crate/sim-lib-view","surface_kind":"view"}
 {"id":"view/sim-lib-view-agent","kind":"surface","subject":"crate/sim-lib-view-agent","surface_kind":"view"}
+{"id":"view/sim-lib-view-bay","kind":"surface","subject":"crate/sim-lib-view-bay","surface_kind":"view"}
 {"id":"view/sim-lib-view-bridge","kind":"surface","subject":"crate/sim-lib-view-bridge","surface_kind":"view"}
 {"id":"view/sim-lib-view-codec","kind":"surface","subject":"crate/sim-lib-view-codec","surface_kind":"view"}
 {"id":"view/sim-lib-view-daw","kind":"surface","subject":"crate/sim-lib-view-daw","surface_kind":"view"}

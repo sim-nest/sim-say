@@ -5,7 +5,26 @@
 | Package | Kind | Title |
 | --- | --- | --- |
 | `crate/agents30` | `crate` | agents30 |
+| `crate/auto-core-citizens` | `crate` | auto-core-citizens |
+| `crate/auto-lane-flash` | `crate` | auto-lane-flash |
+| `crate/auto-lane-info` | `crate` | auto-lane-info |
+| `crate/auto-lane-order` | `crate` | auto-lane-order |
+| `crate/auto-lane-parts` | `crate` | auto-lane-parts |
+| `crate/auto-lane-read` | `crate` | auto-lane-read |
+| `crate/auto-lane-service` | `crate` | auto-lane-service |
+| `crate/auto-modeled-work-order` | `crate` | auto-modeled-work-order |
+| `crate/auto-recipe-support` | `crate` | auto-recipe-support |
+| `crate/auto-site-autotuner` | `crate` | auto-site-autotuner |
+| `crate/auto-site-biluppgifter-se` | `crate` | auto-site-biluppgifter-se |
+| `crate/auto-site-esitronic` | `crate` | auto-site-esitronic |
+| `crate/auto-site-haynespro` | `crate` | auto-site-haynespro |
+| `crate/auto-site-ista` | `crate` | auto-site-ista |
+| `crate/auto-site-mekonomen-pro` | `crate` | auto-site-mekonomen-pro |
+| `crate/auto-site-odis` | `crate` | auto-site-odis |
+| `crate/auto-site-vida` | `crate` | auto-site-vida |
+| `crate/auto-site-xentry` | `crate` | auto-site-xentry |
 | `crate/citizen-roundtrip` | `crate` | citizen-roundtrip |
+| `crate/sim-auto` | `crate` | sim-auto |
 | `crate/sim-citizen` | `crate` | sim-citizen |
 | `crate/sim-citizen-derive` | `crate` | sim-citizen-derive |
 | `crate/sim-codec` | `crate` | sim-codec |
@@ -27,6 +46,7 @@
 | `crate/sim-codec-odf` | `crate` | sim-codec-odf |
 | `crate/sim-codec-ooxml` | `crate` | sim-codec-ooxml |
 | `crate/sim-codec-pratt` | `crate` | sim-codec-pratt |
+| `crate/sim-codec-uds` | `crate` | sim-codec-uds |
 | `crate/sim-config` | `crate` | sim-config |
 | `crate/sim-conformance` | `crate` | sim-conformance |
 | `crate/sim-cookbook` | `crate` | sim-cookbook |
@@ -41,6 +61,13 @@
 | `crate/sim-lib-agent-runner-local` | `crate` | sim-lib-agent-runner-local |
 | `crate/sim-lib-agent-runner-process` | `crate` | sim-lib-agent-runner-process |
 | `crate/sim-lib-audio-graph-live` | `crate` | sim-lib-audio-graph-live |
+| `crate/sim-lib-auto-core` | `crate` | sim-lib-auto-core |
+| `crate/sim-lib-auto-diag` | `crate` | sim-lib-auto-diag |
+| `crate/sim-lib-auto-info` | `crate` | sim-lib-auto-info |
+| `crate/sim-lib-auto-order` | `crate` | sim-lib-auto-order |
+| `crate/sim-lib-auto-parts` | `crate` | sim-lib-auto-parts |
+| `crate/sim-lib-auto-vehicle` | `crate` | sim-lib-auto-vehicle |
+| `crate/sim-lib-auto-vendor` | `crate` | sim-lib-auto-vendor |
 | `crate/sim-lib-binding` | `crate` | sim-lib-binding |
 | `crate/sim-lib-bridge` | `crate` | sim-lib-bridge |
 | `crate/sim-lib-control` | `crate` | sim-lib-control |
@@ -187,6 +214,7 @@
 | `crate/sim-lib-stream-wristbridge` | `crate` | sim-lib-stream-wristbridge |
 | `crate/sim-lib-surface-card` | `crate` | sim-lib-surface-card |
 | `crate/sim-lib-view-agent` | `crate` | sim-lib-view-agent |
+| `crate/sim-lib-view-bay` | `crate` | sim-lib-view-bay |
 | `crate/sim-lib-view-bridge` | `crate` | sim-lib-view-bridge |
 | `crate/sim-lib-view-codec` | `crate` | sim-lib-view-codec |
 | `crate/sim-lib-view-daw` | `crate` | sim-lib-view-daw |
@@ -218,6 +246,7 @@
 | `crate/sim-web-shell` | `crate` | sim-web-shell |
 | `doc-set/sim-agent-net/generated` | `doc-set` | sim-agent-net generated docs |
 | `doc-set/sim-audio-daw/generated` | `doc-set` | sim-audio-daw generated docs |
+| `doc-set/sim-auto/generated` | `doc-set` | sim-auto generated docs |
 | `doc-set/sim-citizen/generated` | `doc-set` | sim-citizen generated docs |
 | `doc-set/sim-codecs/generated` | `doc-set` | sim-codecs generated docs |
 | `doc-set/sim-discrete/generated` | `doc-set` | sim-discrete generated docs |
@@ -249,6 +278,7 @@
 | `local/sim-audio-daw/crate/sim-lib-audio-graph-core` | `crate` | sim-lib-audio-graph-core |
 | `local/sim-audio-daw/crate/sim-lib-plugin-core` | `crate` | sim-lib-plugin-core |
 | `local/sim-audio-daw/crate/xtask` | `crate` | xtask |
+| `local/sim-auto/crate/xtask` | `crate` | xtask |
 | `local/sim-citizen/crate/xtask` | `crate` | xtask |
 | `local/sim-codecs/crate/sim-codec-mcp` | `crate` | sim-codec-mcp |
 | `local/sim-codecs/crate/xtask` | `crate` | xtask |
@@ -358,6 +388,7 @@
 | `local/sim-web/crate/xtask` | `crate` | xtask |
 | `repo/sim-agent-net` | `repo` | sim-agent-net |
 | `repo/sim-audio-daw` | `repo` | sim-audio-daw |
+| `repo/sim-auto` | `repo` | sim-auto |
 | `repo/sim-citizen` | `repo` | sim-citizen |
 | `repo/sim-codecs` | `repo` | sim-codecs |
 | `repo/sim-discrete` | `repo` | sim-discrete |
