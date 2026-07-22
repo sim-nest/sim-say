@@ -6,7 +6,7 @@
 - Subject: `crate/sim-value`
 - Canonical key: `crate/sim-value/feature-sim-foundation-value-helpers`
 
-Provide shared value conversion and table-field helpers for reusable runtime libraries.
+Provide shared value conversion, expression builder, expression field reader, map field reader, and field access helpers for reusable runtime libraries.
 
 ## Anchors
 

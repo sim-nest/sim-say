@@ -47,9 +47,8 @@ Source `crates/sim-codec-odf/src/tests.rs`:
 ```rust
 use std::collections::BTreeMap;
 use std::io::{Cursor, Write};
-use std::sync::Arc;
 
-use sim_kernel::{Cx, DefaultFactory, NoopEvalPolicy};
+use sim_kernel::{Cx, testing::bare_cx as cx};
 use sim_lib_deck::{Deck, Slide, SlideBlock, deck_to_doc, doc_to_deck};
 use sim_lib_doc_core::{DocCodec, DocCodecOptions, DocId, ExternalRef};
 use sim_lib_sheet::{
@@ -65,10 +64,6 @@ use crate::package::{
 };
 
 // conformance: document codecs round-trip sheet and deck office packages.
-
-fn cx() -> Cx {
-    Cx::new(Arc::new(NoopEvalPolicy), Arc::new(DefaultFactory))
-}
 
 fn options(cx: &mut Cx) -> DocCodecOptions {
     DocCodecOptions::new(cx.factory().nil().unwrap())

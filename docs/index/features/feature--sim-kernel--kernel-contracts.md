@@ -6,9 +6,10 @@
 - Subject: `crate/sim-kernel`
 - Canonical key: `crate/sim-kernel/feature-sim-kernel-kernel-contracts`
 
-Define the protocol kernel for values, context, registries, shapes, capabilities, and export records.
+Define the protocol kernel for values, context, registries, shapes, capabilities, export records, and bare Cx or eager Cx test context helpers.
 
 ## Anchors
 
 - `anchor/crate/sim-kernel`
 - `anchor/export/sim-kernel/registry/libs`
+- `anchor/rustdoc/sim-kernel/testing`
