@@ -11,6 +11,7 @@ Parse operator-oriented expression languages through the Pratt codec surface.
 ## Anchors
 
 - `anchor/crate/sim-codec-pratt`
+- `anchor/grammar/syntax/pratt`
 
 ## Surfaces
 

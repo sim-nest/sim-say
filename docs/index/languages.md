@@ -4,6 +4,35 @@
 
 | Source | Id | Context |
 | --- | --- | --- |
+| `grammar` | `grammar/syntax/algol` | Expression syntax grammars |
+| `grammar` | `grammar/syntax/binary` | Domain syntax grammars |
+| `grammar` | `grammar/syntax/binary-base64` | Domain syntax grammars |
+| `grammar` | `grammar/syntax/bitwise` | Domain syntax grammars |
+| `grammar` | `grammar/syntax/bitwise-base64` | Domain syntax grammars |
+| `grammar` | `grammar/syntax/bridge` | Expression syntax grammars |
+| `grammar` | `grammar/syntax/chat` | Domain syntax grammars |
+| `grammar` | `grammar/syntax/compare` | Expression syntax grammars |
+| `grammar` | `grammar/syntax/config` | Domain syntax grammars |
+| `grammar` | `grammar/syntax/doc` | Domain syntax grammars |
+| `grammar` | `grammar/syntax/index` | Domain syntax grammars |
+| `grammar` | `grammar/syntax/json` | Expression syntax grammars |
+| `grammar` | `grammar/syntax/lisp` | Expression syntax grammars |
+| `grammar` | `grammar/syntax/lua` | Expression syntax grammars |
+| `grammar` | `grammar/syntax/mcp` | Domain syntax grammars |
+| `grammar` | `grammar/syntax/mspdi` | Document codec workflows |
+| `grammar` | `grammar/syntax/odf` | Document codec workflows |
+| `grammar` | `grammar/syntax/ooxml` | Document codec workflows |
+| `grammar` | `grammar/syntax/pratt` | Pratt operator parser |
+| `grammar` | `grammar/wire/binary` | Wire protocol grammars |
+| `grammar` | `grammar/wire/binary-base64` | Wire protocol grammars |
+| `grammar` | `grammar/wire/bitwise` | Wire protocol grammars |
+| `grammar` | `grammar/wire/bitwise-base64` | Wire protocol grammars |
+| `grammar` | `grammar/wire/bridge` | Bridge packet codec |
+| `grammar` | `grammar/wire/chat` | Wire protocol grammars |
+| `grammar` | `grammar/wire/config` | Wire protocol grammars |
+| `grammar` | `grammar/wire/doc` | Wire protocol grammars |
+| `grammar` | `grammar/wire/index` | Wire protocol grammars |
+| `grammar` | `grammar/wire/mcp` | Wire protocol grammars |
 | `specimen` | `algol` | crates/sim-codec-algol/recipes/01-basics/algol-arithmetic/recipe.toml |
 | `specimen` | `bridge` | crates/sim-codec-bridge/recipes/01-basics/packet-descriptor/recipe.toml |
 | `specimen` | `codec` | crates/sim-citizen/src/lib.rs |

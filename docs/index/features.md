@@ -16,9 +16,12 @@
 | [`feature/sim-audio-daw/audio-graph-workbench`](features/feature--sim-audio-daw--audio-graph-workbench.md) | `local/sim-audio-daw/crate/sim-lib-audio-graph-core` | 0 |
 | [`feature/sim-audio-daw/generated-docs`](features/feature--sim-audio-daw--generated-docs.md) | `local/sim-audio-daw/crate/xtask` | 0 |
 | [`feature/sim-citizen/citizen-read-constructs`](features/feature--sim-citizen--citizen-read-constructs.md) | `crate/sim-citizen` | 1 |
-| [`feature/sim-codecs/bridge-packet-codec`](features/feature--sim-codecs--bridge-packet-codec.md) | `crate/sim-codec-bridge` | 0 |
-| [`feature/sim-codecs/codec`](features/feature--sim-codecs--codec.md) | `crate/sim-codec` | 1 |
+| [`feature/sim-codecs/bridge-packet-codec`](features/feature--sim-codecs--bridge-packet-codec.md) | `crate/sim-codec-bridge` | 1 |
+| [`feature/sim-codecs/codec`](features/feature--sim-codecs--codec.md) | `crate/sim-codec` | 0 |
+| [`feature/sim-codecs/domain-syntax-grammars`](features/feature--sim-codecs--domain-syntax-grammars.md) | `crate/sim-codec` | 0 |
+| [`feature/sim-codecs/expression-syntax-grammars`](features/feature--sim-codecs--expression-syntax-grammars.md) | `crate/sim-codec-lisp` | 0 |
 | [`feature/sim-codecs/pratt`](features/feature--sim-codecs--pratt.md) | `crate/sim-codec-pratt` | 0 |
+| [`feature/sim-codecs/wire-protocol-grammars`](features/feature--sim-codecs--wire-protocol-grammars.md) | `crate/sim-codec` | 0 |
 | [`feature/sim-foundation/cookbook`](features/feature--sim-foundation--cookbook.md) | `crate/sim-cookbook` | 0 |
 | [`feature/sim-foundation/host-primitives`](features/feature--sim-foundation--host-primitives.md) | `crate/sim-lib-net-core` | 0 |
 | [`feature/sim-foundation/table-dir-core`](features/feature--sim-foundation--table-dir-core.md) | `crate/sim-table-core` | 0 |

@@ -7,3 +7,15 @@
 - Canonical key: `crate/sim-lib-office-pack/feature-sim-office-document-codecs`
 
 Round-trip OOXML, ODF, MSPDI, deck, sheet, and markup documents through office codec recipes.
+
+## Anchors
+
+- `anchor/grammar/syntax/mspdi`
+- `anchor/grammar/syntax/odf`
+- `anchor/grammar/syntax/ooxml`
+
+## Surfaces
+
+- `syntax/mspdi`
+- `syntax/odf`
+- `syntax/ooxml`
