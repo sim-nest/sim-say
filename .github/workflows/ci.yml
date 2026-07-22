@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - name: stays code-free (no Rust, any depth)
         run: |
           hits=$(git ls-files | grep -E '(^|/)(Cargo\.toml|Cargo\.lock)$|\.rs$|(^|/)(src|crates|xtask|tests|benches|examples|fuzz)/' || true)
