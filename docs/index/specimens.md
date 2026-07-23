@@ -360,6 +360,7 @@
 | `` | `recipe/sim-storage/crates/sim-table-fs/01-basics/grep-tree` | `local/sim-storage/crate/sim-table-fs` | `recipe` | `crates/sim-table-fs/recipes/01-basics/grep-tree/recipe.toml` | `lisp` | `` | `false` | `false` |
 | `` | `recipe/sim-storage/crates/sim-table-fs/01-basics/read-edit-file` | `local/sim-storage/crate/sim-table-fs` | `recipe` | `crates/sim-table-fs/recipes/01-basics/read-edit-file/recipe.toml` | `lisp` | `` | `false` | `false` |
 | `` | `recipe/sim-storage/crates/sim-table-http/01-basics/http-get` | `local/sim-storage/crate/sim-table-http` | `recipe` | `crates/sim-table-http/recipes/01-basics/http-get/recipe.toml` | `lisp` | `` | `false` | `false` |
+| `` | `recipe/sim-storage/crates/sim-table-mount/01-basics/backend-composition` | `crate/sim-table-mount` | `recipe` | `crates/sim-table-mount/recipes/01-basics/backend-composition/recipe.toml` | `lisp` | `` | `false` | `false` |
 | `` | `recipe/sim-stream-host/01-basics/fake-backend` | `crate/sim-lib-stream-host` | `recipe` | `recipes/01-basics/fake-backend/recipe.toml` | `lisp` | `` | `false` | `false` |
 | `` | `recipe/sim-stream/crates/sim-lib-rank/01-basics/rank-retrieve` | `local/sim-stream/crate/sim-lib-rank` | `recipe` | `crates/sim-lib-rank/recipes/01-basics/rank-retrieve/recipe.toml` | `lisp` | `` | `false` | `false` |
 | `` | `recipe/sim-stream/crates/sim-lib-rank/01-basics/space-coordinate` | `local/sim-stream/crate/sim-lib-rank` | `recipe` | `crates/sim-lib-rank/recipes/01-basics/space-coordinate/recipe.toml` | `lisp` | `` | `false` | `false` |
@@ -493,6 +494,8 @@
 | `feature/sim-shape/shape` | `spec-test/sim-shape/src/citizen/inventory` | `local/sim-shape/crate/sim-shape` | `spec-test` | `src/citizen/inventory.rs` | `shape` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-shape/src/citizen_tests` | `local/sim-shape/crate/sim-shape` | `spec-test` | `src/citizen_tests.rs` | `shape` | `cargo test` | `true` | `true` |
 | `feature/sim-storage/host-storage-primitives` | `spec-test/sim-storage/crates/sim-table-fs/src/tests/table` | `local/sim-storage/crate/sim-table-fs` | `spec-test` | `crates/sim-table-fs/src/tests/table.rs` | `` | `cargo test` | `true` | `true` |
+| `feature/sim-storage/mounted-table-dir-namespace` | `spec-test/sim-storage/crates/sim-table-mount/src/tests` | `crate/sim-table-mount` | `spec-test` | `crates/sim-table-mount/src/tests.rs` | `` | `cargo test` | `true` | `true` |
+| `feature/sim-storage/table-dir-backends` | `spec-test/sim-storage/crates/sim-table-mount/src/tests` | `crate/sim-table-mount` | `spec-test` | `crates/sim-table-mount/src/tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-storage/table-dir-backends` | `spec-test/sim-storage/crates/sim-table-override/src/install` | `local/sim-storage/crate/sim-table-override` | `spec-test` | `crates/sim-table-override/src/install.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-stream-host/hardware-host-surfaces` | `spec-test/sim-stream-host/src/placement_tests` | `crate/sim-lib-stream-host` | `spec-test` | `src/placement_tests.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-stream/crates/sim-lib-rank/src/lisp` | `local/sim-stream/crate/sim-lib-rank` | `spec-test` | `crates/sim-lib-rank/src/lisp.rs` | `` | `cargo test` | `true` | `true` |

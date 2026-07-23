@@ -11,6 +11,7 @@ Published commit: `d906e96bceee4cff741d8d43b23d3532f532ad8b`.
 - `sim-table-hash`
 - `sim-table-http`
 - `sim-table-lazy`
+- `sim-table-mount`
 - `sim-table-override`
 
 ## Contracts

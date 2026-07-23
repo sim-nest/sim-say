@@ -88,7 +88,8 @@
 | [`feature/sim-shape/shape-recipes`](features/feature--sim-shape--shape-recipes.md) | `crate/sim-shape-recipe-exact-bool-shape` | 0 |
 | [`feature/sim-storage/contract-emitter`](features/feature--sim-storage--contract-emitter.md) | `local/sim-storage/crate/xtask` | 0 |
 | [`feature/sim-storage/host-storage-primitives`](features/feature--sim-storage--host-storage-primitives.md) | `local/sim-storage/crate/sim-table-fs` | 1 |
-| [`feature/sim-storage/table-dir-backends`](features/feature--sim-storage--table-dir-backends.md) | `local/sim-storage/crate/sim-table-hash` | 1 |
+| [`feature/sim-storage/mounted-table-dir-namespace`](features/feature--sim-storage--mounted-table-dir-namespace.md) | `crate/sim-table-mount` | 1 |
+| [`feature/sim-storage/table-dir-backends`](features/feature--sim-storage--table-dir-backends.md) | `local/sim-storage/crate/sim-table-hash` | 2 |
 | [`feature/sim-stream-host/generated-docs`](features/feature--sim-stream-host--generated-docs.md) | `local/sim-stream-host/crate/xtask` | 0 |
 | [`feature/sim-stream-host/hardware-host-surfaces`](features/feature--sim-stream-host--hardware-host-surfaces.md) | `crate/sim-lib-stream-host` | 1 |
 | [`feature/sim-stream/generated-docs`](features/feature--sim-stream--generated-docs.md) | `local/sim-stream/crate/xtask` | 0 |

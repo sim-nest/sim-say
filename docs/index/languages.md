@@ -367,6 +367,7 @@
 | `specimen` | `lisp` | crates/sim-table-fs/recipes/01-basics/grep-tree/recipe.toml |
 | `specimen` | `lisp` | crates/sim-table-fs/recipes/01-basics/read-edit-file/recipe.toml |
 | `specimen` | `lisp` | crates/sim-table-http/recipes/01-basics/http-get/recipe.toml |
+| `specimen` | `lisp` | crates/sim-table-mount/recipes/01-basics/backend-composition/recipe.toml |
 | `specimen` | `lisp` | crates/sim-table-remote/recipes/01-basics/remote-dir-descriptor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-web-shell/recipes/01-basics/open-workspace/recipe.toml |
 | `specimen` | `lisp` | recipes/01-basics/boot-runtime/recipe.toml |

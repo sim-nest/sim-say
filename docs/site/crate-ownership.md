@@ -236,6 +236,7 @@
 | `sim-table-hash` | [sim-storage](../repos/sim-storage.md) |
 | `sim-table-http` | [sim-storage](../repos/sim-storage.md) |
 | `sim-table-lazy` | [sim-storage](../repos/sim-storage.md) |
+| `sim-table-mount` | [sim-storage](../repos/sim-storage.md) |
 | `sim-table-override` | [sim-storage](../repos/sim-storage.md) |
 | `sim-lib-rank` | [sim-stream](../repos/sim-stream.md) |
 | `sim-lib-stream-audio` | [sim-stream](../repos/sim-stream.md) |

@@ -229,6 +229,7 @@
 | `crate/sim-site-powerproject` | `crate` | sim-site-powerproject | 0 |
 | `crate/sim-site-sharepoint` | `crate` | sim-site-sharepoint | 0 |
 | `crate/sim-table-core` | `crate` | sim-table-core | 0 |
+| `crate/sim-table-mount` | `crate` | sim-table-mount | 1 |
 | `crate/sim-test-support` | `crate` | sim-test-support | 0 |
 | `crate/sim-value` | `crate` | sim-value | 0 |
 | `crate/sim-view-tty` | `crate` | sim-view-tty | 1 |
@@ -417,7 +418,7 @@
 | `repo/sim-runtime` | `repo` | sim-runtime | 24 |
 | `repo/sim-sdk` | `repo` | sim-sdk | 64 |
 | `repo/sim-shape` | `repo` | sim-shape | 5 |
-| `repo/sim-storage` | `repo` | sim-storage | 10 |
+| `repo/sim-storage` | `repo` | sim-storage | 11 |
 | `repo/sim-stream` | `repo` | sim-stream | 12 |
 | `repo/sim-stream-host` | `repo` | sim-stream-host | 7 |
 | `repo/sim-tooling` | `repo` | sim-tooling | 2 |

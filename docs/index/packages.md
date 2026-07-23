@@ -229,6 +229,7 @@
 | `crate/sim-site-powerproject` | `crate` | sim-site-powerproject |
 | `crate/sim-site-sharepoint` | `crate` | sim-site-sharepoint |
 | `crate/sim-table-core` | `crate` | sim-table-core |
+| `crate/sim-table-mount` | `crate` | sim-table-mount |
 | `crate/sim-test-support` | `crate` | sim-test-support |
 | `crate/sim-value` | `crate` | sim-value |
 | `crate/sim-view-tty` | `crate` | sim-view-tty |
