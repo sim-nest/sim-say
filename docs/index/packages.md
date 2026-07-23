@@ -27,7 +27,6 @@
 | `crate/sim-auto` | `crate` | sim-auto |
 | `crate/sim-citizen` | `crate` | sim-citizen |
 | `crate/sim-citizen-derive` | `crate` | sim-citizen-derive |
-| `crate/sim-codec` | `crate` | sim-codec |
 | `crate/sim-codec-algol` | `crate` | sim-codec-algol |
 | `crate/sim-codec-binary` | `crate` | sim-codec-binary |
 | `crate/sim-codec-binary-base64` | `crate` | sim-codec-binary-base64 |
@@ -55,7 +54,6 @@
 | `crate/sim-ledger` | `crate` | sim-ledger |
 | `crate/sim-ledger-cli` | `crate` | sim-ledger-cli |
 | `crate/sim-ledger-odb` | `crate` | sim-ledger-odb |
-| `crate/sim-lib-agent` | `crate` | sim-lib-agent |
 | `crate/sim-lib-agent-runner-core-recipe-output-contract-repair` | `crate` | sim-lib-agent-runner-core-recipe-output-contract-repair |
 | `crate/sim-lib-agent-runner-http` | `crate` | sim-lib-agent-runner-http |
 | `crate/sim-lib-agent-runner-local` | `crate` | sim-lib-agent-runner-local |
@@ -70,8 +68,6 @@
 | `crate/sim-lib-auto-vendor` | `crate` | sim-lib-auto-vendor |
 | `crate/sim-lib-binding` | `crate` | sim-lib-binding |
 | `crate/sim-lib-bridge` | `crate` | sim-lib-bridge |
-| `crate/sim-lib-control` | `crate` | sim-lib-control |
-| `crate/sim-lib-cookbook` | `crate` | sim-lib-cookbook |
 | `crate/sim-lib-core` | `crate` | sim-lib-core |
 | `crate/sim-lib-deck` | `crate` | sim-lib-deck |
 | `crate/sim-lib-discrete-algebra` | `crate` | sim-lib-discrete-algebra |
@@ -89,7 +85,6 @@
 | `crate/sim-lib-exec` | `crate` | sim-lib-exec |
 | `crate/sim-lib-femm-assembly` | `crate` | sim-lib-femm-assembly |
 | `crate/sim-lib-femm-core` | `crate` | sim-lib-femm-core |
-| `crate/sim-lib-femm-field` | `crate` | sim-lib-femm-field |
 | `crate/sim-lib-femm-fixtures` | `crate` | sim-lib-femm-fixtures |
 | `crate/sim-lib-femm-flow` | `crate` | sim-lib-femm-flow |
 | `crate/sim-lib-femm-function` | `crate` | sim-lib-femm-function |
@@ -110,7 +105,6 @@
 | `crate/sim-lib-lang-cl` | `crate` | sim-lib-lang-cl |
 | `crate/sim-lib-lang-clojure` | `crate` | sim-lib-lang-clojure |
 | `crate/sim-lib-lang-genconf` | `crate` | sim-lib-lang-genconf |
-| `crate/sim-lib-lang-islisp` | `crate` | sim-lib-lang-islisp |
 | `crate/sim-lib-lang-julia` | `crate` | sim-lib-lang-julia |
 | `crate/sim-lib-lang-lua` | `crate` | sim-lib-lang-lua |
 | `crate/sim-lib-lang-matrix` | `crate` | sim-lib-lang-matrix |
@@ -120,7 +114,6 @@
 | `crate/sim-lib-lang-typed-lazy` | `crate` | sim-lib-lang-typed-lazy |
 | `crate/sim-lib-ledger-books` | `crate` | sim-lib-ledger-books |
 | `crate/sim-lib-ledger-close` | `crate` | sim-lib-ledger-close |
-| `crate/sim-lib-logic` | `crate` | sim-lib-logic |
 | `crate/sim-lib-mail` | `crate` | sim-lib-mail |
 | `crate/sim-lib-midi-ble` | `crate` | sim-lib-midi-ble |
 | `crate/sim-lib-midi-core` | `crate` | sim-lib-midi-core |
@@ -137,7 +130,6 @@
 | `crate/sim-lib-music-notation` | `crate` | sim-lib-music-notation |
 | `crate/sim-lib-music-transform` | `crate` | sim-lib-music-transform |
 | `crate/sim-lib-music-wasm-frame` | `crate` | sim-lib-music-wasm-frame |
-| `crate/sim-lib-mutation` | `crate` | sim-lib-mutation |
 | `crate/sim-lib-namespace` | `crate` | sim-lib-namespace |
 | `crate/sim-lib-net-core` | `crate` | sim-lib-net-core |
 | `crate/sim-lib-numbers-ad` | `crate` | sim-lib-numbers-ad |
@@ -166,7 +158,6 @@
 | `crate/sim-lib-numbers-tensor-linalg` | `crate` | sim-lib-numbers-tensor-linalg |
 | `crate/sim-lib-numbers-tensor-rat64` | `crate` | sim-lib-numbers-tensor-rat64 |
 | `crate/sim-lib-office-pack` | `crate` | sim-lib-office-pack |
-| `crate/sim-lib-pattern` | `crate` | sim-lib-pattern |
 | `crate/sim-lib-pitch-chord` | `crate` | sim-lib-pitch-chord |
 | `crate/sim-lib-pitch-core` | `crate` | sim-lib-pitch-core |
 | `crate/sim-lib-pitch-dissonance` | `crate` | sim-lib-pitch-dissonance |
@@ -183,7 +174,6 @@
 | `crate/sim-lib-plugin-vst3` | `crate` | sim-lib-plugin-vst3 |
 | `crate/sim-lib-plugin-wasm` | `crate` | sim-lib-plugin-wasm |
 | `crate/sim-lib-repl` | `crate` | sim-lib-repl |
-| `crate/sim-lib-sequence` | `crate` | sim-lib-sequence |
 | `crate/sim-lib-sheet` | `crate` | sim-lib-sheet |
 | `crate/sim-lib-sound-audio-lift` | `crate` | sim-lib-sound-audio-lift |
 | `crate/sim-lib-sound-bridge` | `crate` | sim-lib-sound-bridge |
@@ -266,7 +256,9 @@
 | `doc-set/sim-stream/generated` | `doc-set` | sim-stream generated docs |
 | `doc-set/sim-tooling/generated` | `doc-set` | sim-tooling generated docs |
 | `doc-set/sim-web/generated` | `doc-set` | sim-web generated docs |
+| `local/sim-agent-net/crate/sim-lib-agent` | `crate` | sim-lib-agent |
 | `local/sim-agent-net/crate/sim-lib-agent-runner-core` | `crate` | sim-lib-agent-runner-core |
+| `local/sim-agent-net/crate/sim-lib-cookbook` | `crate` | sim-lib-cookbook |
 | `local/sim-agent-net/crate/sim-lib-forge` | `crate` | sim-lib-forge |
 | `local/sim-agent-net/crate/sim-lib-mcp` | `crate` | sim-lib-mcp |
 | `local/sim-agent-net/crate/sim-lib-openai-server` | `crate` | sim-lib-openai-server |
@@ -280,11 +272,13 @@
 | `local/sim-audio-daw/crate/xtask` | `crate` | xtask |
 | `local/sim-auto/crate/xtask` | `crate` | xtask |
 | `local/sim-citizen/crate/xtask` | `crate` | xtask |
+| `local/sim-codecs/crate/sim-codec` | `crate` | sim-codec |
 | `local/sim-codecs/crate/sim-codec-mcp` | `crate` | sim-codec-mcp |
 | `local/sim-codecs/crate/xtask` | `crate` | xtask |
 | `local/sim-discrete/crate/sim-lib-discrete` | `crate` | sim-lib-discrete |
 | `local/sim-discrete/crate/xtask` | `crate` | xtask |
 | `local/sim-femm/crate/sim-lib-femm-codec` | `crate` | sim-lib-femm-codec |
+| `local/sim-femm/crate/sim-lib-femm-field` | `crate` | sim-lib-femm-field |
 | `local/sim-femm/crate/xtask` | `crate` | xtask |
 | `local/sim-foundation/crate/xtask` | `crate` | xtask |
 | `local/sim-kernel/crate/xtask` | `crate` | xtask |
@@ -306,32 +300,48 @@
 | `local/sim-office/crate/xtask` | `crate` | xtask |
 | `local/sim-run/crate/sim` | `crate` | sim |
 | `local/sim-run/crate/xtask` | `crate` | xtask |
+| `local/sim-runtime/crate/sim-lib-control` | `crate` | sim-lib-control |
+| `local/sim-runtime/crate/sim-lib-lang-islisp` | `crate` | sim-lib-lang-islisp |
+| `local/sim-runtime/crate/sim-lib-logic` | `crate` | sim-lib-logic |
+| `local/sim-runtime/crate/sim-lib-mutation` | `crate` | sim-lib-mutation |
+| `local/sim-runtime/crate/sim-lib-pattern` | `crate` | sim-lib-pattern |
+| `local/sim-runtime/crate/sim-lib-sequence` | `crate` | sim-lib-sequence |
 | `local/sim-runtime/crate/sim-lib-standard-core` | `crate` | sim-lib-standard-core |
 | `local/sim-runtime/crate/xtask` | `crate` | xtask |
 | `local/sim-sdk/crate/sim` | `crate` | sim |
+| `local/sim-sdk/crate/sim-codec` | `crate` | sim-codec |
 | `local/sim-sdk/crate/sim-codec-mcp` | `crate` | sim-codec-mcp |
+| `local/sim-sdk/crate/sim-lib-agent` | `crate` | sim-lib-agent |
 | `local/sim-sdk/crate/sim-lib-agent-runner-core` | `crate` | sim-lib-agent-runner-core |
 | `local/sim-sdk/crate/sim-lib-audio-dsp` | `crate` | sim-lib-audio-dsp |
 | `local/sim-sdk/crate/sim-lib-audio-graph-core` | `crate` | sim-lib-audio-graph-core |
+| `local/sim-sdk/crate/sim-lib-control` | `crate` | sim-lib-control |
+| `local/sim-sdk/crate/sim-lib-cookbook` | `crate` | sim-lib-cookbook |
 | `local/sim-sdk/crate/sim-lib-daw-session` | `crate` | sim-lib-daw-session |
 | `local/sim-sdk/crate/sim-lib-discrete` | `crate` | sim-lib-discrete |
 | `local/sim-sdk/crate/sim-lib-femm-codec` | `crate` | sim-lib-femm-codec |
+| `local/sim-sdk/crate/sim-lib-femm-field` | `crate` | sim-lib-femm-field |
 | `local/sim-sdk/crate/sim-lib-forge` | `crate` | sim-lib-forge |
 | `local/sim-sdk/crate/sim-lib-intent` | `crate` | sim-lib-intent |
+| `local/sim-sdk/crate/sim-lib-lang-islisp` | `crate` | sim-lib-lang-islisp |
+| `local/sim-sdk/crate/sim-lib-logic` | `crate` | sim-lib-logic |
 | `local/sim-sdk/crate/sim-lib-mcp` | `crate` | sim-lib-mcp |
 | `local/sim-sdk/crate/sim-lib-midi-shapes` | `crate` | sim-lib-midi-shapes |
 | `local/sim-sdk/crate/sim-lib-music-shapes` | `crate` | sim-lib-music-shapes |
 | `local/sim-sdk/crate/sim-lib-music-synth` | `crate` | sim-lib-music-synth |
+| `local/sim-sdk/crate/sim-lib-mutation` | `crate` | sim-lib-mutation |
 | `local/sim-sdk/crate/sim-lib-numbers-cas` | `crate` | sim-lib-numbers-cas |
 | `local/sim-sdk/crate/sim-lib-numbers-complex` | `crate` | sim-lib-numbers-complex |
 | `local/sim-sdk/crate/sim-lib-numbers-func` | `crate` | sim-lib-numbers-func |
 | `local/sim-sdk/crate/sim-lib-numbers-rational` | `crate` | sim-lib-numbers-rational |
 | `local/sim-sdk/crate/sim-lib-numbers-tensor` | `crate` | sim-lib-numbers-tensor |
 | `local/sim-sdk/crate/sim-lib-openai-server` | `crate` | sim-lib-openai-server |
+| `local/sim-sdk/crate/sim-lib-pattern` | `crate` | sim-lib-pattern |
 | `local/sim-sdk/crate/sim-lib-pitch-shapes` | `crate` | sim-lib-pitch-shapes |
 | `local/sim-sdk/crate/sim-lib-plugin-core` | `crate` | sim-lib-plugin-core |
 | `local/sim-sdk/crate/sim-lib-rank` | `crate` | sim-lib-rank |
 | `local/sim-sdk/crate/sim-lib-scene` | `crate` | sim-lib-scene |
+| `local/sim-sdk/crate/sim-lib-sequence` | `crate` | sim-lib-sequence |
 | `local/sim-sdk/crate/sim-lib-server` | `crate` | sim-lib-server |
 | `local/sim-sdk/crate/sim-lib-skill` | `crate` | sim-lib-skill |
 | `local/sim-sdk/crate/sim-lib-sound-shapes` | `crate` | sim-lib-sound-shapes |

@@ -453,7 +453,6 @@
 | `specimen` | `shell` | recipes/02-scenarios/placement-report/recipe.toml |
 | `specimen` | `shell` | recipes/02-scenarios/server-verb/recipe.toml |
 | `specimen` | `shell` | recipes/publish-readiness/package-list/recipe.toml |
-| `subject` | `crate/sim-codec` | sim-codec |
 | `subject` | `crate/sim-codec-algol` | sim-codec-algol |
 | `subject` | `crate/sim-codec-binary` | sim-codec-binary |
 | `subject` | `crate/sim-codec-binary-base64` | sim-codec-binary-base64 |
@@ -517,8 +516,10 @@
 | `subject` | `language/ooxml` | ooxml |
 | `subject` | `language/pratt` | pratt |
 | `subject` | `language/uds` | uds |
+| `subject` | `local/sim-codecs/crate/sim-codec` | sim-codec |
 | `subject` | `local/sim-codecs/crate/sim-codec-mcp` | sim-codec-mcp |
 | `subject` | `local/sim-femm/crate/sim-lib-femm-codec` | sim-lib-femm-codec |
+| `subject` | `local/sim-sdk/crate/sim-codec` | sim-codec |
 | `subject` | `local/sim-sdk/crate/sim-codec-mcp` | sim-codec-mcp |
 | `subject` | `local/sim-sdk/crate/sim-lib-femm-codec` | sim-lib-femm-codec |
 | `subject` | `repo/sim-codecs` | sim-codecs |
