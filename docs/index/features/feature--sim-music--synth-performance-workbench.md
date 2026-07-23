@@ -18,6 +18,10 @@ Describe synth presets, streaming render fixtures, and placement choices for loc
 - `anchor/export/sim-lib-music-synth/view/component`
 - `anchor/runtime-lib/sim-lib-music-synth/audio-synth-lib`
 
+## Surfaces
+
+- `docs/sim-music/generated`
+
 ## Specimens
 
 - `spec-test/sim-music/crates/sim-lib-music-synth/src/tests/daw`

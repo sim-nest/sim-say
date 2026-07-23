@@ -27,6 +27,10 @@ Lift, lower, inspect, and export musical material across MIDI files, live MIDI f
 - `anchor/runtime-lib/sim-lib-midi-rtmidi/midi-rtmidi-lib`
 - `anchor/runtime-lib/sim-lib-midi-shapes/midi-shapes-lib`
 
+## Surfaces
+
+- `docs/sim-music/generated`
+
 ## Specimens
 
 - `spec-test/sim-music/crates/sim-lib-midi-core/src/tests`
