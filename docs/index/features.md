@@ -29,6 +29,7 @@
 | [`feature/sim-discrete/generated-docs`](features/feature--sim-discrete--generated-docs.md) | `local/sim-discrete/crate/xtask` | 0 |
 | [`feature/sim-femm/femm-domain-stack`](features/feature--sim-femm--femm-domain-stack.md) | `crate/sim-lib-femm-core` | 1 |
 | [`feature/sim-femm/generated-docs`](features/feature--sim-femm--generated-docs.md) | `local/sim-femm/crate/xtask` | 0 |
+| [`feature/sim-femm/linear-solvers`](features/feature--sim-femm--linear-solvers.md) | `crate/sim-lib-femm-solve` | 1 |
 | [`feature/sim-foundation/contract-emitter`](features/feature--sim-foundation--contract-emitter.md) | `local/sim-foundation/crate/xtask` | 0 |
 | [`feature/sim-foundation/cookbook`](features/feature--sim-foundation--cookbook.md) | `crate/sim-cookbook` | 1 |
 | [`feature/sim-foundation/host-primitives`](features/feature--sim-foundation--host-primitives.md) | `crate/sim-lib-net-core` | 1 |
@@ -49,6 +50,8 @@
 | [`feature/sim-music/synth-performance-workbench`](features/feature--sim-music--synth-performance-workbench.md) | `local/sim-music/crate/sim-lib-music-synth` | 1 |
 | [`feature/sim-numbers/generated-docs`](features/feature--sim-numbers--generated-docs.md) | `local/sim-numbers/crate/xtask` | 0 |
 | [`feature/sim-numbers/numbers`](features/feature--sim-numbers--numbers.md) | `crate/sim-lib-numbers-core` | 1 |
+| [`feature/sim-numbers/numeric-pipelines`](features/feature--sim-numbers--numeric-pipelines.md) | `crate/sim-lib-numbers-numeric` | 1 |
+| [`feature/sim-numbers/tensors`](features/feature--sim-numbers--tensors.md) | `local/sim-numbers/crate/sim-lib-numbers-tensor` | 1 |
 | [`feature/sim-office/document-codecs`](features/feature--sim-office--document-codecs.md) | `crate/sim-lib-office-pack` | 1 |
 | [`feature/sim-office/document-surfaces`](features/feature--sim-office--document-surfaces.md) | `crate/sim-lib-doc-surface` | 1 |
 | [`feature/sim-office/generated-docs`](features/feature--sim-office--generated-docs.md) | `local/sim-office/crate/xtask` | 0 |
