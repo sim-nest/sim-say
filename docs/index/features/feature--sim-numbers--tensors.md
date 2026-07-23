@@ -6,7 +6,7 @@
 - Subject: `local/sim-numbers/crate/sim-lib-numbers-tensor`
 - Canonical key: `crate/sim-lib-numbers-tensor/feature-sim-numbers-tensors`
 
-Provide the canonical runtime Tensor value, typed tensor descriptors, broadcasting, and matrix operations.
+Provide the canonical storage-polymorphic runtime Tensor value, checked host or resident observation, typed tensor descriptors, broadcasting, and matrix operations.
 
 ## Anchors
 
@@ -28,11 +28,14 @@ Provide the canonical runtime Tensor value, typed tensor descriptors, broadcasti
 - `anchor/runtime-lib/sim-lib-numbers-tensor/tensor-numbers-lib`
 - `anchor/rustdoc/sim-lib-numbers-tensor-linalg/dispatch`
 - `anchor/rustdoc/sim-lib-numbers-tensor-linalg/tensor-linalg-lib`
+- `anchor/rustdoc/sim-lib-numbers-tensor/boxed-tensor-storage`
 - `anchor/rustdoc/sim-lib-numbers-tensor/build_tensor_value`
 - `anchor/rustdoc/sim-lib-numbers-tensor/checked_element_count`
 - `anchor/rustdoc/sim-lib-numbers-tensor/spec-tensor`
 - `anchor/rustdoc/sim-lib-numbers-tensor/tensor`
 - `anchor/rustdoc/sim-lib-numbers-tensor/tensor-function`
+- `anchor/rustdoc/sim-lib-numbers-tensor/tensor-location`
+- `anchor/rustdoc/sim-lib-numbers-tensor/tensor-storage`
 
 ## Specimens
 
