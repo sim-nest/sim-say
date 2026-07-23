@@ -64,6 +64,7 @@
 | `sim-codec-mcp` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-test-support` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-wasm-abi` | [sim-codecs](../repos/sim-codecs.md) |
+| `sim-codec-mspdi` | [sim-construction](../repos/sim-construction.md) |
 | `sim-lib-construction-project` | [sim-construction](../repos/sim-construction.md) |
 | `sim-lib-discrete` | [sim-discrete](../repos/sim-discrete.md) |
 | `sim-lib-discrete-algebra` | [sim-discrete](../repos/sim-discrete.md) |
@@ -179,7 +180,6 @@
 | `sim-lib-numbers-tensor-i64` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-tensor-linalg` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-tensor-rat64` | [sim-numbers](../repos/sim-numbers.md) |
-| `sim-codec-mspdi` | [sim-office](../repos/sim-office.md) |
 | `sim-codec-odf` | [sim-office](../repos/sim-office.md) |
 | `sim-codec-ooxml` | [sim-office](../repos/sim-office.md) |
 | `sim-lib-deck` | [sim-office](../repos/sim-office.md) |

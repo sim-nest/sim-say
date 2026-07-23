@@ -404,7 +404,7 @@
 | `repo/sim-auto` | `repo` | sim-auto | 30 |
 | `repo/sim-citizen` | `repo` | sim-citizen | 5 |
 | `repo/sim-codecs` | `repo` | sim-codecs | 21 |
-| `repo/sim-construction` | `repo` | sim-construction | 3 |
+| `repo/sim-construction` | `repo` | sim-construction | 4 |
 | `repo/sim-discrete` | `repo` | sim-discrete | 8 |
 | `repo/sim-femm` | `repo` | sim-femm | 21 |
 | `repo/sim-foundation` | `repo` | sim-foundation | 10 |
@@ -412,7 +412,7 @@
 | `repo/sim-ledger` | `repo` | sim-ledger | 7 |
 | `repo/sim-music` | `repo` | sim-music | 47 |
 | `repo/sim-numbers` | `repo` | sim-numbers | 32 |
-| `repo/sim-office` | `repo` | sim-office | 21 |
+| `repo/sim-office` | `repo` | sim-office | 20 |
 | `repo/sim-run` | `repo` | sim-run | 9 |
 | `repo/sim-runtime` | `repo` | sim-runtime | 24 |
 | `repo/sim-sdk` | `repo` | sim-sdk | 64 |

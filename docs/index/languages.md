@@ -19,7 +19,7 @@
 | `grammar` | `grammar/syntax/lisp` | Expression syntax grammars |
 | `grammar` | `grammar/syntax/lua` | Expression syntax grammars |
 | `grammar` | `grammar/syntax/mcp` | Domain syntax grammars |
-| `grammar` | `grammar/syntax/mspdi` | Document codec workflows |
+| `grammar` | `grammar/syntax/mspdi` | MSPDI schedule exchange |
 | `grammar` | `grammar/syntax/odf` | Document codec workflows |
 | `grammar` | `grammar/syntax/ooxml` | Document codec workflows |
 | `grammar` | `grammar/syntax/pratt` | Pratt operator parser |

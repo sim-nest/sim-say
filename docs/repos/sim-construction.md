@@ -1,9 +1,10 @@
 # sim-construction
 
-Published commit: `12966a9c517e8a3a3c0d40ce89c4767fbabe8fca`.
+Published commit: `391bf9a1fa1f5e4f59e7fa166182094518e3ce17`.
 
 ## Crates
 
+- `sim-codec-mspdi`
 - `sim-lib-construction-project`
 
 ## Contracts
