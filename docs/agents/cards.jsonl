@@ -58,6 +58,9 @@
 {"card": {"id": "cookbook/codec/mcp", "kind": "cookbook-recipe", "owner": "sim-codec-mcp", "summary": "MCP JSON-RPC request, response, notification, and error envelopes."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/pratt", "kind": "cookbook-recipe", "owner": "sim-codec-pratt", "summary": "Shared Pratt parsing substrate for codec lexers."}, "repo": "sim-codecs"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-codecs"}
+{"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-construction"}
+{"card": {"id": "cookbook/construction/project", "kind": "cookbook-recipe", "owner": "sim-lib-construction-project", "summary": "Project charter records and evidence readiness."}, "repo": "sim-construction"}
+{"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-construction"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-discrete"}
 {"card": {"id": "cookbook/discrete", "kind": "cookbook-recipe", "owner": "sim-lib-discrete", "summary": "Runtime-facing discrete matrix, graph, and transform descriptors."}, "repo": "sim-discrete"}
 {"card": {"id": "cookbook/discrete-algebra", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-algebra", "summary": "Small semiring and matrix-view descriptors."}, "repo": "sim-discrete"}

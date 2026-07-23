@@ -64,6 +64,7 @@
 | `sim-codec-mcp` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-test-support` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-wasm-abi` | [sim-codecs](../repos/sim-codecs.md) |
+| `sim-lib-construction-project` | [sim-construction](../repos/sim-construction.md) |
 | `sim-lib-discrete` | [sim-discrete](../repos/sim-discrete.md) |
 | `sim-lib-discrete-algebra` | [sim-discrete](../repos/sim-discrete.md) |
 | `sim-lib-discrete-comb` | [sim-discrete](../repos/sim-discrete.md) |

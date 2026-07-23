@@ -68,6 +68,7 @@
 | `crate/sim-lib-auto-vendor` | `crate` | sim-lib-auto-vendor |
 | `crate/sim-lib-binding` | `crate` | sim-lib-binding |
 | `crate/sim-lib-bridge` | `crate` | sim-lib-bridge |
+| `crate/sim-lib-construction-project` | `crate` | sim-lib-construction-project |
 | `crate/sim-lib-core` | `crate` | sim-lib-core |
 | `crate/sim-lib-deck` | `crate` | sim-lib-deck |
 | `crate/sim-lib-discrete-algebra` | `crate` | sim-lib-discrete-algebra |
@@ -239,6 +240,7 @@
 | `doc-set/sim-auto/generated` | `doc-set` | sim-auto generated docs |
 | `doc-set/sim-citizen/generated` | `doc-set` | sim-citizen generated docs |
 | `doc-set/sim-codecs/generated` | `doc-set` | sim-codecs generated docs |
+| `doc-set/sim-construction/generated` | `doc-set` | sim-construction generated docs |
 | `doc-set/sim-discrete/generated` | `doc-set` | sim-discrete generated docs |
 | `doc-set/sim-femm/generated` | `doc-set` | sim-femm generated docs |
 | `doc-set/sim-foundation/generated` | `doc-set` | sim-foundation generated docs |
@@ -275,6 +277,7 @@
 | `local/sim-codecs/crate/sim-codec` | `crate` | sim-codec |
 | `local/sim-codecs/crate/sim-codec-mcp` | `crate` | sim-codec-mcp |
 | `local/sim-codecs/crate/xtask` | `crate` | xtask |
+| `local/sim-construction/crate/xtask` | `crate` | xtask |
 | `local/sim-discrete/crate/sim-lib-discrete` | `crate` | sim-lib-discrete |
 | `local/sim-discrete/crate/xtask` | `crate` | xtask |
 | `local/sim-femm/crate/sim-lib-femm-codec` | `crate` | sim-lib-femm-codec |
@@ -401,6 +404,7 @@
 | `repo/sim-auto` | `repo` | sim-auto |
 | `repo/sim-citizen` | `repo` | sim-citizen |
 | `repo/sim-codecs` | `repo` | sim-codecs |
+| `repo/sim-construction` | `repo` | sim-construction |
 | `repo/sim-discrete` | `repo` | sim-discrete |
 | `repo/sim-femm` | `repo` | sim-femm |
 | `repo/sim-foundation` | `repo` | sim-foundation |

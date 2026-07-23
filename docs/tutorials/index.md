@@ -7,6 +7,7 @@ Tutorial links are generated from published repo contracts.
 - [sim-auto tutorial lane](../repos/sim-auto.md#tutorial-lane)
 - [sim-citizen tutorial lane](../repos/sim-citizen.md#tutorial-lane)
 - [sim-codecs tutorial lane](../repos/sim-codecs.md#tutorial-lane)
+- [sim-construction tutorial lane](../repos/sim-construction.md#tutorial-lane)
 - [sim-discrete tutorial lane](../repos/sim-discrete.md#tutorial-lane)
 - [sim-femm tutorial lane](../repos/sim-femm.md#tutorial-lane)
 - [sim-foundation tutorial lane](../repos/sim-foundation.md#tutorial-lane)

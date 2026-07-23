@@ -25,6 +25,8 @@ Generated from `docs/index/index.cards.jsonl`.
 | `feature/sim-codecs/expression-syntax-grammars` | `crate/sim-codec-lisp` | [features/feature--sim-codecs--expression-syntax-grammars.md](../index/features/feature--sim-codecs--expression-syntax-grammars.md) | 1 | Read and write Lisp, JSON, Algol, Lua, Compare, and Bridge rendered expression grammars. |
 | `feature/sim-codecs/pratt` | `crate/sim-codec-pratt` | [features/feature--sim-codecs--pratt.md](../index/features/feature--sim-codecs--pratt.md) | 1 | Parse operator-oriented expression languages through the Pratt codec surface. |
 | `feature/sim-codecs/wire-protocol-grammars` | `local/sim-codecs/crate/sim-codec` | [features/feature--sim-codecs--wire-protocol-grammars.md](../index/features/feature--sim-codecs--wire-protocol-grammars.md) | 1 | Read and write binary, bitwise, chat, config, document, index, and MCP wire protocols. |
+| `feature/sim-construction/generated-docs` | `local/sim-construction/crate/xtask` | [features/feature--sim-construction--generated-docs.md](../index/features/feature--sim-construction--generated-docs.md) | 0 | Publish generated package, card, recipe, and index facts for construction project-control crates. |
+| `feature/sim-construction/project-control` | `crate/sim-lib-construction-project` | [features/feature--sim-construction--project-control.md](../index/features/feature--sim-construction--project-control.md) | 1 | Describe construction project charters with reference-only evidence and deterministic readiness states. |
 | `feature/sim-discrete/discrete-algebra` | `local/sim-discrete/crate/sim-lib-discrete` | [features/feature--sim-discrete--discrete-algebra.md](../index/features/feature--sim-discrete--discrete-algebra.md) | 1 | Provide algebra, graph, combinatorics, ranking, and spectral helpers as one reusable discrete-domain stack. |
 | `feature/sim-discrete/generated-docs` | `local/sim-discrete/crate/xtask` | [features/feature--sim-discrete--generated-docs.md](../index/features/feature--sim-discrete--generated-docs.md) | 0 | Publish generated package, card, rustdoc, and index facts for the discrete algebra crates. |
 | `feature/sim-femm/femm-domain-stack` | `crate/sim-lib-femm-core` | [features/feature--sim-femm--femm-domain-stack.md](../index/features/feature--sim-femm--femm-domain-stack.md) | 1 | Collect finite-element mesh, field, material, geometry, solve, post-processing, and ODE helpers into one code-facing domain feature. |
@@ -142,6 +144,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `docs/sim-auto/generated` | `docs` | `doc-set/sim-auto/generated` |
 | `docs/sim-citizen/generated` | `docs` | `doc-set/sim-citizen/generated` |
 | `docs/sim-codecs/generated` | `docs` | `doc-set/sim-codecs/generated` |
+| `docs/sim-construction/generated` | `docs` | `doc-set/sim-construction/generated` |
 | `docs/sim-discrete/generated` | `docs` | `doc-set/sim-discrete/generated` |
 | `docs/sim-femm/generated` | `docs` | `doc-set/sim-femm/generated` |
 | `docs/sim-foundation/generated` | `docs` | `doc-set/sim-foundation/generated` |
@@ -164,6 +167,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `local/sim-auto/cli/xtask` | `cli` | `local/sim-auto/crate/xtask` |
 | `local/sim-citizen/cli/xtask` | `cli` | `local/sim-citizen/crate/xtask` |
 | `local/sim-codecs/cli/xtask` | `cli` | `local/sim-codecs/crate/xtask` |
+| `local/sim-construction/cli/xtask` | `cli` | `local/sim-construction/crate/xtask` |
 | `local/sim-discrete/cli/xtask` | `cli` | `local/sim-discrete/crate/xtask` |
 | `local/sim-femm/cli/xtask` | `cli` | `local/sim-femm/crate/xtask` |
 | `local/sim-foundation/cli/xtask` | `cli` | `local/sim-foundation/crate/xtask` |
