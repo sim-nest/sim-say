@@ -16,12 +16,12 @@
 | [sim-music](../repos/sim-music.md) | `a1149d47c26cc579f622483bd371e6fd3a87d7e8` | [JSON](../contracts/sim-music/repo-contract.json) |
 | [sim-numbers](../repos/sim-numbers.md) | `bd4540a6ca9678cac00f44176b7e1c1482e336d4` | [JSON](../contracts/sim-numbers/repo-contract.json) |
 | [sim-office](../repos/sim-office.md) | `ae25d36fb5d09ca919faf31430a1fbc6837111f0` | [JSON](../contracts/sim-office/repo-contract.json) |
-| [sim-run](../repos/sim-run.md) | `9999deb364fb152726f5939cfdc056c46a5c108d` | [JSON](../contracts/sim-run/repo-contract.json) |
+| [sim-run](../repos/sim-run.md) | `afcd2fb262a0aef01182c349a2703c57f9dc0848` | [JSON](../contracts/sim-run/repo-contract.json) |
 | [sim-runtime](../repos/sim-runtime.md) | `fa56494f87760043f310441339fbc065054d6442` | [JSON](../contracts/sim-runtime/repo-contract.json) |
 | [sim-sdk](../repos/sim-sdk.md) | `b62dd6a78948c92da6cdb2a216a902a26ae12456` | [JSON](../contracts/sim-sdk/repo-contract.json) |
 | [sim-shape](../repos/sim-shape.md) | `e2a3c3ba7a602baef80dbb4e47f82afd0acf09e2` | [JSON](../contracts/sim-shape/repo-contract.json) |
-| [sim-storage](../repos/sim-storage.md) | `d906e96bceee4cff741d8d43b23d3532f532ad8b` | [JSON](../contracts/sim-storage/repo-contract.json) |
+| [sim-storage](../repos/sim-storage.md) | `01ef884a86d81c9d8b6cccc8300538e1efb6380a` | [JSON](../contracts/sim-storage/repo-contract.json) |
 | [sim-stream](../repos/sim-stream.md) | `fbc0d112d863ac6145b31b62ee5ec8e580c184b1` | [JSON](../contracts/sim-stream/repo-contract.json) |
 | [sim-stream-host](../repos/sim-stream-host.md) | `2bc9c60535deaf995e764a075175e42bd72a47b4` | [JSON](../contracts/sim-stream-host/repo-contract.json) |
-| [sim-tooling](../repos/sim-tooling.md) | `d659702b67aaa9a25f3e43d93b9582a7fe46c756` | [JSON](../contracts/sim-tooling/repo-contract.json) |
+| [sim-tooling](../repos/sim-tooling.md) | `22f2fc9afc2324e9e59c2fb33fbb71522ee0bd89` | [JSON](../contracts/sim-tooling/repo-contract.json) |
 | [sim-web](../repos/sim-web.md) | `f55b4b201ee8cbb1c4c56f91bd951fed088c1a2e` | [JSON](../contracts/sim-web/repo-contract.json) |

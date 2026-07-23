@@ -497,6 +497,7 @@
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-storage"}
 {"card": {"id": "cookbook/storage/table-fs", "kind": "cookbook-recipe", "owner": "sim-table-fs", "summary": "Host directory reads, writes, edits, and searches through the table surface."}, "repo": "sim-storage"}
 {"card": {"id": "cookbook/storage/table-http", "kind": "cookbook-recipe", "owner": "sim-table-http", "summary": "Direct HTTP resources addressed through the table directory surface."}, "repo": "sim-storage"}
+{"card": {"id": "cookbook/storage/table-mount", "kind": "cookbook-recipe", "owner": "sim-table-mount", "summary": "Compose independently owned Table and Dir backends behind one directory view."}, "repo": "sim-storage"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-storage"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-stream"}
 {"card": {"id": "cookbook/rank", "kind": "cookbook-recipe", "owner": "sim-lib-rank", "summary": "Rank spaces, nodes, coordinates, and deterministic traversal."}, "repo": "sim-stream"}
