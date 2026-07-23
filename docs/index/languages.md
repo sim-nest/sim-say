@@ -439,6 +439,7 @@
 | `specimen` | `shape` | crates/sim-value/src/tests.rs |
 | `specimen` | `shape` | src/citizen/inventory.rs |
 | `specimen` | `shape` | src/citizen_tests.rs |
+| `specimen` | `shape` | src/index_vault_profile_tests.rs |
 | `specimen` | `shape` | src/runtime/tests/browse_conformance.rs |
 | `specimen` | `shell` | crates/sim-conformance/recipes/01-basics/run-contract/recipe.toml |
 | `specimen` | `shell` | recipes/01-basics/hello/recipe.toml |
