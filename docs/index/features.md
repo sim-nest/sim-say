@@ -26,6 +26,7 @@
 | [`feature/sim-codecs/expression-syntax-grammars`](features/feature--sim-codecs--expression-syntax-grammars.md) | `crate/sim-codec-lisp` | 1 |
 | [`feature/sim-codecs/pratt`](features/feature--sim-codecs--pratt.md) | `crate/sim-codec-pratt` | 1 |
 | [`feature/sim-codecs/wire-protocol-grammars`](features/feature--sim-codecs--wire-protocol-grammars.md) | `local/sim-codecs/crate/sim-codec` | 1 |
+| [`feature/sim-construction/dalux-project-items`](features/feature--sim-construction--dalux-project-items.md) | `crate/sim-site-dalux` | 2 |
 | [`feature/sim-construction/generated-docs`](features/feature--sim-construction--generated-docs.md) | `local/sim-construction/crate/xtask` | 0 |
 | [`feature/sim-construction/mspdi-schedule-exchange`](features/feature--sim-construction--mspdi-schedule-exchange.md) | `crate/sim-codec-mspdi` | 1 |
 | [`feature/sim-construction/powerproject-schedule-placement`](features/feature--sim-construction--powerproject-schedule-placement.md) | `crate/sim-site-powerproject` | 1 |
@@ -65,7 +66,7 @@
 | [`feature/sim-office/document-codecs`](features/feature--sim-office--document-codecs.md) | `crate/sim-lib-office-pack` | 1 |
 | [`feature/sim-office/document-surfaces`](features/feature--sim-office--document-surfaces.md) | `crate/sim-lib-doc-surface` | 1 |
 | [`feature/sim-office/generated-docs`](features/feature--sim-office--generated-docs.md) | `local/sim-office/crate/xtask` | 0 |
-| [`feature/sim-office/office-site-workflows`](features/feature--sim-office--office-site-workflows.md) | `crate/sim-lib-doc-site` | 1 |
+| [`feature/sim-office/office-site-workflows`](features/feature--sim-office--office-site-workflows.md) | `crate/sim-lib-doc-site` | 0 |
 | [`feature/sim-run/bootloader`](features/feature--sim-run--bootloader.md) | `crate/sim-run-core` | 2 |
 | [`feature/sim-run/glasses`](features/feature--sim-run--glasses.md) | `crate/sim-run` | 1 |
 | [`feature/sim-run/index`](features/feature--sim-run--index.md) | `local/sim-run/crate/xtask` | 1 |

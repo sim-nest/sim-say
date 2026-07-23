@@ -26,6 +26,7 @@
 | [`feature/sim-codecs/expression-syntax-grammars`](features/feature--sim-codecs--expression-syntax-grammars.md) | `crate/sim-codec-lisp` | Read and write Lisp, JSON, Algol, Lua, Compare, and Bridge rendered expression grammars. | 1 |
 | [`feature/sim-codecs/pratt`](features/feature--sim-codecs--pratt.md) | `crate/sim-codec-pratt` | Parse operator-oriented expression languages through the Pratt codec surface. | 1 |
 | [`feature/sim-codecs/wire-protocol-grammars`](features/feature--sim-codecs--wire-protocol-grammars.md) | `local/sim-codecs/crate/sim-codec` | Read and write binary, bitwise, chat, config, document, index, and MCP wire protocols. | 1 |
+| [`feature/sim-construction/dalux-project-items`](features/feature--sim-construction--dalux-project-items.md) | `crate/sim-site-dalux` | Read Dalux project items into local office documents for construction evidence and keep note updates narrow. | 2 |
 | [`feature/sim-construction/generated-docs`](features/feature--sim-construction--generated-docs.md) | `local/sim-construction/crate/xtask` | Publish generated package, card, recipe, and index facts for construction project-control crates. | 0 |
 | [`feature/sim-construction/mspdi-schedule-exchange`](features/feature--sim-construction--mspdi-schedule-exchange.md) | `crate/sim-codec-mspdi` | Round-trip Microsoft Project XML schedules through the portable construction Gantt document model. | 1 |
 | [`feature/sim-construction/powerproject-schedule-placement`](features/feature--sim-construction--powerproject-schedule-placement.md) | `crate/sim-site-powerproject` | Place construction Gantt schedules at Powerproject desktop and Project for the web boundaries. | 1 |
@@ -65,7 +66,7 @@
 | [`feature/sim-office/document-codecs`](features/feature--sim-office--document-codecs.md) | `crate/sim-lib-office-pack` | Round-trip OOXML, ODF, deck, sheet, and markup documents through office codec recipes. | 1 |
 | [`feature/sim-office/document-surfaces`](features/feature--sim-office--document-surfaces.md) | `crate/sim-lib-doc-surface` | Project document, markup, and suite descriptors into view surfaces for review and editing. | 1 |
 | [`feature/sim-office/generated-docs`](features/feature--sim-office--generated-docs.md) | `local/sim-office/crate/xtask` | Publish generated package, card, recipe, and index facts for office documents, sites, and codecs. | 0 |
-| [`feature/sim-office/office-site-workflows`](features/feature--sim-office--office-site-workflows.md) | `crate/sim-lib-doc-site` | Model document stores, mail and calendar summaries, and enterprise site reads. | 1 |
+| [`feature/sim-office/office-site-workflows`](features/feature--sim-office--office-site-workflows.md) | `crate/sim-lib-doc-site` | Model document stores, mail and calendar summaries, and enterprise office site reads. | 0 |
 | [`feature/sim-run/bootloader`](features/feature--sim-run--bootloader.md) | `crate/sim-run-core` | Start product commands through the shared bootloader and loaded runtime libraries. | 2 |
 | [`feature/sim-run/glasses`](features/feature--sim-run--glasses.md) | `crate/sim-run` | Start modeled or hardware-backed glasses plans through the shared command bootloader. | 1 |
 | [`feature/sim-run/index`](features/feature--sim-run--index.md) | `local/sim-run/crate/xtask` | Expose generated package, card, surface, and recipe facts as a checked SIM Index fragment. | 1 |

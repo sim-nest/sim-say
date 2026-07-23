@@ -60,6 +60,7 @@
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-codecs"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-construction"}
 {"card": {"id": "cookbook/construction/project", "kind": "cookbook-recipe", "owner": "sim-lib-construction-project", "summary": "Project charter records and evidence readiness."}, "repo": "sim-construction"}
+{"card": {"id": "cookbook/office/dalux-site", "kind": "cookbook-recipe", "owner": "sim-site-dalux", "summary": "Modeled Dalux project item reads with API identity live gates."}, "repo": "sim-construction"}
 {"card": {"id": "cookbook/office/mspdi", "kind": "cookbook-recipe", "owner": "sim-codec-mspdi", "summary": "Microsoft Project XML exchange for local Gantt documents."}, "repo": "sim-construction"}
 {"card": {"id": "cookbook/office/powerproject-site", "kind": "cookbook-recipe", "owner": "sim-site-powerproject", "summary": "Powerproject and Project for the web placements for Gantt plans."}, "repo": "sim-construction"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-construction"}
@@ -200,7 +201,6 @@
 {"card": {"id": "cookbook/numbers/tensor-rat64", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor-rat64", "summary": "Rational-cell tensor helpers."}, "repo": "sim-numbers"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-numbers"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-office"}
-{"card": {"id": "cookbook/office/dalux-site", "kind": "cookbook-recipe", "owner": "sim-site-dalux", "summary": "Modeled Dalux project item reads with API identity live gates."}, "repo": "sim-office"}
 {"card": {"id": "cookbook/office/deck", "kind": "cookbook-recipe", "owner": "sim-lib-deck", "summary": "Local decks with slides, bullets, tables, and image references."}, "repo": "sim-office"}
 {"card": {"id": "cookbook/office/doc-core", "kind": "cookbook-recipe", "owner": "sim-lib-doc-core", "summary": "Office document model and kind-shape descriptors."}, "repo": "sim-office"}
 {"card": {"id": "cookbook/office/doc-ledger", "kind": "cookbook-recipe", "owner": "sim-lib-doc-ledger", "summary": "Preview ledger draft posting from office evidence."}, "repo": "sim-office"}
