@@ -30,6 +30,7 @@
 | [`feature/sim-construction/mspdi-schedule-exchange`](features/feature--sim-construction--mspdi-schedule-exchange.md) | `crate/sim-codec-mspdi` | 1 |
 | [`feature/sim-construction/project-control`](features/feature--sim-construction--project-control.md) | `crate/sim-lib-construction-project` | 1 |
 | [`feature/sim-discrete/discrete-algebra`](features/feature--sim-discrete--discrete-algebra.md) | `local/sim-discrete/crate/sim-lib-discrete` | 1 |
+| [`feature/sim-discrete/finite-enumeration`](features/feature--sim-discrete--finite-enumeration.md) | `crate/sim-lib-discrete-comb` | 1 |
 | [`feature/sim-discrete/generated-docs`](features/feature--sim-discrete--generated-docs.md) | `local/sim-discrete/crate/xtask` | 0 |
 | [`feature/sim-femm/femm-domain-stack`](features/feature--sim-femm--femm-domain-stack.md) | `crate/sim-lib-femm-core` | 1 |
 | [`feature/sim-femm/generated-docs`](features/feature--sim-femm--generated-docs.md) | `local/sim-femm/crate/xtask` | 0 |

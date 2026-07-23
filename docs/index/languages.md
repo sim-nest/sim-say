@@ -136,6 +136,7 @@
 | `specimen` | `lisp` | crates/sim-lib-daw-session/recipes/02-performance-integration/sup-instrument-performance/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-deck/recipes/01-basics/deck-outline/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-algebra/recipes/01-basics/semiring-matrix/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-discrete-comb/recipes/01-basics/finite-enumeration/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-comb/recipes/01-basics/rankable-values/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-graph/recipes/01-basics/tiny-graph/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-rank/recipes/01-basics/combination-space/recipe.toml |
