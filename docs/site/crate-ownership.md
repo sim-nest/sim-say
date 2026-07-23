@@ -177,7 +177,9 @@
 | `sim-lib-numbers-tensor-bcast` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-tensor-bit` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-tensor-cmplxf` | [sim-numbers](../repos/sim-numbers.md) |
+| `sim-lib-numbers-tensor-f32` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-tensor-f64` | [sim-numbers](../repos/sim-numbers.md) |
+| `sim-lib-numbers-tensor-half` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-tensor-i64` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-tensor-linalg` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-tensor-rat64` | [sim-numbers](../repos/sim-numbers.md) |

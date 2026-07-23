@@ -191,7 +191,9 @@
 {"card": {"id": "cookbook/numbers/tensor-bcast", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor-bcast", "summary": "Broadcasting helpers for tensor values."}, "repo": "sim-numbers"}
 {"card": {"id": "cookbook/numbers/tensor-bit", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor-bit", "summary": "Packed boolean tensor helpers."}, "repo": "sim-numbers"}
 {"card": {"id": "cookbook/numbers/tensor-cmplxf", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor-cmplxf", "summary": "Complex-cell tensor helpers."}, "repo": "sim-numbers"}
+{"card": {"id": "cookbook/numbers/tensor-f32", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor-f32", "summary": "F32-specialized tensor helpers."}, "repo": "sim-numbers"}
 {"card": {"id": "cookbook/numbers/tensor-f64", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor-f64", "summary": "F64-specialized tensor helpers."}, "repo": "sim-numbers"}
+{"card": {"id": "cookbook/numbers/tensor-half", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor-half", "summary": "F16 and bf16 tensor descriptors with f32-widened host helpers."}, "repo": "sim-numbers"}
 {"card": {"id": "cookbook/numbers/tensor-i64", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor-i64", "summary": "I64-specialized tensor helpers."}, "repo": "sim-numbers"}
 {"card": {"id": "cookbook/numbers/tensor-linalg", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor-linalg", "summary": "Linear algebra helpers for tensors."}, "repo": "sim-numbers"}
 {"card": {"id": "cookbook/numbers/tensor-rat64", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor-rat64", "summary": "Rational-cell tensor helpers."}, "repo": "sim-numbers"}
