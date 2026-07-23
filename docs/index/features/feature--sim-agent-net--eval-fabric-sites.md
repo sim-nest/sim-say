@@ -6,20 +6,13 @@
 - Subject: `crate/sim-lib-agent-runner-local`
 - Canonical key: `crate/sim-lib-agent-runner-local/feature-sim-agent-net-eval-fabric-sites`
 
-Place model and stream work through loadable runner, local model, and content-addressed fleet libraries.
+Place model and stream work through the agent placement catalog, modeled loadable sites, and content-addressed fleet libraries.
 
 ## Anchors
 
-- `anchor/crate/sim-lib-agent-runner-core`
-- `anchor/crate/sim-lib-agent-runner-http`
-- `anchor/crate/sim-lib-agent-runner-local`
-- `anchor/crate/sim-lib-agent-runner-process`
 - `anchor/crate/sim-lib-stream-fabric`
 - `anchor/crate/sim-table-remote`
-- `anchor/export/sim-lib-agent-runner-local/model/local`
 - `anchor/export/sim-lib-stream-fabric/codec/binary`
-- `anchor/runtime-lib/sim-lib-agent-runner-local/local-model-lib`
-- `anchor/runtime-lib/sim-lib-agent-runner-local/wasm-model-lib`
 - `anchor/runtime-lib/sim-lib-stream-fabric/cadr-fixture-lib`
 
 ## Surfaces

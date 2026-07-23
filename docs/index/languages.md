@@ -411,6 +411,7 @@
 | `specimen` | `shape` | crates/sim-conformance/tests/spec/forge_eval.rs |
 | `specimen` | `shape` | crates/sim-conformance/tests/spec/support.rs |
 | `specimen` | `shape` | crates/sim-lib-agent-runner-local/tests/load_register.rs |
+| `specimen` | `shape` | crates/sim-lib-agent/src/tests/agent_ai_placement_swap.rs |
 | `specimen` | `shape` | crates/sim-lib-auto-order/src/conformance.rs |
 | `specimen` | `shape` | crates/sim-lib-auto-order/src/lib.rs |
 | `specimen` | `shape` | crates/sim-lib-bridge/src/tests/ask.rs |
