@@ -76,6 +76,7 @@
 | `crate/sim-lib-discrete-comb` | `crate` | sim-lib-discrete-comb | 0 |
 | `crate/sim-lib-discrete-graph` | `crate` | sim-lib-discrete-graph | 0 |
 | `crate/sim-lib-discrete-rank` | `crate` | sim-lib-discrete-rank | 0 |
+| `crate/sim-lib-discrete-search` | `crate` | sim-lib-discrete-search | 0 |
 | `crate/sim-lib-discrete-spectral` | `crate` | sim-lib-discrete-spectral | 0 |
 | `crate/sim-lib-dispatch` | `crate` | sim-lib-dispatch | 0 |
 | `crate/sim-lib-doc-core` | `crate` | sim-lib-doc-core | 0 |
@@ -409,7 +410,7 @@
 | `repo/sim-citizen` | `repo` | sim-citizen | 5 |
 | `repo/sim-codecs` | `repo` | sim-codecs | 21 |
 | `repo/sim-construction` | `repo` | sim-construction | 5 |
-| `repo/sim-discrete` | `repo` | sim-discrete | 8 |
+| `repo/sim-discrete` | `repo` | sim-discrete | 9 |
 | `repo/sim-femm` | `repo` | sim-femm | 21 |
 | `repo/sim-foundation` | `repo` | sim-foundation | 10 |
 | `repo/sim-kernel` | `repo` | sim-kernel | 3 |

@@ -76,6 +76,7 @@
 | `crate/sim-lib-discrete-comb` | `crate` | sim-lib-discrete-comb |
 | `crate/sim-lib-discrete-graph` | `crate` | sim-lib-discrete-graph |
 | `crate/sim-lib-discrete-rank` | `crate` | sim-lib-discrete-rank |
+| `crate/sim-lib-discrete-search` | `crate` | sim-lib-discrete-search |
 | `crate/sim-lib-discrete-spectral` | `crate` | sim-lib-discrete-spectral |
 | `crate/sim-lib-dispatch` | `crate` | sim-lib-dispatch |
 | `crate/sim-lib-doc-core` | `crate` | sim-lib-doc-core |

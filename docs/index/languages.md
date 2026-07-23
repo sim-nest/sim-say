@@ -140,6 +140,8 @@
 | `specimen` | `lisp` | crates/sim-lib-discrete-comb/recipes/01-basics/rankable-values/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-graph/recipes/01-basics/tiny-graph/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-rank/recipes/01-basics/combination-space/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-discrete-search/recipes/01-basics/constrained-word/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-discrete-search/src/cookbook.rs |
 | `specimen` | `lisp` | crates/sim-lib-discrete-spectral/recipes/01-basics/fwht-signal/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete/recipes/01-basics/binomial-count/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete/recipes/01-basics/matrix-runtime/recipe.toml |
