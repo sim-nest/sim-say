@@ -6,7 +6,7 @@
 - Subject: `local/sim-agent-net/crate/sim-lib-agent-runner-core`
 - Canonical key: `crate/sim-lib-agent-runner-core/feature-sim-agent-net-model-runner-framework`
 
-Run model requests through provider-neutral runner contracts, HTTP profiles, process adapters, and loadable model sites.
+Run local GenAI requests through provider-neutral runner contracts, HTTP profiles, process adapters, and loadable model sites.
 
 ## Anchors
 
@@ -295,7 +295,7 @@ fn one_prompt_graph_realizes_against_three_placements() {
     register_loaded_model_site(
         &mut cx,
         "model-site:local",
-        "sim-local-stub",
+        "sim-local-modeled",
         "ok-local",
         None,
     );
@@ -332,7 +332,7 @@ fn cached_local_placement_skips_second_inference() {
     register_loaded_model_site(
         &mut cx,
         "model-site:cached-local",
-        "sim-local-stub",
+        "sim-local-modeled",
         "cached-local",
         Some(calls.clone()),
     );
