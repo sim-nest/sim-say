@@ -49,6 +49,7 @@
 | `crate/sim-config` | `crate` | sim-config | 0 |
 | `crate/sim-conformance` | `crate` | sim-conformance | 0 |
 | `crate/sim-cookbook` | `crate` | sim-cookbook | 0 |
+| `crate/sim-incremental-core` | `crate` | sim-incremental-core | 0 |
 | `crate/sim-index-core` | `crate` | sim-index-core | 0 |
 | `crate/sim-kernel` | `crate` | sim-kernel | 0 |
 | `crate/sim-ledger` | `crate` | sim-ledger | 0 |
@@ -415,7 +416,7 @@
 | `repo/sim-numbers` | `repo` | sim-numbers | 32 |
 | `repo/sim-office` | `repo` | sim-office | 19 |
 | `repo/sim-run` | `repo` | sim-run | 9 |
-| `repo/sim-runtime` | `repo` | sim-runtime | 24 |
+| `repo/sim-runtime` | `repo` | sim-runtime | 25 |
 | `repo/sim-sdk` | `repo` | sim-sdk | 64 |
 | `repo/sim-shape` | `repo` | sim-shape | 5 |
 | `repo/sim-storage` | `repo` | sim-storage | 11 |

@@ -77,6 +77,7 @@
 | [`feature/sim-runtime/capabilities-read-eval`](features/feature--sim-runtime--capabilities-read-eval.md) | `crate/sim-lib-core` | Gate diminished read-eval and surface packing through explicit runtime libraries and capability checks. | 1 |
 | [`feature/sim-runtime/contract-emitter`](features/feature--sim-runtime--contract-emitter.md) | `local/sim-runtime/crate/xtask` | Emit generated repository contract and index fragments for runtime crates. | 0 |
 | [`feature/sim-runtime/host-exec`](features/feature--sim-runtime--host-exec.md) | `crate/sim-lib-exec` | Expose bounded process execution as a capability-gated host primitive outside the kernel. | 1 |
+| [`feature/sim-runtime/incremental-query-core`](features/feature--sim-runtime--incremental-query-core.md) | `crate/sim-incremental-core` | Provide the generic memo graph algorithm that runtime organs can wrap without depending on SIM value surfaces. | 1 |
 | [`feature/sim-runtime/library-loading`](features/feature--sim-runtime--library-loading.md) | `local/sim-runtime/crate/sim-lib-standard-core` | Load standard and language-profile runtime libraries through stable export records. | 1 |
 | [`feature/sim-runtime/organs`](features/feature--sim-runtime--organs.md) | `crate/sim-lib-binding` | Provide binding, control, logic, pattern, mutation, and sequence organs as loadable runtime libraries. | 1 |
 | [`feature/sim-sdk/conformance-contract`](features/feature--sim-sdk--conformance-contract.md) | `crate/sim-conformance` | Run the SDK conformance contract as a checked operational recipe. | 1 |

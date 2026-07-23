@@ -4,6 +4,7 @@ Published commit: `fa56494f87760043f310441339fbc065054d6442`.
 
 ## Crates
 
+- `sim-incremental-core`
 - `sim-lib-binding`
 - `sim-lib-control`
 - `sim-lib-core`

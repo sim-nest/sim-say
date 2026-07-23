@@ -49,6 +49,7 @@
 | `crate/sim-config` | `crate` | sim-config |
 | `crate/sim-conformance` | `crate` | sim-conformance |
 | `crate/sim-cookbook` | `crate` | sim-cookbook |
+| `crate/sim-incremental-core` | `crate` | sim-incremental-core |
 | `crate/sim-index-core` | `crate` | sim-index-core |
 | `crate/sim-kernel` | `crate` | sim-kernel |
 | `crate/sim-ledger` | `crate` | sim-ledger |
