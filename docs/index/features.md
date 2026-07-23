@@ -38,6 +38,7 @@
 | [`feature/sim-foundation/index-graph-core`](features/feature--sim-foundation--index-graph-core.md) | `crate/sim-index-core` | 0 |
 | [`feature/sim-foundation/library-macros`](features/feature--sim-foundation--library-macros.md) | `crate/sim-macros` | 0 |
 | [`feature/sim-foundation/table-dir-core`](features/feature--sim-foundation--table-dir-core.md) | `crate/sim-table-core` | 1 |
+| [`feature/sim-foundation/table-path-references`](features/feature--sim-foundation--table-path-references.md) | `crate/sim-table-core` | 1 |
 | [`feature/sim-foundation/value-helpers`](features/feature--sim-foundation--value-helpers.md) | `crate/sim-value` | 1 |
 | [`feature/sim-index/core`](features/feature--sim-index--core.md) | `local/sim-tooling/crate/xtask` | 1 |
 | [`feature/sim-kernel/contract-emitter`](features/feature--sim-kernel--contract-emitter.md) | `local/sim-kernel/crate/xtask` | 0 |

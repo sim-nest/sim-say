@@ -424,6 +424,7 @@
 | `feature/sim-femm/linear-solvers` | `spec-test/sim-femm/crates/sim-lib-femm-solve/src/implementation` | `crate/sim-lib-femm-solve` | `spec-test` | `crates/sim-lib-femm-solve/src/implementation.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-foundation/cookbook` | `spec-test/sim-foundation/crates/sim-cookbook/src/model` | `crate/sim-cookbook` | `spec-test` | `crates/sim-cookbook/src/model.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-foundation/table-dir-core` | `spec-test/sim-foundation/crates/sim-table-core/src/tests` | `crate/sim-table-core` | `spec-test` | `crates/sim-table-core/src/tests.rs` | `` | `cargo test` | `true` | `true` |
+| `feature/sim-foundation/table-path-references` | `spec-test/sim-foundation/crates/sim-table-core/src/tests` | `crate/sim-table-core` | `spec-test` | `crates/sim-table-core/src/tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-foundation/value-helpers` | `spec-test/sim-foundation/crates/sim-value/src/tests` | `crate/sim-value` | `spec-test` | `crates/sim-value/src/tests.rs` | `shape` | `cargo test` | `true` | `true` |
 | `feature/sim-ledger/ledger-command` | `spec-test/sim-ledger/crates/sim-ledger-cli/src/tests` | `crate/sim-ledger-cli` | `spec-test` | `crates/sim-ledger-cli/src/tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-ledger/ledger-libraries` | `spec-test/sim-ledger/crates/sim-lib-ledger-books/src/lib` | `crate/sim-lib-ledger-books` | `spec-test` | `crates/sim-lib-ledger-books/src/lib.rs` | `` | `cargo test` | `true` | `true` |
