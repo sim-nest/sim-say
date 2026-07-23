@@ -1,6 +1,6 @@
 # sim-office
 
-Published commit: `ae25d36fb5d09ca919faf31430a1fbc6837111f0`.
+Published commit: `04d71367b1e689841e94ccf38b303d5f9719dfc3`.
 
 ## Crates
 
@@ -20,7 +20,6 @@ Published commit: `ae25d36fb5d09ca919faf31430a1fbc6837111f0`.
 - `sim-site-dalux`
 - `sim-site-libreoffice`
 - `sim-site-msgraph`
-- `sim-site-powerproject`
 - `sim-site-sharepoint`
 
 ## Contracts

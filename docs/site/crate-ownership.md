@@ -66,6 +66,7 @@
 | `sim-wasm-abi` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-mspdi` | [sim-construction](../repos/sim-construction.md) |
 | `sim-lib-construction-project` | [sim-construction](../repos/sim-construction.md) |
+| `sim-site-powerproject` | [sim-construction](../repos/sim-construction.md) |
 | `sim-lib-discrete` | [sim-discrete](../repos/sim-discrete.md) |
 | `sim-lib-discrete-algebra` | [sim-discrete](../repos/sim-discrete.md) |
 | `sim-lib-discrete-comb` | [sim-discrete](../repos/sim-discrete.md) |
@@ -196,7 +197,6 @@
 | `sim-site-dalux` | [sim-office](../repos/sim-office.md) |
 | `sim-site-libreoffice` | [sim-office](../repos/sim-office.md) |
 | `sim-site-msgraph` | [sim-office](../repos/sim-office.md) |
-| `sim-site-powerproject` | [sim-office](../repos/sim-office.md) |
 | `sim-site-sharepoint` | [sim-office](../repos/sim-office.md) |
 | `sim-run` | [sim-run](../repos/sim-run.md) |
 | `sim-run-core` | [sim-run](../repos/sim-run.md) |

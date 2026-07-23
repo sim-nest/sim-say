@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-doc-site`
 - Canonical key: `crate/sim-lib-doc-site/feature-sim-office-office-site-workflows`
 
-Model document stores, mail and calendar summaries, planning data, and enterprise site reads.
+Model document stores, mail and calendar summaries, and enterprise site reads.
 
 ## Anchors
 
@@ -17,13 +17,11 @@ Model document stores, mail and calendar summaries, planning data, and enterpris
 - `anchor/crate/sim-site-dalux`
 - `anchor/crate/sim-site-libreoffice`
 - `anchor/crate/sim-site-msgraph`
-- `anchor/crate/sim-site-powerproject`
 - `anchor/crate/sim-site-sharepoint`
 - `anchor/export/sim-lib-mail/site/msgraph`
 - `anchor/export/sim-site-dalux/site/dalux`
 - `anchor/export/sim-site-libreoffice/site/libreoffice`
 - `anchor/export/sim-site-msgraph/site/msgraph`
-- `anchor/export/sim-site-powerproject/site/powerproject`
 - `anchor/export/sim-site-sharepoint/site/sharepoint`
 
 ## Specimens

@@ -61,6 +61,7 @@
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-construction"}
 {"card": {"id": "cookbook/construction/project", "kind": "cookbook-recipe", "owner": "sim-lib-construction-project", "summary": "Project charter records and evidence readiness."}, "repo": "sim-construction"}
 {"card": {"id": "cookbook/office/mspdi", "kind": "cookbook-recipe", "owner": "sim-codec-mspdi", "summary": "Microsoft Project XML exchange for local Gantt documents."}, "repo": "sim-construction"}
+{"card": {"id": "cookbook/office/powerproject-site", "kind": "cookbook-recipe", "owner": "sim-site-powerproject", "summary": "Powerproject and Project for the web placements for Gantt plans."}, "repo": "sim-construction"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-construction"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-discrete"}
 {"card": {"id": "cookbook/discrete", "kind": "cookbook-recipe", "owner": "sim-lib-discrete", "summary": "Runtime-facing discrete matrix, graph, and transform descriptors."}, "repo": "sim-discrete"}
@@ -211,7 +212,6 @@
 {"card": {"id": "cookbook/office/odf", "kind": "cookbook-recipe", "owner": "sim-codec-odf", "summary": "Local .ods and .odp packages for sheet and deck documents."}, "repo": "sim-office"}
 {"card": {"id": "cookbook/office/ooxml", "kind": "cookbook-recipe", "owner": "sim-codec-ooxml", "summary": "Local .xlsx and .pptx packages for sheet and deck documents."}, "repo": "sim-office"}
 {"card": {"id": "cookbook/office/pack", "kind": "cookbook-recipe", "owner": "sim-lib-office-pack", "summary": "Preview annual accounts exports before live mail or archive actions."}, "repo": "sim-office"}
-{"card": {"id": "cookbook/office/powerproject-site", "kind": "cookbook-recipe", "owner": "sim-site-powerproject", "summary": "Powerproject and Project for the web placements for Gantt plans."}, "repo": "sim-office"}
 {"card": {"id": "cookbook/office/sharepoint-site", "kind": "cookbook-recipe", "owner": "sim-site-sharepoint", "summary": "Modeled SharePoint list, drive, and REST fallback operations."}, "repo": "sim-office"}
 {"card": {"id": "cookbook/office/sheet", "kind": "cookbook-recipe", "owner": "sim-lib-sheet", "summary": "Exact local sheets and open cell edits."}, "repo": "sim-office"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-office"}
