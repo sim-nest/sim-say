@@ -277,10 +277,13 @@
 | `specimen` | `lisp` | crates/sim-lib-numbers-tensor-bcast/recipes/01-basics/broadcast-descriptor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-tensor-bit/recipes/01-basics/bit-tensor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-tensor-cmplxf/recipes/01-basics/cmplxf-tensor/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-numbers-tensor-f32/recipes/01-basics/f32-tensor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-tensor-f64/recipes/01-basics/f64-tensor/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-numbers-tensor-half/recipes/01-basics/half-tensor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-tensor-i64/recipes/01-basics/i64-tensor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-tensor-linalg/recipes/01-basics/linalg-ops/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-tensor-rat64/recipes/01-basics/rat64-tensor/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-numbers-tensor/recipes/01-basics/tensor-cast/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-tensor/recipes/01-basics/tensor-constructor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-tensor/recipes/01-basics/tensor-scale/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-openai-server/recipes/01-basics/fixture-chat/recipe.toml |

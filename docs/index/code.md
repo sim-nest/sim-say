@@ -155,7 +155,9 @@
 | `crate/sim-lib-numbers-tensor-bcast` | `crate` | sim-lib-numbers-tensor-bcast | 1 |
 | `crate/sim-lib-numbers-tensor-bit` | `crate` | sim-lib-numbers-tensor-bit | 1 |
 | `crate/sim-lib-numbers-tensor-cmplxf` | `crate` | sim-lib-numbers-tensor-cmplxf | 1 |
+| `crate/sim-lib-numbers-tensor-f32` | `crate` | sim-lib-numbers-tensor-f32 | 1 |
 | `crate/sim-lib-numbers-tensor-f64` | `crate` | sim-lib-numbers-tensor-f64 | 1 |
+| `crate/sim-lib-numbers-tensor-half` | `crate` | sim-lib-numbers-tensor-half | 1 |
 | `crate/sim-lib-numbers-tensor-i64` | `crate` | sim-lib-numbers-tensor-i64 | 1 |
 | `crate/sim-lib-numbers-tensor-linalg` | `crate` | sim-lib-numbers-tensor-linalg | 1 |
 | `crate/sim-lib-numbers-tensor-rat64` | `crate` | sim-lib-numbers-tensor-rat64 | 1 |
@@ -413,7 +415,7 @@
 | `repo/sim-kernel` | `repo` | sim-kernel | 3 |
 | `repo/sim-ledger` | `repo` | sim-ledger | 7 |
 | `repo/sim-music` | `repo` | sim-music | 47 |
-| `repo/sim-numbers` | `repo` | sim-numbers | 32 |
+| `repo/sim-numbers` | `repo` | sim-numbers | 34 |
 | `repo/sim-office` | `repo` | sim-office | 19 |
 | `repo/sim-run` | `repo` | sim-run | 9 |
 | `repo/sim-runtime` | `repo` | sim-runtime | 25 |

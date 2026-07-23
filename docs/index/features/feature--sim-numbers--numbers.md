@@ -36,7 +36,9 @@ Provide arithmetic, exact, floating, symbolic, tensor, and statistics number dom
 - `anchor/crate/sim-lib-numbers-tensor-bcast`
 - `anchor/crate/sim-lib-numbers-tensor-bit`
 - `anchor/crate/sim-lib-numbers-tensor-cmplxf`
+- `anchor/crate/sim-lib-numbers-tensor-f32`
 - `anchor/crate/sim-lib-numbers-tensor-f64`
+- `anchor/crate/sim-lib-numbers-tensor-half`
 - `anchor/crate/sim-lib-numbers-tensor-i64`
 - `anchor/crate/sim-lib-numbers-tensor-linalg`
 - `anchor/crate/sim-lib-numbers-tensor-rat64`
@@ -61,7 +63,9 @@ Provide arithmetic, exact, floating, symbolic, tensor, and statistics number dom
 - `anchor/runtime-lib/sim-lib-numbers-tensor-bcast/tensor-broadcast-lib`
 - `anchor/runtime-lib/sim-lib-numbers-tensor-bit/bit-tensor-lib`
 - `anchor/runtime-lib/sim-lib-numbers-tensor-cmplxf/complex-ftensor-lib`
+- `anchor/runtime-lib/sim-lib-numbers-tensor-f32/f32-tensor-lib`
 - `anchor/runtime-lib/sim-lib-numbers-tensor-f64/f64-tensor-lib`
+- `anchor/runtime-lib/sim-lib-numbers-tensor-half/half-tensor-lib`
 - `anchor/runtime-lib/sim-lib-numbers-tensor-i64/i64-tensor-lib`
 - `anchor/runtime-lib/sim-lib-numbers-tensor-linalg/tensor-linalg-lib`
 - `anchor/runtime-lib/sim-lib-numbers-tensor-rat64/rat64-tensor-lib`

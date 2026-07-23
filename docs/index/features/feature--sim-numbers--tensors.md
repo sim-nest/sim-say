@@ -6,7 +6,7 @@
 - Subject: `local/sim-numbers/crate/sim-lib-numbers-tensor`
 - Canonical key: `crate/sim-lib-numbers-tensor/feature-sim-numbers-tensors`
 
-Provide the canonical storage-polymorphic runtime Tensor value, checked host or resident observation, typed tensor descriptors, broadcasting, and matrix operations.
+Provide the canonical storage-polymorphic runtime Tensor value, checked host or resident observation, typed tensor descriptors, explicit casts, broadcasting, and matrix operations.
 
 ## Anchors
 
@@ -14,14 +14,18 @@ Provide the canonical storage-polymorphic runtime Tensor value, checked host or 
 - `anchor/crate/sim-lib-numbers-tensor-bcast`
 - `anchor/crate/sim-lib-numbers-tensor-bit`
 - `anchor/crate/sim-lib-numbers-tensor-cmplxf`
+- `anchor/crate/sim-lib-numbers-tensor-f32`
 - `anchor/crate/sim-lib-numbers-tensor-f64`
+- `anchor/crate/sim-lib-numbers-tensor-half`
 - `anchor/crate/sim-lib-numbers-tensor-i64`
 - `anchor/crate/sim-lib-numbers-tensor-linalg`
 - `anchor/crate/sim-lib-numbers-tensor-rat64`
 - `anchor/runtime-lib/sim-lib-numbers-tensor-bcast/tensor-broadcast-lib`
 - `anchor/runtime-lib/sim-lib-numbers-tensor-bit/bit-tensor-lib`
 - `anchor/runtime-lib/sim-lib-numbers-tensor-cmplxf/complex-ftensor-lib`
+- `anchor/runtime-lib/sim-lib-numbers-tensor-f32/f32-tensor-lib`
 - `anchor/runtime-lib/sim-lib-numbers-tensor-f64/f64-tensor-lib`
+- `anchor/runtime-lib/sim-lib-numbers-tensor-half/half-tensor-lib`
 - `anchor/runtime-lib/sim-lib-numbers-tensor-i64/i64-tensor-lib`
 - `anchor/runtime-lib/sim-lib-numbers-tensor-linalg/tensor-linalg-lib`
 - `anchor/runtime-lib/sim-lib-numbers-tensor-rat64/rat64-tensor-lib`
@@ -30,6 +34,7 @@ Provide the canonical storage-polymorphic runtime Tensor value, checked host or 
 - `anchor/rustdoc/sim-lib-numbers-tensor-linalg/tensor-linalg-lib`
 - `anchor/rustdoc/sim-lib-numbers-tensor/boxed-tensor-storage`
 - `anchor/rustdoc/sim-lib-numbers-tensor/build_tensor_value`
+- `anchor/rustdoc/sim-lib-numbers-tensor/cast_tensor`
 - `anchor/rustdoc/sim-lib-numbers-tensor/checked_element_count`
 - `anchor/rustdoc/sim-lib-numbers-tensor/spec-tensor`
 - `anchor/rustdoc/sim-lib-numbers-tensor/tensor`

@@ -155,7 +155,9 @@
 | `crate/sim-lib-numbers-tensor-bcast` | `crate` | sim-lib-numbers-tensor-bcast |
 | `crate/sim-lib-numbers-tensor-bit` | `crate` | sim-lib-numbers-tensor-bit |
 | `crate/sim-lib-numbers-tensor-cmplxf` | `crate` | sim-lib-numbers-tensor-cmplxf |
+| `crate/sim-lib-numbers-tensor-f32` | `crate` | sim-lib-numbers-tensor-f32 |
 | `crate/sim-lib-numbers-tensor-f64` | `crate` | sim-lib-numbers-tensor-f64 |
+| `crate/sim-lib-numbers-tensor-half` | `crate` | sim-lib-numbers-tensor-half |
 | `crate/sim-lib-numbers-tensor-i64` | `crate` | sim-lib-numbers-tensor-i64 |
 | `crate/sim-lib-numbers-tensor-linalg` | `crate` | sim-lib-numbers-tensor-linalg |
 | `crate/sim-lib-numbers-tensor-rat64` | `crate` | sim-lib-numbers-tensor-rat64 |
