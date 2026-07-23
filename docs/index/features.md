@@ -80,8 +80,11 @@
 | [`feature/sim-runtime/contract-emitter`](features/feature--sim-runtime--contract-emitter.md) | `local/sim-runtime/crate/xtask` | 0 |
 | [`feature/sim-runtime/host-exec`](features/feature--sim-runtime--host-exec.md) | `crate/sim-lib-exec` | 1 |
 | [`feature/sim-runtime/incremental-query-core`](features/feature--sim-runtime--incremental-query-core.md) | `crate/sim-incremental-core` | 1 |
+| [`feature/sim-runtime/incremental-query-organ`](features/feature--sim-runtime--incremental-query-organ.md) | `crate/sim-lib-incremental` | 1 |
 | [`feature/sim-runtime/library-loading`](features/feature--sim-runtime--library-loading.md) | `local/sim-runtime/crate/sim-lib-standard-core` | 1 |
-| [`feature/sim-runtime/organs`](features/feature--sim-runtime--organs.md) | `crate/sim-lib-binding` | 1 |
+| [`feature/sim-runtime/mutation-organ`](features/feature--sim-runtime--mutation-organ.md) | `local/sim-runtime/crate/sim-lib-mutation` | 1 |
+| [`feature/sim-runtime/namespace-organ`](features/feature--sim-runtime--namespace-organ.md) | `crate/sim-lib-namespace` | 1 |
+| [`feature/sim-runtime/organs`](features/feature--sim-runtime--organs.md) | `crate/sim-lib-binding` | 2 |
 | [`feature/sim-sdk/conformance-contract`](features/feature--sim-sdk--conformance-contract.md) | `crate/sim-conformance` | 1 |
 | [`feature/sim-sdk/device-recipes`](features/feature--sim-sdk--device-recipes.md) | `crate/sim-nest` | 1 |
 | [`feature/sim-sdk/facade-codecs`](features/feature--sim-sdk--facade-codecs.md) | `crate/sim-nest` | 0 |

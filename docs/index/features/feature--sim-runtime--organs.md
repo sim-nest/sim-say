@@ -6,13 +6,14 @@
 - Subject: `crate/sim-lib-binding`
 - Canonical key: `crate/sim-lib-binding/feature-sim-runtime-organs`
 
-Provide binding, control, logic, pattern, mutation, and sequence organs as loadable runtime libraries.
+Provide binding, control, logic, pattern, incremental, mutation, namespace, and sequence organs as reusable runtime behavior.
 
 ## Anchors
 
 - `anchor/crate/sim-lib-binding`
 - `anchor/crate/sim-lib-control`
 - `anchor/crate/sim-lib-dispatch`
+- `anchor/crate/sim-lib-incremental`
 - `anchor/crate/sim-lib-logic`
 - `anchor/crate/sim-lib-mutation`
 - `anchor/crate/sim-lib-namespace`
@@ -20,202 +21,262 @@ Provide binding, control, logic, pattern, mutation, and sequence organs as loada
 - `anchor/crate/sim-lib-sequence`
 - `anchor/runtime-lib/sim-lib-binding/binding-lib`
 - `anchor/runtime-lib/sim-lib-control/control-lib`
+- `anchor/runtime-lib/sim-lib-incremental/incremental-lib`
 - `anchor/runtime-lib/sim-lib-logic/logic-lib`
 - `anchor/runtime-lib/sim-lib-pattern/pattern-lib`
 - `anchor/runtime-lib/sim-lib-sequence/sequence-lib`
 
 ## Specimens
 
+- `spec-test/sim-runtime/crates/sim-lib-incremental/src/tests`
 - `spec-test/sim-runtime/crates/sim-lib-logic/src/tests/organ_proof`
 
 ## Worked Example
 
-Specimen `spec-test/sim-runtime/crates/sim-lib-logic/src/tests/organ_proof` is checked by `cargo test`.
+Specimen `spec-test/sim-runtime/crates/sim-lib-incremental/src/tests` is checked by `cargo test`.
 
-Source `crates/sim-lib-logic/src/tests/organ_proof.rs`:
+Source `crates/sim-lib-incremental/src/tests.rs`:
 
 ```rust
-use std::sync::{
-    Arc,
-    atomic::{AtomicUsize, Ordering},
+// conformance: incremental query organ callables, cutoff, reports, and Card projection
+
+use sim_kernel::{
+    Args, Cx, Error, Expr, Ref, Symbol, Value,
+    card::{card_for_ref, card_kind_predicate},
+    force_list_to_vec,
+    standard::standard_organ_kind,
 };
 
-// conformance: runtime organs prove facts through the logic library.
+use crate::*;
 
-use sim_kernel::{Cx, DefaultFactory, EagerPolicy, Expr, NumberLiteral, ShapeMatch, Symbol};
+use sim_kernel::testing::bare_cx as cx;
 
-use crate::{
-    LogicConfig, LogicDb,
-    all_solutions::{FindallRequest, findall_through_sequence_with_probe},
-    env::LogicEnv,
-    query::query_all,
-};
-
-fn cx_with_number_tower() -> Cx {
-    let mut cx = Cx::new(Arc::new(EagerPolicy), Arc::new(DefaultFactory));
-    cx.load_lib(&sim_lib_numbers_arith::NumbersArithmeticLib::new())
-        .unwrap();
-    cx.load_lib(&sim_lib_numbers_i64::I64NumbersLib::new())
-        .unwrap();
-    cx.load_lib(&sim_lib_numbers_f64::F64NumbersLib::new())
-        .unwrap();
-    cx.load_lib(&sim_lib_numbers_bigint::BigIntNumbersLib::new())
-        .unwrap();
-    cx
+fn string(cx: &mut Cx, value: &str) -> Value {
+    cx.factory().string(value.to_owned()).unwrap()
 }
 
-fn number(domain: &str, canonical: impl Into<String>) -> Expr {
-    Expr::Number(NumberLiteral {
-        domain: Symbol::qualified("numbers", domain),
-        canonical: canonical.into(),
-    })
+fn expr_value(cx: &mut Cx, expr: Expr) -> Value {
+    cx.factory().expr(expr).unwrap()
 }
 
-fn capture<'a>(answer: &'a ShapeMatch, name: &str) -> &'a Expr {
-    answer
-        .captures
-        .exprs()
-        .iter()
-        .find_map(|(symbol, expr)| (symbol == &Symbol::new(name)).then_some(expr))
+fn call(cx: &mut Cx, name: &str, args: Vec<Value>) -> Value {
+    let function = cx
+        .resolve_function(&Symbol::qualified("incremental", name))
+        .unwrap();
+    let callable = function.object().as_callable().unwrap();
+    callable.call(cx, Args::new(args)).unwrap()
+}
+
+fn call_err(cx: &mut Cx, name: &str, args: Vec<Value>) -> Error {
+    let function = cx
+        .resolve_function(&Symbol::qualified("incremental", name))
+        .unwrap();
+    let callable = function.object().as_callable().unwrap();
+    callable.call(cx, Args::new(args)).unwrap_err()
+}
+
+fn register_query(cx: &mut Cx, engine: &Value, key: &str, source: Expr) -> Value {
+    let key = string(cx, key);
+    let source = expr_value(cx, source);
+    call(cx, "register", vec![engine.clone(), key, source])
+}
+
+fn verify_query(cx: &mut Cx, engine: &Value, key: &str) -> Value {
+    let key = string(cx, key);
+    call(cx, "verify", vec![engine.clone(), key])
+}
+
+fn invalidate_key(cx: &mut Cx, engine: &Value, key: &str) -> Value {
+    let key = string(cx, key);
+    call(cx, "invalidate", vec![engine.clone(), key])
+}
+
+fn report(cx: &mut Cx, name: &str, engine: &Value) -> Value {
+    call(cx, name, vec![engine.clone()])
+}
+
+fn keyed_report(cx: &mut Cx, name: &str, engine: &Value, key: &str) -> Value {
+    let key = string(cx, key);
+    call(cx, name, vec![engine.clone(), key])
+}
+
+fn table_get(cx: &mut Cx, table_value: &Value, key: &str) -> Value {
+    table_value
+        .object()
+        .as_table_impl()
+        .unwrap()
+        .get(cx, Symbol::new(key))
         .unwrap()
 }
 
-fn color_db() -> LogicDb {
-    let mut db = LogicDb::new();
-    for color in ["red", "green", "blue"] {
-        db.assert_clause_expr(Expr::List(vec![
-            Expr::Symbol(Symbol::new("fact")),
-            Expr::List(vec![
-                Expr::Symbol(Symbol::new("color")),
-                Expr::Symbol(Symbol::new(color)),
-            ]),
-        ]))
-        .unwrap();
+fn number_text(cx: &mut Cx, value: &Value) -> String {
+    match value.object().as_expr(cx).unwrap() {
+        Expr::Number(number) => number.canonical,
+        other => panic!("expected number, got {other:?}"),
     }
-    db
+}
+
+fn grant_all(cx: &mut Cx) {
+    cx.grant(incremental_read_capability());
+    cx.grant(incremental_write_capability());
+    cx.grant(incremental_verify_capability());
+}
+
+fn read_expr(key: &str) -> Expr {
+    Expr::Call {
+        operator: Box::new(Expr::Symbol(Symbol::qualified("incremental", "read"))),
+        args: vec![Expr::String(key.to_owned())],
+    }
+}
+
+fn missing_expr(key: &str) -> Expr {
+    Expr::Call {
+        operator: Box::new(Expr::Symbol(Symbol::qualified("incremental", "missing"))),
+        args: vec![Expr::String(key.to_owned())],
+    }
 }
 
 #[test]
-fn is_routes_mixed_terms_through_number_tower() {
-    let mut cx = cx_with_number_tower();
-    let answers = query_all(
-        &mut cx,
-        &LogicDb::new(),
-        &LogicConfig::default(),
-        Expr::List(vec![
-            Expr::Symbol(Symbol::new("is")),
-            Expr::Local(Symbol::new("X")),
-            Expr::List(vec![
-                Expr::Symbol(Symbol::new("+")),
-                number("i64", "1"),
-                number("f64", "0.5"),
-            ]),
-        ]),
-        Some(1),
-    )
-    .unwrap();
+fn callables_have_shape_contracts_and_capability_gates() {
+    let mut cx = cx();
+    install_incremental_lib(&mut cx).unwrap();
+    let engine = call(&mut cx, "engine", Vec::new());
 
-    assert_eq!(answers.len(), 1);
-    assert_eq!(capture(&answers[0], "X"), &number("f64", "1.5"));
-}
+    for name in [
+        "engine",
+        "register",
+        "invalidate",
+        "verify",
+        "explain",
+        "snapshot",
+        "metrics",
+    ] {
+        let function = cx
+            .resolve_function(&Symbol::qualified("incremental", name))
+            .unwrap();
+        let callable = function.object().as_callable().unwrap();
+        assert!(
+            callable.browse_args_shape(&mut cx).unwrap().is_some(),
+            "{name}"
+        );
+        assert!(
+            callable.browse_result_shape(&mut cx).unwrap().is_some(),
+            "{name}"
+        );
+    }
 
-#[test]
-fn is_widens_overflowing_integer_terms_through_number_tower() {
-    let mut cx = cx_with_number_tower();
-    let answers = query_all(
-        &mut cx,
-        &LogicDb::new(),
-        &LogicConfig::default(),
-        Expr::List(vec![
-            Expr::Symbol(Symbol::new("is")),
-            Expr::Local(Symbol::new("X")),
-            Expr::List(vec![
-                Expr::Symbol(Symbol::new("+")),
-                number("i64", i64::MAX.to_string()),
-                number("i64", "1"),
-            ]),
-        ]),
-        Some(1),
-    )
-    .unwrap();
+    let key = string(&mut cx, "leaf");
+    let source = expr_value(&mut cx, Expr::String("same".to_owned()));
+    let denied = call_err(&mut cx, "register", vec![engine.clone(), key, source]);
+    assert!(
+        matches!(denied, Error::CapabilityDenied { capability } if capability == incremental_write_capability())
+    );
 
-    assert_eq!(answers.len(), 1);
-    assert_eq!(
-        capture(&answers[0], "X"),
-        &number("bigint", "9223372036854775808")
+    cx.grant(incremental_write_capability());
+    register_query(&mut cx, &engine, "leaf", Expr::String("same".to_owned()));
+
+    let key = string(&mut cx, "leaf");
+    let denied = call_err(&mut cx, "verify", vec![engine, key]);
+    assert!(
+        matches!(denied, Error::CapabilityDenied { capability } if capability == incremental_verify_capability())
     );
 }
 
 #[test]
-fn findall_collects_answers_forced_from_sequence_engine() {
-    let mut cx = Cx::new(Arc::new(EagerPolicy), Arc::new(DefaultFactory));
-    let db = color_db();
-    let config = LogicConfig::default();
-    let forced = Arc::new(AtomicUsize::new(0));
-    let probe = Arc::clone(&forced);
-    let template = Expr::Local(Symbol::new("X"));
-    let goal = Expr::List(vec![
-        Expr::Symbol(Symbol::new("color")),
-        Expr::Local(Symbol::new("X")),
-    ]);
-    let output = Expr::Local(Symbol::new("Xs"));
-    let env = LogicEnv::new();
-    let envs = findall_through_sequence_with_probe(
+fn query_family_tracks_missing_invalidation_and_cutoff() {
+    let mut cx = cx();
+    install_incremental_lib(&mut cx).unwrap();
+    grant_all(&mut cx);
+    let engine = call(&mut cx, "engine", Vec::new());
+    register_query(&mut cx, &engine, "leaf", Expr::String("same".to_owned()));
+    register_query(&mut cx, &engine, "root", read_expr("leaf"));
+    register_query(
         &mut cx,
-        FindallRequest {
-            db: &db,
-            config: &config,
-            template: &template,
-            goal: &goal,
-            output: &output,
-            env: &env,
-        },
-        |_| {
-            probe.fetch_add(1, Ordering::SeqCst);
-        },
-    )
-    .unwrap();
-
-    assert_eq!(forced.load(Ordering::SeqCst), 3);
-    assert_eq!(envs.len(), 1);
-    assert_eq!(
-        envs[0].get(&Symbol::new("Xs")),
-        Some(&Expr::List(vec![
-            Expr::Symbol(Symbol::new("red")),
-            Expr::Symbol(Symbol::new("green")),
-            Expr::Symbol(Symbol::new("blue")),
-        ]))
+        &engine,
+        "guard",
+        Expr::Vector(vec![read_expr("root"), missing_expr("optional")]),
     );
+
+    let verified = verify_query(&mut cx, &engine, "guard");
+    assert_eq!(
+        verified.object().as_expr(&mut cx).unwrap(),
+        Expr::Vector(vec![Expr::String("same".to_owned()), Expr::Bool(false)])
+    );
+    let metrics = report(&mut cx, "metrics", &engine);
+    let executions = table_get(&mut cx, &metrics, "executions");
+    let leaf_count = table_get(&mut cx, &executions, "leaf");
+    assert_eq!(number_text(&mut cx, &leaf_count), "1");
+    let root_count = table_get(&mut cx, &executions, "root");
+    assert_eq!(number_text(&mut cx, &root_count), "1");
+    let guard_count = table_get(&mut cx, &executions, "guard");
+    assert_eq!(number_text(&mut cx, &guard_count), "1");
+
+    verify_query(&mut cx, &engine, "guard");
+    let metrics = report(&mut cx, "metrics", &engine);
+    let executions = table_get(&mut cx, &metrics, "executions");
+    let guard_count = table_get(&mut cx, &executions, "guard");
+    assert_eq!(number_text(&mut cx, &guard_count), "1");
+
+    invalidate_key(&mut cx, &engine, "optional");
+    verify_query(&mut cx, &engine, "guard");
+    let metrics = report(&mut cx, "metrics", &engine);
+    let executions = table_get(&mut cx, &metrics, "executions");
+    let guard_count = table_get(&mut cx, &executions, "guard");
+    assert_eq!(number_text(&mut cx, &guard_count), "2");
+    let root_count = table_get(&mut cx, &executions, "root");
+    assert_eq!(number_text(&mut cx, &root_count), "1");
 }
 
 #[test]
-fn findall_query_projects_answer_template() {
-    let mut cx = Cx::new(Arc::new(EagerPolicy), Arc::new(DefaultFactory));
-    let answers = query_all(
-        &mut cx,
-        &color_db(),
-        &LogicConfig::default(),
-        Expr::List(vec![
-            Expr::Symbol(Symbol::new("findall")),
-            Expr::Local(Symbol::new("X")),
-            Expr::List(vec![
-                Expr::Symbol(Symbol::new("color")),
-                Expr::Local(Symbol::new("X")),
-            ]),
-            Expr::Local(Symbol::new("Xs")),
-        ]),
-        Some(1),
-    )
-    .unwrap();
+fn explanation_snapshot_and_card_projection_are_browseable() {
+    let mut cx = cx();
+    install_incremental_lib(&mut cx).unwrap();
+    grant_all(&mut cx);
+    let engine = call(&mut cx, "engine", Vec::new());
+    register_query(&mut cx, &engine, "leaf", Expr::String("same".to_owned()));
+    register_query(&mut cx, &engine, "root", read_expr("leaf"));
+    verify_query(&mut cx, &engine, "root");
 
-    assert_eq!(answers.len(), 1);
+    let explain = keyed_report(&mut cx, "explain", &engine, "root");
     assert_eq!(
-        capture(&answers[0], "Xs"),
-        &Expr::List(vec![
-            Expr::Symbol(Symbol::new("red")),
-            Expr::Symbol(Symbol::new("green")),
-            Expr::Symbol(Symbol::new("blue")),
-        ])
+        table_get(&mut cx, &explain, "registered")
+            .object()
+            .as_expr(&mut cx)
+            .unwrap(),
+        Expr::Bool(true)
     );
+    assert_ne!(
+        table_get(&mut cx, &explain, "fingerprint")
+            .object()
+            .as_expr(&mut cx)
+            .unwrap(),
+        Expr::Nil
+    );
+
+    let snapshot = keyed_report(&mut cx, "snapshot", &engine, "root");
+    let nodes = table_get(&mut cx, &snapshot, "nodes");
+    let list = nodes.object().as_list().unwrap();
+    let nodes = force_list_to_vec(&mut cx, list, "incremental snapshot nodes").unwrap();
+    assert_eq!(nodes.len(), 2);
+
+    let claims = cx
+        .query_facts(sim_kernel::ClaimPattern {
+            subject: Some(Ref::Symbol(incremental_organ_symbol())),
+            predicate: Some(card_kind_predicate()),
+            object: Some(Ref::Symbol(standard_organ_kind())),
+            include_revoked: false,
+        })
+        .unwrap();
+    assert_eq!(claims.len(), 1);
+    let card = card_for_ref(&mut cx, Ref::Symbol(incremental_organ_symbol())).unwrap();
+    let table = card.object().as_table(&mut cx).unwrap();
+    let entries = table.object().as_table_impl().unwrap();
+    let ops = entries.get(&mut cx, Symbol::new("ops")).unwrap();
+    let list = ops.object().as_list().unwrap();
+    let values = force_list_to_vec(&mut cx, list, "incremental organ ops").unwrap();
+    assert!(values.into_iter().any(|value| {
+        value.object().as_expr(&mut cx).unwrap()
+            == Expr::Symbol(Symbol::qualified("incremental", "register.v1"))
+    }));
 }
 ```

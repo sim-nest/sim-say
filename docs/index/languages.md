@@ -176,6 +176,7 @@
 | `specimen` | `lisp` | crates/sim-lib-forge/recipes/01-basics/eval-harness/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-forge/recipes/01-basics/forge-cli/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-gantt/recipes/01-basics/local-gantt-plan/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-incremental/recipes/01-basics/query-family/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-intent/recipes/01-basics/select-intent/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-lang-cl/recipes/01-basics/matrix-row/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-lang-cl/recipes/01-basics/profile-descriptor/recipe.toml |
@@ -425,6 +426,7 @@
 | `specimen` | `shape` | crates/sim-lib-auto-order/src/lib.rs |
 | `specimen` | `shape` | crates/sim-lib-bridge/src/tests/ask.rs |
 | `specimen` | `shape` | crates/sim-lib-discrete/src/forms.rs |
+| `specimen` | `shape` | crates/sim-lib-incremental/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-lang-prolog/src/conformance.rs |
 | `specimen` | `shape` | crates/sim-lib-logic/src/tests/organ_proof.rs |
 | `specimen` | `shape` | crates/sim-lib-mcp/tests/serve_mcp.rs |

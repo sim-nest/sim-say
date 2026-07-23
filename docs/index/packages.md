@@ -104,6 +104,7 @@
 | `crate/sim-lib-femm-space` | `crate` | sim-lib-femm-space |
 | `crate/sim-lib-femm-tape` | `crate` | sim-lib-femm-tape |
 | `crate/sim-lib-gantt` | `crate` | sim-lib-gantt |
+| `crate/sim-lib-incremental` | `crate` | sim-lib-incremental |
 | `crate/sim-lib-index` | `crate` | sim-lib-index |
 | `crate/sim-lib-lang-cl` | `crate` | sim-lib-lang-cl |
 | `crate/sim-lib-lang-clojure` | `crate` | sim-lib-lang-clojure |

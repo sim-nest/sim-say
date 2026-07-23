@@ -104,6 +104,7 @@
 | `crate/sim-lib-femm-space` | `crate` | sim-lib-femm-space | 0 |
 | `crate/sim-lib-femm-tape` | `crate` | sim-lib-femm-tape | 0 |
 | `crate/sim-lib-gantt` | `crate` | sim-lib-gantt | 0 |
+| `crate/sim-lib-incremental` | `crate` | sim-lib-incremental | 1 |
 | `crate/sim-lib-index` | `crate` | sim-lib-index | 1 |
 | `crate/sim-lib-lang-cl` | `crate` | sim-lib-lang-cl | 1 |
 | `crate/sim-lib-lang-clojure` | `crate` | sim-lib-lang-clojure | 1 |
@@ -419,7 +420,7 @@
 | `repo/sim-numbers` | `repo` | sim-numbers | 34 |
 | `repo/sim-office` | `repo` | sim-office | 18 |
 | `repo/sim-run` | `repo` | sim-run | 9 |
-| `repo/sim-runtime` | `repo` | sim-runtime | 25 |
+| `repo/sim-runtime` | `repo` | sim-runtime | 26 |
 | `repo/sim-sdk` | `repo` | sim-sdk | 64 |
 | `repo/sim-shape` | `repo` | sim-shape | 5 |
 | `repo/sim-storage` | `repo` | sim-storage | 11 |

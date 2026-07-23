@@ -318,6 +318,7 @@
 | `` | `recipe/sim-runtime/crates/sim-lib-core/01-basics/quote-list-basics` | `crate/sim-lib-core` | `recipe` | `crates/sim-lib-core/recipes/01-basics/quote-list-basics/recipe.toml` | `lisp` | `` | `false` | `false` |
 | `` | `recipe/sim-runtime/crates/sim-lib-dispatch/01-basics/select-overload` | `crate/sim-lib-dispatch` | `recipe` | `crates/sim-lib-dispatch/recipes/01-basics/select-overload/recipe.toml` | `lisp` | `` | `false` | `false` |
 | `` | `recipe/sim-runtime/crates/sim-lib-exec/01-basics/bounded-process` | `crate/sim-lib-exec` | `recipe` | `crates/sim-lib-exec/recipes/01-basics/bounded-process/recipe.toml` | `lisp` | `` | `false` | `false` |
+| `` | `recipe/sim-runtime/crates/sim-lib-incremental/01-basics/query-family` | `crate/sim-lib-incremental` | `recipe` | `crates/sim-lib-incremental/recipes/01-basics/query-family/recipe.toml` | `lisp` | `` | `false` | `false` |
 | `` | `recipe/sim-runtime/crates/sim-lib-lang-cl/01-basics/matrix-row` | `crate/sim-lib-lang-cl` | `recipe` | `crates/sim-lib-lang-cl/recipes/01-basics/matrix-row/recipe.toml` | `lisp` | `` | `false` | `false` |
 | `` | `recipe/sim-runtime/crates/sim-lib-lang-cl/01-basics/profile-descriptor` | `crate/sim-lib-lang-cl` | `recipe` | `crates/sim-lib-lang-cl/recipes/01-basics/profile-descriptor/recipe.toml` | `lisp` | `` | `false` | `false` |
 | `` | `recipe/sim-runtime/crates/sim-lib-lang-clojure/01-basics/matrix-row` | `crate/sim-lib-lang-clojure` | `recipe` | `crates/sim-lib-lang-clojure/recipes/01-basics/matrix-row/recipe.toml` | `lisp` | `` | `false` | `false` |
@@ -459,6 +460,8 @@
 | `feature/sim-run/watch` | `spec-test/sim-run/crates/sim-run/tests/watch` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/watch.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-runtime/incremental-query-core` | `spec-test/sim-runtime/crates/sim-incremental-core/src/tests` | `crate/sim-incremental-core` | `spec-test` | `crates/sim-incremental-core/src/tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-runtime/host-exec` | `spec-test/sim-runtime/crates/sim-lib-exec/src/tests` | `crate/sim-lib-exec` | `spec-test` | `crates/sim-lib-exec/src/tests.rs` | `` | `cargo test` | `true` | `true` |
+| `feature/sim-runtime/incremental-query-organ` | `spec-test/sim-runtime/crates/sim-lib-incremental/src/tests` | `crate/sim-lib-incremental` | `spec-test` | `crates/sim-lib-incremental/src/tests.rs` | `shape` | `cargo test` | `true` | `true` |
+| `feature/sim-runtime/organs` | `spec-test/sim-runtime/crates/sim-lib-incremental/src/tests` | `crate/sim-lib-incremental` | `spec-test` | `crates/sim-lib-incremental/src/tests.rs` | `shape` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-runtime/crates/sim-lib-lang-cl/src/conformance` | `crate/sim-lib-lang-cl` | `spec-test` | `crates/sim-lib-lang-cl/src/conformance.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-runtime/crates/sim-lib-lang-cl/src/lib` | `crate/sim-lib-lang-cl` | `spec-test` | `crates/sim-lib-lang-cl/src/lib.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-runtime/crates/sim-lib-lang-clojure/src/conformance` | `crate/sim-lib-lang-clojure` | `spec-test` | `crates/sim-lib-lang-clojure/src/conformance.rs` | `` | `cargo test` | `true` | `true` |
@@ -479,6 +482,8 @@
 | `` | `spec-test/sim-runtime/crates/sim-lib-lang-typed-lazy/src/conformance` | `crate/sim-lib-lang-typed-lazy` | `spec-test` | `crates/sim-lib-lang-typed-lazy/src/conformance.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-runtime/crates/sim-lib-lang-typed-lazy/src/lib` | `crate/sim-lib-lang-typed-lazy` | `spec-test` | `crates/sim-lib-lang-typed-lazy/src/lib.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-runtime/organs` | `spec-test/sim-runtime/crates/sim-lib-logic/src/tests/organ_proof` | `local/sim-runtime/crate/sim-lib-logic` | `spec-test` | `crates/sim-lib-logic/src/tests/organ_proof.rs` | `shape` | `cargo test` | `true` | `true` |
+| `feature/sim-runtime/mutation-organ` | `spec-test/sim-runtime/crates/sim-lib-mutation/src/tests` | `local/sim-runtime/crate/sim-lib-mutation` | `spec-test` | `crates/sim-lib-mutation/src/tests.rs` | `` | `cargo test` | `true` | `true` |
+| `feature/sim-runtime/namespace-organ` | `spec-test/sim-runtime/crates/sim-lib-namespace/src/tests` | `crate/sim-lib-namespace` | `spec-test` | `crates/sim-lib-namespace/src/tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-runtime/capabilities-read-eval` | `spec-test/sim-runtime/crates/sim-lib-standard-core/src/read_construct` | `local/sim-runtime/crate/sim-lib-standard-core` | `spec-test` | `crates/sim-lib-standard-core/src/read_construct.rs` | `shape` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/agents30` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/agents30.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/atelier_self_hosting` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/atelier_self_hosting.rs` | `` | `cargo test` | `true` | `true` |
