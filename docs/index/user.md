@@ -5,7 +5,7 @@
 | Feature | Subject | Summary | Specimens |
 | --- | --- | --- | ---: |
 | [`feature/sim-agent-net/agent-server-tools`](features/feature--sim-agent-net--agent-server-tools.md) | `local/sim-agent-net/crate/sim-lib-server` | Expose agent-facing server, skill, and OpenAI gateway libraries for model-connected hosts. | 1 |
-| [`feature/sim-agent-net/bridge-runtime`](features/feature--sim-agent-net--bridge-runtime.md) | `crate/sim-lib-agent` | Transmit, receive, check, and route symmetric human-model packets with agent and bridge runtime support. | 1 |
+| [`feature/sim-agent-net/bridge-runtime`](features/feature--sim-agent-net--bridge-runtime.md) | `local/sim-agent-net/crate/sim-lib-agent` | Transmit, receive, check, and route symmetric human-model packets with agent and bridge runtime support. | 1 |
 | [`feature/sim-agent-net/eval-fabric-sites`](features/feature--sim-agent-net--eval-fabric-sites.md) | `crate/sim-lib-agent-runner-local` | Place model and stream work through loadable runner, local model, and content-addressed fleet libraries. | 1 |
 | [`feature/sim-agent-net/fabric-fixture-cli`](features/feature--sim-agent-net--fabric-fixture-cli.md) | `crate/sim-lib-stream-fabric` | Replay content-addressed stream-fabric fixtures through the loadable fixture command. | 1 |
 | [`feature/sim-agent-net/forge-intent`](features/feature--sim-agent-net--forge-intent.md) | `local/sim-agent-net/crate/sim-lib-forge` | Compile high-level intent records into checked Forge output through the loadable Forge runtime library. | 1 |
@@ -18,12 +18,12 @@
 | [`feature/sim-citizen/citizen-read-constructs`](features/feature--sim-citizen--citizen-read-constructs.md) | `crate/sim-citizen` | Expose Rust values as runtime citizens with class members, registry rows, and read-construct round trips. | 1 |
 | [`feature/sim-citizen/generated-docs`](features/feature--sim-citizen--generated-docs.md) | `local/sim-citizen/crate/xtask` | Publish generated package, card, rustdoc, and index facts for the citizen crates and helper command. | 0 |
 | [`feature/sim-codecs/bridge-packet-codec`](features/feature--sim-codecs--bridge-packet-codec.md) | `crate/sim-codec-bridge` | Encode and decode Bridge packet workflow data through the Bridge wire grammar. | 1 |
-| [`feature/sim-codecs/codec`](features/feature--sim-codecs--codec.md) | `crate/sim-codec` | Define codec positions, limits, syntax surfaces, wire surfaces, and loadable codec runtime libraries. | 1 |
+| [`feature/sim-codecs/codec`](features/feature--sim-codecs--codec.md) | `local/sim-codecs/crate/sim-codec` | Define codec positions, limits, syntax surfaces, wire surfaces, and loadable codec runtime libraries. | 1 |
 | [`feature/sim-codecs/contract-emitter`](features/feature--sim-codecs--contract-emitter.md) | `local/sim-codecs/crate/xtask` | Emit generated repository contract and index fragments for codec crates. | 0 |
-| [`feature/sim-codecs/domain-syntax-grammars`](features/feature--sim-codecs--domain-syntax-grammars.md) | `crate/sim-codec` | Read and write binary, bitwise, chat, config, document, index, and MCP grammar surfaces. | 1 |
+| [`feature/sim-codecs/domain-syntax-grammars`](features/feature--sim-codecs--domain-syntax-grammars.md) | `local/sim-codecs/crate/sim-codec` | Read and write binary, bitwise, chat, config, document, index, and MCP grammar surfaces. | 1 |
 | [`feature/sim-codecs/expression-syntax-grammars`](features/feature--sim-codecs--expression-syntax-grammars.md) | `crate/sim-codec-lisp` | Read and write Lisp, JSON, Algol, Lua, Compare, and Bridge rendered expression grammars. | 1 |
 | [`feature/sim-codecs/pratt`](features/feature--sim-codecs--pratt.md) | `crate/sim-codec-pratt` | Parse operator-oriented expression languages through the Pratt codec surface. | 1 |
-| [`feature/sim-codecs/wire-protocol-grammars`](features/feature--sim-codecs--wire-protocol-grammars.md) | `crate/sim-codec` | Read and write binary, bitwise, chat, config, document, index, and MCP wire protocols. | 1 |
+| [`feature/sim-codecs/wire-protocol-grammars`](features/feature--sim-codecs--wire-protocol-grammars.md) | `local/sim-codecs/crate/sim-codec` | Read and write binary, bitwise, chat, config, document, index, and MCP wire protocols. | 1 |
 | [`feature/sim-discrete/discrete-algebra`](features/feature--sim-discrete--discrete-algebra.md) | `local/sim-discrete/crate/sim-lib-discrete` | Provide algebra, graph, combinatorics, ranking, and spectral helpers as one reusable discrete-domain stack. | 1 |
 | [`feature/sim-discrete/generated-docs`](features/feature--sim-discrete--generated-docs.md) | `local/sim-discrete/crate/xtask` | Publish generated package, card, rustdoc, and index facts for the discrete algebra crates. | 0 |
 | [`feature/sim-femm/femm-domain-stack`](features/feature--sim-femm--femm-domain-stack.md) | `crate/sim-lib-femm-core` | Collect finite-element mesh, field, material, geometry, solve, post-processing, and ODE helpers into one code-facing domain feature. | 1 |

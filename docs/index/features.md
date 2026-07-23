@@ -5,7 +5,7 @@
 | Feature | Subject | Specimens |
 | --- | --- | ---: |
 | [`feature/sim-agent-net/agent-server-tools`](features/feature--sim-agent-net--agent-server-tools.md) | `local/sim-agent-net/crate/sim-lib-server` | 1 |
-| [`feature/sim-agent-net/bridge-runtime`](features/feature--sim-agent-net--bridge-runtime.md) | `crate/sim-lib-agent` | 1 |
+| [`feature/sim-agent-net/bridge-runtime`](features/feature--sim-agent-net--bridge-runtime.md) | `local/sim-agent-net/crate/sim-lib-agent` | 1 |
 | [`feature/sim-agent-net/eval-fabric-sites`](features/feature--sim-agent-net--eval-fabric-sites.md) | `crate/sim-lib-agent-runner-local` | 1 |
 | [`feature/sim-agent-net/fabric-fixture-cli`](features/feature--sim-agent-net--fabric-fixture-cli.md) | `crate/sim-lib-stream-fabric` | 1 |
 | [`feature/sim-agent-net/forge-intent`](features/feature--sim-agent-net--forge-intent.md) | `local/sim-agent-net/crate/sim-lib-forge` | 1 |
@@ -18,12 +18,12 @@
 | [`feature/sim-citizen/citizen-read-constructs`](features/feature--sim-citizen--citizen-read-constructs.md) | `crate/sim-citizen` | 1 |
 | [`feature/sim-citizen/generated-docs`](features/feature--sim-citizen--generated-docs.md) | `local/sim-citizen/crate/xtask` | 0 |
 | [`feature/sim-codecs/bridge-packet-codec`](features/feature--sim-codecs--bridge-packet-codec.md) | `crate/sim-codec-bridge` | 1 |
-| [`feature/sim-codecs/codec`](features/feature--sim-codecs--codec.md) | `crate/sim-codec` | 1 |
+| [`feature/sim-codecs/codec`](features/feature--sim-codecs--codec.md) | `local/sim-codecs/crate/sim-codec` | 1 |
 | [`feature/sim-codecs/contract-emitter`](features/feature--sim-codecs--contract-emitter.md) | `local/sim-codecs/crate/xtask` | 0 |
-| [`feature/sim-codecs/domain-syntax-grammars`](features/feature--sim-codecs--domain-syntax-grammars.md) | `crate/sim-codec` | 1 |
+| [`feature/sim-codecs/domain-syntax-grammars`](features/feature--sim-codecs--domain-syntax-grammars.md) | `local/sim-codecs/crate/sim-codec` | 1 |
 | [`feature/sim-codecs/expression-syntax-grammars`](features/feature--sim-codecs--expression-syntax-grammars.md) | `crate/sim-codec-lisp` | 1 |
 | [`feature/sim-codecs/pratt`](features/feature--sim-codecs--pratt.md) | `crate/sim-codec-pratt` | 1 |
-| [`feature/sim-codecs/wire-protocol-grammars`](features/feature--sim-codecs--wire-protocol-grammars.md) | `crate/sim-codec` | 1 |
+| [`feature/sim-codecs/wire-protocol-grammars`](features/feature--sim-codecs--wire-protocol-grammars.md) | `local/sim-codecs/crate/sim-codec` | 1 |
 | [`feature/sim-discrete/discrete-algebra`](features/feature--sim-discrete--discrete-algebra.md) | `local/sim-discrete/crate/sim-lib-discrete` | 1 |
 | [`feature/sim-discrete/generated-docs`](features/feature--sim-discrete--generated-docs.md) | `local/sim-discrete/crate/xtask` | 0 |
 | [`feature/sim-femm/femm-domain-stack`](features/feature--sim-femm--femm-domain-stack.md) | `crate/sim-lib-femm-core` | 1 |

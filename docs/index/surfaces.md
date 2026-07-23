@@ -114,7 +114,7 @@
 | `local/sim-web/site-device/watch-sleep` | `site-device` | `local/sim-web/crate/sim-lib-view` |
 | `local/sim-web/site-device/watch-sport` | `site-device` | `local/sim-web/crate/sim-lib-view` |
 | `model/auto-modeled-work-order` | `model-exchange` | `crate/auto-modeled-work-order` |
-| `model/sim-lib-agent` | `model-exchange` | `crate/sim-lib-agent` |
+| `model/sim-lib-agent` | `model-exchange` | `local/sim-agent-net/crate/sim-lib-agent` |
 | `model/sim-lib-agent-runner-core` | `model-exchange` | `local/sim-agent-net/crate/sim-lib-agent-runner-core` |
 | `model/sim-lib-agent-runner-core-recipe-output-contract-repair` | `model-exchange` | `crate/sim-lib-agent-runner-core-recipe-output-contract-repair` |
 | `model/sim-lib-agent-runner-http` | `model-exchange` | `crate/sim-lib-agent-runner-http` |
