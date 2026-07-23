@@ -69,6 +69,7 @@
 {"card": {"id": "cookbook/discrete-comb", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-comb", "summary": "Combination and permutation descriptors."}, "repo": "sim-discrete"}
 {"card": {"id": "cookbook/discrete-graph", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-graph", "summary": "Graph, edge, traversal, and certificate descriptors."}, "repo": "sim-discrete"}
 {"card": {"id": "cookbook/discrete-rank", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-rank", "summary": "Rank-space descriptors for discrete objects."}, "repo": "sim-discrete"}
+{"card": {"id": "cookbook/discrete-search", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-search", "summary": "Bounded deterministic search recipes."}, "repo": "sim-discrete"}
 {"card": {"id": "cookbook/discrete-spectral", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-spectral", "summary": "FWHT, Walsh signature, and spectral descriptor examples."}, "repo": "sim-discrete"}
 {"card": {"id": "discrete/algebra", "kind": "static-card", "owner": "workspace", "summary": "Semiring matrices, powers, and Kleene closure (the spine)."}, "repo": "sim-discrete"}
 {"card": {"id": "discrete/combinatorics", "kind": "static-card", "owner": "workspace", "summary": "Exact counts, lazy enumerators, and canonical ordinals."}, "repo": "sim-discrete"}

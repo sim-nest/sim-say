@@ -72,6 +72,7 @@
 | `sim-lib-discrete-comb` | [sim-discrete](../repos/sim-discrete.md) |
 | `sim-lib-discrete-graph` | [sim-discrete](../repos/sim-discrete.md) |
 | `sim-lib-discrete-rank` | [sim-discrete](../repos/sim-discrete.md) |
+| `sim-lib-discrete-search` | [sim-discrete](../repos/sim-discrete.md) |
 | `sim-lib-discrete-spectral` | [sim-discrete](../repos/sim-discrete.md) |
 | `sim-lib-femm-assembly` | [sim-femm](../repos/sim-femm.md) |
 | `sim-lib-femm-codec` | [sim-femm](../repos/sim-femm.md) |

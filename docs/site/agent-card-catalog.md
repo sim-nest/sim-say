@@ -8,7 +8,7 @@
 | [sim-citizen](../repos/sim-citizen.md) | 2 | [card-index.json](../contracts/sim-citizen/card-index.json) |
 | [sim-codecs](../repos/sim-codecs.md) | 18 | [card-index.json](../contracts/sim-codecs/card-index.json) |
 | [sim-construction](../repos/sim-construction.md) | 5 | [card-index.json](../contracts/sim-construction/card-index.json) |
-| [sim-discrete](../repos/sim-discrete.md) | 21 | [card-index.json](../contracts/sim-discrete/card-index.json) |
+| [sim-discrete](../repos/sim-discrete.md) | 22 | [card-index.json](../contracts/sim-discrete/card-index.json) |
 | [sim-femm](../repos/sim-femm.md) | 21 | [card-index.json](../contracts/sim-femm/card-index.json) |
 | [sim-foundation](../repos/sim-foundation.md) | 4 | [card-index.json](../contracts/sim-foundation/card-index.json) |
 | [sim-kernel](../repos/sim-kernel.md) | 2 | [card-index.json](../contracts/sim-kernel/card-index.json) |
