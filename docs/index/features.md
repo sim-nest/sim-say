@@ -9,6 +9,7 @@
 | [`feature/sim-agent-net/eval-fabric-sites`](features/feature--sim-agent-net--eval-fabric-sites.md) | `crate/sim-lib-agent-runner-local` | 1 |
 | [`feature/sim-agent-net/fabric-fixture-cli`](features/feature--sim-agent-net--fabric-fixture-cli.md) | `crate/sim-lib-stream-fabric` | 1 |
 | [`feature/sim-agent-net/forge-intent`](features/feature--sim-agent-net--forge-intent.md) | `local/sim-agent-net/crate/sim-lib-forge` | 1 |
+| [`feature/sim-agent-net/genai-assembly`](features/feature--sim-agent-net--genai-assembly.md) | `local/sim-agent-net/crate/sim-lib-agent` | 2 |
 | [`feature/sim-agent-net/generated-docs`](features/feature--sim-agent-net--generated-docs.md) | `local/sim-agent-net/crate/xtask` | 0 |
 | [`feature/sim-agent-net/mcp-server`](features/feature--sim-agent-net--mcp-server.md) | `local/sim-agent-net/crate/sim-lib-mcp` | 1 |
 | [`feature/sim-agent-net/model-runner-framework`](features/feature--sim-agent-net--model-runner-framework.md) | `local/sim-agent-net/crate/sim-lib-agent-runner-core` | 1 |
