@@ -6,27 +6,45 @@
 - Subject: `local/sim-numbers/crate/sim-lib-numbers-tensor`
 - Canonical key: `crate/sim-lib-numbers-tensor/feature-sim-numbers-tensor-execution`
 
-Run canonical Tensor expressions and element-wise broadcast operations through an open TensorExecutor contract and a loadable TensorSite over the standard EvalFabric path.
+Run canonical Tensor expressions, element-wise broadcast operations, reductions, linear algebra, and f32/f64 transcendentals through an open TensorExecutor contract and a loadable TensorSite over the standard EvalFabric path.
 
 ## Anchors
 
 - `anchor/crate/sim-lib-numbers-tensor`
 - `anchor/crate/sim-lib-numbers-tensor-bcast`
+- `anchor/crate/sim-lib-numbers-tensor-linalg`
 - `anchor/export/sim-lib-numbers-tensor/site/tensor`
 - `anchor/runtime-lib/sim-lib-numbers-tensor-bcast/tensor-broadcast-lib`
+- `anchor/runtime-lib/sim-lib-numbers-tensor-linalg/tensor-linalg-lib`
 - `anchor/runtime-lib/sim-lib-numbers-tensor/tensor-numbers-lib`
 - `anchor/rustdoc/sim-lib-numbers-tensor/active_tensor_executor`
 - `anchor/rustdoc/sim-lib-numbers-tensor/add_op_symbol`
+- `anchor/rustdoc/sim-lib-numbers-tensor/cos_op_symbol`
 - `anchor/rustdoc/sim-lib-numbers-tensor/cpu-tensor-executor`
 - `anchor/rustdoc/sim-lib-numbers-tensor/div_op_symbol`
+- `anchor/rustdoc/sim-lib-numbers-tensor/dot_op_symbol`
 - `anchor/rustdoc/sim-lib-numbers-tensor/execute_tensor_binary_op`
+- `anchor/rustdoc/sim-lib-numbers-tensor/execute_tensor_dot`
+- `anchor/rustdoc/sim-lib-numbers-tensor/execute_tensor_matmul`
+- `anchor/rustdoc/sim-lib-numbers-tensor/execute_tensor_norm`
+- `anchor/rustdoc/sim-lib-numbers-tensor/execute_tensor_reduction`
 - `anchor/rustdoc/sim-lib-numbers-tensor/execute_tensor_request`
+- `anchor/rustdoc/sim-lib-numbers-tensor/execute_tensor_transcendental`
+- `anchor/rustdoc/sim-lib-numbers-tensor/execute_tensor_transpose`
 - `anchor/rustdoc/sim-lib-numbers-tensor/execute_tensor_unary_op`
+- `anchor/rustdoc/sim-lib-numbers-tensor/exp_op_symbol`
+- `anchor/rustdoc/sim-lib-numbers-tensor/matmul_exec_op_symbol`
+- `anchor/rustdoc/sim-lib-numbers-tensor/max_op_symbol`
+- `anchor/rustdoc/sim-lib-numbers-tensor/min_op_symbol`
 - `anchor/rustdoc/sim-lib-numbers-tensor/mul_op_symbol`
 - `anchor/rustdoc/sim-lib-numbers-tensor/neg_op_symbol`
+- `anchor/rustdoc/sim-lib-numbers-tensor/norm_op_symbol`
 - `anchor/rustdoc/sim-lib-numbers-tensor/pow_op_symbol`
 - `anchor/rustdoc/sim-lib-numbers-tensor/rem_op_symbol`
+- `anchor/rustdoc/sim-lib-numbers-tensor/sin_op_symbol`
+- `anchor/rustdoc/sim-lib-numbers-tensor/sqrt_op_symbol`
 - `anchor/rustdoc/sim-lib-numbers-tensor/sub_op_symbol`
+- `anchor/rustdoc/sim-lib-numbers-tensor/sum_op_symbol`
 - `anchor/rustdoc/sim-lib-numbers-tensor/tensor-exec-error`
 - `anchor/rustdoc/sim-lib-numbers-tensor/tensor-execution`
 - `anchor/rustdoc/sim-lib-numbers-tensor/tensor-executor`
@@ -36,11 +54,14 @@ Run canonical Tensor expressions and element-wise broadcast operations through a
 - `anchor/rustdoc/sim-lib-numbers-tensor/tensor-request`
 - `anchor/rustdoc/sim-lib-numbers-tensor/tensor-site`
 - `anchor/rustdoc/sim-lib-numbers-tensor/tensor_execute_capability`
+- `anchor/rustdoc/sim-lib-numbers-tensor/tensor_executor_math_op_symbols`
 - `anchor/rustdoc/sim-lib-numbers-tensor/tensor_site_symbol`
+- `anchor/rustdoc/sim-lib-numbers-tensor/transpose_exec_op_symbol`
 
 ## Specimens
 
 - `spec-test/sim-numbers/crates/sim-lib-numbers-tensor-bcast/src/tests`
+- `spec-test/sim-numbers/crates/sim-lib-numbers-tensor-linalg/src/tests`
 - `spec-test/sim-numbers/crates/sim-lib-numbers-tensor/src/tests/execution`
 
 ## Worked Example

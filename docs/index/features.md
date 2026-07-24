@@ -62,7 +62,7 @@
 | [`feature/sim-numbers/generated-docs`](features/feature--sim-numbers--generated-docs.md) | `local/sim-numbers/crate/xtask` | 0 |
 | [`feature/sim-numbers/numbers`](features/feature--sim-numbers--numbers.md) | `crate/sim-lib-numbers-core` | 1 |
 | [`feature/sim-numbers/numeric-pipelines`](features/feature--sim-numbers--numeric-pipelines.md) | `crate/sim-lib-numbers-numeric` | 1 |
-| [`feature/sim-numbers/tensor-execution`](features/feature--sim-numbers--tensor-execution.md) | `local/sim-numbers/crate/sim-lib-numbers-tensor` | 2 |
+| [`feature/sim-numbers/tensor-execution`](features/feature--sim-numbers--tensor-execution.md) | `local/sim-numbers/crate/sim-lib-numbers-tensor` | 3 |
 | [`feature/sim-numbers/tensors`](features/feature--sim-numbers--tensors.md) | `local/sim-numbers/crate/sim-lib-numbers-tensor` | 1 |
 | [`feature/sim-office/document-codecs`](features/feature--sim-office--document-codecs.md) | `crate/sim-lib-office-pack` | 1 |
 | [`feature/sim-office/document-surfaces`](features/feature--sim-office--document-surfaces.md) | `crate/sim-lib-doc-surface` | 1 |
