@@ -48,6 +48,7 @@
 | `docs/sim-auto/generated` | `docs` | `doc-set/sim-auto/generated` |
 | `docs/sim-citizen/generated` | `docs` | `doc-set/sim-citizen/generated` |
 | `docs/sim-codecs/generated` | `docs` | `doc-set/sim-codecs/generated` |
+| `docs/sim-compute/generated` | `docs` | `doc-set/sim-compute/generated` |
 | `docs/sim-construction/generated` | `docs` | `doc-set/sim-construction/generated` |
 | `docs/sim-discrete/generated` | `docs` | `doc-set/sim-discrete/generated` |
 | `docs/sim-femm/generated` | `docs` | `doc-set/sim-femm/generated` |
@@ -71,6 +72,7 @@
 | `local/sim-auto/cli/xtask` | `cli` | `local/sim-auto/crate/xtask` |
 | `local/sim-citizen/cli/xtask` | `cli` | `local/sim-citizen/crate/xtask` |
 | `local/sim-codecs/cli/xtask` | `cli` | `local/sim-codecs/crate/xtask` |
+| `local/sim-compute/cli/xtask` | `cli` | `local/sim-compute/crate/xtask` |
 | `local/sim-construction/cli/xtask` | `cli` | `local/sim-construction/crate/xtask` |
 | `local/sim-discrete/cli/xtask` | `cli` | `local/sim-discrete/crate/xtask` |
 | `local/sim-femm/cli/xtask` | `cli` | `local/sim-femm/crate/xtask` |
@@ -122,6 +124,7 @@
 | `model/sim-lib-agent-runner-http` | `model-exchange` | `crate/sim-lib-agent-runner-http` |
 | `model/sim-lib-agent-runner-local` | `model-exchange` | `crate/sim-lib-agent-runner-local` |
 | `model/sim-lib-agent-runner-process` | `model-exchange` | `crate/sim-lib-agent-runner-process` |
+| `model/sim-lib-compute-model` | `model-exchange` | `crate/sim-lib-compute-model` |
 | `model/sim-lib-openai-server` | `model-exchange` | `local/sim-agent-net/crate/sim-lib-openai-server` |
 | `model/sim-lib-view-agent` | `model-exchange` | `crate/sim-lib-view-agent` |
 | `site/sim-kernel` | `site` | `crate/sim-kernel` |
@@ -131,6 +134,8 @@
 | `site/sim-lib-auto-parts` | `site` | `crate/sim-lib-auto-parts` |
 | `site/sim-lib-auto-vehicle` | `site` | `crate/sim-lib-auto-vehicle` |
 | `site/sim-lib-auto-vendor` | `site` | `crate/sim-lib-auto-vendor` |
+| `site/sim-lib-compute-auto` | `site` | `crate/sim-lib-compute-auto` |
+| `site/sim-lib-compute-model` | `site` | `crate/sim-lib-compute-model` |
 | `site/sim-lib-numbers-f64` | `site` | `crate/sim-lib-numbers-f64` |
 | `site/sim-lib-numbers-tensor` | `site` | `local/sim-numbers/crate/sim-lib-numbers-tensor` |
 | `site/sim-lib-stream-cpal` | `site` | `crate/sim-lib-stream-cpal` |

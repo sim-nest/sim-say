@@ -126,6 +126,8 @@
 | `specimen` | `lisp` | crates/sim-lib-bridge/recipes/01-basics/loom-invalid/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-bridge/recipes/01-basics/loom-valid/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-bridge/recipes/01-basics/loom-woven-repair/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-compute-auto/recipes/01-basics/auto-compute-site/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-compute-model/recipes/01-basics/modeled-resident-matrix/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/late-decision/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/mixed-obligation-gate/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/mobilization-gate/recipe.toml |

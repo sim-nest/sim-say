@@ -12,6 +12,7 @@
         | sim-auto
         | sim-citizen
         | sim-codecs
+        | sim-compute
         | sim-construction
         | sim-discrete
         | sim-femm

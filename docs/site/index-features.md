@@ -26,6 +26,8 @@ Generated from `docs/index/index.cards.jsonl`.
 | `feature/sim-codecs/expression-syntax-grammars` | `crate/sim-codec-lisp` | [features/feature--sim-codecs--expression-syntax-grammars.md](../index/features/feature--sim-codecs--expression-syntax-grammars.md) | 1 | Read and write Lisp, JSON, Algol, Lua, Compare, and Bridge rendered expression grammars. |
 | `feature/sim-codecs/pratt` | `crate/sim-codec-pratt` | [features/feature--sim-codecs--pratt.md](../index/features/feature--sim-codecs--pratt.md) | 1 | Parse operator-oriented expression languages through the Pratt codec surface. |
 | `feature/sim-codecs/wire-protocol-grammars` | `local/sim-codecs/crate/sim-codec` | [features/feature--sim-codecs--wire-protocol-grammars.md](../index/features/feature--sim-codecs--wire-protocol-grammars.md) | 1 | Read and write binary, bitwise, chat, config, document, index, and MCP wire protocols. |
+| `feature/sim-compute/generated-docs` | `local/sim-compute/crate/xtask` | [features/feature--sim-compute--generated-docs.md](../index/features/feature--sim-compute--generated-docs.md) | 0 | Publish generated package, card, rustdoc, recipe, and Index facts for compute providers. |
+| `feature/sim-compute/tensor-providers` | `crate/sim-lib-compute-model` | [features/feature--sim-compute--tensor-providers.md](../index/features/feature--sim-compute--tensor-providers.md) | 3 | Run canonical Tensor requests through modeled resident and automatic compute sites. |
 | `feature/sim-construction/dalux-project-items` | `crate/sim-site-dalux` | [features/feature--sim-construction--dalux-project-items.md](../index/features/feature--sim-construction--dalux-project-items.md) | 2 | Read Dalux project items into local office documents for construction evidence and keep note updates narrow. |
 | `feature/sim-construction/generated-docs` | `local/sim-construction/crate/xtask` | [features/feature--sim-construction--generated-docs.md](../index/features/feature--sim-construction--generated-docs.md) | 0 | Publish generated package, card, recipe, and index facts for construction project-control crates. |
 | `feature/sim-construction/mspdi-schedule-exchange` | `crate/sim-codec-mspdi` | [features/feature--sim-construction--mspdi-schedule-exchange.md](../index/features/feature--sim-construction--mspdi-schedule-exchange.md) | 1 | Round-trip Microsoft Project XML schedules through the portable construction Gantt document model. |
@@ -114,6 +116,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `feature/sim-web/daw-view-surfaces` | `crate/sim-lib-view-daw` | [features/feature--sim-web--daw-view-surfaces.md](../index/features/feature--sim-web--daw-view-surfaces.md) | 1 | Expose synth, stream, placement, and component views through the DAW view library. |
 | `feature/sim-web/device-surfaces` | `local/sim-web/crate/sim-lib-view` | [features/feature--sim-web--device-surfaces.md](../index/features/feature--sim-web--device-surfaces.md) | 1 | Rank and project view surfaces against desktop, phone, watch, and glasses device profiles. |
 | `feature/sim-web/generated-docs` | `local/sim-web/crate/xtask` | [features/feature--sim-web--generated-docs.md](../index/features/feature--sim-web--generated-docs.md) | 0 | Publish generated package, card, recipe, and index facts for browser and view crates. |
+| `feature/sim-web/stateful-tree-scenes` | `local/sim-web/crate/sim-lib-scene` | [features/feature--sim-web--stateful-tree-scenes.md](../index/features/feature--sim-web--stateful-tree-scenes.md) | 2 | Render expandable Scene outlines with explicit disclosure state and total budgets for nodes, depth, encoded bytes, and visible faces. |
 | `feature/sim-web/view-surface` | `local/sim-web/crate/sim-lib-view` | [features/feature--sim-web--view-surface.md](../index/features/feature--sim-web--view-surface.md) | 1 | Expose view and edit surfaces so codecs, browser hosts, and device profiles can render and reverse surface data. |
 | `feature/sim-web/web-shell-host` | `crate/sim-web-shell` | [features/feature--sim-web--web-shell-host.md](../index/features/feature--sim-web--web-shell-host.md) | 1 | Serve browser-facing surfaces through loaded web shell runtime libraries and command entry points. |
 
@@ -165,6 +168,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `docs/sim-auto/generated` | `docs` | `doc-set/sim-auto/generated` |
 | `docs/sim-citizen/generated` | `docs` | `doc-set/sim-citizen/generated` |
 | `docs/sim-codecs/generated` | `docs` | `doc-set/sim-codecs/generated` |
+| `docs/sim-compute/generated` | `docs` | `doc-set/sim-compute/generated` |
 | `docs/sim-construction/generated` | `docs` | `doc-set/sim-construction/generated` |
 | `docs/sim-discrete/generated` | `docs` | `doc-set/sim-discrete/generated` |
 | `docs/sim-femm/generated` | `docs` | `doc-set/sim-femm/generated` |
@@ -188,6 +192,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `local/sim-auto/cli/xtask` | `cli` | `local/sim-auto/crate/xtask` |
 | `local/sim-citizen/cli/xtask` | `cli` | `local/sim-citizen/crate/xtask` |
 | `local/sim-codecs/cli/xtask` | `cli` | `local/sim-codecs/crate/xtask` |
+| `local/sim-compute/cli/xtask` | `cli` | `local/sim-compute/crate/xtask` |
 | `local/sim-construction/cli/xtask` | `cli` | `local/sim-construction/crate/xtask` |
 | `local/sim-discrete/cli/xtask` | `cli` | `local/sim-discrete/crate/xtask` |
 | `local/sim-femm/cli/xtask` | `cli` | `local/sim-femm/crate/xtask` |
@@ -239,6 +244,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `model/sim-lib-agent-runner-http` | `model-exchange` | `crate/sim-lib-agent-runner-http` |
 | `model/sim-lib-agent-runner-local` | `model-exchange` | `crate/sim-lib-agent-runner-local` |
 | `model/sim-lib-agent-runner-process` | `model-exchange` | `crate/sim-lib-agent-runner-process` |
+| `model/sim-lib-compute-model` | `model-exchange` | `crate/sim-lib-compute-model` |
 | `model/sim-lib-openai-server` | `model-exchange` | `local/sim-agent-net/crate/sim-lib-openai-server` |
 | `model/sim-lib-view-agent` | `model-exchange` | `crate/sim-lib-view-agent` |
 | `site/sim-kernel` | `site` | `crate/sim-kernel` |
@@ -248,6 +254,8 @@ Generated from `docs/index/index.cards.jsonl`.
 | `site/sim-lib-auto-parts` | `site` | `crate/sim-lib-auto-parts` |
 | `site/sim-lib-auto-vehicle` | `site` | `crate/sim-lib-auto-vehicle` |
 | `site/sim-lib-auto-vendor` | `site` | `crate/sim-lib-auto-vendor` |
+| `site/sim-lib-compute-auto` | `site` | `crate/sim-lib-compute-auto` |
+| `site/sim-lib-compute-model` | `site` | `crate/sim-lib-compute-model` |
 | `site/sim-lib-numbers-f64` | `site` | `crate/sim-lib-numbers-f64` |
 | `site/sim-lib-numbers-tensor` | `site` | `local/sim-numbers/crate/sim-lib-numbers-tensor` |
 | `site/sim-lib-stream-cpal` | `site` | `crate/sim-lib-stream-cpal` |
