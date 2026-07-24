@@ -293,6 +293,7 @@
 | `specimen` | `lisp` | crates/sim-lib-openai-server/recipes/01-basics/fixture-chat/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pattern/recipes/01-basics/match-destructure/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-chord/recipes/01-basics/major-triad/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-pitch-core/recipes/01-basics/octave-space/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-core/recipes/01-basics/pitch-value/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-dissonance/recipes/01-basics/tritone-score/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-namer-forte/recipes/01-basics/forte-number/recipe.toml |
