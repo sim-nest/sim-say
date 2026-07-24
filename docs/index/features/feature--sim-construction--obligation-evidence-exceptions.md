@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-construction-project`
 - Canonical key: `crate/sim-lib-construction-project/feature-sim-construction-obligation-evidence-exceptions`
 
-Evaluate shared construction requirements and project obligations across open lanes with stable evidence states, validity windows, dependencies, source references, optional policy, bounded exceptions, and deterministic explanations.
+Evaluate shared construction requirements and project obligations across open lanes with stable evidence states, validity windows, graph-composed dependencies, source references, optional policy, bounded exceptions, and deterministic explanation paths.
 
 ## Anchors
 
@@ -15,22 +15,23 @@ Evaluate shared construction requirements and project obligations across open la
 
 ## Specimens
 
+- `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/blocked-gate-graph`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/mixed-obligation-gate`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/obligation_tests`
 
 ## Worked Example
 
-Specimen `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/mixed-obligation-gate` is checked by `sh scripts/check-recipes.sh`.
+Specimen `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/blocked-gate-graph` is checked by `sh scripts/check-recipes.sh`.
 
-Source `crates/sim-lib-construction-project/recipes/01-basics/mixed-obligation-gate/recipe.toml`:
+Source `crates/sim-lib-construction-project/recipes/01-basics/blocked-gate-graph/recipe.toml`:
 
 ```toml
-id = "mixed-obligation-gate"
-title = "Mixed obligation gate"
+id = "blocked-gate-graph"
+title = "Blocked gate graph"
 codec = "lisp"
 setup = "setup.siml"
 purpose = "purpose.md"
-order = 35
-tags = ["construction", "project-control", "obligation", "evidence", "exception", "gate"]
+order = 36
+tags = ["construction", "project-control", "obligation", "dependency-graph", "blocker", "gate"]
 requires = ["construction.project.read", "construction.exception", "codec/lisp"]
 ```
