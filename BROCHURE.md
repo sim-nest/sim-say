@@ -701,9 +701,9 @@ project schedules can cross the Microsoft Project XML boundary with clear loss r
 
 #### sim-lib-construction-project
 
-the construction charter spine that keeps project intent tied to evidence.
+the construction control spine that keeps project facts tied to evidence.
 
-`sim-lib-construction-project` gives a construction team a narrow starting record: project identity, customer intent, delivery model, currency, acceptance, and source references. The readiness result says exactly which charter facts are present and which are still missing.
+`sim-lib-construction-project` gives a construction team a narrow control record: project identity, customer intent, delivery model, currency, acceptance, changes, and source references. It can replay the project as it looked at a chosen point and say exactly what changed between two points.
 
 #### sim-site-dalux
 
