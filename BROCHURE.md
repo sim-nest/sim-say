@@ -175,6 +175,8 @@ piece gives you.
 - **sim-lib-numbers-tensor-i64** -- It gives you fast grids of whole numbers that never overflow into wrong answers.
 - **sim-lib-numbers-tensor-linalg** -- It does the matrix and vector math behind graphics, data science, and engineering.
 - **sim-lib-numbers-tensor-rat64** -- It gives you grids of exact fractions, so array math avoids rounding entirely.
+- **sim-lib-compute-auto** -- `sim-lib-compute-auto` gives SIM a stable automatic tensor placement surface that chooses an available compute site without changing the caller's tensor program.
+- **sim-lib-compute-model** -- `sim-lib-compute-model` gives SIM a deterministic tensor execution site for proving provider behavior before real hardware is involved.
 - **sim-lib-discrete** -- one front door to the whole discrete-math family, where you switch on only the parts you need.
 - **sim-lib-discrete-algebra** -- one calculation core that answers many discrete-math questions by changing what "add" and "multiply" mean.
 - **sim-lib-discrete-comb** -- count and list every way to arrange or choose things, and give each arrangement its own exact number.
@@ -691,6 +693,20 @@ It is the shared handshake that lets SIM pass values to and from sandboxed WebAs
 
 WebAssembly lets code from elsewhere run safely inside a sandbox, and this is the agreed way for SIM and such a module to talk. It defines the exact byte frames that carry values, descriptions, and lists of what a module offers, so both sides read and write them the same way. With that handshake in place, a guest module can be brought in and its offerings surfaced to the runtime as if they were part of it, ready to be called. This handles only the crossing itself -- the framing and the passing of values back and forth -- and leaves what the guest actually does inside its own walls. The result is a clean, well-defined border between the host and any code loaded into the sandbox.
 
+### sim-compute
+
+#### sim-lib-compute-auto
+
+`sim-lib-compute-auto` gives SIM a stable automatic tensor placement surface that chooses an available compute site without changing the caller's tensor program.
+
+`sim-lib-compute-auto` provides `site/compute/auto`, the automatic placement entry point for tensor execution. A caller can ask for an automatic site and let the library select the modeled provider when a compatible profile is installed, falling back to local CPU behavior when no modeled or resident provider is available. The result is a durable handoff point for higher-level numeric code: tensor semantics stay in `sim-numbers`, provider fixtures stay in compute libraries, and the runtime sees one ordinary loadable site.
+
+#### sim-lib-compute-model
+
+`sim-lib-compute-model` gives SIM a deterministic tensor execution site for proving provider behavior before real hardware is involved.
+
+`sim-lib-compute-model` models resident tensor handles, bounded submissions, flush evidence, counters, and explicit failure cases such as out-of-memory, device-loss, and readback errors. It does that without owning tensor semantics: the actual tensor value, shape, dtype, and arithmetic rules remain in `sim-numbers`. The crate is useful for recipes, conformance, and provider development because a host can exercise placement, residency, counters, and failure reporting with stable offline evidence.
+
 ### sim-construction
 
 #### sim-codec-mspdi
@@ -1141,7 +1157,7 @@ This gives you scales and modes as working objects. It defines the diatonic and 
 
 Packs a group of pitches into a compact bit pattern and runs the set-theory operations on it fast.
 
-This models unordered groups of pitches as compact bitmasks. A twelve-slot mask packs the pitch classes into a small integer and supports transposition by rotation, inversion, prime-form normalisation, and the interval-vector census that set theory leans on. A wider mask does the same across the full 128-key range. Companion types pair a mask with an optional root and encode chords as stacks of thirds, giving analysis tools a quick, exact representation.
+This models unordered groups of pitches as compact bitmasks. A twelve-slot mask packs the pitch classes into a small integer and supports transposition by rotation, inversion, numeric normalisation, conventional normal-order and prime-form classification, complement and inclusion checks, symmetry scans, Z-relation checks, and the interval-vector census that set theory leans on. A wider mask does the same across the full 128-key range. Companion types pair a mask with an optional root and encode chords as stacks of thirds, giving analysis tools a quick, exact representation.
 
 #### sim-lib-pitch-shapes
 
