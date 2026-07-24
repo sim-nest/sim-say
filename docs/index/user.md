@@ -68,6 +68,7 @@
 | [`feature/sim-office/document-surfaces`](features/feature--sim-office--document-surfaces.md) | `crate/sim-lib-doc-surface` | Project document, markup, and suite descriptors into view surfaces for review and editing. | 1 |
 | [`feature/sim-office/generated-docs`](features/feature--sim-office--generated-docs.md) | `local/sim-office/crate/xtask` | Publish generated package, card, recipe, and index facts for office documents, sites, and codecs. | 0 |
 | [`feature/sim-office/office-site-workflows`](features/feature--sim-office--office-site-workflows.md) | `crate/sim-lib-doc-site` | Model document stores, mail and calendar summaries, and enterprise office site reads. | 0 |
+| [`feature/sim-office/sheet-calculation`](features/feature--sim-office--sheet-calculation.md) | `crate/sim-lib-sheet` | Evaluate local sheet formulas over exact rational cells with incremental dependency tracking and cutoff. | 1 |
 | [`feature/sim-run/bootloader`](features/feature--sim-run--bootloader.md) | `crate/sim-run-core` | Start product commands through the shared bootloader and loaded runtime libraries. | 2 |
 | [`feature/sim-run/glasses`](features/feature--sim-run--glasses.md) | `crate/sim-run` | Start modeled or hardware-backed glasses plans through the shared command bootloader. | 1 |
 | [`feature/sim-run/index`](features/feature--sim-run--index.md) | `local/sim-run/crate/xtask` | Expose generated package, card, surface, and recipe facts as a checked SIM Index fragment. | 1 |

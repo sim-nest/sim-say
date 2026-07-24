@@ -68,6 +68,7 @@
 | [`feature/sim-office/document-surfaces`](features/feature--sim-office--document-surfaces.md) | `crate/sim-lib-doc-surface` | 1 |
 | [`feature/sim-office/generated-docs`](features/feature--sim-office--generated-docs.md) | `local/sim-office/crate/xtask` | 0 |
 | [`feature/sim-office/office-site-workflows`](features/feature--sim-office--office-site-workflows.md) | `crate/sim-lib-doc-site` | 0 |
+| [`feature/sim-office/sheet-calculation`](features/feature--sim-office--sheet-calculation.md) | `crate/sim-lib-sheet` | 1 |
 | [`feature/sim-run/bootloader`](features/feature--sim-run--bootloader.md) | `crate/sim-run-core` | 2 |
 | [`feature/sim-run/glasses`](features/feature--sim-run--glasses.md) | `crate/sim-run` | 1 |
 | [`feature/sim-run/index`](features/feature--sim-run--index.md) | `local/sim-run/crate/xtask` | 1 |
