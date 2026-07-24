@@ -6,7 +6,7 @@
 - Subject: `local/sim-agent-net/crate/sim-lib-agent`
 - Canonical key: `crate/sim-lib-agent/feature-sim-agent-net-genai-assembly`
 
-Compose one checked generative exchange from BRIDGE packets, model placement, JSON terminal content, and a return Shape.
+Compose one checked generative exchange from BRIDGE packets, model placement, provider runners, JSON terminal content, and a return Shape.
 
 ## Specimens
 

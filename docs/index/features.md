@@ -12,7 +12,7 @@
 | [`feature/sim-agent-net/genai-assembly`](features/feature--sim-agent-net--genai-assembly.md) | `local/sim-agent-net/crate/sim-lib-agent` | 2 |
 | [`feature/sim-agent-net/generated-docs`](features/feature--sim-agent-net--generated-docs.md) | `local/sim-agent-net/crate/xtask` | 0 |
 | [`feature/sim-agent-net/mcp-server`](features/feature--sim-agent-net--mcp-server.md) | `local/sim-agent-net/crate/sim-lib-mcp` | 1 |
-| [`feature/sim-agent-net/model-runner-framework`](features/feature--sim-agent-net--model-runner-framework.md) | `local/sim-agent-net/crate/sim-lib-agent-runner-core` | 1 |
+| [`feature/sim-agent-net/model-runner-framework`](features/feature--sim-agent-net--model-runner-framework.md) | `local/sim-agent-net/crate/sim-lib-agent-runner-core` | 2 |
 | [`feature/sim-agent-net/output-contract-repair-cli`](features/feature--sim-agent-net--output-contract-repair-cli.md) | `crate/sim-lib-agent-runner-core-recipe-output-contract-repair` | 1 |
 | [`feature/sim-audio-daw/audio-device-providers`](features/feature--sim-audio-daw--audio-device-providers.md) | `crate/sim-lib-stream-cpal` | 1 |
 | [`feature/sim-audio-daw/audio-graph-workbench`](features/feature--sim-audio-daw--audio-graph-workbench.md) | `local/sim-audio-daw/crate/sim-lib-audio-graph-core` | 1 |

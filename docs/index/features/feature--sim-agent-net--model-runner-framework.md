@@ -47,6 +47,7 @@ Run local GenAI requests through provider-neutral runner contracts, HTTP profile
 ## Specimens
 
 - `spec-test/sim-agent-net/crates/sim-lib-agent/src/tests/agent_ai_placement_swap`
+- `spec-test/sim-agent-net/crates/sim-lib-agent/src/tests/genai_assembly`
 
 ## Worked Example
 
