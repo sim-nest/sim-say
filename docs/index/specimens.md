@@ -509,6 +509,8 @@
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/stream_matrix` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/stream_matrix.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/support` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/support.rs` | `shape` | `cargo test` | `true` | `true` |
 | `feature/sim-sdk/device-recipes` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/surface_protocol` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/surface_protocol.rs` | `` | `cargo test` | `true` | `true` |
+| `feature/sim-sdk/genai-feature-bundles` | `spec-test/sim-sdk/src/feature_contract_tests` | `crate/sim-nest` | `spec-test` | `src/feature_contract_tests.rs` | `shape` | `cargo test` | `true` | `true` |
+| `feature/sim-sdk/genai-feature-bundles` | `spec-test/sim-sdk/src/runtime/cookbook_directory` | `crate/sim-nest` | `spec-test` | `src/runtime/cookbook_directory.rs` | `lisp` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/src/runtime/tests/browse_conformance` | `crate/sim-nest` | `spec-test` | `src/runtime/tests/browse_conformance.rs` | `shape` | `cargo test` | `true` | `true` |
 | `feature/sim-shape/shape` | `spec-test/sim-shape/src/citizen/inventory` | `local/sim-shape/crate/sim-shape` | `spec-test` | `src/citizen/inventory.rs` | `shape` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-shape/src/citizen_tests` | `local/sim-shape/crate/sim-shape` | `spec-test` | `src/citizen_tests.rs` | `shape` | `cargo test` | `true` | `true` |

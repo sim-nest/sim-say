@@ -394,6 +394,7 @@
 | `specimen` | `lisp` | recipes/watch/glance-pager/recipe.toml |
 | `specimen` | `lisp` | recipes/watch/hold-last/recipe.toml |
 | `specimen` | `lisp` | recipes/watch/privacy-reaper/recipe.toml |
+| `specimen` | `lisp` | src/runtime/cookbook_directory.rs |
 | `specimen` | `mcp` | crates/sim-codec-mcp/recipes/01-basics/envelope-descriptor/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-agent-runner-core/recipes/01-basics/output-contract-repair/recipe.toml |
 | `specimen` | `rust` | recipes/00-overview/modeled-work-order/recipe.toml |
@@ -448,6 +449,7 @@
 | `specimen` | `shape` | crates/sim-value/src/tests.rs |
 | `specimen` | `shape` | src/citizen/inventory.rs |
 | `specimen` | `shape` | src/citizen_tests.rs |
+| `specimen` | `shape` | src/feature_contract_tests.rs |
 | `specimen` | `shape` | src/index_vault_profile_tests.rs |
 | `specimen` | `shape` | src/runtime/tests/browse_conformance.rs |
 | `specimen` | `shell` | crates/sim-conformance/recipes/01-basics/run-contract/recipe.toml |

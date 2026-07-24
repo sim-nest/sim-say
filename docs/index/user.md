@@ -92,6 +92,7 @@
 | [`feature/sim-sdk/facade-model-workflows`](features/feature--sim-sdk--facade-model-workflows.md) | `crate/sim-nest` | Expose model-facing facade exports for answer routing and drafter setup. | 0 |
 | [`feature/sim-sdk/facade-runtime`](features/feature--sim-sdk--facade-runtime.md) | `crate/sim-nest` | Boot the public SIM facade and expose its command plus reversible view surface. | 1 |
 | [`feature/sim-sdk/facade-shapes`](features/feature--sim-sdk--facade-shapes.md) | `crate/sim-nest` | Expose public Shape exports through the SDK facade while shape crates keep the matching behavior. | 0 |
+| [`feature/sim-sdk/genai-feature-bundles`](features/feature--sim-sdk--genai-feature-bundles.md) | `crate/sim-nest` | Select base, local, and provider GenAI dependency bundles through SDK Cargo feature aliases. | 2 |
 | [`feature/sim-sdk/generated-docs`](features/feature--sim-sdk--generated-docs.md) | `local/sim-sdk/crate/xtask` | Publish generated package, card, recipe, and index facts for the SDK facade and conformance crate. | 0 |
 | [`feature/sim-shape/contract-emitter`](features/feature--sim-shape--contract-emitter.md) | `local/sim-shape/crate/xtask` | Emit generated repository contract and index fragments for Shape crates. | 0 |
 | [`feature/sim-shape/shape`](features/feature--sim-shape--shape.md) | `local/sim-shape/crate/sim-shape` | Define reusable Shape matching, binding, citizen projection, and grammar contracts for runtime values. | 1 |

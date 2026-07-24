@@ -92,6 +92,7 @@
 | [`feature/sim-sdk/facade-model-workflows`](features/feature--sim-sdk--facade-model-workflows.md) | `crate/sim-nest` | 0 |
 | [`feature/sim-sdk/facade-runtime`](features/feature--sim-sdk--facade-runtime.md) | `crate/sim-nest` | 1 |
 | [`feature/sim-sdk/facade-shapes`](features/feature--sim-sdk--facade-shapes.md) | `crate/sim-nest` | 0 |
+| [`feature/sim-sdk/genai-feature-bundles`](features/feature--sim-sdk--genai-feature-bundles.md) | `crate/sim-nest` | 2 |
 | [`feature/sim-sdk/generated-docs`](features/feature--sim-sdk--generated-docs.md) | `local/sim-sdk/crate/xtask` | 0 |
 | [`feature/sim-shape/contract-emitter`](features/feature--sim-shape--contract-emitter.md) | `local/sim-shape/crate/xtask` | 0 |
 | [`feature/sim-shape/shape`](features/feature--sim-shape--shape.md) | `local/sim-shape/crate/sim-shape` | 1 |
