@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-music-analysis`
 - Canonical key: `crate/sim-lib-music-analysis/feature-sim-music-exact-music-analysis-and-transform`
 
-Analyze exact music objects into pitch histograms, chord windows, and piano-roll views, then transform exact sequences with reusable music operations.
+Analyze exact music objects into pitch histograms, chord windows, and piano-roll views, then transform exact sequences with reusable operations and explicit pitch maps.
 
 ## Anchors
 
@@ -30,6 +30,7 @@ Analyze exact music objects into pitch histograms, chord windows, and piano-roll
 ## Specimens
 
 - `spec-test/sim-music/crates/sim-lib-music-analysis/src/tests`
+- `spec-test/sim-music/crates/sim-lib-music-transform/src/tests/remap`
 
 ## Worked Example
 

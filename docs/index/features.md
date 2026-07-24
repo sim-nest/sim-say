@@ -54,7 +54,7 @@
 | [`feature/sim-ledger/ledger-libraries`](features/feature--sim-ledger--ledger-libraries.md) | `crate/sim-ledger` | 1 |
 | [`feature/sim-music/audio-lift-and-render`](features/feature--sim-music--audio-lift-and-render.md) | `crate/sim-lib-sound-audio-lift` | 1 |
 | [`feature/sim-music/daw-session-runtime`](features/feature--sim-music--daw-session-runtime.md) | `local/sim-music/crate/sim-lib-daw-session` | 0 |
-| [`feature/sim-music/exact-music-analysis-and-transform`](features/feature--sim-music--exact-music-analysis-and-transform.md) | `crate/sim-lib-music-analysis` | 1 |
+| [`feature/sim-music/exact-music-analysis-and-transform`](features/feature--sim-music--exact-music-analysis-and-transform.md) | `crate/sim-lib-music-analysis` | 2 |
 | [`feature/sim-music/generated-docs`](features/feature--sim-music--generated-docs.md) | `local/sim-music/crate/xtask` | 0 |
 | [`feature/sim-music/midi-notation-workflows`](features/feature--sim-music--midi-notation-workflows.md) | `crate/sim-lib-midi-core` | 1 |
 | [`feature/sim-music/pitch-and-sound-vocabulary`](features/feature--sim-music--pitch-and-sound-vocabulary.md) | `crate/sim-lib-pitch-core` | 1 |
