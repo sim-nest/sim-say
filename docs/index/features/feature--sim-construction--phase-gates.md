@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-construction-project`
 - Canonical key: `crate/sim-lib-construction-project/feature-sim-construction-phase-gates`
 
-Derive construction phase gate baseline readiness from accepted project-control facts while keeping human approval as a separate accountable decision.
+Derive construction phase gate baseline and obligation readiness from accepted project-control facts while keeping human approval and exceptions as separate accountable decisions.
 
 ## Anchors
 
@@ -16,8 +16,10 @@ Derive construction phase gate baseline readiness from accepted project-control 
 ## Specimens
 
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/late-decision`
+- `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/mixed-obligation-gate`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/mobilization-gate`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/lifecycle_tests`
+- `spec-test/sim-construction/crates/sim-lib-construction-project/src/obligation_tests`
 
 ## Worked Example
 

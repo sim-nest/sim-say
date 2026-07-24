@@ -26,12 +26,15 @@
 | [`feature/sim-codecs/expression-syntax-grammars`](features/feature--sim-codecs--expression-syntax-grammars.md) | `crate/sim-codec-lisp` | 1 |
 | [`feature/sim-codecs/pratt`](features/feature--sim-codecs--pratt.md) | `crate/sim-codec-pratt` | 1 |
 | [`feature/sim-codecs/wire-protocol-grammars`](features/feature--sim-codecs--wire-protocol-grammars.md) | `local/sim-codecs/crate/sim-codec` | 1 |
+| [`feature/sim-compute/generated-docs`](features/feature--sim-compute--generated-docs.md) | `local/sim-compute/crate/xtask` | 0 |
+| [`feature/sim-compute/tensor-providers`](features/feature--sim-compute--tensor-providers.md) | `crate/sim-lib-compute-model` | 3 |
 | [`feature/sim-construction/dalux-project-items`](features/feature--sim-construction--dalux-project-items.md) | `crate/sim-site-dalux` | 2 |
 | [`feature/sim-construction/generated-docs`](features/feature--sim-construction--generated-docs.md) | `local/sim-construction/crate/xtask` | 0 |
 | [`feature/sim-construction/mspdi-schedule-exchange`](features/feature--sim-construction--mspdi-schedule-exchange.md) | `crate/sim-codec-mspdi` | 1 |
-| [`feature/sim-construction/phase-gates`](features/feature--sim-construction--phase-gates.md) | `crate/sim-lib-construction-project` | 3 |
+| [`feature/sim-construction/obligation-evidence-exceptions`](features/feature--sim-construction--obligation-evidence-exceptions.md) | `crate/sim-lib-construction-project` | 3 |
+| [`feature/sim-construction/phase-gates`](features/feature--sim-construction--phase-gates.md) | `crate/sim-lib-construction-project` | 5 |
 | [`feature/sim-construction/powerproject-schedule-placement`](features/feature--sim-construction--powerproject-schedule-placement.md) | `crate/sim-site-powerproject` | 1 |
-| [`feature/sim-construction/project-control`](features/feature--sim-construction--project-control.md) | `crate/sim-lib-construction-project` | 5 |
+| [`feature/sim-construction/project-control`](features/feature--sim-construction--project-control.md) | `crate/sim-lib-construction-project` | 7 |
 | [`feature/sim-discrete/bounded-search`](features/feature--sim-discrete--bounded-search.md) | `crate/sim-lib-discrete-search` | 1 |
 | [`feature/sim-discrete/discrete-algebra`](features/feature--sim-discrete--discrete-algebra.md) | `local/sim-discrete/crate/sim-lib-discrete` | 1 |
 | [`feature/sim-discrete/finite-enumeration`](features/feature--sim-discrete--finite-enumeration.md) | `crate/sim-lib-discrete-comb` | 1 |
@@ -113,5 +116,7 @@
 | [`feature/sim-web/daw-view-surfaces`](features/feature--sim-web--daw-view-surfaces.md) | `crate/sim-lib-view-daw` | 1 |
 | [`feature/sim-web/device-surfaces`](features/feature--sim-web--device-surfaces.md) | `local/sim-web/crate/sim-lib-view` | 1 |
 | [`feature/sim-web/generated-docs`](features/feature--sim-web--generated-docs.md) | `local/sim-web/crate/xtask` | 0 |
+| [`feature/sim-web/server-backed-web-sessions`](features/feature--sim-web--server-backed-web-sessions.md) | `crate/sim-lib-web-bridge` | 1 |
+| [`feature/sim-web/stateful-tree-scenes`](features/feature--sim-web--stateful-tree-scenes.md) | `local/sim-web/crate/sim-lib-scene` | 2 |
 | [`feature/sim-web/view-surface`](features/feature--sim-web--view-surface.md) | `local/sim-web/crate/sim-lib-view` | 1 |
 | [`feature/sim-web/web-shell-host`](features/feature--sim-web--web-shell-host.md) | `crate/sim-web-shell` | 1 |

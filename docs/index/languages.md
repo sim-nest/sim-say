@@ -126,7 +126,11 @@
 | `specimen` | `lisp` | crates/sim-lib-bridge/recipes/01-basics/loom-invalid/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-bridge/recipes/01-basics/loom-valid/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-bridge/recipes/01-basics/loom-woven-repair/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-compute-auto/recipes/01-basics/auto-compute-site/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-compute-model/recipes/01-basics/modeled-resident-matrix/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/blocked-gate-graph/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/late-decision/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/mixed-obligation-gate/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/mobilization-gate/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/project-charter/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/what-changed/recipe.toml |
@@ -444,6 +448,7 @@
 | `specimen` | `shape` | crates/sim-lib-numbers-tensor-linalg/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-tensor/src/implementation/citizen.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-tensor/src/tests/execution.rs |
+| `specimen` | `shape` | crates/sim-lib-scene/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-standard-core/src/read_construct.rs |
 | `specimen` | `shape` | crates/sim-lib-stream-core/src/read_construct.rs |
 | `specimen` | `shape` | crates/sim-lib-stream-device/src/citizen.rs |
@@ -451,6 +456,7 @@
 | `specimen` | `shape` | crates/sim-lib-stream-wrist/src/citizen.rs |
 | `specimen` | `shape` | crates/sim-lib-stream-xr/src/citizen.rs |
 | `specimen` | `shape` | crates/sim-lib-view/src/surface_tests.rs |
+| `specimen` | `shape` | crates/sim-lib-view/src/universal_tests.rs |
 | `specimen` | `shape` | crates/sim-value/src/tests.rs |
 | `specimen` | `shape` | src/citizen/inventory.rs |
 | `specimen` | `shape` | src/citizen_tests.rs |

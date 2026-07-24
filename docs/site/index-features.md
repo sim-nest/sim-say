@@ -26,12 +26,15 @@ Generated from `docs/index/index.cards.jsonl`.
 | `feature/sim-codecs/expression-syntax-grammars` | `crate/sim-codec-lisp` | [features/feature--sim-codecs--expression-syntax-grammars.md](../index/features/feature--sim-codecs--expression-syntax-grammars.md) | 1 | Read and write Lisp, JSON, Algol, Lua, Compare, and Bridge rendered expression grammars. |
 | `feature/sim-codecs/pratt` | `crate/sim-codec-pratt` | [features/feature--sim-codecs--pratt.md](../index/features/feature--sim-codecs--pratt.md) | 1 | Parse operator-oriented expression languages through the Pratt codec surface. |
 | `feature/sim-codecs/wire-protocol-grammars` | `local/sim-codecs/crate/sim-codec` | [features/feature--sim-codecs--wire-protocol-grammars.md](../index/features/feature--sim-codecs--wire-protocol-grammars.md) | 1 | Read and write binary, bitwise, chat, config, document, index, and MCP wire protocols. |
+| `feature/sim-compute/generated-docs` | `local/sim-compute/crate/xtask` | [features/feature--sim-compute--generated-docs.md](../index/features/feature--sim-compute--generated-docs.md) | 0 | Publish generated package, card, rustdoc, recipe, and Index facts for compute providers. |
+| `feature/sim-compute/tensor-providers` | `crate/sim-lib-compute-model` | [features/feature--sim-compute--tensor-providers.md](../index/features/feature--sim-compute--tensor-providers.md) | 3 | Run canonical Tensor requests through modeled resident and automatic compute sites. |
 | `feature/sim-construction/dalux-project-items` | `crate/sim-site-dalux` | [features/feature--sim-construction--dalux-project-items.md](../index/features/feature--sim-construction--dalux-project-items.md) | 2 | Read Dalux project items into local office documents for construction evidence and keep note updates narrow. |
 | `feature/sim-construction/generated-docs` | `local/sim-construction/crate/xtask` | [features/feature--sim-construction--generated-docs.md](../index/features/feature--sim-construction--generated-docs.md) | 0 | Publish generated package, card, recipe, and index facts for construction project-control crates. |
 | `feature/sim-construction/mspdi-schedule-exchange` | `crate/sim-codec-mspdi` | [features/feature--sim-construction--mspdi-schedule-exchange.md](../index/features/feature--sim-construction--mspdi-schedule-exchange.md) | 1 | Round-trip Microsoft Project XML schedules through the portable construction Gantt document model. |
-| `feature/sim-construction/phase-gates` | `crate/sim-lib-construction-project` | [features/feature--sim-construction--phase-gates.md](../index/features/feature--sim-construction--phase-gates.md) | 3 | Derive construction phase gate baseline readiness from accepted project-control facts while keeping human approval as a separate accountable decision. |
+| `feature/sim-construction/obligation-evidence-exceptions` | `crate/sim-lib-construction-project` | [features/feature--sim-construction--obligation-evidence-exceptions.md](../index/features/feature--sim-construction--obligation-evidence-exceptions.md) | 3 | Evaluate shared construction requirements and project obligations across open lanes with stable evidence states, validity windows, graph-composed dependencies, source references, optional policy, bounded exceptions, and deterministic explanation paths. |
+| `feature/sim-construction/phase-gates` | `crate/sim-lib-construction-project` | [features/feature--sim-construction--phase-gates.md](../index/features/feature--sim-construction--phase-gates.md) | 5 | Derive construction phase gate baseline and obligation readiness from accepted project-control facts while keeping human approval and exceptions as separate accountable decisions. |
 | `feature/sim-construction/powerproject-schedule-placement` | `crate/sim-site-powerproject` | [features/feature--sim-construction--powerproject-schedule-placement.md](../index/features/feature--sim-construction--powerproject-schedule-placement.md) | 1 | Place construction Gantt schedules at Powerproject desktop and Project for the web boundaries. |
-| `feature/sim-construction/project-control` | `crate/sim-lib-construction-project` | [features/feature--sim-construction--project-control.md](../index/features/feature--sim-construction--project-control.md) | 5 | Describe construction phase gate and baseline control through as-of snapshot records, project charter identity, append-only fact books, lifecycle vocabulary, baselines, gates, actions, decisions, deterministic deltas, governance, capabilities, and readiness with reference-only evidence. |
+| `feature/sim-construction/project-control` | `crate/sim-lib-construction-project` | [features/feature--sim-construction--project-control.md](../index/features/feature--sim-construction--project-control.md) | 7 | Describe construction phase gate and baseline control through as-of snapshot records, project charter identity, append-only fact books, lifecycle vocabulary, baselines, gates, actions, decisions, deterministic deltas, governance, capabilities, shared obligations, bounded exceptions, graph-composed blockers, and readiness with reference-only evidence. |
 | `feature/sim-discrete/bounded-search` | `crate/sim-lib-discrete-search` | [features/feature--sim-discrete--bounded-search.md](../index/features/feature--sim-discrete--bounded-search.md) | 1 | Search finite state spaces with deterministic order, explicit work charging, bounds, cancellation, pruning, propagation, and receipts. |
 | `feature/sim-discrete/discrete-algebra` | `local/sim-discrete/crate/sim-lib-discrete` | [features/feature--sim-discrete--discrete-algebra.md](../index/features/feature--sim-discrete--discrete-algebra.md) | 1 | Provide algebra, graph, combinatorics, ranking, and spectral helpers as one reusable discrete-domain stack. |
 | `feature/sim-discrete/finite-enumeration` | `crate/sim-lib-discrete-comb` | [features/feature--sim-discrete--finite-enumeration.md](../index/features/feature--sim-discrete--finite-enumeration.md) | 1 | Enumerate fixed-alphabet words lazily, adapt words to mixed-radix digits, canonicalize cyclic patterns, and keep longest candidates. |
@@ -59,7 +62,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `feature/sim-music/exact-music-analysis-and-transform` | `crate/sim-lib-music-analysis` | [features/feature--sim-music--exact-music-analysis-and-transform.md](../index/features/feature--sim-music--exact-music-analysis-and-transform.md) | 2 | Analyze exact music objects into pitch histograms, chord windows, and piano-roll views, then transform exact sequences with reusable operations and explicit pitch maps. |
 | `feature/sim-music/generated-docs` | `local/sim-music/crate/xtask` | [features/feature--sim-music--generated-docs.md](../index/features/feature--sim-music--generated-docs.md) | 0 | Publish generated package, card, recipe, and index facts for the music, MIDI, pitch, and sound crates. |
 | `feature/sim-music/midi-notation-workflows` | `crate/sim-lib-midi-core` | [features/feature--sim-music--midi-notation-workflows.md](../index/features/feature--sim-music--midi-notation-workflows.md) | 1 | Lift, lower, inspect, and export musical material across MIDI files, live MIDI fixtures, and notation forms. |
-| `feature/sim-music/pitch-and-sound-vocabulary` | `crate/sim-lib-pitch-core` | [features/feature--sim-music--pitch-and-sound-vocabulary.md](../index/features/feature--sim-music--pitch-and-sound-vocabulary.md) | 1 | Name chords, scales, pitch sets, timbres, spectra, and tuning facts through worked musical descriptors. |
+| `feature/sim-music/pitch-and-sound-vocabulary` | `crate/sim-lib-pitch-core` | [features/feature--sim-music--pitch-and-sound-vocabulary.md](../index/features/feature--sim-music--pitch-and-sound-vocabulary.md) | 1 | Name chords, scales, pitch sets, timbres, spectra, and tuning facts through worked musical descriptors and bounded timbre families. |
 | `feature/sim-music/synth-performance-workbench` | `local/sim-music/crate/sim-lib-music-synth` | [features/feature--sim-music--synth-performance-workbench.md](../index/features/feature--sim-music--synth-performance-workbench.md) | 1 | Describe synth presets, streaming render fixtures, and placement choices for local or browser-backed performance. |
 | `feature/sim-numbers/generated-docs` | `local/sim-numbers/crate/xtask` | [features/feature--sim-numbers--generated-docs.md](../index/features/feature--sim-numbers--generated-docs.md) | 0 | Publish generated package, card, rustdoc, and index facts for the number-domain crates. |
 | `feature/sim-numbers/numbers` | `crate/sim-lib-numbers-core` | [features/feature--sim-numbers--numbers.md](../index/features/feature--sim-numbers--numbers.md) | 1 | Provide arithmetic, exact, floating, symbolic, tensor, and statistics number domains as loadable libraries. |
@@ -113,6 +116,8 @@ Generated from `docs/index/index.cards.jsonl`.
 | `feature/sim-web/daw-view-surfaces` | `crate/sim-lib-view-daw` | [features/feature--sim-web--daw-view-surfaces.md](../index/features/feature--sim-web--daw-view-surfaces.md) | 1 | Expose synth, stream, placement, and component views through the DAW view library. |
 | `feature/sim-web/device-surfaces` | `local/sim-web/crate/sim-lib-view` | [features/feature--sim-web--device-surfaces.md](../index/features/feature--sim-web--device-surfaces.md) | 1 | Rank and project view surfaces against desktop, phone, watch, and glasses device profiles. |
 | `feature/sim-web/generated-docs` | `local/sim-web/crate/xtask` | [features/feature--sim-web--generated-docs.md](../index/features/feature--sim-web--generated-docs.md) | 0 | Publish generated package, card, recipe, and index facts for browser and view crates. |
+| `feature/sim-web/server-backed-web-sessions` | `crate/sim-lib-web-bridge` | [features/feature--sim-web--server-backed-web-sessions.md](../index/features/feature--sim-web--server-backed-web-sessions.md) | 1 | Connect RemoteTransport to the existing SIM server transport so browser sessions read, commit, drain changes, reconnect, and report revision conflicts through ordinary server eval requests. |
+| `feature/sim-web/stateful-tree-scenes` | `local/sim-web/crate/sim-lib-scene` | [features/feature--sim-web--stateful-tree-scenes.md](../index/features/feature--sim-web--stateful-tree-scenes.md) | 2 | Render expandable Scene outlines with explicit disclosure state and total budgets for nodes, depth, encoded bytes, and visible faces. |
 | `feature/sim-web/view-surface` | `local/sim-web/crate/sim-lib-view` | [features/feature--sim-web--view-surface.md](../index/features/feature--sim-web--view-surface.md) | 1 | Expose view and edit surfaces so codecs, browser hosts, and device profiles can render and reverse surface data. |
 | `feature/sim-web/web-shell-host` | `crate/sim-web-shell` | [features/feature--sim-web--web-shell-host.md](../index/features/feature--sim-web--web-shell-host.md) | 1 | Serve browser-facing surfaces through loaded web shell runtime libraries and command entry points. |
 
@@ -164,6 +169,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `docs/sim-auto/generated` | `docs` | `doc-set/sim-auto/generated` |
 | `docs/sim-citizen/generated` | `docs` | `doc-set/sim-citizen/generated` |
 | `docs/sim-codecs/generated` | `docs` | `doc-set/sim-codecs/generated` |
+| `docs/sim-compute/generated` | `docs` | `doc-set/sim-compute/generated` |
 | `docs/sim-construction/generated` | `docs` | `doc-set/sim-construction/generated` |
 | `docs/sim-discrete/generated` | `docs` | `doc-set/sim-discrete/generated` |
 | `docs/sim-femm/generated` | `docs` | `doc-set/sim-femm/generated` |
@@ -187,6 +193,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `local/sim-auto/cli/xtask` | `cli` | `local/sim-auto/crate/xtask` |
 | `local/sim-citizen/cli/xtask` | `cli` | `local/sim-citizen/crate/xtask` |
 | `local/sim-codecs/cli/xtask` | `cli` | `local/sim-codecs/crate/xtask` |
+| `local/sim-compute/cli/xtask` | `cli` | `local/sim-compute/crate/xtask` |
 | `local/sim-construction/cli/xtask` | `cli` | `local/sim-construction/crate/xtask` |
 | `local/sim-discrete/cli/xtask` | `cli` | `local/sim-discrete/crate/xtask` |
 | `local/sim-femm/cli/xtask` | `cli` | `local/sim-femm/crate/xtask` |
@@ -238,6 +245,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `model/sim-lib-agent-runner-http` | `model-exchange` | `crate/sim-lib-agent-runner-http` |
 | `model/sim-lib-agent-runner-local` | `model-exchange` | `crate/sim-lib-agent-runner-local` |
 | `model/sim-lib-agent-runner-process` | `model-exchange` | `crate/sim-lib-agent-runner-process` |
+| `model/sim-lib-compute-model` | `model-exchange` | `crate/sim-lib-compute-model` |
 | `model/sim-lib-openai-server` | `model-exchange` | `local/sim-agent-net/crate/sim-lib-openai-server` |
 | `model/sim-lib-view-agent` | `model-exchange` | `crate/sim-lib-view-agent` |
 | `site/sim-kernel` | `site` | `crate/sim-kernel` |
@@ -247,6 +255,8 @@ Generated from `docs/index/index.cards.jsonl`.
 | `site/sim-lib-auto-parts` | `site` | `crate/sim-lib-auto-parts` |
 | `site/sim-lib-auto-vehicle` | `site` | `crate/sim-lib-auto-vehicle` |
 | `site/sim-lib-auto-vendor` | `site` | `crate/sim-lib-auto-vendor` |
+| `site/sim-lib-compute-auto` | `site` | `crate/sim-lib-compute-auto` |
+| `site/sim-lib-compute-model` | `site` | `crate/sim-lib-compute-model` |
 | `site/sim-lib-numbers-f64` | `site` | `crate/sim-lib-numbers-f64` |
 | `site/sim-lib-numbers-tensor` | `site` | `local/sim-numbers/crate/sim-lib-numbers-tensor` |
 | `site/sim-lib-stream-cpal` | `site` | `crate/sim-lib-stream-cpal` |
