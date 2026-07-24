@@ -49,6 +49,7 @@
 | `crate/sim-config` | `crate` | sim-config | 0 |
 | `crate/sim-conformance` | `crate` | sim-conformance | 0 |
 | `crate/sim-cookbook` | `crate` | sim-cookbook | 0 |
+| `crate/sim-incremental-core` | `crate` | sim-incremental-core | 0 |
 | `crate/sim-index-core` | `crate` | sim-index-core | 0 |
 | `crate/sim-kernel` | `crate` | sim-kernel | 0 |
 | `crate/sim-ledger` | `crate` | sim-ledger | 0 |
@@ -68,12 +69,14 @@
 | `crate/sim-lib-auto-vendor` | `crate` | sim-lib-auto-vendor | 1 |
 | `crate/sim-lib-binding` | `crate` | sim-lib-binding | 1 |
 | `crate/sim-lib-bridge` | `crate` | sim-lib-bridge | 1 |
+| `crate/sim-lib-construction-project` | `crate` | sim-lib-construction-project | 0 |
 | `crate/sim-lib-core` | `crate` | sim-lib-core | 2 |
 | `crate/sim-lib-deck` | `crate` | sim-lib-deck | 0 |
 | `crate/sim-lib-discrete-algebra` | `crate` | sim-lib-discrete-algebra | 0 |
 | `crate/sim-lib-discrete-comb` | `crate` | sim-lib-discrete-comb | 0 |
 | `crate/sim-lib-discrete-graph` | `crate` | sim-lib-discrete-graph | 0 |
 | `crate/sim-lib-discrete-rank` | `crate` | sim-lib-discrete-rank | 0 |
+| `crate/sim-lib-discrete-search` | `crate` | sim-lib-discrete-search | 0 |
 | `crate/sim-lib-discrete-spectral` | `crate` | sim-lib-discrete-spectral | 0 |
 | `crate/sim-lib-dispatch` | `crate` | sim-lib-dispatch | 0 |
 | `crate/sim-lib-doc-core` | `crate` | sim-lib-doc-core | 0 |
@@ -101,6 +104,7 @@
 | `crate/sim-lib-femm-space` | `crate` | sim-lib-femm-space | 0 |
 | `crate/sim-lib-femm-tape` | `crate` | sim-lib-femm-tape | 0 |
 | `crate/sim-lib-gantt` | `crate` | sim-lib-gantt | 0 |
+| `crate/sim-lib-incremental` | `crate` | sim-lib-incremental | 1 |
 | `crate/sim-lib-index` | `crate` | sim-lib-index | 1 |
 | `crate/sim-lib-lang-cl` | `crate` | sim-lib-lang-cl | 1 |
 | `crate/sim-lib-lang-clojure` | `crate` | sim-lib-lang-clojure | 1 |
@@ -153,7 +157,9 @@
 | `crate/sim-lib-numbers-tensor-bcast` | `crate` | sim-lib-numbers-tensor-bcast | 1 |
 | `crate/sim-lib-numbers-tensor-bit` | `crate` | sim-lib-numbers-tensor-bit | 1 |
 | `crate/sim-lib-numbers-tensor-cmplxf` | `crate` | sim-lib-numbers-tensor-cmplxf | 1 |
+| `crate/sim-lib-numbers-tensor-f32` | `crate` | sim-lib-numbers-tensor-f32 | 1 |
 | `crate/sim-lib-numbers-tensor-f64` | `crate` | sim-lib-numbers-tensor-f64 | 1 |
+| `crate/sim-lib-numbers-tensor-half` | `crate` | sim-lib-numbers-tensor-half | 1 |
 | `crate/sim-lib-numbers-tensor-i64` | `crate` | sim-lib-numbers-tensor-i64 | 1 |
 | `crate/sim-lib-numbers-tensor-linalg` | `crate` | sim-lib-numbers-tensor-linalg | 1 |
 | `crate/sim-lib-numbers-tensor-rat64` | `crate` | sim-lib-numbers-tensor-rat64 | 1 |
@@ -228,6 +234,7 @@
 | `crate/sim-site-powerproject` | `crate` | sim-site-powerproject | 0 |
 | `crate/sim-site-sharepoint` | `crate` | sim-site-sharepoint | 0 |
 | `crate/sim-table-core` | `crate` | sim-table-core | 0 |
+| `crate/sim-table-mount` | `crate` | sim-table-mount | 1 |
 | `crate/sim-test-support` | `crate` | sim-test-support | 0 |
 | `crate/sim-value` | `crate` | sim-value | 0 |
 | `crate/sim-view-tty` | `crate` | sim-view-tty | 1 |
@@ -239,6 +246,7 @@
 | `doc-set/sim-auto/generated` | `doc-set` | sim-auto generated docs | 0 |
 | `doc-set/sim-citizen/generated` | `doc-set` | sim-citizen generated docs | 0 |
 | `doc-set/sim-codecs/generated` | `doc-set` | sim-codecs generated docs | 0 |
+| `doc-set/sim-construction/generated` | `doc-set` | sim-construction generated docs | 0 |
 | `doc-set/sim-discrete/generated` | `doc-set` | sim-discrete generated docs | 0 |
 | `doc-set/sim-femm/generated` | `doc-set` | sim-femm generated docs | 0 |
 | `doc-set/sim-foundation/generated` | `doc-set` | sim-foundation generated docs | 0 |
@@ -275,6 +283,7 @@
 | `local/sim-codecs/crate/sim-codec` | `crate` | sim-codec | 1 |
 | `local/sim-codecs/crate/sim-codec-mcp` | `crate` | sim-codec-mcp | 1 |
 | `local/sim-codecs/crate/xtask` | `crate` | xtask | 0 |
+| `local/sim-construction/crate/xtask` | `crate` | xtask | 0 |
 | `local/sim-discrete/crate/sim-lib-discrete` | `crate` | sim-lib-discrete | 1 |
 | `local/sim-discrete/crate/xtask` | `crate` | xtask | 0 |
 | `local/sim-femm/crate/sim-lib-femm-codec` | `crate` | sim-lib-femm-codec | 0 |
@@ -401,19 +410,20 @@
 | `repo/sim-auto` | `repo` | sim-auto | 30 |
 | `repo/sim-citizen` | `repo` | sim-citizen | 5 |
 | `repo/sim-codecs` | `repo` | sim-codecs | 21 |
-| `repo/sim-discrete` | `repo` | sim-discrete | 8 |
+| `repo/sim-construction` | `repo` | sim-construction | 6 |
+| `repo/sim-discrete` | `repo` | sim-discrete | 9 |
 | `repo/sim-femm` | `repo` | sim-femm | 21 |
 | `repo/sim-foundation` | `repo` | sim-foundation | 10 |
 | `repo/sim-kernel` | `repo` | sim-kernel | 3 |
 | `repo/sim-ledger` | `repo` | sim-ledger | 7 |
 | `repo/sim-music` | `repo` | sim-music | 47 |
-| `repo/sim-numbers` | `repo` | sim-numbers | 32 |
-| `repo/sim-office` | `repo` | sim-office | 21 |
+| `repo/sim-numbers` | `repo` | sim-numbers | 34 |
+| `repo/sim-office` | `repo` | sim-office | 18 |
 | `repo/sim-run` | `repo` | sim-run | 9 |
-| `repo/sim-runtime` | `repo` | sim-runtime | 24 |
+| `repo/sim-runtime` | `repo` | sim-runtime | 26 |
 | `repo/sim-sdk` | `repo` | sim-sdk | 64 |
 | `repo/sim-shape` | `repo` | sim-shape | 5 |
-| `repo/sim-storage` | `repo` | sim-storage | 10 |
+| `repo/sim-storage` | `repo` | sim-storage | 11 |
 | `repo/sim-stream` | `repo` | sim-stream | 12 |
 | `repo/sim-stream-host` | `repo` | sim-stream-host | 7 |
 | `repo/sim-tooling` | `repo` | sim-tooling | 2 |

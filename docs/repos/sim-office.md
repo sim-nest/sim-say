@@ -1,10 +1,9 @@
 # sim-office
 
-Published commit: `0a740e577565c0a40e00d90e96f7c461dab77222`.
+Published commit: `ea5eee338b13684d805a38afd5b3c987d7d3b950`.
 
 ## Crates
 
-- `sim-codec-mspdi`
 - `sim-codec-odf`
 - `sim-codec-ooxml`
 - `sim-lib-deck`
@@ -18,10 +17,8 @@ Published commit: `0a740e577565c0a40e00d90e96f7c461dab77222`.
 - `sim-lib-mail`
 - `sim-lib-office-pack`
 - `sim-lib-sheet`
-- `sim-site-dalux`
 - `sim-site-libreoffice`
 - `sim-site-msgraph`
-- `sim-site-powerproject`
 - `sim-site-sharepoint`
 
 ## Contracts

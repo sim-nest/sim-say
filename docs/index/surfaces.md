@@ -48,6 +48,7 @@
 | `docs/sim-auto/generated` | `docs` | `doc-set/sim-auto/generated` |
 | `docs/sim-citizen/generated` | `docs` | `doc-set/sim-citizen/generated` |
 | `docs/sim-codecs/generated` | `docs` | `doc-set/sim-codecs/generated` |
+| `docs/sim-construction/generated` | `docs` | `doc-set/sim-construction/generated` |
 | `docs/sim-discrete/generated` | `docs` | `doc-set/sim-discrete/generated` |
 | `docs/sim-femm/generated` | `docs` | `doc-set/sim-femm/generated` |
 | `docs/sim-foundation/generated` | `docs` | `doc-set/sim-foundation/generated` |
@@ -70,6 +71,7 @@
 | `local/sim-auto/cli/xtask` | `cli` | `local/sim-auto/crate/xtask` |
 | `local/sim-citizen/cli/xtask` | `cli` | `local/sim-citizen/crate/xtask` |
 | `local/sim-codecs/cli/xtask` | `cli` | `local/sim-codecs/crate/xtask` |
+| `local/sim-construction/cli/xtask` | `cli` | `local/sim-construction/crate/xtask` |
 | `local/sim-discrete/cli/xtask` | `cli` | `local/sim-discrete/crate/xtask` |
 | `local/sim-femm/cli/xtask` | `cli` | `local/sim-femm/crate/xtask` |
 | `local/sim-foundation/cli/xtask` | `cli` | `local/sim-foundation/crate/xtask` |
@@ -130,6 +132,7 @@
 | `site/sim-lib-auto-vehicle` | `site` | `crate/sim-lib-auto-vehicle` |
 | `site/sim-lib-auto-vendor` | `site` | `crate/sim-lib-auto-vendor` |
 | `site/sim-lib-numbers-f64` | `site` | `crate/sim-lib-numbers-f64` |
+| `site/sim-lib-numbers-tensor` | `site` | `local/sim-numbers/crate/sim-lib-numbers-tensor` |
 | `site/sim-lib-stream-cpal` | `site` | `crate/sim-lib-stream-cpal` |
 | `site/sim-lib-stream-host` | `site` | `crate/sim-lib-stream-host` |
 | `site/sim-lib-topology` | `site` | `local/sim-stream/crate/sim-lib-topology` |

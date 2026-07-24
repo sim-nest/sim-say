@@ -49,6 +49,7 @@
 | `crate/sim-config` | `crate` | sim-config |
 | `crate/sim-conformance` | `crate` | sim-conformance |
 | `crate/sim-cookbook` | `crate` | sim-cookbook |
+| `crate/sim-incremental-core` | `crate` | sim-incremental-core |
 | `crate/sim-index-core` | `crate` | sim-index-core |
 | `crate/sim-kernel` | `crate` | sim-kernel |
 | `crate/sim-ledger` | `crate` | sim-ledger |
@@ -68,12 +69,14 @@
 | `crate/sim-lib-auto-vendor` | `crate` | sim-lib-auto-vendor |
 | `crate/sim-lib-binding` | `crate` | sim-lib-binding |
 | `crate/sim-lib-bridge` | `crate` | sim-lib-bridge |
+| `crate/sim-lib-construction-project` | `crate` | sim-lib-construction-project |
 | `crate/sim-lib-core` | `crate` | sim-lib-core |
 | `crate/sim-lib-deck` | `crate` | sim-lib-deck |
 | `crate/sim-lib-discrete-algebra` | `crate` | sim-lib-discrete-algebra |
 | `crate/sim-lib-discrete-comb` | `crate` | sim-lib-discrete-comb |
 | `crate/sim-lib-discrete-graph` | `crate` | sim-lib-discrete-graph |
 | `crate/sim-lib-discrete-rank` | `crate` | sim-lib-discrete-rank |
+| `crate/sim-lib-discrete-search` | `crate` | sim-lib-discrete-search |
 | `crate/sim-lib-discrete-spectral` | `crate` | sim-lib-discrete-spectral |
 | `crate/sim-lib-dispatch` | `crate` | sim-lib-dispatch |
 | `crate/sim-lib-doc-core` | `crate` | sim-lib-doc-core |
@@ -101,6 +104,7 @@
 | `crate/sim-lib-femm-space` | `crate` | sim-lib-femm-space |
 | `crate/sim-lib-femm-tape` | `crate` | sim-lib-femm-tape |
 | `crate/sim-lib-gantt` | `crate` | sim-lib-gantt |
+| `crate/sim-lib-incremental` | `crate` | sim-lib-incremental |
 | `crate/sim-lib-index` | `crate` | sim-lib-index |
 | `crate/sim-lib-lang-cl` | `crate` | sim-lib-lang-cl |
 | `crate/sim-lib-lang-clojure` | `crate` | sim-lib-lang-clojure |
@@ -153,7 +157,9 @@
 | `crate/sim-lib-numbers-tensor-bcast` | `crate` | sim-lib-numbers-tensor-bcast |
 | `crate/sim-lib-numbers-tensor-bit` | `crate` | sim-lib-numbers-tensor-bit |
 | `crate/sim-lib-numbers-tensor-cmplxf` | `crate` | sim-lib-numbers-tensor-cmplxf |
+| `crate/sim-lib-numbers-tensor-f32` | `crate` | sim-lib-numbers-tensor-f32 |
 | `crate/sim-lib-numbers-tensor-f64` | `crate` | sim-lib-numbers-tensor-f64 |
+| `crate/sim-lib-numbers-tensor-half` | `crate` | sim-lib-numbers-tensor-half |
 | `crate/sim-lib-numbers-tensor-i64` | `crate` | sim-lib-numbers-tensor-i64 |
 | `crate/sim-lib-numbers-tensor-linalg` | `crate` | sim-lib-numbers-tensor-linalg |
 | `crate/sim-lib-numbers-tensor-rat64` | `crate` | sim-lib-numbers-tensor-rat64 |
@@ -228,6 +234,7 @@
 | `crate/sim-site-powerproject` | `crate` | sim-site-powerproject |
 | `crate/sim-site-sharepoint` | `crate` | sim-site-sharepoint |
 | `crate/sim-table-core` | `crate` | sim-table-core |
+| `crate/sim-table-mount` | `crate` | sim-table-mount |
 | `crate/sim-test-support` | `crate` | sim-test-support |
 | `crate/sim-value` | `crate` | sim-value |
 | `crate/sim-view-tty` | `crate` | sim-view-tty |
@@ -239,6 +246,7 @@
 | `doc-set/sim-auto/generated` | `doc-set` | sim-auto generated docs |
 | `doc-set/sim-citizen/generated` | `doc-set` | sim-citizen generated docs |
 | `doc-set/sim-codecs/generated` | `doc-set` | sim-codecs generated docs |
+| `doc-set/sim-construction/generated` | `doc-set` | sim-construction generated docs |
 | `doc-set/sim-discrete/generated` | `doc-set` | sim-discrete generated docs |
 | `doc-set/sim-femm/generated` | `doc-set` | sim-femm generated docs |
 | `doc-set/sim-foundation/generated` | `doc-set` | sim-foundation generated docs |
@@ -275,6 +283,7 @@
 | `local/sim-codecs/crate/sim-codec` | `crate` | sim-codec |
 | `local/sim-codecs/crate/sim-codec-mcp` | `crate` | sim-codec-mcp |
 | `local/sim-codecs/crate/xtask` | `crate` | xtask |
+| `local/sim-construction/crate/xtask` | `crate` | xtask |
 | `local/sim-discrete/crate/sim-lib-discrete` | `crate` | sim-lib-discrete |
 | `local/sim-discrete/crate/xtask` | `crate` | xtask |
 | `local/sim-femm/crate/sim-lib-femm-codec` | `crate` | sim-lib-femm-codec |
@@ -401,6 +410,7 @@
 | `repo/sim-auto` | `repo` | sim-auto |
 | `repo/sim-citizen` | `repo` | sim-citizen |
 | `repo/sim-codecs` | `repo` | sim-codecs |
+| `repo/sim-construction` | `repo` | sim-construction |
 | `repo/sim-discrete` | `repo` | sim-discrete |
 | `repo/sim-femm` | `repo` | sim-femm |
 | `repo/sim-foundation` | `repo` | sim-foundation |

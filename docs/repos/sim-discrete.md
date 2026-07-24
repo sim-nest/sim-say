@@ -1,6 +1,6 @@
 # sim-discrete
 
-Published commit: `6dfbeaea4690cff19775c91409a30d8c01be5fd4`.
+Published commit: `0a037cc4d12294c90d323bb473aaeb7150127b2e`.
 
 ## Crates
 
@@ -9,6 +9,7 @@ Published commit: `6dfbeaea4690cff19775c91409a30d8c01be5fd4`.
 - `sim-lib-discrete-comb`
 - `sim-lib-discrete-graph`
 - `sim-lib-discrete-rank`
+- `sim-lib-discrete-search`
 - `sim-lib-discrete-spectral`
 
 ## Contracts

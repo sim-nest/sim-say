@@ -20,6 +20,8 @@ Generate, query, route, prove, and check duplicate implementation overlap in the
 ## Specimens
 
 - `spec-test/sim-tooling/src/index_fixpoint_tests`
+- `spec-test/sim-tooling/src/index_vault_graph_tests`
+- `spec-test/sim-tooling/src/index_vault_profile_tests`
 
 ## Worked Example
 

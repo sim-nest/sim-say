@@ -58,12 +58,19 @@
 {"card": {"id": "cookbook/codec/mcp", "kind": "cookbook-recipe", "owner": "sim-codec-mcp", "summary": "MCP JSON-RPC request, response, notification, and error envelopes."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/pratt", "kind": "cookbook-recipe", "owner": "sim-codec-pratt", "summary": "Shared Pratt parsing substrate for codec lexers."}, "repo": "sim-codecs"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-codecs"}
+{"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-construction"}
+{"card": {"id": "cookbook/construction/project", "kind": "cookbook-recipe", "owner": "sim-lib-construction-project", "summary": "Project charter records, append-only facts, snapshots, and evidence readiness."}, "repo": "sim-construction"}
+{"card": {"id": "cookbook/office/dalux-site", "kind": "cookbook-recipe", "owner": "sim-site-dalux", "summary": "Modeled Dalux project item reads with API identity live gates."}, "repo": "sim-construction"}
+{"card": {"id": "cookbook/office/mspdi", "kind": "cookbook-recipe", "owner": "sim-codec-mspdi", "summary": "Microsoft Project XML exchange for local Gantt documents."}, "repo": "sim-construction"}
+{"card": {"id": "cookbook/office/powerproject-site", "kind": "cookbook-recipe", "owner": "sim-site-powerproject", "summary": "Powerproject and Project for the web placements for Gantt plans."}, "repo": "sim-construction"}
+{"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-construction"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-discrete"}
 {"card": {"id": "cookbook/discrete", "kind": "cookbook-recipe", "owner": "sim-lib-discrete", "summary": "Runtime-facing discrete matrix, graph, and transform descriptors."}, "repo": "sim-discrete"}
 {"card": {"id": "cookbook/discrete-algebra", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-algebra", "summary": "Small semiring and matrix-view descriptors."}, "repo": "sim-discrete"}
 {"card": {"id": "cookbook/discrete-comb", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-comb", "summary": "Combination and permutation descriptors."}, "repo": "sim-discrete"}
 {"card": {"id": "cookbook/discrete-graph", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-graph", "summary": "Graph, edge, traversal, and certificate descriptors."}, "repo": "sim-discrete"}
 {"card": {"id": "cookbook/discrete-rank", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-rank", "summary": "Rank-space descriptors for discrete objects."}, "repo": "sim-discrete"}
+{"card": {"id": "cookbook/discrete-search", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-search", "summary": "Bounded deterministic search recipes."}, "repo": "sim-discrete"}
 {"card": {"id": "cookbook/discrete-spectral", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-spectral", "summary": "FWHT, Walsh signature, and spectral descriptor examples."}, "repo": "sim-discrete"}
 {"card": {"id": "discrete/algebra", "kind": "static-card", "owner": "workspace", "summary": "Semiring matrices, powers, and Kleene closure (the spine)."}, "repo": "sim-discrete"}
 {"card": {"id": "discrete/combinatorics", "kind": "static-card", "owner": "workspace", "summary": "Exact counts, lazy enumerators, and canonical ordinals."}, "repo": "sim-discrete"}
@@ -186,13 +193,14 @@
 {"card": {"id": "cookbook/numbers/tensor-bcast", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor-bcast", "summary": "Broadcasting helpers for tensor values."}, "repo": "sim-numbers"}
 {"card": {"id": "cookbook/numbers/tensor-bit", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor-bit", "summary": "Packed boolean tensor helpers."}, "repo": "sim-numbers"}
 {"card": {"id": "cookbook/numbers/tensor-cmplxf", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor-cmplxf", "summary": "Complex-cell tensor helpers."}, "repo": "sim-numbers"}
+{"card": {"id": "cookbook/numbers/tensor-f32", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor-f32", "summary": "F32-specialized tensor helpers."}, "repo": "sim-numbers"}
 {"card": {"id": "cookbook/numbers/tensor-f64", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor-f64", "summary": "F64-specialized tensor helpers."}, "repo": "sim-numbers"}
+{"card": {"id": "cookbook/numbers/tensor-half", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor-half", "summary": "F16 and bf16 tensor descriptors with f32-widened host helpers."}, "repo": "sim-numbers"}
 {"card": {"id": "cookbook/numbers/tensor-i64", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor-i64", "summary": "I64-specialized tensor helpers."}, "repo": "sim-numbers"}
 {"card": {"id": "cookbook/numbers/tensor-linalg", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor-linalg", "summary": "Linear algebra helpers for tensors."}, "repo": "sim-numbers"}
 {"card": {"id": "cookbook/numbers/tensor-rat64", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor-rat64", "summary": "Rational-cell tensor helpers."}, "repo": "sim-numbers"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-numbers"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-office"}
-{"card": {"id": "cookbook/office/dalux-site", "kind": "cookbook-recipe", "owner": "sim-site-dalux", "summary": "Modeled Dalux project item reads with API identity live gates."}, "repo": "sim-office"}
 {"card": {"id": "cookbook/office/deck", "kind": "cookbook-recipe", "owner": "sim-lib-deck", "summary": "Local decks with slides, bullets, tables, and image references."}, "repo": "sim-office"}
 {"card": {"id": "cookbook/office/doc-core", "kind": "cookbook-recipe", "owner": "sim-lib-doc-core", "summary": "Office document model and kind-shape descriptors."}, "repo": "sim-office"}
 {"card": {"id": "cookbook/office/doc-ledger", "kind": "cookbook-recipe", "owner": "sim-lib-doc-ledger", "summary": "Preview ledger draft posting from office evidence."}, "repo": "sim-office"}
@@ -204,11 +212,9 @@
 {"card": {"id": "cookbook/office/libreoffice-site", "kind": "cookbook-recipe", "owner": "sim-site-libreoffice", "summary": "Permissioned helper-process placement for LibreOffice office tasks."}, "repo": "sim-office"}
 {"card": {"id": "cookbook/office/mail", "kind": "cookbook-recipe", "owner": "sim-lib-mail", "summary": "Privacy-aware messages, events, and attachment references."}, "repo": "sim-office"}
 {"card": {"id": "cookbook/office/msgraph-site", "kind": "cookbook-recipe", "owner": "sim-site-msgraph", "summary": "Modeled Microsoft Graph document site calls with explicit live gates."}, "repo": "sim-office"}
-{"card": {"id": "cookbook/office/mspdi", "kind": "cookbook-recipe", "owner": "sim-codec-mspdi", "summary": "Microsoft Project XML exchange for local Gantt documents."}, "repo": "sim-office"}
 {"card": {"id": "cookbook/office/odf", "kind": "cookbook-recipe", "owner": "sim-codec-odf", "summary": "Local .ods and .odp packages for sheet and deck documents."}, "repo": "sim-office"}
 {"card": {"id": "cookbook/office/ooxml", "kind": "cookbook-recipe", "owner": "sim-codec-ooxml", "summary": "Local .xlsx and .pptx packages for sheet and deck documents."}, "repo": "sim-office"}
 {"card": {"id": "cookbook/office/pack", "kind": "cookbook-recipe", "owner": "sim-lib-office-pack", "summary": "Preview annual accounts exports before live mail or archive actions."}, "repo": "sim-office"}
-{"card": {"id": "cookbook/office/powerproject-site", "kind": "cookbook-recipe", "owner": "sim-site-powerproject", "summary": "Powerproject and Project for the web placements for Gantt plans."}, "repo": "sim-office"}
 {"card": {"id": "cookbook/office/sharepoint-site", "kind": "cookbook-recipe", "owner": "sim-site-sharepoint", "summary": "Modeled SharePoint list, drive, and REST fallback operations."}, "repo": "sim-office"}
 {"card": {"id": "cookbook/office/sheet", "kind": "cookbook-recipe", "owner": "sim-lib-sheet", "summary": "Exact local sheets and open cell edits."}, "repo": "sim-office"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-office"}
@@ -231,6 +237,7 @@
 {"card": {"id": "cookbook/logic", "kind": "cookbook-recipe", "owner": "sim-lib-logic", "summary": "Logic database, assertion, and query surfaces."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/organ/binding", "kind": "cookbook-recipe", "owner": "sim-lib-binding", "summary": "Binding surface concepts shared by language profiles."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/organ/dispatch", "kind": "cookbook-recipe", "owner": "sim-lib-dispatch", "summary": "Generic function and multimethod concepts."}, "repo": "sim-runtime"}
+{"card": {"id": "cookbook/organ/incremental", "kind": "cookbook-recipe", "owner": "sim-lib-incremental", "summary": "Memoized expression queries with invalidation, missing observations, cutoff, snapshots, and metrics."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/organ/mutation", "kind": "cookbook-recipe", "owner": "sim-lib-mutation", "summary": "Cells, boxes, mutable tables, and mutable vectors."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/organ/namespace", "kind": "cookbook-recipe", "owner": "sim-lib-namespace", "summary": "Package, module, import, export, and shadowing surfaces."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/organ/pattern", "kind": "cookbook-recipe", "owner": "sim-lib-pattern", "summary": "Pattern matching and algebraic data type declarations."}, "repo": "sim-runtime"}
@@ -494,6 +501,7 @@
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-storage"}
 {"card": {"id": "cookbook/storage/table-fs", "kind": "cookbook-recipe", "owner": "sim-table-fs", "summary": "Host directory reads, writes, edits, and searches through the table surface."}, "repo": "sim-storage"}
 {"card": {"id": "cookbook/storage/table-http", "kind": "cookbook-recipe", "owner": "sim-table-http", "summary": "Direct HTTP resources addressed through the table directory surface."}, "repo": "sim-storage"}
+{"card": {"id": "cookbook/storage/table-mount", "kind": "cookbook-recipe", "owner": "sim-table-mount", "summary": "Compose independently owned Table and Dir backends behind one directory view."}, "repo": "sim-storage"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-storage"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-stream"}
 {"card": {"id": "cookbook/rank", "kind": "cookbook-recipe", "owner": "sim-lib-rank", "summary": "Rank spaces, nodes, coordinates, and deterministic traversal."}, "repo": "sim-stream"}

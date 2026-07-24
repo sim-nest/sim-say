@@ -1,6 +1,6 @@
 # sim-numbers
 
-Published commit: `57943e398eacb5bc58433f98b3ff0846eba5abc4`.
+Published commit: `9ec85862530236dade7ff695af635ebe78506ac2`.
 
 ## Crates
 
@@ -30,7 +30,9 @@ Published commit: `57943e398eacb5bc58433f98b3ff0846eba5abc4`.
 - `sim-lib-numbers-tensor-bcast`
 - `sim-lib-numbers-tensor-bit`
 - `sim-lib-numbers-tensor-cmplxf`
+- `sim-lib-numbers-tensor-f32`
 - `sim-lib-numbers-tensor-f64`
+- `sim-lib-numbers-tensor-half`
 - `sim-lib-numbers-tensor-i64`
 - `sim-lib-numbers-tensor-linalg`
 - `sim-lib-numbers-tensor-rat64`

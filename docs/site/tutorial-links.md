@@ -5,6 +5,7 @@
 - [sim-auto human docs](../repos/sim-auto.md#tutorial-lane)
 - [sim-citizen human docs](../repos/sim-citizen.md#tutorial-lane)
 - [sim-codecs human docs](../repos/sim-codecs.md#tutorial-lane)
+- [sim-construction human docs](../repos/sim-construction.md#tutorial-lane)
 - [sim-discrete human docs](../repos/sim-discrete.md#tutorial-lane)
 - [sim-femm human docs](../repos/sim-femm.md#tutorial-lane)
 - [sim-foundation human docs](../repos/sim-foundation.md#tutorial-lane)

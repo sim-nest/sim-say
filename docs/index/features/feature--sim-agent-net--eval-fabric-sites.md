@@ -6,20 +6,13 @@
 - Subject: `crate/sim-lib-agent-runner-local`
 - Canonical key: `crate/sim-lib-agent-runner-local/feature-sim-agent-net-eval-fabric-sites`
 
-Place model and stream work through loadable runner, local model, and content-addressed fleet libraries.
+Place model and stream work through the agent placement catalog, modeled loadable sites, and content-addressed fleet libraries.
 
 ## Anchors
 
-- `anchor/crate/sim-lib-agent-runner-core`
-- `anchor/crate/sim-lib-agent-runner-http`
-- `anchor/crate/sim-lib-agent-runner-local`
-- `anchor/crate/sim-lib-agent-runner-process`
 - `anchor/crate/sim-lib-stream-fabric`
 - `anchor/crate/sim-table-remote`
-- `anchor/export/sim-lib-agent-runner-local/model/local`
 - `anchor/export/sim-lib-stream-fabric/codec/binary`
-- `anchor/runtime-lib/sim-lib-agent-runner-local/local-model-lib`
-- `anchor/runtime-lib/sim-lib-agent-runner-local/wasm-model-lib`
 - `anchor/runtime-lib/sim-lib-stream-fabric/cadr-fixture-lib`
 
 ## Surfaces
@@ -125,15 +118,15 @@ fn model_at_realizes_loaded_local_stub() {
     validate_chat_transcript(&expr).unwrap();
     let response = ModelResponse::try_from(expr).unwrap();
     assert_eq!(response.runner, Symbol::new("runner/local-model"));
-    assert_eq!(response.model, "sim-local-stub");
-    assert!(format!("{:?}", response.content).contains("sim-local-stub-ok: local prompt"));
+    assert_eq!(response.model, "sim-local-modeled");
+    assert!(format!("{:?}", response.content).contains("sim-local-modeled-ok: local prompt"));
 }
 
 #[test]
 fn card_reports_local_placement_and_capabilities() {
     let card = LocalModelBackend::new().card();
     assert_eq!(card.locality, Symbol::new("local"));
-    assert_eq!(card.model, "sim-local-stub");
+    assert_eq!(card.model, "sim-local-modeled");
     assert_eq!(
         find_extra_string(&card, "placement-key"),
         Some(LOCAL_MODEL_SITE_KEY)

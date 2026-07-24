@@ -15,6 +15,7 @@ Provide algebra, graph, combinatorics, ranking, and spectral helpers as one reus
 - `anchor/crate/sim-lib-discrete-comb`
 - `anchor/crate/sim-lib-discrete-graph`
 - `anchor/crate/sim-lib-discrete-rank`
+- `anchor/crate/sim-lib-discrete-search`
 - `anchor/crate/sim-lib-discrete-spectral`
 - `anchor/runtime-lib/sim-lib-discrete/discrete-lib`
 

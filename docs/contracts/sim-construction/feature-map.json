@@ -1,0 +1,41 @@
+{
+  "generator": "xtask repo-contract v1",
+  "packages": [
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "sim-codec-mspdi"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "sim-lib-construction-project"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "sim-site-dalux"
+    },
+    {
+      "features": [
+        {
+          "edges": [],
+          "name": "default",
+          "workspace_edges": []
+        },
+        {
+          "edges": [],
+          "name": "powerproject-ole",
+          "workspace_edges": []
+        }
+      ],
+      "group": "workspace",
+      "package": "sim-site-powerproject"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "xtask"
+    }
+  ]
+}

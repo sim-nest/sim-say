@@ -1,0 +1,40 @@
+{
+  "generator": "xtask repo-contract v1",
+  "packages": [
+    {
+      "crate_name": "sim_codec_mspdi",
+      "group": "workspace",
+      "manifest": "crates/sim-codec-mspdi/Cargo.toml",
+      "package": "sim-codec-mspdi",
+      "summary": "MSPDI XML codec for local Gantt schedule documents."
+    },
+    {
+      "crate_name": "sim_lib_construction_project",
+      "group": "workspace",
+      "manifest": "crates/sim-lib-construction-project/Cargo.toml",
+      "package": "sim-lib-construction-project",
+      "summary": "Construction project-control records for SIM."
+    },
+    {
+      "crate_name": "sim_site_dalux",
+      "group": "workspace",
+      "manifest": "crates/sim-site-dalux/Cargo.toml",
+      "package": "sim-site-dalux",
+      "summary": "Dalux API-identity site adapter for construction project item evidence."
+    },
+    {
+      "crate_name": "sim_site_powerproject",
+      "group": "workspace",
+      "manifest": "crates/sim-site-powerproject/Cargo.toml",
+      "package": "sim-site-powerproject",
+      "summary": "Powerproject and Project for the web placement for SIM Gantt documents."
+    },
+    {
+      "crate_name": "xtask",
+      "group": "workspace",
+      "manifest": "xtask/Cargo.toml",
+      "package": "xtask",
+      "summary": "SIM workspace package for xtask."
+    }
+  ]
+}

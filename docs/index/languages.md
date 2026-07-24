@@ -19,7 +19,7 @@
 | `grammar` | `grammar/syntax/lisp` | Expression syntax grammars |
 | `grammar` | `grammar/syntax/lua` | Expression syntax grammars |
 | `grammar` | `grammar/syntax/mcp` | Domain syntax grammars |
-| `grammar` | `grammar/syntax/mspdi` | Document codec workflows |
+| `grammar` | `grammar/syntax/mspdi` | MSPDI schedule exchange |
 | `grammar` | `grammar/syntax/odf` | Document codec workflows |
 | `grammar` | `grammar/syntax/ooxml` | Document codec workflows |
 | `grammar` | `grammar/syntax/pratt` | Pratt operator parser |
@@ -80,6 +80,7 @@
 | `specimen` | `lisp` | crates/sim-lib-agent/recipes/01-basics/decompose-reflect/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-agent/recipes/01-basics/fairness-explain/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-agent/recipes/01-basics/fake-multimodal/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-agent/recipes/01-basics/genai-assembly/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-agent/recipes/01-basics/offline-agent/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-agent/recipes/30-agents/a30-001-autonomous-decision/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-agent/recipes/30-agents/a30-002-planning/recipe.toml |
@@ -125,6 +126,8 @@
 | `specimen` | `lisp` | crates/sim-lib-bridge/recipes/01-basics/loom-invalid/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-bridge/recipes/01-basics/loom-valid/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-bridge/recipes/01-basics/loom-woven-repair/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/project-charter/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/what-changed/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-control/recipes/01-basics/if-branch/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-control/recipes/30-agents/a30-021-physical-sensing/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-cookbook/recipes/01-basics/search-recipe/recipe.toml |
@@ -134,9 +137,12 @@
 | `specimen` | `lisp` | crates/sim-lib-daw-session/recipes/02-performance-integration/sup-instrument-performance/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-deck/recipes/01-basics/deck-outline/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-algebra/recipes/01-basics/semiring-matrix/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-discrete-comb/recipes/01-basics/finite-enumeration/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-comb/recipes/01-basics/rankable-values/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-graph/recipes/01-basics/tiny-graph/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-rank/recipes/01-basics/combination-space/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-discrete-search/recipes/01-basics/constrained-word/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-discrete-search/src/cookbook.rs |
 | `specimen` | `lisp` | crates/sim-lib-discrete-spectral/recipes/01-basics/fwht-signal/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete/recipes/01-basics/binomial-count/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete/recipes/01-basics/matrix-runtime/recipe.toml |
@@ -171,6 +177,7 @@
 | `specimen` | `lisp` | crates/sim-lib-forge/recipes/01-basics/eval-harness/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-forge/recipes/01-basics/forge-cli/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-gantt/recipes/01-basics/local-gantt-plan/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-incremental/recipes/01-basics/query-family/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-intent/recipes/01-basics/select-intent/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-lang-cl/recipes/01-basics/matrix-row/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-lang-cl/recipes/01-basics/profile-descriptor/recipe.toml |
@@ -274,15 +281,20 @@
 | `specimen` | `lisp` | crates/sim-lib-numbers-tensor-bcast/recipes/01-basics/broadcast-descriptor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-tensor-bit/recipes/01-basics/bit-tensor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-tensor-cmplxf/recipes/01-basics/cmplxf-tensor/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-numbers-tensor-f32/recipes/01-basics/f32-tensor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-tensor-f64/recipes/01-basics/f64-tensor/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-numbers-tensor-half/recipes/01-basics/half-tensor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-tensor-i64/recipes/01-basics/i64-tensor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-tensor-linalg/recipes/01-basics/linalg-ops/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-tensor-rat64/recipes/01-basics/rat64-tensor/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-numbers-tensor/recipes/01-basics/tensor-cast/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-tensor/recipes/01-basics/tensor-constructor/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-numbers-tensor/recipes/01-basics/tensor-execution/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-tensor/recipes/01-basics/tensor-scale/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-openai-server/recipes/01-basics/fixture-chat/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pattern/recipes/01-basics/match-destructure/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-chord/recipes/01-basics/major-triad/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-pitch-core/recipes/01-basics/octave-space/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-core/recipes/01-basics/pitch-value/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-dissonance/recipes/01-basics/tritone-score/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-namer-forte/recipes/01-basics/forte-number/recipe.toml |
@@ -366,6 +378,7 @@
 | `specimen` | `lisp` | crates/sim-table-fs/recipes/01-basics/grep-tree/recipe.toml |
 | `specimen` | `lisp` | crates/sim-table-fs/recipes/01-basics/read-edit-file/recipe.toml |
 | `specimen` | `lisp` | crates/sim-table-http/recipes/01-basics/http-get/recipe.toml |
+| `specimen` | `lisp` | crates/sim-table-mount/recipes/01-basics/backend-composition/recipe.toml |
 | `specimen` | `lisp` | crates/sim-table-remote/recipes/01-basics/remote-dir-descriptor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-web-shell/recipes/01-basics/open-workspace/recipe.toml |
 | `specimen` | `lisp` | recipes/01-basics/boot-runtime/recipe.toml |
@@ -382,6 +395,7 @@
 | `specimen` | `lisp` | recipes/watch/glance-pager/recipe.toml |
 | `specimen` | `lisp` | recipes/watch/hold-last/recipe.toml |
 | `specimen` | `lisp` | recipes/watch/privacy-reaper/recipe.toml |
+| `specimen` | `lisp` | src/runtime/cookbook_directory.rs |
 | `specimen` | `mcp` | crates/sim-codec-mcp/recipes/01-basics/envelope-descriptor/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-agent-runner-core/recipes/01-basics/output-contract-repair/recipe.toml |
 | `specimen` | `rust` | recipes/00-overview/modeled-work-order/recipe.toml |
@@ -411,10 +425,12 @@
 | `specimen` | `shape` | crates/sim-conformance/tests/spec/forge_eval.rs |
 | `specimen` | `shape` | crates/sim-conformance/tests/spec/support.rs |
 | `specimen` | `shape` | crates/sim-lib-agent-runner-local/tests/load_register.rs |
+| `specimen` | `shape` | crates/sim-lib-agent/src/tests/agent_ai_placement_swap.rs |
 | `specimen` | `shape` | crates/sim-lib-auto-order/src/conformance.rs |
 | `specimen` | `shape` | crates/sim-lib-auto-order/src/lib.rs |
 | `specimen` | `shape` | crates/sim-lib-bridge/src/tests/ask.rs |
 | `specimen` | `shape` | crates/sim-lib-discrete/src/forms.rs |
+| `specimen` | `shape` | crates/sim-lib-incremental/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-lang-prolog/src/conformance.rs |
 | `specimen` | `shape` | crates/sim-lib-logic/src/tests/organ_proof.rs |
 | `specimen` | `shape` | crates/sim-lib-mcp/tests/serve_mcp.rs |
@@ -422,7 +438,9 @@
 | `specimen` | `shape` | crates/sim-lib-numbers-complex/src/implementation/literal.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-func/src/implementation/domain.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-rational/src/implementation/domain.rs |
+| `specimen` | `shape` | crates/sim-lib-numbers-tensor-bcast/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-tensor/src/implementation/citizen.rs |
+| `specimen` | `shape` | crates/sim-lib-numbers-tensor/src/tests/execution.rs |
 | `specimen` | `shape` | crates/sim-lib-standard-core/src/read_construct.rs |
 | `specimen` | `shape` | crates/sim-lib-stream-core/src/read_construct.rs |
 | `specimen` | `shape` | crates/sim-lib-stream-device/src/citizen.rs |
@@ -433,6 +451,8 @@
 | `specimen` | `shape` | crates/sim-value/src/tests.rs |
 | `specimen` | `shape` | src/citizen/inventory.rs |
 | `specimen` | `shape` | src/citizen_tests.rs |
+| `specimen` | `shape` | src/feature_contract_tests.rs |
+| `specimen` | `shape` | src/index_vault_profile_tests.rs |
 | `specimen` | `shape` | src/runtime/tests/browse_conformance.rs |
 | `specimen` | `shell` | crates/sim-conformance/recipes/01-basics/run-contract/recipe.toml |
 | `specimen` | `shell` | recipes/01-basics/hello/recipe.toml |
