@@ -59,7 +59,7 @@
 {"card": {"id": "cookbook/codec/pratt", "kind": "cookbook-recipe", "owner": "sim-codec-pratt", "summary": "Shared Pratt parsing substrate for codec lexers."}, "repo": "sim-codecs"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-codecs"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-construction"}
-{"card": {"id": "cookbook/construction/project", "kind": "cookbook-recipe", "owner": "sim-lib-construction-project", "summary": "Project charter records and evidence readiness."}, "repo": "sim-construction"}
+{"card": {"id": "cookbook/construction/project", "kind": "cookbook-recipe", "owner": "sim-lib-construction-project", "summary": "Project charter records, append-only facts, snapshots, and evidence readiness."}, "repo": "sim-construction"}
 {"card": {"id": "cookbook/office/dalux-site", "kind": "cookbook-recipe", "owner": "sim-site-dalux", "summary": "Modeled Dalux project item reads with API identity live gates."}, "repo": "sim-construction"}
 {"card": {"id": "cookbook/office/mspdi", "kind": "cookbook-recipe", "owner": "sim-codec-mspdi", "summary": "Microsoft Project XML exchange for local Gantt documents."}, "repo": "sim-construction"}
 {"card": {"id": "cookbook/office/powerproject-site", "kind": "cookbook-recipe", "owner": "sim-site-powerproject", "summary": "Powerproject and Project for the web placements for Gantt plans."}, "repo": "sim-construction"}

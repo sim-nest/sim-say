@@ -127,6 +127,7 @@
 | `specimen` | `lisp` | crates/sim-lib-bridge/recipes/01-basics/loom-valid/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-bridge/recipes/01-basics/loom-woven-repair/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/project-charter/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/what-changed/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-control/recipes/01-basics/if-branch/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-control/recipes/30-agents/a30-021-physical-sensing/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-cookbook/recipes/01-basics/search-recipe/recipe.toml |
