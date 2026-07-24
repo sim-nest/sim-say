@@ -6,14 +6,27 @@
 - Subject: `local/sim-numbers/crate/sim-lib-numbers-tensor`
 - Canonical key: `crate/sim-lib-numbers-tensor/feature-sim-numbers-tensor-execution`
 
-Run canonical Tensor expressions through an open TensorExecutor contract and a loadable TensorSite over the standard EvalFabric path.
+Run canonical Tensor expressions and element-wise broadcast operations through an open TensorExecutor contract and a loadable TensorSite over the standard EvalFabric path.
 
 ## Anchors
 
 - `anchor/crate/sim-lib-numbers-tensor`
+- `anchor/crate/sim-lib-numbers-tensor-bcast`
 - `anchor/export/sim-lib-numbers-tensor/site/tensor`
+- `anchor/runtime-lib/sim-lib-numbers-tensor-bcast/tensor-broadcast-lib`
 - `anchor/runtime-lib/sim-lib-numbers-tensor/tensor-numbers-lib`
+- `anchor/rustdoc/sim-lib-numbers-tensor/active_tensor_executor`
+- `anchor/rustdoc/sim-lib-numbers-tensor/add_op_symbol`
 - `anchor/rustdoc/sim-lib-numbers-tensor/cpu-tensor-executor`
+- `anchor/rustdoc/sim-lib-numbers-tensor/div_op_symbol`
+- `anchor/rustdoc/sim-lib-numbers-tensor/execute_tensor_binary_op`
+- `anchor/rustdoc/sim-lib-numbers-tensor/execute_tensor_request`
+- `anchor/rustdoc/sim-lib-numbers-tensor/execute_tensor_unary_op`
+- `anchor/rustdoc/sim-lib-numbers-tensor/mul_op_symbol`
+- `anchor/rustdoc/sim-lib-numbers-tensor/neg_op_symbol`
+- `anchor/rustdoc/sim-lib-numbers-tensor/pow_op_symbol`
+- `anchor/rustdoc/sim-lib-numbers-tensor/rem_op_symbol`
+- `anchor/rustdoc/sim-lib-numbers-tensor/sub_op_symbol`
 - `anchor/rustdoc/sim-lib-numbers-tensor/tensor-exec-error`
 - `anchor/rustdoc/sim-lib-numbers-tensor/tensor-execution`
 - `anchor/rustdoc/sim-lib-numbers-tensor/tensor-executor`
@@ -27,38 +40,53 @@ Run canonical Tensor expressions through an open TensorExecutor contract and a l
 
 ## Specimens
 
+- `spec-test/sim-numbers/crates/sim-lib-numbers-tensor-bcast/src/tests`
 - `spec-test/sim-numbers/crates/sim-lib-numbers-tensor/src/tests/execution`
 
 ## Worked Example
 
-Specimen `spec-test/sim-numbers/crates/sim-lib-numbers-tensor/src/tests/execution` is checked by `cargo test`.
+Specimen `spec-test/sim-numbers/crates/sim-lib-numbers-tensor-bcast/src/tests` is checked by `cargo test`.
 
-Source `crates/sim-lib-numbers-tensor/src/tests/execution.rs`:
+Source `crates/sim-lib-numbers-tensor-bcast/src/tests.rs`:
 
 ```rust
-use std::sync::Arc;
+use std::sync::{
+    Arc,
+    atomic::{AtomicUsize, Ordering},
+};
 
 use sim_kernel::{
-    CapabilityName, Consistency, Error, EvalFabric, EvalMode, EvalRequest, Expr, NumberLiteral,
-    Symbol, Value, realize_final,
+    Args, CapabilityName, Consistency, Cx, DefaultFactory, EagerPolicy, Error, EvalFabric,
+    EvalMode, EvalRequest, Expr, Factory, NumberLiteral, Symbol, read_construct_capability,
 };
-use sim_shape::{ExprKind, ExprKindShape, shape_value};
-
-// conformance: tensor execution site
-
-use crate::{
-    CpuTensorExecutor, TensorExecution, TensorExecutor, TensorMeta, TensorOp, TensorRequest,
-    TensorSite, reshape_op_symbol, tensor_execute_capability, tensor_executor_symbol,
-    tensor_site_symbol, tensor_value_ref,
+use sim_lib_numbers_tensor::{
+    CpuTensorExecutor, SubmissionEvidence, TensorExecError, TensorExecution, TensorExecutor,
+    TensorExecutorCard, TensorRequest, TensorSite, add_op_symbol, build_tensor_value,
+    tensor_value_class_symbol, tensor_value_ref,
 };
 
-use super::test_cx;
+use crate::TensorBroadcastLib;
 
-fn int_expr(canonical: &str) -> Expr {
-    Expr::Number(NumberLiteral {
-        domain: Symbol::qualified("citizen", "int"),
-        canonical: canonical.to_owned(),
-    })
+fn test_cx() -> Cx {
+    let mut cx = Cx::new(Arc::new(EagerPolicy), Arc::new(DefaultFactory));
+    cx.load_lib(&sim_lib_numbers_arith::NumbersArithmeticLib::new())
+        .unwrap();
+    cx.load_lib(&sim_lib_numbers_f64::F64NumbersLib::new())
+        .unwrap();
+    cx.load_lib(&sim_lib_numbers_i64::I64NumbersLib::new())
+        .unwrap();
+    cx.load_lib(&sim_lib_numbers_rational::RationalNumbersLib::new())
+        .unwrap();
+    cx.load_lib(&sim_lib_numbers_tensor::TensorNumbersLib::new())
+        .unwrap();
+    cx.load_lib(&TensorBroadcastLib::new()).unwrap();
+    cx
+}
+
+fn number(canonical: &str) -> sim_kernel::Value {
+    DefaultFactory
+        .number_literal(Symbol::qualified("numbers", "i64"), canonical.to_owned())
+        .unwrap()
 }
 
 fn i64_expr(canonical: &str) -> Expr {
@@ -75,24 +103,48 @@ fn call(symbol: &str, args: Vec<Expr>) -> Expr {
     }
 }
 
-fn reshape_expr() -> Expr {
-    call(
-        "reshape",
-        vec![
-            call(
-                "vec",
-                vec![i64_expr("1"), i64_expr("2"), i64_expr("3"), i64_expr("4")],
-            ),
-            Expr::Vector(vec![int_expr("2"), int_expr("2")]),
-        ],
-    )
+fn symbol(value: Symbol) -> sim_kernel::Value {
+    DefaultFactory.symbol(value).unwrap()
 }
 
-fn request(expr: Expr, required_capabilities: Vec<CapabilityName>) -> EvalRequest {
+fn shape_value(dims: &[&str]) -> sim_kernel::Value {
+    DefaultFactory
+        .list(
+            dims.iter()
+                .map(|dim| {
+                    DefaultFactory
+                        .number_literal(Symbol::qualified("citizen", "int"), (*dim).to_owned())
+                        .unwrap()
+                })
+                .collect(),
+        )
+        .unwrap()
+}
+
+fn data_value(cells: Vec<sim_kernel::Value>) -> sim_kernel::Value {
+    DefaultFactory.list(cells).unwrap()
+}
+
+// conformance: tensor broadcast element-wise execution routes through TensorExecutor.
+
+fn tensor_cells(cx: &mut Cx, value: &sim_kernel::Value) -> Vec<String> {
+    tensor_value_ref(value)
+        .expect("tensor value")
+        .cells()
+        .unwrap()
+        .iter()
+        .map(|cell| match cell.object().as_expr(cx).unwrap() {
+            Expr::Number(NumberLiteral { canonical, .. }) => canonical,
+            other => panic!("expected number cell, found {other:?}"),
+        })
+        .collect()
+}
+
+fn eval_request(expr: Expr) -> EvalRequest {
     EvalRequest {
         expr,
         result_shape: None,
-        required_capabilities,
+        required_capabilities: Vec::new(),
         deadline: None,
         consistency: Consistency::LocalFirst,
         mode: EvalMode::Eval,
@@ -103,148 +155,375 @@ fn request(expr: Expr, required_capabilities: Vec<CapabilityName>) -> EvalReques
     }
 }
 
-fn tensor_cells_expr(cx: &mut sim_kernel::Cx, value: &Value) -> Vec<Expr> {
-    let tensor = tensor_value_ref(value).expect("tensor value");
-    tensor
-        .cells()
-        .unwrap()
-        .iter()
-        .map(|cell| cell.object().as_expr(cx).unwrap())
-        .collect()
+#[derive(Clone)]
+struct CountingExecutor {
+    calls: Arc<AtomicUsize>,
 }
 
-fn assert_same_tensor(cx: &mut sim_kernel::Cx, left: &Value, right: &Value) {
-    let left_tensor = tensor_value_ref(left).expect("left tensor");
-    let right_tensor = tensor_value_ref(right).expect("right tensor");
-    assert_eq!(left_tensor.shape(), right_tensor.shape());
-    assert_eq!(left_tensor.dtype(), right_tensor.dtype());
-    assert_eq!(tensor_cells_expr(cx, left), tensor_cells_expr(cx, right));
+impl CountingExecutor {
+    fn new(calls: Arc<AtomicUsize>) -> Self {
+        Self { calls }
+    }
 }
 
-#[test]
-fn cpu_executor_reshapes_using_current_tensor_semantics() {
-    let mut cx = test_cx();
-    let source_value = cx
-        .eval_expr(call("vec", vec![i64_expr("1"), i64_expr("2")]))
-        .unwrap();
-    let source_tensor = tensor_value_ref(&source_value).unwrap().clone();
-    let op = TensorOp::without_attributes(&mut cx, reshape_op_symbol()).unwrap();
-    let request = TensorRequest::new(
-        op,
-        vec![source_tensor],
-        TensorMeta::new(vec![2, 1], Symbol::qualified("numbers", "i64")),
-    );
-
-    let result = CpuTensorExecutor::new().execute(&mut cx, request).unwrap();
-
-    let TensorExecution::Complete(tensor) = result else {
-        panic!("cpu executor must complete reshape");
-    };
-    assert_eq!(tensor.shape(), &[2, 1]);
-    assert_eq!(tensor.dtype(), &Symbol::qualified("numbers", "i64"));
-}
-
-#[test]
-fn tensor_site_realized_cpu_matches_direct_cpu_executor() {
-    let mut cx = test_cx();
-    let source_value = cx
-        .eval_expr(call(
-            "vec",
-            vec![i64_expr("1"), i64_expr("2"), i64_expr("3"), i64_expr("4")],
-        ))
-        .unwrap();
-    let source_tensor = tensor_value_ref(&source_value).unwrap().clone();
-    let op = TensorOp::without_attributes(&mut cx, reshape_op_symbol()).unwrap();
-    let direct = match CpuTensorExecutor::new()
-        .execute(
-            &mut cx,
-            TensorRequest::new(
-                op,
-                vec![source_tensor],
-                TensorMeta::new(vec![2, 2], Symbol::qualified("numbers", "i64")),
-            ),
+impl TensorExecutor for CountingExecutor {
+    fn card(&self) -> TensorExecutorCard {
+        TensorExecutorCard::new(
+            Symbol::qualified("test", "counting-executor"),
+            "counting",
+            Symbol::qualified("core", "local-fabric"),
+            vec![add_op_symbol()],
+            None,
         )
-        .unwrap()
-    {
-        TensorExecution::Complete(tensor) => {
-            cx.factory().opaque(std::sync::Arc::new(tensor)).unwrap()
-        }
-        TensorExecution::Unsupported { reason } => panic!("unexpected unsupported: {reason}"),
-    };
+    }
 
-    let site = TensorSite::local_cpu();
-    let realized = realize_final(&mut cx, &site, request(reshape_expr(), Vec::new()))
-        .unwrap()
-        .value;
+    fn execute(
+        &self,
+        cx: &mut Cx,
+        request: TensorRequest,
+    ) -> std::result::Result<TensorExecution, TensorExecError> {
+        self.calls.fetch_add(1, Ordering::SeqCst);
+        assert_eq!(request.operation.symbol, add_op_symbol());
+        CpuTensorExecutor::new().execute(cx, request)
+    }
 
-    assert_same_tensor(&mut cx, &direct, &realized);
+    fn flush(&self) -> std::result::Result<SubmissionEvidence, TensorExecError> {
+        CpuTensorExecutor::new().flush()
+    }
+}
+
+#[derive(Clone)]
+struct DecliningExecutor;
+
+impl TensorExecutor for DecliningExecutor {
+    fn card(&self) -> TensorExecutorCard {
+        TensorExecutorCard::new(
+            Symbol::qualified("test", "declining-executor"),
+            "declining",
+            Symbol::qualified("test", "device"),
+            vec![add_op_symbol()],
+            Some(CapabilityName::new("test.device")),
+        )
+    }
+
+    fn execute(
+        &self,
+        _cx: &mut Cx,
+        _request: TensorRequest,
+    ) -> std::result::Result<TensorExecution, TensorExecError> {
+        Ok(TensorExecution::Unsupported {
+            reason: Arc::from("device declines boxed mixed-number tensors"),
+        })
+    }
+
+    fn flush(&self) -> std::result::Result<SubmissionEvidence, TensorExecError> {
+        Ok(SubmissionEvidence::new(self.card().symbol, 0))
+    }
 }
 
 #[test]
-fn tensor_site_checks_capabilities_and_restores_parent_env() {
+fn scalar_plus_vector_broadcasts() {
     let mut cx = test_cx();
-    assert!(cx.env().get(&tensor_executor_symbol()).is_none());
-    let site = TensorSite::local_cpu();
-    let denied = match site.realize(
-        &mut cx,
-        request(reshape_expr(), vec![tensor_execute_capability()]),
-    ) {
-        Ok(_) => panic!("tensor site must deny missing tensor execution capability"),
-        Err(error) => error,
-    };
-    assert!(matches!(
-        denied,
-        Error::CapabilityDenied { capability } if capability == tensor_execute_capability()
-    ));
-    assert!(cx.env().get(&tensor_executor_symbol()).is_none());
+    let vector = cx
+        .call_function(
+            &Symbol::new("vec"),
+            Args::new(vec![number("1"), number("2"), number("3")]),
+        )
+        .unwrap();
+    let out = cx
+        .call_function(&Symbol::new("+"), Args::new(vec![number("1"), vector]))
+        .unwrap();
+    assert_eq!(
+        out.object().as_expr(&mut cx).unwrap(),
+        Expr::Vector(vec![
+            Expr::Number(NumberLiteral {
+                domain: Symbol::qualified("numbers", "i64"),
+                canonical: "2".to_owned(),
+            }),
+            Expr::Number(NumberLiteral {
+                domain: Symbol::qualified("numbers", "i64"),
+                canonical: "3".to_owned(),
+            }),
+            Expr::Number(NumberLiteral {
+                domain: Symbol::qualified("numbers", "i64"),
+                canonical: "4".to_owned(),
+            }),
+        ])
+    );
+}
 
-    cx.grant(tensor_execute_capability());
+#[test]
+fn matrix_plus_vector_broadcasts_trailing_axis() {
+    let mut cx = test_cx();
+    let rows = cx
+        .factory()
+        .list(vec![
+            cx.factory().list(vec![number("1"), number("2")]).unwrap(),
+            cx.factory().list(vec![number("3"), number("4")]).unwrap(),
+        ])
+        .unwrap();
+    let matrix = cx
+        .call_function(&Symbol::new("mat"), Args::new(vec![rows]))
+        .unwrap();
+    let vector = cx
+        .call_function(
+            &Symbol::new("vec"),
+            Args::new(vec![number("10"), number("20")]),
+        )
+        .unwrap();
+    let out = cx
+        .call_function(&Symbol::new("+"), Args::new(vec![matrix, vector]))
+        .unwrap();
+    assert_eq!(
+        out.object().as_expr(&mut cx).unwrap(),
+        Expr::Vector(vec![
+            Expr::Vector(vec![
+                Expr::Number(NumberLiteral {
+                    domain: Symbol::qualified("numbers", "i64"),
+                    canonical: "11".to_owned(),
+                }),
+                Expr::Number(NumberLiteral {
+                    domain: Symbol::qualified("numbers", "i64"),
+                    canonical: "22".to_owned(),
+                }),
+            ]),
+            Expr::Vector(vec![
+                Expr::Number(NumberLiteral {
+                    domain: Symbol::qualified("numbers", "i64"),
+                    canonical: "13".to_owned(),
+                }),
+                Expr::Number(NumberLiteral {
+                    domain: Symbol::qualified("numbers", "i64"),
+                    canonical: "24".to_owned(),
+                }),
+            ]),
+        ])
+    );
+}
+
+#[test]
+fn rank_three_broadcast_matches_manual_cells() {
+    let mut cx = test_cx();
+    let left = build_tensor_value(
+        &mut cx,
+        vec![2, 1, 3],
+        Some(Symbol::qualified("numbers", "i64")),
+        ["1", "2", "3", "4", "5", "6"]
+            .into_iter()
+            .map(number)
+            .collect(),
+    )
+    .unwrap();
+    let right = build_tensor_value(
+        &mut cx,
+        vec![1, 4, 1],
+        Some(Symbol::qualified("numbers", "i64")),
+        ["10", "20", "30", "40"].into_iter().map(number).collect(),
+    )
+    .unwrap();
+
+    let out = cx
+        .call_function(&Symbol::new("+"), Args::new(vec![left, right]))
+        .unwrap();
+    let tensor = tensor_value_ref(&out).unwrap();
+
+    assert_eq!(tensor.shape(), &[2, 4, 3]);
+    assert_eq!(
+        tensor_cells(&mut cx, &out),
+        vec![
+            "11", "12", "13", "21", "22", "23", "31", "32", "33", "41", "42", "43", "14", "15",
+            "16", "24", "25", "26", "34", "35", "36", "44", "45", "46",
+        ]
+    );
+}
+
+#[test]
+fn zero_extent_broadcast_preserves_empty_result() {
+    let mut cx = test_cx();
+    let empty = build_tensor_value(
+        &mut cx,
+        vec![0],
+        Some(Symbol::qualified("numbers", "i64")),
+        Vec::new(),
+    )
+    .unwrap();
+    let unit = build_tensor_value(
+        &mut cx,
+        vec![1],
+        Some(Symbol::qualified("numbers", "i64")),
+        vec![number("9")],
+    )
+    .unwrap();
+
+    let out = cx
+        .call_function(&Symbol::new("+"), Args::new(vec![empty, unit]))
+        .unwrap();
+    let tensor = tensor_value_ref(&out).unwrap();
+
+    assert_eq!(tensor.shape(), &[0]);
+    assert!(tensor.cells().unwrap().is_empty());
+}
+
+#[test]
+fn repeated_operand_alias_uses_stable_source_cells() {
+    let mut cx = test_cx();
+    let vector = cx
+        .call_function(
+            &Symbol::new("vec"),
+            Args::new(vec![number("2"), number("3"), number("4")]),
+        )
+        .unwrap();
+
+    let out = cx
+        .call_function(&Symbol::new("*"), Args::new(vec![vector.clone(), vector]))
+        .unwrap();
+
+    assert_eq!(tensor_cells(&mut cx, &out), vec!["4", "9", "16"]);
+}
+
+#[test]
+fn incompatible_broadcast_shapes_error_before_execution() {
+    let mut cx = test_cx();
+    let left = cx
+        .call_function(
+            &Symbol::new("vec"),
+            Args::new(vec![number("1"), number("2")]),
+        )
+        .unwrap();
+    let right = cx
+        .call_function(
+            &Symbol::new("vec"),
+            Args::new(vec![number("3"), number("4"), number("5")]),
+        )
+        .unwrap();
+
+    let err = cx
+        .call_function(&Symbol::new("+"), Args::new(vec![left, right]))
+        .unwrap_err();
+
+    assert!(err.to_string().contains("cannot broadcast"));
+}
+
+#[test]
+fn active_env_executor_receives_elementwise_request() {
+    let mut cx = test_cx();
+    let calls = Arc::new(AtomicUsize::new(0));
+    let site = TensorSite::new(
+        Symbol::qualified("test", "tensor-counting-site"),
+        Arc::new(CountingExecutor::new(calls.clone())),
+        Vec::new(),
+    );
     let reply = site
         .realize(
             &mut cx,
-            request(
-                Expr::Symbol(tensor_executor_symbol()),
-                vec![tensor_execute_capability()],
-            ),
+            eval_request(call(
+                "+",
+                vec![
+                    i64_expr("1"),
+                    call("vec", vec![i64_expr("2"), i64_expr("3")]),
+                ],
+            )),
         )
         .unwrap();
-    assert!(
-        reply
-            .value
-            .object()
-            .display(&mut cx)
-            .unwrap()
-            .contains("tensor-executor")
-    );
-    assert!(cx.env().get(&tensor_executor_symbol()).is_none());
+
+    assert_eq!(calls.load(Ordering::SeqCst), 1);
+    assert_eq!(tensor_cells(&mut cx, &reply.value), vec!["3", "4"]);
 }
 
 #[test]
-fn tensor_site_checks_result_shape_and_restores_parent_env() {
+fn active_device_decline_returns_unsupported_error() {
     let mut cx = test_cx();
-    let site = TensorSite::local_cpu();
-    let mut request = request(reshape_expr(), Vec::new());
-    request.result_shape = Some(shape_value(
-        Symbol::qualified("test", "bool-result"),
-        Arc::new(ExprKindShape::new(ExprKind::Bool)),
-    ));
+    cx.grant(CapabilityName::new("test.device"));
+    let site = TensorSite::new(
+        Symbol::qualified("test", "tensor-declining-site"),
+        Arc::new(DecliningExecutor),
+        vec![CapabilityName::new("test.device")],
+    );
 
-    let error = match site.realize(&mut cx, request) {
-        Ok(_) => panic!("tensor site must reject a mismatched result shape"),
+    let err = match site.realize(
+        &mut cx,
+        eval_request(call(
+            "+",
+            vec![
+                call("vec", vec![i64_expr("1"), i64_expr("2")]),
+                call("vec", vec![i64_expr("3"), i64_expr("4")]),
+            ],
+        )),
+    ) {
+        Ok(_) => panic!("declining executor must fail the realized expression"),
         Err(error) => error,
     };
 
-    assert!(matches!(error, Error::WrongShape { .. }));
-    assert!(cx.env().get(&tensor_executor_symbol()).is_none());
+    assert!(matches!(err, Error::Eval(_)));
+    assert!(err.to_string().contains("device declines"));
 }
 
 #[test]
-fn tensor_numbers_lib_exports_tensor_site() {
-    let cx = test_cx();
-    let site = cx
-        .registry()
-        .site_by_symbol(&tensor_site_symbol())
-        .expect("tensor site export");
-    assert!(site.object().as_eval_fabric().is_some());
+fn broadcast_ops_accept_tensor_citizen_values() {
+    let mut cx = test_cx();
+    cx.grant(read_construct_capability());
+    let vector = cx
+        .read_construct(
+            &tensor_value_class_symbol(),
+            vec![
+                symbol(Symbol::new("v1")),
+                shape_value(&["3"]),
+                data_value(vec![number("1"), number("2"), number("3")]),
+                symbol(Symbol::qualified("numbers", "i64")),
+            ],
+        )
+        .unwrap();
+    let out = cx
+        .call_function(&Symbol::new("+"), Args::new(vec![number("1"), vector]))
+        .unwrap();
+    assert_eq!(
+        out.object().as_expr(&mut cx).unwrap(),
+        Expr::Vector(vec![
+            Expr::Number(NumberLiteral {
+                domain: Symbol::qualified("numbers", "i64"),
+                canonical: "2".to_owned(),
+            }),
+            Expr::Number(NumberLiteral {
+                domain: Symbol::qualified("numbers", "i64"),
+                canonical: "3".to_owned(),
+            }),
+            Expr::Number(NumberLiteral {
+                domain: Symbol::qualified("numbers", "i64"),
+                canonical: "4".to_owned(),
+            }),
+        ])
+    );
+}
+
+#[test]
+fn broadcast_result_over_cell_ceiling_errors_instead_of_oom() {
+    let mut cx = test_cx();
+    let i64_domain = Symbol::qualified("numbers", "i64");
+    // Two individually-legal operands (~1M cells each) whose broadcast is a
+    // 1e12-cell shape: it fits in usize but must be rejected before the result
+    // is materialized rather than driven into an out-of-memory abort.
+    let cell = number("1");
+    let column = build_tensor_value(
+        &mut cx,
+        vec![1_000_000, 1],
+        Some(i64_domain.clone()),
+        vec![cell.clone(); 1_000_000],
+    )
+    .unwrap();
+    let row = build_tensor_value(
+        &mut cx,
+        vec![1, 1_000_000],
+        Some(i64_domain),
+        vec![cell; 1_000_000],
+    )
+    .unwrap();
+    let err = cx
+        .call_function(&Symbol::new("+"), Args::new(vec![column, row]))
+        .unwrap_err();
+    let message = err.to_string();
+    assert!(
+        message.contains("cells") && message.contains("exceeding"),
+        "expected a cell-ceiling diagnostic, got: {message}"
+    );
 }
 ```
