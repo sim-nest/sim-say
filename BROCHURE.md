@@ -169,7 +169,9 @@ piece gives you.
 - **sim-lib-numbers-tensor-bcast** -- It lets you combine grids of different shapes sensibly, stretching the smaller to match the larger.
 - **sim-lib-numbers-tensor-bit** -- It stores big grids of yes-or-no values tightly packed and combines them with logical operations.
 - **sim-lib-numbers-tensor-cmplxf** -- It holds grids of complex numbers efficiently, for signal and wave work done in bulk.
+- **sim-lib-numbers-tensor-f32** -- It gives you compact single-precision grids for data and model math that do not need f64 storage.
 - **sim-lib-numbers-tensor-f64** -- It gives you fast grids of ordinary decimal numbers, the common case for number-heavy work.
+- **sim-lib-numbers-tensor-half** -- It gives you compact half-precision tensor storage with explicit f32 widening for CPU work.
 - **sim-lib-numbers-tensor-i64** -- It gives you fast grids of whole numbers that never overflow into wrong answers.
 - **sim-lib-numbers-tensor-linalg** -- It does the matrix and vector math behind graphics, data science, and engineering.
 - **sim-lib-numbers-tensor-rat64** -- It gives you grids of exact fractions, so array math avoids rounding entirely.
@@ -178,6 +180,7 @@ piece gives you.
 - **sim-lib-discrete-comb** -- count and list every way to arrange or choose things, and give each arrangement its own exact number.
 - **sim-lib-discrete-graph** -- model anything as a network of connections and find out how the pieces link, reach, and cost.
 - **sim-lib-discrete-rank** -- turn a discrete object into a position and a grade so you can place it, score it, and compare it.
+- **sim-lib-discrete-search** -- Search a finite decision space with explicit budgets and a receipt that says exactly what happened.
 - **sim-lib-discrete-spectral** -- break a pattern over on-or-off choices into its building blocks and read how it is really shaped.
 - **sim-lib-femm-assembly** -- It gathers every small piece of your model into one big system the computer can actually solve.
 - **sim-lib-femm-codec** -- It writes your model and its results out as readable text and reads them back without losing anything.
@@ -201,11 +204,13 @@ piece gives you.
 
 ### runtime
 
+- **sim-incremental-core** -- It is the small, generic calculation engine that remembers what a query read and recomputes only the parts whose evidence changed.
 - **sim-lib-binding** -- It keeps track of what every name in a program stands for, and exactly where that meaning holds.
 - **sim-lib-control** -- It manages how a running program moves -- pausing, resuming, retrying, and recovering when something goes wrong.
 - **sim-lib-core** -- It is the shared plumbing every SIM library uses to announce what it offers and get it installed once, cleanly.
 - **sim-lib-dispatch** -- It picks the right version of an operation based on the kinds of things you hand it.
 - **sim-lib-exec** -- It lets a trusted host run a specific outside process with clear permission and tight limits.
+- **sim-lib-incremental** -- It loads incremental calculation into SIM as a capability-gated runtime organ for expression values.
 - **sim-lib-lang-cl** -- It lets you write for SIM in familiar Common Lisp style, with the parentheses and forms Lisp people expect.
 - **sim-lib-lang-clojure** -- It lets you write for SIM in Clojure style, using EDN data notation and an immutable, functional feel.
 - **sim-lib-lang-genconf** -- It generates a steady, repeatable set of test inputs for confirming that language surfaces behave correctly.
@@ -230,6 +235,7 @@ piece gives you.
 - **sim-table-hash** -- A quick name-to-value lookup store that finds any entry by its key almost instantly.
 - **sim-table-http** -- It lets a trusted host treat direct HTTP resources as table entries under explicit network permission.
 - **sim-table-lazy** -- A lookup table whose values are worked out the first time you ask and then remembered.
+- **sim-table-mount** -- It turns several Table and Dir backends into one predictable namespace without weakening each backend's authority checks.
 - **sim-table-override** -- A stack of lookup tables where the top layers can cover entries in the ones beneath.
 - **sim-ledger** -- clear yearly books with exact money values and balance checks at the center.
 - **sim-ledger-cli** -- a direct terminal path from exported books to checked yearly reports.
@@ -265,7 +271,6 @@ piece gives you.
 - **sim-view-tty** -- The library that draws SIM in your terminal and reads your keystrokes.
 - **sim-conformance** -- the runnable checklist that proves SIM actually behaves the way its architecture promises.
 - **sim-nest** -- the single starting point a developer adds to reach every part of the SIM runtime.
-- **sim-codec-mspdi** -- project schedules can cross the Microsoft Project XML boundary with clear loss reporting.
 - **sim-codec-odf** -- LibreOffice files can carry local office documents without hiding what falls outside the portable model.
 - **sim-codec-ooxml** -- Office file packages can move through SIM without hiding what the portable model cannot keep.
 - **sim-lib-deck** -- presentation content stays portable before it enters a slide file or hosted editor.
@@ -279,10 +284,8 @@ piece gives you.
 - **sim-lib-mail** -- mail and calendar records stay useful without carrying private bodies around.
 - **sim-lib-office-pack** -- It packages a closed ledger year into review-ready office exports without sending anything live.
 - **sim-lib-sheet** -- spreadsheets keep exact local values before any vendor file format enters.
-- **sim-site-dalux** -- Dalux project items become local SIM office records behind API identity gates.
 - **sim-site-libreoffice** -- LibreOffice automation stays optional, permissioned, and outside the runtime process.
 - **sim-site-msgraph** -- Microsoft Graph documents can enter SIM through a modeled-first office site.
-- **sim-site-powerproject** -- Powerproject and Project for the web become permissioned places for SIM Gantt plans.
 - **sim-site-sharepoint** -- SharePoint lists and drive folders become reviewable SIM office records.
 
 ### web
@@ -330,7 +333,7 @@ This crate lets SIM talk to a model that lives behind a web address. You point i
 
 The piece that lets SIM run a model right on your own machine, in the same process.
 
-This crate installs a model runner that lives inside SIM itself, registered under a local placement so agents can send work to it. Out of the box it needs no model files and makes no outside contact, which makes it a safe, predictable default for trying things and for tests where you want the same answer every time. When you do want real on-device inference, an optional build brings in native model support, kept fenced off in one clearly marked spot. Another optional build can host a model packaged as a sandboxed guest, loaded only after capability checks pass. The runner announces what it offers, including whether it can stream and whether replies can be reused.
+This crate installs a modeled local runner inside SIM, registered under a local placement so agents can send work to it. It needs no model files and makes no outside contact, which makes it a safe, predictable default for trying things and for tests where you want the same answer every time. Real local execution uses the subprocess runner, loopback HTTP runner profiles, or a sandboxed wasm model guest loaded only after capability checks pass. The runner announces what it offers, including whether it can stream and whether replies can be reused.
 
 #### sim-lib-agent-runner-process
 
@@ -688,6 +691,32 @@ It is the shared handshake that lets SIM pass values to and from sandboxed WebAs
 
 WebAssembly lets code from elsewhere run safely inside a sandbox, and this is the agreed way for SIM and such a module to talk. It defines the exact byte frames that carry values, descriptions, and lists of what a module offers, so both sides read and write them the same way. With that handshake in place, a guest module can be brought in and its offerings surfaced to the runtime as if they were part of it, ready to be called. This handles only the crossing itself -- the framing and the passing of values back and forth -- and leaves what the guest actually does inside its own walls. The result is a clean, well-defined border between the host and any code loaded into the sandbox.
 
+### sim-construction
+
+#### sim-codec-mspdi
+
+project schedules can cross the Microsoft Project XML boundary with clear loss reporting.
+
+`sim-codec-mspdi` gives construction project-control workflows a file exchange path for local Gantt plans. It reads and writes the schedule pieces people need to inspect first: task ids, names, dates, progress, and dependency links.
+
+#### sim-lib-construction-project
+
+the construction charter spine that keeps project intent tied to evidence.
+
+`sim-lib-construction-project` gives a construction team a narrow starting record: project identity, customer intent, delivery model, currency, acceptance, and source references. The readiness result says exactly which charter facts are present and which are still missing.
+
+#### sim-site-dalux
+
+Dalux project items become construction evidence behind API identity gates.
+
+This crate gives construction project data a Dalux boundary that reads items into local office documents and keeps live service access behind a bearer token from an API identity. It gives hosts a small, named place to connect Dalux without changing the construction or office document models.
+
+#### sim-site-powerproject
+
+Powerproject and Project for the web become permissioned places for SIM Gantt plans.
+
+This crate gives schedule work a vendor boundary without changing the local plan model. It names Powerproject as a live desktop placement, names Project for the web as a Dataverse placement, and keeps both paths tied to the same task and dependency records.
+
 ### sim-discrete
 
 #### sim-lib-discrete
@@ -719,6 +748,12 @@ Whenever your problem is really a set of things joined by links -- roads between
 turn a discrete object into a position and a grade so you can place it, score it, and compare it.
 
 This crate connects the discrete-math family to SIM's ranking machinery. It takes concrete objects -- a set of chosen items, an ordering, a small network, a on-or-off signal, a bundle of flags -- and gives each one a clear place within the full space of possibilities. From there you can measure how far apart two objects are, so "similar" and "very different" become numbers you can act on. It also compiles a grade from an object's own structure: how tightly a network holds together, how heavy its cheapest connecting skeleton is, how spread out its component pattern is. The result is a single, comparable score drawn straight from meaningful traits rather than an arbitrary label.
+
+#### sim-lib-discrete-search
+
+Search a finite decision space with explicit budgets and a receipt that says exactly what happened.
+
+This crate gives discrete algorithms a common way to explore choices without silently running forever or hiding partial answers. A caller supplies a state, ordered choices, pruning rules, propagation, and optional cost bounds. The engine charges work for expansion, scoring, propagation, and output, then stops deterministically when it completes, proves infeasibility, hits a bound, or is cancelled.
 
 #### sim-lib-discrete-spectral
 
@@ -884,7 +919,7 @@ Adding a new capability to SIM normally means writing a pile of repetitive regis
 
 The shared rulebook for naming and requesting table data across SIM.
 
-Many parts of SIM store and fetch data arranged as tables, and they need to agree on two things: which names are allowed for a location, and how a request to read or change a table is spelled out on the wire. This crate is the single home for both. It checks that a path segment is a real, safe name -- not empty, not a sneaky parent escape, not carrying a stray separator -- and it builds a small path step by step, rejecting anything illegal as it grows. It also describes each table request in one agreed form and translates it to and from SIM data using the exact spellings the remote backends already use, so a local store and a distant one understand each other without guesswork.
+Many parts of SIM store and fetch data arranged as tables, and they need to agree on three things: which names are allowed for a location, how relative references resolve, and how a request to read or change a table is spelled out on the wire. This crate is the single home for those rules. It checks that a path segment is a real, safe name -- not empty, not a sneaky parent escape, not carrying a stray separator -- and it resolves absolute and relative references into one canonical path. It also describes each table request in one agreed form and translates it to and from SIM data using the exact spellings the remote backends already use, so a local store and a distant one understand each other without guesswork.
 
 #### sim-value
 
@@ -1342,7 +1377,7 @@ Point it at a set of numbers and it tells you the story they hold: the typical v
 
 It gives you grids of numbers, from simple lists to multi-dimensional blocks, as one kind of value.
 
-Lots of real data comes in arrangements: a row of readings, a table of figures, an image made of pixels, a stack of layers. This gives you a single, uniform way to hold any such arrangement of numbers, from a plain list up to a many-dimensioned block, and to build them with simple constructors for vectors, matrices, and beyond. Because the shape is part of the value, everything that works on grids works the same regardless of how many dimensions you use. It is the common container that turns scattered numbers into structured data you can operate on as a whole.
+Lots of real data comes in arrangements: a row of readings, a table of figures, an image made of pixels, a stack of layers. This gives you a single, uniform way to hold any such arrangement of numbers, from a plain list up to a many-dimensioned block, and to build them with simple constructors for vectors, matrices, and beyond. Because the shape is part of the value, everything that works on grids works the same regardless of how many dimensions you use. It is the common container that turns scattered numbers into structured data you can operate on as a whole, and `tensor/cast` makes dtype conversion explicit when storage precision changes.
 
 #### sim-lib-numbers-tensor-bcast
 
@@ -1362,11 +1397,23 @@ It holds grids of complex numbers efficiently, for signal and wave work done in 
 
 Fields like signal processing and physics work with whole arrays of complex numbers, each having a real and an imaginary part. This provides a grid specialized to carry exactly those two-part values compactly and to operate on them as a unit. Instead of scattering the pairs loosely, it keeps them in a tight, ordered arrangement suited to fast bulk work, and it converts cleanly to and from the system's general grid form so it stays fully compatible. If the number of values does not match the declared shape, it refuses rather than guess, so your data stays trustworthy.
 
+#### sim-lib-numbers-tensor-f32
+
+It gives you compact single-precision grids for data and model math that do not need f64 storage.
+
+Many numeric workloads want the shape discipline of tensors without the memory footprint of double precision. This provides a tensor backend that stores each cell as native `f32`, keeps the same canonical tensor interface as the rest of the stack, and can still round-trip through the uniform representation when a generic runtime component needs to inspect it.
+
 #### sim-lib-numbers-tensor-f64
 
 It gives you fast grids of ordinary decimal numbers, the common case for number-heavy work.
 
 Most grid math, from data analysis to simulation, runs on plain decimal numbers. This provides a grid specialized to hold those decimals in a single tight, contiguous block and to run math across them at speed. Because the values sit together in memory rather than scattered, operations sweep through them quickly. It converts cleanly to and from the system's general grid form, so this fast version and the uniform one use the same interface. If the number of values you supply does not fit the shape you declared, it declines rather than proceed with mismatched data, keeping results sound.
+
+#### sim-lib-numbers-tensor-half
+
+It gives you compact half-precision tensor storage with explicit f32 widening for CPU work.
+
+Model and GPU-oriented data often lives in `f16` or `bf16` buffers. This provides those two storage backends as ordinary SIM tensor descriptors while keeping CPU arithmetic honest: when a host-side helper computes over the compact cells, it widens them to `f32` first and returns an `f32` tensor or value.
 
 #### sim-lib-numbers-tensor-i64
 
@@ -1387,12 +1434,6 @@ It gives you grids of exact fractions, so array math avoids rounding entirely.
 When you need a whole grid of values to stay exact, decimals will not do; they round. This provides a grid where every cell is a precise fraction, a top number over a bottom number, kept compact for speed. Each cell is automatically reduced to lowest terms with a tidy, consistent sign, so equal fractions look the same and comparisons behave. It converts cleanly to and from the system's general grid form, staying fully compatible with the rest of the stack. If the count of values does not match the shape you declared, it refuses rather than proceed with mismatched data.
 
 ### sim-office
-
-#### sim-codec-mspdi
-
-project schedules can cross the Microsoft Project XML boundary with clear loss reporting.
-
-`sim-codec-mspdi` gives the office family a file exchange path for local Gantt plans. It reads and writes the schedule pieces people need to inspect first: task ids, names, dates, progress, and dependency links.
 
 #### sim-codec-odf
 
@@ -1472,12 +1513,6 @@ spreadsheets keep exact local values before any vendor file format enters.
 
 `sim-lib-sheet` gives the office family a small spreadsheet model with sparse cells, exact rational numbers, formulas, and document projection. A local sheet can be inspected and edited as SIM data before Excel, LibreOffice, or service placements appear.
 
-#### sim-site-dalux
-
-Dalux project items become local SIM office records behind API identity gates.
-
-This crate gives construction project data a Dalux boundary that reads items into local office documents and keeps live service access behind a bearer token from an API identity. It gives hosts a small, named place to connect Dalux without changing the document model.
-
 #### sim-site-libreoffice
 
 LibreOffice automation stays optional, permissioned, and outside the runtime process.
@@ -1489,12 +1524,6 @@ LibreOffice automation stays optional, permissioned, and outside the runtime pro
 Microsoft Graph documents can enter SIM through a modeled-first office site.
 
 This crate gives the office family a Microsoft Graph boundary that works with stable recorded answers by default and requires deliberate host permission for live service reads. It keeps the vendor connection outside the kernel while still fitting the shared document site shape.
-
-#### sim-site-powerproject
-
-Powerproject and Project for the web become permissioned places for SIM Gantt plans.
-
-This crate gives schedule work a vendor boundary without changing the local plan model. It names Powerproject as a live desktop placement, names Project for the web as a Dataverse placement, and keeps both paths tied to the same task and dependency records.
 
 #### sim-site-sharepoint
 
@@ -1542,6 +1571,12 @@ This is the terminal face of SIM. It takes a scene the system wants to show and 
 
 ### sim-runtime
 
+#### sim-incremental-core
+
+It is the small, generic calculation engine that remembers what a query read and recomputes only the parts whose evidence changed.
+
+This crate lets a runtime component register named queries, read other queries from inside a query frame, and record external observations such as missing names, directory listings, policy revisions, or backend epochs. The engine keeps reverse dependency edges, invalidates dependents deterministically, and reuses memoized values when dependency stamps and fingerprints still match.
+
 #### sim-lib-binding
 
 It keeps track of what every name in a program stands for, and exactly where that meaning holds.
@@ -1571,6 +1606,12 @@ This library lets one named operation have many implementations and choose the f
 It lets a trusted host run a specific outside process with clear permission and tight limits.
 
 Some useful work belongs outside the runtime: a formatter, a compiler, a small command-line helper, or another tool the host already trusts. This crate gives that work a narrow gate. The caller names the exact program and arguments, the host checks permission first, and the run is bounded by a working directory root, a timeout, and a byte limit on captured output.
+
+#### sim-lib-incremental
+
+It loads incremental calculation into SIM as a capability-gated runtime organ for expression values.
+
+This crate wraps `sim-incremental-core` with SIM value conversion, runtime registration, Shape descriptors, and public callables. A library can register query functions, invalidate named keys, verify dirty roots, explain dependency edges, snapshot graph state, and read calculation metrics without importing a private calculation loop. The organ keeps the generic engine separate while presenting ordinary SIM expressions at the runtime boundary.
 
 #### sim-lib-lang-cl
 
@@ -1739,6 +1780,12 @@ This backend points a table at a base HTTP address. A key becomes one resource u
 A lookup table whose values are worked out the first time you ask and then remembered.
 
 This table holds names now but puts off producing their values until someone reads them. Each entry carries a small piece of work that runs at most once; the first read computes the value, and every read after that returns the saved result. That means a program can list many entries cheaply and pay only for the ones it actually opens, and never pay twice for the same one. It suits values that are expensive to build or drawn from somewhere slow. It loads into SIM as an optional part, present when a program wants keyed storage with deferred, remembered values.
+
+#### sim-table-mount
+
+It turns several Table and Dir backends into one predictable namespace without weakening each backend's authority checks.
+
+Applications often need one namespace assembled from several storage places: an in-memory control tree, a filesystem project folder, a remote table, and a small local table of overrides. This crate provides that composition point. A caller sees one directory, while each mounted backend still owns its path rules, capabilities, mutation policy, and error behavior. `MountedDir` keeps the normal Table and Dir contract. Longest-prefix routing makes nested mounts predictable, visible mount leaves make inspection clear, and conflicts fail closed instead of silently shadowing data.
 
 #### sim-table-override
 
