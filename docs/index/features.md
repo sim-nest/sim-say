@@ -114,5 +114,6 @@
 | [`feature/sim-web/daw-view-surfaces`](features/feature--sim-web--daw-view-surfaces.md) | `crate/sim-lib-view-daw` | 1 |
 | [`feature/sim-web/device-surfaces`](features/feature--sim-web--device-surfaces.md) | `local/sim-web/crate/sim-lib-view` | 1 |
 | [`feature/sim-web/generated-docs`](features/feature--sim-web--generated-docs.md) | `local/sim-web/crate/xtask` | 0 |
+| [`feature/sim-web/stateful-tree-scenes`](features/feature--sim-web--stateful-tree-scenes.md) | `local/sim-web/crate/sim-lib-scene` | 2 |
 | [`feature/sim-web/view-surface`](features/feature--sim-web--view-surface.md) | `local/sim-web/crate/sim-lib-view` | 1 |
 | [`feature/sim-web/web-shell-host`](features/feature--sim-web--web-shell-host.md) | `crate/sim-web-shell` | 1 |

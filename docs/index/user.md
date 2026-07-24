@@ -114,5 +114,6 @@
 | [`feature/sim-web/daw-view-surfaces`](features/feature--sim-web--daw-view-surfaces.md) | `crate/sim-lib-view-daw` | Expose synth, stream, placement, and component views through the DAW view library. | 1 |
 | [`feature/sim-web/device-surfaces`](features/feature--sim-web--device-surfaces.md) | `local/sim-web/crate/sim-lib-view` | Rank and project view surfaces against desktop, phone, watch, and glasses device profiles. | 1 |
 | [`feature/sim-web/generated-docs`](features/feature--sim-web--generated-docs.md) | `local/sim-web/crate/xtask` | Publish generated package, card, recipe, and index facts for browser and view crates. | 0 |
+| [`feature/sim-web/stateful-tree-scenes`](features/feature--sim-web--stateful-tree-scenes.md) | `local/sim-web/crate/sim-lib-scene` | Render expandable Scene outlines with explicit disclosure state and total budgets for nodes, depth, encoded bytes, and visible faces. | 2 |
 | [`feature/sim-web/view-surface`](features/feature--sim-web--view-surface.md) | `local/sim-web/crate/sim-lib-view` | Expose view and edit surfaces so codecs, browser hosts, and device profiles can render and reverse surface data. | 1 |
 | [`feature/sim-web/web-shell-host`](features/feature--sim-web--web-shell-host.md) | `crate/sim-web-shell` | Serve browser-facing surfaces through loaded web shell runtime libraries and command entry points. | 1 |
