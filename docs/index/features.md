@@ -108,6 +108,7 @@
 | [`feature/sim-stream/generated-docs`](features/feature--sim-stream--generated-docs.md) | `local/sim-stream/crate/xtask` | 0 |
 | [`feature/sim-stream/stream-protocol-helpers`](features/feature--sim-stream--stream-protocol-helpers.md) | `local/sim-stream/crate/sim-lib-stream-core` | 1 |
 | [`feature/sim-tooling/generated-docs`](features/feature--sim-tooling--generated-docs.md) | `local/sim-tooling/crate/xtask` | 2 |
+| [`feature/sim-web/codec-surface-sessions`](features/feature--sim-web--codec-surface-sessions.md) | `crate/sim-lib-web-bridge` | 1 |
 | [`feature/sim-web/daw-view-surfaces`](features/feature--sim-web--daw-view-surfaces.md) | `crate/sim-lib-view-daw` | 1 |
 | [`feature/sim-web/device-surfaces`](features/feature--sim-web--device-surfaces.md) | `local/sim-web/crate/sim-lib-view` | 1 |
 | [`feature/sim-web/generated-docs`](features/feature--sim-web--generated-docs.md) | `local/sim-web/crate/xtask` | 0 |

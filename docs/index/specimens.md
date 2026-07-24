@@ -544,4 +544,5 @@
 | `feature/sim-web/daw-view-surfaces` | `spec-test/sim-web/crates/sim-lib-view-daw/src/recipe_tests` | `crate/sim-lib-view-daw` | `spec-test` | `crates/sim-lib-view-daw/src/recipe_tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-web/device-surfaces` | `spec-test/sim-web/crates/sim-lib-view-device/src/profile_tests` | `crate/sim-lib-view-device` | `spec-test` | `crates/sim-lib-view-device/src/profile_tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-web/view-surface` | `spec-test/sim-web/crates/sim-lib-view/src/surface_tests` | `local/sim-web/crate/sim-lib-view` | `spec-test` | `crates/sim-lib-view/src/surface_tests.rs` | `shape` | `cargo test` | `true` | `true` |
+| `feature/sim-web/codec-surface-sessions` | `spec-test/sim-web/crates/sim-lib-web-bridge/src/surface_session_tests` | `crate/sim-lib-web-bridge` | `spec-test` | `crates/sim-lib-web-bridge/src/surface_session_tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-web/web-shell-host` | `spec-test/sim-web/crates/sim-web-shell/src/tests` | `crate/sim-web-shell` | `spec-test` | `crates/sim-web-shell/src/tests.rs` | `json` | `cargo test` | `true` | `true` |
