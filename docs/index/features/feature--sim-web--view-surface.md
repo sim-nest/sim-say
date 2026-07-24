@@ -66,7 +66,6 @@ Expose view and edit surfaces so codecs, browser hosts, and device profiles can 
 - `view-edit/sim-lib-view-spatial`
 - `view-edit/sim-lib-view-wasm-frame`
 - `view-edit/sim-lib-web-bridge`
-- `view-edit/sim-web-shell`
 - `view/sim-lib-view`
 - `view/sim-lib-view-agent`
 - `view/sim-lib-view-bridge`

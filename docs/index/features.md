@@ -29,8 +29,9 @@
 | [`feature/sim-construction/dalux-project-items`](features/feature--sim-construction--dalux-project-items.md) | `crate/sim-site-dalux` | 2 |
 | [`feature/sim-construction/generated-docs`](features/feature--sim-construction--generated-docs.md) | `local/sim-construction/crate/xtask` | 0 |
 | [`feature/sim-construction/mspdi-schedule-exchange`](features/feature--sim-construction--mspdi-schedule-exchange.md) | `crate/sim-codec-mspdi` | 1 |
+| [`feature/sim-construction/phase-gates`](features/feature--sim-construction--phase-gates.md) | `crate/sim-lib-construction-project` | 3 |
 | [`feature/sim-construction/powerproject-schedule-placement`](features/feature--sim-construction--powerproject-schedule-placement.md) | `crate/sim-site-powerproject` | 1 |
-| [`feature/sim-construction/project-control`](features/feature--sim-construction--project-control.md) | `crate/sim-lib-construction-project` | 3 |
+| [`feature/sim-construction/project-control`](features/feature--sim-construction--project-control.md) | `crate/sim-lib-construction-project` | 5 |
 | [`feature/sim-discrete/bounded-search`](features/feature--sim-discrete--bounded-search.md) | `crate/sim-lib-discrete-search` | 1 |
 | [`feature/sim-discrete/discrete-algebra`](features/feature--sim-discrete--discrete-algebra.md) | `local/sim-discrete/crate/sim-lib-discrete` | 1 |
 | [`feature/sim-discrete/finite-enumeration`](features/feature--sim-discrete--finite-enumeration.md) | `crate/sim-lib-discrete-comb` | 1 |
@@ -47,6 +48,7 @@
 | [`feature/sim-foundation/table-path-references`](features/feature--sim-foundation--table-path-references.md) | `crate/sim-table-core` | 1 |
 | [`feature/sim-foundation/value-helpers`](features/feature--sim-foundation--value-helpers.md) | `crate/sim-value` | 1 |
 | [`feature/sim-index/core`](features/feature--sim-index--core.md) | `local/sim-tooling/crate/xtask` | 3 |
+| [`feature/sim-index/vault-export`](features/feature--sim-index--vault-export.md) | `local/sim-tooling/crate/xtask` | 1 |
 | [`feature/sim-kernel/contract-emitter`](features/feature--sim-kernel--contract-emitter.md) | `local/sim-kernel/crate/xtask` | 0 |
 | [`feature/sim-kernel/kernel-contracts`](features/feature--sim-kernel--kernel-contracts.md) | `crate/sim-kernel` | 0 |
 | [`feature/sim-ledger/generated-docs`](features/feature--sim-ledger--generated-docs.md) | `local/sim-ledger/crate/xtask` | 0 |
@@ -62,7 +64,7 @@
 | [`feature/sim-numbers/generated-docs`](features/feature--sim-numbers--generated-docs.md) | `local/sim-numbers/crate/xtask` | 0 |
 | [`feature/sim-numbers/numbers`](features/feature--sim-numbers--numbers.md) | `crate/sim-lib-numbers-core` | 1 |
 | [`feature/sim-numbers/numeric-pipelines`](features/feature--sim-numbers--numeric-pipelines.md) | `crate/sim-lib-numbers-numeric` | 1 |
-| [`feature/sim-numbers/tensor-execution`](features/feature--sim-numbers--tensor-execution.md) | `local/sim-numbers/crate/sim-lib-numbers-tensor` | 2 |
+| [`feature/sim-numbers/tensor-execution`](features/feature--sim-numbers--tensor-execution.md) | `local/sim-numbers/crate/sim-lib-numbers-tensor` | 3 |
 | [`feature/sim-numbers/tensors`](features/feature--sim-numbers--tensors.md) | `local/sim-numbers/crate/sim-lib-numbers-tensor` | 1 |
 | [`feature/sim-office/document-codecs`](features/feature--sim-office--document-codecs.md) | `crate/sim-lib-office-pack` | 1 |
 | [`feature/sim-office/document-surfaces`](features/feature--sim-office--document-surfaces.md) | `crate/sim-lib-doc-surface` | 1 |
@@ -107,6 +109,7 @@
 | [`feature/sim-stream/generated-docs`](features/feature--sim-stream--generated-docs.md) | `local/sim-stream/crate/xtask` | 0 |
 | [`feature/sim-stream/stream-protocol-helpers`](features/feature--sim-stream--stream-protocol-helpers.md) | `local/sim-stream/crate/sim-lib-stream-core` | 1 |
 | [`feature/sim-tooling/generated-docs`](features/feature--sim-tooling--generated-docs.md) | `local/sim-tooling/crate/xtask` | 2 |
+| [`feature/sim-web/codec-surface-sessions`](features/feature--sim-web--codec-surface-sessions.md) | `crate/sim-lib-web-bridge` | 1 |
 | [`feature/sim-web/daw-view-surfaces`](features/feature--sim-web--daw-view-surfaces.md) | `crate/sim-lib-view-daw` | 1 |
 | [`feature/sim-web/device-surfaces`](features/feature--sim-web--device-surfaces.md) | `local/sim-web/crate/sim-lib-view` | 1 |
 | [`feature/sim-web/generated-docs`](features/feature--sim-web--generated-docs.md) | `local/sim-web/crate/xtask` | 0 |
