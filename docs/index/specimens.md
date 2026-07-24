@@ -526,6 +526,7 @@
 | `feature/sim-tooling/generated-docs` | `spec-test/sim-tooling/src/index_render_tests` | `local/sim-tooling/crate/xtask` | `spec-test` | `src/index_render_tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-index/core` | `spec-test/sim-tooling/src/index_vault_graph_tests` | `local/sim-tooling/crate/xtask` | `spec-test` | `src/index_vault_graph_tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-index/core` | `spec-test/sim-tooling/src/index_vault_profile_tests` | `local/sim-tooling/crate/xtask` | `spec-test` | `src/index_vault_profile_tests.rs` | `shape` | `cargo test` | `true` | `true` |
+| `feature/sim-tooling/generated-docs` | `spec-test/sim-tooling/src/index_vault_write_tests` | `local/sim-tooling/crate/xtask` | `spec-test` | `src/index_vault_write_tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-web/daw-view-surfaces` | `spec-test/sim-web/crates/sim-lib-view-daw/src/recipe_tests` | `crate/sim-lib-view-daw` | `spec-test` | `crates/sim-lib-view-daw/src/recipe_tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-web/device-surfaces` | `spec-test/sim-web/crates/sim-lib-view-device/src/profile_tests` | `crate/sim-lib-view-device` | `spec-test` | `crates/sim-lib-view-device/src/profile_tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-web/view-surface` | `spec-test/sim-web/crates/sim-lib-view/src/surface_tests` | `local/sim-web/crate/sim-lib-view` | `spec-test` | `crates/sim-lib-view/src/surface_tests.rs` | `shape` | `cargo test` | `true` | `true` |

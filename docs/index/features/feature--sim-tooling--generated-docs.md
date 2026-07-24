@@ -6,7 +6,7 @@
 - Subject: `local/sim-tooling/crate/xtask`
 - Canonical key: `crate/xtask/feature-sim-tooling-generated-docs`
 
-Generate repo contracts, feature maps, card indexes, and index fragments through xtask.
+Generate repo contracts, feature maps, card indexes, index fragments, and managed vault note namespaces through xtask.
 
 ## Anchors
 
@@ -25,6 +25,7 @@ Generate repo contracts, feature maps, card indexes, and index fragments through
 ## Specimens
 
 - `spec-test/sim-tooling/src/index_render_tests`
+- `spec-test/sim-tooling/src/index_vault_write_tests`
 
 ## Worked Example
 
