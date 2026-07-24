@@ -208,6 +208,7 @@
 | `sim-lib-repl` | [sim-run](../repos/sim-run.md) |
 | `sim-view-tty` | [sim-run](../repos/sim-run.md) |
 | `sim-incremental-core` | [sim-runtime](../repos/sim-runtime.md) |
+| `sim-lib-incremental` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-binding` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-control` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-core` | [sim-runtime](../repos/sim-runtime.md) |

@@ -1,10 +1,11 @@
 # sim-runtime
 
-Published commit: `6435e4bceb4d44e37304fd09cfbae3aacbccd5a6`.
+Published commit: `d304576ddb7b76fef566eb0318017b93af0855b2`.
 
 ## Crates
 
 - `sim-incremental-core`
+- `sim-lib-incremental`
 - `sim-lib-binding`
 - `sim-lib-control`
 - `sim-lib-core`

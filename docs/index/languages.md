@@ -288,6 +288,7 @@
 | `specimen` | `lisp` | crates/sim-lib-numbers-tensor-rat64/recipes/01-basics/rat64-tensor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-tensor/recipes/01-basics/tensor-cast/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-tensor/recipes/01-basics/tensor-constructor/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-numbers-tensor/recipes/01-basics/tensor-execution/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-tensor/recipes/01-basics/tensor-scale/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-openai-server/recipes/01-basics/fixture-chat/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pattern/recipes/01-basics/match-destructure/recipe.toml |
@@ -435,6 +436,7 @@
 | `specimen` | `shape` | crates/sim-lib-numbers-func/src/implementation/domain.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-rational/src/implementation/domain.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-tensor/src/implementation/citizen.rs |
+| `specimen` | `shape` | crates/sim-lib-numbers-tensor/src/tests/execution.rs |
 | `specimen` | `shape` | crates/sim-lib-standard-core/src/read_construct.rs |
 | `specimen` | `shape` | crates/sim-lib-stream-core/src/read_construct.rs |
 | `specimen` | `shape` | crates/sim-lib-stream-device/src/citizen.rs |

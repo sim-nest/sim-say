@@ -237,6 +237,7 @@
 {"card": {"id": "cookbook/logic", "kind": "cookbook-recipe", "owner": "sim-lib-logic", "summary": "Logic database, assertion, and query surfaces."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/organ/binding", "kind": "cookbook-recipe", "owner": "sim-lib-binding", "summary": "Binding surface concepts shared by language profiles."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/organ/dispatch", "kind": "cookbook-recipe", "owner": "sim-lib-dispatch", "summary": "Generic function and multimethod concepts."}, "repo": "sim-runtime"}
+{"card": {"id": "cookbook/organ/incremental", "kind": "cookbook-recipe", "owner": "sim-lib-incremental", "summary": "Memoized expression queries with invalidation, missing observations, cutoff, snapshots, and metrics."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/organ/mutation", "kind": "cookbook-recipe", "owner": "sim-lib-mutation", "summary": "Cells, boxes, mutable tables, and mutable vectors."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/organ/namespace", "kind": "cookbook-recipe", "owner": "sim-lib-namespace", "summary": "Package, module, import, export, and shadowing surfaces."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/organ/pattern", "kind": "cookbook-recipe", "owner": "sim-lib-pattern", "summary": "Pattern matching and algebraic data type declarations."}, "repo": "sim-runtime"}
