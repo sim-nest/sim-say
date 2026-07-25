@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-construction-project`
 - Canonical key: `crate/sim-lib-construction-project/feature-sim-construction-project-control`
 
-Describe construction phase gate and baseline control through as-of snapshot records, project charter identity, append-only fact books, lifecycle vocabulary, baselines, gates, actions, decisions, deterministic deltas, governance, capabilities, shared obligations, bounded exceptions, graph-composed blockers, and readiness with reference-only evidence.
+Describe construction phase gate and baseline control through as-of snapshot records, project charter identity, opportunity, bid/no-bid, customer-intent, collaboration charter, append-only fact books, lifecycle vocabulary, baselines, gates, actions, decisions, deterministic deltas, governance, capabilities, shared obligations, bounded exceptions, graph-composed blockers, and readiness with reference-only evidence.
 
 ## Anchors
 
@@ -16,11 +16,13 @@ Describe construction phase gate and baseline control through as-of snapshot rec
 ## Specimens
 
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/blocked-gate-graph`
+- `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/customer-intent-to-collaboration`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/late-decision`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/mixed-obligation-gate`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/mobilization-gate`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/what-changed`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/fact_book_tests`
+- `spec-test/sim-construction/crates/sim-lib-construction-project/src/opportunity_tests`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/tests`
 
 ## Worked Example
