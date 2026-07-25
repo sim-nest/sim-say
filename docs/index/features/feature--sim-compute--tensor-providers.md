@@ -34,6 +34,7 @@ Run canonical Tensor requests through modeled, automatic, and probe-backed wgpu 
 
 ## Specimens
 
+- `recipe/sim-compute/crates/sim-lib-compute-auto/01-basics/measured-profile-routing`
 - `recipe/sim-compute/crates/sim-lib-compute-model/01-basics/modeled-resident-matrix`
 - `recipe/sim-compute/crates/sim-lib-compute-wgpu/01-basics/wgpu-discovery`
 - `spec-test/sim-compute/crates/sim-lib-compute-auto/src/tests`
@@ -42,26 +43,22 @@ Run canonical Tensor requests through modeled, automatic, and probe-backed wgpu 
 
 ## Worked Example
 
-Specimen `recipe/sim-compute/crates/sim-lib-compute-model/01-basics/modeled-resident-matrix` is checked by `xtask check-recipes`.
+Specimen `recipe/sim-compute/crates/sim-lib-compute-auto/01-basics/measured-profile-routing` is checked by `xtask check-recipes`.
 
-Source `crates/sim-lib-compute-model/recipes/01-basics/modeled-resident-matrix/recipe.toml`:
+Source `crates/sim-lib-compute-auto/recipes/01-basics/measured-profile-routing/recipe.toml`:
 
 ```toml
-id = "modeled-resident-matrix"
-title = "Modeled resident matrix"
+id = "measured-profile-routing"
+title = "Measured profile routing"
 codec = "lisp"
 setup = "setup.siml"
 purpose = "purpose.md"
 expected = "expected.txt"
-order = 10
-tags = ["compute", "tensor", "resident", "modeled"]
-requires = ["compute/model", "numbers/tensor", "standard"]
-capabilities = ["tensor.execute"]
-assert_tags = ["resident", "modeled"]
-assert_capabilities = ["tensor.execute"]
-assert_setup_codec = "lisp"
+order = 20
+tags = ["compute", "tensor", "auto", "profile", "routing"]
+requires = ["compute/auto", "compute/profile", "storage/table", "numbers/tensor", "standard"]
 
 [[expect]]
 form = 0
-result = "(compute modeled-resident-matrix (site site/compute/model) (chain resident resident) (materializations 1) (readbacks 1))"
+result = "(compute auto-profile (table supplied) (measure bounded upload download launch element reduction matmul) (fresh-compatible-conclusive device) (else cpu) (ledger provider materialization-bytes synchronizations))"
 ```

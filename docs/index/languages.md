@@ -127,6 +127,7 @@
 | `specimen` | `lisp` | crates/sim-lib-bridge/recipes/01-basics/loom-valid/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-bridge/recipes/01-basics/loom-woven-repair/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-compute-auto/recipes/01-basics/auto-compute-site/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-compute-auto/recipes/01-basics/measured-profile-routing/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-compute-model/recipes/01-basics/modeled-resident-matrix/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/blocked-gate-graph/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/customer-intent-to-collaboration/recipe.toml |
@@ -443,6 +444,7 @@
 | `specimen` | `shape` | crates/sim-lib-auto-order/src/conformance.rs |
 | `specimen` | `shape` | crates/sim-lib-auto-order/src/lib.rs |
 | `specimen` | `shape` | crates/sim-lib-bridge/src/tests/ask.rs |
+| `specimen` | `shape` | crates/sim-lib-compute-auto/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-compute-wgpu/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-discrete/src/forms.rs |
 | `specimen` | `shape` | crates/sim-lib-incremental/src/tests.rs |
