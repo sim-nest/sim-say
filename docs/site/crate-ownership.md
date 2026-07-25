@@ -67,6 +67,7 @@
 | `sim-lib-compute-auto` | [sim-compute](../repos/sim-compute.md) |
 | `sim-lib-compute-cuda` | [sim-compute](../repos/sim-compute.md) |
 | `sim-lib-compute-model` | [sim-compute](../repos/sim-compute.md) |
+| `sim-lib-compute-rocm` | [sim-compute](../repos/sim-compute.md) |
 | `sim-lib-compute-wgpu` | [sim-compute](../repos/sim-compute.md) |
 | `sim-codec-mspdi` | [sim-construction](../repos/sim-construction.md) |
 | `sim-lib-construction-project` | [sim-construction](../repos/sim-construction.md) |
