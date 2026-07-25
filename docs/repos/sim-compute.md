@@ -1,11 +1,12 @@
 # sim-compute
 
-Published commit: `811b34bcf2aa5ffcf8d2301566163e5b05a1e27a`.
+Published commit: `161ddf6c48ca3937b6c85a9d61875f8fb725b676`.
 
 ## Crates
 
 - `sim-lib-compute-auto`
 - `sim-lib-compute-model`
+- `sim-lib-compute-wgpu`
 
 ## Contracts
 

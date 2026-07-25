@@ -27,7 +27,7 @@
 | [`feature/sim-codecs/pratt`](features/feature--sim-codecs--pratt.md) | `crate/sim-codec-pratt` | 1 |
 | [`feature/sim-codecs/wire-protocol-grammars`](features/feature--sim-codecs--wire-protocol-grammars.md) | `local/sim-codecs/crate/sim-codec` | 1 |
 | [`feature/sim-compute/generated-docs`](features/feature--sim-compute--generated-docs.md) | `local/sim-compute/crate/xtask` | 0 |
-| [`feature/sim-compute/tensor-providers`](features/feature--sim-compute--tensor-providers.md) | `crate/sim-lib-compute-model` | 3 |
+| [`feature/sim-compute/tensor-providers`](features/feature--sim-compute--tensor-providers.md) | `crate/sim-lib-compute-model` | 5 |
 | [`feature/sim-construction/dalux-project-items`](features/feature--sim-construction--dalux-project-items.md) | `crate/sim-site-dalux` | 2 |
 | [`feature/sim-construction/generated-docs`](features/feature--sim-construction--generated-docs.md) | `local/sim-construction/crate/xtask` | 0 |
 | [`feature/sim-construction/mspdi-schedule-exchange`](features/feature--sim-construction--mspdi-schedule-exchange.md) | `crate/sim-codec-mspdi` | 1 |

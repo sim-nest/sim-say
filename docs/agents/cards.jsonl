@@ -61,6 +61,7 @@
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-compute"}
 {"card": {"id": "cookbook/compute-auto", "kind": "cookbook-recipe", "owner": "sim-lib-compute-auto", "summary": "Automatic tensor compute site selection with CPU fallback."}, "repo": "sim-compute"}
 {"card": {"id": "cookbook/compute-model", "kind": "cookbook-recipe", "owner": "sim-lib-compute-model", "summary": "Modeled resident tensor execution for provider and placement tests."}, "repo": "sim-compute"}
+{"card": {"id": "cookbook/compute-wgpu", "kind": "cookbook-recipe", "owner": "sim-lib-compute-wgpu", "summary": "Evidence-based portable GPU adapter discovery."}, "repo": "sim-compute"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-compute"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-construction"}
 {"card": {"id": "cookbook/construction/project", "kind": "cookbook-recipe", "owner": "sim-lib-construction-project", "summary": "Project charter records, append-only facts, snapshots, lifecycle gates, decisions, and evidence readiness."}, "repo": "sim-construction"}

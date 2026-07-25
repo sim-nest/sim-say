@@ -27,7 +27,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `feature/sim-codecs/pratt` | `crate/sim-codec-pratt` | [features/feature--sim-codecs--pratt.md](../index/features/feature--sim-codecs--pratt.md) | 1 | Parse operator-oriented expression languages through the Pratt codec surface. |
 | `feature/sim-codecs/wire-protocol-grammars` | `local/sim-codecs/crate/sim-codec` | [features/feature--sim-codecs--wire-protocol-grammars.md](../index/features/feature--sim-codecs--wire-protocol-grammars.md) | 1 | Read and write binary, bitwise, chat, config, document, index, and MCP wire protocols. |
 | `feature/sim-compute/generated-docs` | `local/sim-compute/crate/xtask` | [features/feature--sim-compute--generated-docs.md](../index/features/feature--sim-compute--generated-docs.md) | 0 | Publish generated package, card, rustdoc, recipe, and Index facts for compute providers. |
-| `feature/sim-compute/tensor-providers` | `crate/sim-lib-compute-model` | [features/feature--sim-compute--tensor-providers.md](../index/features/feature--sim-compute--tensor-providers.md) | 3 | Run canonical Tensor requests through modeled resident and automatic compute sites. |
+| `feature/sim-compute/tensor-providers` | `crate/sim-lib-compute-model` | [features/feature--sim-compute--tensor-providers.md](../index/features/feature--sim-compute--tensor-providers.md) | 5 | Run canonical Tensor requests through modeled, automatic, and probe-backed wgpu compute sites. |
 | `feature/sim-construction/dalux-project-items` | `crate/sim-site-dalux` | [features/feature--sim-construction--dalux-project-items.md](../index/features/feature--sim-construction--dalux-project-items.md) | 2 | Read Dalux project items into local office documents for construction evidence and keep note updates narrow. |
 | `feature/sim-construction/generated-docs` | `local/sim-construction/crate/xtask` | [features/feature--sim-construction--generated-docs.md](../index/features/feature--sim-construction--generated-docs.md) | 0 | Publish generated package, card, recipe, and index facts for construction project-control crates. |
 | `feature/sim-construction/mspdi-schedule-exchange` | `crate/sim-codec-mspdi` | [features/feature--sim-construction--mspdi-schedule-exchange.md](../index/features/feature--sim-construction--mspdi-schedule-exchange.md) | 1 | Round-trip Microsoft Project XML schedules through the portable construction Gantt document model. |
@@ -257,6 +257,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `site/sim-lib-auto-vendor` | `site` | `crate/sim-lib-auto-vendor` |
 | `site/sim-lib-compute-auto` | `site` | `crate/sim-lib-compute-auto` |
 | `site/sim-lib-compute-model` | `site` | `crate/sim-lib-compute-model` |
+| `site/sim-lib-compute-wgpu` | `site` | `crate/sim-lib-compute-wgpu` |
 | `site/sim-lib-numbers-f64` | `site` | `crate/sim-lib-numbers-f64` |
 | `site/sim-lib-numbers-tensor` | `site` | `local/sim-numbers/crate/sim-lib-numbers-tensor` |
 | `site/sim-lib-stream-cpal` | `site` | `crate/sim-lib-stream-cpal` |

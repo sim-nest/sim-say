@@ -6,30 +6,37 @@
 - Subject: `crate/sim-lib-compute-model`
 - Canonical key: `crate/sim-lib-compute-model/feature-sim-compute-tensor-providers`
 
-Run canonical Tensor requests through modeled resident and automatic compute sites.
+Run canonical Tensor requests through modeled, automatic, and probe-backed wgpu compute sites.
 
 ## Anchors
 
 - `anchor/crate/sim-lib-compute-auto`
 - `anchor/crate/sim-lib-compute-model`
+- `anchor/crate/sim-lib-compute-wgpu`
 - `anchor/export/sim-lib-compute-auto/site/compute/auto`
 - `anchor/export/sim-lib-compute-model/site/compute/model`
 - `anchor/runtime-lib/sim-lib-compute-auto/compute-auto-lib`
 - `anchor/runtime-lib/sim-lib-compute-model/compute-model-lib`
+- `anchor/runtime-lib/sim-lib-compute-wgpu/compute-wgpu-lib`
 - `anchor/rustdoc/sim-lib-compute-auto/auto-tensor-executor`
 - `anchor/rustdoc/sim-lib-compute-model/modeled-resident-storage`
 - `anchor/rustdoc/sim-lib-compute-model/modeled-tensor-executor`
+- `anchor/rustdoc/sim-lib-compute-wgpu/compute-wgpu-lib`
+- `anchor/rustdoc/sim-lib-compute-wgpu/wgpu-discovery`
 
 ## Surfaces
 
 - `site/sim-lib-compute-auto`
 - `site/sim-lib-compute-model`
+- `site/sim-lib-compute-wgpu`
 
 ## Specimens
 
 - `recipe/sim-compute/crates/sim-lib-compute-model/01-basics/modeled-resident-matrix`
+- `recipe/sim-compute/crates/sim-lib-compute-wgpu/01-basics/wgpu-discovery`
 - `spec-test/sim-compute/crates/sim-lib-compute-auto/src/tests`
 - `spec-test/sim-compute/crates/sim-lib-compute-model/src/tests`
+- `spec-test/sim-compute/crates/sim-lib-compute-wgpu/src/tests`
 
 ## Worked Example
 
