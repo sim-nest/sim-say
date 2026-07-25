@@ -78,6 +78,13 @@
 | `sim-lib-discrete-rank` | [sim-discrete](../repos/sim-discrete.md) |
 | `sim-lib-discrete-search` | [sim-discrete](../repos/sim-discrete.md) |
 | `sim-lib-discrete-spectral` | [sim-discrete](../repos/sim-discrete.md) |
+| `sim-expr-tree` | [sim-expr-tree](../repos/sim-expr-tree.md) |
+| `sim-expr-tree-calc` | [sim-expr-tree](../repos/sim-expr-tree.md) |
+| `sim-expr-tree-core` | [sim-expr-tree](../repos/sim-expr-tree.md) |
+| `sim-lib-expr-tree` | [sim-expr-tree](../repos/sim-expr-tree.md) |
+| `sim-lib-expr-tree-serve` | [sim-expr-tree](../repos/sim-expr-tree.md) |
+| `sim-lib-expr-tree-server` | [sim-expr-tree](../repos/sim-expr-tree.md) |
+| `sim-lib-view-expr-tree` | [sim-expr-tree](../repos/sim-expr-tree.md) |
 | `sim-lib-femm-assembly` | [sim-femm](../repos/sim-femm.md) |
 | `sim-lib-femm-codec` | [sim-femm](../repos/sim-femm.md) |
 | `sim-lib-femm-core` | [sim-femm](../repos/sim-femm.md) |

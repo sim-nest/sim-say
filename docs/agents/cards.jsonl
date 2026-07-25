@@ -91,6 +91,11 @@
 {"card": {"id": "rank/discrete/simple-graph", "kind": "static-card", "owner": "workspace", "summary": "Labeled simple undirected graphs on n nodes."}, "repo": "sim-discrete"}
 {"card": {"id": "rank/discrete/subset", "kind": "static-card", "owner": "workspace", "summary": "Subsets of a finite ground set."}, "repo": "sim-discrete"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-discrete"}
+{"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-expr-tree"}
+{"card": {"id": "cookbook/sim-expr-tree-calc", "kind": "cookbook-recipe", "owner": "sim-expr-tree-calc", "summary": ""}, "repo": "sim-expr-tree"}
+{"card": {"id": "cookbook/sim-expr-tree-core", "kind": "cookbook-recipe", "owner": "sim-expr-tree-core", "summary": ""}, "repo": "sim-expr-tree"}
+{"card": {"id": "cookbook/sim-lib-expr-tree", "kind": "cookbook-recipe", "owner": "sim-lib-expr-tree", "summary": ""}, "repo": "sim-expr-tree"}
+{"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-expr-tree"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-femm"}
 {"card": {"id": "cookbook/femm-assembly", "kind": "cookbook-recipe", "owner": "sim-lib-femm-assembly", "summary": "Tiny element assembly descriptors."}, "repo": "sim-femm"}
 {"card": {"id": "cookbook/femm-codec", "kind": "cookbook-recipe", "owner": "sim-lib-femm-codec", "summary": "FEMM descriptor codec round-trip examples."}, "repo": "sim-femm"}

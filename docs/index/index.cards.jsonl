@@ -345,6 +345,9 @@
 {"checked":false,"checked_by":null,"id":"recipe/sim-discrete/crates/sim-lib-discrete-spectral/01-basics/fwht-signal","kind":"specimen","language":"lisp","path":"crates/sim-lib-discrete-spectral/recipes/01-basics/fwht-signal/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-lib-discrete-spectral"}
 {"checked":false,"checked_by":null,"id":"recipe/sim-discrete/crates/sim-lib-discrete/01-basics/binomial-count","kind":"specimen","language":"lisp","path":"crates/sim-lib-discrete/recipes/01-basics/binomial-count/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"local/sim-discrete/crate/sim-lib-discrete"}
 {"checked":false,"checked_by":null,"id":"recipe/sim-discrete/crates/sim-lib-discrete/01-basics/matrix-runtime","kind":"specimen","language":"lisp","path":"crates/sim-lib-discrete/recipes/01-basics/matrix-runtime/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"local/sim-discrete/crate/sim-lib-discrete"}
+{"checked":true,"checked_by":"xtask check-recipes","id":"recipe/sim-expr-tree/crates/sim-expr-tree-calc/01-basics/scaffold","kind":"specimen","language":null,"path":"crates/sim-expr-tree-calc/recipes/01-basics/scaffold/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-expr-tree-calc"}
+{"checked":true,"checked_by":"xtask check-recipes","id":"recipe/sim-expr-tree/crates/sim-expr-tree-core/01-basics/scaffold","kind":"specimen","language":null,"path":"crates/sim-expr-tree-core/recipes/01-basics/scaffold/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-expr-tree-core"}
+{"checked":true,"checked_by":"xtask check-recipes","id":"recipe/sim-expr-tree/crates/sim-lib-expr-tree/01-basics/scaffold","kind":"specimen","language":null,"path":"crates/sim-lib-expr-tree/recipes/01-basics/scaffold/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-lib-expr-tree"}
 {"checked":false,"checked_by":null,"id":"recipe/sim-femm/crates/sim-lib-femm-assembly/01-basics/local-stiffness","kind":"specimen","language":"lisp","path":"crates/sim-lib-femm-assembly/recipes/01-basics/local-stiffness/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-lib-femm-assembly"}
 {"checked":false,"checked_by":null,"id":"recipe/sim-femm/crates/sim-lib-femm-codec/01-basics/solution-descriptor","kind":"specimen","language":"lisp","path":"crates/sim-lib-femm-codec/recipes/01-basics/solution-descriptor/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"local/sim-femm/crate/sim-lib-femm-codec"}
 {"checked":false,"checked_by":null,"id":"recipe/sim-femm/crates/sim-lib-femm-core/01-basics/model-limits","kind":"specimen","language":"lisp","path":"crates/sim-lib-femm-core/recipes/01-basics/model-limits/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-lib-femm-core"}
@@ -801,6 +804,9 @@
 {"id":"crate/sim-config","kind":"subject","subject_kind":"crate","title":"sim-config"}
 {"id":"crate/sim-conformance","kind":"subject","subject_kind":"crate","title":"sim-conformance"}
 {"id":"crate/sim-cookbook","kind":"subject","subject_kind":"crate","title":"sim-cookbook"}
+{"id":"crate/sim-expr-tree","kind":"subject","subject_kind":"crate","title":"sim-expr-tree"}
+{"id":"crate/sim-expr-tree-calc","kind":"subject","subject_kind":"crate","title":"sim-expr-tree-calc"}
+{"id":"crate/sim-expr-tree-core","kind":"subject","subject_kind":"crate","title":"sim-expr-tree-core"}
 {"id":"crate/sim-incremental-core","kind":"subject","subject_kind":"crate","title":"sim-incremental-core"}
 {"id":"crate/sim-index-core","kind":"subject","subject_kind":"crate","title":"sim-index-core"}
 {"id":"crate/sim-kernel","kind":"subject","subject_kind":"crate","title":"sim-kernel"}
@@ -841,6 +847,9 @@
 {"id":"crate/sim-lib-doc-store","kind":"subject","subject_kind":"crate","title":"sim-lib-doc-store"}
 {"id":"crate/sim-lib-doc-surface","kind":"subject","subject_kind":"crate","title":"sim-lib-doc-surface"}
 {"id":"crate/sim-lib-exec","kind":"subject","subject_kind":"crate","title":"sim-lib-exec"}
+{"id":"crate/sim-lib-expr-tree","kind":"subject","subject_kind":"crate","title":"sim-lib-expr-tree"}
+{"id":"crate/sim-lib-expr-tree-serve","kind":"subject","subject_kind":"crate","title":"sim-lib-expr-tree-serve"}
+{"id":"crate/sim-lib-expr-tree-server","kind":"subject","subject_kind":"crate","title":"sim-lib-expr-tree-server"}
 {"id":"crate/sim-lib-femm-assembly","kind":"subject","subject_kind":"crate","title":"sim-lib-femm-assembly"}
 {"id":"crate/sim-lib-femm-core","kind":"subject","subject_kind":"crate","title":"sim-lib-femm-core"}
 {"id":"crate/sim-lib-femm-fixtures","kind":"subject","subject_kind":"crate","title":"sim-lib-femm-fixtures"}
@@ -971,6 +980,7 @@
 {"id":"crate/sim-lib-view-codec","kind":"subject","subject_kind":"crate","title":"sim-lib-view-codec"}
 {"id":"crate/sim-lib-view-daw","kind":"subject","subject_kind":"crate","title":"sim-lib-view-daw"}
 {"id":"crate/sim-lib-view-device","kind":"subject","subject_kind":"crate","title":"sim-lib-view-device"}
+{"id":"crate/sim-lib-view-expr-tree","kind":"subject","subject_kind":"crate","title":"sim-lib-view-expr-tree"}
 {"id":"crate/sim-lib-view-math","kind":"subject","subject_kind":"crate","title":"sim-lib-view-math"}
 {"id":"crate/sim-lib-view-spatial","kind":"subject","subject_kind":"crate","title":"sim-lib-view-spatial"}
 {"id":"crate/sim-lib-view-wasm-frame","kind":"subject","subject_kind":"crate","title":"sim-lib-view-wasm-frame"}
@@ -1005,6 +1015,7 @@
 {"id":"doc-set/sim-compute/generated","kind":"subject","subject_kind":"doc-set","title":"sim-compute generated docs"}
 {"id":"doc-set/sim-construction/generated","kind":"subject","subject_kind":"doc-set","title":"sim-construction generated docs"}
 {"id":"doc-set/sim-discrete/generated","kind":"subject","subject_kind":"doc-set","title":"sim-discrete generated docs"}
+{"id":"doc-set/sim-expr-tree/generated","kind":"subject","subject_kind":"doc-set","title":"sim-expr-tree generated docs"}
 {"id":"doc-set/sim-femm/generated","kind":"subject","subject_kind":"doc-set","title":"sim-femm generated docs"}
 {"id":"doc-set/sim-foundation/generated","kind":"subject","subject_kind":"doc-set","title":"sim-foundation generated docs"}
 {"id":"doc-set/sim-kernel/generated","kind":"subject","subject_kind":"doc-set","title":"sim-kernel generated docs"}
@@ -1084,6 +1095,7 @@
 {"id":"local/sim-construction/crate/xtask","kind":"subject","subject_kind":"crate","title":"xtask"}
 {"id":"local/sim-discrete/crate/sim-lib-discrete","kind":"subject","subject_kind":"crate","title":"sim-lib-discrete"}
 {"id":"local/sim-discrete/crate/xtask","kind":"subject","subject_kind":"crate","title":"xtask"}
+{"id":"local/sim-expr-tree/crate/xtask","kind":"subject","subject_kind":"crate","title":"xtask"}
 {"id":"local/sim-femm/crate/sim-lib-femm-codec","kind":"subject","subject_kind":"crate","title":"sim-lib-femm-codec"}
 {"id":"local/sim-femm/crate/sim-lib-femm-field","kind":"subject","subject_kind":"crate","title":"sim-lib-femm-field"}
 {"id":"local/sim-femm/crate/xtask","kind":"subject","subject_kind":"crate","title":"xtask"}
@@ -1211,6 +1223,7 @@
 {"id":"repo/sim-compute","kind":"subject","subject_kind":"repo","title":"sim-compute"}
 {"id":"repo/sim-construction","kind":"subject","subject_kind":"repo","title":"sim-construction"}
 {"id":"repo/sim-discrete","kind":"subject","subject_kind":"repo","title":"sim-discrete"}
+{"id":"repo/sim-expr-tree","kind":"subject","subject_kind":"repo","title":"sim-expr-tree"}
 {"id":"repo/sim-femm","kind":"subject","subject_kind":"repo","title":"sim-femm"}
 {"id":"repo/sim-foundation","kind":"subject","subject_kind":"repo","title":"sim-foundation"}
 {"id":"repo/sim-kernel","kind":"subject","subject_kind":"repo","title":"sim-kernel"}
@@ -1418,6 +1431,7 @@
 {"id":"cli/serve","kind":"surface","subject":"crate/sim-web-shell","surface_kind":"cli"}
 {"id":"cli/sim-auto","kind":"surface","subject":"crate/sim-auto","surface_kind":"cli"}
 {"id":"cli/sim-codec-compare","kind":"surface","subject":"crate/sim-codec-compare","surface_kind":"cli"}
+{"id":"cli/sim-expr-tree","kind":"surface","subject":"crate/sim-expr-tree","surface_kind":"cli"}
 {"id":"cli/sim-fabric-cadr-fixture","kind":"surface","subject":"crate/sim-lib-stream-fabric","surface_kind":"cli"}
 {"id":"cli/sim-ledger-cli","kind":"surface","subject":"crate/sim-ledger-cli","surface_kind":"cli"}
 {"id":"cli/sim-lib-agent-runner-core-recipe-output-contract-repair","kind":"surface","subject":"crate/sim-lib-agent-runner-core-recipe-output-contract-repair","surface_kind":"cli"}
@@ -1437,6 +1451,7 @@
 {"id":"docs/sim-compute/generated","kind":"surface","subject":"doc-set/sim-compute/generated","surface_kind":"docs"}
 {"id":"docs/sim-construction/generated","kind":"surface","subject":"doc-set/sim-construction/generated","surface_kind":"docs"}
 {"id":"docs/sim-discrete/generated","kind":"surface","subject":"doc-set/sim-discrete/generated","surface_kind":"docs"}
+{"id":"docs/sim-expr-tree/generated","kind":"surface","subject":"doc-set/sim-expr-tree/generated","surface_kind":"docs"}
 {"id":"docs/sim-femm/generated","kind":"surface","subject":"doc-set/sim-femm/generated","surface_kind":"docs"}
 {"id":"docs/sim-foundation/generated","kind":"surface","subject":"doc-set/sim-foundation/generated","surface_kind":"docs"}
 {"id":"docs/sim-kernel/generated","kind":"surface","subject":"doc-set/sim-kernel/generated","surface_kind":"docs"}
@@ -1461,6 +1476,7 @@
 {"id":"local/sim-compute/cli/xtask","kind":"surface","subject":"local/sim-compute/crate/xtask","surface_kind":"cli"}
 {"id":"local/sim-construction/cli/xtask","kind":"surface","subject":"local/sim-construction/crate/xtask","surface_kind":"cli"}
 {"id":"local/sim-discrete/cli/xtask","kind":"surface","subject":"local/sim-discrete/crate/xtask","surface_kind":"cli"}
+{"id":"local/sim-expr-tree/cli/xtask","kind":"surface","subject":"local/sim-expr-tree/crate/xtask","surface_kind":"cli"}
 {"id":"local/sim-femm/cli/xtask","kind":"surface","subject":"local/sim-femm/crate/xtask","surface_kind":"cli"}
 {"id":"local/sim-foundation/cli/xtask","kind":"surface","subject":"local/sim-foundation/crate/xtask","surface_kind":"cli"}
 {"id":"local/sim-kernel/cli/xtask","kind":"surface","subject":"local/sim-kernel/crate/xtask","surface_kind":"cli"}
@@ -1573,6 +1589,7 @@
 {"id":"view/sim-lib-view-daw","kind":"surface","subject":"crate/sim-lib-view-daw","surface_kind":"view"}
 {"id":"view/sim-lib-view-device","kind":"surface","subject":"crate/sim-lib-view-device","surface_kind":"view"}
 {"id":"view/sim-lib-view-doc","kind":"surface","subject":"local/sim-web/crate/sim-lib-view-doc","surface_kind":"view"}
+{"id":"view/sim-lib-view-expr-tree","kind":"surface","subject":"crate/sim-lib-view-expr-tree","surface_kind":"view"}
 {"id":"view/sim-lib-view-math","kind":"surface","subject":"crate/sim-lib-view-math","surface_kind":"view"}
 {"id":"view/sim-lib-view-spatial","kind":"surface","subject":"crate/sim-lib-view-spatial","surface_kind":"view"}
 {"id":"view/sim-lib-view-wasm-frame","kind":"surface","subject":"crate/sim-lib-view-wasm-frame","surface_kind":"view"}

@@ -49,6 +49,9 @@
 | `crate/sim-config` | `crate` | sim-config |
 | `crate/sim-conformance` | `crate` | sim-conformance |
 | `crate/sim-cookbook` | `crate` | sim-cookbook |
+| `crate/sim-expr-tree` | `crate` | sim-expr-tree |
+| `crate/sim-expr-tree-calc` | `crate` | sim-expr-tree-calc |
+| `crate/sim-expr-tree-core` | `crate` | sim-expr-tree-core |
 | `crate/sim-incremental-core` | `crate` | sim-incremental-core |
 | `crate/sim-index-core` | `crate` | sim-index-core |
 | `crate/sim-kernel` | `crate` | sim-kernel |
@@ -89,6 +92,9 @@
 | `crate/sim-lib-doc-store` | `crate` | sim-lib-doc-store |
 | `crate/sim-lib-doc-surface` | `crate` | sim-lib-doc-surface |
 | `crate/sim-lib-exec` | `crate` | sim-lib-exec |
+| `crate/sim-lib-expr-tree` | `crate` | sim-lib-expr-tree |
+| `crate/sim-lib-expr-tree-serve` | `crate` | sim-lib-expr-tree-serve |
+| `crate/sim-lib-expr-tree-server` | `crate` | sim-lib-expr-tree-server |
 | `crate/sim-lib-femm-assembly` | `crate` | sim-lib-femm-assembly |
 | `crate/sim-lib-femm-core` | `crate` | sim-lib-femm-core |
 | `crate/sim-lib-femm-fixtures` | `crate` | sim-lib-femm-fixtures |
@@ -219,6 +225,7 @@
 | `crate/sim-lib-view-codec` | `crate` | sim-lib-view-codec |
 | `crate/sim-lib-view-daw` | `crate` | sim-lib-view-daw |
 | `crate/sim-lib-view-device` | `crate` | sim-lib-view-device |
+| `crate/sim-lib-view-expr-tree` | `crate` | sim-lib-view-expr-tree |
 | `crate/sim-lib-view-math` | `crate` | sim-lib-view-math |
 | `crate/sim-lib-view-spatial` | `crate` | sim-lib-view-spatial |
 | `crate/sim-lib-view-wasm-frame` | `crate` | sim-lib-view-wasm-frame |
@@ -253,6 +260,7 @@
 | `doc-set/sim-compute/generated` | `doc-set` | sim-compute generated docs |
 | `doc-set/sim-construction/generated` | `doc-set` | sim-construction generated docs |
 | `doc-set/sim-discrete/generated` | `doc-set` | sim-discrete generated docs |
+| `doc-set/sim-expr-tree/generated` | `doc-set` | sim-expr-tree generated docs |
 | `doc-set/sim-femm/generated` | `doc-set` | sim-femm generated docs |
 | `doc-set/sim-foundation/generated` | `doc-set` | sim-foundation generated docs |
 | `doc-set/sim-kernel/generated` | `doc-set` | sim-kernel generated docs |
@@ -292,6 +300,7 @@
 | `local/sim-construction/crate/xtask` | `crate` | xtask |
 | `local/sim-discrete/crate/sim-lib-discrete` | `crate` | sim-lib-discrete |
 | `local/sim-discrete/crate/xtask` | `crate` | xtask |
+| `local/sim-expr-tree/crate/xtask` | `crate` | xtask |
 | `local/sim-femm/crate/sim-lib-femm-codec` | `crate` | sim-lib-femm-codec |
 | `local/sim-femm/crate/sim-lib-femm-field` | `crate` | sim-lib-femm-field |
 | `local/sim-femm/crate/xtask` | `crate` | xtask |
@@ -419,6 +428,7 @@
 | `repo/sim-compute` | `repo` | sim-compute |
 | `repo/sim-construction` | `repo` | sim-construction |
 | `repo/sim-discrete` | `repo` | sim-discrete |
+| `repo/sim-expr-tree` | `repo` | sim-expr-tree |
 | `repo/sim-femm` | `repo` | sim-femm |
 | `repo/sim-foundation` | `repo` | sim-foundation |
 | `repo/sim-kernel` | `repo` | sim-kernel |
