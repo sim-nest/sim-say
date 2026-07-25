@@ -30,12 +30,13 @@
 | [`feature/sim-compute/tensor-providers`](features/feature--sim-compute--tensor-providers.md) | `crate/sim-lib-compute-model` | 8 |
 | [`feature/sim-construction/dalux-project-items`](features/feature--sim-construction--dalux-project-items.md) | `crate/sim-site-dalux` | 2 |
 | [`feature/sim-construction/design-release-authority-control`](features/feature--sim-construction--design-release-authority-control.md) | `crate/sim-lib-construction-project` | 2 |
+| [`feature/sim-construction/gantt-schedule-impact`](features/feature--sim-construction--gantt-schedule-impact.md) | `crate/sim-lib-construction-project` | 2 |
 | [`feature/sim-construction/generated-docs`](features/feature--sim-construction--generated-docs.md) | `local/sim-construction/crate/xtask` | 0 |
 | [`feature/sim-construction/mspdi-schedule-exchange`](features/feature--sim-construction--mspdi-schedule-exchange.md) | `crate/sim-codec-mspdi` | 1 |
 | [`feature/sim-construction/obligation-evidence-exceptions`](features/feature--sim-construction--obligation-evidence-exceptions.md) | `crate/sim-lib-construction-project` | 3 |
 | [`feature/sim-construction/phase-gates`](features/feature--sim-construction--phase-gates.md) | `crate/sim-lib-construction-project` | 5 |
 | [`feature/sim-construction/powerproject-schedule-placement`](features/feature--sim-construction--powerproject-schedule-placement.md) | `crate/sim-site-powerproject` | 1 |
-| [`feature/sim-construction/project-control`](features/feature--sim-construction--project-control.md) | `crate/sim-lib-construction-project` | 14 |
+| [`feature/sim-construction/project-control`](features/feature--sim-construction--project-control.md) | `crate/sim-lib-construction-project` | 16 |
 | [`feature/sim-construction/supplier-production-handoff`](features/feature--sim-construction--supplier-production-handoff.md) | `crate/sim-lib-construction-project` | 2 |
 | [`feature/sim-construction/sustainability-reference-outcomes`](features/feature--sim-construction--sustainability-reference-outcomes.md) | `crate/sim-lib-construction-project` | 2 |
 | [`feature/sim-construction/work-package-procurement-awards`](features/feature--sim-construction--work-package-procurement-awards.md) | `crate/sim-lib-construction-project` | 2 |
