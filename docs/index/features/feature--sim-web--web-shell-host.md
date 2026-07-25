@@ -6,7 +6,7 @@
 - Subject: `crate/sim-web-shell`
 - Canonical key: `crate/sim-web-shell/feature-sim-web-web-shell-host`
 
-Serve browser-facing surfaces through loaded web shell runtime libraries and command entry points.
+Serve isolated, bounded browser-facing surfaces through loaded web shell runtime libraries and command entry points.
 
 ## Anchors
 
