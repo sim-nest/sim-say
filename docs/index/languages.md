@@ -311,6 +311,7 @@
 | `specimen` | `lisp` | crates/sim-lib-pitch-namer-riemann/recipes/01-basics/tonic-function/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-namer-roman/recipes/01-basics/dominant-seven/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-namer/recipes/01-basics/name-registry/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-pitch-ratio/recipes/01-basics/chord-relations/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-ratio/recipes/01-basics/exact-ratio/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-scale/recipes/01-basics/major-degrees/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-scale/recipes/01-basics/scale-generate/recipe.toml |
