@@ -175,6 +175,7 @@
 | `crate/sim-lib-pitch-namer-jazz` | `crate` | sim-lib-pitch-namer-jazz | 0 |
 | `crate/sim-lib-pitch-namer-riemann` | `crate` | sim-lib-pitch-namer-riemann | 0 |
 | `crate/sim-lib-pitch-namer-roman` | `crate` | sim-lib-pitch-namer-roman | 0 |
+| `crate/sim-lib-pitch-ratio` | `crate` | sim-lib-pitch-ratio | 0 |
 | `crate/sim-lib-pitch-scale` | `crate` | sim-lib-pitch-scale | 0 |
 | `crate/sim-lib-pitch-set` | `crate` | sim-lib-pitch-set | 0 |
 | `crate/sim-lib-pitch-wasm-frame` | `crate` | sim-lib-pitch-wasm-frame | 0 |
@@ -422,7 +423,7 @@
 | `repo/sim-foundation` | `repo` | sim-foundation | 10 |
 | `repo/sim-kernel` | `repo` | sim-kernel | 3 |
 | `repo/sim-ledger` | `repo` | sim-ledger | 7 |
-| `repo/sim-music` | `repo` | sim-music | 47 |
+| `repo/sim-music` | `repo` | sim-music | 48 |
 | `repo/sim-numbers` | `repo` | sim-numbers | 34 |
 | `repo/sim-office` | `repo` | sim-office | 18 |
 | `repo/sim-run` | `repo` | sim-run | 9 |

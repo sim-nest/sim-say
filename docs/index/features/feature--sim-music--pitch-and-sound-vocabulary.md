@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-pitch-core`
 - Canonical key: `crate/sim-lib-pitch-core/feature-sim-music-pitch-and-sound-vocabulary`
 
-Name chords, generate bounded tetrachord scales, walk pitch-set graphs, and describe timbres, spectra, and tuning facts through worked musical descriptors and bounded families.
+Name chords, generate bounded tetrachord scales, rank exact ratio intervals, walk pitch-set graphs, and describe timbres, spectra, and tuning facts through worked musical descriptors and bounded families.
 
 ## Anchors
 
@@ -18,6 +18,7 @@ Name chords, generate bounded tetrachord scales, walk pitch-set graphs, and desc
 - `anchor/crate/sim-lib-pitch-namer-jazz`
 - `anchor/crate/sim-lib-pitch-namer-riemann`
 - `anchor/crate/sim-lib-pitch-namer-roman`
+- `anchor/crate/sim-lib-pitch-ratio`
 - `anchor/crate/sim-lib-pitch-scale`
 - `anchor/crate/sim-lib-pitch-set`
 - `anchor/crate/sim-lib-pitch-shapes`
