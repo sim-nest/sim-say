@@ -6,19 +6,25 @@
 - Subject: `crate/sim-lib-compute-model`
 - Canonical key: `crate/sim-lib-compute-model/feature-sim-compute-tensor-providers`
 
-Run canonical Tensor requests through modeled, automatic, and probe-backed wgpu compute sites.
+Run canonical Tensor requests through modeled, automatic, probe-backed wgpu, and optional CUDA/cuBLAS compute sites.
 
 ## Anchors
 
 - `anchor/crate/sim-lib-compute-auto`
+- `anchor/crate/sim-lib-compute-cuda`
 - `anchor/crate/sim-lib-compute-model`
 - `anchor/crate/sim-lib-compute-wgpu`
 - `anchor/export/sim-lib-compute-auto/site/compute/auto`
+- `anchor/export/sim-lib-compute-cuda/site/compute/cuda`
 - `anchor/export/sim-lib-compute-model/site/compute/model`
 - `anchor/runtime-lib/sim-lib-compute-auto/compute-auto-lib`
+- `anchor/runtime-lib/sim-lib-compute-cuda/compute-cuda-lib`
 - `anchor/runtime-lib/sim-lib-compute-model/compute-model-lib`
 - `anchor/runtime-lib/sim-lib-compute-wgpu/compute-wgpu-lib`
 - `anchor/rustdoc/sim-lib-compute-auto/auto-tensor-executor`
+- `anchor/rustdoc/sim-lib-compute-cuda/cuda-resident-storage`
+- `anchor/rustdoc/sim-lib-compute-cuda/cuda-runtime-loader`
+- `anchor/rustdoc/sim-lib-compute-cuda/cuda-tensor-executor`
 - `anchor/rustdoc/sim-lib-compute-model/modeled-resident-storage`
 - `anchor/rustdoc/sim-lib-compute-model/modeled-tensor-executor`
 - `anchor/rustdoc/sim-lib-compute-wgpu/compute-wgpu-lib`
@@ -29,15 +35,18 @@ Run canonical Tensor requests through modeled, automatic, and probe-backed wgpu 
 ## Surfaces
 
 - `site/sim-lib-compute-auto`
+- `site/sim-lib-compute-cuda`
 - `site/sim-lib-compute-model`
 - `site/sim-lib-compute-wgpu`
 
 ## Specimens
 
 - `recipe/sim-compute/crates/sim-lib-compute-auto/01-basics/measured-profile-routing`
+- `recipe/sim-compute/crates/sim-lib-compute-cuda/01-basics/cuda-discovery`
 - `recipe/sim-compute/crates/sim-lib-compute-model/01-basics/modeled-resident-matrix`
 - `recipe/sim-compute/crates/sim-lib-compute-wgpu/01-basics/wgpu-discovery`
 - `spec-test/sim-compute/crates/sim-lib-compute-auto/src/tests`
+- `spec-test/sim-compute/crates/sim-lib-compute-cuda/src/tests`
 - `spec-test/sim-compute/crates/sim-lib-compute-model/src/tests`
 - `spec-test/sim-compute/crates/sim-lib-compute-wgpu/src/tests`
 

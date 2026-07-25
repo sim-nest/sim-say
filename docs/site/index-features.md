@@ -27,7 +27,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `feature/sim-codecs/pratt` | `crate/sim-codec-pratt` | [features/feature--sim-codecs--pratt.md](../index/features/feature--sim-codecs--pratt.md) | 1 | Parse operator-oriented expression languages through the Pratt codec surface. |
 | `feature/sim-codecs/wire-protocol-grammars` | `local/sim-codecs/crate/sim-codec` | [features/feature--sim-codecs--wire-protocol-grammars.md](../index/features/feature--sim-codecs--wire-protocol-grammars.md) | 1 | Read and write binary, bitwise, chat, config, document, index, and MCP wire protocols. |
 | `feature/sim-compute/generated-docs` | `local/sim-compute/crate/xtask` | [features/feature--sim-compute--generated-docs.md](../index/features/feature--sim-compute--generated-docs.md) | 0 | Publish generated package, card, rustdoc, recipe, and Index facts for compute providers. |
-| `feature/sim-compute/tensor-providers` | `crate/sim-lib-compute-model` | [features/feature--sim-compute--tensor-providers.md](../index/features/feature--sim-compute--tensor-providers.md) | 6 | Run canonical Tensor requests through modeled, automatic, and probe-backed wgpu compute sites. |
+| `feature/sim-compute/tensor-providers` | `crate/sim-lib-compute-model` | [features/feature--sim-compute--tensor-providers.md](../index/features/feature--sim-compute--tensor-providers.md) | 8 | Run canonical Tensor requests through modeled, automatic, probe-backed wgpu, and optional CUDA/cuBLAS compute sites. |
 | `feature/sim-construction/dalux-project-items` | `crate/sim-site-dalux` | [features/feature--sim-construction--dalux-project-items.md](../index/features/feature--sim-construction--dalux-project-items.md) | 2 | Read Dalux project items into local office documents for construction evidence and keep note updates narrow. |
 | `feature/sim-construction/design-release-authority-control` | `crate/sim-lib-construction-project` | [features/feature--sim-construction--design-release-authority-control.md](../index/features/feature--sim-construction--design-release-authority-control.md) | 2 | Trace current design revisions, RFIs, reviews, purpose-specific releases, permits, inspections, and authority obligations into package or task readiness through the shared construction control graph. |
 | `feature/sim-construction/generated-docs` | `local/sim-construction/crate/xtask` | [features/feature--sim-construction--generated-docs.md](../index/features/feature--sim-construction--generated-docs.md) | 0 | Publish generated package, card, recipe, and index facts for construction project-control crates. |
@@ -264,6 +264,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `site/sim-lib-auto-vehicle` | `site` | `crate/sim-lib-auto-vehicle` |
 | `site/sim-lib-auto-vendor` | `site` | `crate/sim-lib-auto-vendor` |
 | `site/sim-lib-compute-auto` | `site` | `crate/sim-lib-compute-auto` |
+| `site/sim-lib-compute-cuda` | `site` | `crate/sim-lib-compute-cuda` |
 | `site/sim-lib-compute-model` | `site` | `crate/sim-lib-compute-model` |
 | `site/sim-lib-compute-wgpu` | `site` | `crate/sim-lib-compute-wgpu` |
 | `site/sim-lib-numbers-f64` | `site` | `crate/sim-lib-numbers-f64` |

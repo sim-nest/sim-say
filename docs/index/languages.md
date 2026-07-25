@@ -446,6 +446,7 @@
 | `specimen` | `shape` | crates/sim-lib-auto-order/src/lib.rs |
 | `specimen` | `shape` | crates/sim-lib-bridge/src/tests/ask.rs |
 | `specimen` | `shape` | crates/sim-lib-compute-auto/src/tests.rs |
+| `specimen` | `shape` | crates/sim-lib-compute-cuda/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-compute-wgpu/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-construction-project/src/outcome_tests.rs |
 | `specimen` | `shape` | crates/sim-lib-discrete/src/forms.rs |

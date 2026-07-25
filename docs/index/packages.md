@@ -73,6 +73,7 @@
 | `crate/sim-lib-binding` | `crate` | sim-lib-binding |
 | `crate/sim-lib-bridge` | `crate` | sim-lib-bridge |
 | `crate/sim-lib-compute-auto` | `crate` | sim-lib-compute-auto |
+| `crate/sim-lib-compute-cuda` | `crate` | sim-lib-compute-cuda |
 | `crate/sim-lib-compute-model` | `crate` | sim-lib-compute-model |
 | `crate/sim-lib-compute-wgpu` | `crate` | sim-lib-compute-wgpu |
 | `crate/sim-lib-construction-project` | `crate` | sim-lib-construction-project |
