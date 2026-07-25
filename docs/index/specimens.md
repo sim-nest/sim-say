@@ -530,6 +530,7 @@
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/placement` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/placement.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/rust_intelligence` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/rust_intelligence.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/stream_matrix` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/stream_matrix.rs` | `` | `cargo test` | `true` | `true` |
+| `` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/stream_matrix_helpers` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/stream_matrix_helpers.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/support` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/support.rs` | `shape` | `cargo test` | `true` | `true` |
 | `feature/sim-sdk/device-recipes` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/surface_protocol` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/surface_protocol.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-sdk/genai-feature-bundles` | `spec-test/sim-sdk/src/feature_contract_tests` | `crate/sim-nest` | `spec-test` | `src/feature_contract_tests.rs` | `shape` | `cargo test` | `true` | `true` |
