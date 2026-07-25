@@ -137,6 +137,7 @@
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/mobilization-gate/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/project-charter/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/supplier-to-production-handoff/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/sustainability-to-reference-evidence/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/what-changed/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/work-package-award/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-control/recipes/01-basics/if-branch/recipe.toml |
@@ -446,6 +447,7 @@
 | `specimen` | `shape` | crates/sim-lib-bridge/src/tests/ask.rs |
 | `specimen` | `shape` | crates/sim-lib-compute-auto/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-compute-wgpu/src/tests.rs |
+| `specimen` | `shape` | crates/sim-lib-construction-project/src/outcome_tests.rs |
 | `specimen` | `shape` | crates/sim-lib-discrete/src/forms.rs |
 | `specimen` | `shape` | crates/sim-lib-incremental/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-lang-prolog/src/conformance.rs |
