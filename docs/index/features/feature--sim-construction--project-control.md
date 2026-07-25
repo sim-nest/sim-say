@@ -22,9 +22,11 @@ Describe construction phase gate and baseline control through as-of snapshot rec
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/mixed-obligation-gate`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/mobilization-gate`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/what-changed`
+- `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/work-package-award`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/design_tests`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/fact_book_tests`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/opportunity_tests`
+- `spec-test/sim-construction/crates/sim-lib-construction-project/src/procurement_tests`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/tests`
 
 ## Worked Example

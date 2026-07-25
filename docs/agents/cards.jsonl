@@ -152,6 +152,7 @@
 {"card": {"id": "cookbook/pitch-namer-jazz", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-namer-jazz", "summary": "Jazz chord naming descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-namer-riemann", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-namer-riemann", "summary": "Riemannian function descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-namer-roman", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-namer-roman", "summary": "Roman numeral analysis descriptors."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/pitch-ratio", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-ratio", "summary": "Exact musical ratio interval descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-scale", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-scale", "summary": "Scale and degree descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-set", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-set", "summary": "Pitch-class sets, masks, and normal-form descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-shapes", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-shapes", "summary": "Citizen descriptor shapes for pitch values."}, "repo": "sim-music"}

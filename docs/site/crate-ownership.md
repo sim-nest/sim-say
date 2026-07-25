@@ -138,6 +138,7 @@
 | `sim-lib-pitch-namer-jazz` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-namer-riemann` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-namer-roman` | [sim-music](../repos/sim-music.md) |
+| `sim-lib-pitch-ratio` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-scale` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-set` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-shapes` | [sim-music](../repos/sim-music.md) |
