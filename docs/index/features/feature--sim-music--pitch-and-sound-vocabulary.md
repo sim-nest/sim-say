@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-pitch-core`
 - Canonical key: `crate/sim-lib-pitch-core/feature-sim-music-pitch-and-sound-vocabulary`
 
-Name chords, scales, pitch sets, pitch-set graph walks, timbres, spectra, and tuning facts through worked musical descriptors and bounded timbre families.
+Name chords, generate bounded tetrachord scales, walk pitch-set graphs, and describe timbres, spectra, and tuning facts through worked musical descriptors and bounded families.
 
 ## Anchors
 
