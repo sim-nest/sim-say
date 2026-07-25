@@ -1319,6 +1319,7 @@
 {"id":"runtime-lib/sim-lib-core/surface-pack-lib","kind":"subject","subject_kind":"runtime-lib","title":"surface-pack-lib"}
 {"id":"runtime-lib/sim-lib-daw-session/daw-session-lib","kind":"subject","subject_kind":"runtime-lib","title":"daw-session-lib"}
 {"id":"runtime-lib/sim-lib-discrete/discrete-lib","kind":"subject","subject_kind":"runtime-lib","title":"discrete-lib"}
+{"id":"runtime-lib/sim-lib-expr-tree-serve/expr-tree-cli-lib","kind":"subject","subject_kind":"runtime-lib","title":"expr-tree-cli-lib"}
 {"id":"runtime-lib/sim-lib-femm-core/femm-core-lib","kind":"subject","subject_kind":"runtime-lib","title":"femm-core-lib"}
 {"id":"runtime-lib/sim-lib-femm-field/femm-field-lib","kind":"subject","subject_kind":"runtime-lib","title":"femm-field-lib"}
 {"id":"runtime-lib/sim-lib-femm-function/femm-function-lib","kind":"subject","subject_kind":"runtime-lib","title":"femm-function-lib"}
@@ -1455,6 +1456,7 @@
 {"id":"cli/auto-site-xentry","kind":"surface","subject":"crate/auto-site-xentry","surface_kind":"cli"}
 {"id":"cli/browse","kind":"surface","subject":"crate/sim-web-shell","surface_kind":"cli"}
 {"id":"cli/citizen-roundtrip","kind":"surface","subject":"crate/citizen-roundtrip","surface_kind":"cli"}
+{"id":"cli/expr-tree","kind":"surface","subject":"crate/sim-lib-expr-tree-serve","surface_kind":"cli"}
 {"id":"cli/glasses","kind":"surface","subject":"crate/sim-run","surface_kind":"cli"}
 {"id":"cli/index","kind":"surface","subject":"crate/sim-lib-index","surface_kind":"cli"}
 {"id":"cli/mcp","kind":"surface","subject":"local/sim-agent-net/crate/sim-lib-mcp","surface_kind":"cli"}

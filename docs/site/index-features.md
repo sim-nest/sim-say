@@ -156,6 +156,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `cli/auto-site-xentry` | `cli` | `crate/auto-site-xentry` |
 | `cli/browse` | `cli` | `crate/sim-web-shell` |
 | `cli/citizen-roundtrip` | `cli` | `crate/citizen-roundtrip` |
+| `cli/expr-tree` | `cli` | `crate/sim-lib-expr-tree-serve` |
 | `cli/glasses` | `cli` | `crate/sim-run` |
 | `cli/index` | `cli` | `crate/sim-lib-index` |
 | `cli/mcp` | `cli` | `local/sim-agent-net/crate/sim-lib-mcp` |
