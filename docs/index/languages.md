@@ -340,6 +340,7 @@
 | `specimen` | `lisp` | crates/sim-lib-sound-bridge/recipes/01-basics/gm-voice/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-sound-core/recipes/01-basics/sine-tone/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-sound-dissonance/recipes/01-basics/roughness-model/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-sound-dissonance/recipes/01-basics/sonance-fit/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-sound-gm/recipes/01-basics/acoustic-grand/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-sound-render/recipes/01-basics/offline-buffer/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-sound-shapes/recipes/01-basics/shape-family/recipe.toml |
