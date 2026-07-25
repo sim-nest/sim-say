@@ -36,6 +36,7 @@
 | [`feature/sim-construction/phase-gates`](features/feature--sim-construction--phase-gates.md) | `crate/sim-lib-construction-project` | 5 |
 | [`feature/sim-construction/powerproject-schedule-placement`](features/feature--sim-construction--powerproject-schedule-placement.md) | `crate/sim-site-powerproject` | 1 |
 | [`feature/sim-construction/project-control`](features/feature--sim-construction--project-control.md) | `crate/sim-lib-construction-project` | 13 |
+| [`feature/sim-construction/supplier-production-handoff`](features/feature--sim-construction--supplier-production-handoff.md) | `crate/sim-lib-construction-project` | 2 |
 | [`feature/sim-construction/work-package-procurement-awards`](features/feature--sim-construction--work-package-procurement-awards.md) | `crate/sim-lib-construction-project` | 2 |
 | [`feature/sim-discrete/bounded-search`](features/feature--sim-discrete--bounded-search.md) | `crate/sim-lib-discrete-search` | 1 |
 | [`feature/sim-discrete/discrete-algebra`](features/feature--sim-discrete--discrete-algebra.md) | `local/sim-discrete/crate/sim-lib-discrete` | 1 |

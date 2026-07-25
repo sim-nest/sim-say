@@ -135,6 +135,7 @@
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/mixed-obligation-gate/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/mobilization-gate/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/project-charter/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/supplier-to-production-handoff/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/what-changed/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/work-package-award/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-control/recipes/01-basics/if-branch/recipe.toml |
