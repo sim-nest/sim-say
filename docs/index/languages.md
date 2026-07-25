@@ -463,6 +463,7 @@
 | `specimen` | `shape` | crates/sim-lib-numbers-complex/src/implementation/literal.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-func/src/implementation/domain.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-rational/src/implementation/domain.rs |
+| `specimen` | `shape` | crates/sim-lib-numbers-rk/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-tensor-bcast/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-tensor-linalg/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-tensor/src/implementation/citizen.rs |
