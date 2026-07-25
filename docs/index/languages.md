@@ -309,6 +309,7 @@
 | `specimen` | `lisp` | crates/sim-lib-pitch-namer-roman/recipes/01-basics/dominant-seven/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-namer/recipes/01-basics/name-registry/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-scale/recipes/01-basics/major-degrees/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-pitch-set/recipes/01-basics/neighborhood-walk/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-set/recipes/01-basics/triad-mask/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-shapes/recipes/01-basics/shape-family/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-wasm-frame/recipes/01-basics/browser-facade/recipe.toml |
