@@ -439,6 +439,7 @@
 | `specimen` | `shape` | crates/sim-lib-auto-order/src/conformance.rs |
 | `specimen` | `shape` | crates/sim-lib-auto-order/src/lib.rs |
 | `specimen` | `shape` | crates/sim-lib-bridge/src/tests/ask.rs |
+| `specimen` | `shape` | crates/sim-lib-compute-wgpu/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-discrete/src/forms.rs |
 | `specimen` | `shape` | crates/sim-lib-incremental/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-lang-prolog/src/conformance.rs |

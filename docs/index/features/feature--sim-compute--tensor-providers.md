@@ -23,6 +23,8 @@ Run canonical Tensor requests through modeled, automatic, and probe-backed wgpu 
 - `anchor/rustdoc/sim-lib-compute-model/modeled-tensor-executor`
 - `anchor/rustdoc/sim-lib-compute-wgpu/compute-wgpu-lib`
 - `anchor/rustdoc/sim-lib-compute-wgpu/wgpu-discovery`
+- `anchor/rustdoc/sim-lib-compute-wgpu/wgpu-pipeline-cache`
+- `anchor/rustdoc/sim-lib-compute-wgpu/wgpu-resident-storage`
 
 ## Surfaces
 
