@@ -120,7 +120,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `feature/sim-web/server-backed-web-sessions` | `crate/sim-lib-web-bridge` | [features/feature--sim-web--server-backed-web-sessions.md](../index/features/feature--sim-web--server-backed-web-sessions.md) | 1 | Connect RemoteTransport to the existing SIM server transport so browser sessions read, commit, drain changes, reconnect, and report revision conflicts through ordinary server eval requests. |
 | `feature/sim-web/stateful-tree-scenes` | `local/sim-web/crate/sim-lib-scene` | [features/feature--sim-web--stateful-tree-scenes.md](../index/features/feature--sim-web--stateful-tree-scenes.md) | 2 | Render expandable Scene outlines with explicit disclosure state and total budgets for nodes, depth, encoded bytes, and visible faces. |
 | `feature/sim-web/view-surface` | `local/sim-web/crate/sim-lib-view` | [features/feature--sim-web--view-surface.md](../index/features/feature--sim-web--view-surface.md) | 1 | Expose view and edit surfaces so codecs, browser hosts, and device profiles can render and reverse surface data. |
-| `feature/sim-web/web-shell-host` | `crate/sim-web-shell` | [features/feature--sim-web--web-shell-host.md](../index/features/feature--sim-web--web-shell-host.md) | 1 | Serve isolated, bounded browser-facing surfaces through loaded web shell runtime libraries and command entry points. |
+| `feature/sim-web/web-shell-host` | `crate/sim-web-shell` | [features/feature--sim-web--web-shell-host.md](../index/features/feature--sim-web--web-shell-host.md) | 1 | Serve isolated, bounded, phone-capable browser surfaces through loaded web shell runtime libraries, installable shell assets, and command entry points. |
 
 ## Surface Rows
 
