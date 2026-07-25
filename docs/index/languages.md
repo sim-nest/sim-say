@@ -309,6 +309,7 @@
 | `specimen` | `lisp` | crates/sim-lib-pitch-core/recipes/01-basics/octave-space/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-core/recipes/01-basics/pitch-value/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-dissonance/recipes/01-basics/tritone-score/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-pitch-dissonance/recipes/02-scenarios/contextual-sonance/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-namer-forte/recipes/01-basics/forte-number/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-namer-jazz/recipes/01-basics/chord-symbol/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-namer-riemann/recipes/01-basics/tonic-function/recipe.toml |
