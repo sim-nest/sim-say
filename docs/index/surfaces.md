@@ -144,7 +144,7 @@
 | `site/sim-lib-compute-model` | `site` | `crate/sim-lib-compute-model` |
 | `site/sim-lib-compute-rocm` | `site` | `crate/sim-lib-compute-rocm` |
 | `site/sim-lib-compute-wgpu` | `site` | `crate/sim-lib-compute-wgpu` |
-| `site/sim-lib-numbers-f64` | `site` | `crate/sim-lib-numbers-f64` |
+| `site/sim-lib-numbers-f64` | `site` | `local/sim-numbers/crate/sim-lib-numbers-f64` |
 | `site/sim-lib-numbers-tensor` | `site` | `local/sim-numbers/crate/sim-lib-numbers-tensor` |
 | `site/sim-lib-stream-cpal` | `site` | `crate/sim-lib-stream-cpal` |
 | `site/sim-lib-stream-host` | `site` | `crate/sim-lib-stream-host` |

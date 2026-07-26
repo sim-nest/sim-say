@@ -113,6 +113,7 @@
 | [`feature/sim-sdk/facade-shapes`](features/feature--sim-sdk--facade-shapes.md) | `crate/sim-nest` | Expose public Shape exports through the SDK facade while shape crates keep the matching behavior. | 0 |
 | [`feature/sim-sdk/genai-feature-bundles`](features/feature--sim-sdk--genai-feature-bundles.md) | `crate/sim-nest` | Select base, local, and provider GenAI dependency bundles through SDK Cargo feature aliases. | 2 |
 | [`feature/sim-sdk/generated-docs`](features/feature--sim-sdk--generated-docs.md) | `local/sim-sdk/crate/xtask` | Publish generated package, card, recipe, and index facts for the SDK facade and conformance crate. | 0 |
+| [`feature/sim-sdk/gpu-math-composition`](features/feature--sim-sdk--gpu-math-composition.md) | `crate/sim-nest` | Expose opt-in Tensor, ODE, compute-provider, and FEMM solver composition through direct SDK re-exports. | 1 |
 | [`feature/sim-shape/contract-emitter`](features/feature--sim-shape--contract-emitter.md) | `local/sim-shape/crate/xtask` | Emit generated repository contract and index fragments for Shape crates. | 0 |
 | [`feature/sim-shape/shape`](features/feature--sim-shape--shape.md) | `local/sim-shape/crate/sim-shape` | Define reusable Shape matching, binding, citizen projection, and grammar contracts for runtime values. | 1 |
 | [`feature/sim-shape/shape-recipes`](features/feature--sim-shape--shape-recipes.md) | `crate/sim-shape-recipe-exact-bool-shape` | Carry runnable Shape recipe crates used as checked examples for exact booleans and grammar contracts. | 0 |

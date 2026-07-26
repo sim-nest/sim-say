@@ -113,6 +113,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `feature/sim-sdk/facade-shapes` | `crate/sim-nest` | [features/feature--sim-sdk--facade-shapes.md](../index/features/feature--sim-sdk--facade-shapes.md) | 0 | Expose public Shape exports through the SDK facade while shape crates keep the matching behavior. |
 | `feature/sim-sdk/genai-feature-bundles` | `crate/sim-nest` | [features/feature--sim-sdk--genai-feature-bundles.md](../index/features/feature--sim-sdk--genai-feature-bundles.md) | 2 | Select base, local, and provider GenAI dependency bundles through SDK Cargo feature aliases. |
 | `feature/sim-sdk/generated-docs` | `local/sim-sdk/crate/xtask` | [features/feature--sim-sdk--generated-docs.md](../index/features/feature--sim-sdk--generated-docs.md) | 0 | Publish generated package, card, recipe, and index facts for the SDK facade and conformance crate. |
+| `feature/sim-sdk/gpu-math-composition` | `crate/sim-nest` | [features/feature--sim-sdk--gpu-math-composition.md](../index/features/feature--sim-sdk--gpu-math-composition.md) | 1 | Expose opt-in Tensor, ODE, compute-provider, and FEMM solver composition through direct SDK re-exports. |
 | `feature/sim-shape/contract-emitter` | `local/sim-shape/crate/xtask` | [features/feature--sim-shape--contract-emitter.md](../index/features/feature--sim-shape--contract-emitter.md) | 0 | Emit generated repository contract and index fragments for Shape crates. |
 | `feature/sim-shape/shape` | `local/sim-shape/crate/sim-shape` | [features/feature--sim-shape--shape.md](../index/features/feature--sim-shape--shape.md) | 1 | Define reusable Shape matching, binding, citizen projection, and grammar contracts for runtime values. |
 | `feature/sim-shape/shape-recipes` | `crate/sim-shape-recipe-exact-bool-shape` | [features/feature--sim-shape--shape-recipes.md](../index/features/feature--sim-shape--shape-recipes.md) | 0 | Carry runnable Shape recipe crates used as checked examples for exact booleans and grammar contracts. |
@@ -278,7 +279,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `site/sim-lib-compute-model` | `site` | `crate/sim-lib-compute-model` |
 | `site/sim-lib-compute-rocm` | `site` | `crate/sim-lib-compute-rocm` |
 | `site/sim-lib-compute-wgpu` | `site` | `crate/sim-lib-compute-wgpu` |
-| `site/sim-lib-numbers-f64` | `site` | `crate/sim-lib-numbers-f64` |
+| `site/sim-lib-numbers-f64` | `site` | `local/sim-numbers/crate/sim-lib-numbers-f64` |
 | `site/sim-lib-numbers-tensor` | `site` | `local/sim-numbers/crate/sim-lib-numbers-tensor` |
 | `site/sim-lib-stream-cpal` | `site` | `crate/sim-lib-stream-cpal` |
 | `site/sim-lib-stream-host` | `site` | `crate/sim-lib-stream-host` |

@@ -412,6 +412,7 @@
 | `specimen` | `lisp` | recipes/glasses/review-in-space/recipe.toml |
 | `specimen` | `lisp` | recipes/glasses/viture-two-rate/recipe.toml |
 | `specimen` | `lisp` | recipes/glasses/voice-site/recipe.toml |
+| `specimen` | `lisp` | recipes/gpu-math/modeled-matrix-ode-femm/recipe.toml |
 | `specimen` | `lisp` | recipes/watch/dual-quorum/recipe.toml |
 | `specimen` | `lisp` | recipes/watch/glance-pager/recipe.toml |
 | `specimen` | `lisp` | recipes/watch/hold-last/recipe.toml |
