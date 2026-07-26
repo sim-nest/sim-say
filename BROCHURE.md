@@ -177,7 +177,9 @@ piece gives you.
 - **sim-lib-numbers-tensor-linalg** -- It does the matrix and vector math behind graphics, data science, and engineering.
 - **sim-lib-numbers-tensor-rat64** -- It gives you grids of exact fractions, so array math avoids rounding entirely.
 - **sim-lib-compute-auto** -- `sim-lib-compute-auto` gives SIM a stable automatic tensor placement surface that chooses an available compute site without changing the caller's tensor program.
+- **sim-lib-compute-cli** -- `sim-lib-compute-cli` gives SIM a loadable `compute` command for inspecting modeled, automatic, and hardware providers without adding another product binary.
 - **sim-lib-compute-cuda** -- `sim-lib-compute-cuda` gives SIM an NVIDIA-backed dense tensor site that is loaded only when the local CUDA stack proves it can run.
+- **sim-lib-compute-femm** -- `sim-lib-compute-femm` gives SIM a provider-neutral resident sparse linear solver that still has to pass f64 FEMM certificate checks.
 - **sim-lib-compute-model** -- `sim-lib-compute-model` gives SIM a deterministic tensor execution site for proving provider behavior before real hardware is involved.
 - **sim-lib-compute-rocm** -- `sim-lib-compute-rocm` gives SIM an AMD-backed dense tensor site that is admitted only after HIP and rocBLAS prove the device contract.
 - **sim-lib-compute-wgpu** -- `sim-lib-compute-wgpu` discovers portable GPU adapters and exports only probe-backed compute sites.
@@ -705,11 +707,23 @@ WebAssembly lets code from elsewhere run safely inside a sandbox, and this is th
 
 `sim-lib-compute-auto` provides `site/compute/auto`, the automatic placement entry point for tensor execution. A caller can supply measured profiles through any Table/Dir backend, let the library select the modeled provider only when the evidence is fresh, compatible, and conclusive, and fall back to local CPU behavior for absent, stale, incompatible, or inconclusive evidence. The result is a durable handoff point for higher-level numeric code: tensor semantics stay in `sim-numbers`, provider fixtures stay in compute libraries, and the runtime sees one ordinary loadable site.
 
+#### sim-lib-compute-cli
+
+`sim-lib-compute-cli` gives SIM a loadable `compute` command for inspecting modeled, automatic, and hardware providers without adding another product binary.
+
+The crate exports the `cli/main/compute` surface used by bootloaded SIM command sessions. It reports installed compute sites, renders machine-readable provider evidence, exposes modeled fallback behavior, and validates profile operations through caller-supplied Table storage instead of raw host paths.
+
 #### sim-lib-compute-cuda
 
 `sim-lib-compute-cuda` gives SIM an NVIDIA-backed dense tensor site that is loaded only when the local CUDA stack proves it can run.
 
 It discovers CUDA at runtime, opens the driver and cuBLAS through checked ABI bindings, records device and library evidence, and exports a dense matrix provider for SIM tensor placement. The crate keeps every hardware claim tied to probe results, so machines without a usable NVIDIA stack fall back to the CPU or portable provider path without inventing a fake accelerator.
+
+#### sim-lib-compute-femm
+
+`sim-lib-compute-femm` gives SIM a provider-neutral resident sparse linear solver that still has to pass f64 FEMM certificate checks.
+
+The crate implements a loadable FEMM `LinearSolver` over CSR matrices. It models factor upload reuse by fingerprint, resident f32 Krylov work vectors, explicit convergence synchronizations, and bounded f64 refinement.
 
 #### sim-lib-compute-model
 
