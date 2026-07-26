@@ -7,7 +7,7 @@ The SIM Index is the generated constellation graph for public source facts, feat
 | Row family | Count |
 | --- | ---: |
 | Subjects | 649 |
-| Anchors | 11427 |
+| Anchors | 11433 |
 | Surfaces | 208 |
 | Specimens | 580 |
 | Features | 126 |
