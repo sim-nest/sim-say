@@ -6,6 +6,7 @@ Published commit: `18aed30093a8f4af7fe1f70b2c49efe709d61a2a`.
 
 - `sim-lib-compute-auto`
 - `sim-lib-compute-cuda`
+- `sim-lib-compute-femm`
 - `sim-lib-compute-model`
 - `sim-lib-compute-rocm`
 - `sim-lib-compute-wgpu`

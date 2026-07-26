@@ -74,6 +74,7 @@
 | `crate/sim-lib-bridge` | `crate` | sim-lib-bridge | 1 |
 | `crate/sim-lib-compute-auto` | `crate` | sim-lib-compute-auto | 1 |
 | `crate/sim-lib-compute-cuda` | `crate` | sim-lib-compute-cuda | 1 |
+| `crate/sim-lib-compute-femm` | `crate` | sim-lib-compute-femm | 1 |
 | `crate/sim-lib-compute-model` | `crate` | sim-lib-compute-model | 1 |
 | `crate/sim-lib-compute-rocm` | `crate` | sim-lib-compute-rocm | 1 |
 | `crate/sim-lib-compute-wgpu` | `crate` | sim-lib-compute-wgpu | 1 |
@@ -427,7 +428,7 @@
 | `repo/sim-auto` | `repo` | sim-auto | 30 |
 | `repo/sim-citizen` | `repo` | sim-citizen | 5 |
 | `repo/sim-codecs` | `repo` | sim-codecs | 21 |
-| `repo/sim-compute` | `repo` | sim-compute | 7 |
+| `repo/sim-compute` | `repo` | sim-compute | 8 |
 | `repo/sim-construction` | `repo` | sim-construction | 6 |
 | `repo/sim-discrete` | `repo` | sim-discrete | 9 |
 | `repo/sim-expr-tree` | `repo` | sim-expr-tree | 9 |

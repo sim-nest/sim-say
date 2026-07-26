@@ -74,6 +74,7 @@
 | `crate/sim-lib-bridge` | `crate` | sim-lib-bridge |
 | `crate/sim-lib-compute-auto` | `crate` | sim-lib-compute-auto |
 | `crate/sim-lib-compute-cuda` | `crate` | sim-lib-compute-cuda |
+| `crate/sim-lib-compute-femm` | `crate` | sim-lib-compute-femm |
 | `crate/sim-lib-compute-model` | `crate` | sim-lib-compute-model |
 | `crate/sim-lib-compute-rocm` | `crate` | sim-lib-compute-rocm |
 | `crate/sim-lib-compute-wgpu` | `crate` | sim-lib-compute-wgpu |
