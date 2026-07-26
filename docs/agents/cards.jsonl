@@ -61,6 +61,11 @@
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-compute"}
 {"card": {"id": "cookbook/compute-auto", "kind": "cookbook-recipe", "owner": "sim-lib-compute-auto", "summary": "Automatic tensor compute site selection with CPU fallback."}, "repo": "sim-compute"}
 {"card": {"id": "cookbook/compute-model", "kind": "cookbook-recipe", "owner": "sim-lib-compute-model", "summary": "Modeled resident tensor execution for provider and placement tests."}, "repo": "sim-compute"}
+{"card": {"id": "cookbook/compute-wgpu", "kind": "cookbook-recipe", "owner": "sim-lib-compute-wgpu", "summary": "Evidence-based portable GPU adapter discovery."}, "repo": "sim-compute"}
+{"card": {"id": "cookbook/sim-lib-compute-cli", "kind": "cookbook-recipe", "owner": "sim-lib-compute-cli", "summary": ""}, "repo": "sim-compute"}
+{"card": {"id": "cookbook/sim-lib-compute-cuda", "kind": "cookbook-recipe", "owner": "sim-lib-compute-cuda", "summary": ""}, "repo": "sim-compute"}
+{"card": {"id": "cookbook/sim-lib-compute-femm", "kind": "cookbook-recipe", "owner": "sim-lib-compute-femm", "summary": ""}, "repo": "sim-compute"}
+{"card": {"id": "cookbook/sim-lib-compute-rocm", "kind": "cookbook-recipe", "owner": "sim-lib-compute-rocm", "summary": ""}, "repo": "sim-compute"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-compute"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-construction"}
 {"card": {"id": "cookbook/construction/project", "kind": "cookbook-recipe", "owner": "sim-lib-construction-project", "summary": "Project charter records, append-only facts, snapshots, lifecycle gates, decisions, and evidence readiness."}, "repo": "sim-construction"}
@@ -90,6 +95,11 @@
 {"card": {"id": "rank/discrete/simple-graph", "kind": "static-card", "owner": "workspace", "summary": "Labeled simple undirected graphs on n nodes."}, "repo": "sim-discrete"}
 {"card": {"id": "rank/discrete/subset", "kind": "static-card", "owner": "workspace", "summary": "Subsets of a finite ground set."}, "repo": "sim-discrete"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-discrete"}
+{"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-expr-tree"}
+{"card": {"id": "cookbook/sim-expr-tree-calc", "kind": "cookbook-recipe", "owner": "sim-expr-tree-calc", "summary": ""}, "repo": "sim-expr-tree"}
+{"card": {"id": "cookbook/sim-expr-tree-core", "kind": "cookbook-recipe", "owner": "sim-expr-tree-core", "summary": ""}, "repo": "sim-expr-tree"}
+{"card": {"id": "cookbook/sim-lib-expr-tree", "kind": "cookbook-recipe", "owner": "sim-lib-expr-tree", "summary": ""}, "repo": "sim-expr-tree"}
+{"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-expr-tree"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-femm"}
 {"card": {"id": "cookbook/femm-assembly", "kind": "cookbook-recipe", "owner": "sim-lib-femm-assembly", "summary": "Tiny element assembly descriptors."}, "repo": "sim-femm"}
 {"card": {"id": "cookbook/femm-codec", "kind": "cookbook-recipe", "owner": "sim-lib-femm-codec", "summary": "FEMM descriptor codec round-trip examples."}, "repo": "sim-femm"}
@@ -151,6 +161,7 @@
 {"card": {"id": "cookbook/pitch-namer-jazz", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-namer-jazz", "summary": "Jazz chord naming descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-namer-riemann", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-namer-riemann", "summary": "Riemannian function descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-namer-roman", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-namer-roman", "summary": "Roman numeral analysis descriptors."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/pitch-ratio", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-ratio", "summary": "Exact musical ratio interval descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-scale", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-scale", "summary": "Scale and degree descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-set", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-set", "summary": "Pitch-class sets, masks, and normal-form descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-shapes", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-shapes", "summary": "Citizen descriptor shapes for pitch values."}, "repo": "sim-music"}
@@ -263,16 +274,24 @@
 {"card": {"id": "citizen/Agent", "kind": "citizen-class", "owner": "sim-lib-agent", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/AgentComponent", "kind": "citizen-class", "owner": "sim-lib-agent", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/AgentFabric", "kind": "citizen-class", "owner": "sim-lib-agent", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/BigIntNumberDomain", "kind": "citizen-class", "owner": "sim-lib-numbers-bigint", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/BoolNumberDomain", "kind": "citizen-class", "owner": "sim-lib-numbers-bool", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/CasNumberDomain", "kind": "citizen-class", "owner": "sim-lib-numbers-cas", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/Cell", "kind": "citizen-class", "owner": "sim-lib-mutation", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/CodecRuntime", "kind": "citizen-class", "owner": "sim-codec", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/CoefficientList", "kind": "citizen-class", "owner": "sim-lib-numbers-exotic", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/ComplexNumberDomain", "kind": "citizen-class", "owner": "sim-lib-numbers-complex", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/Connection", "kind": "citizen-class", "owner": "sim-lib-server", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/ContinuationValue", "kind": "citizen-class", "owner": "sim-lib-control", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/ContinuedFraction", "kind": "citizen-class", "owner": "sim-lib-numbers-exotic", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/ControlResultValue", "kind": "citizen-class", "owner": "sim-lib-control", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/CookbookStoreHandle", "kind": "citizen-class", "owner": "sim-lib-cookbook", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/Coroutine", "kind": "citizen-class", "owner": "sim-lib-server", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/ExoticNumberDomain", "kind": "citizen-class", "owner": "sim-lib-numbers-exotic", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/F32NumberDomain", "kind": "citizen-class", "owner": "sim-lib-numbers-float", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/F64NumberDomain", "kind": "citizen-class", "owner": "sim-lib-numbers-f64", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/FieldDomain", "kind": "citizen-class", "owner": "sim-lib-femm-field", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/FixedNumberDomain", "kind": "citizen-class", "owner": "sim-lib-numbers-fixed", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/FuncNumberDomain", "kind": "citizen-class", "owner": "sim-lib-numbers-func", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/GatewayEvent", "kind": "citizen-class", "owner": "sim-lib-openai-server", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/GatewayRequest", "kind": "citizen-class", "owner": "sim-lib-openai-server", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
@@ -280,6 +299,7 @@
 {"card": {"id": "citizen/GatewayResponseValue", "kind": "citizen-class", "owner": "sim-lib-openai-server", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/GatewayRoutesValue", "kind": "citizen-class", "owner": "sim-lib-openai-server", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/GatewayRun", "kind": "citizen-class", "owner": "sim-lib-openai-server", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/I64NumberDomain", "kind": "citizen-class", "owner": "sim-lib-numbers-i64", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/IslispObject", "kind": "citizen-class", "owner": "sim-lib-lang-islisp", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/LazySequence", "kind": "citizen-class", "owner": "sim-lib-sequence", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/LogicConfigState", "kind": "citizen-class", "owner": "sim-lib-logic", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}

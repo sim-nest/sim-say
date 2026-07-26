@@ -65,7 +65,12 @@
 | `sim-test-support` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-wasm-abi` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-lib-compute-auto` | [sim-compute](../repos/sim-compute.md) |
+| `sim-lib-compute-cli` | [sim-compute](../repos/sim-compute.md) |
+| `sim-lib-compute-cuda` | [sim-compute](../repos/sim-compute.md) |
+| `sim-lib-compute-femm` | [sim-compute](../repos/sim-compute.md) |
 | `sim-lib-compute-model` | [sim-compute](../repos/sim-compute.md) |
+| `sim-lib-compute-rocm` | [sim-compute](../repos/sim-compute.md) |
+| `sim-lib-compute-wgpu` | [sim-compute](../repos/sim-compute.md) |
 | `sim-codec-mspdi` | [sim-construction](../repos/sim-construction.md) |
 | `sim-lib-construction-project` | [sim-construction](../repos/sim-construction.md) |
 | `sim-site-dalux` | [sim-construction](../repos/sim-construction.md) |
@@ -77,6 +82,13 @@
 | `sim-lib-discrete-rank` | [sim-discrete](../repos/sim-discrete.md) |
 | `sim-lib-discrete-search` | [sim-discrete](../repos/sim-discrete.md) |
 | `sim-lib-discrete-spectral` | [sim-discrete](../repos/sim-discrete.md) |
+| `sim-expr-tree` | [sim-expr-tree](../repos/sim-expr-tree.md) |
+| `sim-expr-tree-calc` | [sim-expr-tree](../repos/sim-expr-tree.md) |
+| `sim-expr-tree-core` | [sim-expr-tree](../repos/sim-expr-tree.md) |
+| `sim-lib-expr-tree` | [sim-expr-tree](../repos/sim-expr-tree.md) |
+| `sim-lib-expr-tree-serve` | [sim-expr-tree](../repos/sim-expr-tree.md) |
+| `sim-lib-expr-tree-server` | [sim-expr-tree](../repos/sim-expr-tree.md) |
+| `sim-lib-view-expr-tree` | [sim-expr-tree](../repos/sim-expr-tree.md) |
 | `sim-lib-femm-assembly` | [sim-femm](../repos/sim-femm.md) |
 | `sim-lib-femm-codec` | [sim-femm](../repos/sim-femm.md) |
 | `sim-lib-femm-core` | [sim-femm](../repos/sim-femm.md) |
@@ -137,6 +149,7 @@
 | `sim-lib-pitch-namer-jazz` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-namer-riemann` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-namer-roman` | [sim-music](../repos/sim-music.md) |
+| `sim-lib-pitch-ratio` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-scale` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-set` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-shapes` | [sim-music](../repos/sim-music.md) |

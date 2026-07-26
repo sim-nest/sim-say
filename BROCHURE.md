@@ -72,6 +72,7 @@ piece gives you.
 - **sim-lib-pitch-namer-jazz** -- Reads and recognises jazz chord symbols, turning names like Cmaj7 or Am7/G into chords and back.
 - **sim-lib-pitch-namer-riemann** -- Labels a triad by its function -- major or minor tonic -- in the neo-Riemannian style.
 - **sim-lib-pitch-namer-roman** -- Reads a chord in the context of a key and names its scale degree -- I, V7, and so on -- the way theory class does.
+- **sim-lib-pitch-ratio** -- Keeps just-intonation style intervals as exact reduced ratios.
 - **sim-lib-pitch-scale** -- Defines scales and modes and can snap incoming notes onto the scale you choose.
 - **sim-lib-pitch-set** -- Packs a group of pitches into a compact bit pattern and runs the set-theory operations on it fast.
 - **sim-lib-pitch-shapes** -- Gives pitches, scales, chords, and keys a readable text form and makes them objects the SIM runtime can hold.
@@ -176,7 +177,12 @@ piece gives you.
 - **sim-lib-numbers-tensor-linalg** -- It does the matrix and vector math behind graphics, data science, and engineering.
 - **sim-lib-numbers-tensor-rat64** -- It gives you grids of exact fractions, so array math avoids rounding entirely.
 - **sim-lib-compute-auto** -- `sim-lib-compute-auto` gives SIM a stable automatic tensor placement surface that chooses an available compute site without changing the caller's tensor program.
+- **sim-lib-compute-cli** -- `sim-lib-compute-cli` gives SIM a loadable `compute` command for inspecting modeled, automatic, and hardware providers without adding another product binary.
+- **sim-lib-compute-cuda** -- `sim-lib-compute-cuda` gives SIM an NVIDIA-backed dense tensor site that is loaded only when the local CUDA stack proves it can run.
+- **sim-lib-compute-femm** -- `sim-lib-compute-femm` gives SIM a provider-neutral resident sparse linear solver that still has to pass f64 FEMM certificate checks.
 - **sim-lib-compute-model** -- `sim-lib-compute-model` gives SIM a deterministic tensor execution site for proving provider behavior before real hardware is involved.
+- **sim-lib-compute-rocm** -- `sim-lib-compute-rocm` gives SIM an AMD-backed dense tensor site that is admitted only after HIP and rocBLAS prove the device contract.
+- **sim-lib-compute-wgpu** -- `sim-lib-compute-wgpu` discovers portable GPU adapters and exports only probe-backed compute sites.
 - **sim-lib-discrete** -- one front door to the whole discrete-math family, where you switch on only the parts you need.
 - **sim-lib-discrete-algebra** -- one calculation core that answers many discrete-math questions by changing what "add" and "multiply" mean.
 - **sim-lib-discrete-comb** -- count and list every way to arrange or choose things, and give each arrangement its own exact number.
@@ -699,13 +705,43 @@ WebAssembly lets code from elsewhere run safely inside a sandbox, and this is th
 
 `sim-lib-compute-auto` gives SIM a stable automatic tensor placement surface that chooses an available compute site without changing the caller's tensor program.
 
-`sim-lib-compute-auto` provides `site/compute/auto`, the automatic placement entry point for tensor execution. A caller can ask for an automatic site and let the library select the modeled provider when a compatible profile is installed, falling back to local CPU behavior when no modeled or resident provider is available. The result is a durable handoff point for higher-level numeric code: tensor semantics stay in `sim-numbers`, provider fixtures stay in compute libraries, and the runtime sees one ordinary loadable site.
+`sim-lib-compute-auto` provides `site/compute/auto`, the automatic placement entry point for tensor execution. A caller can supply measured profiles through any Table/Dir backend, let the library select the modeled provider only when the evidence is fresh, compatible, and conclusive, and fall back to local CPU behavior for absent, stale, incompatible, or inconclusive evidence. The result is a durable handoff point for higher-level numeric code: tensor semantics stay in `sim-numbers`, provider fixtures stay in compute libraries, and the runtime sees one ordinary loadable site.
+
+#### sim-lib-compute-cli
+
+`sim-lib-compute-cli` gives SIM a loadable `compute` command for inspecting modeled, automatic, and hardware providers without adding another product binary.
+
+The crate exports the `cli/main/compute` surface used by bootloaded SIM command sessions. It reports installed compute sites, renders machine-readable provider evidence, exposes modeled fallback behavior, and validates profile operations through caller-supplied Table storage instead of raw host paths.
+
+#### sim-lib-compute-cuda
+
+`sim-lib-compute-cuda` gives SIM an NVIDIA-backed dense tensor site that is loaded only when the local CUDA stack proves it can run.
+
+It discovers CUDA at runtime, opens the driver and cuBLAS through checked ABI bindings, records device and library evidence, and exports a dense matrix provider for SIM tensor placement. The crate keeps every hardware claim tied to probe results, so machines without a usable NVIDIA stack fall back to the CPU or portable provider path without inventing a fake accelerator.
+
+#### sim-lib-compute-femm
+
+`sim-lib-compute-femm` gives SIM a provider-neutral resident sparse linear solver that still has to pass f64 FEMM certificate checks.
+
+The crate implements a loadable FEMM `LinearSolver` over CSR matrices. It models factor upload reuse by fingerprint, resident f32 Krylov work vectors, explicit convergence synchronizations, and bounded f64 refinement.
 
 #### sim-lib-compute-model
 
 `sim-lib-compute-model` gives SIM a deterministic tensor execution site for proving provider behavior before real hardware is involved.
 
 `sim-lib-compute-model` models resident tensor handles, bounded submissions, flush evidence, counters, and explicit failure cases such as out-of-memory, device-loss, and readback errors. It does that without owning tensor semantics: the actual tensor value, shape, dtype, and arithmetic rules remain in `sim-numbers`. The crate is useful for recipes, conformance, and provider development because a host can exercise placement, residency, counters, and failure reporting with stable offline evidence.
+
+#### sim-lib-compute-rocm
+
+`sim-lib-compute-rocm` gives SIM an AMD-backed dense tensor site that is admitted only after HIP and rocBLAS prove the device contract.
+
+It discovers compatible ROCm devices at runtime, loads HIP and rocBLAS through checked bindings, records `gfx*` target evidence, and exposes dense matrix execution as a SIM compute site. The provider keeps unsupported machines on the ordinary CPU or portable GPU path and reports why ROCm was unavailable instead of silently changing tensor semantics.
+
+#### sim-lib-compute-wgpu
+
+`sim-lib-compute-wgpu` discovers portable GPU adapters and exports only probe-backed compute sites.
+
+It checks adapter identity, requested and granted limits, transfer and map behavior, bounded allocation attempts, timestamp support, f16 support, portable f32 element-wise arithmetic, transcendentals, fixed-tree reductions, transpose, dot, and tiled matrix multiplication. A site appears only when those probes succeed, so placement receives evidence instead of a vague hardware promise.
 
 ### sim-construction
 
@@ -776,6 +812,50 @@ This crate gives discrete algorithms a common way to explore choices without sil
 break a pattern over on-or-off choices into its building blocks and read how it is really shaped.
 
 When your data is a pattern indexed by yes-or-no combinations -- which switches are on, which features are present -- this crate lets you look at it in a second, revealing way. It rewrites the pattern as a blend of simple underlying components, so you can see which broad tendencies dominate and which fine details barely register. From that view you can measure how concentrated or how spread out a pattern is, combine two patterns by their toggled differences, and roll information up or down across every subset of choices. It moves between the plain view and the component view quickly and exactly, so nothing is approximated away.
+
+### sim-expr-tree
+
+#### sim-expr-tree
+
+the `sim-expr-tree` binary crate provides the product entrypoint for expression-tree commands.
+
+It is the thin executable surface for the expression-tree family. The binary keeps command ownership in the product repo while delegating behavior to the loadable runtime and serve libraries, so command entrypoints can boot through the standard SIM loader instead of constructing a private runtime.
+
+#### sim-expr-tree-calc
+
+`sim-expr-tree-calc` connects expression-tree names to dependency-aware refresh behavior.
+
+It observes expression evaluation, records which named paths were read, and uses the incremental query substrate to dirty dependents when names are created, renamed, moved, listed, remounted, or governed by a changed policy. The crate is the calculation layer for the expression-tree family, not a separate language or parallel store.
+
+#### sim-expr-tree-core
+
+`sim-expr-tree-core` gives expression trees stable names, immutable identities, inherited policy, and crash-safe reservation.
+
+It owns the finite namespace records for expression-tree storage: path references, generated-name reservation, rename and move semantics, mount epochs, source-control stamps, typed adapters, read-only mounts, and policy inheritance. The crate keeps table leaves as table leaves, detects corrupt state, and makes finite reads safe without allocating new namespace state.
+
+#### sim-lib-expr-tree
+
+`sim-lib-expr-tree` is the loadable runtime library for expression-tree operations.
+
+It gives the expression-tree family a runtime crate where callable exports, library claims, and object-facing behavior can live without moving core records into the kernel. The library is intentionally separate from the server and view crates, so local runtime use can stay small while served and projected surfaces compose it.
+
+#### sim-lib-expr-tree-serve
+
+`sim-lib-expr-tree-serve` owns the loadable serve entrypoint for expression-tree sessions.
+
+It is the serving library that product commands can load when expression-tree behavior needs to run as a session surface. Keeping this as a library leaves the binary thin, lets bootloader dispatch own startup, and gives server-oriented behavior a clear place to grow beside the runtime and view crates.
+
+#### sim-lib-expr-tree-server
+
+`sim-lib-expr-tree-server` is the session-oriented server library for expression-tree work.
+
+It provides the public home for expression-tree server sessions, separate from the core records and the product binary. That boundary lets served state, connection handling, and collaboration flows evolve as loadable behavior while continuing to reuse the same namespace, policy, and calculation crates.
+
+#### sim-lib-view-expr-tree
+
+`sim-lib-view-expr-tree` is the view projection library for expression-tree sessions.
+
+It owns the SurfaceCodec-facing projection for expression-tree data, so tree sessions can become inspectable views without inventing a separate UI data model. The crate keeps view behavior beside the rest of the expression-tree family and leaves core naming, calculation, runtime exports, and server sessions in their own crates.
 
 ### sim-femm
 
@@ -1115,7 +1195,7 @@ This defines the foundation pitch types every other pitch crate builds on: the t
 
 Scores how tense or restful a group of notes sounds, from several theoretical points of view at once.
 
-This rates a collection of pitch classes for dissonance against a set of interchangeable models. It offers an interval-vector weighting, a Forte-style complexity measure, a key-relative model that weighs how notes function in a key, and a tritone-density ratio. A registry runs every model at once so you can compare readings, and the whole set installs as a runtime library you can call on demand.
+This rates a collection of pitch classes for dissonance against a set of interchangeable models. It offers an interval-vector weighting, a Forte-style complexity measure, a key-relative model that weighs how notes function in a key, and a tritone-density ratio. It also compares contextual pitch windows with separately named roughness, commonality, leading, motion, pseudo-partial, multiplicity-aware interval-vector, and exact-ratio components. Each result keeps roughness mass, normalized density, harmonic context, and provenance separate, with explicit interval-difference, merge, context-window, duplicate, voice-identity, normalization, and weighting policy. The historical tritone-density binning is still available, but only as a named compatibility dialect. A registry runs every model at once so you can compare readings, and the whole set installs as a runtime library you can call on demand.
 
 #### sim-lib-pitch-namer
 
@@ -1146,6 +1226,12 @@ This implements the Riemannian naming school. It labels a triad by its functiona
 Reads a chord in the context of a key and names its scale degree -- I, V7, and so on -- the way theory class does.
 
 This implements the functional roman-numeral naming school. Given a key, it labels a chord by its scale degree from one through seven and by its quality, using upper-case numerals for major chords, lower-case for minor, a small circle for diminished, and seventh suffixes -- so a dominant seventh in a major key reads as V7. It needs a key to work against and returns a plain diagnostic when a chord will not fit.
+
+#### sim-lib-pitch-ratio
+
+Keeps just-intonation style intervals as exact reduced ratios.
+
+It validates positive ratios, reduces them to canonical identity, optionally folds them into one octave, exposes bounded prime-factor vectors, ranks finite prime-limit vectors with the discrete mixed-radix machinery, searches for nearby ratios under explicit `SearchControl` bounds, analyzes exact chord interval matrices, and walks cycle-safe ratio relation trees.
 
 #### sim-lib-pitch-scale
 
@@ -1193,7 +1279,7 @@ This defines the foundation acoustic types the whole synthesis layer shares: fre
 
 Estimates how rough or smooth two or more sounds are together, using established psychoacoustic models.
 
-This scores the sensory roughness of sound using a family of well-known psychoacoustic estimators -- Plomp-Levelt, Sethares, Helmholtz beating, and harmonic entropy. A registry lets you look them up by name and run them, and a runtime surface installs the whole set as a library. Unlike theory-based scoring, these models work from the actual spectral content, so they judge how a combination genuinely sounds to the ear.
+This scores the sensory roughness of sound using a family of well-known psychoacoustic estimators -- Plomp-Levelt, Sethares, Helmholtz beating, and harmonic entropy. Results keep roughness mass, normalized density, harmonic context, curve family, and partial-policy evidence separate, including skipped inaudible pairs. A registry lets you look models up by name and run them, and a runtime surface installs the whole set as a library. Unlike theory-based scoring, these models work from the actual spectral content, so they judge how a combination genuinely sounds to the ear.
 
 #### sim-lib-sound-gm
 

@@ -6,53 +6,77 @@
 - Subject: `crate/sim-lib-compute-model`
 - Canonical key: `crate/sim-lib-compute-model/feature-sim-compute-tensor-providers`
 
-Run canonical Tensor requests through modeled resident and automatic compute sites.
+Run canonical Tensor requests through modeled, automatic, probe-backed wgpu, optional CUDA/cuBLAS, and optional ROCm/rocBLAS compute sites.
 
 ## Anchors
 
 - `anchor/crate/sim-lib-compute-auto`
+- `anchor/crate/sim-lib-compute-cuda`
 - `anchor/crate/sim-lib-compute-model`
+- `anchor/crate/sim-lib-compute-rocm`
+- `anchor/crate/sim-lib-compute-wgpu`
 - `anchor/export/sim-lib-compute-auto/site/compute/auto`
+- `anchor/export/sim-lib-compute-cuda/site/compute/cuda`
 - `anchor/export/sim-lib-compute-model/site/compute/model`
+- `anchor/export/sim-lib-compute-rocm/site/compute/rocm`
 - `anchor/runtime-lib/sim-lib-compute-auto/compute-auto-lib`
+- `anchor/runtime-lib/sim-lib-compute-cuda/compute-cuda-lib`
 - `anchor/runtime-lib/sim-lib-compute-model/compute-model-lib`
+- `anchor/runtime-lib/sim-lib-compute-rocm/compute-rocm-lib`
+- `anchor/runtime-lib/sim-lib-compute-wgpu/compute-wgpu-lib`
 - `anchor/rustdoc/sim-lib-compute-auto/auto-tensor-executor`
+- `anchor/rustdoc/sim-lib-compute-cuda/cuda-resident-storage`
+- `anchor/rustdoc/sim-lib-compute-cuda/cuda-runtime-loader`
+- `anchor/rustdoc/sim-lib-compute-cuda/cuda-tensor-executor`
 - `anchor/rustdoc/sim-lib-compute-model/modeled-resident-storage`
 - `anchor/rustdoc/sim-lib-compute-model/modeled-tensor-executor`
+- `anchor/rustdoc/sim-lib-compute-rocm/rocm-resident-storage`
+- `anchor/rustdoc/sim-lib-compute-rocm/rocm-runtime-loader`
+- `anchor/rustdoc/sim-lib-compute-rocm/rocm-tensor-executor`
+- `anchor/rustdoc/sim-lib-compute-wgpu/compute-wgpu-lib`
+- `anchor/rustdoc/sim-lib-compute-wgpu/wgpu-discovery`
+- `anchor/rustdoc/sim-lib-compute-wgpu/wgpu-pipeline-cache`
+- `anchor/rustdoc/sim-lib-compute-wgpu/wgpu-resident-storage`
 
 ## Surfaces
 
 - `site/sim-lib-compute-auto`
+- `site/sim-lib-compute-cuda`
 - `site/sim-lib-compute-model`
+- `site/sim-lib-compute-rocm`
+- `site/sim-lib-compute-wgpu`
 
 ## Specimens
 
+- `recipe/sim-compute/crates/sim-lib-compute-auto/01-basics/measured-profile-routing`
+- `recipe/sim-compute/crates/sim-lib-compute-cuda/01-basics/cuda-discovery`
 - `recipe/sim-compute/crates/sim-lib-compute-model/01-basics/modeled-resident-matrix`
+- `recipe/sim-compute/crates/sim-lib-compute-rocm/01-basics/rocm-discovery`
+- `recipe/sim-compute/crates/sim-lib-compute-wgpu/01-basics/wgpu-discovery`
 - `spec-test/sim-compute/crates/sim-lib-compute-auto/src/tests`
+- `spec-test/sim-compute/crates/sim-lib-compute-cuda/src/tests`
 - `spec-test/sim-compute/crates/sim-lib-compute-model/src/tests`
+- `spec-test/sim-compute/crates/sim-lib-compute-rocm/src/tests`
+- `spec-test/sim-compute/crates/sim-lib-compute-wgpu/src/tests`
 
 ## Worked Example
 
-Specimen `recipe/sim-compute/crates/sim-lib-compute-model/01-basics/modeled-resident-matrix` is checked by `xtask check-recipes`.
+Specimen `recipe/sim-compute/crates/sim-lib-compute-auto/01-basics/measured-profile-routing` is checked by `xtask check-recipes`.
 
-Source `crates/sim-lib-compute-model/recipes/01-basics/modeled-resident-matrix/recipe.toml`:
+Source `crates/sim-lib-compute-auto/recipes/01-basics/measured-profile-routing/recipe.toml`:
 
 ```toml
-id = "modeled-resident-matrix"
-title = "Modeled resident matrix"
+id = "measured-profile-routing"
+title = "Measured profile routing"
 codec = "lisp"
 setup = "setup.siml"
 purpose = "purpose.md"
 expected = "expected.txt"
-order = 10
-tags = ["compute", "tensor", "resident", "modeled"]
-requires = ["compute/model", "numbers/tensor", "standard"]
-capabilities = ["tensor.execute"]
-assert_tags = ["resident", "modeled"]
-assert_capabilities = ["tensor.execute"]
-assert_setup_codec = "lisp"
+order = 20
+tags = ["compute", "tensor", "auto", "profile", "routing"]
+requires = ["compute/auto", "compute/profile", "storage/table", "numbers/tensor", "standard"]
 
 [[expect]]
 form = 0
-result = "(compute modeled-resident-matrix (site site/compute/model) (chain resident resident) (materializations 1) (readbacks 1))"
+result = "(compute auto-profile (table supplied) (synthetic bounded upload download launch element reduction matmul) (physical-device required) (else cpu) (ledger provider materialization-bytes synchronizations))"
 ```

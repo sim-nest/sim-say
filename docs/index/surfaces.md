@@ -25,6 +25,8 @@
 | `cli/auto-site-xentry` | `cli` | `crate/auto-site-xentry` |
 | `cli/browse` | `cli` | `crate/sim-web-shell` |
 | `cli/citizen-roundtrip` | `cli` | `crate/citizen-roundtrip` |
+| `cli/compute` | `cli` | `crate/sim-lib-compute-cli` |
+| `cli/expr-tree` | `cli` | `crate/sim-lib-expr-tree-serve` |
 | `cli/glasses` | `cli` | `crate/sim-run` |
 | `cli/index` | `cli` | `crate/sim-lib-index` |
 | `cli/mcp` | `cli` | `local/sim-agent-net/crate/sim-lib-mcp` |
@@ -32,6 +34,7 @@
 | `cli/serve` | `cli` | `crate/sim-web-shell` |
 | `cli/sim-auto` | `cli` | `crate/sim-auto` |
 | `cli/sim-codec-compare` | `cli` | `crate/sim-codec-compare` |
+| `cli/sim-expr-tree` | `cli` | `crate/sim-expr-tree` |
 | `cli/sim-fabric-cadr-fixture` | `cli` | `crate/sim-lib-stream-fabric` |
 | `cli/sim-ledger-cli` | `cli` | `crate/sim-ledger-cli` |
 | `cli/sim-lib-agent-runner-core-recipe-output-contract-repair` | `cli` | `crate/sim-lib-agent-runner-core-recipe-output-contract-repair` |
@@ -51,6 +54,7 @@
 | `docs/sim-compute/generated` | `docs` | `doc-set/sim-compute/generated` |
 | `docs/sim-construction/generated` | `docs` | `doc-set/sim-construction/generated` |
 | `docs/sim-discrete/generated` | `docs` | `doc-set/sim-discrete/generated` |
+| `docs/sim-expr-tree/generated` | `docs` | `doc-set/sim-expr-tree/generated` |
 | `docs/sim-femm/generated` | `docs` | `doc-set/sim-femm/generated` |
 | `docs/sim-foundation/generated` | `docs` | `doc-set/sim-foundation/generated` |
 | `docs/sim-kernel/generated` | `docs` | `doc-set/sim-kernel/generated` |
@@ -75,6 +79,7 @@
 | `local/sim-compute/cli/xtask` | `cli` | `local/sim-compute/crate/xtask` |
 | `local/sim-construction/cli/xtask` | `cli` | `local/sim-construction/crate/xtask` |
 | `local/sim-discrete/cli/xtask` | `cli` | `local/sim-discrete/crate/xtask` |
+| `local/sim-expr-tree/cli/xtask` | `cli` | `local/sim-expr-tree/crate/xtask` |
 | `local/sim-femm/cli/xtask` | `cli` | `local/sim-femm/crate/xtask` |
 | `local/sim-foundation/cli/xtask` | `cli` | `local/sim-foundation/crate/xtask` |
 | `local/sim-kernel/cli/xtask` | `cli` | `local/sim-kernel/crate/xtask` |
@@ -135,8 +140,11 @@
 | `site/sim-lib-auto-vehicle` | `site` | `crate/sim-lib-auto-vehicle` |
 | `site/sim-lib-auto-vendor` | `site` | `crate/sim-lib-auto-vendor` |
 | `site/sim-lib-compute-auto` | `site` | `crate/sim-lib-compute-auto` |
+| `site/sim-lib-compute-cuda` | `site` | `crate/sim-lib-compute-cuda` |
 | `site/sim-lib-compute-model` | `site` | `crate/sim-lib-compute-model` |
-| `site/sim-lib-numbers-f64` | `site` | `crate/sim-lib-numbers-f64` |
+| `site/sim-lib-compute-rocm` | `site` | `crate/sim-lib-compute-rocm` |
+| `site/sim-lib-compute-wgpu` | `site` | `crate/sim-lib-compute-wgpu` |
+| `site/sim-lib-numbers-f64` | `site` | `local/sim-numbers/crate/sim-lib-numbers-f64` |
 | `site/sim-lib-numbers-tensor` | `site` | `local/sim-numbers/crate/sim-lib-numbers-tensor` |
 | `site/sim-lib-stream-cpal` | `site` | `crate/sim-lib-stream-cpal` |
 | `site/sim-lib-stream-host` | `site` | `crate/sim-lib-stream-host` |
@@ -186,6 +194,7 @@
 | `view/sim-lib-view-daw` | `view` | `crate/sim-lib-view-daw` |
 | `view/sim-lib-view-device` | `view` | `crate/sim-lib-view-device` |
 | `view/sim-lib-view-doc` | `view` | `local/sim-web/crate/sim-lib-view-doc` |
+| `view/sim-lib-view-expr-tree` | `view` | `crate/sim-lib-view-expr-tree` |
 | `view/sim-lib-view-math` | `view` | `crate/sim-lib-view-math` |
 | `view/sim-lib-view-spatial` | `view` | `crate/sim-lib-view-spatial` |
 | `view/sim-lib-view-wasm-frame` | `view` | `crate/sim-lib-view-wasm-frame` |

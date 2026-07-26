@@ -6,7 +6,7 @@
 - Subject: `local/sim-discrete/crate/sim-lib-discrete`
 - Canonical key: `crate/sim-lib-discrete/feature-sim-discrete-discrete-algebra`
 
-Provide algebra, graph, combinatorics, ranking, and spectral helpers as one reusable discrete-domain stack.
+Provide algebra, graph, graph-path certificates, combinatorics, ranking, and spectral helpers as one reusable discrete-domain stack.
 
 ## Anchors
 
@@ -18,6 +18,7 @@ Provide algebra, graph, combinatorics, ranking, and spectral helpers as one reus
 - `anchor/crate/sim-lib-discrete-search`
 - `anchor/crate/sim-lib-discrete-spectral`
 - `anchor/runtime-lib/sim-lib-discrete/discrete-lib`
+- `anchor/rustdoc/sim-lib-discrete-graph/shortest_path`
 
 ## Specimens
 

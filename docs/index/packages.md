@@ -49,6 +49,9 @@
 | `crate/sim-config` | `crate` | sim-config |
 | `crate/sim-conformance` | `crate` | sim-conformance |
 | `crate/sim-cookbook` | `crate` | sim-cookbook |
+| `crate/sim-expr-tree` | `crate` | sim-expr-tree |
+| `crate/sim-expr-tree-calc` | `crate` | sim-expr-tree-calc |
+| `crate/sim-expr-tree-core` | `crate` | sim-expr-tree-core |
 | `crate/sim-incremental-core` | `crate` | sim-incremental-core |
 | `crate/sim-index-core` | `crate` | sim-index-core |
 | `crate/sim-kernel` | `crate` | sim-kernel |
@@ -70,7 +73,12 @@
 | `crate/sim-lib-binding` | `crate` | sim-lib-binding |
 | `crate/sim-lib-bridge` | `crate` | sim-lib-bridge |
 | `crate/sim-lib-compute-auto` | `crate` | sim-lib-compute-auto |
+| `crate/sim-lib-compute-cli` | `crate` | sim-lib-compute-cli |
+| `crate/sim-lib-compute-cuda` | `crate` | sim-lib-compute-cuda |
+| `crate/sim-lib-compute-femm` | `crate` | sim-lib-compute-femm |
 | `crate/sim-lib-compute-model` | `crate` | sim-lib-compute-model |
+| `crate/sim-lib-compute-rocm` | `crate` | sim-lib-compute-rocm |
+| `crate/sim-lib-compute-wgpu` | `crate` | sim-lib-compute-wgpu |
 | `crate/sim-lib-construction-project` | `crate` | sim-lib-construction-project |
 | `crate/sim-lib-core` | `crate` | sim-lib-core |
 | `crate/sim-lib-deck` | `crate` | sim-lib-deck |
@@ -88,6 +96,9 @@
 | `crate/sim-lib-doc-store` | `crate` | sim-lib-doc-store |
 | `crate/sim-lib-doc-surface` | `crate` | sim-lib-doc-surface |
 | `crate/sim-lib-exec` | `crate` | sim-lib-exec |
+| `crate/sim-lib-expr-tree` | `crate` | sim-lib-expr-tree |
+| `crate/sim-lib-expr-tree-serve` | `crate` | sim-lib-expr-tree-serve |
+| `crate/sim-lib-expr-tree-server` | `crate` | sim-lib-expr-tree-server |
 | `crate/sim-lib-femm-assembly` | `crate` | sim-lib-femm-assembly |
 | `crate/sim-lib-femm-core` | `crate` | sim-lib-femm-core |
 | `crate/sim-lib-femm-fixtures` | `crate` | sim-lib-femm-fixtures |
@@ -140,17 +151,10 @@
 | `crate/sim-lib-net-core` | `crate` | sim-lib-net-core |
 | `crate/sim-lib-numbers-ad` | `crate` | sim-lib-numbers-ad |
 | `crate/sim-lib-numbers-arith` | `crate` | sim-lib-numbers-arith |
-| `crate/sim-lib-numbers-bigint` | `crate` | sim-lib-numbers-bigint |
-| `crate/sim-lib-numbers-bool` | `crate` | sim-lib-numbers-bool |
 | `crate/sim-lib-numbers-cas-diff` | `crate` | sim-lib-numbers-cas-diff |
 | `crate/sim-lib-numbers-cas-eval` | `crate` | sim-lib-numbers-cas-eval |
 | `crate/sim-lib-numbers-codec` | `crate` | sim-lib-numbers-codec |
 | `crate/sim-lib-numbers-core` | `crate` | sim-lib-numbers-core |
-| `crate/sim-lib-numbers-exotic` | `crate` | sim-lib-numbers-exotic |
-| `crate/sim-lib-numbers-f64` | `crate` | sim-lib-numbers-f64 |
-| `crate/sim-lib-numbers-fixed` | `crate` | sim-lib-numbers-fixed |
-| `crate/sim-lib-numbers-float` | `crate` | sim-lib-numbers-float |
-| `crate/sim-lib-numbers-i64` | `crate` | sim-lib-numbers-i64 |
 | `crate/sim-lib-numbers-numeric` | `crate` | sim-lib-numbers-numeric |
 | `crate/sim-lib-numbers-prelude` | `crate` | sim-lib-numbers-prelude |
 | `crate/sim-lib-numbers-quad` | `crate` | sim-lib-numbers-quad |
@@ -174,6 +178,7 @@
 | `crate/sim-lib-pitch-namer-jazz` | `crate` | sim-lib-pitch-namer-jazz |
 | `crate/sim-lib-pitch-namer-riemann` | `crate` | sim-lib-pitch-namer-riemann |
 | `crate/sim-lib-pitch-namer-roman` | `crate` | sim-lib-pitch-namer-roman |
+| `crate/sim-lib-pitch-ratio` | `crate` | sim-lib-pitch-ratio |
 | `crate/sim-lib-pitch-scale` | `crate` | sim-lib-pitch-scale |
 | `crate/sim-lib-pitch-set` | `crate` | sim-lib-pitch-set |
 | `crate/sim-lib-pitch-wasm-frame` | `crate` | sim-lib-pitch-wasm-frame |
@@ -217,6 +222,7 @@
 | `crate/sim-lib-view-codec` | `crate` | sim-lib-view-codec |
 | `crate/sim-lib-view-daw` | `crate` | sim-lib-view-daw |
 | `crate/sim-lib-view-device` | `crate` | sim-lib-view-device |
+| `crate/sim-lib-view-expr-tree` | `crate` | sim-lib-view-expr-tree |
 | `crate/sim-lib-view-math` | `crate` | sim-lib-view-math |
 | `crate/sim-lib-view-spatial` | `crate` | sim-lib-view-spatial |
 | `crate/sim-lib-view-wasm-frame` | `crate` | sim-lib-view-wasm-frame |
@@ -251,6 +257,7 @@
 | `doc-set/sim-compute/generated` | `doc-set` | sim-compute generated docs |
 | `doc-set/sim-construction/generated` | `doc-set` | sim-construction generated docs |
 | `doc-set/sim-discrete/generated` | `doc-set` | sim-discrete generated docs |
+| `doc-set/sim-expr-tree/generated` | `doc-set` | sim-expr-tree generated docs |
 | `doc-set/sim-femm/generated` | `doc-set` | sim-femm generated docs |
 | `doc-set/sim-foundation/generated` | `doc-set` | sim-foundation generated docs |
 | `doc-set/sim-kernel/generated` | `doc-set` | sim-kernel generated docs |
@@ -290,6 +297,7 @@
 | `local/sim-construction/crate/xtask` | `crate` | xtask |
 | `local/sim-discrete/crate/sim-lib-discrete` | `crate` | sim-lib-discrete |
 | `local/sim-discrete/crate/xtask` | `crate` | xtask |
+| `local/sim-expr-tree/crate/xtask` | `crate` | xtask |
 | `local/sim-femm/crate/sim-lib-femm-codec` | `crate` | sim-lib-femm-codec |
 | `local/sim-femm/crate/sim-lib-femm-field` | `crate` | sim-lib-femm-field |
 | `local/sim-femm/crate/xtask` | `crate` | xtask |
@@ -304,9 +312,16 @@
 | `local/sim-music/crate/sim-lib-sound-shapes` | `crate` | sim-lib-sound-shapes |
 | `local/sim-music/crate/sim-lib-stream-bridge` | `crate` | sim-lib-stream-bridge |
 | `local/sim-music/crate/xtask` | `crate` | xtask |
+| `local/sim-numbers/crate/sim-lib-numbers-bigint` | `crate` | sim-lib-numbers-bigint |
+| `local/sim-numbers/crate/sim-lib-numbers-bool` | `crate` | sim-lib-numbers-bool |
 | `local/sim-numbers/crate/sim-lib-numbers-cas` | `crate` | sim-lib-numbers-cas |
 | `local/sim-numbers/crate/sim-lib-numbers-complex` | `crate` | sim-lib-numbers-complex |
+| `local/sim-numbers/crate/sim-lib-numbers-exotic` | `crate` | sim-lib-numbers-exotic |
+| `local/sim-numbers/crate/sim-lib-numbers-f64` | `crate` | sim-lib-numbers-f64 |
+| `local/sim-numbers/crate/sim-lib-numbers-fixed` | `crate` | sim-lib-numbers-fixed |
+| `local/sim-numbers/crate/sim-lib-numbers-float` | `crate` | sim-lib-numbers-float |
 | `local/sim-numbers/crate/sim-lib-numbers-func` | `crate` | sim-lib-numbers-func |
+| `local/sim-numbers/crate/sim-lib-numbers-i64` | `crate` | sim-lib-numbers-i64 |
 | `local/sim-numbers/crate/sim-lib-numbers-rational` | `crate` | sim-lib-numbers-rational |
 | `local/sim-numbers/crate/sim-lib-numbers-tensor` | `crate` | sim-lib-numbers-tensor |
 | `local/sim-numbers/crate/xtask` | `crate` | xtask |
@@ -343,9 +358,16 @@
 | `local/sim-sdk/crate/sim-lib-music-shapes` | `crate` | sim-lib-music-shapes |
 | `local/sim-sdk/crate/sim-lib-music-synth` | `crate` | sim-lib-music-synth |
 | `local/sim-sdk/crate/sim-lib-mutation` | `crate` | sim-lib-mutation |
+| `local/sim-sdk/crate/sim-lib-numbers-bigint` | `crate` | sim-lib-numbers-bigint |
+| `local/sim-sdk/crate/sim-lib-numbers-bool` | `crate` | sim-lib-numbers-bool |
 | `local/sim-sdk/crate/sim-lib-numbers-cas` | `crate` | sim-lib-numbers-cas |
 | `local/sim-sdk/crate/sim-lib-numbers-complex` | `crate` | sim-lib-numbers-complex |
+| `local/sim-sdk/crate/sim-lib-numbers-exotic` | `crate` | sim-lib-numbers-exotic |
+| `local/sim-sdk/crate/sim-lib-numbers-f64` | `crate` | sim-lib-numbers-f64 |
+| `local/sim-sdk/crate/sim-lib-numbers-fixed` | `crate` | sim-lib-numbers-fixed |
+| `local/sim-sdk/crate/sim-lib-numbers-float` | `crate` | sim-lib-numbers-float |
 | `local/sim-sdk/crate/sim-lib-numbers-func` | `crate` | sim-lib-numbers-func |
+| `local/sim-sdk/crate/sim-lib-numbers-i64` | `crate` | sim-lib-numbers-i64 |
 | `local/sim-sdk/crate/sim-lib-numbers-rational` | `crate` | sim-lib-numbers-rational |
 | `local/sim-sdk/crate/sim-lib-numbers-tensor` | `crate` | sim-lib-numbers-tensor |
 | `local/sim-sdk/crate/sim-lib-openai-server` | `crate` | sim-lib-openai-server |
@@ -417,6 +439,7 @@
 | `repo/sim-compute` | `repo` | sim-compute |
 | `repo/sim-construction` | `repo` | sim-construction |
 | `repo/sim-discrete` | `repo` | sim-discrete |
+| `repo/sim-expr-tree` | `repo` | sim-expr-tree |
 | `repo/sim-femm` | `repo` | sim-femm |
 | `repo/sim-foundation` | `repo` | sim-foundation |
 | `repo/sim-kernel` | `repo` | sim-kernel |

@@ -1,6 +1,6 @@
 # sim-music
 
-Published commit: `9f0e85295f9e86cd59cb3a880f25e94f2257696a`.
+Published commit: `3b80bd3f654ae108c4a5262ffb903ea2a71a3be8`.
 
 ## Crates
 
@@ -31,6 +31,7 @@ Published commit: `9f0e85295f9e86cd59cb3a880f25e94f2257696a`.
 - `sim-lib-pitch-namer-jazz`
 - `sim-lib-pitch-namer-riemann`
 - `sim-lib-pitch-namer-roman`
+- `sim-lib-pitch-ratio`
 - `sim-lib-pitch-scale`
 - `sim-lib-pitch-set`
 - `sim-lib-pitch-shapes`
