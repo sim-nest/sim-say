@@ -601,6 +601,7 @@
 | `subject` | `runtime-lib/sim-lib-lang-scheme/scheme-codec-lib` | scheme-codec-lib |
 | `subject` | `runtime-lib/sim-lib-scene/scene-codec-lib` | scene-codec-lib |
 | `subject` | `runtime-lib/sim-lib-standard-core/language-profile-lib` | language-profile-lib |
+| `subject` | `runtime-lib/sim-run/compute-boot-codec` | compute-boot-codec |
 | `subject` | `runtime-lib/sim-run/glasses-boot-codec` | glasses-boot-codec |
 | `subject` | `runtime-lib/sim-run/index-boot-codec` | index-boot-codec |
 | `subject` | `runtime-lib/sim-run/watch-boot-codec` | watch-boot-codec |

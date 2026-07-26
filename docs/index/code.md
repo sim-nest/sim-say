@@ -238,7 +238,7 @@
 | `crate/sim-macros` | `crate` | sim-macros | 0 |
 | `crate/sim-mcp-server` | `crate` | sim-mcp-server | 0 |
 | `crate/sim-nest` | `crate` | sim-nest | 5 |
-| `crate/sim-run` | `crate` | sim-run | 5 |
+| `crate/sim-run` | `crate` | sim-run | 6 |
 | `crate/sim-run-core` | `crate` | sim-run-core | 0 |
 | `crate/sim-run-loaders` | `crate` | sim-run-loaders | 3 |
 | `crate/sim-shape-recipe-exact-bool-shape` | `crate` | sim-shape-recipe-exact-bool-shape | 0 |

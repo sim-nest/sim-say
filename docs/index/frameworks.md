@@ -63,6 +63,7 @@
 | [`feature/sim-office/document-surfaces`](features/feature--sim-office--document-surfaces.md) | `crate/sim-lib-doc-surface` | Project document, markup, and suite descriptors into view surfaces for review and editing. |  |
 | [`feature/sim-office/sheet-calculation`](features/feature--sim-office--sheet-calculation.md) | `crate/sim-lib-sheet` | Evaluate local sheet formulas over exact rational cells with incremental dependency tracking and cutoff. | route/calculate-sheet |
 | [`feature/sim-run/bootloader`](features/feature--sim-run--bootloader.md) | `crate/sim-run-core` | Start product commands through the shared bootloader and loaded runtime libraries. |  |
+| [`feature/sim-run/compute`](features/feature--sim-run--compute.md) | `crate/sim-run` | Start modeled and automatic compute inspection through the shared command bootloader. |  |
 | [`feature/sim-run/glasses`](features/feature--sim-run--glasses.md) | `crate/sim-run` | Start modeled or hardware-backed glasses plans through the shared command bootloader. |  |
 | [`feature/sim-run/index-table-dir`](features/feature--sim-run--index-table-dir.md) | `crate/sim-lib-index` | Expose the embedded SIM Index as immutable Table/Dir collections for loaded runtime code. | local/sim-run/route/add-table-dir-backend |
 | [`feature/sim-run/loaders`](features/feature--sim-run--loaders.md) | `crate/sim-run-loaders` | Load native, source, and re-exported runtime libraries as bootloader inputs. | route/load-runtime-surface |

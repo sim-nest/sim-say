@@ -531,6 +531,7 @@
 | `feature/sim-office/sheet-calculation` | `spec-test/sim-office/crates/sim-lib-sheet/src/tests` | `crate/sim-lib-sheet` | `spec-test` | `crates/sim-lib-sheet/src/tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/index-table-dir` | `spec-test/sim-run/crates/sim-lib-index/src/dir` | `crate/sim-lib-index` | `spec-test` | `crates/sim-lib-index/src/dir.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/loaders` | `spec-test/sim-run/crates/sim-run-loaders/src/native/codec_proxy_tests` | `crate/sim-run-loaders` | `spec-test` | `crates/sim-run-loaders/src/native/codec_proxy_tests.rs` | `codec` | `cargo test` | `true` | `true` |
+| `feature/sim-run/compute` | `spec-test/sim-run/crates/sim-run/tests/compute` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/compute.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/glasses` | `spec-test/sim-run/crates/sim-run/tests/glasses` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/glasses.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/watch` | `spec-test/sim-run/crates/sim-run/tests/watch` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/watch.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-runtime/incremental-query-core` | `spec-test/sim-runtime/crates/sim-incremental-core/src/tests` | `crate/sim-incremental-core` | `spec-test` | `crates/sim-incremental-core/src/tests.rs` | `` | `cargo test` | `true` | `true` |
