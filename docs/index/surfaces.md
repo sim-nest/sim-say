@@ -25,6 +25,7 @@
 | `cli/auto-site-xentry` | `cli` | `crate/auto-site-xentry` |
 | `cli/browse` | `cli` | `crate/sim-web-shell` |
 | `cli/citizen-roundtrip` | `cli` | `crate/citizen-roundtrip` |
+| `cli/compute` | `cli` | `crate/sim-lib-compute-cli` |
 | `cli/expr-tree` | `cli` | `crate/sim-lib-expr-tree-serve` |
 | `cli/glasses` | `cli` | `crate/sim-run` |
 | `cli/index` | `cli` | `crate/sim-lib-index` |

@@ -1,10 +1,11 @@
 # sim-compute
 
-Published commit: `18aed30093a8f4af7fe1f70b2c49efe709d61a2a`.
+Published commit: `042f86e56bf0a40238b127f3129a60dcd1f5638e`.
 
 ## Crates
 
 - `sim-lib-compute-auto`
+- `sim-lib-compute-cli`
 - `sim-lib-compute-cuda`
 - `sim-lib-compute-femm`
 - `sim-lib-compute-model`

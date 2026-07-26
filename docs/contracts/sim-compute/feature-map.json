@@ -9,7 +9,17 @@
     {
       "features": [],
       "group": "workspace",
+      "package": "sim-lib-compute-cli"
+    },
+    {
+      "features": [],
+      "group": "workspace",
       "package": "sim-lib-compute-cuda"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "sim-lib-compute-femm"
     },
     {
       "features": [],

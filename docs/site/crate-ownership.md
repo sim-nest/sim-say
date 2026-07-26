@@ -65,6 +65,7 @@
 | `sim-test-support` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-wasm-abi` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-lib-compute-auto` | [sim-compute](../repos/sim-compute.md) |
+| `sim-lib-compute-cli` | [sim-compute](../repos/sim-compute.md) |
 | `sim-lib-compute-cuda` | [sim-compute](../repos/sim-compute.md) |
 | `sim-lib-compute-femm` | [sim-compute](../repos/sim-compute.md) |
 | `sim-lib-compute-model` | [sim-compute](../repos/sim-compute.md) |

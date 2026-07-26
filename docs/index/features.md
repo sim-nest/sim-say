@@ -26,6 +26,7 @@
 | [`feature/sim-codecs/expression-syntax-grammars`](features/feature--sim-codecs--expression-syntax-grammars.md) | `crate/sim-codec-lisp` | 1 |
 | [`feature/sim-codecs/pratt`](features/feature--sim-codecs--pratt.md) | `crate/sim-codec-pratt` | 1 |
 | [`feature/sim-codecs/wire-protocol-grammars`](features/feature--sim-codecs--wire-protocol-grammars.md) | `local/sim-codecs/crate/sim-codec` | 1 |
+| [`feature/sim-compute/compute-cli`](features/feature--sim-compute--compute-cli.md) | `crate/sim-lib-compute-cli` | 1 |
 | [`feature/sim-compute/femm-resident-solvers`](features/feature--sim-compute--femm-resident-solvers.md) | `crate/sim-lib-compute-femm` | 2 |
 | [`feature/sim-compute/generated-docs`](features/feature--sim-compute--generated-docs.md) | `local/sim-compute/crate/xtask` | 0 |
 | [`feature/sim-compute/tensor-providers`](features/feature--sim-compute--tensor-providers.md) | `crate/sim-lib-compute-model` | 10 |

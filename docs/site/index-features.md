@@ -26,6 +26,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `feature/sim-codecs/expression-syntax-grammars` | `crate/sim-codec-lisp` | [features/feature--sim-codecs--expression-syntax-grammars.md](../index/features/feature--sim-codecs--expression-syntax-grammars.md) | 1 | Read and write Lisp, JSON, Algol, Lua, Compare, and Bridge rendered expression grammars. |
 | `feature/sim-codecs/pratt` | `crate/sim-codec-pratt` | [features/feature--sim-codecs--pratt.md](../index/features/feature--sim-codecs--pratt.md) | 1 | Parse operator-oriented expression languages through the Pratt codec surface. |
 | `feature/sim-codecs/wire-protocol-grammars` | `local/sim-codecs/crate/sim-codec` | [features/feature--sim-codecs--wire-protocol-grammars.md](../index/features/feature--sim-codecs--wire-protocol-grammars.md) | 1 | Read and write binary, bitwise, chat, config, document, index, and MCP wire protocols. |
+| `feature/sim-compute/compute-cli` | `crate/sim-lib-compute-cli` | [features/feature--sim-compute--compute-cli.md](../index/features/feature--sim-compute--compute-cli.md) | 1 | Export a bounded loadable `cli/main/compute` command for inspecting compute devices, probes, profiles, explanations, and recipes. |
 | `feature/sim-compute/femm-resident-solvers` | `crate/sim-lib-compute-femm` | [features/feature--sim-compute--femm-resident-solvers.md](../index/features/feature--sim-compute--femm-resident-solvers.md) | 2 | Export a provider-neutral FEMM LinearSolver that keeps CSR and Krylov work vectors resident while requiring f64 residual certification. |
 | `feature/sim-compute/generated-docs` | `local/sim-compute/crate/xtask` | [features/feature--sim-compute--generated-docs.md](../index/features/feature--sim-compute--generated-docs.md) | 0 | Publish generated package, card, rustdoc, recipe, and Index facts for compute providers. |
 | `feature/sim-compute/tensor-providers` | `crate/sim-lib-compute-model` | [features/feature--sim-compute--tensor-providers.md](../index/features/feature--sim-compute--tensor-providers.md) | 10 | Run canonical Tensor requests through modeled, automatic, probe-backed wgpu, optional CUDA/cuBLAS, and optional ROCm/rocBLAS compute sites. |
@@ -157,6 +158,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `cli/auto-site-xentry` | `cli` | `crate/auto-site-xentry` |
 | `cli/browse` | `cli` | `crate/sim-web-shell` |
 | `cli/citizen-roundtrip` | `cli` | `crate/citizen-roundtrip` |
+| `cli/compute` | `cli` | `crate/sim-lib-compute-cli` |
 | `cli/expr-tree` | `cli` | `crate/sim-lib-expr-tree-serve` |
 | `cli/glasses` | `cli` | `crate/sim-run` |
 | `cli/index` | `cli` | `crate/sim-lib-index` |
