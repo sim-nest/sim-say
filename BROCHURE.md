@@ -182,7 +182,7 @@ piece gives you.
 - **sim-lib-compute-femm** -- `sim-lib-compute-femm` gives SIM a provider-neutral resident sparse linear solver that still has to pass f64 FEMM certificate checks.
 - **sim-lib-compute-model** -- `sim-lib-compute-model` gives SIM a deterministic tensor execution site for proving provider behavior before real hardware is involved.
 - **sim-lib-compute-rocm** -- `sim-lib-compute-rocm` gives SIM an AMD-backed dense tensor site that is admitted only after HIP and rocBLAS prove the device contract.
-- **sim-lib-compute-wgpu** -- `sim-lib-compute-wgpu` discovers portable GPU adapters and exports only probe-backed compute sites.
+- **sim-lib-compute-wgpu** -- `sim-lib-compute-wgpu` discovers portable GPU adapters and exports probe-backed compute sites with retained-device pointwise dispatch.
 - **sim-lib-discrete** -- one front door to the whole discrete-math family, where you switch on only the parts you need.
 - **sim-lib-discrete-algebra** -- one calculation core that answers many discrete-math questions by changing what "add" and "multiply" mean.
 - **sim-lib-discrete-comb** -- count and list every way to arrange or choose things, and give each arrangement its own exact number.
@@ -705,7 +705,7 @@ WebAssembly lets code from elsewhere run safely inside a sandbox, and this is th
 
 `sim-lib-compute-auto` gives SIM a stable automatic tensor placement surface that chooses an available compute site without changing the caller's tensor program.
 
-`sim-lib-compute-auto` provides `site/compute/auto`, the automatic placement entry point for tensor execution. A caller can supply measured profiles through any Table/Dir backend, let the library select the modeled provider only when the evidence is fresh, compatible, and conclusive, and fall back to local CPU behavior for absent, stale, incompatible, or inconclusive evidence. The result is a durable handoff point for higher-level numeric code: tensor semantics stay in `sim-numbers`, provider fixtures stay in compute libraries, and the runtime sees one ordinary loadable site.
+`sim-lib-compute-auto` provides `site/compute/auto`, the automatic placement entry point for tensor execution. A caller can supply bounded profiles through any Table/Dir backend, let the library select the modeled provider only when the evidence is fresh, compatible, conclusive, `physical-device`, and not caller-renamed, and fall back to local CPU behavior for absent, stale, incompatible, inconclusive, modeled, host-emulated, or renamed evidence. The result is a durable handoff point for higher-level numeric code: tensor semantics stay in `sim-numbers`, provider fixtures stay in compute libraries, and the runtime sees one ordinary loadable site.
 
 #### sim-lib-compute-cli
 
@@ -723,7 +723,7 @@ It discovers CUDA at runtime, opens the driver and cuBLAS through checked ABI bi
 
 `sim-lib-compute-femm` gives SIM a provider-neutral resident sparse linear solver that still has to pass f64 FEMM certificate checks.
 
-The crate implements a loadable FEMM `LinearSolver` over CSR matrices. It models factor upload reuse by fingerprint, resident f32 Krylov work vectors, explicit convergence synchronizations, and bounded f64 refinement.
+The crate implements a loadable FEMM `LinearSolver` over CSR matrices. It routes factor upload reuse, resident f32 Krylov work vectors, sparse matvecs, dot/norm reductions, and vector updates through the selected compute provider, then keeps the bounded CPU f64 refinement and certificate checks.
 
 #### sim-lib-compute-model
 
@@ -739,9 +739,9 @@ It discovers compatible ROCm devices at runtime, loads HIP and rocBLAS through c
 
 #### sim-lib-compute-wgpu
 
-`sim-lib-compute-wgpu` discovers portable GPU adapters and exports only probe-backed compute sites.
+`sim-lib-compute-wgpu` discovers portable GPU adapters and exports probe-backed compute sites with retained-device pointwise dispatch.
 
-It checks adapter identity, requested and granted limits, transfer and map behavior, bounded allocation attempts, timestamp support, f16 support, portable f32 element-wise arithmetic, transcendentals, fixed-tree reductions, transpose, dot, and tiled matrix multiplication. A site appears only when those probes succeed, so placement receives evidence instead of a vague hardware promise.
+It checks adapter identity, requested and granted limits, transfer and map behavior, bounded allocation attempts, timestamp support, f16 support, portable f32 element-wise arithmetic, transcendentals, fixed-tree reductions, transpose, dot, and tiled matrix multiplication. A site appears only when those probes succeed, so placement receives bounded adapter evidence instead of a vague hardware promise. Retained physical probes dispatch add, subtract, multiply, divide, negation, sqrt, exp, log, sin, and cos on the selected device; reductions and linalg keep the portable resident path.
 
 ### sim-construction
 
