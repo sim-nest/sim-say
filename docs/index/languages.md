@@ -128,8 +128,12 @@
 | `specimen` | `lisp` | crates/sim-lib-bridge/recipes/01-basics/loom-woven-repair/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-compute-auto/recipes/01-basics/auto-compute-site/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-compute-auto/recipes/01-basics/measured-profile-routing/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-compute-cli/recipes/01-basics/inspect-compute-device/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-compute-cuda/recipes/01-basics/cuda-discovery/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-compute-femm/recipes/01-basics/resident-csr-solve/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-compute-model/recipes/01-basics/modeled-resident-matrix/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-compute-rocm/recipes/01-basics/rocm-discovery/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-compute-wgpu/recipes/01-basics/wgpu-discovery/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/blocked-gate-graph/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/control-graph-meets-gantt/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/customer-intent-to-collaboration/recipe.toml |

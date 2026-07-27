@@ -50,5 +50,5 @@ assert_setup_codec = "lisp"
 
 [[expect]]
 form = 0
-result = "(expr:call compute devices (expr:call model installed) (expr:call auto installed) (expr:call profiles table-supplied))"
+result = "(compute devices (model installed) (auto installed) (profiles table-supplied))"
 ```
