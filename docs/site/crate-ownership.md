@@ -116,6 +116,7 @@
 | `sim-macros` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-table-core` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-value` | [sim-foundation](../repos/sim-foundation.md) |
+| `sim-lib-interference-compute` | [sim-interference](../repos/sim-interference.md) |
 | `sim-lib-interference-core` | [sim-interference](../repos/sim-interference.md) |
 | `sim-lib-interference-runtime` | [sim-interference](../repos/sim-interference.md) |
 | `sim-lib-interference-solve` | [sim-interference](../repos/sim-interference.md) |

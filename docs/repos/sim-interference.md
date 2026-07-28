@@ -1,9 +1,10 @@
 # sim-interference
 
-Published commit: `8a8b1e582c477f7f51876eaae42bb0a4afb408f7`.
+Published commit: `62d0e769be0075e4e4f45794e42f9b9fc116a4ff`.
 
 ## Crates
 
+- `sim-lib-interference-compute`
 - `sim-lib-interference-core`
 - `sim-lib-interference-runtime`
 - `sim-lib-interference-solve`

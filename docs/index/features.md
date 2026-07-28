@@ -69,6 +69,7 @@
 | [`feature/sim-interference/deterministic-reference-solver`](features/feature--sim-interference--deterministic-reference-solver.md) | `crate/sim-lib-interference-solve` | 2 |
 | [`feature/sim-interference/fringe-analysis-scenarios`](features/feature--sim-interference--fringe-analysis-scenarios.md) | `crate/sim-lib-interference-solve` | 2 |
 | [`feature/sim-interference/generated-docs`](features/feature--sim-interference--generated-docs.md) | `local/sim-interference/crate/xtask` | 0 |
+| [`feature/sim-interference/normalized-tensor-lowering`](features/feature--sim-interference--normalized-tensor-lowering.md) | `crate/sim-lib-interference-compute` | 1 |
 | [`feature/sim-interference/quantity-vocabulary`](features/feature--sim-interference--quantity-vocabulary.md) | `crate/sim-lib-interference-core` | 2 |
 | [`feature/sim-interference/scalar-wave-model`](features/feature--sim-interference--scalar-wave-model.md) | `crate/sim-lib-interference-core` | 2 |
 | [`feature/sim-interference/tensor-runtime-records`](features/feature--sim-interference--tensor-runtime-records.md) | `crate/sim-lib-interference-runtime` | 1 |
