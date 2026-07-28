@@ -54,6 +54,7 @@
 | `crate/sim-expr-tree-core` | `crate` | sim-expr-tree-core | 0 |
 | `crate/sim-incremental-core` | `crate` | sim-incremental-core | 0 |
 | `crate/sim-index-core` | `crate` | sim-index-core | 0 |
+| `crate/sim-interference` | `crate` | sim-interference | 0 |
 | `crate/sim-kernel` | `crate` | sim-kernel | 0 |
 | `crate/sim-ledger` | `crate` | sim-ledger | 0 |
 | `crate/sim-ledger-cli` | `crate` | sim-ledger-cli | 0 |
@@ -119,6 +120,7 @@
 | `crate/sim-lib-gantt` | `crate` | sim-lib-gantt | 0 |
 | `crate/sim-lib-incremental` | `crate` | sim-lib-incremental | 1 |
 | `crate/sim-lib-index` | `crate` | sim-lib-index | 1 |
+| `crate/sim-lib-interference-core` | `crate` | sim-lib-interference-core | 0 |
 | `crate/sim-lib-lang-cl` | `crate` | sim-lib-lang-cl | 1 |
 | `crate/sim-lib-lang-clojure` | `crate` | sim-lib-lang-clojure | 1 |
 | `crate/sim-lib-lang-genconf` | `crate` | sim-lib-lang-genconf | 0 |
@@ -260,6 +262,7 @@
 | `doc-set/sim-expr-tree/generated` | `doc-set` | sim-expr-tree generated docs | 0 |
 | `doc-set/sim-femm/generated` | `doc-set` | sim-femm generated docs | 0 |
 | `doc-set/sim-foundation/generated` | `doc-set` | sim-foundation generated docs | 0 |
+| `doc-set/sim-interference/generated` | `doc-set` | sim-interference generated docs | 0 |
 | `doc-set/sim-kernel/generated` | `doc-set` | sim-kernel generated docs | 0 |
 | `doc-set/sim-ledger/generated` | `doc-set` | sim-ledger generated docs | 0 |
 | `doc-set/sim-music/generated` | `doc-set` | sim-music generated docs | 0 |
@@ -302,6 +305,7 @@
 | `local/sim-femm/crate/sim-lib-femm-field` | `crate` | sim-lib-femm-field | 1 |
 | `local/sim-femm/crate/xtask` | `crate` | xtask | 0 |
 | `local/sim-foundation/crate/xtask` | `crate` | xtask | 0 |
+| `local/sim-interference/crate/xtask` | `crate` | xtask | 0 |
 | `local/sim-kernel/crate/xtask` | `crate` | xtask | 0 |
 | `local/sim-ledger/crate/xtask` | `crate` | xtask | 0 |
 | `local/sim-music/crate/sim-lib-daw-session` | `crate` | sim-lib-daw-session | 1 |
@@ -442,6 +446,7 @@
 | `repo/sim-expr-tree` | `repo` | sim-expr-tree | 9 |
 | `repo/sim-femm` | `repo` | sim-femm | 21 |
 | `repo/sim-foundation` | `repo` | sim-foundation | 10 |
+| `repo/sim-interference` | `repo` | sim-interference | 4 |
 | `repo/sim-kernel` | `repo` | sim-kernel | 3 |
 | `repo/sim-ledger` | `repo` | sim-ledger | 7 |
 | `repo/sim-music` | `repo` | sim-music | 48 |

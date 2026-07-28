@@ -425,6 +425,7 @@
 | `specimen` | `mcp` | crates/sim-codec-mcp/recipes/01-basics/envelope-descriptor/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-agent-runner-core/recipes/01-basics/output-contract-repair/recipe.toml |
 | `specimen` | `rust` | recipes/00-overview/modeled-work-order/recipe.toml |
+| `specimen` | `rust` | recipes/01-basics/checked-quantities/recipe.toml |
 | `specimen` | `rust` | recipes/01-basics/exact-bool-shape/recipe.toml |
 | `specimen` | `rust` | recipes/01-basics/shape-grammar-contract/recipe.toml |
 | `specimen` | `rust` | recipes/01-lanes/flash-lane/recipe.toml |

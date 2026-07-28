@@ -18,6 +18,7 @@
         | sim-expr-tree
         | sim-femm
         | sim-foundation
+        | sim-interference
         | sim-kernel
         | sim-ledger
         | sim-music

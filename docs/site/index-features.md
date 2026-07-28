@@ -63,6 +63,8 @@ Generated from `docs/index/index.cards.jsonl`.
 | `feature/sim-foundation/value-helpers` | `crate/sim-value` | [features/feature--sim-foundation--value-helpers.md](../index/features/feature--sim-foundation--value-helpers.md) | 1 | Provide shared value conversion, expression builder, expression field reader, map field reader, and field access helpers for reusable runtime libraries. |
 | `feature/sim-index/core` | `local/sim-tooling/crate/xtask` | [features/feature--sim-index--core.md](../index/features/feature--sim-index--core.md) | 3 | Generate, query, route, prove, and check duplicate implementation overlap in the SIM Index graph as a checked constellation surface. |
 | `feature/sim-index/vault-export` | `local/sim-tooling/crate/xtask` | [features/feature--sim-index--vault-export.md](../index/features/feature--sim-index--vault-export.md) | 1 | Project the public SIM Index into a managed Markdown vault namespace for portable, Obsidian, SeqLog, and Logseq profiles. |
+| `feature/sim-interference/generated-docs` | `local/sim-interference/crate/xtask` | [features/feature--sim-interference--generated-docs.md](../index/features/feature--sim-interference--generated-docs.md) | 0 | Publish generated package, card, rustdoc, recipe, diagram, and Index facts for the interference domain. |
+| `feature/sim-interference/quantity-vocabulary` | `crate/sim-lib-interference-core` | [features/feature--sim-interference--quantity-vocabulary.md](../index/features/feature--sim-interference--quantity-vocabulary.md) | 2 | Admit finite scalar-wave inputs through explicit distance, frequency, speed, attenuation, phase, and amplitude boundary types. |
 | `feature/sim-kernel/contract-emitter` | `local/sim-kernel/crate/xtask` | [features/feature--sim-kernel--contract-emitter.md](../index/features/feature--sim-kernel--contract-emitter.md) | 0 | Emit generated repository contract and index fragments for the kernel crate. |
 | `feature/sim-kernel/kernel-contracts` | `crate/sim-kernel` | [features/feature--sim-kernel--kernel-contracts.md](../index/features/feature--sim-kernel--kernel-contracts.md) | 0 | Define the protocol kernel for values, context, registries, shapes, capabilities, export records, and bare Cx or eager Cx test context helpers. |
 | `feature/sim-ledger/generated-docs` | `local/sim-ledger/crate/xtask` | [features/feature--sim-ledger--generated-docs.md](../index/features/feature--sim-ledger--generated-docs.md) | 0 | Publish generated package, card, recipe, and index facts for the ledger crates. |
@@ -192,6 +194,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `docs/sim-expr-tree/generated` | `docs` | `doc-set/sim-expr-tree/generated` |
 | `docs/sim-femm/generated` | `docs` | `doc-set/sim-femm/generated` |
 | `docs/sim-foundation/generated` | `docs` | `doc-set/sim-foundation/generated` |
+| `docs/sim-interference/generated` | `docs` | `doc-set/sim-interference/generated` |
 | `docs/sim-kernel/generated` | `docs` | `doc-set/sim-kernel/generated` |
 | `docs/sim-ledger/generated` | `docs` | `doc-set/sim-ledger/generated` |
 | `docs/sim-music/generated` | `docs` | `doc-set/sim-music/generated` |
@@ -217,6 +220,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `local/sim-expr-tree/cli/xtask` | `cli` | `local/sim-expr-tree/crate/xtask` |
 | `local/sim-femm/cli/xtask` | `cli` | `local/sim-femm/crate/xtask` |
 | `local/sim-foundation/cli/xtask` | `cli` | `local/sim-foundation/crate/xtask` |
+| `local/sim-interference/cli/xtask` | `cli` | `local/sim-interference/crate/xtask` |
 | `local/sim-kernel/cli/xtask` | `cli` | `local/sim-kernel/crate/xtask` |
 | `local/sim-ledger/cli/xtask` | `cli` | `local/sim-ledger/crate/xtask` |
 | `local/sim-music/cli/xtask` | `cli` | `local/sim-music/crate/xtask` |

@@ -63,6 +63,8 @@
 | [`feature/sim-foundation/value-helpers`](features/feature--sim-foundation--value-helpers.md) | `crate/sim-value` | 1 |
 | [`feature/sim-index/core`](features/feature--sim-index--core.md) | `local/sim-tooling/crate/xtask` | 3 |
 | [`feature/sim-index/vault-export`](features/feature--sim-index--vault-export.md) | `local/sim-tooling/crate/xtask` | 1 |
+| [`feature/sim-interference/generated-docs`](features/feature--sim-interference--generated-docs.md) | `local/sim-interference/crate/xtask` | 0 |
+| [`feature/sim-interference/quantity-vocabulary`](features/feature--sim-interference--quantity-vocabulary.md) | `crate/sim-lib-interference-core` | 2 |
 | [`feature/sim-kernel/contract-emitter`](features/feature--sim-kernel--contract-emitter.md) | `local/sim-kernel/crate/xtask` | 0 |
 | [`feature/sim-kernel/kernel-contracts`](features/feature--sim-kernel--kernel-contracts.md) | `crate/sim-kernel` | 0 |
 | [`feature/sim-ledger/generated-docs`](features/feature--sim-ledger--generated-docs.md) | `local/sim-ledger/crate/xtask` | 0 |

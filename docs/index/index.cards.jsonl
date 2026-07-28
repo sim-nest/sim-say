@@ -57,6 +57,8 @@
 {"anchors":["anchor/crate/sim-value"],"canonical_key":"crate/sim-value/feature-sim-foundation-value-helpers","id":"feature/sim-foundation/value-helpers","kind":"feature","page":"features/feature--sim-foundation--value-helpers.md","specimens":["spec-test/sim-foundation/crates/sim-value/src/tests"],"subject":"crate/sim-value","summary":"Provide shared value conversion, expression builder, expression field reader, map field reader, and field access helpers for reusable runtime libraries.","surfaces":[],"title":"Value helper framework"}
 {"anchors":["local/sim-tooling/anchor/cli/xtask"],"canonical_key":"crate/xtask/feature-sim-index-core","id":"feature/sim-index/core","kind":"feature","page":"features/feature--sim-index--core.md","specimens":["spec-test/sim-tooling/src/index_fixpoint_tests","spec-test/sim-tooling/src/index_vault_graph_tests","spec-test/sim-tooling/src/index_vault_profile_tests"],"subject":"local/sim-tooling/crate/xtask","summary":"Generate, query, route, prove, and check duplicate implementation overlap in the SIM Index graph as a checked constellation surface.","surfaces":["docs/sim-tooling/generated","local/sim-tooling/cli/xtask"],"title":"SIM Index core"}
 {"anchors":["local/sim-tooling/anchor/cli/xtask"],"canonical_key":"crate/xtask/feature-sim-index-vault-export","id":"feature/sim-index/vault-export","kind":"feature","page":"features/feature--sim-index--vault-export.md","specimens":["spec-test/sim-tooling/src/index_vault_tests"],"subject":"local/sim-tooling/crate/xtask","summary":"Project the public SIM Index into a managed Markdown vault namespace for portable, Obsidian, SeqLog, and Logseq profiles.","surfaces":["docs/sim-tooling/generated","local/sim-tooling/cli/xtask"],"title":"SIM Index vault export"}
+{"anchors":["anchor/repo/sim-interference","local/sim-interference/anchor/cli/xtask","local/sim-interference/anchor/crate/xtask","local/sim-interference/anchor/doc/generated/card-index","local/sim-interference/anchor/doc/generated/feature-map","local/sim-interference/anchor/doc/generated/provenance","local/sim-interference/anchor/doc/generated/repo-contract","local/sim-interference/anchor/doc/generated/rustdoc-index","local/sim-interference/anchor/doc/generated/sim-index-fragment"],"canonical_key":"crate/xtask/feature-sim-interference-generated-docs","id":"feature/sim-interference/generated-docs","kind":"feature","page":"features/feature--sim-interference--generated-docs.md","specimens":[],"subject":"local/sim-interference/crate/xtask","summary":"Publish generated package, card, rustdoc, recipe, diagram, and Index facts for the interference domain.","surfaces":["docs/sim-interference/generated","local/sim-interference/cli/xtask"],"title":"Repository documentation surface"}
+{"anchors":["anchor/crate/sim-lib-interference-core","anchor/rustdoc/sim-lib-interference-core/crate-root","anchor/rustdoc/sim-lib-interference-core/field-amplitude","anchor/rustdoc/sim-lib-interference-core/hertz","anchor/rustdoc/sim-lib-interference-core/interference-error","anchor/rustdoc/sim-lib-interference-core/metres","anchor/rustdoc/sim-lib-interference-core/metres-per-second","anchor/rustdoc/sim-lib-interference-core/nepers-per-metre","anchor/rustdoc/sim-lib-interference-core/positive-metres","anchor/rustdoc/sim-lib-interference-core/radians"],"canonical_key":"crate/sim-lib-interference-core/feature-sim-interference-quantity-vocabulary","id":"feature/sim-interference/quantity-vocabulary","kind":"feature","page":"features/feature--sim-interference--quantity-vocabulary.md","specimens":["recipe/sim-interference/01-basics/checked-quantities","spec-test/sim-interference/crates/sim-lib-interference-core/tests/quantity_conformance"],"subject":"crate/sim-lib-interference-core","summary":"Admit finite scalar-wave inputs through explicit distance, frequency, speed, attenuation, phase, and amplitude boundary types.","surfaces":[],"title":"Checked interference quantity vocabulary"}
 {"anchors":["local/sim-kernel/anchor/crate/xtask"],"canonical_key":"crate/xtask/feature-sim-kernel-contract-emitter","id":"feature/sim-kernel/contract-emitter","kind":"feature","page":"features/feature--sim-kernel--contract-emitter.md","specimens":[],"subject":"local/sim-kernel/crate/xtask","summary":"Emit generated repository contract and index fragments for the kernel crate.","surfaces":[],"title":"Kernel contract emitter"}
 {"anchors":["anchor/crate/sim-kernel","anchor/export/sim-kernel/registry/libs","anchor/rustdoc/sim-kernel/testing"],"canonical_key":"crate/sim-kernel/feature-sim-kernel-kernel-contracts","id":"feature/sim-kernel/kernel-contracts","kind":"feature","page":"features/feature--sim-kernel--kernel-contracts.md","specimens":[],"subject":"crate/sim-kernel","summary":"Define the protocol kernel for values, context, registries, shapes, capabilities, export records, and bare Cx or eager Cx test context helpers.","surfaces":[],"title":"Kernel contracts"}
 {"anchors":["local/sim-ledger/anchor/cli/xtask","local/sim-ledger/anchor/crate/xtask","local/sim-ledger/anchor/doc/generated/feature-map","local/sim-ledger/anchor/doc/generated/sim-index-fragment"],"canonical_key":"crate/xtask/feature-sim-ledger-generated-docs","id":"feature/sim-ledger/generated-docs","kind":"feature","page":"features/feature--sim-ledger--generated-docs.md","specimens":[],"subject":"local/sim-ledger/crate/xtask","summary":"Publish generated package, card, recipe, and index facts for the ledger crates.","surfaces":["docs/sim-ledger/generated","local/sim-ledger/cli/xtask"],"title":"Repository documentation surface"}
@@ -395,6 +397,7 @@
 {"checked":false,"checked_by":null,"id":"recipe/sim-femm/crates/sim-lib-femm-tape/01-basics/one-solve-tape","kind":"specimen","language":"lisp","path":"crates/sim-lib-femm-tape/recipes/01-basics/one-solve-tape/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-lib-femm-tape"}
 {"checked":true,"checked_by":"xtask check-recipes","id":"recipe/sim-foundation/crates/sim-lib-net-core/01-basics/response-head","kind":"specimen","language":"lisp","path":"crates/sim-lib-net-core/recipes/01-basics/response-head/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-lib-net-core"}
 {"checked":true,"checked_by":"xtask check-recipes","id":"recipe/sim-foundation/crates/sim-lib-surface-card/01-basics/external-name","kind":"specimen","language":"lisp","path":"crates/sim-lib-surface-card/recipes/01-basics/external-name/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"crate/sim-lib-surface-card"}
+{"checked":true,"checked_by":"xtask check-recipes","id":"recipe/sim-interference/01-basics/checked-quantities","kind":"specimen","language":"rust","path":"recipes/01-basics/checked-quantities/recipe.toml","runnable":true,"specimen_kind":"recipe","subject":"repo/sim-interference"}
 {"checked":false,"checked_by":null,"id":"recipe/sim-ledger/crates/sim-ledger/01-basics/balanced-year","kind":"specimen","language":"lisp","path":"crates/sim-ledger/recipes/01-basics/balanced-year/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"crate/sim-ledger"}
 {"checked":false,"checked_by":null,"id":"recipe/sim-music/crates/sim-lib-daw-session/01-basics/offline-session","kind":"specimen","language":"lisp","path":"crates/sim-lib-daw-session/recipes/01-basics/offline-session/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"local/sim-music/crate/sim-lib-daw-session"}
 {"checked":false,"checked_by":null,"id":"recipe/sim-music/crates/sim-lib-daw-session/02-performance-integration/golden-cassette-integration","kind":"specimen","language":"lisp","path":"crates/sim-lib-daw-session/recipes/02-performance-integration/golden-cassette-integration/recipe.toml","runnable":false,"specimen_kind":"recipe","subject":"local/sim-music/crate/sim-lib-daw-session"}
@@ -699,6 +702,7 @@
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-foundation/crates/sim-cookbook/src/model","kind":"specimen","language":null,"path":"crates/sim-cookbook/src/model.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-cookbook"}
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-foundation/crates/sim-table-core/src/tests","kind":"specimen","language":null,"path":"crates/sim-table-core/src/tests.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-table-core"}
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-foundation/crates/sim-value/src/tests","kind":"specimen","language":"shape","path":"crates/sim-value/src/tests.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-value"}
+{"checked":true,"checked_by":"cargo test","id":"spec-test/sim-interference/crates/sim-lib-interference-core/tests/quantity_conformance","kind":"specimen","language":null,"path":"crates/sim-lib-interference-core/tests/quantity_conformance.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-lib-interference-core"}
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-ledger/crates/sim-ledger-cli/src/tests","kind":"specimen","language":null,"path":"crates/sim-ledger-cli/src/tests.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-ledger-cli"}
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-ledger/crates/sim-lib-ledger-books/src/lib","kind":"specimen","language":null,"path":"crates/sim-lib-ledger-books/src/lib.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-lib-ledger-books"}
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-music/crates/sim-lib-midi-core/src/tests","kind":"specimen","language":null,"path":"crates/sim-lib-midi-core/src/tests.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-lib-midi-core"}
@@ -851,6 +855,7 @@
 {"id":"crate/sim-expr-tree-core","kind":"subject","subject_kind":"crate","title":"sim-expr-tree-core"}
 {"id":"crate/sim-incremental-core","kind":"subject","subject_kind":"crate","title":"sim-incremental-core"}
 {"id":"crate/sim-index-core","kind":"subject","subject_kind":"crate","title":"sim-index-core"}
+{"id":"crate/sim-interference","kind":"subject","subject_kind":"crate","title":"sim-interference"}
 {"id":"crate/sim-kernel","kind":"subject","subject_kind":"crate","title":"sim-kernel"}
 {"id":"crate/sim-ledger","kind":"subject","subject_kind":"crate","title":"sim-ledger"}
 {"id":"crate/sim-ledger-cli","kind":"subject","subject_kind":"crate","title":"sim-ledger-cli"}
@@ -916,6 +921,7 @@
 {"id":"crate/sim-lib-gantt","kind":"subject","subject_kind":"crate","title":"sim-lib-gantt"}
 {"id":"crate/sim-lib-incremental","kind":"subject","subject_kind":"crate","title":"sim-lib-incremental"}
 {"id":"crate/sim-lib-index","kind":"subject","subject_kind":"crate","title":"sim-lib-index"}
+{"id":"crate/sim-lib-interference-core","kind":"subject","subject_kind":"crate","title":"sim-lib-interference-core"}
 {"id":"crate/sim-lib-lang-cl","kind":"subject","subject_kind":"crate","title":"sim-lib-lang-cl"}
 {"id":"crate/sim-lib-lang-clojure","kind":"subject","subject_kind":"crate","title":"sim-lib-lang-clojure"}
 {"id":"crate/sim-lib-lang-genconf","kind":"subject","subject_kind":"crate","title":"sim-lib-lang-genconf"}
@@ -1057,6 +1063,7 @@
 {"id":"doc-set/sim-expr-tree/generated","kind":"subject","subject_kind":"doc-set","title":"sim-expr-tree generated docs"}
 {"id":"doc-set/sim-femm/generated","kind":"subject","subject_kind":"doc-set","title":"sim-femm generated docs"}
 {"id":"doc-set/sim-foundation/generated","kind":"subject","subject_kind":"doc-set","title":"sim-foundation generated docs"}
+{"id":"doc-set/sim-interference/generated","kind":"subject","subject_kind":"doc-set","title":"sim-interference generated docs"}
 {"id":"doc-set/sim-kernel/generated","kind":"subject","subject_kind":"doc-set","title":"sim-kernel generated docs"}
 {"id":"doc-set/sim-ledger/generated","kind":"subject","subject_kind":"doc-set","title":"sim-ledger generated docs"}
 {"id":"doc-set/sim-music/generated","kind":"subject","subject_kind":"doc-set","title":"sim-music generated docs"}
@@ -1139,6 +1146,7 @@
 {"id":"local/sim-femm/crate/sim-lib-femm-field","kind":"subject","subject_kind":"crate","title":"sim-lib-femm-field"}
 {"id":"local/sim-femm/crate/xtask","kind":"subject","subject_kind":"crate","title":"xtask"}
 {"id":"local/sim-foundation/crate/xtask","kind":"subject","subject_kind":"crate","title":"xtask"}
+{"id":"local/sim-interference/crate/xtask","kind":"subject","subject_kind":"crate","title":"xtask"}
 {"id":"local/sim-kernel/crate/xtask","kind":"subject","subject_kind":"crate","title":"xtask"}
 {"id":"local/sim-ledger/crate/xtask","kind":"subject","subject_kind":"crate","title":"xtask"}
 {"id":"local/sim-music/crate/sim-lib-daw-session","kind":"subject","subject_kind":"crate","title":"sim-lib-daw-session"}
@@ -1279,6 +1287,7 @@
 {"id":"repo/sim-expr-tree","kind":"subject","subject_kind":"repo","title":"sim-expr-tree"}
 {"id":"repo/sim-femm","kind":"subject","subject_kind":"repo","title":"sim-femm"}
 {"id":"repo/sim-foundation","kind":"subject","subject_kind":"repo","title":"sim-foundation"}
+{"id":"repo/sim-interference","kind":"subject","subject_kind":"repo","title":"sim-interference"}
 {"id":"repo/sim-kernel","kind":"subject","subject_kind":"repo","title":"sim-kernel"}
 {"id":"repo/sim-ledger","kind":"subject","subject_kind":"repo","title":"sim-ledger"}
 {"id":"repo/sim-music","kind":"subject","subject_kind":"repo","title":"sim-music"}
@@ -1515,6 +1524,7 @@
 {"id":"docs/sim-expr-tree/generated","kind":"surface","subject":"doc-set/sim-expr-tree/generated","surface_kind":"docs"}
 {"id":"docs/sim-femm/generated","kind":"surface","subject":"doc-set/sim-femm/generated","surface_kind":"docs"}
 {"id":"docs/sim-foundation/generated","kind":"surface","subject":"doc-set/sim-foundation/generated","surface_kind":"docs"}
+{"id":"docs/sim-interference/generated","kind":"surface","subject":"doc-set/sim-interference/generated","surface_kind":"docs"}
 {"id":"docs/sim-kernel/generated","kind":"surface","subject":"doc-set/sim-kernel/generated","surface_kind":"docs"}
 {"id":"docs/sim-ledger/generated","kind":"surface","subject":"doc-set/sim-ledger/generated","surface_kind":"docs"}
 {"id":"docs/sim-music/generated","kind":"surface","subject":"doc-set/sim-music/generated","surface_kind":"docs"}
@@ -1540,6 +1550,7 @@
 {"id":"local/sim-expr-tree/cli/xtask","kind":"surface","subject":"local/sim-expr-tree/crate/xtask","surface_kind":"cli"}
 {"id":"local/sim-femm/cli/xtask","kind":"surface","subject":"local/sim-femm/crate/xtask","surface_kind":"cli"}
 {"id":"local/sim-foundation/cli/xtask","kind":"surface","subject":"local/sim-foundation/crate/xtask","surface_kind":"cli"}
+{"id":"local/sim-interference/cli/xtask","kind":"surface","subject":"local/sim-interference/crate/xtask","surface_kind":"cli"}
 {"id":"local/sim-kernel/cli/xtask","kind":"surface","subject":"local/sim-kernel/crate/xtask","surface_kind":"cli"}
 {"id":"local/sim-ledger/cli/xtask","kind":"surface","subject":"local/sim-ledger/crate/xtask","surface_kind":"cli"}
 {"id":"local/sim-music/cli/xtask","kind":"surface","subject":"local/sim-music/crate/xtask","surface_kind":"cli"}

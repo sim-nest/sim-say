@@ -116,6 +116,7 @@
 | `sim-macros` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-table-core` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-value` | [sim-foundation](../repos/sim-foundation.md) |
+| `sim-lib-interference-core` | [sim-interference](../repos/sim-interference.md) |
 | `sim-kernel` | [sim-kernel](../repos/sim-kernel.md) |
 | `sim-ledger` | [sim-ledger](../repos/sim-ledger.md) |
 | `sim-ledger-cli` | [sim-ledger](../repos/sim-ledger.md) |

@@ -11,6 +11,7 @@
 - [sim-expr-tree human docs](../repos/sim-expr-tree.md#tutorial-lane)
 - [sim-femm human docs](../repos/sim-femm.md#tutorial-lane)
 - [sim-foundation human docs](../repos/sim-foundation.md#tutorial-lane)
+- [sim-interference human docs](../repos/sim-interference.md#tutorial-lane)
 - [sim-kernel human docs](../repos/sim-kernel.md#tutorial-lane)
 - [sim-ledger human docs](../repos/sim-ledger.md#tutorial-lane)
 - [sim-music human docs](../repos/sim-music.md#tutorial-lane)

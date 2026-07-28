@@ -54,6 +54,7 @@
 | `crate/sim-expr-tree-core` | `crate` | sim-expr-tree-core |
 | `crate/sim-incremental-core` | `crate` | sim-incremental-core |
 | `crate/sim-index-core` | `crate` | sim-index-core |
+| `crate/sim-interference` | `crate` | sim-interference |
 | `crate/sim-kernel` | `crate` | sim-kernel |
 | `crate/sim-ledger` | `crate` | sim-ledger |
 | `crate/sim-ledger-cli` | `crate` | sim-ledger-cli |
@@ -119,6 +120,7 @@
 | `crate/sim-lib-gantt` | `crate` | sim-lib-gantt |
 | `crate/sim-lib-incremental` | `crate` | sim-lib-incremental |
 | `crate/sim-lib-index` | `crate` | sim-lib-index |
+| `crate/sim-lib-interference-core` | `crate` | sim-lib-interference-core |
 | `crate/sim-lib-lang-cl` | `crate` | sim-lib-lang-cl |
 | `crate/sim-lib-lang-clojure` | `crate` | sim-lib-lang-clojure |
 | `crate/sim-lib-lang-genconf` | `crate` | sim-lib-lang-genconf |
@@ -260,6 +262,7 @@
 | `doc-set/sim-expr-tree/generated` | `doc-set` | sim-expr-tree generated docs |
 | `doc-set/sim-femm/generated` | `doc-set` | sim-femm generated docs |
 | `doc-set/sim-foundation/generated` | `doc-set` | sim-foundation generated docs |
+| `doc-set/sim-interference/generated` | `doc-set` | sim-interference generated docs |
 | `doc-set/sim-kernel/generated` | `doc-set` | sim-kernel generated docs |
 | `doc-set/sim-ledger/generated` | `doc-set` | sim-ledger generated docs |
 | `doc-set/sim-music/generated` | `doc-set` | sim-music generated docs |
@@ -302,6 +305,7 @@
 | `local/sim-femm/crate/sim-lib-femm-field` | `crate` | sim-lib-femm-field |
 | `local/sim-femm/crate/xtask` | `crate` | xtask |
 | `local/sim-foundation/crate/xtask` | `crate` | xtask |
+| `local/sim-interference/crate/xtask` | `crate` | xtask |
 | `local/sim-kernel/crate/xtask` | `crate` | xtask |
 | `local/sim-ledger/crate/xtask` | `crate` | xtask |
 | `local/sim-music/crate/sim-lib-daw-session` | `crate` | sim-lib-daw-session |
@@ -442,6 +446,7 @@
 | `repo/sim-expr-tree` | `repo` | sim-expr-tree |
 | `repo/sim-femm` | `repo` | sim-femm |
 | `repo/sim-foundation` | `repo` | sim-foundation |
+| `repo/sim-interference` | `repo` | sim-interference |
 | `repo/sim-kernel` | `repo` | sim-kernel |
 | `repo/sim-ledger` | `repo` | sim-ledger |
 | `repo/sim-music` | `repo` | sim-music |
