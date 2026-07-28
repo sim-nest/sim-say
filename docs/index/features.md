@@ -64,6 +64,7 @@
 | [`feature/sim-index/core`](features/feature--sim-index--core.md) | `local/sim-tooling/crate/xtask` | 3 |
 | [`feature/sim-index/vault-export`](features/feature--sim-index--vault-export.md) | `local/sim-tooling/crate/xtask` | 1 |
 | [`feature/sim-interference/certified-interference`](features/feature--sim-interference--certified-interference.md) | `crate/sim-lib-interference-solve` | 1 |
+| [`feature/sim-interference/certified-multitone-composition`](features/feature--sim-interference--certified-multitone-composition.md) | `crate/sim-lib-interference-solve` | 1 |
 | [`feature/sim-interference/certified-sampling`](features/feature--sim-interference--certified-sampling.md) | `crate/sim-lib-interference-core` | 4 |
 | [`feature/sim-interference/deterministic-reference-solver`](features/feature--sim-interference--deterministic-reference-solver.md) | `crate/sim-lib-interference-solve` | 2 |
 | [`feature/sim-interference/fringe-analysis-scenarios`](features/feature--sim-interference--fringe-analysis-scenarios.md) | `crate/sim-lib-interference-solve` | 2 |
