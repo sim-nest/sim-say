@@ -26,6 +26,7 @@ Construct, solve, project, analyze, scenario-build, and compose coherent interfe
 - `anchor/rustdoc/sim-lib-interference-runtime/solver-provider`
 - `anchor/rustdoc/sim-lib-interference-runtime/study-solver`
 - `anchor/rustdoc/sim-lib-interference-runtime/study_solver_symbol`
+- `anchor/rustdoc/sim-lib-interference-runtime/tensor_study_solver_symbol`
 - `anchor/rustdoc/sim-lib-interference-solve/detector-footprint`
 - `anchor/rustdoc/sim-lib-interference-solve/grid-dimensions`
 - `anchor/rustdoc/sim-lib-interference-solve/loss-class`

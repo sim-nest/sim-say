@@ -120,7 +120,7 @@
 | `crate/sim-lib-gantt` | `crate` | sim-lib-gantt | 0 |
 | `crate/sim-lib-incremental` | `crate` | sim-lib-incremental | 1 |
 | `crate/sim-lib-index` | `crate` | sim-lib-index | 1 |
-| `crate/sim-lib-interference-compute` | `crate` | sim-lib-interference-compute | 0 |
+| `crate/sim-lib-interference-compute` | `crate` | sim-lib-interference-compute | 1 |
 | `crate/sim-lib-interference-core` | `crate` | sim-lib-interference-core | 0 |
 | `crate/sim-lib-interference-runtime` | `crate` | sim-lib-interference-runtime | 2 |
 | `crate/sim-lib-interference-solve` | `crate` | sim-lib-interference-solve | 0 |
