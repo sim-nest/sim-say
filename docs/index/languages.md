@@ -465,6 +465,7 @@
 | `specimen` | `shape` | crates/sim-lib-construction-project/src/outcome_tests.rs |
 | `specimen` | `shape` | crates/sim-lib-discrete/src/forms.rs |
 | `specimen` | `shape` | crates/sim-lib-incremental/src/tests.rs |
+| `specimen` | `shape` | crates/sim-lib-interference-compute/src/tests/dense.rs |
 | `specimen` | `shape` | crates/sim-lib-interference-compute/src/tests/preflight.rs |
 | `specimen` | `shape` | crates/sim-lib-interference-runtime/src/citizen.rs |
 | `specimen` | `shape` | crates/sim-lib-lang-prolog/src/conformance.rs |

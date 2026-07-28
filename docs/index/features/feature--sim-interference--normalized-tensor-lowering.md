@@ -11,7 +11,15 @@ Lower coherent point and forward-plane fields into bounded tile-local f32 Tensor
 ## Anchors
 
 - `anchor/crate/sim-lib-interference-compute`
+- `anchor/rustdoc/sim-lib-interference-compute/compare_dense_to_reference`
+- `anchor/rustdoc/sim-lib-interference-compute/conformance-metric`
 - `anchor/rustdoc/sim-lib-interference-compute/crate-root`
+- `anchor/rustdoc/sim-lib-interference-compute/dense-execution-evidence`
+- `anchor/rustdoc/sim-lib-interference-compute/dense-f32-field`
+- `anchor/rustdoc/sim-lib-interference-compute/differential-error`
+- `anchor/rustdoc/sim-lib-interference-compute/differential-maximum`
+- `anchor/rustdoc/sim-lib-interference-compute/differential-report`
+- `anchor/rustdoc/sim-lib-interference-compute/differential-tolerances`
 - `anchor/rustdoc/sim-lib-interference-compute/lowered-tile`
 - `anchor/rustdoc/sim-lib-interference-compute/lowering-error`
 - `anchor/rustdoc/sim-lib-interference-compute/lowering-plan`
@@ -21,6 +29,8 @@ Lower coherent point and forward-plane fields into bounded tile-local f32 Tensor
 - `anchor/rustdoc/sim-lib-interference-compute/point-tile-constants`
 - `anchor/rustdoc/sim-lib-interference-compute/preflight-check`
 - `anchor/rustdoc/sim-lib-interference-compute/required_tensor_operation_names`
+- `anchor/rustdoc/sim-lib-interference-compute/scalar-tolerance`
+- `anchor/rustdoc/sim-lib-interference-compute/solve_dense_f32_cpu`
 - `anchor/rustdoc/sim-lib-interference-compute/source-phase-estimate`
 - `anchor/rustdoc/sim-lib-interference-compute/source-tile-constants`
 - `anchor/rustdoc/sim-lib-interference-compute/tile-plan`
@@ -28,459 +38,410 @@ Lower coherent point and forward-plane fields into bounded tile-local f32 Tensor
 
 ## Specimens
 
+- `spec-test/sim-interference/crates/sim-lib-interference-compute/src/tests/dense`
 - `spec-test/sim-interference/crates/sim-lib-interference-compute/src/tests/preflight`
 
 ## Worked Example
 
-Specimen `spec-test/sim-interference/crates/sim-lib-interference-compute/src/tests/preflight` is checked by `cargo test`.
+Specimen `spec-test/sim-interference/crates/sim-lib-interference-compute/src/tests/dense` is checked by `cargo test`.
 
-Source `crates/sim-lib-interference-compute/src/tests/preflight.rs`:
+Source `crates/sim-lib-interference-compute/src/tests/dense.rs`:
 
 ```rust
-use std::{
-    collections::BTreeSet,
-    sync::{
-        Arc, Mutex,
-        atomic::{AtomicUsize, Ordering},
-    },
-};
-
-use sim_kernel::{Cx, Symbol};
 use sim_lib_interference_core::{
     Emitter, FieldAmplitude, Hertz, InterferenceProblem, MetresPerSecond, NepersPerMetre, Point3M,
-    PositiveMetres, Radians, SamplingPlane, ScalarMedium, SourceSet, UnitVector3,
+    PositiveMetres, Radians, SamplingPlane, SamplingPolicy, SamplingThresholds, ScalarMedium,
+    SourceSet, UnitVector3, WorkBudget,
 };
-use sim_lib_numbers_tensor::{
-    SubmissionEvidence, Tensor, TensorExecError, TensorExecution, TensorExecutor,
-    TensorExecutorCard, TensorRequest, TypedTensorStorage, add_op_symbol, cos_op_symbol,
-    div_op_symbol, domains, exp_op_symbol, mul_op_symbol, parse_f32_literal_cell, sin_op_symbol,
-    sqrt_op_symbol, sub_op_symbol,
-};
+use sim_lib_interference_solve::ReferencePhasorSolver;
 
 use crate::{
-    LoweringPlan, PhaseBudget, PreflightCheck, SourceTileConstants, TilePlan, TileProfile,
-    preflight::required_operation_symbols,
+    DifferentialTolerances, PhaseBudget, PreflightCheck, TileProfile, compare_dense_to_reference,
+    solve_dense_f32_cpu,
 };
 
-// conformance: normalized tile-local f32 tensor lowering
+// conformance: dense f32 CPU execution follows the exact normalized lowering
 
-fn test_context() -> Cx {
-    sim_kernel::testing::eager_cx()
+fn point(x: f64, y: f64, z: f64) -> Point3M {
+    Point3M::from_metres(x, y, z).unwrap()
 }
 
-fn plane_at_x(x: f64, rows: usize, columns: usize) -> SamplingPlane {
+fn plane(distance_m: f64, rows: usize, columns: usize) -> SamplingPlane {
     SamplingPlane::new(
-        Point3M::from_metres(x, -0.5, -0.5).unwrap(),
+        point(distance_m, -0.1, -0.1),
         UnitVector3::new(0.0, 1.0, 0.0).unwrap(),
         UnitVector3::new(0.0, 0.0, 1.0).unwrap(),
-        PositiveMetres::new(1.0).unwrap(),
-        PositiveMetres::new(1.0).unwrap(),
+        PositiveMetres::new(0.2).unwrap(),
+        PositiveMetres::new(0.2).unwrap(),
         rows,
         columns,
     )
     .unwrap()
 }
 
-fn point(id: &str, position: [f64; 3], phase: f64) -> Emitter {
-    Emitter::Point {
-        id: id.to_owned(),
-        position: Point3M::from_metres(position[0], position[1], position[2]).unwrap(),
-        amplitude_at_reference: FieldAmplitude::new(1.0).unwrap(),
-        phase: Radians::new(phase).unwrap(),
-    }
+fn problem() -> InterferenceProblem {
+    problem_from_sources(
+        0.002,
+        vec![
+            Emitter::Point {
+                id: "left".to_owned(),
+                position: point(0.0, -0.03, 0.0),
+                amplitude_at_reference: FieldAmplitude::new(1.0).unwrap(),
+                phase: Radians::new(0.2).unwrap(),
+            },
+            Emitter::Point {
+                id: "right".to_owned(),
+                position: point(0.0, 0.04, 0.01),
+                amplitude_at_reference: FieldAmplitude::new(0.8).unwrap(),
+                phase: Radians::new(-0.4).unwrap(),
+            },
+        ],
+    )
 }
 
-fn forward_plane(id: &str, through_x: f64) -> Emitter {
-    Emitter::ForwardPlane {
-        id: id.to_owned(),
-        through: Point3M::from_metres(through_x, 0.0, 0.0).unwrap(),
-        direction: UnitVector3::new(1.0, 0.0, 0.0).unwrap(),
-        amplitude: FieldAmplitude::new(1.0).unwrap(),
-        phase: Radians::new(0.25).unwrap(),
-    }
-}
-
-fn problem(sources: Vec<Emitter>, singularity_radius: f64) -> InterferenceProblem {
+fn problem_from_sources(attenuation_np_m: f64, sources: Vec<Emitter>) -> InterferenceProblem {
     InterferenceProblem::new(
         Hertz::new(343.0).unwrap(),
         ScalarMedium::new(
             MetresPerSecond::new(343.0).unwrap(),
-            NepersPerMetre::new(0.01).unwrap(),
+            NepersPerMetre::new(attenuation_np_m).unwrap(),
         ),
         SourceSet::new(sources).unwrap(),
-        PositiveMetres::new(singularity_radius).unwrap(),
+        PositiveMetres::new(0.001).unwrap(),
     )
 }
 
-#[test]
-fn phase_budget_never_admits_arguments_above_pi() {
-    assert!(PhaseBudget::default().max_abs_residual_phase_rad <= std::f64::consts::PI);
-    let error = PhaseBudget::new(std::f64::consts::PI.next_up(), 1.0e-4, 1.0e-4).unwrap_err();
-    assert_eq!(error.check(), PreflightCheck::Configuration);
+fn test_cx() -> sim_kernel::Cx {
+    let mut cx = sim_kernel::testing::eager_cx();
+    cx.load_lib(&sim_lib_numbers_arith::NumbersArithmeticLib::new())
+        .unwrap();
+    cx.load_lib(&sim_lib_numbers_float::F32NumbersLib::new())
+        .unwrap();
+    cx
+}
+
+fn reference(
+    problem: &InterferenceProblem,
+    plane: &SamplingPlane,
+) -> sim_lib_interference_solve::HostPhasorField {
+    ReferencePhasorSolver::new(
+        SamplingPolicy::Annotate,
+        SamplingThresholds::default(),
+        WorkBudget::default(),
+    )
+    .solve(problem, plane)
+    .unwrap()
+    .0
 }
 
 #[test]
-fn tiles_obey_phase_element_segment_and_profile_limits() {
-    let plane = plane_at_x(1_000.0, 4, 4);
+fn exact_lowering_executes_through_dense_f32_cpu_and_assembles_tiles() {
+    let problem = problem();
+    let plane = plane(100.0, 5, 7);
     let profile = TileProfile {
-        max_elements_per_tile: 4,
+        max_elements_per_tile: 6,
         max_segment_bytes: 8,
-        max_segments_per_tensor: 2,
-        max_tensor_bytes: 16,
-        max_result_bytes: 128,
+        max_segments_per_tensor: 3,
+        max_tensor_bytes: 24,
+        max_result_bytes: 8 * 35,
         ..TileProfile::default()
     };
-    let plan = TilePlan::new(
-        plane,
-        2.0 * std::f64::consts::PI,
-        PhaseBudget::default(),
-        profile,
-    )
-    .unwrap();
-    assert!(plan.tiles().len() > 1);
-    assert_eq!(
-        plan.tiles()
+    let mut cx = test_cx();
+    let dense =
+        solve_dense_f32_cpu(&mut cx, &problem, plane, PhaseBudget::default(), profile).unwrap();
+
+    assert_eq!(dense.rows(), 5);
+    assert_eq!(dense.columns(), 7);
+    assert_eq!(dense.real().len(), 35);
+    assert_eq!(dense.imaginary().len(), 35);
+    assert!(
+        dense
+            .real()
             .iter()
-            .map(|tile| tile.rows() * tile.columns())
-            .sum::<usize>(),
-        16
+            .chain(dense.imaginary())
+            .all(|v| v.is_finite())
     );
-    for tile in plan.tiles() {
-        assert!(tile.rows() * tile.columns() <= 4);
-        assert!(tile.segments_per_tensor() <= 2);
-        assert!(tile.tensor_bytes() <= 16);
-        assert!(2.0 * std::f64::consts::PI * tile.max_offset_metres() <= std::f64::consts::PI);
-    }
+    assert_eq!(
+        dense.evidence().executor().to_string(),
+        "tensor/executor/cpu"
+    );
+    assert!(dense.evidence().tiles() > 1);
+    assert_eq!(dense.evidence().max_segments_per_tensor(), 3);
+    assert!(dense.evidence().submissions() >= dense.evidence().tiles() * 3);
+    assert!(dense.evidence().observed_max_abs_psi_rad() <= dense.evidence().phase_limit_rad());
+    assert!(dense.evidence().predicted_max_abs_psi_rad() <= dense.evidence().phase_limit_rad());
+
+    let report = compare_dense_to_reference(
+        &reference(&problem, &plane),
+        &dense,
+        DifferentialTolerances::default(),
+    )
+    .unwrap();
+    assert!(report.passed(), "{report:?}");
 }
 
 #[test]
-fn point_and_plane_constants_are_host_anchored_and_local() {
-    let problem = problem(
-        vec![
-            point("point", [0.0, 0.0, 0.0], 0.0),
-            forward_plane("plane", 0.0),
-        ],
-        0.1,
-    );
-    let mut cx = test_context();
-    let plan = LoweringPlan::preflight(
+fn fixed_tolerances_compare_every_published_quantity_above_phase_floor() {
+    let problem = problem();
+    let plane = plane(10.0, 4, 6);
+    let mut cx = test_cx();
+    let dense = solve_dense_f32_cpu(
         &mut cx,
         &problem,
-        plane_at_x(1_000.0, 2, 2),
+        plane,
         PhaseBudget::default(),
         TileProfile::default(),
     )
     .unwrap();
-    let constants = plan.source_constants(0).unwrap();
-    let point = constants
-        .iter()
-        .find_map(|constants| match constants {
-            SourceTileConstants::Point { constants, .. } => Some(constants),
-            SourceTileConstants::ForwardPlane { .. } => None,
-        })
-        .unwrap();
-    assert_eq!(point.n0, [1.0, 0.0, 0.0]);
-    assert!((point.rho - 0.001).abs() < 1.0e-9);
-    assert!(point.phase_cos.is_finite() && point.phase_sin.is_finite());
-    assert!(point.gain0 > 0.0);
-    let plane = constants
-        .iter()
-        .find_map(|constants| match constants {
-            SourceTileConstants::Point { .. } => None,
-            SourceTileConstants::ForwardPlane { constants, .. } => Some(constants),
-        })
-        .unwrap();
-    assert_eq!(plane.direction, [1.0, 0.0, 0.0]);
-    assert_eq!(plane.signed_distance0_m, 1_000.0);
-    assert!(plane.phase_cos.is_finite() && plane.phase_sin.is_finite());
+    let tolerances = DifferentialTolerances::default();
+    assert_eq!(tolerances.component.absolute, 2.0e-5);
+    assert_eq!(tolerances.component.relative, 2.0e-4);
+    assert_eq!(tolerances.amplitude.absolute, 2.0e-5);
+    assert_eq!(tolerances.amplitude.relative, 2.0e-4);
+    assert_eq!(tolerances.phase.absolute, 3.0e-4);
+    assert_eq!(tolerances.phase.relative, 1.0e-4);
+    assert_eq!(tolerances.magnitude_squared.absolute, 4.0e-5);
+    assert_eq!(tolerances.magnitude_squared.relative, 4.0e-4);
+    assert_eq!(tolerances.phase_amplitude_floor, 1.0e-5);
+
+    let report = compare_dense_to_reference(&reference(&problem, &plane), &dense, tolerances)
+        .expect("finite equal-shape fields compare");
+    assert_eq!(report.phase_cells, plane.cell_count());
+    assert!(report.real.passed(), "{report:?}");
+    assert!(report.imaginary.passed(), "{report:?}");
+    assert!(report.amplitude.passed(), "{report:?}");
+    assert!(report.phase.unwrap().passed(), "{report:?}");
+    assert!(report.magnitude_squared.passed(), "{report:?}");
+    assert!(report.passed(), "{report:?}");
 }
 
 #[test]
-fn every_preflight_refusal_happens_before_the_first_execute() {
-    let problem = problem(vec![point("point", [0.0, 0.0, 0.0], 0.0)], 0.1);
-    let plane = plane_at_x(1_000.0, 2, 2);
-    for missing in required_operation_symbols() {
-        let executor = Arc::new(RecordingExecutor::missing(missing));
-        let mut cx = test_context();
-        let error = LoweringPlan::preflight_with_executor(
-            &mut cx,
-            &problem,
-            plane,
-            PhaseBudget::default(),
-            TileProfile::default(),
-            executor.clone(),
+fn fixture_matrix_covers_nodes_attenuation_edges_segments_permutation_and_refusals() {
+    let attenuated = problem();
+    let sample_plane = plane(100.0, 5, 7);
+    let segmented_profile = TileProfile {
+        max_elements_per_tile: 6,
+        max_segment_bytes: 8,
+        max_segments_per_tensor: 3,
+        max_tensor_bytes: 24,
+        max_result_bytes: 8 * 35,
+        ..TileProfile::default()
+    };
+    let mut cx = test_cx();
+    let attenuated_dense = solve_dense_f32_cpu(
+        &mut cx,
+        &attenuated,
+        sample_plane,
+        PhaseBudget::default(),
+        segmented_profile,
+    )
+    .unwrap();
+    let attenuated_report = compare_dense_to_reference(
+        &reference(&attenuated, &sample_plane),
+        &attenuated_dense,
+        DifferentialTolerances::default(),
+    )
+    .unwrap();
+    assert!(attenuated_report.passed(), "{attenuated_report:?}");
+    assert!(attenuated_dense.evidence().tiles() > 1);
+    assert_eq!(attenuated_dense.evidence().max_segments_per_tensor(), 3);
+    assert!(
+        attenuated_dense.evidence().tiles().saturating_mul(6) > sample_plane.cell_count(),
+        "the final tile must be an awkward clipped edge"
+    );
+
+    let node_sources = vec![
+        Emitter::ForwardPlane {
+            id: "phase-0".to_owned(),
+            through: point(0.0, 0.0, 0.0),
+            direction: UnitVector3::new(1.0, 0.0, 0.0).unwrap(),
+            amplitude: FieldAmplitude::new(1.0).unwrap(),
+            phase: Radians::new(0.0).unwrap(),
+        },
+        Emitter::ForwardPlane {
+            id: "phase-pi".to_owned(),
+            through: point(0.0, 0.0, 0.0),
+            direction: UnitVector3::new(1.0, 0.0, 0.0).unwrap(),
+            amplitude: FieldAmplitude::new(1.0).unwrap(),
+            phase: Radians::new(std::f64::consts::PI).unwrap(),
+        },
+    ];
+    let node_problem = problem_from_sources(0.0, node_sources.clone());
+    let node_plane = plane(10.0, 3, 5);
+    let node_dense = solve_dense_f32_cpu(
+        &mut cx,
+        &node_problem,
+        node_plane,
+        PhaseBudget::default(),
+        TileProfile::default(),
+    )
+    .unwrap();
+    let node_report = compare_dense_to_reference(
+        &reference(&node_problem, &node_plane),
+        &node_dense,
+        DifferentialTolerances::default(),
+    )
+    .unwrap();
+    assert!(node_report.passed(), "{node_report:?}");
+    assert_eq!(node_report.phase_cells, 0);
+    assert_eq!(node_report.phase, None);
+
+    let permuted_problem =
+        problem_from_sources(0.0, node_sources.into_iter().rev().collect::<Vec<_>>());
+    let permuted_dense = solve_dense_f32_cpu(
+        &mut cx,
+        &permuted_problem,
+        node_plane,
+        PhaseBudget::default(),
+        TileProfile::default(),
+    )
+    .unwrap();
+    assert_eq!(node_dense.real(), permuted_dense.real());
+    assert_eq!(node_dense.imaginary(), permuted_dense.imaginary());
+
+    assert!(FieldAmplitude::new(f64::NAN).is_err());
+    assert!(Point3M::from_metres(f64::INFINITY, 0.0, 0.0).is_err());
+    let invalid_tolerances = DifferentialTolerances {
+        phase_amplitude_floor: f64::NAN,
+        ..DifferentialTolerances::default()
+    };
+    assert!(
+        compare_dense_to_reference(
+            &reference(&node_problem, &node_plane),
+            &node_dense,
+            invalid_tolerances,
         )
-        .err()
-        .expect("missing operation must fail");
-        assert_eq!(error.check(), PreflightCheck::Operator);
-        assert_eq!(executor.executes.load(Ordering::SeqCst), 0);
-    }
+        .unwrap_err()
+        .detail()
+        .contains("phase amplitude floor")
+    );
 
-    let mut cx = test_context();
-    let error = LoweringPlan::preflight(
+    let behind_problem = problem_from_sources(
+        0.0,
+        vec![Emitter::ForwardPlane {
+            id: "forward-only".to_owned(),
+            through: point(11.0, 0.0, 0.0),
+            direction: UnitVector3::new(1.0, 0.0, 0.0).unwrap(),
+            amplitude: FieldAmplitude::new(1.0).unwrap(),
+            phase: Radians::new(0.0).unwrap(),
+        }],
+    );
+    let error = solve_dense_f32_cpu(
         &mut cx,
-        &problem,
-        plane,
-        PhaseBudget::default(),
-        TileProfile {
-            supports_f32: false,
-            ..TileProfile::default()
-        },
-    )
-    .err()
-    .expect("f32 refusal");
-    assert_eq!(error.check(), PreflightCheck::DType);
-
-    let error = LoweringPlan::preflight(
-        &mut cx,
-        &problem,
-        plane,
-        PhaseBudget::default(),
-        TileProfile {
-            max_result_bytes: 31,
-            ..TileProfile::default()
-        },
-    )
-    .err()
-    .expect("result allocation refusal");
-    assert_eq!(error.check(), PreflightCheck::ResultAllocation);
-
-    let error = LoweringPlan::preflight(
-        &mut cx,
-        &problem,
-        plane,
-        PhaseBudget::new(std::f64::consts::PI, 1.0e-12, 1.0e-12).unwrap(),
-        TileProfile::default(),
-    )
-    .err()
-    .expect("roundoff budget refusal");
-    assert!(matches!(
-        error.check(),
-        PreflightCheck::GeometryBudget | PreflightCheck::RoundoffBudget
-    ));
-}
-
-#[test]
-fn singular_and_backward_samples_fail_before_execution() {
-    let mut cx = test_context();
-    let singular = problem(vec![point("singular", [0.0, 0.0, 0.0], 0.0)], 0.1);
-    let error = LoweringPlan::preflight(
-        &mut cx,
-        &singular,
-        plane_at_x(0.0, 1, 1),
+        &behind_problem,
+        node_plane,
         PhaseBudget::default(),
         TileProfile::default(),
     )
-    .err()
-    .expect("singular sample refusal");
-    assert_eq!(error.check(), PreflightCheck::Singularity);
-
-    let backward = problem(vec![forward_plane("plane", 1.0)], 0.1);
-    let error = LoweringPlan::preflight(
-        &mut cx,
-        &backward,
-        plane_at_x(0.0, 2, 2),
-        PhaseBudget::default(),
-        TileProfile::default(),
-    )
-    .err()
-    .expect("backward sample refusal");
+    .unwrap_err();
     assert_eq!(error.check(), PreflightCheck::ForwardPlane);
 }
 
 #[test]
-fn lowering_uses_only_open_operations_and_pairwise_levels() {
-    let problem = problem(
-        vec![
-            point("a", [0.0, -0.25, 0.0], 0.0),
-            point("b", [0.0, 0.0, 0.0], 0.5),
-            point("c", [0.0, 0.25, 0.0], -0.5),
-        ],
-        0.1,
+fn normalized_phase_stays_bounded_while_naive_absolute_f32_grows() {
+    let direction = UnitVector3::new(1.0, 0.125, 0.0).unwrap();
+    let source_phase = Radians::new(0.37).unwrap();
+    let sweep_problem = problem_from_sources(
+        0.0,
+        vec![Emitter::ForwardPlane {
+            id: "tilted".to_owned(),
+            through: point(0.0, 0.0, 0.0),
+            direction,
+            amplitude: FieldAmplitude::new(1.0).unwrap(),
+            phase: source_phase,
+        }],
     );
-    let executor = Arc::new(RecordingExecutor::complete());
-    let mut cx = test_context();
-    let plan = LoweringPlan::preflight_with_executor(
-        &mut cx,
-        &problem,
-        plane_at_x(1_000.0, 2, 2),
-        PhaseBudget::default(),
-        TileProfile::default(),
-        executor.clone(),
-    )
-    .unwrap();
-    assert!(plan.max_phase_estimate().max_abs_residual_phase_rad <= std::f64::consts::PI);
-    let lowered = plan.execute(&mut cx).unwrap();
-    assert_eq!(lowered.len(), 1);
-    assert_eq!(lowered[0].real().shape(), &[2, 2]);
-    assert_eq!(lowered[0].imaginary().shape(), &[2, 2]);
-    assert_eq!(lowered[0].submissions().len(), 5);
-    for tensor in [lowered[0].real(), lowered[0].imaginary()] {
-        assert!(
-            tensor
-                .cells()
-                .unwrap()
-                .iter()
-                .all(|cell| parse_f32_literal_cell(cell).unwrap().is_finite())
+    let mut cx = test_cx();
+    let mut rows = Vec::new();
+
+    println!(
+        "distance_m max_abs_psi normalized_phase_error naive_phase_error predicted_bound tiles worst_cell"
+    );
+    for distance_m in [1.0, 10.0, 100.0, 1_000.0] {
+        let sample_plane = plane(distance_m, 3, 5);
+        let reference = reference(&sweep_problem, &sample_plane);
+        let dense = solve_dense_f32_cpu(
+            &mut cx,
+            &sweep_problem,
+            sample_plane,
+            PhaseBudget::default(),
+            TileProfile::default(),
+        )
+        .unwrap();
+        let report =
+            compare_dense_to_reference(&reference, &dense, DifferentialTolerances::default())
+                .unwrap();
+        let phase = report.phase.expect("unit-amplitude phase is compared");
+        let naive_phase_error =
+            naive_forward_plane_phase_error(&sweep_problem, sample_plane, &reference);
+        let evidence = dense.evidence();
+        println!(
+            "{distance_m:.0} {:.9e} {:.9e} {:.9e} {:.9e} {} ({},{})",
+            evidence.observed_max_abs_psi_rad(),
+            phase.error,
+            naive_phase_error,
+            evidence.predicted_max_abs_psi_rad(),
+            evidence.tiles(),
+            report.worst_row,
+            report.worst_column,
         );
+        assert!(report.passed(), "distance {distance_m}: {report:?}");
+        assert!(phase.error <= phase.limit);
+        assert!(evidence.observed_max_abs_psi_rad() <= evidence.phase_limit_rad());
+        assert!(evidence.predicted_max_abs_psi_rad() <= evidence.phase_limit_rad());
+        rows.push((phase.error, naive_phase_error));
     }
-    let observed: BTreeSet<_> = executor
-        .operations
-        .lock()
-        .unwrap()
-        .iter()
-        .map(ToString::to_string)
-        .collect();
-    let expected: BTreeSet<_> = required_operation_symbols()
-        .into_iter()
-        .map(|symbol| symbol.to_string())
-        .collect();
-    assert_eq!(observed, expected);
+
+    assert!(
+        rows.windows(2).all(|pair| pair[1].1 > pair[0].1),
+        "naive absolute-f32 phase error must grow each decade: {rows:?}"
+    );
+    assert!(
+        rows.last().unwrap().1 > rows.last().unwrap().0 * 1_000.0,
+        "normalization must remain load-bearing at 1000 m: {rows:?}"
+    );
 }
 
-struct RecordingExecutor {
-    missing: Option<Symbol>,
-    executes: AtomicUsize,
-    flushes: AtomicUsize,
-    operations: Mutex<Vec<Symbol>>,
-}
-
-impl RecordingExecutor {
-    fn complete() -> Self {
-        Self {
-            missing: None,
-            executes: AtomicUsize::new(0),
-            flushes: AtomicUsize::new(0),
-            operations: Mutex::new(Vec::new()),
+fn naive_forward_plane_phase_error(
+    problem: &InterferenceProblem,
+    plane: SamplingPlane,
+    reference: &sim_lib_interference_solve::HostPhasorField,
+) -> f64 {
+    let Emitter::ForwardPlane {
+        through,
+        direction,
+        phase,
+        ..
+    } = problem.sources.iter().next().expect("phase sweep source")
+    else {
+        panic!("phase sweep fixture must contain one forward plane");
+    };
+    let origin = through.coordinates_metres().map(|value| value as f32);
+    let direction = direction.components().map(|value| value as f32);
+    let wavenumber = problem.wavenumber().real_radians_per_metre() as f32;
+    let source_phase = phase.get() as f32;
+    let mut maximum = 0.0_f64;
+    for row in 0..plane.rows() {
+        for column in 0..plane.columns() {
+            let at = plane.point_at(row, column).unwrap().coordinates_metres();
+            let x = direction[0] * (at[0] as f32 - origin[0]);
+            let y = direction[1] * (at[1] as f32 - origin[1]);
+            let z = direction[2] * (at[2] as f32 - origin[2]);
+            let signed_distance = (x + y) + z;
+            let absolute_phase = wavenumber * signed_distance + source_phase;
+            let candidate_phase =
+                f64::from(absolute_phase.sin()).atan2(f64::from(absolute_phase.cos()));
+            let (reference_real, reference_imaginary) = reference.cell(row, column).unwrap();
+            let reference_phase = reference_imaginary.atan2(reference_real);
+            maximum = maximum.max(wrapped_phase_error(reference_phase, candidate_phase));
         }
     }
-
-    fn missing(symbol: Symbol) -> Self {
-        Self {
-            missing: Some(symbol),
-            ..Self::complete()
-        }
-    }
+    maximum
 }
 
-impl TensorExecutor for RecordingExecutor {
-    fn card(&self) -> TensorExecutorCard {
-        TensorExecutorCard::new(
-            Symbol::qualified("test", "recording-executor"),
-            "recording",
-            Symbol::qualified("test", "local"),
-            required_operation_symbols()
-                .into_iter()
-                .filter(|symbol| self.missing.as_ref() != Some(symbol))
-                .collect(),
-            None,
-        )
-    }
-
-    fn execute(
-        &self,
-        _cx: &mut Cx,
-        request: TensorRequest,
-    ) -> Result<TensorExecution, TensorExecError> {
-        self.executes.fetch_add(1, Ordering::SeqCst);
-        self.operations
-            .lock()
-            .unwrap()
-            .push(request.operation.symbol.clone());
-        let cells = if request.inputs.len() == 1 {
-            unary_cells(&request)?
-        } else {
-            binary_cells(&request)?
-        };
-        let tensor = Tensor::from_storage(
-            request.output.shape().to_vec(),
-            domains::f32(),
-            Arc::new(TypedTensorStorage::<f32>::new(cells)),
-        )
-        .map_err(exec_error)?;
-        Ok(TensorExecution::Complete(tensor))
-    }
-
-    fn flush(&self) -> Result<SubmissionEvidence, TensorExecError> {
-        let accepted = self.flushes.fetch_add(1, Ordering::SeqCst) + 1;
-        Ok(SubmissionEvidence::new(
-            Symbol::qualified("test", "recording-executor"),
-            accepted,
-        ))
-    }
-}
-
-fn unary_cells(request: &TensorRequest) -> Result<Vec<f32>, TensorExecError> {
-    let [input] = request.inputs.as_ref() else {
-        return Err(exec_error("unary test operation expects one input"));
-    };
-    tensor_cells(input)?
-        .into_iter()
-        .map(|value| {
-            if request.operation.symbol == sqrt_op_symbol() {
-                Ok(value.sqrt())
-            } else if request.operation.symbol == exp_op_symbol() {
-                Ok(value.exp())
-            } else if request.operation.symbol == sin_op_symbol() {
-                Ok(value.sin())
-            } else if request.operation.symbol == cos_op_symbol() {
-                Ok(value.cos())
-            } else {
-                Err(exec_error("unexpected unary test operation"))
-            }
-        })
-        .collect()
-}
-
-fn binary_cells(request: &TensorRequest) -> Result<Vec<f32>, TensorExecError> {
-    let [left, right] = request.inputs.as_ref() else {
-        return Err(exec_error("binary test operation expects two inputs"));
-    };
-    let output_len = request.output.shape().iter().copied().product::<usize>();
-    let left = broadcast_cells(left, output_len)?;
-    let right = broadcast_cells(right, output_len)?;
-    left.into_iter()
-        .zip(right)
-        .map(|(left, right)| {
-            if request.operation.symbol == add_op_symbol() {
-                Ok(left + right)
-            } else if request.operation.symbol == sub_op_symbol() {
-                Ok(left - right)
-            } else if request.operation.symbol == mul_op_symbol() {
-                Ok(left * right)
-            } else if request.operation.symbol == div_op_symbol() {
-                Ok(left / right)
-            } else {
-                Err(exec_error("unexpected binary test operation"))
-            }
-        })
-        .collect()
-}
-
-fn broadcast_cells(tensor: &Tensor, output_len: usize) -> Result<Vec<f32>, TensorExecError> {
-    let cells = tensor_cells(tensor)?;
-    match cells.as_slice() {
-        [scalar] if tensor.shape().is_empty() => Ok(vec![*scalar; output_len]),
-        _ if cells.len() == output_len => Ok(cells),
-        _ => Err(exec_error("unexpected test broadcast shape")),
-    }
-}
-
-fn tensor_cells(tensor: &Tensor) -> Result<Vec<f32>, TensorExecError> {
-    tensor
-        .cells()
-        .map_err(exec_error)?
-        .iter()
-        .map(|cell| {
-            parse_f32_literal_cell(cell)
-                .ok_or_else(|| exec_error("test Tensor contains a non-f32 cell"))
-        })
-        .collect()
-}
-
-fn exec_error(error: impl std::fmt::Display) -> TensorExecError {
-    TensorExecError::Eval {
-        message: Arc::from(error.to_string()),
-    }
+fn wrapped_phase_error(left: f64, right: f64) -> f64 {
+    let full_turn = 2.0 * std::f64::consts::PI;
+    let difference = (left - right).abs().rem_euclid(full_turn);
+    difference.min(full_turn - difference)
 }
 ```
