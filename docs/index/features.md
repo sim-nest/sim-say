@@ -65,6 +65,7 @@
 | [`feature/sim-index/vault-export`](features/feature--sim-index--vault-export.md) | `local/sim-tooling/crate/xtask` | 1 |
 | [`feature/sim-interference/generated-docs`](features/feature--sim-interference--generated-docs.md) | `local/sim-interference/crate/xtask` | 0 |
 | [`feature/sim-interference/quantity-vocabulary`](features/feature--sim-interference--quantity-vocabulary.md) | `crate/sim-lib-interference-core` | 2 |
+| [`feature/sim-interference/scalar-wave-model`](features/feature--sim-interference--scalar-wave-model.md) | `crate/sim-lib-interference-core` | 2 |
 | [`feature/sim-kernel/contract-emitter`](features/feature--sim-kernel--contract-emitter.md) | `local/sim-kernel/crate/xtask` | 0 |
 | [`feature/sim-kernel/kernel-contracts`](features/feature--sim-kernel--kernel-contracts.md) | `crate/sim-kernel` | 0 |
 | [`feature/sim-ledger/generated-docs`](features/feature--sim-ledger--generated-docs.md) | `local/sim-ledger/crate/xtask` | 0 |
