@@ -71,7 +71,7 @@
 | [`feature/sim-interference/generated-docs`](features/feature--sim-interference--generated-docs.md) | `local/sim-interference/crate/xtask` | 0 |
 | [`feature/sim-interference/normalized-tensor-lowering`](features/feature--sim-interference--normalized-tensor-lowering.md) | `crate/sim-lib-interference-compute` | 2 |
 | [`feature/sim-interference/quantity-vocabulary`](features/feature--sim-interference--quantity-vocabulary.md) | `crate/sim-lib-interference-core` | 2 |
-| [`feature/sim-interference/resident-compute-studies`](features/feature--sim-interference--resident-compute-studies.md) | `crate/sim-lib-interference-compute` | 2 |
+| [`feature/sim-interference/resident-compute-studies`](features/feature--sim-interference--resident-compute-studies.md) | `crate/sim-lib-interference-compute` | 4 |
 | [`feature/sim-interference/scalar-wave-model`](features/feature--sim-interference--scalar-wave-model.md) | `crate/sim-lib-interference-core` | 2 |
 | [`feature/sim-interference/tensor-runtime-records`](features/feature--sim-interference--tensor-runtime-records.md) | `crate/sim-lib-interference-runtime` | 1 |
 | [`feature/sim-kernel/contract-emitter`](features/feature--sim-kernel--contract-emitter.md) | `local/sim-kernel/crate/xtask` | 0 |

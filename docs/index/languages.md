@@ -199,6 +199,7 @@
 | `specimen` | `lisp` | crates/sim-lib-incremental/recipes/01-basics/query-family/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-intent/recipes/01-basics/select-intent/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-interference-compute/recipes/01-basics/modeled-resident-study/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-interference-compute/recipes/01-basics/wgpu-differential-evidence/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-interference-runtime/recipes/01-basics/two-source-cancellation/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-lang-cl/recipes/01-basics/matrix-row/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-lang-cl/recipes/01-basics/profile-descriptor/recipe.toml |
@@ -466,6 +467,7 @@
 | `specimen` | `shape` | crates/sim-lib-construction-project/src/outcome_tests.rs |
 | `specimen` | `shape` | crates/sim-lib-discrete/src/forms.rs |
 | `specimen` | `shape` | crates/sim-lib-incremental/src/tests.rs |
+| `specimen` | `shape` | crates/sim-lib-interference-compute/src/hardware_tests.rs |
 | `specimen` | `shape` | crates/sim-lib-interference-compute/src/modeled_tests.rs |
 | `specimen` | `shape` | crates/sim-lib-interference-compute/src/tests/dense.rs |
 | `specimen` | `shape` | crates/sim-lib-interference-compute/src/tests/preflight.rs |

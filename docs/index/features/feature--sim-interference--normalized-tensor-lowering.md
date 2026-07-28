@@ -12,6 +12,7 @@ Lower coherent point and forward-plane fields into bounded tile-local f32 Tensor
 
 - `anchor/crate/sim-lib-interference-compute`
 - `anchor/rustdoc/sim-lib-interference-compute/compare_dense_to_reference`
+- `anchor/rustdoc/sim-lib-interference-compute/compare_materialized_to_reference`
 - `anchor/rustdoc/sim-lib-interference-compute/conformance-metric`
 - `anchor/rustdoc/sim-lib-interference-compute/crate-root`
 - `anchor/rustdoc/sim-lib-interference-compute/dense-execution-evidence`

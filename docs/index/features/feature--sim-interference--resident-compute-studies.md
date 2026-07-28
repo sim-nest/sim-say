@@ -12,6 +12,10 @@ Route an admitted interference Study through the active Env-bound Tensor executo
 
 - `anchor/runtime-lib/sim-lib-interference-compute/interference-compute-lib`
 - `anchor/rustdoc/sim-lib-interference-compute/cpu-fallback-reason`
+- `anchor/rustdoc/sim-lib-interference-compute/hardware-evidence-metrics`
+- `anchor/rustdoc/sim-lib-interference-compute/hardware-evidence-report`
+- `anchor/rustdoc/sim-lib-interference-compute/hardware-measurement-result`
+- `anchor/rustdoc/sim-lib-interference-compute/hardware_determinism_repeats`
 - `anchor/rustdoc/sim-lib-interference-compute/interference-compute-lib`
 - `anchor/rustdoc/sim-lib-interference-compute/interference_compute_lib_symbol`
 - `anchor/rustdoc/sim-lib-interference-compute/provider-route`
@@ -22,6 +26,8 @@ Route an admitted interference Study through the active Env-bound Tensor executo
 ## Specimens
 
 - `recipe/sim-interference/crates/sim-lib-interference-compute/01-basics/modeled-resident-study`
+- `recipe/sim-interference/crates/sim-lib-interference-compute/01-basics/wgpu-differential-evidence`
+- `spec-test/sim-interference/crates/sim-lib-interference-compute/src/hardware_tests`
 - `spec-test/sim-interference/crates/sim-lib-interference-compute/src/modeled_tests`
 
 ## Worked Example
