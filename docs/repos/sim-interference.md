@@ -1,10 +1,11 @@
 # sim-interference
 
-Published commit: `0b196f08d2cc66cc4747adc7e80bbcc2b5794024`.
+Published commit: `19a00d1e62139d590c43b5594ca29bac9851a245`.
 
 ## Crates
 
 - `sim-lib-interference-core`
+- `sim-lib-interference-solve`
 
 ## Contracts
 
