@@ -1,6 +1,6 @@
 # sim-runtime
 
-Published commit: `2d725b203e9f58c3e08ab5bc31aa63e43dbcbb53`.
+Published commit: `5ffbab55a84fe30a9405d6ea940af574e7bc3acd`.
 
 ## Crates
 
