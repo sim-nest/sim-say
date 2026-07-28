@@ -13,7 +13,7 @@
 | [sim-expr-tree](../repos/sim-expr-tree.md) | 5 | [card-index.json](../contracts/sim-expr-tree/card-index.json) |
 | [sim-femm](../repos/sim-femm.md) | 21 | [card-index.json](../contracts/sim-femm/card-index.json) |
 | [sim-foundation](../repos/sim-foundation.md) | 4 | [card-index.json](../contracts/sim-foundation/card-index.json) |
-| [sim-interference](../repos/sim-interference.md) | 3 | [card-index.json](../contracts/sim-interference/card-index.json) |
+| [sim-interference](../repos/sim-interference.md) | 4 | [card-index.json](../contracts/sim-interference/card-index.json) |
 | [sim-kernel](../repos/sim-kernel.md) | 2 | [card-index.json](../contracts/sim-kernel/card-index.json) |
 | [sim-ledger](../repos/sim-ledger.md) | 3 | [card-index.json](../contracts/sim-ledger/card-index.json) |
 | [sim-music](../repos/sim-music.md) | 51 | [card-index.json](../contracts/sim-music/card-index.json) |
