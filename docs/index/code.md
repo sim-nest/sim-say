@@ -121,7 +121,7 @@
 | `crate/sim-lib-incremental` | `crate` | sim-lib-incremental | 1 |
 | `crate/sim-lib-index` | `crate` | sim-lib-index | 1 |
 | `crate/sim-lib-interference-core` | `crate` | sim-lib-interference-core | 0 |
-| `crate/sim-lib-interference-runtime` | `crate` | sim-lib-interference-runtime | 1 |
+| `crate/sim-lib-interference-runtime` | `crate` | sim-lib-interference-runtime | 2 |
 | `crate/sim-lib-interference-solve` | `crate` | sim-lib-interference-solve | 0 |
 | `crate/sim-lib-lang-cl` | `crate` | sim-lib-lang-cl | 1 |
 | `crate/sim-lib-lang-clojure` | `crate` | sim-lib-lang-clojure | 1 |

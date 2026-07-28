@@ -198,6 +198,7 @@
 | `specimen` | `lisp` | crates/sim-lib-gantt/recipes/01-basics/local-gantt-plan/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-incremental/recipes/01-basics/query-family/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-intent/recipes/01-basics/select-intent/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-interference-runtime/recipes/01-basics/two-source-cancellation/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-lang-cl/recipes/01-basics/matrix-row/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-lang-cl/recipes/01-basics/profile-descriptor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-lang-clojure/recipes/01-basics/matrix-row/recipe.toml |
