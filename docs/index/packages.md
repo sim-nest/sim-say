@@ -121,6 +121,7 @@
 | `crate/sim-lib-incremental` | `crate` | sim-lib-incremental |
 | `crate/sim-lib-index` | `crate` | sim-lib-index |
 | `crate/sim-lib-interference-core` | `crate` | sim-lib-interference-core |
+| `crate/sim-lib-interference-solve` | `crate` | sim-lib-interference-solve |
 | `crate/sim-lib-lang-cl` | `crate` | sim-lib-lang-cl |
 | `crate/sim-lib-lang-clojure` | `crate` | sim-lib-lang-clojure |
 | `crate/sim-lib-lang-genconf` | `crate` | sim-lib-lang-genconf |
