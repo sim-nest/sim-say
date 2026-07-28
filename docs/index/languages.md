@@ -427,6 +427,7 @@
 | `specimen` | `rust` | recipes/00-overview/modeled-work-order/recipe.toml |
 | `specimen` | `rust` | recipes/01-basics/checked-quantities/recipe.toml |
 | `specimen` | `rust` | recipes/01-basics/exact-bool-shape/recipe.toml |
+| `specimen` | `rust` | recipes/01-basics/fringe-analysis/recipe.toml |
 | `specimen` | `rust` | recipes/01-basics/shape-grammar-contract/recipe.toml |
 | `specimen` | `rust` | recipes/01-lanes/flash-lane/recipe.toml |
 | `specimen` | `rust` | recipes/01-lanes/info-lane/recipe.toml |
