@@ -562,6 +562,7 @@
 {"card": {"id": "cookbook/view/codec", "kind": "cookbook-recipe", "owner": "sim-lib-view-codec", "summary": "Multi-codec, round-trip, and Shape-aware lens descriptors."}, "repo": "sim-web"}
 {"card": {"id": "cookbook/view/daw", "kind": "cookbook-recipe", "owner": "sim-lib-view-daw", "summary": "Timeline, mixer, rack, waveform, and synth lens descriptors."}, "repo": "sim-web"}
 {"card": {"id": "cookbook/view/doc", "kind": "cookbook-recipe", "owner": "sim-lib-view-doc", "summary": "Scientific article values, source lenses, and export descriptors."}, "repo": "sim-web"}
+{"card": {"id": "cookbook/view/interference", "kind": "cookbook-recipe", "owner": "sim-lib-view-interference", "summary": "Reversible, evidence-preserving views over solved interference studies."}, "repo": "sim-web"}
 {"card": {"id": "cookbook/view/math", "kind": "cookbook-recipe", "owner": "sim-lib-view-math", "summary": "Bounded heatmap, plot, matrix, symbolic, and sweep lens descriptors."}, "repo": "sim-web"}
 {"card": {"id": "cookbook/view/wasm", "kind": "cookbook-recipe", "owner": "sim-lib-view-wasm-frame", "summary": "Browser-side view host descriptors for local Scene and Intent flow."}, "repo": "sim-web"}
 {"card": {"id": "cookbook/web/bridge", "kind": "cookbook-recipe", "owner": "sim-lib-web-bridge", "summary": "Session bus, transports, history, and Scene update descriptors."}, "repo": "sim-web"}
