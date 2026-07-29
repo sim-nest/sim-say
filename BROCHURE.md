@@ -311,7 +311,8 @@ piece gives you.
 - **sim-lib-view-daw** -- it brings a full music studio -- timeline, mixer, effects, and synths -- into the browser workspace.
 - **sim-lib-view-device** -- it turns open surface claims into a clear device envelope, so small screens and wearable edges degrade honestly.
 - **sim-lib-view-doc** -- it is a writing surface where article structure, equations, figures, source text, and live results stay together.
-- **sim-lib-view-math** -- it turns numbers, matrices, and formulas into plots and grids you can see and adjust.
+- **sim-lib-view-interference** -- it opens a solved interference field as an honest heatmap you can inspect, edit, and recompute without losing the evidence behind the picture.
+- **sim-lib-view-math** -- it turns numbers, scalar fields, matrices, and formulas into bounded plots and grids you can see and adjust.
 - **sim-lib-view-spatial** -- Glasses surfaces get the right SIM Scene form for stereo panels, mono HUD cards, and simple mirrored displays.
 - **sim-lib-view-wasm-frame** -- it is the local helper that renders a value to a screen picture, folds your gestures into edits, and commits them in place.
 - **sim-lib-view-wrist** -- Round watch glance budgets that reuse the shared device glance path for haptic wrist feedback.
@@ -2031,7 +2032,7 @@ Every time you act on a value in the browser -- moving a node, setting a field, 
 
 it is the portable picture of what should appear on screen, saved as plain data you can inspect and share.
 
-Before anything is drawn, the workspace builds a Scene: a tidy tree that describes the graph, table, plot, or panel to show. A Scene is ordinary SIM data, so it can be saved to a file, compared against yesterday's version, checked for correctness, sent across the network, or read by an agent. Only the browser turns a Scene into actual pixels; everything before that point just produces this description. Because the picture is data, you can snapshot it, test it, and diff two versions to see exactly what changed on screen -- all without a running browser in the loop.
+Before anything is drawn, the workspace builds a Scene: a tidy tree that describes the graph, table, plot, heatmap, or panel to show. A Scene is ordinary SIM data, so it can be saved to a file, compared against yesterday's version, checked for correctness, sent across the network, or read by an agent. Its heatmap contract checks dimensions, finite scalar values, masks, display range, palette, detector label, payload footprint, and advisories before a pixel is painted. It carries those facts without claiming that detail is detector integration or creating scientific evidence; a domain view inherits that evidence from its source value. Only the browser turns a Scene into actual pixels; everything before that point just produces this description. Because the picture is data, you can snapshot it, test it, and diff two versions to see exactly what changed on screen -- all without a running browser in the loop.
 
 #### sim-lib-view
 
@@ -2075,11 +2076,17 @@ it is a writing surface where article structure, equations, figures, source text
 
 This lens gives you a proper authoring workspace for technical writing, not a plain text box. A document is built from meaningful blocks -- sections, prose, equations, figures, tables, citations, and blocks that run live inside the page. You navigate by an outline and arrange blocks on a canvas. You can look at the same article two ways at once: the clean formatted reading view and the underlying source, side by side, each a lens on the one document. Because the document is one stored markup value, an embedded live block shows a real computed result right where it belongs in your argument.
 
+#### sim-lib-view-interference
+
+it opens a solved interference field as an honest heatmap you can inspect, edit, and recompute without losing the evidence behind the picture.
+
+A completed Study opens with controls, source and solver summaries, sampling status, a certified heatmap, and a cross-section plot. Change how the existing field is viewed and the surface realizes `interference/project`; change the physical model and it realizes `interference/solve`, then refreshes the Scene from the returned Study. Desktop, phone, and glance surfaces each receive a grid reduced to their advertised budget.
+
 #### sim-lib-view-math
 
-it turns numbers, matrices, and formulas into plots and grids you can see and adjust.
+it turns numbers, scalar fields, matrices, and formulas into bounded plots and grids you can see and adjust.
 
-This lens family makes math visual and hands-on. Numeric series and functions become plots you can read at a glance. Matrices and tensors open as editable grids, so you can change a slice and see the effect. A symbolic formula shows as a tree you can explore. Sliders and knobs let you sweep a parameter and watch the result move, then snapshot a setting and compare it against another. Throughout, the display reads numbers from SIM's own number kinds, while the runtime value stays the single source of truth -- so what you tweak on screen is the same number the system actually holds.
+This lens family makes math visual and hands-on. Bounded scalar fields become masked heatmap Scenes with an honest detector label and advisory; the generic view refuses oversized input instead of guessing how a scientific domain should reduce it. Detail means the caller kept its source cells. Detector integration means the owning domain already combined every covered source cell under a declared rule. The math view validates either prepared grid but never turns one into the other or invents evidence for it. Numeric series and functions become plots you can read at a glance. Matrices and tensors open as editable grids, so you can change a slice and see the effect. A symbolic formula shows as a tree you can explore. Sliders and knobs let you sweep a parameter and watch the result move, then snapshot a setting and compare it against another. Throughout, the display reads numbers from SIM's own number kinds, while the runtime value stays the single source of truth -- so what you tweak on screen is the same number the system actually holds.
 
 #### sim-lib-view-spatial
 
