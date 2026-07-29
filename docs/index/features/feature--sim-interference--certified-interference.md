@@ -42,6 +42,8 @@ Construct, solve, project, analyze, scenario-build, and compose coherent interfe
 ## Specimens
 
 - `recipe/sim-interference/crates/sim-lib-interference-runtime/01-basics/two-source-cancellation`
+- `recipe/sim-interference/crates/sim-lib-interference-solve/01-basics/animation-projection`
+- `recipe/sim-interference/crates/sim-lib-interference-solve/01-basics/detector-reduction`
 - `spec-test/sim-interference/crates/sim-lib-interference-solve/tests/projection_conformance`
 
 ## Worked Example

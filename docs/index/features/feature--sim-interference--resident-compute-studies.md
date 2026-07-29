@@ -25,28 +25,31 @@ Route an admitted interference Study through the active Env-bound Tensor executo
 
 ## Specimens
 
+- `recipe/sim-interference/crates/sim-lib-interference-compute/01-basics/modeled-differential-matrix`
+- `recipe/sim-interference/crates/sim-lib-interference-compute/01-basics/modeled-fault-containment`
 - `recipe/sim-interference/crates/sim-lib-interference-compute/01-basics/modeled-resident-study`
+- `recipe/sim-interference/crates/sim-lib-interference-compute/01-basics/wgpu-absence-refusal`
 - `recipe/sim-interference/crates/sim-lib-interference-compute/01-basics/wgpu-differential-evidence`
 - `spec-test/sim-interference/crates/sim-lib-interference-compute/src/hardware_tests`
 - `spec-test/sim-interference/crates/sim-lib-interference-compute/src/modeled_tests`
 
 ## Worked Example
 
-Specimen `recipe/sim-interference/crates/sim-lib-interference-compute/01-basics/modeled-resident-study` is checked by `xtask check-recipes`.
+Specimen `recipe/sim-interference/crates/sim-lib-interference-compute/01-basics/modeled-differential-matrix` is checked by `xtask check-recipes`.
 
-Source `crates/sim-lib-interference-compute/recipes/01-basics/modeled-resident-study/recipe.toml`:
+Source `crates/sim-lib-interference-compute/recipes/01-basics/modeled-differential-matrix/recipe.toml`:
 
 ```toml
-id = "modeled-resident-study"
-title = "Run an interference study on modeled resident compute"
+id = "modeled-differential-matrix"
+title = "Compare modeled resident compute with the CPU oracle"
 codec = "lisp"
 setup = "setup.siml"
 purpose = "purpose.md"
-order = 10
-tags = ["interference", "compute", "modeled", "resident", "fallback", "faults"]
+order = 30
+tags = ["interference", "compute", "modeled", "differential", "headless", "evidence"]
 requires = ["interference-runtime", "interference-compute", "site/compute/model", "numbers/tensor"]
 harness = "cargo-test"
 package = "sim-lib-interference-compute"
-test = "modeled_tests::modeled_resident_recipe_reports_checked_evidence"
+test = "hardware_tests::f64_dense_and_modeled_share_one_differential_matrix"
 expected = "expected.txt"
 ```

@@ -32,25 +32,26 @@ Summarize amplitude-like fields without losing provenance and construct bounded 
 
 ## Specimens
 
-- `recipe/sim-interference/01-basics/fringe-analysis`
+- `recipe/sim-interference/crates/sim-lib-interference-solve/01-basics/aperture-refusal`
+- `recipe/sim-interference/crates/sim-lib-interference-solve/01-basics/fringe-analysis`
 - `spec-test/sim-interference/crates/sim-lib-interference-solve/tests/analysis_scenario_conformance`
 
 ## Worked Example
 
-Specimen `recipe/sim-interference/01-basics/fringe-analysis` is checked by `xtask check-recipes`.
+Specimen `recipe/sim-interference/crates/sim-lib-interference-solve/01-basics/aperture-refusal` is checked by `xtask check-recipes`.
 
-Source `recipes/01-basics/fringe-analysis/recipe.toml`:
+Source `crates/sim-lib-interference-solve/recipes/01-basics/aperture-refusal/recipe.toml`:
 
 ```toml
-id = "fringe-analysis"
-title = "Build and analyze a certified standing wave"
+id = "aperture-refusal"
+title = "Refuse a sparse aperture approximation"
 codec = "rust"
 setup = "main.rs"
 purpose = "purpose.md"
 expected = "expected.txt"
-order = 20
-tags = ["interference", "analysis", "scenario", "sampling"]
+order = 70
+tags = ["interference", "cpu", "aperture", "sampling", "fail-closed"]
 harness = "cargo-example"
 package = "sim-lib-interference-solve"
-example = "fringe-analysis"
+example = "aperture-refusal"
 ```

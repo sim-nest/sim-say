@@ -209,6 +209,10 @@ piece gives you.
 - **sim-lib-femm-solve** -- It takes a described model all the way to a solved answer and hands you proof it was done right.
 - **sim-lib-femm-space** -- It works out the fine geometric details inside each triangle so the solver knows how values vary across it.
 - **sim-lib-femm-tape** -- It remembers work already done so repeated solves do not start from scratch every time.
+- **sim-lib-interference-compute** -- accurate coherent-wave geometry is reduced on the host so ordinary portable `f32` Tensor operations can evaluate it without large-world phase loss.
+- **sim-lib-interference-core** -- this crate validates scalar-wave physics, sampling truth, and bounded work before solving begins.
+- **sim-lib-interference-runtime** -- this crate makes certified interference studies ordinary, Shape-checked SIM values without giving up tensor residency or provenance.
+- **sim-lib-interference-solve** -- this crate turns an admitted coherent wave problem into a deterministic host phasor field with inseparable solve evidence.
 
 ### runtime
 
@@ -1022,6 +1026,32 @@ Many parts of SIM store and fetch data arranged as tables, and they need to agre
 A friendly toolkit for building and reading the small data shapes that flow through SIM.
 
 SIM moves information around as compact data forms -- numbers, words, lists, and named fields. On their own those forms are bare and awkward to work with. This crate gives you a tidy, consistent set of helpers for making them and reading them back: build a value, look up a field by name, replace one field while leaving its siblings untouched, or walk into a nested spot by a simple address. Everything is done by copying rather than altering shared state, so a change never surprises code that still holds the older value. One shared home means every part of SIM speaks the same small vocabulary instead of each corner inventing its own.
+
+### sim-interference
+
+#### sim-lib-interference-compute
+
+accurate coherent-wave geometry is reduced on the host so ordinary portable `f32` Tensor operations can evaluate it without large-world phase loss.
+
+- Complete fail-closed preflight before the first executor submission. - Bounded physical tiles selected from phase, element, segment, and byte limits. - Host `f64` point and forward-plane constants with a local `f32` residual. - A recorded geometry/roundoff prediction for every source and tile. - Only canonical open Tensor arithmetic and transcendental requests. - Stable deterministic pairwise accumulation of source contributions. - A canonical dense CPU baseline with executor, tile, segment, flush, phase, and predicted-error evidence. - One fixed differential report for components, amplitude, above-floor wrapped phase, and squared magnitude against the deterministic `f64` oracle. - The same differential report for dense, modeled, and materialized wgpu results. - Sanitized adapter/profile evidence with an explicit measured/not-measured boundary and a 100-repeat same-profile determinism gate. - Scoped compute-site routing that leaves the CPU registry default untouched. - Pre-submission CPU selection for absent or ineligible providers. - Resident real/imaginary Studies with upload, submission, segment, readback, adapter, profile, and tolerance evidence. - Fail-closed OOM, deadline, device-loss, execution, and readback behavior with no CPU restart after provider selection. - Explicit unavailable-wgpu refusal and automatic pre-submit CPU-choice evidence.
+
+#### sim-lib-interference-core
+
+this crate validates scalar-wave physics, sampling truth, and bounded work before solving begins.
+
+Focused `f64` wrappers feed one coherent source model and exact Green-function convention. `SamplingPlane` defines finite pixel centres; `SamplingCertificate` records carrier, power-fringe, and point-envelope adequacy; `RequestPreflight` applies sampling policy and `WorkBudget`.
+
+#### sim-lib-interference-runtime
+
+this crate makes certified interference studies ordinary, Shape-checked SIM values without giving up tensor residency or provenance.
+
+- Citizen records for problems, planes, fields, studies, evidence, and projections. - A loadable `InterferenceLib` with Shape-checked constructors, provider-routed solve, propagation-free project and analysis, bounded scenarios, and multi-tone composition. - A narrow `StudySolver` provider seam resolved from the child environment before the registry, with the deterministic reference CPU solver as default. - Two canonical Tensors for phasor components and one canonical Tensor for a scalar projection. - Fail-closed Shape and codec boundaries for dimensions, physical units, evidence counts, and phase masks. - An exact checked Lisp recipe for a 1024-by-1024 two-source cancellation study through the local evaluation fabric.
+
+#### sim-lib-interference-solve
+
+this crate turns an admitted coherent wave problem into a deterministic host phasor field with inseparable solve evidence.
+
+`ReferencePhasorSolver` produces separate row-major real and imaginary `f64` component planes. `SolveEvidence` retains the sampling policy, certificate, and complete work estimate that admitted the request. `project` and `reduce_for_view` derive certified scalar fields without rerunning propagation. `analyze_fringes` adds deterministic statistics, strict local node/antinode candidates, and Michelson contrast while retaining sampling and projection identity. `ScenarioBuilder` provides bounded canonical point, plane, phased array, and discrete-aperture fixtures.
 
 ### sim-kernel
 

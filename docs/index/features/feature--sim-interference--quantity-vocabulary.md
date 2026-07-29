@@ -23,14 +23,14 @@ Admit finite scalar-wave inputs through explicit distance, frequency, speed, att
 
 ## Specimens
 
-- `recipe/sim-interference/01-basics/checked-quantities`
+- `recipe/sim-interference/crates/sim-lib-interference-core/01-basics/checked-quantities`
 - `spec-test/sim-interference/crates/sim-lib-interference-core/tests/quantity_conformance`
 
 ## Worked Example
 
-Specimen `recipe/sim-interference/01-basics/checked-quantities` is checked by `xtask check-recipes`.
+Specimen `recipe/sim-interference/crates/sim-lib-interference-core/01-basics/checked-quantities` is checked by `xtask check-recipes`.
 
-Source `recipes/01-basics/checked-quantities/recipe.toml`:
+Source `crates/sim-lib-interference-core/recipes/01-basics/checked-quantities/recipe.toml`:
 
 ```toml
 id = "checked-quantities"

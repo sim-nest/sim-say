@@ -54,7 +54,6 @@
 | `crate/sim-expr-tree-core` | `crate` | sim-expr-tree-core |
 | `crate/sim-incremental-core` | `crate` | sim-incremental-core |
 | `crate/sim-index-core` | `crate` | sim-index-core |
-| `crate/sim-interference` | `crate` | sim-interference |
 | `crate/sim-kernel` | `crate` | sim-kernel |
 | `crate/sim-ledger` | `crate` | sim-ledger |
 | `crate/sim-ledger-cli` | `crate` | sim-ledger-cli |

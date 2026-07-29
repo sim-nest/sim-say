@@ -54,7 +54,6 @@
 | `crate/sim-expr-tree-core` | `crate` | sim-expr-tree-core | 0 |
 | `crate/sim-incremental-core` | `crate` | sim-incremental-core | 0 |
 | `crate/sim-index-core` | `crate` | sim-index-core | 0 |
-| `crate/sim-interference` | `crate` | sim-interference | 0 |
 | `crate/sim-kernel` | `crate` | sim-kernel | 0 |
 | `crate/sim-ledger` | `crate` | sim-ledger | 0 |
 | `crate/sim-ledger-cli` | `crate` | sim-ledger-cli | 0 |
@@ -449,7 +448,7 @@
 | `repo/sim-expr-tree` | `repo` | sim-expr-tree | 9 |
 | `repo/sim-femm` | `repo` | sim-femm | 21 |
 | `repo/sim-foundation` | `repo` | sim-foundation | 10 |
-| `repo/sim-interference` | `repo` | sim-interference | 7 |
+| `repo/sim-interference` | `repo` | sim-interference | 6 |
 | `repo/sim-kernel` | `repo` | sim-kernel | 3 |
 | `repo/sim-ledger` | `repo` | sim-ledger | 7 |
 | `repo/sim-music` | `repo` | sim-music | 48 |

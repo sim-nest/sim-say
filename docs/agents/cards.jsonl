@@ -128,7 +128,8 @@
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-interference"}
 {"card": {"id": "cookbook/interference-compute", "kind": "cookbook-recipe", "owner": "sim-lib-interference-compute", "summary": "Route certified interference studies through scoped Tensor executors."}, "repo": "sim-interference"}
 {"card": {"id": "cookbook/interference-runtime", "kind": "cookbook-recipe", "owner": "sim-lib-interference-runtime", "summary": "Shape-checked coherent field studies through the loadable CPU solver."}, "repo": "sim-interference"}
-{"card": {"id": "cookbook/sim-interference", "kind": "cookbook-recipe", "owner": "sim-interference", "summary": ""}, "repo": "sim-interference"}
+{"card": {"id": "cookbook/sim-lib-interference-core", "kind": "cookbook-recipe", "owner": "sim-lib-interference-core", "summary": ""}, "repo": "sim-interference"}
+{"card": {"id": "cookbook/sim-lib-interference-solve", "kind": "cookbook-recipe", "owner": "sim-lib-interference-solve", "summary": ""}, "repo": "sim-interference"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-interference"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-kernel"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-kernel"}
