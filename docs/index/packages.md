@@ -227,6 +227,7 @@
 | `crate/sim-lib-view-daw` | `crate` | sim-lib-view-daw |
 | `crate/sim-lib-view-device` | `crate` | sim-lib-view-device |
 | `crate/sim-lib-view-expr-tree` | `crate` | sim-lib-view-expr-tree |
+| `crate/sim-lib-view-interference` | `crate` | sim-lib-view-interference |
 | `crate/sim-lib-view-math` | `crate` | sim-lib-view-math |
 | `crate/sim-lib-view-spatial` | `crate` | sim-lib-view-spatial |
 | `crate/sim-lib-view-wasm-frame` | `crate` | sim-lib-view-wasm-frame |

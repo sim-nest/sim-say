@@ -227,6 +227,7 @@
 | `crate/sim-lib-view-daw` | `crate` | sim-lib-view-daw | 0 |
 | `crate/sim-lib-view-device` | `crate` | sim-lib-view-device | 0 |
 | `crate/sim-lib-view-expr-tree` | `crate` | sim-lib-view-expr-tree | 0 |
+| `crate/sim-lib-view-interference` | `crate` | sim-lib-view-interference | 0 |
 | `crate/sim-lib-view-math` | `crate` | sim-lib-view-math | 0 |
 | `crate/sim-lib-view-spatial` | `crate` | sim-lib-view-spatial | 0 |
 | `crate/sim-lib-view-wasm-frame` | `crate` | sim-lib-view-wasm-frame | 0 |
@@ -462,4 +463,4 @@
 | `repo/sim-stream` | `repo` | sim-stream | 12 |
 | `repo/sim-stream-host` | `repo` | sim-stream-host | 7 |
 | `repo/sim-tooling` | `repo` | sim-tooling | 2 |
-| `repo/sim-web` | `repo` | sim-web | 18 |
+| `repo/sim-web` | `repo` | sim-web | 19 |

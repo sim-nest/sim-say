@@ -1075,6 +1075,7 @@
 {"id":"crate/sim-lib-view-daw","kind":"subject","subject_kind":"crate","title":"sim-lib-view-daw"}
 {"id":"crate/sim-lib-view-device","kind":"subject","subject_kind":"crate","title":"sim-lib-view-device"}
 {"id":"crate/sim-lib-view-expr-tree","kind":"subject","subject_kind":"crate","title":"sim-lib-view-expr-tree"}
+{"id":"crate/sim-lib-view-interference","kind":"subject","subject_kind":"crate","title":"sim-lib-view-interference"}
 {"id":"crate/sim-lib-view-math","kind":"subject","subject_kind":"crate","title":"sim-lib-view-math"}
 {"id":"crate/sim-lib-view-spatial","kind":"subject","subject_kind":"crate","title":"sim-lib-view-spatial"}
 {"id":"crate/sim-lib-view-wasm-frame","kind":"subject","subject_kind":"crate","title":"sim-lib-view-wasm-frame"}
@@ -1699,6 +1700,7 @@
 {"id":"view-edit/sim-lib-view","kind":"surface","subject":"local/sim-web/crate/sim-lib-view","surface_kind":"view-edit"}
 {"id":"view-edit/sim-lib-view-bridge","kind":"surface","subject":"crate/sim-lib-view-bridge","surface_kind":"view-edit"}
 {"id":"view-edit/sim-lib-view-device","kind":"surface","subject":"crate/sim-lib-view-device","surface_kind":"view-edit"}
+{"id":"view-edit/sim-lib-view-interference","kind":"surface","subject":"crate/sim-lib-view-interference","surface_kind":"view-edit"}
 {"id":"view-edit/sim-lib-view-spatial","kind":"surface","subject":"crate/sim-lib-view-spatial","surface_kind":"view-edit"}
 {"id":"view-edit/sim-lib-view-wasm-frame","kind":"surface","subject":"crate/sim-lib-view-wasm-frame","surface_kind":"view-edit"}
 {"id":"view-edit/sim-lib-web-bridge","kind":"surface","subject":"crate/sim-lib-web-bridge","surface_kind":"view-edit"}
@@ -1716,6 +1718,7 @@
 {"id":"view/sim-lib-view-device","kind":"surface","subject":"crate/sim-lib-view-device","surface_kind":"view"}
 {"id":"view/sim-lib-view-doc","kind":"surface","subject":"local/sim-web/crate/sim-lib-view-doc","surface_kind":"view"}
 {"id":"view/sim-lib-view-expr-tree","kind":"surface","subject":"crate/sim-lib-view-expr-tree","surface_kind":"view"}
+{"id":"view/sim-lib-view-interference","kind":"surface","subject":"crate/sim-lib-view-interference","surface_kind":"view"}
 {"id":"view/sim-lib-view-math","kind":"surface","subject":"crate/sim-lib-view-math","surface_kind":"view"}
 {"id":"view/sim-lib-view-spatial","kind":"surface","subject":"crate/sim-lib-view-spatial","surface_kind":"view"}
 {"id":"view/sim-lib-view-wasm-frame","kind":"surface","subject":"crate/sim-lib-view-wasm-frame","surface_kind":"view"}

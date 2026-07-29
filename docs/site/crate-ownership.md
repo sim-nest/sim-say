@@ -287,6 +287,7 @@
 | `sim-lib-view-daw` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-view-device` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-view-doc` | [sim-web](../repos/sim-web.md) |
+| `sim-lib-view-interference` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-view-math` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-view-spatial` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-view-wasm-frame` | [sim-web](../repos/sim-web.md) |

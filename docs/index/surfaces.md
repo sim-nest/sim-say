@@ -180,6 +180,7 @@
 | `view-edit/sim-lib-view` | `view-edit` | `local/sim-web/crate/sim-lib-view` |
 | `view-edit/sim-lib-view-bridge` | `view-edit` | `crate/sim-lib-view-bridge` |
 | `view-edit/sim-lib-view-device` | `view-edit` | `crate/sim-lib-view-device` |
+| `view-edit/sim-lib-view-interference` | `view-edit` | `crate/sim-lib-view-interference` |
 | `view-edit/sim-lib-view-spatial` | `view-edit` | `crate/sim-lib-view-spatial` |
 | `view-edit/sim-lib-view-wasm-frame` | `view-edit` | `crate/sim-lib-view-wasm-frame` |
 | `view-edit/sim-lib-web-bridge` | `view-edit` | `crate/sim-lib-web-bridge` |
@@ -197,6 +198,7 @@
 | `view/sim-lib-view-device` | `view` | `crate/sim-lib-view-device` |
 | `view/sim-lib-view-doc` | `view` | `local/sim-web/crate/sim-lib-view-doc` |
 | `view/sim-lib-view-expr-tree` | `view` | `crate/sim-lib-view-expr-tree` |
+| `view/sim-lib-view-interference` | `view` | `crate/sim-lib-view-interference` |
 | `view/sim-lib-view-math` | `view` | `crate/sim-lib-view-math` |
 | `view/sim-lib-view-spatial` | `view` | `crate/sim-lib-view-spatial` |
 | `view/sim-lib-view-wasm-frame` | `view` | `crate/sim-lib-view-wasm-frame` |
