@@ -63,7 +63,7 @@
 | [`feature/sim-foundation/value-helpers`](features/feature--sim-foundation--value-helpers.md) | `crate/sim-value` | 1 |
 | [`feature/sim-index/core`](features/feature--sim-index--core.md) | `local/sim-tooling/crate/xtask` | 3 |
 | [`feature/sim-index/vault-export`](features/feature--sim-index--vault-export.md) | `local/sim-tooling/crate/xtask` | 1 |
-| [`feature/sim-interference/certified-interference`](features/feature--sim-interference--certified-interference.md) | `crate/sim-lib-interference-runtime` | 4 |
+| [`feature/sim-interference/certified-interference`](features/feature--sim-interference--certified-interference.md) | `local/sim-interference/crate/sim-lib-interference-runtime` | 4 |
 | [`feature/sim-interference/certified-multitone-composition`](features/feature--sim-interference--certified-multitone-composition.md) | `crate/sim-lib-interference-solve` | 2 |
 | [`feature/sim-interference/certified-sampling`](features/feature--sim-interference--certified-sampling.md) | `crate/sim-lib-interference-core` | 5 |
 | [`feature/sim-interference/deterministic-reference-solver`](features/feature--sim-interference--deterministic-reference-solver.md) | `crate/sim-lib-interference-solve` | 2 |
@@ -73,7 +73,7 @@
 | [`feature/sim-interference/quantity-vocabulary`](features/feature--sim-interference--quantity-vocabulary.md) | `crate/sim-lib-interference-core` | 2 |
 | [`feature/sim-interference/resident-compute-studies`](features/feature--sim-interference--resident-compute-studies.md) | `crate/sim-lib-interference-compute` | 7 |
 | [`feature/sim-interference/scalar-wave-model`](features/feature--sim-interference--scalar-wave-model.md) | `crate/sim-lib-interference-core` | 5 |
-| [`feature/sim-interference/tensor-runtime-records`](features/feature--sim-interference--tensor-runtime-records.md) | `crate/sim-lib-interference-runtime` | 1 |
+| [`feature/sim-interference/tensor-runtime-records`](features/feature--sim-interference--tensor-runtime-records.md) | `local/sim-interference/crate/sim-lib-interference-runtime` | 1 |
 | [`feature/sim-kernel/contract-emitter`](features/feature--sim-kernel--contract-emitter.md) | `local/sim-kernel/crate/xtask` | 0 |
 | [`feature/sim-kernel/kernel-contracts`](features/feature--sim-kernel--kernel-contracts.md) | `crate/sim-kernel` | 0 |
 | [`feature/sim-ledger/generated-docs`](features/feature--sim-ledger--generated-docs.md) | `local/sim-ledger/crate/xtask` | 0 |

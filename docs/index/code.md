@@ -121,7 +121,6 @@
 | `crate/sim-lib-index` | `crate` | sim-lib-index | 1 |
 | `crate/sim-lib-interference-compute` | `crate` | sim-lib-interference-compute | 1 |
 | `crate/sim-lib-interference-core` | `crate` | sim-lib-interference-core | 0 |
-| `crate/sim-lib-interference-runtime` | `crate` | sim-lib-interference-runtime | 2 |
 | `crate/sim-lib-interference-solve` | `crate` | sim-lib-interference-solve | 0 |
 | `crate/sim-lib-lang-cl` | `crate` | sim-lib-lang-cl | 1 |
 | `crate/sim-lib-lang-clojure` | `crate` | sim-lib-lang-clojure | 1 |
@@ -216,7 +215,6 @@
 | `crate/sim-lib-stream-midi` | `crate` | sim-lib-stream-midi | 0 |
 | `crate/sim-lib-stream-pipewire` | `crate` | sim-lib-stream-pipewire | 1 |
 | `crate/sim-lib-stream-portaudio` | `crate` | sim-lib-stream-portaudio | 1 |
-| `crate/sim-lib-stream-prelude` | `crate` | sim-lib-stream-prelude | 1 |
 | `crate/sim-lib-stream-viture` | `crate` | sim-lib-stream-viture | 0 |
 | `crate/sim-lib-stream-wristbridge` | `crate` | sim-lib-stream-wristbridge | 0 |
 | `crate/sim-lib-surface-card` | `crate` | sim-lib-surface-card | 0 |
@@ -308,6 +306,7 @@
 | `local/sim-femm/crate/sim-lib-femm-field` | `crate` | sim-lib-femm-field | 1 |
 | `local/sim-femm/crate/xtask` | `crate` | xtask | 0 |
 | `local/sim-foundation/crate/xtask` | `crate` | xtask | 0 |
+| `local/sim-interference/crate/sim-lib-interference-runtime` | `crate` | sim-lib-interference-runtime | 2 |
 | `local/sim-interference/crate/xtask` | `crate` | xtask | 0 |
 | `local/sim-kernel/crate/xtask` | `crate` | xtask | 0 |
 | `local/sim-ledger/crate/xtask` | `crate` | xtask | 0 |
@@ -358,6 +357,7 @@
 | `local/sim-sdk/crate/sim-lib-femm-field` | `crate` | sim-lib-femm-field | 0 |
 | `local/sim-sdk/crate/sim-lib-forge` | `crate` | sim-lib-forge | 0 |
 | `local/sim-sdk/crate/sim-lib-intent` | `crate` | sim-lib-intent | 0 |
+| `local/sim-sdk/crate/sim-lib-interference-runtime` | `crate` | sim-lib-interference-runtime | 0 |
 | `local/sim-sdk/crate/sim-lib-lang-islisp` | `crate` | sim-lib-lang-islisp | 0 |
 | `local/sim-sdk/crate/sim-lib-logic` | `crate` | sim-lib-logic | 0 |
 | `local/sim-sdk/crate/sim-lib-mcp` | `crate` | sim-lib-mcp | 0 |
@@ -393,6 +393,7 @@
 | `local/sim-sdk/crate/sim-lib-stream-clock` | `crate` | sim-lib-stream-clock | 0 |
 | `local/sim-sdk/crate/sim-lib-stream-core` | `crate` | sim-lib-stream-core | 0 |
 | `local/sim-sdk/crate/sim-lib-stream-device` | `crate` | sim-lib-stream-device | 0 |
+| `local/sim-sdk/crate/sim-lib-stream-prelude` | `crate` | sim-lib-stream-prelude | 0 |
 | `local/sim-sdk/crate/sim-lib-stream-wrist` | `crate` | sim-lib-stream-wrist | 0 |
 | `local/sim-sdk/crate/sim-lib-stream-xr` | `crate` | sim-lib-stream-xr | 0 |
 | `local/sim-sdk/crate/sim-lib-topology` | `crate` | sim-lib-topology | 0 |
@@ -427,6 +428,7 @@
 | `local/sim-stream/crate/sim-lib-stream-clock` | `crate` | sim-lib-stream-clock | 0 |
 | `local/sim-stream/crate/sim-lib-stream-core` | `crate` | sim-lib-stream-core | 1 |
 | `local/sim-stream/crate/sim-lib-stream-device` | `crate` | sim-lib-stream-device | 1 |
+| `local/sim-stream/crate/sim-lib-stream-prelude` | `crate` | sim-lib-stream-prelude | 1 |
 | `local/sim-stream/crate/sim-lib-stream-wrist` | `crate` | sim-lib-stream-wrist | 1 |
 | `local/sim-stream/crate/sim-lib-stream-xr` | `crate` | sim-lib-stream-xr | 1 |
 | `local/sim-stream/crate/sim-lib-topology` | `crate` | sim-lib-topology | 1 |
@@ -457,7 +459,7 @@
 | `repo/sim-office` | `repo` | sim-office | 18 |
 | `repo/sim-run` | `repo` | sim-run | 9 |
 | `repo/sim-runtime` | `repo` | sim-runtime | 26 |
-| `repo/sim-sdk` | `repo` | sim-sdk | 71 |
+| `repo/sim-sdk` | `repo` | sim-sdk | 73 |
 | `repo/sim-shape` | `repo` | sim-shape | 5 |
 | `repo/sim-storage` | `repo` | sim-storage | 11 |
 | `repo/sim-stream` | `repo` | sim-stream | 12 |
