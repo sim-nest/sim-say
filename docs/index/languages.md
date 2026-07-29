@@ -424,6 +424,7 @@
 | `specimen` | `lisp` | recipes/glasses/viture-two-rate/recipe.toml |
 | `specimen` | `lisp` | recipes/glasses/voice-site/recipe.toml |
 | `specimen` | `lisp` | recipes/gpu-math/modeled-matrix-ode-femm/recipe.toml |
+| `specimen` | `lisp` | recipes/interference/modeled-study/recipe.toml |
 | `specimen` | `lisp` | recipes/watch/dual-quorum/recipe.toml |
 | `specimen` | `lisp` | recipes/watch/glance-pager/recipe.toml |
 | `specimen` | `lisp` | recipes/watch/hold-last/recipe.toml |
@@ -467,6 +468,7 @@
 | `specimen` | `shape` | crates/sim-conformance/tests/shape_grammar.rs |
 | `specimen` | `shape` | crates/sim-conformance/tests/spec.rs |
 | `specimen` | `shape` | crates/sim-conformance/tests/spec/forge_eval.rs |
+| `specimen` | `shape` | crates/sim-conformance/tests/spec/interference.rs |
 | `specimen` | `shape` | crates/sim-conformance/tests/spec/support.rs |
 | `specimen` | `shape` | crates/sim-lib-agent-runner-local/tests/load_register.rs |
 | `specimen` | `shape` | crates/sim-lib-agent/src/tests/agent_ai_placement_swap.rs |
