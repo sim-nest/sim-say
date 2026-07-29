@@ -114,6 +114,7 @@ fn interpreter_modules_are_served_as_javascript() {
         "/interpreter/app.js",
         "/interpreter/glasses.js",
         "/interpreter/scene.js",
+        "/interpreter/heatmap.js",
         "/interpreter/diff.js",
         "/interpreter/intent.js",
         "/interpreter/keymap.js",
@@ -134,6 +135,10 @@ fn interpreter_module_import_graph_is_served() {
     assert!(
         seen.contains("/interpreter/keymap.js"),
         "scene.js imports keymap.js and the router must serve it"
+    );
+    assert!(
+        seen.contains("/interpreter/heatmap.js"),
+        "scene.js imports heatmap.js and the router must serve it"
     );
     assert!(
         seen.contains("/interpreter/glasses.js"),
@@ -208,10 +213,11 @@ fn install_manifest_and_icons_are_served() {
 fn service_worker_names_shell_assets_only() {
     let js = asset_text("/sw.js");
     for expected in [
-        "sim-web-shell-v1",
+        "sim-web-shell-v2",
         "/index.html",
         "/styles/theme.css",
         "/interpreter/app.js",
+        "/interpreter/heatmap.js",
         "/interpreter/pwa.js",
         "/manifest.webmanifest",
     ] {
