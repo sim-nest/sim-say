@@ -6,7 +6,7 @@
 - Subject: `crate/sim-expr-tree-calc`
 - Canonical key: `crate/sim-expr-tree-calc/feature-sim-expr-tree-incremental-calculation`
 
-Calculate ordinary Expr sources into ordinary Value results through one bounded incremental engine with inherited triggers, directed force modes, immutable authority ceilings, restartable automatic work, standard progress streams, and inspectable receipts.
+Calculate ordinary Expr sources into ordinary Value results through one bounded incremental engine with validated Table-backed restarts, explicit backend refresh, inherited triggers, immutable authority ceilings, restartable automatic work, standard progress streams, and inspectable receipts.
 
 ## Anchors
 
@@ -487,6 +487,10 @@ fn stream_progress_changes_are_bounded_observable_and_cancellable() {
 }
 
 mod receipt;
+
+mod refresh;
+
+mod restart;
 
 mod verification;
 ```
