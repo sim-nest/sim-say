@@ -840,9 +840,9 @@ It owns the finite namespace records for expression-tree storage: path reference
 
 #### sim-lib-expr-tree
 
-`sim-lib-expr-tree` is the loadable runtime library for expression-tree operations.
+`sim-lib-expr-tree` gives any SIM runtime a checked, loadable expression-tree engine.
 
-It gives the expression-tree family a runtime crate where callable exports, library claims, and object-facing behavior can live without moving core records into the kernel. The library is intentionally separate from the server and view crates, so local runtime use can stay small while served and projected surfaces compose it.
+Load one library and receive the stable `expr-tree/*` operation family, per-operation Shapes and Cards, explicit read/write/calculate/mount capabilities, durable source and policy Citizens, bounded receipts, and a standard change stream. The same surface creates finite namespaces, composes mixed storage, calculates dependencies, applies inherited codec policy, and reopens named trees.
 
 #### sim-lib-expr-tree-serve
 
@@ -852,15 +852,15 @@ It is the serving library that product commands can load when expression-tree be
 
 #### sim-lib-expr-tree-server
 
-`sim-lib-expr-tree-server` is the session-oriented server library for expression-tree work.
+`sim-lib-expr-tree-server` gives expression trees a real, loadable, authority-preserving home on SIM's standard server fabric.
 
-It provides the public home for expression-tree server sessions, separate from the core records and the product binary. That boundary lets served state, connection handling, and collaboration flows evolve as loadable behavior while continuing to reuse the same namespace, policy, and calculation crates.
+The crate turns the reusable expression-tree runtime and reversible outline codec into authoritative long-lived sessions. One site answers ordinary `EvalFabric` requests, standard `ServerFrame` requests, checked surface operations, and generic server-backed web-session requests. Sessions have opaque ids, optimistic revisions, logical-time idle expiry, bounded directory continuations, cancellable bounded watches, overflow evidence, and structured errors. Optional injected wall observations make human timestamps useful without making clock rollback a correctness event.
 
 #### sim-lib-view-expr-tree
 
-`sim-lib-view-expr-tree` is the view projection library for expression-tree sessions.
+`sim-lib-view-expr-tree` is a bounded reversible SurfaceCodec for expression-tree sessions.
 
-It owns the SurfaceCodec-facing projection for expression-tree data, so tree sessions can become inspectable views without inventing a separate UI data model. The crate keeps view behavior beside the rest of the expression-tree family and leaves core naming, calculation, runtime exports, and server sessions in their own crates.
+It projects one revisioned expression-tree snapshot into an expandable standard Scene outline and decodes the matching standard Intents back into existing `expr-tree/*` operations. A cell row can expose source and result faces, freshness, revisions, optional human timestamps, policy badges, receipt evidence, and actions without stringifying an unbounded runtime value.
 
 ### sim-femm
 

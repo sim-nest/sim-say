@@ -369,6 +369,8 @@
 {"card": {"id": "citizen/discrete/SparseMatrix", "kind": "citizen-class", "owner": "sim-lib-discrete", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/discrete/SubsetSpace", "kind": "citizen-class", "owner": "sim-lib-discrete", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/doc/Article", "kind": "citizen-class", "owner": "sim-lib-view-doc", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/expr-tree/PolicyRecord", "kind": "citizen-class", "owner": "sim-lib-expr-tree", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/expr-tree/SourceRecord", "kind": "citizen-class", "owner": "sim-lib-expr-tree", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/femm/Field", "kind": "citizen-class", "owner": "sim-lib-femm-codec", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/femm/FuncPayload", "kind": "citizen-class", "owner": "sim-lib-femm-codec", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/femm/Function", "kind": "citizen-class", "owner": "sim-lib-femm-codec", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
