@@ -31,6 +31,7 @@
 | [`feature/sim-compute/femm-resident-solvers`](features/feature--sim-compute--femm-resident-solvers.md) | `crate/sim-lib-compute-femm` | 2 |
 | [`feature/sim-compute/generated-docs`](features/feature--sim-compute--generated-docs.md) | `local/sim-compute/crate/xtask` | 0 |
 | [`feature/sim-compute/tensor-providers`](features/feature--sim-compute--tensor-providers.md) | `crate/sim-lib-compute-model` | 10 |
+| [`feature/sim-construction/change-commercial-exposure`](features/feature--sim-construction--change-commercial-exposure.md) | `crate/sim-lib-construction-project` | 2 |
 | [`feature/sim-construction/dalux-project-items`](features/feature--sim-construction--dalux-project-items.md) | `crate/sim-site-dalux` | 2 |
 | [`feature/sim-construction/design-release-authority-control`](features/feature--sim-construction--design-release-authority-control.md) | `crate/sim-lib-construction-project` | 2 |
 | [`feature/sim-construction/gantt-schedule-impact`](features/feature--sim-construction--gantt-schedule-impact.md) | `crate/sim-lib-construction-project` | 2 |
