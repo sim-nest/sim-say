@@ -33,4 +33,5 @@ Source `crates/sim-lib-expr-tree-server/src/tests.rs`:
 mod conformance;
 mod lifecycle;
 mod support;
+mod web;
 ```

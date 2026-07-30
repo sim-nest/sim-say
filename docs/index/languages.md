@@ -421,6 +421,7 @@
 | `specimen` | `lisp` | crates/sim-web-shell/recipes/01-basics/open-workspace/recipe.toml |
 | `specimen` | `lisp` | recipes/01-basics/boot-runtime/recipe.toml |
 | `specimen` | `lisp` | recipes/01-basics/fake-backend/recipe.toml |
+| `specimen` | `lisp` | recipes/03-server/web-session/recipe.toml |
 | `specimen` | `lisp` | recipes/device/consent/recipe.toml |
 | `specimen` | `lisp` | recipes/device/route-swap/recipe.toml |
 | `specimen` | `lisp` | recipes/device/two-rate/recipe.toml |

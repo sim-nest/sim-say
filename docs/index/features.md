@@ -55,6 +55,7 @@
 | [`feature/sim-expr-tree/finite-namespace`](features/feature--sim-expr-tree--finite-namespace.md) | `crate/sim-expr-tree-core` | 1 |
 | [`feature/sim-expr-tree/incremental-calculation`](features/feature--sim-expr-tree--incremental-calculation.md) | `crate/sim-expr-tree-calc` | 1 |
 | [`feature/sim-expr-tree/mixed-backend-storage`](features/feature--sim-expr-tree--mixed-backend-storage.md) | `crate/sim-expr-tree-core` | 2 |
+| [`feature/sim-expr-tree/server-backed-web-ui`](features/feature--sim-expr-tree--server-backed-web-ui.md) | `crate/sim-lib-expr-tree-server` | 1 |
 | [`feature/sim-femm/femm-domain-stack`](features/feature--sim-femm--femm-domain-stack.md) | `crate/sim-lib-femm-core` | 1 |
 | [`feature/sim-femm/generated-docs`](features/feature--sim-femm--generated-docs.md) | `local/sim-femm/crate/xtask` | 0 |
 | [`feature/sim-femm/linear-solvers`](features/feature--sim-femm--linear-solvers.md) | `crate/sim-lib-femm-solve` | 1 |

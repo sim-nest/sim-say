@@ -188,10 +188,12 @@
 | `view-edit/sim-lib-view-wasm-frame` | `view-edit` | `crate/sim-lib-view-wasm-frame` |
 | `view-edit/sim-lib-web-bridge` | `view-edit` | `crate/sim-lib-web-bridge` |
 | `view-edit/sim-nest` | `view-edit` | `crate/sim-nest` |
+| `view-edit/sim-web-shell` | `view-edit` | `crate/sim-web-shell` |
 | `view-edit/xtask` | `view-edit` | `local/sim-tooling/crate/xtask` |
 | `view/sim-lib-doc-core` | `view` | `crate/sim-lib-doc-core` |
 | `view/sim-lib-doc-markup` | `view` | `crate/sim-lib-doc-markup` |
 | `view/sim-lib-doc-surface` | `view` | `crate/sim-lib-doc-surface` |
+| `view/sim-lib-expr-tree-server` | `view` | `crate/sim-lib-expr-tree-server` |
 | `view/sim-lib-view` | `view` | `local/sim-web/crate/sim-lib-view` |
 | `view/sim-lib-view-agent` | `view` | `crate/sim-lib-view-agent` |
 | `view/sim-lib-view-bay` | `view` | `crate/sim-lib-view-bay` |
