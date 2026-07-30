@@ -72,6 +72,7 @@
 | `sim-lib-compute-rocm` | [sim-compute](../repos/sim-compute.md) |
 | `sim-lib-compute-wgpu` | [sim-compute](../repos/sim-compute.md) |
 | `sim-codec-mspdi` | [sim-construction](../repos/sim-construction.md) |
+| `sim-lib-construction-office` | [sim-construction](../repos/sim-construction.md) |
 | `sim-lib-construction-project` | [sim-construction](../repos/sim-construction.md) |
 | `sim-site-dalux` | [sim-construction](../repos/sim-construction.md) |
 | `sim-site-powerproject` | [sim-construction](../repos/sim-construction.md) |

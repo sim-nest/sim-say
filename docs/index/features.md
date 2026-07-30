@@ -39,6 +39,7 @@
 | [`feature/sim-construction/generated-docs`](features/feature--sim-construction--generated-docs.md) | `local/sim-construction/crate/xtask` | 0 |
 | [`feature/sim-construction/mspdi-schedule-exchange`](features/feature--sim-construction--mspdi-schedule-exchange.md) | `crate/sim-codec-mspdi` | 1 |
 | [`feature/sim-construction/obligation-evidence-exceptions`](features/feature--sim-construction--obligation-evidence-exceptions.md) | `crate/sim-lib-construction-project` | 3 |
+| [`feature/sim-construction/office-evidence-bridge`](features/feature--sim-construction--office-evidence-bridge.md) | `crate/sim-lib-construction-office` | 2 |
 | [`feature/sim-construction/phase-gates`](features/feature--sim-construction--phase-gates.md) | `crate/sim-lib-construction-project` | 5 |
 | [`feature/sim-construction/powerproject-schedule-placement`](features/feature--sim-construction--powerproject-schedule-placement.md) | `crate/sim-site-powerproject` | 1 |
 | [`feature/sim-construction/production-field-control`](features/feature--sim-construction--production-field-control.md) | `crate/sim-lib-construction-project` | 2 |

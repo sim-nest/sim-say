@@ -79,6 +79,7 @@
 | `crate/sim-lib-compute-model` | `crate` | sim-lib-compute-model | 1 |
 | `crate/sim-lib-compute-rocm` | `crate` | sim-lib-compute-rocm | 1 |
 | `crate/sim-lib-compute-wgpu` | `crate` | sim-lib-compute-wgpu | 1 |
+| `crate/sim-lib-construction-office` | `crate` | sim-lib-construction-office | 0 |
 | `crate/sim-lib-construction-project` | `crate` | sim-lib-construction-project | 1 |
 | `crate/sim-lib-core` | `crate` | sim-lib-core | 2 |
 | `crate/sim-lib-deck` | `crate` | sim-lib-deck | 0 |
@@ -447,7 +448,7 @@
 | `repo/sim-citizen` | `repo` | sim-citizen | 5 |
 | `repo/sim-codecs` | `repo` | sim-codecs | 21 |
 | `repo/sim-compute` | `repo` | sim-compute | 9 |
-| `repo/sim-construction` | `repo` | sim-construction | 6 |
+| `repo/sim-construction` | `repo` | sim-construction | 7 |
 | `repo/sim-discrete` | `repo` | sim-discrete | 9 |
 | `repo/sim-expr-tree` | `repo` | sim-expr-tree | 9 |
 | `repo/sim-femm` | `repo` | sim-femm | 21 |

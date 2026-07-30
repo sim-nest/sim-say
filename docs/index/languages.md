@@ -136,6 +136,7 @@
 | `specimen` | `lisp` | crates/sim-lib-compute-model/recipes/01-basics/modeled-resident-matrix/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-compute-rocm/recipes/01-basics/rocm-discovery/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-compute-wgpu/recipes/01-basics/wgpu-discovery/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-construction-office/recipes/01-basics/construction-office-evidence/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/blocked-gate-graph/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/closeout-to-reference-admission/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/control-graph-meets-gantt/recipe.toml |

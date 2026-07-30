@@ -756,6 +756,12 @@ project schedules can cross the Microsoft Project XML boundary with clear loss r
 
 `sim-codec-mspdi` gives construction project-control workflows a file exchange path for local Gantt plans. It reads and writes the schedule pieces people need to inspect first: task ids, names, dates, progress, and dependency links.
 
+#### sim-lib-construction-office
+
+construction evidence becomes reviewable in office documents without losing its authority boundary.
+
+This crate connects a construction control fact to the office document where a team reviews it. The link keeps the exact project, control, fact, document, and source reference together while using the existing office evidence store.
+
 #### sim-lib-construction-project
 
 the construction control spine that keeps project facts tied to evidence.
