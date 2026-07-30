@@ -150,7 +150,7 @@
 {"card": {"id": "cookbook/midi-live", "kind": "cookbook-recipe", "owner": "sim-lib-midi-live", "summary": "Live MIDI session descriptors using in-memory rings."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/midi-rtmidi", "kind": "cookbook-recipe", "owner": "sim-lib-midi-rtmidi", "summary": "RtMidi backend descriptors with virtual and ALSA sequencer ports."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/midi-shapes", "kind": "cookbook-recipe", "owner": "sim-lib-midi-shapes", "summary": "Citizen descriptor shapes for MIDI values."}, "repo": "sim-music"}
-{"card": {"id": "cookbook/midi-smf", "kind": "cookbook-recipe", "owner": "sim-lib-midi-smf", "summary": "Standard MIDI File structure and metadata descriptors."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/midi-smf", "kind": "cookbook-recipe", "owner": "sim-lib-midi-smf", "summary": "Bounded Standard MIDI File parsing, lossless time division, and metadata descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/midi-sysex", "kind": "cookbook-recipe", "owner": "sim-lib-midi-sysex", "summary": "System exclusive message descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/midi-wasm", "kind": "cookbook-recipe", "owner": "sim-lib-midi-wasm-frame", "summary": "Browser-safe MIDI facade descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-analysis", "kind": "cookbook-recipe", "owner": "sim-lib-music-analysis", "summary": "Pitch-class, histogram, and chord-window analysis descriptors."}, "repo": "sim-music"}

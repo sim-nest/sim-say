@@ -253,6 +253,7 @@
 | `specimen` | `lisp` | crates/sim-lib-midi-rtmidi/recipes/01-basics/virtual-port/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-midi-shapes/recipes/01-basics/shape-family/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-midi-smf/recipes/01-basics/file-metadata/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-midi-smf/recipes/01-basics/smpte-timecode/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-midi-smf/recipes/02-export-fixtures/note-echo-frozen-midi/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-midi-smf/recipes/02-export-fixtures/unsupported-export-failure/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-midi-sysex/recipes/01-basics/test-message/recipe.toml |

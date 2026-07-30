@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-midi-core`
 - Canonical key: `crate/sim-lib-midi-core/feature-sim-music-midi-notation-workflows`
 
-Lift, lower, inspect, and export musical material across MIDI files, live MIDI fixtures, and notation forms.
+Lift, lower, inspect, and export musical material across bounded lossless MIDI files, live MIDI fixtures, and notation forms.
 
 ## Anchors
 
@@ -34,6 +34,7 @@ Lift, lower, inspect, and export musical material across MIDI files, live MIDI f
 ## Specimens
 
 - `spec-test/sim-music/crates/sim-lib-midi-core/src/tests`
+- `spec-test/sim-music/crates/sim-lib-midi-smf/src/tests`
 
 ## Worked Example
 
