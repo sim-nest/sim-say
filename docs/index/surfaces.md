@@ -180,6 +180,7 @@
 | `view-edit/sim-lib-view` | `view-edit` | `local/sim-web/crate/sim-lib-view` |
 | `view-edit/sim-lib-view-bridge` | `view-edit` | `crate/sim-lib-view-bridge` |
 | `view-edit/sim-lib-view-device` | `view-edit` | `crate/sim-lib-view-device` |
+| `view-edit/sim-lib-view-expr-tree` | `view-edit` | `crate/sim-lib-view-expr-tree` |
 | `view-edit/sim-lib-view-interference` | `view-edit` | `crate/sim-lib-view-interference` |
 | `view-edit/sim-lib-view-spatial` | `view-edit` | `crate/sim-lib-view-spatial` |
 | `view-edit/sim-lib-view-wasm-frame` | `view-edit` | `crate/sim-lib-view-wasm-frame` |

@@ -398,6 +398,7 @@
 | `specimen` | `lisp` | crates/sim-lib-view-device/recipes/01-basics/device-profile/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-view-doc/recipes/01-basics/article-document/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-view-doc/recipes/01-basics/latex-view-lens/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-view-expr-tree/src/tests/conformance.rs |
 | `specimen` | `lisp` | crates/sim-lib-view-math/recipes/01-basics/heatmap-grid/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-view-math/recipes/01-basics/plot-series/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-view-wasm-frame/recipes/01-basics/host-loop/recipe.toml |
