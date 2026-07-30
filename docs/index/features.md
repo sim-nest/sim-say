@@ -106,6 +106,7 @@
 | [`feature/sim-office/sheet-calculation`](features/feature--sim-office--sheet-calculation.md) | `crate/sim-lib-sheet` | 1 |
 | [`feature/sim-run/bootloader`](features/feature--sim-run--bootloader.md) | `crate/sim-run-core` | 2 |
 | [`feature/sim-run/compute`](features/feature--sim-run--compute.md) | `crate/sim-run` | 1 |
+| [`feature/sim-run/expression-tree-command`](features/feature--sim-run--expression-tree-command.md) | `crate/sim-run` | 1 |
 | [`feature/sim-run/glasses`](features/feature--sim-run--glasses.md) | `crate/sim-run` | 1 |
 | [`feature/sim-run/index`](features/feature--sim-run--index.md) | `local/sim-run/crate/xtask` | 1 |
 | [`feature/sim-run/index-table-dir`](features/feature--sim-run--index-table-dir.md) | `crate/sim-lib-index` | 1 |
