@@ -146,6 +146,7 @@
 | `site/sim-lib-compute-model` | `site` | `crate/sim-lib-compute-model` |
 | `site/sim-lib-compute-rocm` | `site` | `crate/sim-lib-compute-rocm` |
 | `site/sim-lib-compute-wgpu` | `site` | `crate/sim-lib-compute-wgpu` |
+| `site/sim-lib-expr-tree-server` | `site` | `crate/sim-lib-expr-tree-server` |
 | `site/sim-lib-numbers-f64` | `site` | `local/sim-numbers/crate/sim-lib-numbers-f64` |
 | `site/sim-lib-numbers-tensor` | `site` | `local/sim-numbers/crate/sim-lib-numbers-tensor` |
 | `site/sim-lib-stream-cpal` | `site` | `crate/sim-lib-stream-cpal` |
@@ -177,6 +178,7 @@
 | `syntax/ooxml` | `syntax` | `language/ooxml` |
 | `syntax/pratt` | `syntax` | `language/pratt` |
 | `syntax/uds` | `syntax` | `language/uds` |
+| `view-edit/sim-lib-expr-tree-server` | `view-edit` | `crate/sim-lib-expr-tree-server` |
 | `view-edit/sim-lib-view` | `view-edit` | `local/sim-web/crate/sim-lib-view` |
 | `view-edit/sim-lib-view-bridge` | `view-edit` | `crate/sim-lib-view-bridge` |
 | `view-edit/sim-lib-view-device` | `view-edit` | `crate/sim-lib-view-device` |

@@ -98,7 +98,7 @@
 | `crate/sim-lib-exec` | `crate` | sim-lib-exec | 0 |
 | `crate/sim-lib-expr-tree` | `crate` | sim-lib-expr-tree | 1 |
 | `crate/sim-lib-expr-tree-serve` | `crate` | sim-lib-expr-tree-serve | 1 |
-| `crate/sim-lib-expr-tree-server` | `crate` | sim-lib-expr-tree-server | 0 |
+| `crate/sim-lib-expr-tree-server` | `crate` | sim-lib-expr-tree-server | 1 |
 | `crate/sim-lib-femm-assembly` | `crate` | sim-lib-femm-assembly | 0 |
 | `crate/sim-lib-femm-core` | `crate` | sim-lib-femm-core | 1 |
 | `crate/sim-lib-femm-fixtures` | `crate` | sim-lib-femm-fixtures | 0 |
