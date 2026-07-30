@@ -34,6 +34,7 @@
 | [`feature/sim-construction/change-commercial-exposure`](features/feature--sim-construction--change-commercial-exposure.md) | `crate/sim-lib-construction-project` | 2 |
 | [`feature/sim-construction/dalux-project-items`](features/feature--sim-construction--dalux-project-items.md) | `crate/sim-site-dalux` | 2 |
 | [`feature/sim-construction/design-release-authority-control`](features/feature--sim-construction--design-release-authority-control.md) | `crate/sim-lib-construction-project` | 2 |
+| [`feature/sim-construction/final-economy-closeout-reference-admission`](features/feature--sim-construction--final-economy-closeout-reference-admission.md) | `crate/sim-lib-construction-project` | 4 |
 | [`feature/sim-construction/gantt-schedule-impact`](features/feature--sim-construction--gantt-schedule-impact.md) | `crate/sim-lib-construction-project` | 2 |
 | [`feature/sim-construction/generated-docs`](features/feature--sim-construction--generated-docs.md) | `local/sim-construction/crate/xtask` | 0 |
 | [`feature/sim-construction/mspdi-schedule-exchange`](features/feature--sim-construction--mspdi-schedule-exchange.md) | `crate/sim-codec-mspdi` | 1 |
