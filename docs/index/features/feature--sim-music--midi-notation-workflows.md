@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-midi-core`
 - Canonical key: `crate/sim-lib-midi-core/feature-sim-music-midi-notation-workflows`
 
-Lift, lower, inspect, and export musical material across bounded lossless MIDI files, live MIDI fixtures, and notation forms.
+Lift, realize, lower, inspect, and export musical material across bounded lossless MIDI files, exact tempo/pedal/note timelines, live MIDI fixtures, and notation forms.
 
 ## Anchors
 
@@ -35,6 +35,7 @@ Lift, lower, inspect, and export musical material across bounded lossless MIDI f
 
 - `spec-test/sim-music/crates/sim-lib-midi-core/src/tests`
 - `spec-test/sim-music/crates/sim-lib-midi-smf/src/tests`
+- `spec-test/sim-music/crates/sim-lib-music-lift/src/tests`
 
 ## Worked Example
 
@@ -206,6 +207,55 @@ fn unknown_meta_and_sysex_preserve_bytes() {
         SysExEvent::F7 { data } => assert_eq!(data, vec![0x01, 0x02]),
         _ => unreachable!(),
     }
+}
+
+#[test]
+fn tempo_map_converts_ticks_beats_and_piecewise_wall_time_exactly() {
+    let tempo = |ticks, us_per_quarter| MidiEvent {
+        time: TickTime::new(ticks, 480).expect("tick"),
+        origin: synthetic_origin(),
+        payload: MidiPayload::Meta(MetaEvent::Tempo { us_per_quarter }),
+    };
+    let events = [tempo(0, 500_000), tempo(480, 400_000), tempo(480, 250_000)];
+    let map = MidiTempoMap::from_ordered_events(480, &events).expect("tempo map");
+
+    assert_eq!(map.segments().len(), 2);
+    assert_eq!(map.segments()[1].us_per_quarter, 250_000);
+    let tick = TickTime::new(960, 480).expect("tick");
+    assert_eq!(
+        map.beat_for_tick(tick).expect("beat"),
+        MidiBeat::new(2, 1).expect("beat")
+    );
+    assert_eq!(
+        map.tick_for_beat(MidiBeat::new(2, 1).expect("beat"))
+            .expect("tick"),
+        tick
+    );
+    let wall = map.wall_time_for_tick(tick).expect("wall time");
+    assert_eq!((wall.numerator(), wall.denominator()), (3, 4));
+    assert_eq!(map.tick_for_wall_time(wall).expect("tick"), tick);
+}
+
+#[test]
+fn tempo_map_rejects_zero_tempo_unordered_events_and_inexact_ticks() {
+    let event = |ticks, us_per_quarter| MidiEvent {
+        time: TickTime::new(ticks, 480).expect("tick"),
+        origin: synthetic_origin(),
+        payload: MidiPayload::Meta(MetaEvent::Tempo { us_per_quarter }),
+    };
+    assert_eq!(
+        MidiTempoMap::from_ordered_events(480, &[event(0, 0)]),
+        Err(MidiError::ZeroTempo)
+    );
+    assert_eq!(
+        MidiTempoMap::from_ordered_events(480, &[event(10, 500_000), event(9, 400_000)]),
+        Err(MidiError::TempoEventsOutOfOrder)
+    );
+    let map = MidiTempoMap::from_ordered_events(480, std::iter::empty()).expect("map");
+    assert_eq!(
+        map.tick_for_beat(MidiBeat::new(1, 7).expect("beat")),
+        Err(MidiError::InexactTempoTick)
+    );
 }
 
 #[test]
