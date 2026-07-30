@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-construction-project`
 - Canonical key: `crate/sim-lib-construction-project/feature-sim-construction-project-control`
 
-Describe construction phase gate and baseline control through as-of snapshot records, project charter identity, opportunity, bid/no-bid, customer-intent, collaboration charter, append-only fact books, lifecycle vocabulary, baselines, gates, actions, decisions, design/RFI/review/release/permit/authority control, deterministic deltas, governance, capabilities, shared obligations, bounded exceptions, graph-composed blockers, readiness with reference-only evidence, and baseline-aware Gantt schedule impact.
+Describe construction phase gate and baseline control through as-of snapshot records, project charter identity, opportunity, bid/no-bid, customer-intent, collaboration charter, append-only fact books, lifecycle vocabulary, baselines, gates, actions, decisions, field observations/incidents/quality controls, design/RFI/review/release/permit/authority control, deterministic deltas, governance, capabilities, shared obligations, bounded exceptions, graph-composed blockers, readiness with reference-only evidence, and baseline-aware Gantt schedule impact.
 
 ## Anchors
 
@@ -19,6 +19,7 @@ Describe construction phase gate and baseline control through as-of snapshot rec
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/control-graph-meets-gantt`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/customer-intent-to-collaboration`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/design-release-to-production`
+- `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/field-item-to-corrective-evidence`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/late-decision`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/mixed-obligation-gate`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/mobilization-gate`
@@ -28,6 +29,7 @@ Describe construction phase gate and baseline control through as-of snapshot rec
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/work-package-award`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/design_tests`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/fact_book_tests`
+- `spec-test/sim-construction/crates/sim-lib-construction-project/src/field_control_tests`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/opportunity_tests`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/procurement_tests`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/production_plan_tests`

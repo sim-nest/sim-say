@@ -6,7 +6,7 @@
 - Subject: `crate/sim-site-dalux`
 - Canonical key: `crate/sim-site-dalux/feature-sim-construction-dalux-project-items`
 
-Read Dalux project items into local office documents for construction evidence and keep note updates narrow.
+Read Dalux project items into local office documents through ledgered site effects, expose URL-free item correlations, and keep writes limited to notes.
 
 ## Anchors
 
