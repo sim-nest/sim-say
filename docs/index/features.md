@@ -48,6 +48,7 @@
 | [`feature/sim-construction/supplier-production-handoff`](features/feature--sim-construction--supplier-production-handoff.md) | `crate/sim-lib-construction-project` | 2 |
 | [`feature/sim-construction/sustainability-reference-outcomes`](features/feature--sim-construction--sustainability-reference-outcomes.md) | `crate/sim-lib-construction-project` | 2 |
 | [`feature/sim-construction/system-handover-commissioning-acceptance`](features/feature--sim-construction--system-handover-commissioning-acceptance.md) | `crate/sim-lib-construction-project` | 3 |
+| [`feature/sim-construction/table-backed-project-books`](features/feature--sim-construction--table-backed-project-books.md) | `crate/sim-lib-construction-project` | 1 |
 | [`feature/sim-construction/work-package-procurement-awards`](features/feature--sim-construction--work-package-procurement-awards.md) | `crate/sim-lib-construction-project` | 2 |
 | [`feature/sim-discrete/bounded-search`](features/feature--sim-discrete--bounded-search.md) | `crate/sim-lib-discrete-search` | 1 |
 | [`feature/sim-discrete/discrete-algebra`](features/feature--sim-discrete--discrete-algebra.md) | `local/sim-discrete/crate/sim-lib-discrete` | 1 |
