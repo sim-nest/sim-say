@@ -79,7 +79,7 @@
 | `crate/sim-lib-compute-model` | `crate` | sim-lib-compute-model | 1 |
 | `crate/sim-lib-compute-rocm` | `crate` | sim-lib-compute-rocm | 1 |
 | `crate/sim-lib-compute-wgpu` | `crate` | sim-lib-compute-wgpu | 1 |
-| `crate/sim-lib-construction-project` | `crate` | sim-lib-construction-project | 0 |
+| `crate/sim-lib-construction-project` | `crate` | sim-lib-construction-project | 1 |
 | `crate/sim-lib-core` | `crate` | sim-lib-core | 2 |
 | `crate/sim-lib-deck` | `crate` | sim-lib-deck | 0 |
 | `crate/sim-lib-discrete-algebra` | `crate` | sim-lib-discrete-algebra | 0 |

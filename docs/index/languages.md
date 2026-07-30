@@ -144,6 +144,7 @@
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/field-item-to-corrective-evidence/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/instruction-to-final-settlement/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/late-decision/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/loadable-project-control/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/mixed-obligation-gate/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/mobilization-gate/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-construction-project/recipes/01-basics/project-charter/recipe.toml |
@@ -492,6 +493,7 @@
 | `specimen` | `shape` | crates/sim-lib-compute-cuda/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-compute-rocm/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-compute-wgpu/src/tests.rs |
+| `specimen` | `shape` | crates/sim-lib-construction-project/src/citizen.rs |
 | `specimen` | `shape` | crates/sim-lib-construction-project/src/outcome_tests.rs |
 | `specimen` | `shape` | crates/sim-lib-discrete/src/forms.rs |
 | `specimen` | `shape` | crates/sim-lib-incremental/src/tests.rs |
