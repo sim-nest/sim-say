@@ -48,6 +48,7 @@
 | `crate/sim-codec-uds` | `crate` | sim-codec-uds | 1 |
 | `crate/sim-config` | `crate` | sim-config | 0 |
 | `crate/sim-conformance` | `crate` | sim-conformance | 0 |
+| `crate/sim-construction` | `crate` | sim-construction | 0 |
 | `crate/sim-cookbook` | `crate` | sim-cookbook | 0 |
 | `crate/sim-expr-tree` | `crate` | sim-expr-tree | 0 |
 | `crate/sim-expr-tree-calc` | `crate` | sim-expr-tree-calc | 0 |
@@ -448,7 +449,7 @@
 | `repo/sim-citizen` | `repo` | sim-citizen | 5 |
 | `repo/sim-codecs` | `repo` | sim-codecs | 21 |
 | `repo/sim-compute` | `repo` | sim-compute | 9 |
-| `repo/sim-construction` | `repo` | sim-construction | 7 |
+| `repo/sim-construction` | `repo` | sim-construction | 8 |
 | `repo/sim-discrete` | `repo` | sim-discrete | 9 |
 | `repo/sim-expr-tree` | `repo` | sim-expr-tree | 9 |
 | `repo/sim-femm` | `repo` | sim-femm | 21 |

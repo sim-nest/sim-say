@@ -48,6 +48,7 @@
 | `crate/sim-codec-uds` | `crate` | sim-codec-uds |
 | `crate/sim-config` | `crate` | sim-config |
 | `crate/sim-conformance` | `crate` | sim-conformance |
+| `crate/sim-construction` | `crate` | sim-construction |
 | `crate/sim-cookbook` | `crate` | sim-cookbook |
 | `crate/sim-expr-tree` | `crate` | sim-expr-tree |
 | `crate/sim-expr-tree-calc` | `crate` | sim-expr-tree-calc |

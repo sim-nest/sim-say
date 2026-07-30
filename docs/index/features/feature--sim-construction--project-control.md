@@ -28,6 +28,7 @@ Load complete construction project control as semantic Citizens, checked Shapes,
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/sustainability-to-reference-evidence`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/what-changed`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/work-package-award`
+- `recipe/sim-construction/reference-project-control`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/design_tests`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/fact_book_tests`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/field_control_tests`

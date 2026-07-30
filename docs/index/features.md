@@ -45,7 +45,7 @@
 | [`feature/sim-construction/powerproject-schedule-placement`](features/feature--sim-construction--powerproject-schedule-placement.md) | `crate/sim-site-powerproject` | 1 |
 | [`feature/sim-construction/production-field-control`](features/feature--sim-construction--production-field-control.md) | `crate/sim-lib-construction-project` | 2 |
 | [`feature/sim-construction/production-lookahead-readiness`](features/feature--sim-construction--production-lookahead-readiness.md) | `crate/sim-lib-construction-project` | 2 |
-| [`feature/sim-construction/project-control`](features/feature--sim-construction--project-control.md) | `crate/sim-lib-construction-project` | 21 |
+| [`feature/sim-construction/project-control`](features/feature--sim-construction--project-control.md) | `crate/sim-lib-construction-project` | 22 |
 | [`feature/sim-construction/risk-opportunity-forecast-escalation`](features/feature--sim-construction--risk-opportunity-forecast-escalation.md) | `crate/sim-lib-construction-project` | 4 |
 | [`feature/sim-construction/supplier-production-handoff`](features/feature--sim-construction--supplier-production-handoff.md) | `crate/sim-lib-construction-project` | 2 |
 | [`feature/sim-construction/sustainability-reference-outcomes`](features/feature--sim-construction--sustainability-reference-outcomes.md) | `crate/sim-lib-construction-project` | 2 |
