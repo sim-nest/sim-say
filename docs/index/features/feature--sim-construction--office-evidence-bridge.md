@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-construction-office`
 - Canonical key: `crate/sim-lib-construction-office/feature-sim-construction-office-evidence-bridge`
 
-Attach project-scoped construction fact evidence to existing office documents while preserving precise construction meaning, visibility, and acceptance.
+The office evidence construction bridge attaches project-scoped fact evidence to existing office documents while preserving precise construction meaning, visibility, and acceptance.
 
 ## Anchors
 
