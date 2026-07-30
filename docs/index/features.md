@@ -14,6 +14,7 @@
 | [`feature/sim-agent-net/mcp-server`](features/feature--sim-agent-net--mcp-server.md) | `local/sim-agent-net/crate/sim-lib-mcp` | 1 |
 | [`feature/sim-agent-net/model-runner-framework`](features/feature--sim-agent-net--model-runner-framework.md) | `local/sim-agent-net/crate/sim-lib-agent-runner-core` | 2 |
 | [`feature/sim-agent-net/output-contract-repair-cli`](features/feature--sim-agent-net--output-contract-repair-cli.md) | `crate/sim-lib-agent-runner-core-recipe-output-contract-repair` | 1 |
+| [`feature/sim-agent-net/server-wall-clock`](features/feature--sim-agent-net--server-wall-clock.md) | `local/sim-agent-net/crate/sim-lib-server` | 1 |
 | [`feature/sim-audio-daw/audio-device-providers`](features/feature--sim-audio-daw--audio-device-providers.md) | `crate/sim-lib-stream-cpal` | 1 |
 | [`feature/sim-audio-daw/audio-graph-workbench`](features/feature--sim-audio-daw--audio-graph-workbench.md) | `local/sim-audio-daw/crate/sim-lib-audio-graph-core` | 1 |
 | [`feature/sim-audio-daw/generated-docs`](features/feature--sim-audio-daw--generated-docs.md) | `local/sim-audio-daw/crate/xtask` | 0 |
