@@ -48,6 +48,7 @@
 | [`feature/sim-discrete/finite-enumeration`](features/feature--sim-discrete--finite-enumeration.md) | `crate/sim-lib-discrete-comb` | 1 |
 | [`feature/sim-discrete/generated-docs`](features/feature--sim-discrete--generated-docs.md) | `local/sim-discrete/crate/xtask` | 0 |
 | [`feature/sim-expr-tree/codec-policy`](features/feature--sim-expr-tree--codec-policy.md) | `crate/sim-expr-tree-calc` | 2 |
+| [`feature/sim-expr-tree/expression-tree`](features/feature--sim-expr-tree--expression-tree.md) | `crate/sim-lib-expr-tree` | 3 |
 | [`feature/sim-expr-tree/finite-namespace`](features/feature--sim-expr-tree--finite-namespace.md) | `crate/sim-expr-tree-core` | 1 |
 | [`feature/sim-expr-tree/incremental-calculation`](features/feature--sim-expr-tree--incremental-calculation.md) | `crate/sim-expr-tree-calc` | 1 |
 | [`feature/sim-expr-tree/mixed-backend-storage`](features/feature--sim-expr-tree--mixed-backend-storage.md) | `crate/sim-expr-tree-core` | 2 |

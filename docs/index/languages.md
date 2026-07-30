@@ -176,6 +176,9 @@
 | `specimen` | `lisp` | crates/sim-lib-doc-store/recipes/01-basics/evidence-fact-graph/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-doc-surface/recipes/01-basics/suite-surface-descriptor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-exec/recipes/01-basics/bounded-process/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-expr-tree/recipes/01-basics/finite-tree/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-expr-tree/recipes/02-calculation/automatic-and-directed/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-expr-tree/src/tests.rs |
 | `specimen` | `lisp` | crates/sim-lib-femm-assembly/recipes/01-basics/local-stiffness/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-femm-codec/recipes/01-basics/solution-descriptor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-femm-core/recipes/01-basics/model-limits/recipe.toml |
