@@ -66,6 +66,8 @@
 | `specimen` | `lisp` | crates/sim-codec-ooxml/recipes/01-basics/pptx-round-trip/recipe.toml |
 | `specimen` | `lisp` | crates/sim-codec-ooxml/recipes/01-basics/xlsx-round-trip/recipe.toml |
 | `specimen` | `lisp` | crates/sim-codec/recipes/01-basics/positions-and-limits/recipe.toml |
+| `specimen` | `lisp` | crates/sim-expr-tree-calc/src/tests.rs |
+| `specimen` | `lisp` | crates/sim-expr-tree-core/src/tests.rs |
 | `specimen` | `lisp` | crates/sim-ledger/recipes/01-basics/balanced-year/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-agent-runner-core/recipes/01-basics/fake-runner-descriptor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-agent-runner-http/recipes/01-basics/anthropic-config-probe-use/recipe.toml |
