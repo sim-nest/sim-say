@@ -169,6 +169,7 @@
 | `specimen` | `lisp` | crates/sim-lib-discrete-algebra/recipes/01-basics/semiring-matrix/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-comb/recipes/01-basics/finite-enumeration/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-comb/recipes/01-basics/rankable-values/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-discrete-graph/recipes/01-basics/min-cost-assignment/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-graph/recipes/01-basics/tiny-graph/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-rank/recipes/01-basics/combination-space/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-search/recipes/01-basics/constrained-word/recipe.toml |
@@ -283,6 +284,7 @@
 | `specimen` | `lisp` | crates/sim-lib-music-synth/recipes/streaming/modular-local-stream/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-synth/recipes/system55/synthetic-voice/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-synth/recipes/system700/synthetic-main-console/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-music-transform/recipes/01-basics/optimal-voice-leading/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-transform/recipes/01-basics/sequence-transform/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-wasm-frame/recipes/01-basics/browser-facade/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-mutation/recipes/01-basics/mutable-state/recipe.toml |

@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-music-analysis`
 - Canonical key: `crate/sim-lib-music-analysis/feature-sim-music-exact-music-analysis-and-transform`
 
-Convert exact score forms with loss and identity evidence, analyze pitch and chord views, and transform exact sequences with audited articulation, register, rhythm, and pitch operations.
+Convert exact score forms with loss and identity evidence, find certified voice-leading paths, and transform exact progressions with audited articulation, register, rhythm, and pitch operations.
 
 ## Anchors
 

@@ -79,13 +79,13 @@
 {"card": {"id": "cookbook/discrete", "kind": "cookbook-recipe", "owner": "sim-lib-discrete", "summary": "Runtime-facing discrete matrix, graph, and transform descriptors."}, "repo": "sim-discrete"}
 {"card": {"id": "cookbook/discrete-algebra", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-algebra", "summary": "Small semiring and matrix-view descriptors."}, "repo": "sim-discrete"}
 {"card": {"id": "cookbook/discrete-comb", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-comb", "summary": "Combination and permutation descriptors."}, "repo": "sim-discrete"}
-{"card": {"id": "cookbook/discrete-graph", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-graph", "summary": "Graph, edge, traversal, and certificate descriptors."}, "repo": "sim-discrete"}
+{"card": {"id": "cookbook/discrete-graph", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-graph", "summary": "Graph, edge, traversal, assignment, and certificate descriptors."}, "repo": "sim-discrete"}
 {"card": {"id": "cookbook/discrete-rank", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-rank", "summary": "Rank-space descriptors for discrete objects."}, "repo": "sim-discrete"}
 {"card": {"id": "cookbook/discrete-search", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-search", "summary": "Bounded deterministic search recipes."}, "repo": "sim-discrete"}
 {"card": {"id": "cookbook/discrete-spectral", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-spectral", "summary": "FWHT, Walsh signature, and spectral descriptor examples."}, "repo": "sim-discrete"}
 {"card": {"id": "discrete/algebra", "kind": "static-card", "owner": "workspace", "summary": "Semiring matrices, powers, and Kleene closure (the spine)."}, "repo": "sim-discrete"}
 {"card": {"id": "discrete/combinatorics", "kind": "static-card", "owner": "workspace", "summary": "Exact counts, lazy enumerators, and canonical ordinals."}, "repo": "sim-discrete"}
-{"card": {"id": "discrete/graph", "kind": "static-card", "owner": "workspace", "summary": "Graphs, MST, shortest paths, and certificates."}, "repo": "sim-discrete"}
+{"card": {"id": "discrete/graph", "kind": "static-card", "owner": "workspace", "summary": "Graphs, assignment, MST, shortest paths, and certificates."}, "repo": "sim-discrete"}
 {"card": {"id": "discrete/music-adapter", "kind": "static-card", "owner": "workspace", "summary": "FWHT-based melody analysis (consumes the spectral atlas)."}, "repo": "sim-discrete"}
 {"card": {"id": "discrete/rank", "kind": "static-card", "owner": "workspace", "summary": "Finite rank spaces, metrics, and invariant grade compilers."}, "repo": "sim-discrete"}
 {"card": {"id": "discrete/spectral", "kind": "static-card", "owner": "workspace", "summary": "FWHT, XOR/subset convolution, and Walsh signatures."}, "repo": "sim-discrete"}
@@ -160,7 +160,7 @@
 {"card": {"id": "cookbook/music-lower", "kind": "cookbook-recipe", "owner": "sim-lib-music-lower", "summary": "Lowering descriptors from scores to MIDI-like tracks."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-notation", "kind": "cookbook-recipe", "owner": "sim-lib-music-notation", "summary": "Notation import and export descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-shapes", "kind": "cookbook-recipe", "owner": "sim-lib-music-shapes", "summary": "Citizen descriptor shapes for music objects."}, "repo": "sim-music"}
-{"card": {"id": "cookbook/music-transform", "kind": "cookbook-recipe", "owner": "sim-lib-music-transform", "summary": "Pure music transformation descriptors."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/music-transform", "kind": "cookbook-recipe", "owner": "sim-lib-music-transform", "summary": "Exact music transformation and voice-leading descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-wasm", "kind": "cookbook-recipe", "owner": "sim-lib-music-wasm-frame", "summary": "Browser-safe music facade descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-chord", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-chord", "summary": "Chord spelling and quality descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-core", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-core", "summary": "Pitch values, names, MIDI notes, and frequency descriptors."}, "repo": "sim-music"}
