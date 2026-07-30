@@ -41,14 +41,14 @@
       "group": "workspace",
       "manifest": "crates/sim-lib-expr-tree-server/Cargo.toml",
       "package": "sim-lib-expr-tree-server",
-      "summary": "Server composition scaffold for expression trees."
+      "summary": "Authoritative expression-tree sessions over SIM's standard server surfaces."
     },
     {
       "crate_name": "sim_lib_view_expr_tree",
       "group": "workspace",
       "manifest": "crates/sim-lib-view-expr-tree/Cargo.toml",
       "package": "sim-lib-view-expr-tree",
-      "summary": "View library scaffold for expression trees."
+      "summary": "Bounded, reversible expression-tree outline over SIM's standard view stack."
     },
     {
       "crate_name": "xtask",

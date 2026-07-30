@@ -14,6 +14,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `feature/sim-agent-net/mcp-server` | `local/sim-agent-net/crate/sim-lib-mcp` | [features/feature--sim-agent-net--mcp-server.md](../index/features/feature--sim-agent-net--mcp-server.md) | 1 | Serve MCP requests through the loaded sim-lib-mcp command and runtime libraries. |
 | `feature/sim-agent-net/model-runner-framework` | `local/sim-agent-net/crate/sim-lib-agent-runner-core` | [features/feature--sim-agent-net--model-runner-framework.md](../index/features/feature--sim-agent-net--model-runner-framework.md) | 2 | Run local GenAI requests through provider-neutral runner contracts, HTTP profiles, process adapters, and loadable model sites. |
 | `feature/sim-agent-net/output-contract-repair-cli` | `crate/sim-lib-agent-runner-core-recipe-output-contract-repair` | [features/feature--sim-agent-net--output-contract-repair-cli.md](../index/features/feature--sim-agent-net--output-contract-repair-cli.md) | 1 | Repair model output contracts with the checked runner-core fixture command. |
+| `feature/sim-agent-net/server-wall-clock` | `local/sim-agent-net/crate/sim-lib-server` | [features/feature--sim-agent-net--server-wall-clock.md](../index/features/feature--sim-agent-net--server-wall-clock.md) | 1 | Observe a validated wall clock timestamp in Unix milliseconds through one injectable server contract. |
 | `feature/sim-audio-daw/audio-device-providers` | `crate/sim-lib-stream-cpal` | [features/feature--sim-audio-daw--audio-device-providers.md](../index/features/feature--sim-audio-daw--audio-device-providers.md) | 1 | Model host audio devices and load JACK, cpal, PipeWire, ALSA, ASIO, CoreAudio, and PortAudio provider paths. |
 | `feature/sim-audio-daw/audio-graph-workbench` | `local/sim-audio-daw/crate/sim-lib-audio-graph-core` | [features/feature--sim-audio-daw--audio-graph-workbench.md](../index/features/feature--sim-audio-daw--audio-graph-workbench.md) | 1 | Compose offline and live audio graph descriptors with DSP and gain-plugin examples. |
 | `feature/sim-audio-daw/generated-docs` | `local/sim-audio-daw/crate/xtask` | [features/feature--sim-audio-daw--generated-docs.md](../index/features/feature--sim-audio-daw--generated-docs.md) | 0 | Publish generated package, card, recipe, and index facts for the audio and plugin crates. |
@@ -49,9 +50,13 @@ Generated from `docs/index/index.cards.jsonl`.
 | `feature/sim-discrete/generated-docs` | `local/sim-discrete/crate/xtask` | [features/feature--sim-discrete--generated-docs.md](../index/features/feature--sim-discrete--generated-docs.md) | 0 | Publish generated package, card, rustdoc, and index facts for the discrete algebra crates. |
 | `feature/sim-expr-tree/codec-policy` | `crate/sim-expr-tree-calc` | [features/feature--sim-expr-tree--codec-policy.md](../index/features/feature--sim-expr-tree--codec-policy.md) | 2 | Decode edited source and encode source/result faces through installed codecs with field-wise tree/directory/cell policy, explicit positions, trusted diminished read policy, and independent hard-clamped byte/depth/item budgets. |
 | `feature/sim-expr-tree/expression-tree` | `crate/sim-lib-expr-tree` | [features/feature--sim-expr-tree--expression-tree.md](../index/features/feature--sim-expr-tree--expression-tree.md) | 3 | Build finite named source trees over mixed Table/Dir storage and calculate them through a capability-gated runtime library with Shape and Card contracts, durable Citizens, bounded receipts, and standard streams. |
+| `feature/sim-expr-tree/expression-tree-product` | `crate/sim-lib-expr-tree-serve` | [features/feature--sim-expr-tree--expression-tree-product.md](../index/features/feature--sim-expr-tree--expression-tree-product.md) | 2 | Run the expression-tree engine, reversible view, authoritative server, and generic web host as one loadable recipe dispatched by the standard SIM bootloader. |
+| `feature/sim-expr-tree/expression-tree-server` | `crate/sim-lib-expr-tree-server` | [features/feature--sim-expr-tree--expression-tree-server.md](../index/features/feature--sim-expr-tree--expression-tree-server.md) | 1 | Serve bounded opaque expression tree sessions through one loadable EvalSite and EvalFabric, preserving caller authority, optimistic revisions, logical-time lifecycle policy, reversible surface operations, structured errors, and backpressured watches. |
+| `feature/sim-expr-tree/expression-tree-view` | `crate/sim-lib-view-expr-tree` | [features/feature--sim-expr-tree--expression-tree-view.md](../index/features/feature--sim-expr-tree--expression-tree-view.md) | 1 | Project revisioned expression-tree snapshots into a Mathematica-like expandable Scene and decode standard Intents back into capability-declared expression-tree operations. |
 | `feature/sim-expr-tree/finite-namespace` | `crate/sim-expr-tree-core` | [features/feature--sim-expr-tree--finite-namespace.md](../index/features/feature--sim-expr-tree--finite-namespace.md) | 1 | Model backend-neutral expression-tree identities, finite parent/name entries, source stamps, inherited policy patches, and crash-safe generated-name reservations. |
 | `feature/sim-expr-tree/incremental-calculation` | `crate/sim-expr-tree-calc` | [features/feature--sim-expr-tree--incremental-calculation.md](../index/features/feature--sim-expr-tree--incremental-calculation.md) | 1 | Calculate ordinary Expr sources into ordinary Value results through one bounded incremental engine with validated Table-backed restarts, explicit backend refresh, inherited triggers, immutable authority ceilings, restartable automatic work, standard progress streams, and inspectable receipts. |
 | `feature/sim-expr-tree/mixed-backend-storage` | `crate/sim-expr-tree-core` | [features/feature--sim-expr-tree--mixed-backend-storage.md](../index/features/feature--sim-expr-tree--mixed-backend-storage.md) | 2 | Compose authored source, operational control, versioned rebuildable derived graphs, and explicit Table/Dir mounts without flattening mounted backend behavior. |
+| `feature/sim-expr-tree/server-backed-web-ui` | `crate/sim-lib-expr-tree-server` | [features/feature--sim-expr-tree--server-backed-web-ui.md](../index/features/feature--sim-expr-tree--server-backed-web-ui.md) | 1 | Compose the expression-tree SurfaceCodec and authoritative server site with RemoteTransport, isolated generic browser sessions, and desktop or phone Scene projections. |
 | `feature/sim-femm/femm-domain-stack` | `crate/sim-lib-femm-core` | [features/feature--sim-femm--femm-domain-stack.md](../index/features/feature--sim-femm--femm-domain-stack.md) | 1 | Collect finite-element mesh, field, material, geometry, solve, post-processing, and ODE helpers into one code-facing domain feature. |
 | `feature/sim-femm/generated-docs` | `local/sim-femm/crate/xtask` | [features/feature--sim-femm--generated-docs.md](../index/features/feature--sim-femm--generated-docs.md) | 0 | Publish generated package, card, rustdoc, and index facts for the FEMM domain crates. |
 | `feature/sim-femm/linear-solvers` | `crate/sim-lib-femm-solve` | [features/feature--sim-femm--linear-solvers.md](../index/features/feature--sim-femm--linear-solvers.md) | 1 | Provide FEMM linear solver contracts, opaque LinearFactor handles, dense fallback, iterative CG and BiCGSTAB kernels, and solve certificates. |
@@ -297,6 +302,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `site/sim-lib-compute-model` | `site` | `crate/sim-lib-compute-model` |
 | `site/sim-lib-compute-rocm` | `site` | `crate/sim-lib-compute-rocm` |
 | `site/sim-lib-compute-wgpu` | `site` | `crate/sim-lib-compute-wgpu` |
+| `site/sim-lib-expr-tree-server` | `site` | `crate/sim-lib-expr-tree-server` |
 | `site/sim-lib-numbers-f64` | `site` | `local/sim-numbers/crate/sim-lib-numbers-f64` |
 | `site/sim-lib-numbers-tensor` | `site` | `local/sim-numbers/crate/sim-lib-numbers-tensor` |
 | `site/sim-lib-stream-cpal` | `site` | `crate/sim-lib-stream-cpal` |
@@ -328,18 +334,22 @@ Generated from `docs/index/index.cards.jsonl`.
 | `syntax/ooxml` | `syntax` | `language/ooxml` |
 | `syntax/pratt` | `syntax` | `language/pratt` |
 | `syntax/uds` | `syntax` | `language/uds` |
+| `view-edit/sim-lib-expr-tree-server` | `view-edit` | `crate/sim-lib-expr-tree-server` |
 | `view-edit/sim-lib-view` | `view-edit` | `local/sim-web/crate/sim-lib-view` |
 | `view-edit/sim-lib-view-bridge` | `view-edit` | `crate/sim-lib-view-bridge` |
 | `view-edit/sim-lib-view-device` | `view-edit` | `crate/sim-lib-view-device` |
+| `view-edit/sim-lib-view-expr-tree` | `view-edit` | `crate/sim-lib-view-expr-tree` |
 | `view-edit/sim-lib-view-interference` | `view-edit` | `crate/sim-lib-view-interference` |
 | `view-edit/sim-lib-view-spatial` | `view-edit` | `crate/sim-lib-view-spatial` |
 | `view-edit/sim-lib-view-wasm-frame` | `view-edit` | `crate/sim-lib-view-wasm-frame` |
 | `view-edit/sim-lib-web-bridge` | `view-edit` | `crate/sim-lib-web-bridge` |
 | `view-edit/sim-nest` | `view-edit` | `crate/sim-nest` |
+| `view-edit/sim-web-shell` | `view-edit` | `crate/sim-web-shell` |
 | `view-edit/xtask` | `view-edit` | `local/sim-tooling/crate/xtask` |
 | `view/sim-lib-doc-core` | `view` | `crate/sim-lib-doc-core` |
 | `view/sim-lib-doc-markup` | `view` | `crate/sim-lib-doc-markup` |
 | `view/sim-lib-doc-surface` | `view` | `crate/sim-lib-doc-surface` |
+| `view/sim-lib-expr-tree-server` | `view` | `crate/sim-lib-expr-tree-server` |
 | `view/sim-lib-view` | `view` | `local/sim-web/crate/sim-lib-view` |
 | `view/sim-lib-view-agent` | `view` | `crate/sim-lib-view-agent` |
 | `view/sim-lib-view-bay` | `view` | `crate/sim-lib-view-bay` |
