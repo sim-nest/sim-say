@@ -474,6 +474,7 @@
 | `specimen` | `shape` | crates/sim-citizen/src/tests.rs |
 | `specimen` | `shape` | crates/sim-conformance/tests/shape_grammar.rs |
 | `specimen` | `shape` | crates/sim-conformance/tests/spec.rs |
+| `specimen` | `shape` | crates/sim-conformance/tests/spec/expr_tree.rs |
 | `specimen` | `shape` | crates/sim-conformance/tests/spec/forge_eval.rs |
 | `specimen` | `shape` | crates/sim-conformance/tests/spec/interference.rs |
 | `specimen` | `shape` | crates/sim-conformance/tests/spec/support.rs |

@@ -96,7 +96,6 @@
 | `crate/sim-lib-doc-store` | `crate` | sim-lib-doc-store |
 | `crate/sim-lib-doc-surface` | `crate` | sim-lib-doc-surface |
 | `crate/sim-lib-exec` | `crate` | sim-lib-exec |
-| `crate/sim-lib-expr-tree` | `crate` | sim-lib-expr-tree |
 | `crate/sim-lib-expr-tree-serve` | `crate` | sim-lib-expr-tree-serve |
 | `crate/sim-lib-expr-tree-server` | `crate` | sim-lib-expr-tree-server |
 | `crate/sim-lib-femm-assembly` | `crate` | sim-lib-femm-assembly |
@@ -301,6 +300,7 @@
 | `local/sim-construction/crate/xtask` | `crate` | xtask |
 | `local/sim-discrete/crate/sim-lib-discrete` | `crate` | sim-lib-discrete |
 | `local/sim-discrete/crate/xtask` | `crate` | xtask |
+| `local/sim-expr-tree/crate/sim-lib-expr-tree` | `crate` | sim-lib-expr-tree |
 | `local/sim-expr-tree/crate/xtask` | `crate` | xtask |
 | `local/sim-femm/crate/sim-lib-femm-codec` | `crate` | sim-lib-femm-codec |
 | `local/sim-femm/crate/sim-lib-femm-field` | `crate` | sim-lib-femm-field |
@@ -353,6 +353,7 @@
 | `local/sim-sdk/crate/sim-lib-cookbook` | `crate` | sim-lib-cookbook |
 | `local/sim-sdk/crate/sim-lib-daw-session` | `crate` | sim-lib-daw-session |
 | `local/sim-sdk/crate/sim-lib-discrete` | `crate` | sim-lib-discrete |
+| `local/sim-sdk/crate/sim-lib-expr-tree` | `crate` | sim-lib-expr-tree |
 | `local/sim-sdk/crate/sim-lib-femm-codec` | `crate` | sim-lib-femm-codec |
 | `local/sim-sdk/crate/sim-lib-femm-field` | `crate` | sim-lib-femm-field |
 | `local/sim-sdk/crate/sim-lib-forge` | `crate` | sim-lib-forge |

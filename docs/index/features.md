@@ -49,7 +49,7 @@
 | [`feature/sim-discrete/finite-enumeration`](features/feature--sim-discrete--finite-enumeration.md) | `crate/sim-lib-discrete-comb` | 1 |
 | [`feature/sim-discrete/generated-docs`](features/feature--sim-discrete--generated-docs.md) | `local/sim-discrete/crate/xtask` | 0 |
 | [`feature/sim-expr-tree/codec-policy`](features/feature--sim-expr-tree--codec-policy.md) | `crate/sim-expr-tree-calc` | 2 |
-| [`feature/sim-expr-tree/expression-tree`](features/feature--sim-expr-tree--expression-tree.md) | `crate/sim-lib-expr-tree` | 3 |
+| [`feature/sim-expr-tree/expression-tree`](features/feature--sim-expr-tree--expression-tree.md) | `local/sim-expr-tree/crate/sim-lib-expr-tree` | 3 |
 | [`feature/sim-expr-tree/expression-tree-product`](features/feature--sim-expr-tree--expression-tree-product.md) | `crate/sim-lib-expr-tree-serve` | 2 |
 | [`feature/sim-expr-tree/expression-tree-server`](features/feature--sim-expr-tree--expression-tree-server.md) | `crate/sim-lib-expr-tree-server` | 1 |
 | [`feature/sim-expr-tree/expression-tree-view`](features/feature--sim-expr-tree--expression-tree-view.md) | `crate/sim-lib-view-expr-tree` | 1 |
@@ -126,6 +126,7 @@
 | [`feature/sim-runtime/organs`](features/feature--sim-runtime--organs.md) | `crate/sim-lib-binding` | 2 |
 | [`feature/sim-sdk/conformance-contract`](features/feature--sim-sdk--conformance-contract.md) | `crate/sim-conformance` | 1 |
 | [`feature/sim-sdk/device-recipes`](features/feature--sim-sdk--device-recipes.md) | `crate/sim-nest` | 1 |
+| [`feature/sim-sdk/expression-tree-composition`](features/feature--sim-sdk--expression-tree-composition.md) | `crate/sim-nest` | 1 |
 | [`feature/sim-sdk/facade-codecs`](features/feature--sim-sdk--facade-codecs.md) | `crate/sim-nest` | 0 |
 | [`feature/sim-sdk/facade-model-workflows`](features/feature--sim-sdk--facade-model-workflows.md) | `crate/sim-nest` | 0 |
 | [`feature/sim-sdk/facade-runtime`](features/feature--sim-sdk--facade-runtime.md) | `crate/sim-nest` | 1 |

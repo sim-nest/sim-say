@@ -96,7 +96,6 @@
 | `crate/sim-lib-doc-store` | `crate` | sim-lib-doc-store | 0 |
 | `crate/sim-lib-doc-surface` | `crate` | sim-lib-doc-surface | 0 |
 | `crate/sim-lib-exec` | `crate` | sim-lib-exec | 0 |
-| `crate/sim-lib-expr-tree` | `crate` | sim-lib-expr-tree | 1 |
 | `crate/sim-lib-expr-tree-serve` | `crate` | sim-lib-expr-tree-serve | 1 |
 | `crate/sim-lib-expr-tree-server` | `crate` | sim-lib-expr-tree-server | 1 |
 | `crate/sim-lib-femm-assembly` | `crate` | sim-lib-femm-assembly | 0 |
@@ -301,6 +300,7 @@
 | `local/sim-construction/crate/xtask` | `crate` | xtask | 0 |
 | `local/sim-discrete/crate/sim-lib-discrete` | `crate` | sim-lib-discrete | 1 |
 | `local/sim-discrete/crate/xtask` | `crate` | xtask | 0 |
+| `local/sim-expr-tree/crate/sim-lib-expr-tree` | `crate` | sim-lib-expr-tree | 1 |
 | `local/sim-expr-tree/crate/xtask` | `crate` | xtask | 0 |
 | `local/sim-femm/crate/sim-lib-femm-codec` | `crate` | sim-lib-femm-codec | 0 |
 | `local/sim-femm/crate/sim-lib-femm-field` | `crate` | sim-lib-femm-field | 1 |
@@ -353,6 +353,7 @@
 | `local/sim-sdk/crate/sim-lib-cookbook` | `crate` | sim-lib-cookbook | 0 |
 | `local/sim-sdk/crate/sim-lib-daw-session` | `crate` | sim-lib-daw-session | 0 |
 | `local/sim-sdk/crate/sim-lib-discrete` | `crate` | sim-lib-discrete | 0 |
+| `local/sim-sdk/crate/sim-lib-expr-tree` | `crate` | sim-lib-expr-tree | 0 |
 | `local/sim-sdk/crate/sim-lib-femm-codec` | `crate` | sim-lib-femm-codec | 0 |
 | `local/sim-sdk/crate/sim-lib-femm-field` | `crate` | sim-lib-femm-field | 0 |
 | `local/sim-sdk/crate/sim-lib-forge` | `crate` | sim-lib-forge | 0 |
@@ -459,7 +460,7 @@
 | `repo/sim-office` | `repo` | sim-office | 18 |
 | `repo/sim-run` | `repo` | sim-run | 9 |
 | `repo/sim-runtime` | `repo` | sim-runtime | 26 |
-| `repo/sim-sdk` | `repo` | sim-sdk | 73 |
+| `repo/sim-sdk` | `repo` | sim-sdk | 74 |
 | `repo/sim-shape` | `repo` | sim-shape | 5 |
 | `repo/sim-storage` | `repo` | sim-storage | 11 |
 | `repo/sim-stream` | `repo` | sim-stream | 12 |
