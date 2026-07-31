@@ -24,6 +24,7 @@
 | `crate/auto-site-vida` | `crate` | auto-site-vida | 0 |
 | `crate/auto-site-xentry` | `crate` | auto-site-xentry | 0 |
 | `crate/citizen-roundtrip` | `crate` | citizen-roundtrip | 0 |
+| `crate/music-algorithm-foundry` | `crate` | music-algorithm-foundry | 1 |
 | `crate/sim-auto` | `crate` | sim-auto | 1 |
 | `crate/sim-citizen` | `crate` | sim-citizen | 2 |
 | `crate/sim-citizen-derive` | `crate` | sim-citizen-derive | 0 |
@@ -143,7 +144,7 @@
 | `crate/sim-lib-midi-smf` | `crate` | sim-lib-midi-smf | 0 |
 | `crate/sim-lib-midi-sysex` | `crate` | sim-lib-midi-sysex | 0 |
 | `crate/sim-lib-midi-wasm-frame` | `crate` | sim-lib-midi-wasm-frame | 0 |
-| `crate/sim-lib-music-analysis` | `crate` | sim-lib-music-analysis | 0 |
+| `crate/sim-lib-music-analysis` | `crate` | sim-lib-music-analysis | 1 |
 | `crate/sim-lib-music-combinators` | `crate` | sim-lib-music-combinators | 0 |
 | `crate/sim-lib-music-consonance` | `crate` | sim-lib-music-consonance | 1 |
 | `crate/sim-lib-music-core` | `crate` | sim-lib-music-core | 0 |
@@ -237,6 +238,7 @@
 | `crate/sim-lib-web-bridge` | `crate` | sim-lib-web-bridge | 0 |
 | `crate/sim-macros` | `crate` | sim-macros | 0 |
 | `crate/sim-mcp-server` | `crate` | sim-mcp-server | 0 |
+| `crate/sim-music` | `crate` | sim-music | 0 |
 | `crate/sim-nest` | `crate` | sim-nest | 5 |
 | `crate/sim-run` | `crate` | sim-run | 6 |
 | `crate/sim-run-core` | `crate` | sim-run-core | 0 |
@@ -460,7 +462,7 @@
 | `repo/sim-interference` | `repo` | sim-interference | 6 |
 | `repo/sim-kernel` | `repo` | sim-kernel | 3 |
 | `repo/sim-ledger` | `repo` | sim-ledger | 7 |
-| `repo/sim-music` | `repo` | sim-music | 50 |
+| `repo/sim-music` | `repo` | sim-music | 52 |
 | `repo/sim-numbers` | `repo` | sim-numbers | 35 |
 | `repo/sim-office` | `repo` | sim-office | 18 |
 | `repo/sim-run` | `repo` | sim-run | 9 |

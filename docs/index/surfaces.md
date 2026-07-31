@@ -30,6 +30,7 @@
 | `cli/glasses` | `cli` | `crate/sim-run` |
 | `cli/index` | `cli` | `crate/sim-lib-index` |
 | `cli/mcp` | `cli` | `local/sim-agent-net/crate/sim-lib-mcp` |
+| `cli/music-algorithm-foundry` | `cli` | `crate/music-algorithm-foundry` |
 | `cli/repl` | `cli` | `crate/sim-lib-repl` |
 | `cli/serve` | `cli` | `crate/sim-web-shell` |
 | `cli/sim-auto` | `cli` | `crate/sim-auto` |

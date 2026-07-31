@@ -24,6 +24,7 @@
 | `crate/auto-site-vida` | `crate` | auto-site-vida |
 | `crate/auto-site-xentry` | `crate` | auto-site-xentry |
 | `crate/citizen-roundtrip` | `crate` | citizen-roundtrip |
+| `crate/music-algorithm-foundry` | `crate` | music-algorithm-foundry |
 | `crate/sim-auto` | `crate` | sim-auto |
 | `crate/sim-citizen` | `crate` | sim-citizen |
 | `crate/sim-citizen-derive` | `crate` | sim-citizen-derive |
@@ -237,6 +238,7 @@
 | `crate/sim-lib-web-bridge` | `crate` | sim-lib-web-bridge |
 | `crate/sim-macros` | `crate` | sim-macros |
 | `crate/sim-mcp-server` | `crate` | sim-mcp-server |
+| `crate/sim-music` | `crate` | sim-music |
 | `crate/sim-nest` | `crate` | sim-nest |
 | `crate/sim-run` | `crate` | sim-run |
 | `crate/sim-run-core` | `crate` | sim-run-core |
