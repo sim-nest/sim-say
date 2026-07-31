@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-pitch-chord`
 - Canonical key: `crate/sim-lib-pitch-chord/feature-sim-music-declarative-harmony`
 
-Load chord palettes, cadence-template algebra, hard legality, weighted musical preferences, voicing changes, and render settings as inspectable expression data.
+Load chord palettes, cadence-template algebra, hard legality, declared and learned weighted preferences, voicing changes, and render settings as inspectable expression data.
 
 ## Anchors
 
@@ -24,6 +24,7 @@ Load chord palettes, cadence-template algebra, hard legality, weighted musical p
 ## Specimens
 
 - `spec-test/sim-music/crates/sim-lib-pitch-chord/src/harmony_conformance`
+- `spec-test/sim-music/crates/sim-lib-pitch-chord/src/harmony_markov_tests`
 
 ## Worked Example
 

@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-numbers-core`
 - Canonical key: `crate/sim-lib-numbers-core/feature-sim-numbers-numbers`
 
-Provide arithmetic, exact, floating, symbolic, tensor, and statistics number domains as loadable libraries.
+Provide arithmetic, exact, floating, symbolic, tensor, and inspectable statistics domains as loadable libraries.
 
 ## Anchors
 
@@ -73,262 +73,95 @@ Provide arithmetic, exact, floating, symbolic, tensor, and statistics number dom
 
 ## Specimens
 
+- `spec-test/sim-numbers/crates/sim-lib-numbers-stats/src/markov_tests`
 - `spec-test/sim-numbers/crates/sim-lib-numbers-tensor/src/implementation/citizen`
 
 ## Worked Example
 
-Specimen `spec-test/sim-numbers/crates/sim-lib-numbers-tensor/src/implementation/citizen` is checked by `cargo test`.
+Specimen `spec-test/sim-numbers/crates/sim-lib-numbers-stats/src/markov_tests` is checked by `cargo test`.
 
-Source `crates/sim-lib-numbers-tensor/src/implementation/citizen.rs`:
+Source `crates/sim-lib-numbers-stats/src/markov_tests.rs`:
 
 ```rust
-//! The tensor value class as a runtime citizen: its class registration and the
-//! read-constructor that reconstructs tensor values from encoded form.
+use super::markov::*;
 
-use std::sync::Arc;
-use std::sync::atomic::{AtomicU32, Ordering};
+// conformance: generic finite transition estimation, evidence, and serialization.
 
-use sim_citizen::{arity_error, decode_version};
-use sim_kernel::{
-    Args, Callable, Class, ClassId, ClassRef, Cx, DefaultFactory, Error, Expr, Factory, Linker,
-    Object, ReadConstructor, ReadConstructorRef, Result, ShapeRef, Symbol, TableRef, Value,
-    force_list_to_vec,
-};
-use sim_lib_numbers_core::domains;
+const FIXTURE: &[u8] = include_bytes!("../fixtures/generated-weather-transitions.tsv");
 
-use super::{dimension::extract_dims, domain::number_domain, value::build_tensor_value};
-
-/// The symbol naming the tensor value class (`numbers/Tensor`) under which
-/// tensor values register and reconstruct.
-pub fn tensor_value_class_symbol() -> Symbol {
-    domains::tensor_value_class()
-}
-
-fn value_shape_symbol() -> Symbol {
-    sim_lib_numbers_core::value_shape_symbol(&number_domain())
-}
-
-struct TensorValueClass {
-    id: AtomicU32,
-}
-
-impl TensorValueClass {
-    fn new() -> Self {
-        Self {
-            id: AtomicU32::new(0),
-        }
-    }
-
-    fn set_id(&self, id: ClassId) {
-        self.id.store(id.0, Ordering::Relaxed);
-    }
-}
-
-impl Object for TensorValueClass {
-    fn display(&self, _cx: &mut Cx) -> Result<String> {
-        Ok(format!("#<class {}>", tensor_value_class_symbol()))
-    }
-
-    fn as_any(&self) -> &dyn std::any::Any {
-        self
-    }
-}
-
-impl sim_kernel::ObjectCompat for TensorValueClass {
-    fn class(&self, cx: &mut Cx) -> Result<ClassRef> {
-        if let Some(value) = cx
-            .registry()
-            .class_by_symbol(&Symbol::qualified("core", "Class"))
-        {
-            return Ok(value.clone());
-        }
-        DefaultFactory.class_stub(
-            sim_kernel::CORE_CLASS_CLASS_ID,
-            Symbol::qualified("core", "Class"),
-        )
-    }
-
-    fn as_expr(&self, _cx: &mut Cx) -> Result<Expr> {
-        Ok(Expr::Symbol(tensor_value_class_symbol()))
-    }
-
-    fn as_callable(&self) -> Option<&dyn Callable> {
-        Some(self)
-    }
-
-    fn as_class(&self) -> Option<&dyn Class> {
-        Some(self)
-    }
-
-    fn as_read_constructor(&self) -> Option<&dyn ReadConstructor> {
-        Some(self)
-    }
-}
-
-impl Callable for TensorValueClass {
-    fn call(&self, cx: &mut Cx, args: Args) -> Result<Value> {
-        let values = args.into_vec();
-        let [version, shape, data, domain] = values.as_slice() else {
-            return Err(arity_error(tensor_value_class_symbol(), 4, values.len()));
-        };
-        decode_version(cx, version.clone(), 1, tensor_value_class_symbol())?;
-        let shape = extract_dims(cx, shape, "numbers/Tensor shape")?;
-        let data = decode_data(cx, data)?;
-        let domain = decode_domain(cx, domain)?;
-        if domain == number_domain() {
-            return Err(Error::Eval(
-                "numbers/Tensor domain field must name a scalar number domain".to_owned(),
-            ));
-        }
-        build_tensor_value(cx, shape, Some(domain), data)
-    }
-}
-
-impl Class for TensorValueClass {
-    fn id(&self) -> ClassId {
-        ClassId(self.id.load(Ordering::Relaxed))
-    }
-
-    fn symbol(&self) -> Symbol {
-        tensor_value_class_symbol()
-    }
-
-    fn constructor_shape(&self, cx: &mut Cx) -> Result<ShapeRef> {
-        cx.factory().nil()
-    }
-
-    fn instance_shape(&self, cx: &mut Cx) -> Result<ShapeRef> {
-        Ok(cx
-            .registry()
-            .shape_by_symbol(&value_shape_symbol())
-            .cloned()
-            .unwrap_or(cx.factory().symbol(value_shape_symbol())?))
-    }
-
-    fn read_constructor(&self, cx: &mut Cx) -> Result<Option<ReadConstructorRef>> {
-        Ok(cx
-            .registry()
-            .class_by_symbol(&tensor_value_class_symbol())
-            .cloned())
-    }
-
-    fn members(&self, cx: &mut Cx) -> Result<TableRef> {
-        cx.factory().table(vec![
-            (
-                Symbol::new("version"),
-                cx.factory()
-                    .number_literal(Symbol::qualified("citizen", "int"), "1".to_owned())?,
-            ),
-            (
-                Symbol::new("fields"),
-                cx.factory().list(vec![
-                    cx.factory().symbol(Symbol::new("shape"))?,
-                    cx.factory().symbol(Symbol::new("data"))?,
-                    cx.factory().symbol(Symbol::new("domain"))?,
-                ])?,
-            ),
-        ])
-    }
-}
-
-impl ReadConstructor for TensorValueClass {
-    fn symbol(&self) -> Symbol {
-        tensor_value_class_symbol()
-    }
-
-    fn args_shape(&self, cx: &mut Cx) -> Result<ShapeRef> {
-        cx.factory().nil()
-    }
-
-    fn construct_read(&self, cx: &mut Cx, args: Vec<Value>) -> Result<Value> {
-        if args.len() != 4 {
-            return Err(arity_error(tensor_value_class_symbol(), 4, args.len()));
-        }
-        self.call(cx, Args::new(args))
-    }
-}
-
-fn decode_data(cx: &mut Cx, value: &Value) -> Result<Vec<Value>> {
-    let list = value
-        .object()
-        .as_list()
-        .ok_or_else(|| Error::Eval("numbers/Tensor data field must be a list".to_owned()))?;
-    force_list_to_vec(cx, list, "numbers/Tensor data")
-}
-
-fn decode_domain(cx: &mut Cx, value: &Value) -> Result<Symbol> {
-    match value.object().as_expr(cx)? {
-        Expr::Symbol(symbol) => Ok(symbol),
-        _ => Err(Error::Eval(
-            "numbers/Tensor domain field must be a symbol".to_owned(),
-        )),
-    }
-}
-
-pub(crate) fn register_tensor_value_class(linker: &mut Linker<'_>) -> Result<()> {
-    let class = Arc::new(TensorValueClass::new());
-    let id = linker.class_value(
-        tensor_value_class_symbol(),
-        DefaultFactory
-            .opaque(class.clone())
-            .expect("tensor value class should be boxable"),
-    )?;
-    class.set_id(id);
-    Ok(())
-}
-
-fn install_tensor_value_citizen(linker: &mut Linker<'_>) -> Result<()> {
-    register_tensor_value_class(linker)
-}
-
-fn conformance_tensor_value_citizen(cx: &mut Cx) -> Result<()> {
-    let dtype = domains::i64();
-    let value = build_tensor_value(
-        cx,
-        vec![2],
-        Some(dtype.clone()),
-        vec![i64_cell("1")?, i64_cell("2")?],
-    )?;
-    sim_citizen::check_value_fixture_with_wrong_version(
-        cx,
-        value,
-        Some(vec![
-            Expr::Symbol(Symbol::new("v999")),
-            Expr::List(vec![int_expr("2")]),
-            Expr::List(vec![
-                Expr::Number(sim_kernel::NumberLiteral {
-                    domain: dtype.clone(),
-                    canonical: "1".to_owned(),
-                }),
-                Expr::Number(sim_kernel::NumberLiteral {
-                    domain: dtype.clone(),
-                    canonical: "2".to_owned(),
-                }),
-            ]),
-            Expr::Symbol(dtype),
-        ]),
+fn policy(held_out_sequences: usize) -> MarkovPolicy {
+    let provenance = CorpusProvenance::from_bytes(
+        "generated-weather-transitions-v1",
+        "deterministic synthetic finite-state fixture",
+        "CC0-1.0",
+        FIXTURE,
     )
+    .unwrap();
+    assert_eq!(provenance.content_hash, "fnv1a64:cfa3c26f7c8d57a0");
+    MarkovPolicy::new(1.0, held_out_sequences, provenance).unwrap()
 }
 
-fn i64_cell(canonical: &str) -> Result<Value> {
-    DefaultFactory.number_literal(domains::i64(), canonical.to_owned())
+#[test]
+fn finite_non_music_model_is_smoothed_and_scores_holdout() {
+    let sequences = vec![
+        vec!["sun", "rain", "sun"],
+        vec!["sun", "sun", "rain"],
+        vec!["rain", "sun", "rain"],
+    ];
+    let report = fit_markov(&sequences, policy(1)).unwrap();
+
+    assert_eq!(report.training_sequences, 2);
+    assert_eq!(report.held_out_sequences, 1);
+    assert_eq!(report.model.transition_count(&"sun", &"rain").unwrap(), 2);
+    assert_eq!(report.model.transition_count(&"rain", &"rain").unwrap(), 0);
+    assert_eq!(report.held_out_score.unwrap().transitions, 2);
+    assert!(report.held_out_score.unwrap().perplexity.is_finite());
 }
 
-fn int_expr(canonical: &str) -> Expr {
-    Expr::Number(sim_kernel::NumberLiteral {
-        domain: Symbol::qualified("citizen", "int"),
-        canonical: canonical.to_owned(),
-    })
+#[test]
+fn stable_serialization_retains_policy_provenance_and_counts() {
+    let report = fit_markov(
+        &[vec!["sun", "rain", "sun"], vec!["rain", "sun", "rain"]],
+        policy(1),
+    )
+    .unwrap();
+    let first = report
+        .model
+        .to_stable_text(|state| (*state).to_owned())
+        .unwrap();
+    let second = report
+        .model
+        .to_stable_text(|state| (*state).to_owned())
+        .unwrap();
+
+    assert_eq!(first, second);
+    assert!(first.starts_with("SIM-MARKOV-1\n"));
+    assert!(first.contains("corpus-license=4343302d312e30"));
+    assert!(first.contains("transition=0:1:"));
 }
 
-sim_citizen::inventory::submit! {
-    sim_citizen::CitizenInfo {
-        symbol: "numbers/Tensor",
-        version: 1,
-        crate_name: env!("CARGO_PKG_NAME"),
-        arity: 3,
-        install: install_tensor_value_citizen,
-        conformance: conformance_tensor_value_citizen,
-    }
+#[test]
+fn invalid_holdout_and_unknown_states_fail_closed() {
+    let sequences = vec![vec!["sun", "rain"]];
+    assert!(matches!(
+        fit_markov(&sequences, policy(1)),
+        Err(MarkovError::InvalidHoldout { .. })
+    ));
+    assert!(matches!(
+        fit_markov(&[vec!["sun", "rain"], vec!["sun", "snow"]], policy(1)),
+        Err(MarkovError::UnknownState {
+            sequence: 0,
+            position: 1
+        })
+    ));
+
+    let model = fit_markov(&sequences, policy(0)).unwrap().model;
+    assert!(matches!(
+        model.score(&[vec!["sun", "snow"]]),
+        Err(MarkovError::UnknownState {
+            sequence: 0,
+            position: 1
+        })
+    ));
 }
 ```

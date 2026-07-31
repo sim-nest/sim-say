@@ -321,6 +321,7 @@
 | `specimen` | `lisp` | crates/sim-lib-numbers-rational/recipes/01-basics/rational-constructor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-rk/recipes/01-basics/rk-method/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-stats/recipes/01-basics/fairness-claim/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-numbers-stats/recipes/01-basics/finite-markov-report/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-stats/recipes/01-basics/stats-helpers/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-stats/recipes/30-agents/a30-010-data-analysis/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-stats/recipes/30-agents/a30-024-healthcare-intelligence/recipe.toml |
@@ -342,6 +343,7 @@
 | `specimen` | `lisp` | crates/sim-lib-openai-server/recipes/01-basics/fixture-chat/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pattern/recipes/01-basics/match-destructure/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-chord/recipes/01-basics/declarative-harmony-program/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-pitch-chord/recipes/01-basics/learned-transition-score/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-chord/recipes/01-basics/major-triad/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-core/recipes/01-basics/octave-space/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-core/recipes/01-basics/pitch-value/recipe.toml |
