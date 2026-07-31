@@ -101,6 +101,7 @@
 | [`feature/sim-music/generated-docs`](features/feature--sim-music--generated-docs.md) | `local/sim-music/crate/xtask` | 0 |
 | [`feature/sim-music/midi-notation-workflows`](features/feature--sim-music--midi-notation-workflows.md) | `crate/sim-lib-midi-core` | 4 |
 | [`feature/sim-music/pitch-and-sound-vocabulary`](features/feature--sim-music--pitch-and-sound-vocabulary.md) | `crate/sim-lib-pitch-core` | 1 |
+| [`feature/sim-music/reversible-consonance-completion`](features/feature--sim-music--reversible-consonance-completion.md) | `crate/sim-lib-music-consonance` | 1 |
 | [`feature/sim-music/synth-performance-workbench`](features/feature--sim-music--synth-performance-workbench.md) | `local/sim-music/crate/sim-lib-music-synth` | 1 |
 | [`feature/sim-numbers/generated-docs`](features/feature--sim-numbers--generated-docs.md) | `local/sim-numbers/crate/xtask` | 0 |
 | [`feature/sim-numbers/numbers`](features/feature--sim-numbers--numbers.md) | `crate/sim-lib-numbers-core` | 1 |
