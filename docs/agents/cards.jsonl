@@ -155,6 +155,7 @@
 {"card": {"id": "cookbook/midi-wasm", "kind": "cookbook-recipe", "owner": "sim-lib-midi-wasm-frame", "summary": "Browser-safe MIDI facade descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-analysis", "kind": "cookbook-recipe", "owner": "sim-lib-music-analysis", "summary": "Pitch-class, histogram, and chord-window analysis descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-combinators", "kind": "cookbook-recipe", "owner": "sim-lib-music-combinators", "summary": "Sequence, parallel, repeat, and transform combinator descriptors."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/music-consonance", "kind": "cookbook-recipe", "owner": "sim-lib-music-consonance", "summary": "Identity-bearing sounding windows with separate consonance metrics."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-core", "kind": "cookbook-recipe", "owner": "sim-lib-music-core", "summary": "Score, melody, note, and duration descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-lift", "kind": "cookbook-recipe", "owner": "sim-lib-music-lift", "summary": "Lifting descriptors from MIDI-style tracks into music objects."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-lower", "kind": "cookbook-recipe", "owner": "sim-lib-music-lower", "summary": "Lowering descriptors from scores to MIDI-like tracks."}, "repo": "sim-music"}

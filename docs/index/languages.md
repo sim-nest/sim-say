@@ -264,6 +264,7 @@
 | `specimen` | `lisp` | crates/sim-lib-music-combinators/recipes/02-player-recipes/beat-map-gm-smf/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-combinators/recipes/02-player-recipes/keyboard-scales-dual-arp/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-combinators/recipes/02-player-recipes/polystep-quad-note-seeded/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-music-consonance/recipes/01-basics/exact-score-consonance/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-core/recipes/01-basics/melody-note/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-core/recipes/02-golden-fixtures/captured-take-direct-record/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-core/recipes/02-golden-fixtures/lfo-player-instrument-params/recipe.toml |

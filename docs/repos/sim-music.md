@@ -1,6 +1,6 @@
 # sim-music
 
-Published commit: `2c0f7e0ecba66a8575168e407e551d3af8fd16d5`.
+Published commit: `05925994cf27d7472f7b4299157e7058070d3ba3`.
 
 ## Crates
 
@@ -16,6 +16,7 @@ Published commit: `2c0f7e0ecba66a8575168e407e551d3af8fd16d5`.
 - `sim-lib-midi-wasm-frame`
 - `sim-lib-music-analysis`
 - `sim-lib-music-combinators`
+- `sim-lib-music-consonance`
 - `sim-lib-music-core`
 - `sim-lib-music-lift`
 - `sim-lib-music-lower`

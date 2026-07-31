@@ -139,6 +139,7 @@
 | `sim-lib-midi-wasm-frame` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-analysis` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-combinators` | [sim-music](../repos/sim-music.md) |
+| `sim-lib-music-consonance` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-core` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-lift` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-lower` | [sim-music](../repos/sim-music.md) |

@@ -145,6 +145,7 @@
 | `crate/sim-lib-midi-wasm-frame` | `crate` | sim-lib-midi-wasm-frame |
 | `crate/sim-lib-music-analysis` | `crate` | sim-lib-music-analysis |
 | `crate/sim-lib-music-combinators` | `crate` | sim-lib-music-combinators |
+| `crate/sim-lib-music-consonance` | `crate` | sim-lib-music-consonance |
 | `crate/sim-lib-music-core` | `crate` | sim-lib-music-core |
 | `crate/sim-lib-music-lift` | `crate` | sim-lib-music-lift |
 | `crate/sim-lib-music-lower` | `crate` | sim-lib-music-lower |
