@@ -1,6 +1,6 @@
 # sim-run
 
-Published commit: `d87503ca24d7b611b1cc5945e2b408501039b228`.
+Published commit: `4deb64416b066b19d9fe9baa6deed817a597a9dc`.
 
 ## Crates
 

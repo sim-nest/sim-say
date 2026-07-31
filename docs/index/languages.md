@@ -260,6 +260,7 @@
 | `specimen` | `lisp` | crates/sim-lib-midi-sysex/recipes/01-basics/test-message/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-midi-wasm-frame/recipes/01-basics/browser-facade/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-analysis/recipes/01-basics/pitch-histogram/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-music-combinators/recipes/01-basics/declarative-harmony-evidence/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-combinators/recipes/01-basics/sequence-tools/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-combinators/recipes/02-player-recipes/bassline-chord-sup/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-combinators/recipes/02-player-recipes/beat-map-gm-smf/recipe.toml |
@@ -339,6 +340,7 @@
 | `specimen` | `lisp` | crates/sim-lib-numbers-tensor/recipes/01-basics/tensor-scale/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-openai-server/recipes/01-basics/fixture-chat/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pattern/recipes/01-basics/match-destructure/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-pitch-chord/recipes/01-basics/declarative-harmony-program/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-chord/recipes/01-basics/major-triad/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-core/recipes/01-basics/octave-space/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-core/recipes/01-basics/pitch-value/recipe.toml |
