@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-sound-spectrum`
 - Canonical key: `crate/sim-lib-sound-spectrum/feature-sim-music-sound-spectrum-adapter`
 
-Retain physical frequency, amplitude, provenance, and sound descriptors while delegating PCM transform math to the generic numbers-signal real FFT.
+Retain physical frequency, amplitude, PCM/STFT provenance, and sound descriptors while delegating transform math to the generic numbers-signal real FFT.
 
 ## Anchors
 
@@ -95,5 +95,39 @@ fn pcm_sine_peak_is_near_expected_bin() {
     let spectrum = Spectrum::from_pcm(&samples, sample_rate, window);
     let peak = spectrum.peaks(1)[0].0;
     assert!((peak.0 - frequency).abs() <= f64::from(sample_rate) / window as f64);
+}
+
+#[test]
+fn stft_projection_retains_provenance_and_summary_apis() {
+    let bins = [(0.0, 0.0), (0.25, -0.5), (0.0, 0.125)];
+    let spectrum = Spectrum::from_stft_bins(&bins, 8_000, 4, -2).unwrap();
+    assert_eq!(
+        spectrum.source,
+        SpectrumSource::FromStft {
+            frame_size: 4,
+            sample_rate: 8_000,
+            onset_sample: -2,
+        }
+    );
+    assert_eq!(spectrum.peaks(1)[0].0, Frequency(2_000.0));
+    assert!(spectrum.centroid().0.is_finite());
+    assert!(spectrum.flatness().is_finite());
+    assert!(spectrum.rolloff(0.85).0.is_finite());
+    assert_eq!(Spectrum::flux(&spectrum, &spectrum), 0.0);
+}
+
+#[test]
+fn stft_projection_rejects_inconsistent_or_non_finite_frames() {
+    assert_eq!(
+        Spectrum::from_stft_bins(&[(0.0, 0.0)], 8_000, 4, 0),
+        Err(SpectrumError::BinCount {
+            expected: 3,
+            actual: 1,
+        })
+    );
+    assert_eq!(
+        Spectrum::from_stft_bins(&[(0.0, 0.0), (f64::NAN, 0.0)], 8_000, 2, 0),
+        Err(SpectrumError::NonFiniteBin { index: 1 })
+    );
 }
 ```

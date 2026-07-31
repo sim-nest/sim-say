@@ -382,6 +382,7 @@
 | `specimen` | `lisp` | crates/sim-lib-sheet/recipes/01-basics/exact-sheet-formula/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-skill/recipes/01-basics/fixture-skill/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-sound-audio-lift/recipes/01-basics/pcm-features/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-sound-audio-lift/recipes/01-basics/stft-cqt-chroma/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-sound-bridge/recipes/01-basics/gm-voice/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-sound-core/recipes/01-basics/sine-tone/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-sound-dissonance/recipes/01-basics/roughness-model/recipe.toml |

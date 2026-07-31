@@ -94,7 +94,7 @@
 | [`feature/sim-ledger/generated-docs`](features/feature--sim-ledger--generated-docs.md) | `local/sim-ledger/crate/xtask` | 0 |
 | [`feature/sim-ledger/ledger-command`](features/feature--sim-ledger--ledger-command.md) | `crate/sim-ledger-cli` | 1 |
 | [`feature/sim-ledger/ledger-libraries`](features/feature--sim-ledger--ledger-libraries.md) | `crate/sim-ledger` | 1 |
-| [`feature/sim-music/audio-lift-and-render`](features/feature--sim-music--audio-lift-and-render.md) | `crate/sim-lib-sound-audio-lift` | 1 |
+| [`feature/sim-music/audio-lift-and-render`](features/feature--sim-music--audio-lift-and-render.md) | `crate/sim-lib-sound-audio-lift` | 2 |
 | [`feature/sim-music/bounded-harmonization`](features/feature--sim-music--bounded-harmonization.md) | `crate/sim-lib-pitch-chord` | 1 |
 | [`feature/sim-music/bounded-rewrite-catalogs`](features/feature--sim-music--bounded-rewrite-catalogs.md) | `crate/sim-lib-music-combinators` | 1 |
 | [`feature/sim-music/carpet-composition`](features/feature--sim-music--carpet-composition.md) | `crate/sim-lib-music-combinators` | 2 |

@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-sound-audio-lift`
 - Canonical key: `crate/sim-lib-sound-audio-lift/feature-sim-music-audio-lift-and-render`
 
-Lift PCM audio into sound features, reuse spectral summaries, and render finite sound buffers or WAV/SMF stream files through current sound libraries.
+Lift PCM through reconstructable framed Fourier analysis, bounded tuning-anchored constant-Q and chroma profiles, pitch candidates, spectral summaries, and finite sound or stream rendering.
 
 ## Anchors
 
@@ -27,6 +27,7 @@ Lift PCM audio into sound features, reuse spectral summaries, and render finite 
 ## Specimens
 
 - `spec-test/sim-music/crates/sim-lib-sound-audio-lift/src/tests`
+- `spec-test/sim-music/crates/sim-lib-sound-audio-lift/src/transform_tests`
 
 ## Worked Example
 

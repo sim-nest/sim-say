@@ -215,7 +215,7 @@
 {"card": {"id": "cookbook/numbers/rational", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-rational", "summary": "Exact rational values and constructor forms."}, "repo": "sim-numbers"}
 {"card": {"id": "cookbook/numbers/rk", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-rk", "summary": "Runge-Kutta ODE solver methods."}, "repo": "sim-numbers"}
 {"card": {"id": "cookbook/numbers/signal", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-signal", "summary": "Deterministic transforms, wavelets, smoothing, interpolation, spectral estimation, and guarded inverse examples."}, "repo": "sim-numbers"}
-{"card": {"id": "cookbook/numbers/stats", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-stats", "summary": "Probability, descriptive statistics, and fairness metric helpers."}, "repo": "sim-numbers"}
+{"card": {"id": "cookbook/numbers/stats", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-stats", "summary": "Probability, clustering, bounded inference, and inspectable evidence."}, "repo": "sim-numbers"}
 {"card": {"id": "cookbook/numbers/tensor", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor", "summary": "Generic tensor values and indexing."}, "repo": "sim-numbers"}
 {"card": {"id": "cookbook/numbers/tensor-bcast", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor-bcast", "summary": "Broadcasting helpers for tensor values."}, "repo": "sim-numbers"}
 {"card": {"id": "cookbook/numbers/tensor-bit", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor-bit", "summary": "Packed boolean tensor helpers."}, "repo": "sim-numbers"}
