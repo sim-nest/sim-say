@@ -6,15 +6,26 @@
 - Subject: `crate/sim-lib-numbers-signal`
 - Canonical key: `crate/sim-lib-numbers-signal/feature-sim-numbers-signal-transforms`
 
-Transform, convolve, correlate, estimate classical spectra, and guardedly deconvolve signals with reference definitions, explicit scaling, and bounded reports.
+Transform, convolve, correlate, fit stable autoregressive models, estimate classical or MEM spectra, interpolate periodic DFT series, derive analytic signals, and guardedly deconvolve with explicit bounded reports.
 
 ## Anchors
 
 - `anchor/crate/sim-lib-numbers-signal`
 - `anchor/runtime-lib/sim-lib-numbers-signal/signal-numbers-lib`
+- `anchor/rustdoc/sim-lib-numbers-signal/analytic-signal`
+- `anchor/rustdoc/sim-lib-numbers-signal/analytic-signal-plan`
+- `anchor/rustdoc/sim-lib-numbers-signal/analytic-signal-report`
+- `anchor/rustdoc/sim-lib-numbers-signal/analytic_envelope`
+- `anchor/rustdoc/sim-lib-numbers-signal/analytic_signal`
+- `anchor/rustdoc/sim-lib-numbers-signal/ar-model`
+- `anchor/rustdoc/sim-lib-numbers-signal/ar-order-criterion`
 - `anchor/rustdoc/sim-lib-numbers-signal/block-convolution-plan`
 - `anchor/rustdoc/sim-lib-numbers-signal/block-convolution-report`
 - `anchor/rustdoc/sim-lib-numbers-signal/boundary-policy`
+- `anchor/rustdoc/sim-lib-numbers-signal/burg`
+- `anchor/rustdoc/sim-lib-numbers-signal/burg-evidence`
+- `anchor/rustdoc/sim-lib-numbers-signal/burg-plan`
+- `anchor/rustdoc/sim-lib-numbers-signal/burg-stability`
 - `anchor/rustdoc/sim-lib-numbers-signal/convolution-algorithm`
 - `anchor/rustdoc/sim-lib-numbers-signal/convolution-cost-plan`
 - `anchor/rustdoc/sim-lib-numbers-signal/convolution-mode`
@@ -28,17 +39,30 @@ Transform, convolve, correlate, estimate classical spectra, and guardedly deconv
 - `anchor/rustdoc/sim-lib-numbers-signal/deconvolution-plan`
 - `anchor/rustdoc/sim-lib-numbers-signal/deconvolution-report`
 - `anchor/rustdoc/sim-lib-numbers-signal/deconvolve`
+- `anchor/rustdoc/sim-lib-numbers-signal/dft-integral`
+- `anchor/rustdoc/sim-lib-numbers-signal/dft-interpolation`
+- `anchor/rustdoc/sim-lib-numbers-signal/dft-series-plan`
+- `anchor/rustdoc/sim-lib-numbers-signal/dft_bin`
+- `anchor/rustdoc/sim-lib-numbers-signal/dft_integrate`
+- `anchor/rustdoc/sim-lib-numbers-signal/dft_interpolate`
+- `anchor/rustdoc/sim-lib-numbers-signal/envelope-follower-plan`
+- `anchor/rustdoc/sim-lib-numbers-signal/envelope_follow`
 - `anchor/rustdoc/sim-lib-numbers-signal/estimator-evidence`
 - `anchor/rustdoc/sim-lib-numbers-signal/estimator-limits`
 - `anchor/rustdoc/sim-lib-numbers-signal/frequency-grid-policy`
 - `anchor/rustdoc/sim-lib-numbers-signal/lag-order`
 - `anchor/rustdoc/sim-lib-numbers-signal/lomb-scargle-plan`
 - `anchor/rustdoc/sim-lib-numbers-signal/lomb_scargle`
+- `anchor/rustdoc/sim-lib-numbers-signal/mem-spectrum-plan`
+- `anchor/rustdoc/sim-lib-numbers-signal/mem_spectrum`
 - `anchor/rustdoc/sim-lib-numbers-signal/multitaper`
 - `anchor/rustdoc/sim-lib-numbers-signal/multitaper-plan`
 - `anchor/rustdoc/sim-lib-numbers-signal/normalization`
 - `anchor/rustdoc/sim-lib-numbers-signal/periodogram`
 - `anchor/rustdoc/sim-lib-numbers-signal/periodogram-plan`
+- `anchor/rustdoc/sim-lib-numbers-signal/predict_backward`
+- `anchor/rustdoc/sim-lib-numbers-signal/predict_forward`
+- `anchor/rustdoc/sim-lib-numbers-signal/prediction-plan`
 - `anchor/rustdoc/sim-lib-numbers-signal/reference_dct`
 - `anchor/rustdoc/sim-lib-numbers-signal/reference_dft`
 - `anchor/rustdoc/sim-lib-numbers-signal/reference_dst`
@@ -59,6 +83,7 @@ Transform, convolve, correlate, estimate classical spectra, and guardedly deconv
 - `anchor/rustdoc/sim-lib-numbers-signal/transform-resources`
 - `anchor/rustdoc/sim-lib-numbers-signal/transform_nd`
 - `anchor/rustdoc/sim-lib-numbers-signal/transform_nd_blocked`
+- `anchor/rustdoc/sim-lib-numbers-signal/unwrap_phase`
 - `anchor/rustdoc/sim-lib-numbers-signal/welch`
 - `anchor/rustdoc/sim-lib-numbers-signal/welch-plan`
 - `anchor/rustdoc/sim-lib-numbers-signal/window`
@@ -70,138 +95,101 @@ Transform, convolve, correlate, estimate classical spectra, and guardedly deconv
 
 ## Specimens
 
+- `spec-test/sim-numbers/crates/sim-lib-numbers-signal/src/analytic_tests`
+- `spec-test/sim-numbers/crates/sim-lib-numbers-signal/src/autoregressive_tests`
 - `spec-test/sim-numbers/crates/sim-lib-numbers-signal/src/conformance`
 - `spec-test/sim-numbers/crates/sim-lib-numbers-signal/src/convolution_tests`
+- `spec-test/sim-numbers/crates/sim-lib-numbers-signal/src/interpolation_tests`
 - `spec-test/sim-numbers/crates/sim-lib-numbers-signal/src/multidimensional_tests`
 - `spec-test/sim-numbers/crates/sim-lib-numbers-signal/src/runtime_tests`
 - `spec-test/sim-numbers/crates/sim-lib-numbers-signal/src/spectral_tests`
 
 ## Worked Example
 
-Specimen `spec-test/sim-numbers/crates/sim-lib-numbers-signal/src/conformance` is checked by `cargo test`.
+Specimen `spec-test/sim-numbers/crates/sim-lib-numbers-signal/src/analytic_tests` is checked by `cargo test`.
 
-Source `crates/sim-lib-numbers-signal/src/conformance.rs`:
+Source `crates/sim-lib-numbers-signal/src/analytic_tests.rs`:
 
 ```rust
-//! Conformance: definition-level signal fixtures shared by transform users.
+// conformance: generated analytic tones, phase, instantaneous frequency, and envelopes.
 
-use std::f64::consts::TAU;
+use std::f64::consts::{PI, TAU};
 
-use crate::{
-    Direction, Normalization, SignalBuffer, SignalError, SignalView, SpectrumPacking,
-    TransformKind, TransformPlan, reference_dft, transform,
-};
+use super::*;
 
-const TOLERANCE: f64 = 3.0e-10;
+fn assert_close(actual: f64, expected: f64, tolerance: f64) {
+    assert!(
+        (actual - expected).abs() <= tolerance,
+        "expected {expected}, got {actual}"
+    );
+}
 
 #[test]
-fn impulse_and_tone_land_in_definition_level_bins() {
-    let impulse = [(1.0, 0.0), (0.0, 0.0), (0.0, 0.0), (0.0, 0.0)];
-    let plan = TransformPlan::new(TransformKind::Fft, impulse.len());
-    let SignalBuffer::Complex(spectrum) = transform(&plan, SignalView::Complex(&impulse)).unwrap()
-    else {
-        panic!("FFT must return complex values");
-    };
-    assert_eq!(
-        spectrum.as_slice(),
-        &[(1.0, 0.0), (1.0, 0.0), (1.0, 0.0), (1.0, 0.0)]
-    );
-
-    let len = 16;
-    let bin = 3;
-    let tone = (0..len)
-        .map(|sample| (TAU * bin as f64 * sample as f64 / len as f64).cos())
+fn hilbert_construction_matches_a_generated_periodic_tone_for_every_scaling() {
+    let len = 64;
+    let bin = 5;
+    let samples = (0..len)
+        .map(|index| (TAU * bin as f64 * index as f64 / len as f64).cos())
         .collect::<Vec<_>>();
-    let mut plan = TransformPlan::new(TransformKind::RealFft, len);
-    plan.packing = SpectrumPacking::HermitianHalf;
-    let SignalBuffer::Complex(spectrum) = transform(&plan, SignalView::Real(&tone)).unwrap() else {
-        panic!("real FFT must return complex values");
-    };
-    for (frequency, (real, imag)) in spectrum.as_slice().iter().copied().enumerate() {
-        let magnitude = real.hypot(imag);
-        if frequency == bin {
-            assert!((magnitude - len as f64 / 2.0).abs() <= TOLERANCE);
-        } else {
-            assert!(magnitude <= TOLERANCE, "unexpected tone bin {frequency}");
+    for normalization in [
+        Normalization::None,
+        Normalization::Forward,
+        Normalization::Inverse,
+        Normalization::Orthonormal,
+    ] {
+        let plan = AnalyticSignalPlan {
+            normalization,
+            ..AnalyticSignalPlan::default()
+        };
+        let analytic = analytic_signal(&samples, &plan).unwrap();
+        for (index, (real, imag)) in analytic.samples.iter().copied().enumerate() {
+            let phase = TAU * bin as f64 * index as f64 / len as f64;
+            assert_close(real, phase.cos(), 1.0e-11);
+            assert_close(imag, phase.sin(), 1.0e-11);
         }
+        let envelope = analytic_envelope(&analytic.samples).unwrap();
+        assert!(envelope.iter().all(|value| (*value - 1.0).abs() < 1.0e-11));
     }
 }
 
 #[test]
-fn prime_length_fast_transform_agrees_with_direct_definition() {
-    let input = (0..11)
-        .map(|index| ((index as f64 * 0.31).sin(), (index as f64 * 0.47).cos()))
-        .collect::<Vec<_>>();
-    let expected = reference_dft(
-        &input,
-        Direction::Forward,
-        crate::SignConvention::NegativeForward,
-    )
-    .unwrap();
-    let plan = TransformPlan::new(TransformKind::Fft, input.len());
-    let SignalBuffer::Complex(actual) = transform(&plan, SignalView::Complex(&input)).unwrap()
-    else {
-        panic!("FFT must return complex values");
-    };
-    for (actual, expected) in actual.as_slice().iter().zip(expected) {
-        assert!((actual.0 - expected.0).abs() <= TOLERANCE);
-        assert!((actual.1 - expected.1).abs() <= TOLERANCE);
-    }
-}
-
-#[test]
-fn orthonormal_fft_satisfies_parseval_and_round_trips() {
-    let input = [
-        (0.5, -0.25),
-        (1.25, 0.75),
-        (-2.0, 0.5),
-        (0.125, -1.0),
-        (0.75, 0.0),
-    ];
-    let mut plan = TransformPlan::new(TransformKind::Fft, input.len());
-    plan.normalization = Normalization::Orthonormal;
-    let SignalBuffer::Complex(spectrum) = transform(&plan, SignalView::Complex(&input)).unwrap()
-    else {
-        panic!("FFT must return complex values");
-    };
-    let input_energy = input
-        .iter()
-        .map(|(real, imag)| real * real + imag * imag)
-        .sum::<f64>();
-    let spectrum_energy = spectrum
-        .as_slice()
-        .iter()
-        .map(|(real, imag)| real * real + imag * imag)
-        .sum::<f64>();
-    assert!((input_energy - spectrum_energy).abs() <= TOLERANCE);
-
-    plan.direction = Direction::Inverse;
-    let SignalBuffer::Complex(recovered) =
-        transform(&plan, SignalView::Complex(spectrum.as_slice())).unwrap()
-    else {
-        panic!("inverse FFT must return complex values");
-    };
-    for (actual, expected) in recovered.as_slice().iter().zip(input) {
-        assert!((actual.0 - expected.0).abs() <= TOLERANCE);
-        assert!((actual.1 - expected.1).abs() <= TOLERANCE);
-    }
-}
-
-#[test]
-fn empty_and_non_finite_inputs_fail_closed() {
-    let empty = TransformPlan::new(TransformKind::Fft, 0);
-    assert!(matches!(
-        transform(&empty, SignalView::Complex(&[])),
-        Err(SignalError::InvalidLength { .. })
-    ));
-
-    let plan = TransformPlan::new(TransformKind::Fft, 2);
-    assert_eq!(
-        transform(&plan, SignalView::Complex(&[(1.0, 0.0), (f64::NAN, 0.0)])),
-        Err(SignalError::NonFinite {
-            index: 1,
-            component: "real"
+fn unwrapped_phase_yields_interval_centered_instantaneous_frequency() {
+    let sample_rate_hz = 64.0;
+    let frequency_hz = 5.0;
+    let analytic = (0..64)
+        .map(|index| {
+            let phase = TAU * frequency_hz * index as f64 / sample_rate_hz;
+            (phase.cos(), phase.sin())
         })
-    );
+        .collect::<Vec<_>>();
+    let result = instantaneous_frequency(&analytic, sample_rate_hz).unwrap();
+    assert_eq!(result.frequency_hz.len(), 63);
+    assert_close(result.time_seconds[0], 0.5 / sample_rate_hz, 1.0e-14);
+    for frequency in result.frequency_hz {
+        assert_close(frequency, frequency_hz, 1.0e-12);
+    }
+
+    let wrapped = [0.75 * PI, -0.75 * PI, -0.5 * PI];
+    let unwrapped = unwrap_phase(&wrapped, PI).unwrap();
+    assert_close(unwrapped[1], 1.25 * PI, 1.0e-14);
+    assert_close(unwrapped[2], 1.5 * PI, 1.0e-14);
+}
+
+#[test]
+fn attack_release_envelope_is_finite_and_directional() {
+    let samples = [0.0, 1.0, 1.0, 0.0, 0.0];
+    let plan = EnvelopeFollowerPlan {
+        sample_rate_hz: 10.0,
+        attack_seconds: 0.1,
+        release_seconds: 1.0,
+        initial_value: 0.0,
+    };
+    let envelope = envelope_follow(&samples, &plan).unwrap();
+    assert_eq!(envelope[0], 0.0);
+    assert!(envelope[1] > 0.5);
+    assert!(envelope[2] > envelope[1]);
+    assert!(envelope[3] < envelope[2]);
+    assert!(envelope[4] < envelope[3]);
+    assert!(envelope[3] > 0.5);
 }
 ```

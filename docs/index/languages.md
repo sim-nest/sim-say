@@ -326,6 +326,7 @@
 | `specimen` | `lisp` | crates/sim-lib-numbers-rational/recipes/01-basics/rational-constructor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-rk/recipes/01-basics/rk-method/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-signal/recipes/01-basics/convolution-evidence/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-numbers-signal/recipes/01-basics/dft-interpolation/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-signal/recipes/01-basics/impulse-fft/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-stats/recipes/01-basics/fairness-claim/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-stats/recipes/01-basics/finite-markov-report/recipe.toml |
@@ -479,6 +480,7 @@
 | `specimen` | `rust` | crates/sim-lib-interference-solve/recipes/01-basics/fringe-analysis/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-interference-solve/recipes/01-basics/two-tone-beats/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-numbers-signal/recipes/01-basics/blocked-transform/recipe.toml |
+| `specimen` | `rust` | crates/sim-lib-numbers-signal/recipes/01-basics/burg-mem-evidence/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-numbers-signal/recipes/01-basics/spectral-estimators/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-view-interference/recipes/01-basics/interference-study/recipe.toml |
 | `specimen` | `rust` | recipes/00-overview/modeled-work-order/recipe.toml |
