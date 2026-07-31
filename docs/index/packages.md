@@ -165,6 +165,7 @@
 | `crate/sim-lib-numbers-prelude` | `crate` | sim-lib-numbers-prelude |
 | `crate/sim-lib-numbers-quad` | `crate` | sim-lib-numbers-quad |
 | `crate/sim-lib-numbers-rk` | `crate` | sim-lib-numbers-rk |
+| `crate/sim-lib-numbers-signal` | `crate` | sim-lib-numbers-signal |
 | `crate/sim-lib-numbers-stats` | `crate` | sim-lib-numbers-stats |
 | `crate/sim-lib-numbers-tensor-bcast` | `crate` | sim-lib-numbers-tensor-bcast |
 | `crate/sim-lib-numbers-tensor-bit` | `crate` | sim-lib-numbers-tensor-bit |

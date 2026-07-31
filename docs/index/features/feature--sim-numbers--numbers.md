@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-numbers-core`
 - Canonical key: `crate/sim-lib-numbers-core/feature-sim-numbers-numbers`
 
-Provide arithmetic, exact, floating, symbolic, tensor, and inspectable statistics domains as loadable libraries.
+Provide arithmetic, exact, floating, symbolic, tensor, signal-transform, and inspectable statistics domains as loadable libraries.
 
 ## Anchors
 
@@ -31,6 +31,7 @@ Provide arithmetic, exact, floating, symbolic, tensor, and inspectable statistic
 - `anchor/crate/sim-lib-numbers-quad`
 - `anchor/crate/sim-lib-numbers-rational`
 - `anchor/crate/sim-lib-numbers-rk`
+- `anchor/crate/sim-lib-numbers-signal`
 - `anchor/crate/sim-lib-numbers-stats`
 - `anchor/crate/sim-lib-numbers-tensor`
 - `anchor/crate/sim-lib-numbers-tensor-bcast`
@@ -59,6 +60,7 @@ Provide arithmetic, exact, floating, symbolic, tensor, and inspectable statistic
 - `anchor/runtime-lib/sim-lib-numbers-quad/quad-numbers-lib`
 - `anchor/runtime-lib/sim-lib-numbers-rational/rational-numbers-lib`
 - `anchor/runtime-lib/sim-lib-numbers-rk/rk-numbers-lib`
+- `anchor/runtime-lib/sim-lib-numbers-signal/signal-numbers-lib`
 - `anchor/runtime-lib/sim-lib-numbers-stats/stats-numbers-lib`
 - `anchor/runtime-lib/sim-lib-numbers-tensor-bcast/tensor-broadcast-lib`
 - `anchor/runtime-lib/sim-lib-numbers-tensor-bit/bit-tensor-lib`

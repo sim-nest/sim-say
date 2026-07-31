@@ -165,6 +165,7 @@
 | `crate/sim-lib-numbers-prelude` | `crate` | sim-lib-numbers-prelude | 0 |
 | `crate/sim-lib-numbers-quad` | `crate` | sim-lib-numbers-quad | 1 |
 | `crate/sim-lib-numbers-rk` | `crate` | sim-lib-numbers-rk | 1 |
+| `crate/sim-lib-numbers-signal` | `crate` | sim-lib-numbers-signal | 1 |
 | `crate/sim-lib-numbers-stats` | `crate` | sim-lib-numbers-stats | 1 |
 | `crate/sim-lib-numbers-tensor-bcast` | `crate` | sim-lib-numbers-tensor-bcast | 1 |
 | `crate/sim-lib-numbers-tensor-bit` | `crate` | sim-lib-numbers-tensor-bit | 1 |
@@ -460,7 +461,7 @@
 | `repo/sim-kernel` | `repo` | sim-kernel | 3 |
 | `repo/sim-ledger` | `repo` | sim-ledger | 7 |
 | `repo/sim-music` | `repo` | sim-music | 50 |
-| `repo/sim-numbers` | `repo` | sim-numbers | 34 |
+| `repo/sim-numbers` | `repo` | sim-numbers | 35 |
 | `repo/sim-office` | `repo` | sim-office | 18 |
 | `repo/sim-run` | `repo` | sim-run | 9 |
 | `repo/sim-runtime` | `repo` | sim-runtime | 26 |

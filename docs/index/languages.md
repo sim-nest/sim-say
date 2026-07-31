@@ -325,6 +325,7 @@
 | `specimen` | `lisp` | crates/sim-lib-numbers-quad/recipes/01-basics/quadrature-method/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-rational/recipes/01-basics/rational-constructor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-rk/recipes/01-basics/rk-method/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-numbers-signal/recipes/01-basics/impulse-fft/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-stats/recipes/01-basics/fairness-claim/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-stats/recipes/01-basics/finite-markov-report/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-numbers-stats/recipes/01-basics/stats-helpers/recipe.toml |

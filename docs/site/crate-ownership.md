@@ -196,6 +196,7 @@
 | `sim-lib-numbers-quad` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-rational` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-rk` | [sim-numbers](../repos/sim-numbers.md) |
+| `sim-lib-numbers-signal` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-stats` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-tensor` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-tensor-bcast` | [sim-numbers](../repos/sim-numbers.md) |
