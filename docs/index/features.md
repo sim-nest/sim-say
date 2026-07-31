@@ -110,9 +110,10 @@
 | [`feature/sim-music/sound-spectrum-adapter`](features/feature--sim-music--sound-spectrum-adapter.md) | `crate/sim-lib-sound-spectrum` | 1 |
 | [`feature/sim-music/synth-performance-workbench`](features/feature--sim-music--synth-performance-workbench.md) | `local/sim-music/crate/sim-lib-music-synth` | 1 |
 | [`feature/sim-numbers/generated-docs`](features/feature--sim-numbers--generated-docs.md) | `local/sim-numbers/crate/xtask` | 0 |
-| [`feature/sim-numbers/numbers`](features/feature--sim-numbers--numbers.md) | `crate/sim-lib-numbers-core` | 2 |
+| [`feature/sim-numbers/numbers`](features/feature--sim-numbers--numbers.md) | `crate/sim-lib-numbers-core` | 4 |
 | [`feature/sim-numbers/numeric-pipelines`](features/feature--sim-numbers--numeric-pipelines.md) | `crate/sim-lib-numbers-numeric` | 1 |
 | [`feature/sim-numbers/signal-transforms`](features/feature--sim-numbers--signal-transforms.md) | `crate/sim-lib-numbers-signal` | 11 |
+| [`feature/sim-numbers/statistical-inference`](features/feature--sim-numbers--statistical-inference.md) | `crate/sim-lib-numbers-stats` | 3 |
 | [`feature/sim-numbers/tensor-execution`](features/feature--sim-numbers--tensor-execution.md) | `local/sim-numbers/crate/sim-lib-numbers-tensor` | 3 |
 | [`feature/sim-numbers/tensor-ode`](features/feature--sim-numbers--tensor-ode.md) | `crate/sim-lib-numbers-numeric` | 2 |
 | [`feature/sim-numbers/tensors`](features/feature--sim-numbers--tensors.md) | `local/sim-numbers/crate/sim-lib-numbers-tensor` | 1 |
