@@ -177,7 +177,7 @@
 {"card": {"id": "cookbook/pitch-set", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-set", "summary": "Pitch-class sets, masks, and normal-form descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-shapes", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-shapes", "summary": "Citizen descriptor shapes for pitch values."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-wasm", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-wasm-frame", "summary": "Browser-safe pitch facade descriptors."}, "repo": "sim-music"}
-{"card": {"id": "cookbook/sound-audio-lift", "kind": "cookbook-recipe", "owner": "sim-lib-sound-audio-lift", "summary": "Descriptors that lift PCM into sound and music features."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/sound-audio-lift", "kind": "cookbook-recipe", "owner": "sim-lib-sound-audio-lift", "summary": "Checked framed transforms and descriptors that lift PCM into sound and music features."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/sound-bridge", "kind": "cookbook-recipe", "owner": "sim-lib-sound-bridge", "summary": "Music and MIDI bridge descriptors for sound playback."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/sound-core", "kind": "cookbook-recipe", "owner": "sim-lib-sound-core", "summary": "Tone, oscillator, and amplitude descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/sound-dissonance", "kind": "cookbook-recipe", "owner": "sim-lib-sound-dissonance", "summary": "Roughness and spectrum-pair descriptors."}, "repo": "sim-music"}
