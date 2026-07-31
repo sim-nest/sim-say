@@ -16,7 +16,7 @@
 {"card": {"id": "cookbook/table-remote", "kind": "cookbook-recipe", "owner": "sim-table-remote", "summary": "Remote table directory descriptors."}, "repo": "sim-agent-net"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-agent-net"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-audio-daw"}
-{"card": {"id": "cookbook/audio-dsp", "kind": "cookbook-recipe", "owner": "sim-lib-audio-dsp", "summary": "Offline DSP processor and fixture descriptors."}, "repo": "sim-audio-daw"}
+{"card": {"id": "cookbook/audio-dsp", "kind": "cookbook-recipe", "owner": "sim-lib-audio-dsp", "summary": "Offline and realtime-safe DSP processor and transform descriptors."}, "repo": "sim-audio-daw"}
 {"card": {"id": "cookbook/audio-graph-live", "kind": "cookbook-recipe", "owner": "sim-lib-audio-graph-live", "summary": "Live graph queue, transport, and fake-clock descriptors."}, "repo": "sim-audio-daw"}
 {"card": {"id": "cookbook/audio-graph/core", "kind": "cookbook-recipe", "owner": "sim-lib-audio-graph-core", "summary": "Hardware-free processor graph descriptors and offline blocks."}, "repo": "sim-audio-daw"}
 {"card": {"id": "cookbook/plugin-clap", "kind": "cookbook-recipe", "owner": "sim-lib-plugin-clap", "summary": "CLAP-shaped plugin descriptor and export metadata."}, "repo": "sim-audio-daw"}
@@ -182,14 +182,14 @@
 {"card": {"id": "cookbook/sound-core", "kind": "cookbook-recipe", "owner": "sim-lib-sound-core", "summary": "Tone, oscillator, and amplitude descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/sound-dissonance", "kind": "cookbook-recipe", "owner": "sim-lib-sound-dissonance", "summary": "Roughness and spectrum-pair descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/sound-gm", "kind": "cookbook-recipe", "owner": "sim-lib-sound-gm", "summary": "General MIDI bank and preset descriptors."}, "repo": "sim-music"}
-{"card": {"id": "cookbook/sound-render", "kind": "cookbook-recipe", "owner": "sim-lib-sound-render", "summary": "Offline PCM render descriptors."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/sound-render", "kind": "cookbook-recipe", "owner": "sim-lib-sound-render", "summary": "Offline PCM render, phase-vocoder, loudness, and normalization descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/sound-shapes", "kind": "cookbook-recipe", "owner": "sim-lib-sound-shapes", "summary": "Citizen descriptor shapes for sound objects."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/sound-spectrum", "kind": "cookbook-recipe", "owner": "sim-lib-sound-spectrum", "summary": "Partial, centroid, and peak descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/sound-timbre", "kind": "cookbook-recipe", "owner": "sim-lib-sound-timbre", "summary": "Timbre, filter, and envelope descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/sound-tuning", "kind": "cookbook-recipe", "owner": "sim-lib-sound-tuning", "summary": "Tuning-system descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/sound-wasm", "kind": "cookbook-recipe", "owner": "sim-lib-sound-wasm-frame", "summary": "Browser-safe sound facade descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/stream-bridge", "kind": "cookbook-recipe", "owner": "sim-lib-stream-bridge", "summary": "Offline MIDI-to-PCM rendering and PCM-to-MIDI lifting descriptors."}, "repo": "sim-music"}
-{"card": {"id": "cookbook/stream-file", "kind": "cookbook-recipe", "owner": "sim-lib-stream-file", "summary": "Capability-gated WAV and SMF stream adapters."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/stream-file", "kind": "cookbook-recipe", "owner": "sim-lib-stream-file", "summary": "Capability-gated WAV and SMF streams with explicit PCM16 conversion policy."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/stream-midi", "kind": "cookbook-recipe", "owner": "sim-lib-stream-midi", "summary": "MIDI packetization and memory stream adapters."}, "repo": "sim-music"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-music"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-numbers"}
