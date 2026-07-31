@@ -274,6 +274,8 @@
 | `specimen` | `lisp` | crates/sim-lib-music-core/recipes/02-golden-fixtures/lfo-player-instrument-params/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-core/recipes/02-golden-fixtures/missing-capability-failure/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-core/recipes/02-golden-fixtures/pattern-mutator-locked-take/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-music-counterpoint/recipes/01-basics/counterpoint-report/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-music-counterpoint/recipes/01-basics/stretto-graph/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-lift/recipes/01-basics/from-midi-track/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-lower/recipes/01-basics/to-midi-track/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-notation/recipes/01-basics/lilypond-export/recipe.toml |
@@ -522,6 +524,7 @@
 | `specimen` | `shape` | crates/sim-lib-lang-prolog/src/conformance.rs |
 | `specimen` | `shape` | crates/sim-lib-logic/src/tests/organ_proof.rs |
 | `specimen` | `shape` | crates/sim-lib-mcp/tests/serve_mcp.rs |
+| `specimen` | `shape` | crates/sim-lib-music-counterpoint/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-music-notation/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-cas/src/implementation/citizen.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-complex/src/implementation/literal.rs |
