@@ -163,7 +163,7 @@
 {"card": {"id": "cookbook/music-shapes", "kind": "cookbook-recipe", "owner": "sim-lib-music-shapes", "summary": "Citizen descriptor shapes for music objects."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-transform", "kind": "cookbook-recipe", "owner": "sim-lib-music-transform", "summary": "Exact music transformation and voice-leading descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-wasm", "kind": "cookbook-recipe", "owner": "sim-lib-music-wasm-frame", "summary": "Browser-safe music facade descriptors."}, "repo": "sim-music"}
-{"card": {"id": "cookbook/pitch-chord", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-chord", "summary": "Chord spelling and quality descriptors."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/pitch-chord", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-chord", "summary": "Chord spelling, voicing, and declarative harmony descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-core", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-core", "summary": "Pitch values, names, MIDI notes, and frequency descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-dissonance", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-dissonance", "summary": "Interval and set dissonance descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-namer", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-namer", "summary": "Pitch and set naming registry descriptors."}, "repo": "sim-music"}
