@@ -259,6 +259,7 @@
 | `specimen` | `lisp` | crates/sim-lib-midi-smf/recipes/02-export-fixtures/unsupported-export-failure/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-midi-sysex/recipes/01-basics/test-message/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-midi-wasm-frame/recipes/01-basics/browser-facade/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-music-analysis/recipes/01-basics/metrical-similarity-pattern/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-analysis/recipes/01-basics/pitch-histogram/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-analysis/recipes/01-basics/tonnetz-path/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-combinators/recipes/01-basics/bounded-harmonization/recipe.toml |
