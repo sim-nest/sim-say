@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-numbers-core`
 - Canonical key: `crate/sim-lib-numbers-core/feature-sim-numbers-numbers`
 
-Provide arithmetic, exact, floating, symbolic, tensor, signal-transform, and inspectable statistics domains as loadable libraries.
+Provide arithmetic, exact, floating, symbolic, tensor, signal-algorithm, and inspectable statistics domains as loadable libraries.
 
 ## Anchors
 
