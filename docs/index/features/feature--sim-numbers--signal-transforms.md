@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-numbers-signal`
 - Canonical key: `crate/sim-lib-numbers-signal/feature-sim-numbers-signal-transforms`
 
-Transform, convolve, correlate, and guardedly deconvolve canonical tensor signals with direct definitions, FFT paths, explicit conventions, and bounded block reports.
+Transform, convolve, correlate, estimate classical spectra, and guardedly deconvolve signals with reference definitions, explicit scaling, and bounded reports.
 
 ## Anchors
 
@@ -23,18 +23,33 @@ Transform, convolve, correlate, and guardedly deconvolve canonical tensor signal
 - `anchor/rustdoc/sim-lib-numbers-signal/convolve_blocked`
 - `anchor/rustdoc/sim-lib-numbers-signal/correlate`
 - `anchor/rustdoc/sim-lib-numbers-signal/correlation-plan`
+- `anchor/rustdoc/sim-lib-numbers-signal/cross-spectrum-estimate`
+- `anchor/rustdoc/sim-lib-numbers-signal/cross_spectrum`
 - `anchor/rustdoc/sim-lib-numbers-signal/deconvolution-plan`
 - `anchor/rustdoc/sim-lib-numbers-signal/deconvolution-report`
 - `anchor/rustdoc/sim-lib-numbers-signal/deconvolve`
+- `anchor/rustdoc/sim-lib-numbers-signal/estimator-evidence`
+- `anchor/rustdoc/sim-lib-numbers-signal/estimator-limits`
+- `anchor/rustdoc/sim-lib-numbers-signal/frequency-grid-policy`
 - `anchor/rustdoc/sim-lib-numbers-signal/lag-order`
+- `anchor/rustdoc/sim-lib-numbers-signal/lomb-scargle-plan`
+- `anchor/rustdoc/sim-lib-numbers-signal/lomb_scargle`
+- `anchor/rustdoc/sim-lib-numbers-signal/multitaper`
+- `anchor/rustdoc/sim-lib-numbers-signal/multitaper-plan`
 - `anchor/rustdoc/sim-lib-numbers-signal/normalization`
+- `anchor/rustdoc/sim-lib-numbers-signal/periodogram`
+- `anchor/rustdoc/sim-lib-numbers-signal/periodogram-plan`
 - `anchor/rustdoc/sim-lib-numbers-signal/reference_dct`
 - `anchor/rustdoc/sim-lib-numbers-signal/reference_dft`
 - `anchor/rustdoc/sim-lib-numbers-signal/reference_dst`
 - `anchor/rustdoc/sim-lib-numbers-signal/regularization`
 - `anchor/rustdoc/sim-lib-numbers-signal/signal-buffer`
 - `anchor/rustdoc/sim-lib-numbers-signal/signal-numbers-lib`
+- `anchor/rustdoc/sim-lib-numbers-signal/spectrum-estimate`
 - `anchor/rustdoc/sim-lib-numbers-signal/spectrum-packing`
+- `anchor/rustdoc/sim-lib-numbers-signal/spectrum-scaling`
+- `anchor/rustdoc/sim-lib-numbers-signal/spectrum-scaling-kind`
+- `anchor/rustdoc/sim-lib-numbers-signal/spectrum-side`
 - `anchor/rustdoc/sim-lib-numbers-signal/tensor-view`
 - `anchor/rustdoc/sim-lib-numbers-signal/transform`
 - `anchor/rustdoc/sim-lib-numbers-signal/transform-kind`
@@ -44,6 +59,14 @@ Transform, convolve, correlate, and guardedly deconvolve canonical tensor signal
 - `anchor/rustdoc/sim-lib-numbers-signal/transform-resources`
 - `anchor/rustdoc/sim-lib-numbers-signal/transform_nd`
 - `anchor/rustdoc/sim-lib-numbers-signal/transform_nd_blocked`
+- `anchor/rustdoc/sim-lib-numbers-signal/welch`
+- `anchor/rustdoc/sim-lib-numbers-signal/welch-plan`
+- `anchor/rustdoc/sim-lib-numbers-signal/window`
+- `anchor/rustdoc/sim-lib-numbers-signal/window-function`
+- `anchor/rustdoc/sim-lib-numbers-signal/window-metrics`
+- `anchor/rustdoc/sim-lib-numbers-signal/window-normalization`
+- `anchor/rustdoc/sim-lib-numbers-signal/window-sampling`
+- `anchor/rustdoc/sim-lib-numbers-signal/window-spec`
 
 ## Specimens
 
@@ -51,6 +74,7 @@ Transform, convolve, correlate, and guardedly deconvolve canonical tensor signal
 - `spec-test/sim-numbers/crates/sim-lib-numbers-signal/src/convolution_tests`
 - `spec-test/sim-numbers/crates/sim-lib-numbers-signal/src/multidimensional_tests`
 - `spec-test/sim-numbers/crates/sim-lib-numbers-signal/src/runtime_tests`
+- `spec-test/sim-numbers/crates/sim-lib-numbers-signal/src/spectral_tests`
 
 ## Worked Example
 

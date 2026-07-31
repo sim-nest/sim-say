@@ -479,6 +479,7 @@
 | `specimen` | `rust` | crates/sim-lib-interference-solve/recipes/01-basics/fringe-analysis/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-interference-solve/recipes/01-basics/two-tone-beats/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-numbers-signal/recipes/01-basics/blocked-transform/recipe.toml |
+| `specimen` | `rust` | crates/sim-lib-numbers-signal/recipes/01-basics/spectral-estimators/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-view-interference/recipes/01-basics/interference-study/recipe.toml |
 | `specimen` | `rust` | recipes/00-overview/modeled-work-order/recipe.toml |
 | `specimen` | `rust` | recipes/01-basics/exact-bool-shape/recipe.toml |
