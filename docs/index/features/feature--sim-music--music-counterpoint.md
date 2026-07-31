@@ -36,7 +36,9 @@ use std::sync::Arc;
 // conformance: counterpoint reports and stretto graphs retain exact rule and relation evidence.
 
 use num_rational::Ratio;
-use sim_kernel::{DefaultFactory, EagerPolicy, Expr, QuoteMode, RawArgs, Symbol};
+use sim_codec::{Input, decode_with_codec};
+use sim_codec_lisp::LispCodecLib;
+use sim_kernel::{DefaultFactory, EagerPolicy, Expr, QuoteMode, RawArgs, ReadPolicy, Symbol};
 use sim_lib_music_core::{
     Articulation, Channel, Counterpoint, Melody, MelodyItem, Note, Pitch, Time,
 };
@@ -345,6 +347,112 @@ fn lisp_surfaces_expose_violation_evidence_and_stretto_relations() {
     assert_eq!(field(&graph, "generation"), Some(&Expr::Bool(false)));
     for key in ["entries", "couples", "components", "cliques", "chains"] {
         assert!(field(&graph, key).is_some(), "missing {key}");
+    }
+}
+
+#[test]
+fn checked_lisp_specimens_execute_and_reproduce_evidence() {
+    let mut cx = sim_kernel::Cx::new(Arc::new(EagerPolicy), Arc::new(DefaultFactory));
+    sim_test_support::register_core_classes(&mut cx);
+    sim_test_support::register_f64_number_domain(&mut cx);
+    let lisp = LispCodecLib::new(cx.registry_mut().fresh_codec_id()).expect("lisp codec");
+    cx.load_lib(&lisp).expect("install lisp codec");
+    install_music_counterpoint_lib(&mut cx).expect("install counterpoint lib");
+
+    let report = evaluate_lisp_specimen(
+        &mut cx,
+        include_str!("../recipes/01-basics/counterpoint-report/setup.siml"),
+    );
+    let Expr::Map(report) = report else {
+        panic!("counterpoint specimen must return a report map: {report:?}");
+    };
+    let Some(Expr::Vector(violations)) = field(&report, "violations") else {
+        panic!("counterpoint specimen must return violation evidence");
+    };
+    assert!(!violations.is_empty());
+    for violation in violations {
+        let Expr::Map(violation) = violation else {
+            panic!("violation evidence must be a map");
+        };
+        for key in ["voices", "notes", "span", "rule", "metric"] {
+            assert!(field(violation, key).is_some(), "missing {key}");
+        }
+    }
+
+    let graph = evaluate_lisp_specimen(
+        &mut cx,
+        include_str!("../recipes/01-basics/stretto-graph/setup.siml"),
+    );
+    let Expr::Map(graph) = graph else {
+        panic!("stretto specimen must return a graph map: {graph:?}");
+    };
+    assert_eq!(field(&graph, "generation"), Some(&Expr::Bool(false)));
+    let Some(Expr::Vector(couples)) = field(&graph, "couples") else {
+        panic!("stretto specimen must return couple relations");
+    };
+    assert!(!couples.is_empty());
+    for key in ["components", "cliques"] {
+        let Some(Expr::Vector(relations)) = field(&graph, key) else {
+            panic!("stretto specimen must return {key} relations");
+        };
+        assert!(!relations.is_empty(), "stretto specimen has no {key}");
+    }
+    assert!(matches!(field(&graph, "chains"), Some(Expr::Vector(_))));
+}
+
+fn evaluate_lisp_specimen(cx: &mut sim_kernel::Cx, source: &str) -> Expr {
+    let form = decode_with_codec(
+        cx,
+        &Symbol::qualified("codec", "lisp"),
+        Input::Text(source.trim().to_owned()),
+        ReadPolicy::default(),
+    )
+    .expect("decode Lisp specimen");
+    let value = cx
+        .eval_expr(lower_lisp_eval_surface(form))
+        .expect("evaluate Lisp specimen");
+    value
+        .object()
+        .as_expr(cx)
+        .expect("Lisp specimen result expression")
+}
+
+fn lower_lisp_eval_surface(expr: Expr) -> Expr {
+    match expr {
+        Expr::List(items) if items.len() > 1 => {
+            let mut items = items
+                .into_iter()
+                .map(lower_lisp_eval_surface)
+                .collect::<Vec<_>>();
+            Expr::Call {
+                operator: Box::new(items.remove(0)),
+                args: items,
+            }
+        }
+        Expr::List(items) => Expr::List(items.into_iter().map(lower_lisp_eval_surface).collect()),
+        Expr::Vector(items) => {
+            Expr::Vector(items.into_iter().map(lower_lisp_eval_surface).collect())
+        }
+        Expr::Map(entries) => Expr::Map(
+            entries
+                .into_iter()
+                .map(|(key, value)| (lower_lisp_eval_surface(key), lower_lisp_eval_surface(value)))
+                .collect(),
+        ),
+        Expr::Set(items) => Expr::Set(items.into_iter().map(lower_lisp_eval_surface).collect()),
+        Expr::Block(items) => Expr::Block(items.into_iter().map(lower_lisp_eval_surface).collect()),
+        Expr::Annotated { expr, annotations } => Expr::Annotated {
+            expr: Box::new(lower_lisp_eval_surface(*expr)),
+            annotations: annotations
+                .into_iter()
+                .map(|(name, value)| (name, lower_lisp_eval_surface(value)))
+                .collect(),
+        },
+        Expr::Extension { tag, payload } => Expr::Extension {
+            tag,
+            payload: Box::new(lower_lisp_eval_surface(*payload)),
+        },
+        other => other,
     }
 }
 
