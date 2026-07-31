@@ -94,6 +94,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `feature/sim-ledger/generated-docs` | `local/sim-ledger/crate/xtask` | [features/feature--sim-ledger--generated-docs.md](../index/features/feature--sim-ledger--generated-docs.md) | 0 | Publish generated package, card, recipe, and index facts for the ledger crates. |
 | `feature/sim-ledger/ledger-command` | `crate/sim-ledger-cli` | [features/feature--sim-ledger--ledger-command.md](../index/features/feature--sim-ledger--ledger-command.md) | 1 | Run ledger import, drafting, trial balance, and closing flows through the checked command package. |
 | `feature/sim-ledger/ledger-libraries` | `crate/sim-ledger` | [features/feature--sim-ledger--ledger-libraries.md](../index/features/feature--sim-ledger--ledger-libraries.md) | 1 | Provide voucher storage, book construction, and closing libraries for ledger workflows. |
+| `feature/sim-music/algorithm-foundry` | `crate/sim-lib-music-analysis` | [features/feature--sim-music--algorithm-foundry.md](../index/features/feature--sim-music--algorithm-foundry.md) | 1 | Execute a data recipe by selecting independently loaded MIDI, analysis, harmony, counterpoint, render, and optional preview stages through open Shape-ranked runtime registrations. |
 | `feature/sim-music/audio-lift-and-render` | `crate/sim-lib-sound-audio-lift` | [features/feature--sim-music--audio-lift-and-render.md](../index/features/feature--sim-music--audio-lift-and-render.md) | 6 | Lift PCM through bounded pitch, onset, varying-tempo beat, zero-crossing, perceptual/MFCC, chroma, key, chord, spectral, and finite rendering workflows with alternatives and evidence. |
 | `feature/sim-music/bounded-harmonization` | `crate/sim-lib-pitch-chord` | [features/feature--sim-music--bounded-harmonization.md](../index/features/feature--sim-music--bounded-harmonization.md) | 1 | Plan legal chord progressions with exhaustive, factored-backtracking, certified layered-DP, or declared-heuristic beam strategies and inspectable receipts. |
 | `feature/sim-music/bounded-rewrite-catalogs` | `crate/sim-lib-music-combinators` | [features/feature--sim-music--bounded-rewrite-catalogs.md](../index/features/feature--sim-music--bounded-rewrite-catalogs.md) | 1 | Derive context-aware musical grammars, scale-following pitch-map programs, and finite progression-tree catalogs with explicit bounds, shared rank/search, derivation trees, and receipts. |
@@ -207,6 +208,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `cli/glasses` | `cli` | `crate/sim-run` |
 | `cli/index` | `cli` | `crate/sim-lib-index` |
 | `cli/mcp` | `cli` | `local/sim-agent-net/crate/sim-lib-mcp` |
+| `cli/music-algorithm-foundry` | `cli` | `crate/music-algorithm-foundry` |
 | `cli/repl` | `cli` | `crate/sim-lib-repl` |
 | `cli/serve` | `cli` | `crate/sim-web-shell` |
 | `cli/sim-auto` | `cli` | `crate/sim-auto` |
