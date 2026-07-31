@@ -96,6 +96,7 @@
 | [`feature/sim-ledger/ledger-libraries`](features/feature--sim-ledger--ledger-libraries.md) | `crate/sim-ledger` | 1 |
 | [`feature/sim-music/audio-lift-and-render`](features/feature--sim-music--audio-lift-and-render.md) | `crate/sim-lib-sound-audio-lift` | 1 |
 | [`feature/sim-music/bounded-harmonization`](features/feature--sim-music--bounded-harmonization.md) | `crate/sim-lib-pitch-chord` | 1 |
+| [`feature/sim-music/bounded-rewrite-catalogs`](features/feature--sim-music--bounded-rewrite-catalogs.md) | `crate/sim-lib-music-combinators` | 1 |
 | [`feature/sim-music/carpet-composition`](features/feature--sim-music--carpet-composition.md) | `crate/sim-lib-music-combinators` | 2 |
 | [`feature/sim-music/daw-session-runtime`](features/feature--sim-music--daw-session-runtime.md) | `local/sim-music/crate/sim-lib-daw-session` | 0 |
 | [`feature/sim-music/declarative-harmony`](features/feature--sim-music--declarative-harmony.md) | `crate/sim-lib-pitch-chord` | 2 |

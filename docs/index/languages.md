@@ -261,6 +261,7 @@
 | `specimen` | `lisp` | crates/sim-lib-midi-wasm-frame/recipes/01-basics/browser-facade/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-analysis/recipes/01-basics/pitch-histogram/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-combinators/recipes/01-basics/bounded-harmonization/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-music-combinators/recipes/01-basics/bounded-rewrite-catalogs/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-combinators/recipes/01-basics/carpet-relative/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-combinators/recipes/01-basics/declarative-harmony-evidence/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-combinators/recipes/01-basics/sequence-tools/recipe.toml |
