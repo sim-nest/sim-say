@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-music-analysis`
 - Canonical key: `crate/sim-lib-music-analysis/feature-sim-music-exact-music-analysis-and-transform`
 
-Convert exact score forms with loss and identity evidence, decode key/chord feature sequences with posterior alternatives, find certified voice-leading paths, and transform exact progressions with audited operations.
+Convert exact score forms with loss and identity evidence, decode key/chord feature sequences with posterior alternatives, find certified voice-leading and Tonnetz paths, and transform exact progressions with audited operations.
 
 ## Anchors
 

@@ -260,6 +260,7 @@
 | `specimen` | `lisp` | crates/sim-lib-midi-sysex/recipes/01-basics/test-message/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-midi-wasm-frame/recipes/01-basics/browser-facade/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-analysis/recipes/01-basics/pitch-histogram/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-music-analysis/recipes/01-basics/tonnetz-path/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-combinators/recipes/01-basics/bounded-harmonization/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-combinators/recipes/01-basics/bounded-rewrite-catalogs/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-combinators/recipes/01-basics/carpet-relative/recipe.toml |
@@ -368,6 +369,7 @@
 | `specimen` | `lisp` | crates/sim-lib-pitch-scale/recipes/01-basics/major-degrees/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-scale/recipes/01-basics/scale-generate/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-set/recipes/01-basics/neighborhood-walk/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-pitch-set/recipes/01-basics/set-relations/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-set/recipes/01-basics/triad-mask/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-shapes/recipes/01-basics/shape-family/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-wasm-frame/recipes/01-basics/browser-facade/recipe.toml |
