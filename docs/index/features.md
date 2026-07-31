@@ -95,6 +95,7 @@
 | [`feature/sim-ledger/ledger-command`](features/feature--sim-ledger--ledger-command.md) | `crate/sim-ledger-cli` | 1 |
 | [`feature/sim-ledger/ledger-libraries`](features/feature--sim-ledger--ledger-libraries.md) | `crate/sim-ledger` | 1 |
 | [`feature/sim-music/audio-lift-and-render`](features/feature--sim-music--audio-lift-and-render.md) | `crate/sim-lib-sound-audio-lift` | 1 |
+| [`feature/sim-music/bounded-harmonization`](features/feature--sim-music--bounded-harmonization.md) | `crate/sim-lib-pitch-chord` | 1 |
 | [`feature/sim-music/daw-session-runtime`](features/feature--sim-music--daw-session-runtime.md) | `local/sim-music/crate/sim-lib-daw-session` | 0 |
 | [`feature/sim-music/declarative-harmony`](features/feature--sim-music--declarative-harmony.md) | `crate/sim-lib-pitch-chord` | 1 |
 | [`feature/sim-music/exact-music-analysis-and-transform`](features/feature--sim-music--exact-music-analysis-and-transform.md) | `crate/sim-lib-music-analysis` | 4 |
