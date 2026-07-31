@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-music-analysis`
 - Canonical key: `crate/sim-lib-music-analysis/feature-sim-music-exact-music-analysis-and-transform`
 
-Convert exact score forms with loss and identity evidence, find certified voice-leading paths, and transform exact progressions with audited articulation, register, rhythm, and pitch operations.
+Convert exact score forms with loss and identity evidence, decode key/chord feature sequences with posterior alternatives, find certified voice-leading paths, and transform exact progressions with audited operations.
 
 ## Anchors
 
@@ -29,6 +29,7 @@ Convert exact score forms with loss and identity evidence, find certified voice-
 
 ## Specimens
 
+- `spec-test/sim-music/crates/sim-lib-music-analysis/src/harmonic_tests`
 - `spec-test/sim-music/crates/sim-lib-music-analysis/src/tests`
 - `spec-test/sim-music/crates/sim-lib-music-core/src/tests/score`
 - `spec-test/sim-music/crates/sim-lib-music-transform/src/tests/exact`
@@ -36,88 +37,101 @@ Convert exact score forms with loss and identity evidence, find certified voice-
 
 ## Worked Example
 
-Specimen `spec-test/sim-music/crates/sim-lib-music-analysis/src/tests` is checked by `cargo test`.
+Specimen `spec-test/sim-music/crates/sim-lib-music-analysis/src/harmonic_tests` is checked by `cargo test`.
 
-Source `crates/sim-lib-music-analysis/src/tests.rs`:
+Source `crates/sim-lib-music-analysis/src/harmonic_tests.rs`:
 
 ```rust
-use num_rational::Ratio;
-
-// conformance: exact music analysis and transform exposes checked analysis descriptors.
-
-use sim_lib_music_core::{Articulation, Channel, Note, PianoRoll, TimedNote};
-use sim_lib_pitch_core::{Pitch, PitchClass};
-
 use crate::{
-    ChordWindowMode, DiffRoll, chord_windows_from_diff_roll, chord_windows_from_piano_roll,
+    HarmonicDecodePlan, HarmonicDecodeStrategy, HarmonicFeatureFrame, HarmonicTemplate,
+    decode_chords, decode_harmonic_sequence, decode_keys,
 };
 
-fn note(midi: u8, onset: Ratio<i64>, duration: Ratio<i64>) -> TimedNote {
-    TimedNote {
-        onset,
-        note: Note::new(
-            duration,
-            Pitch::from_midi(midi),
-            100,
-            Channel::new(0).expect("channel"),
-            Articulation::Normal,
-        )
-        .expect("note"),
-    }
+// conformance: music adapters retain generic HMM posterior and alternative evidence.
+
+#[test]
+fn declared_templates_decode_through_generic_hmm_with_alternatives() {
+    let templates = vec![
+        HarmonicTemplate::new("bright", vec![1.0, 0.1, 0.0]).unwrap(),
+        HarmonicTemplate::new("dark", vec![0.0, 0.1, 1.0]).unwrap(),
+    ];
+    let frames = vec![
+        HarmonicFeatureFrame {
+            at_sample: 0,
+            values: vec![1.0, 0.2, 0.0],
+        },
+        HarmonicFeatureFrame {
+            at_sample: 256,
+            values: vec![0.8, 0.2, 0.1],
+        },
+        HarmonicFeatureFrame {
+            at_sample: 512,
+            values: vec![0.0, 0.2, 1.0],
+        },
+    ];
+    let plan = HarmonicDecodePlan {
+        strategy: HarmonicDecodeStrategy::Viterbi,
+        stay_probability: 0.7,
+        max_alternatives: 2,
+        ..HarmonicDecodePlan::default()
+    };
+    let decoded = decode_harmonic_sequence(&frames, &templates, None, &plan).unwrap();
+
+    assert_eq!(decoded.frames[0].label, "bright");
+    assert_eq!(decoded.frames[2].label, "dark");
+    assert!(decoded.frames.iter().all(|frame| {
+        frame.confidence > 0.0
+            && frame.alternatives.len() == 2
+            && frame
+                .alternatives
+                .iter()
+                .all(|alternative| alternative.posterior > 0.0)
+    }));
+    assert!(decoded.evidence.path_log_probability.is_some());
+    assert_eq!(decoded.evidence.normalized_steps, frames.len());
+    assert!(decoded.evidence.work_used <= decoded.evidence.work_limit);
 }
 
 #[test]
-fn diff_roll_marks_started_sounding_ended_and_slurred() {
-    let roll = PianoRoll::new(vec![
-        note(60, Ratio::new(0, 1), Ratio::new(1, 2)),
-        note(64, Ratio::new(1, 4), Ratio::new(1, 2)),
-    ])
-    .expect("roll");
-    let diff = DiffRoll::from_piano_roll(&roll);
-    assert_eq!(
-        diff.frames[0].started.to_pitches(),
-        vec![Pitch::from_midi(60)]
-    );
-    assert_eq!(diff.frames[1].sounding.to_pitches().len(), 2);
-    assert_eq!(
-        diff.frames[1].slurred.to_pitches(),
-        vec![Pitch::from_midi(60)]
-    );
-    assert_eq!(
-        diff.frames[2].ended.to_pitches(),
-        vec![Pitch::from_midi(60)]
-    );
+fn standard_key_and_chord_templates_name_clear_profiles() {
+    let c_major = HarmonicFeatureFrame {
+        at_sample: 0,
+        values: vec![1.0, 0.0, 0.1, 0.0, 0.9, 0.2, 0.0, 0.8, 0.0, 0.1, 0.0, 0.1],
+    };
+    let keys = decode_keys(
+        &[c_major.clone(), c_major.clone()],
+        &HarmonicDecodePlan::default(),
+    )
+    .unwrap();
+    let chords =
+        decode_chords(&[c_major.clone(), c_major], &HarmonicDecodePlan::default()).unwrap();
+
+    assert_eq!(keys.frames[0].label, "C major");
+    assert_eq!(chords.frames[0].label, "C:maj");
+    assert!(keys.frames[0].alternatives.len() > 1);
+    assert!(chords.frames[0].alternatives.len() > 1);
 }
 
 #[test]
-fn sounding_and_starting_modes_differ_on_sustained_chord() {
-    let roll = PianoRoll::new(vec![
-        note(60, Ratio::new(0, 1), Ratio::new(1, 1)),
-        note(64, Ratio::new(0, 1), Ratio::new(1, 1)),
-        note(67, Ratio::new(1, 2), Ratio::new(1, 2)),
-    ])
-    .expect("roll");
-    let sounding = chord_windows_from_piano_roll(&roll, ChordWindowMode::SoundingNotes);
-    let starting = chord_windows_from_piano_roll(&roll, ChordWindowMode::StartingNotes);
-    assert_ne!(sounding, starting);
-    assert_eq!(
-        starting[1].pitch_class_mask,
-        sim_lib_pitch_set::PitchClassMask::from_pitch_classes(&[PitchClass::G])
-    );
-    assert_eq!(sounding[1].pitch_class_mask.count_bits(), 3);
-}
-
-#[test]
-fn diff_roll_and_window_extraction_agree() {
-    let roll = PianoRoll::new(vec![
-        note(60, Ratio::new(0, 1), Ratio::new(1, 4)),
-        note(67, Ratio::new(1, 4), Ratio::new(1, 4)),
-    ])
-    .expect("roll");
-    let diff = DiffRoll::from_piano_roll(&roll);
-    assert_eq!(
-        chord_windows_from_piano_roll(&roll, ChordWindowMode::StartingNotes),
-        chord_windows_from_diff_roll(&diff, ChordWindowMode::StartingNotes)
-    );
+fn harmonic_decode_refuses_unbounded_or_malformed_requests() {
+    let frame = HarmonicFeatureFrame {
+        at_sample: 0,
+        values: vec![1.0, 0.0],
+    };
+    let template = HarmonicTemplate::new("one", vec![1.0, 0.0]).unwrap();
+    let error = decode_harmonic_sequence(
+        &[frame],
+        &[template],
+        None,
+        &HarmonicDecodePlan {
+            max_work: 1,
+            ..HarmonicDecodePlan::default()
+        },
+    )
+    .unwrap_err();
+    assert!(matches!(
+        error,
+        crate::HarmonicDecodeError::WorkLimit { .. }
+    ));
 }
 ```

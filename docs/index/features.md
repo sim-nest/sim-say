@@ -94,13 +94,13 @@
 | [`feature/sim-ledger/generated-docs`](features/feature--sim-ledger--generated-docs.md) | `local/sim-ledger/crate/xtask` | 0 |
 | [`feature/sim-ledger/ledger-command`](features/feature--sim-ledger--ledger-command.md) | `crate/sim-ledger-cli` | 1 |
 | [`feature/sim-ledger/ledger-libraries`](features/feature--sim-ledger--ledger-libraries.md) | `crate/sim-ledger` | 1 |
-| [`feature/sim-music/audio-lift-and-render`](features/feature--sim-music--audio-lift-and-render.md) | `crate/sim-lib-sound-audio-lift` | 5 |
+| [`feature/sim-music/audio-lift-and-render`](features/feature--sim-music--audio-lift-and-render.md) | `crate/sim-lib-sound-audio-lift` | 6 |
 | [`feature/sim-music/bounded-harmonization`](features/feature--sim-music--bounded-harmonization.md) | `crate/sim-lib-pitch-chord` | 1 |
 | [`feature/sim-music/bounded-rewrite-catalogs`](features/feature--sim-music--bounded-rewrite-catalogs.md) | `crate/sim-lib-music-combinators` | 1 |
 | [`feature/sim-music/carpet-composition`](features/feature--sim-music--carpet-composition.md) | `crate/sim-lib-music-combinators` | 2 |
 | [`feature/sim-music/daw-session-runtime`](features/feature--sim-music--daw-session-runtime.md) | `local/sim-music/crate/sim-lib-daw-session` | 0 |
 | [`feature/sim-music/declarative-harmony`](features/feature--sim-music--declarative-harmony.md) | `crate/sim-lib-pitch-chord` | 2 |
-| [`feature/sim-music/exact-music-analysis-and-transform`](features/feature--sim-music--exact-music-analysis-and-transform.md) | `crate/sim-lib-music-analysis` | 4 |
+| [`feature/sim-music/exact-music-analysis-and-transform`](features/feature--sim-music--exact-music-analysis-and-transform.md) | `crate/sim-lib-music-analysis` | 5 |
 | [`feature/sim-music/exact-score-consonance`](features/feature--sim-music--exact-score-consonance.md) | `crate/sim-lib-music-consonance` | 1 |
 | [`feature/sim-music/generated-docs`](features/feature--sim-music--generated-docs.md) | `local/sim-music/crate/xtask` | 0 |
 | [`feature/sim-music/midi-notation-workflows`](features/feature--sim-music--midi-notation-workflows.md) | `crate/sim-lib-midi-core` | 4 |
