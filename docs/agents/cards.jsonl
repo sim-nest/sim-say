@@ -157,7 +157,7 @@
 {"card": {"id": "cookbook/music-combinators", "kind": "cookbook-recipe", "owner": "sim-lib-music-combinators", "summary": "Sequence, parallel, repeat, and transform combinator descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-consonance", "kind": "cookbook-recipe", "owner": "sim-lib-music-consonance", "summary": "Identity-bearing sounding windows with separate consonance metrics."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-core", "kind": "cookbook-recipe", "owner": "sim-lib-music-core", "summary": "Score, melody, note, and duration descriptors."}, "repo": "sim-music"}
-{"card": {"id": "cookbook/music-counterpoint", "kind": "cookbook-recipe", "owner": "sim-lib-music-counterpoint", "summary": "Exact rule evidence and graph-backed contrapuntal overlap."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/music-counterpoint", "kind": "cookbook-recipe", "owner": "sim-lib-music-counterpoint", "summary": "Exact rule evidence, graph-backed overlap, and bounded reversible generation."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-lift", "kind": "cookbook-recipe", "owner": "sim-lib-music-lift", "summary": "Lifting descriptors from MIDI-style tracks into music objects."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-lower", "kind": "cookbook-recipe", "owner": "sim-lib-music-lower", "summary": "Lowering descriptors from scores to MIDI-like tracks."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-notation", "kind": "cookbook-recipe", "owner": "sim-lib-music-notation", "summary": "Notation import and export descriptors."}, "repo": "sim-music"}
