@@ -274,6 +274,7 @@
 | `specimen` | `lisp` | crates/sim-lib-music-core/recipes/02-golden-fixtures/lfo-player-instrument-params/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-core/recipes/02-golden-fixtures/missing-capability-failure/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-core/recipes/02-golden-fixtures/pattern-mutator-locked-take/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-music-counterpoint/recipes/01-basics/bounded-generation/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-counterpoint/recipes/01-basics/counterpoint-report/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-counterpoint/recipes/01-basics/stretto-graph/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-lift/recipes/01-basics/from-midi-track/recipe.toml |
