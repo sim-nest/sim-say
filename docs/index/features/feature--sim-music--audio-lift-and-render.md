@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-sound-audio-lift`
 - Canonical key: `crate/sim-lib-sound-audio-lift/feature-sim-music-audio-lift-and-render`
 
-Lift PCM through reconstructable framed Fourier analysis, bounded tuning-anchored constant-Q and chroma profiles, pitch candidates, spectral summaries, and finite sound or stream rendering.
+Lift PCM through bounded YIN/pYIN and polyphonic partial tracks, reconstructable framed Fourier analysis, tuning-anchored constant-Q and chroma profiles, spectral summaries, and finite sound or stream rendering.
 
 ## Anchors
 
@@ -26,190 +26,164 @@ Lift PCM through reconstructable framed Fourier analysis, bounded tuning-anchore
 
 ## Specimens
 
+- `spec-test/sim-music/crates/sim-lib-sound-audio-lift/src/partial_track_tests`
+- `spec-test/sim-music/crates/sim-lib-sound-audio-lift/src/pitch_fixture_tests`
+- `spec-test/sim-music/crates/sim-lib-sound-audio-lift/src/pitch_track_tests`
 - `spec-test/sim-music/crates/sim-lib-sound-audio-lift/src/tests`
 - `spec-test/sim-music/crates/sim-lib-sound-audio-lift/src/transform_tests`
 
 ## Worked Example
 
-Specimen `spec-test/sim-music/crates/sim-lib-sound-audio-lift/src/tests` is checked by `cargo test`.
+Specimen `spec-test/sim-music/crates/sim-lib-sound-audio-lift/src/partial_track_tests` is checked by `cargo test`.
 
-Source `crates/sim-lib-sound-audio-lift/src/tests.rs`:
+Source `crates/sim-lib-sound-audio-lift/src/partial_track_tests.rs`:
 
 ```rust
-use std::sync::Arc;
-
-// conformance: audio lift and render workflows expose checked audio analysis descriptors.
-
-use sim_kernel::{Cx, DefaultFactory, EagerPolicy, ExportKind, Symbol};
-use sim_lib_sound_tuning::EqualTemperament;
+use sim_lib_pitch_core::Pitch;
+use sim_lib_sound_core::{Amplitude, Frequency};
+use sim_lib_sound_spectrum::{Spectrum, SpectrumSource};
 
 use crate::{
-    AudioLiftOptions, AudioLifter, FftPeakLifter, HarmonicCombLifter, install_sound_audio_lift_lib,
+    AudioLiftFrame, PartialCrossingPolicy, PartialDeathReason, PartialLinkRejectionReason,
+    PartialTrackPolicy, PitchCandidate, track_partials,
 };
 
-#[cfg(feature = "sound-music")]
-use crate::{lifted_notes_to_counterpoint, lifted_notes_to_diff_roll, lifted_notes_to_piano_roll};
+// conformance: partial tracking retains bounded assignment, DTW, crossing, and provenance evidence.
 
 #[test]
-fn synthetic_a4_sine_lifts_with_high_confidence() {
-    let samples = sine_mix(&[(440.0, 1.0)], 48_000, 0.25, 0.0);
-    let tuning = EqualTemperament::default();
-    let report = HarmonicCombLifter::default()
-        .lift_report(&samples, 48_000, &tuning)
-        .unwrap();
-    let note = report
-        .value
-        .notes
-        .iter()
-        .max_by(|left, right| left.confidence.total_cmp(&right.confidence))
-        .expect("lifted note");
-    assert_eq!(note.pitch.to_midi(), Some(69));
-    assert!(note.confidence >= 0.75, "{note:?}");
-}
-
-#[test]
-fn simultaneous_sines_lift_to_two_pitch_candidates() {
-    let samples = sine_mix(&[(440.0, 1.0), (659.25, 0.8)], 48_000, 0.25, 0.0);
-    let tuning = EqualTemperament::default();
-    let report = FftPeakLifter::default()
-        .lift_report(&samples, 48_000, &tuning)
-        .unwrap();
-    let frame = report
-        .value
-        .frames
-        .iter()
-        .max_by_key(|frame| frame.pitch_candidates.len())
-        .expect("frame");
-    let lifted = frame
-        .pitch_candidates
-        .iter()
-        .filter_map(|candidate| candidate.pitch.to_midi())
-        .collect::<Vec<_>>();
-    assert!(lifted.contains(&69), "{lifted:?}");
-    assert!(lifted.contains(&76), "{lifted:?}");
-}
-
-#[test]
-fn noisy_audio_has_lower_confidence() {
-    let tuning = EqualTemperament::default();
-    let clean = sine_mix(&[(440.0, 1.0)], 48_000, 0.25, 0.0);
-    let noisy = sine_mix(&[(440.0, 1.0)], 48_000, 0.25, 0.35);
-    let lifter = HarmonicCombLifter::default();
-    let clean_note = lifter
-        .lift_report(&clean, 48_000, &tuning)
-        .unwrap()
-        .value
-        .notes
-        .into_iter()
-        .max_by(|left, right| left.confidence.total_cmp(&right.confidence))
-        .unwrap();
-    let noisy_note = lifter
-        .lift_report(&noisy, 48_000, &tuning)
-        .unwrap()
-        .value
-        .notes
-        .into_iter()
-        .max_by(|left, right| left.confidence.total_cmp(&right.confidence))
-        .unwrap();
-    assert!(noisy_note.confidence < clean_note.confidence);
-}
-
-#[test]
-fn note_candidates_include_onset_and_duration_estimates() {
-    let samples = stepped_sine(440.0, 48_000, 0.10, 0.10, 0.10);
-    let tuning = EqualTemperament::default();
-    let report = HarmonicCombLifter {
-        opts: AudioLiftOptions {
-            min_note_windows: 1,
-            ..AudioLiftOptions::default()
+fn certified_assignment_can_follow_or_forbid_crossing_trajectories() {
+    let frames = vec![
+        frame(0, &[220.0, 440.0]),
+        frame(1, &[300.0, 360.0]),
+        frame(2, &[220.0, 440.0]),
+    ];
+    let base = PartialTrackPolicy {
+        max_jump_cents: 1_200.0,
+        birth_cost: 2_000.0,
+        death_cost: 2_000.0,
+        min_points: 3,
+        ..PartialTrackPolicy::default()
+    };
+    let crossing = track_partials(
+        &frames,
+        8_000,
+        &PartialTrackPolicy {
+            crossing: PartialCrossingPolicy::Allow,
+            ..base.clone()
         },
-    }
-    .lift_report(&samples, 48_000, &tuning)
+    )
     .unwrap();
-    assert!(!report.value.notes.is_empty());
-    let note = &report.value.notes[0];
-    assert!(note.onset_sample > 0);
-    assert!(note.duration_samples > 0);
-}
+    let ordered = track_partials(
+        &frames,
+        8_000,
+        &PartialTrackPolicy {
+            crossing: PartialCrossingPolicy::Forbid,
+            ..base
+        },
+    )
+    .unwrap();
 
-#[cfg(feature = "sound-music")]
-#[test]
-fn lifted_notes_convert_to_music_views() {
-    let samples = sine_mix(&[(440.0, 1.0)], 48_000, 0.20, 0.0);
-    let tuning = EqualTemperament::default();
-    let report = HarmonicCombLifter::default()
-        .lift_report(&samples, 48_000, &tuning)
-        .unwrap();
-    let roll = lifted_notes_to_piano_roll(&report.value.notes).unwrap();
-    assert!(!roll.items.is_empty());
-    let diff = lifted_notes_to_diff_roll(&report.value.notes).unwrap();
-    assert!(!diff.frames.is_empty());
-    let counterpoint = lifted_notes_to_counterpoint(&report.value.notes).unwrap();
-    assert!(!counterpoint.voices.is_empty());
-}
-
-#[test]
-fn empty_audio_returns_diagnostics_and_no_notes() {
-    let tuning = EqualTemperament::default();
-    let report = FftPeakLifter::default()
-        .lift_report(&[], 48_000, &tuning)
-        .unwrap();
-    assert!(report.value.notes.is_empty());
-    assert!(!report.diagnostics.is_empty());
+    assert_eq!(crossing.tracks.len(), 2);
+    assert_eq!(ordered.tracks.len(), 2);
+    let rising = &crossing.tracks[0];
+    assert_eq!(frequencies(rising), vec![220.0, 300.0, 440.0]);
+    assert_eq!(frequencies(&ordered.tracks[0]), vec![220.0, 300.0, 220.0]);
+    assert!(rising.continuity.receipt.work_used > 0);
+    assert!(rising.continuity.steps >= rising.points.len());
+    assert!(
+        crossing.frames[1]
+            .assignment_receipt
+            .as_ref()
+            .is_some_and(|receipt| receipt.work_used > 0)
+    );
 }
 
 #[test]
-fn install_runtime_is_idempotent_and_registers_audio_lifters() {
-    let mut cx = Cx::new(Arc::new(EagerPolicy), Arc::new(DefaultFactory));
-    install_sound_audio_lift_lib(&mut cx).unwrap();
-    install_sound_audio_lift_lib(&mut cx).unwrap();
-
-    let loaded = cx
-        .registry()
-        .lib(&Symbol::new("sound-audio-lift"))
-        .expect("sound-audio-lift lib");
-    assert!(loaded.exports.iter().any(|record| {
-        record.kind == ExportKind::named("AudioLifter")
-            && record.symbol == Symbol::qualified("sound", "FftPeakLifter")
+fn birth_death_gap_and_track_caps_are_explicit() {
+    let frames = vec![
+        frame(0, &[220.0, 330.0, 440.0]),
+        frame(1, &[]),
+        frame(2, &[]),
+    ];
+    let report = track_partials(
+        &frames,
+        8_000,
+        &PartialTrackPolicy {
+            max_tracks: 2,
+            max_gap_frames: 1,
+            min_points: 1,
+            ..PartialTrackPolicy::default()
+        },
+    )
+    .unwrap();
+    assert_eq!(report.tracks.len(), 2);
+    assert!(
+        report
+            .tracks
+            .iter()
+            .all(|track| track.death == PartialDeathReason::GapLimit)
+    );
+    assert_eq!(report.frames[2].deaths.len(), 2);
+    assert!(report.frames[0].rejected_links.iter().any(|rejected| {
+        rejected.reason == PartialLinkRejectionReason::TrackLimit && rejected.track.is_none()
     }));
-    assert!(loaded.exports.iter().any(|record| {
-        record.kind == ExportKind::named("AudioLifter")
-            && record.symbol == Symbol::qualified("sound", "HarmonicCombLifter")
-    }));
 }
 
-fn sine_mix(tones: &[(f64, f64)], sample_rate: u32, seconds: f64, noise: f64) -> Vec<f32> {
-    let samples = (seconds * f64::from(sample_rate)).round() as usize;
-    (0..samples)
-        .map(|index| {
-            let t = index as f64 / f64::from(sample_rate);
-            let signal = tones
-                .iter()
-                .map(|(hz, gain)| (std::f64::consts::TAU * hz * t).sin() * gain)
-                .sum::<f64>();
-            let hiss = if noise > 0.0 {
-                noise * pseudo_noise(index)
-            } else {
-                0.0
-            };
-            (signal + hiss).clamp(-1.0, 1.0) as f32
-        })
+#[test]
+fn jump_rejections_and_candidate_uncertainty_retain_frame_provenance() {
+    let frames = vec![frame(0, &[220.0]), frame(1, &[880.0])];
+    let report = track_partials(
+        &frames,
+        8_000,
+        &PartialTrackPolicy {
+            max_jump_cents: 100.0,
+            min_points: 1,
+            ..PartialTrackPolicy::default()
+        },
+    )
+    .unwrap();
+    let rejected = &report.frames[1].rejected_links[0];
+    assert_eq!(rejected.reason, PartialLinkRejectionReason::JumpLimit);
+    assert!(rejected.cents_distance.unwrap() > 2_300.0);
+    let candidate = &report.frames[1].candidates[0];
+    assert_eq!(candidate.provenance.frame_index, 1);
+    assert_eq!(candidate.provenance.onset_sample, 256);
+    assert!(candidate.lower_frequency.0 < candidate.frequency.0);
+    assert!(candidate.upper_frequency.0 > candidate.frequency.0);
+}
+
+fn frame(index: usize, frequencies: &[f64]) -> AudioLiftFrame {
+    AudioLiftFrame {
+        index,
+        onset_sample: index * 256,
+        duration_samples: 1_024,
+        spectrum: Spectrum {
+            bins: Vec::new(),
+            source: SpectrumSource::Synthetic,
+        },
+        pitch_candidates: frequencies
+            .iter()
+            .copied()
+            .map(|frequency| PitchCandidate {
+                pitch: Pitch::from_semitone(
+                    (69.0 + 12.0 * (frequency / 440.0).log2()).round() as i32
+                ),
+                frequency: Frequency(frequency),
+                amplitude: Amplitude(1.0),
+                confidence: 0.9,
+                cents_error: 0.0,
+                harmonic_count: 3,
+            })
+            .collect(),
+        diagnostics: Vec::new(),
+    }
+}
+
+fn frequencies(track: &crate::PartialTrack) -> Vec<f64> {
+    track
+        .points
+        .iter()
+        .map(|point| point.candidate.frequency.0)
         .collect()
-}
-
-fn stepped_sine(hz: f64, sample_rate: u32, lead_silence: f64, tone: f64, tail: f64) -> Vec<f32> {
-    let silence = vec![0.0_f32; (lead_silence * f64::from(sample_rate)).round() as usize];
-    let mut out = silence;
-    out.extend(sine_mix(&[(hz, 1.0)], sample_rate, tone, 0.0));
-    out.extend(vec![
-        0.0_f32;
-        (tail * f64::from(sample_rate)).round() as usize
-    ]);
-    out
-}
-
-fn pseudo_noise(index: usize) -> f64 {
-    let x = ((index as u64).wrapping_mul(1103515245).wrapping_add(12345) % 65536) as f64;
-    (x / 32768.0) - 1.0
 }
 ```
