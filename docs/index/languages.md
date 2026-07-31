@@ -285,6 +285,7 @@
 | `specimen` | `lisp` | crates/sim-lib-music-shapes/recipes/01-basics/shape-family/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-synth/recipes/01-basics/subtractive-preset/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-synth/recipes/02-dx7/synthetic-patch-render/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-music-synth/recipes/03-composition/offline-realtime-preview/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-synth/recipes/placement/all-local/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-synth/recipes/placement/browser-wasm-local/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-synth/recipes/placement/voice-local-lan-preview/recipe.toml |
@@ -519,6 +520,7 @@
 | `specimen` | `shape` | crates/sim-conformance/tests/spec/support.rs |
 | `specimen` | `shape` | crates/sim-lib-agent-runner-local/tests/load_register.rs |
 | `specimen` | `shape` | crates/sim-lib-agent/src/tests/agent_ai_placement_swap.rs |
+| `specimen` | `shape` | crates/sim-lib-audio-dsp/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-auto-order/src/conformance.rs |
 | `specimen` | `shape` | crates/sim-lib-auto-order/src/lib.rs |
 | `specimen` | `shape` | crates/sim-lib-bridge/src/tests/ask.rs |

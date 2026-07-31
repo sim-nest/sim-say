@@ -16,7 +16,7 @@
 | [`feature/sim-agent-net/output-contract-repair-cli`](features/feature--sim-agent-net--output-contract-repair-cli.md) | `crate/sim-lib-agent-runner-core-recipe-output-contract-repair` | 1 |
 | [`feature/sim-agent-net/server-wall-clock`](features/feature--sim-agent-net--server-wall-clock.md) | `local/sim-agent-net/crate/sim-lib-server` | 1 |
 | [`feature/sim-audio-daw/audio-device-providers`](features/feature--sim-audio-daw--audio-device-providers.md) | `crate/sim-lib-stream-cpal` | 1 |
-| [`feature/sim-audio-daw/audio-graph-workbench`](features/feature--sim-audio-daw--audio-graph-workbench.md) | `local/sim-audio-daw/crate/sim-lib-audio-graph-core` | 1 |
+| [`feature/sim-audio-daw/audio-graph-workbench`](features/feature--sim-audio-daw--audio-graph-workbench.md) | `local/sim-audio-daw/crate/sim-lib-audio-graph-core` | 3 |
 | [`feature/sim-audio-daw/generated-docs`](features/feature--sim-audio-daw--generated-docs.md) | `local/sim-audio-daw/crate/xtask` | 0 |
 | [`feature/sim-citizen/citizen-read-constructs`](features/feature--sim-citizen--citizen-read-constructs.md) | `crate/sim-citizen` | 1 |
 | [`feature/sim-citizen/generated-docs`](features/feature--sim-citizen--generated-docs.md) | `local/sim-citizen/crate/xtask` | 0 |
@@ -108,7 +108,7 @@
 | [`feature/sim-music/pitch-and-sound-vocabulary`](features/feature--sim-music--pitch-and-sound-vocabulary.md) | `crate/sim-lib-pitch-core` | 1 |
 | [`feature/sim-music/reversible-consonance-completion`](features/feature--sim-music--reversible-consonance-completion.md) | `crate/sim-lib-music-consonance` | 1 |
 | [`feature/sim-music/sound-spectrum-adapter`](features/feature--sim-music--sound-spectrum-adapter.md) | `crate/sim-lib-sound-spectrum` | 1 |
-| [`feature/sim-music/synth-performance-workbench`](features/feature--sim-music--synth-performance-workbench.md) | `local/sim-music/crate/sim-lib-music-synth` | 1 |
+| [`feature/sim-music/synth-performance-workbench`](features/feature--sim-music--synth-performance-workbench.md) | `local/sim-music/crate/sim-lib-music-synth` | 5 |
 | [`feature/sim-numbers/generated-docs`](features/feature--sim-numbers--generated-docs.md) | `local/sim-numbers/crate/xtask` | 0 |
 | [`feature/sim-numbers/numbers`](features/feature--sim-numbers--numbers.md) | `crate/sim-lib-numbers-core` | 4 |
 | [`feature/sim-numbers/numeric-pipelines`](features/feature--sim-numbers--numeric-pipelines.md) | `crate/sim-lib-numbers-numeric` | 1 |

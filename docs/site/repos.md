@@ -3,7 +3,7 @@
 | Repository | Commit | Contracts |
 | --- | --- | --- |
 | [sim-agent-net](../repos/sim-agent-net.md) | `b046abea97738580f79500e7d869c0bda2dde98d` | [JSON](../contracts/sim-agent-net/repo-contract.json) |
-| [sim-audio-daw](../repos/sim-audio-daw.md) | `77f1e1ea4cc4741853ae17e66ce16b2791d17fdc` | [JSON](../contracts/sim-audio-daw/repo-contract.json) |
+| [sim-audio-daw](../repos/sim-audio-daw.md) | `7661b2552300853898fd36d11d4b2d94bc3c4ddd` | [JSON](../contracts/sim-audio-daw/repo-contract.json) |
 | [sim-auto](../repos/sim-auto.md) | `1a284195f231d9ae73e01aa3e1d7cb76d4a8dc71` | [JSON](../contracts/sim-auto/repo-contract.json) |
 | [sim-citizen](../repos/sim-citizen.md) | `cf435a04dc79328cf607128eb7311d139d8bad2a` | [JSON](../contracts/sim-citizen/repo-contract.json) |
 | [sim-codecs](../repos/sim-codecs.md) | `7c1781e9c03b2861edbf0aea26a906717c96ec99` | [JSON](../contracts/sim-codecs/repo-contract.json) |
@@ -16,7 +16,7 @@
 | [sim-interference](../repos/sim-interference.md) | `85fd9a72a201134f8f2b6bfd02f4c68b6582e27f` | [JSON](../contracts/sim-interference/repo-contract.json) |
 | [sim-kernel](../repos/sim-kernel.md) | `d9cc50b71f6af0e64d648c7c7e2de6a4997e29c4` | [JSON](../contracts/sim-kernel/repo-contract.json) |
 | [sim-ledger](../repos/sim-ledger.md) | `e3f49c24257fea045a1d2c29c867981fcd3692de` | [JSON](../contracts/sim-ledger/repo-contract.json) |
-| [sim-music](../repos/sim-music.md) | `d7b5bf3a7bfedcb5e4411c964d0488d4b7db42ba` | [JSON](../contracts/sim-music/repo-contract.json) |
+| [sim-music](../repos/sim-music.md) | `b97936b420c627f3068cd89f851aa3a409b1ac8e` | [JSON](../contracts/sim-music/repo-contract.json) |
 | [sim-numbers](../repos/sim-numbers.md) | `c9e3cc7e2f52c44496a29973d359b64761d76b47` | [JSON](../contracts/sim-numbers/repo-contract.json) |
 | [sim-office](../repos/sim-office.md) | `42c71937cceb4a5f58bbe7ee7fa156701af747e2` | [JSON](../contracts/sim-office/repo-contract.json) |
 | [sim-run](../repos/sim-run.md) | `7fe8ad56affd7cecb596ac908a05795fe3a5d721` | [JSON](../contracts/sim-run/repo-contract.json) |
