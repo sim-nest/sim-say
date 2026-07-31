@@ -13,6 +13,7 @@ Lift PCM audio into sound features, reuse spectral summaries, and render finite 
 - `anchor/crate/sim-lib-sound-audio-lift`
 - `anchor/crate/sim-lib-sound-bridge`
 - `anchor/crate/sim-lib-sound-render`
+- `anchor/crate/sim-lib-sound-spectrum`
 - `anchor/crate/sim-lib-stream-bridge`
 - `anchor/runtime-lib/sim-lib-sound-audio-lift/sound-audio-lift-lib`
 - `anchor/runtime-lib/sim-lib-sound-bridge/sound-bridge-lib`

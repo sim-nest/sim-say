@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-numbers-signal`
 - Canonical key: `crate/sim-lib-numbers-signal/feature-sim-numbers-signal-transforms`
 
-Transform, convolve, correlate, fit stable autoregressive models, estimate classical or MEM spectra, interpolate periodic DFT series, derive analytic signals, and guardedly deconvolve with explicit bounded reports.
+Transform with Fourier or wavelet plans, smooth and differentiate polynomials, solve Toeplitz systems, interpolate periodic or sampled data, estimate spectra, and guardedly deconvolve with explicit policy and diagnostics.
 
 ## Anchors
 
@@ -17,10 +17,12 @@ Transform, convolve, correlate, fit stable autoregressive models, estimate class
 - `anchor/rustdoc/sim-lib-numbers-signal/analytic-signal-report`
 - `anchor/rustdoc/sim-lib-numbers-signal/analytic_envelope`
 - `anchor/rustdoc/sim-lib-numbers-signal/analytic_signal`
+- `anchor/rustdoc/sim-lib-numbers-signal/apply_savitzky_golay`
 - `anchor/rustdoc/sim-lib-numbers-signal/ar-model`
 - `anchor/rustdoc/sim-lib-numbers-signal/ar-order-criterion`
 - `anchor/rustdoc/sim-lib-numbers-signal/block-convolution-plan`
 - `anchor/rustdoc/sim-lib-numbers-signal/block-convolution-report`
+- `anchor/rustdoc/sim-lib-numbers-signal/boundary-mode`
 - `anchor/rustdoc/sim-lib-numbers-signal/boundary-policy`
 - `anchor/rustdoc/sim-lib-numbers-signal/burg`
 - `anchor/rustdoc/sim-lib-numbers-signal/burg-evidence`
@@ -45,11 +47,19 @@ Transform, convolve, correlate, fit stable autoregressive models, estimate class
 - `anchor/rustdoc/sim-lib-numbers-signal/dft_bin`
 - `anchor/rustdoc/sim-lib-numbers-signal/dft_integrate`
 - `anchor/rustdoc/sim-lib-numbers-signal/dft_interpolate`
+- `anchor/rustdoc/sim-lib-numbers-signal/duplicate-xpolicy`
+- `anchor/rustdoc/sim-lib-numbers-signal/dwt`
 - `anchor/rustdoc/sim-lib-numbers-signal/envelope-follower-plan`
 - `anchor/rustdoc/sim-lib-numbers-signal/envelope_follow`
 - `anchor/rustdoc/sim-lib-numbers-signal/estimator-evidence`
 - `anchor/rustdoc/sim-lib-numbers-signal/estimator-limits`
+- `anchor/rustdoc/sim-lib-numbers-signal/extrapolation-policy`
+- `anchor/rustdoc/sim-lib-numbers-signal/finite-impulse-response`
 - `anchor/rustdoc/sim-lib-numbers-signal/frequency-grid-policy`
+- `anchor/rustdoc/sim-lib-numbers-signal/idwt`
+- `anchor/rustdoc/sim-lib-numbers-signal/interpolate_samples`
+- `anchor/rustdoc/sim-lib-numbers-signal/interpolation-method`
+- `anchor/rustdoc/sim-lib-numbers-signal/interpolation-plan`
 - `anchor/rustdoc/sim-lib-numbers-signal/lag-order`
 - `anchor/rustdoc/sim-lib-numbers-signal/lomb-scargle-plan`
 - `anchor/rustdoc/sim-lib-numbers-signal/lomb_scargle`
@@ -67,14 +77,20 @@ Transform, convolve, correlate, fit stable autoregressive models, estimate class
 - `anchor/rustdoc/sim-lib-numbers-signal/reference_dft`
 - `anchor/rustdoc/sim-lib-numbers-signal/reference_dst`
 - `anchor/rustdoc/sim-lib-numbers-signal/regularization`
+- `anchor/rustdoc/sim-lib-numbers-signal/sample-interpolator`
+- `anchor/rustdoc/sim-lib-numbers-signal/savitzky-golay-spec`
+- `anchor/rustdoc/sim-lib-numbers-signal/savitzky_golay`
 - `anchor/rustdoc/sim-lib-numbers-signal/signal-buffer`
 - `anchor/rustdoc/sim-lib-numbers-signal/signal-numbers-lib`
+- `anchor/rustdoc/sim-lib-numbers-signal/solve_toeplitz`
 - `anchor/rustdoc/sim-lib-numbers-signal/spectrum-estimate`
 - `anchor/rustdoc/sim-lib-numbers-signal/spectrum-packing`
 - `anchor/rustdoc/sim-lib-numbers-signal/spectrum-scaling`
 - `anchor/rustdoc/sim-lib-numbers-signal/spectrum-scaling-kind`
 - `anchor/rustdoc/sim-lib-numbers-signal/spectrum-side`
 - `anchor/rustdoc/sim-lib-numbers-signal/tensor-view`
+- `anchor/rustdoc/sim-lib-numbers-signal/toeplitz-diagnostics`
+- `anchor/rustdoc/sim-lib-numbers-signal/toeplitz-plan`
 - `anchor/rustdoc/sim-lib-numbers-signal/transform`
 - `anchor/rustdoc/sim-lib-numbers-signal/transform-kind`
 - `anchor/rustdoc/sim-lib-numbers-signal/transform-plan`
@@ -84,6 +100,9 @@ Transform, convolve, correlate, fit stable autoregressive models, estimate class
 - `anchor/rustdoc/sim-lib-numbers-signal/transform_nd`
 - `anchor/rustdoc/sim-lib-numbers-signal/transform_nd_blocked`
 - `anchor/rustdoc/sim-lib-numbers-signal/unwrap_phase`
+- `anchor/rustdoc/sim-lib-numbers-signal/wavelet`
+- `anchor/rustdoc/sim-lib-numbers-signal/wavelet-coefficients`
+- `anchor/rustdoc/sim-lib-numbers-signal/wavelet-plan`
 - `anchor/rustdoc/sim-lib-numbers-signal/welch`
 - `anchor/rustdoc/sim-lib-numbers-signal/welch-plan`
 - `anchor/rustdoc/sim-lib-numbers-signal/window`
@@ -102,7 +121,10 @@ Transform, convolve, correlate, fit stable autoregressive models, estimate class
 - `spec-test/sim-numbers/crates/sim-lib-numbers-signal/src/interpolation_tests`
 - `spec-test/sim-numbers/crates/sim-lib-numbers-signal/src/multidimensional_tests`
 - `spec-test/sim-numbers/crates/sim-lib-numbers-signal/src/runtime_tests`
+- `spec-test/sim-numbers/crates/sim-lib-numbers-signal/src/sample_interpolation_tests`
+- `spec-test/sim-numbers/crates/sim-lib-numbers-signal/src/smoothing_tests`
 - `spec-test/sim-numbers/crates/sim-lib-numbers-signal/src/spectral_tests`
+- `spec-test/sim-numbers/crates/sim-lib-numbers-signal/src/wavelet_tests`
 
 ## Worked Example
 

@@ -482,6 +482,7 @@
 | `specimen` | `rust` | crates/sim-lib-numbers-signal/recipes/01-basics/blocked-transform/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-numbers-signal/recipes/01-basics/burg-mem-evidence/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-numbers-signal/recipes/01-basics/spectral-estimators/recipe.toml |
+| `specimen` | `rust` | crates/sim-lib-numbers-signal/recipes/01-basics/wavelet-smoothing/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-view-interference/recipes/01-basics/interference-study/recipe.toml |
 | `specimen` | `rust` | recipes/00-overview/modeled-work-order/recipe.toml |
 | `specimen` | `rust` | recipes/01-basics/exact-bool-shape/recipe.toml |
@@ -541,6 +542,7 @@
 | `specimen` | `shape` | crates/sim-lib-numbers-rational/src/implementation/domain.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-rk/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-signal/src/multidimensional_tests.rs |
+| `specimen` | `shape` | crates/sim-lib-numbers-signal/src/sample_interpolation_tests.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-tensor-bcast/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-tensor-linalg/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-tensor/src/implementation/citizen.rs |
