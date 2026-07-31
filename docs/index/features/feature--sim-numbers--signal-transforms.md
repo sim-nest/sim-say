@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-numbers-signal`
 - Canonical key: `crate/sim-lib-numbers-signal/feature-sim-numbers-signal-transforms`
 
-Transform canonical complex and f64 tensor signals with direct DFT definitions, mixed-radix and Bluestein FFTs, real packing, and DCT/DST I-IV.
+Transform canonical complex and f64 tensor signals with direct definitions, fast paths, strided multidimensional views, and bounded Table/Dir block plans.
 
 ## Anchors
 
@@ -19,13 +19,20 @@ Transform canonical complex and f64 tensor signals with direct DFT definitions, 
 - `anchor/rustdoc/sim-lib-numbers-signal/signal-buffer`
 - `anchor/rustdoc/sim-lib-numbers-signal/signal-numbers-lib`
 - `anchor/rustdoc/sim-lib-numbers-signal/spectrum-packing`
+- `anchor/rustdoc/sim-lib-numbers-signal/tensor-view`
 - `anchor/rustdoc/sim-lib-numbers-signal/transform`
 - `anchor/rustdoc/sim-lib-numbers-signal/transform-kind`
 - `anchor/rustdoc/sim-lib-numbers-signal/transform-plan`
+- `anchor/rustdoc/sim-lib-numbers-signal/transform-precision`
+- `anchor/rustdoc/sim-lib-numbers-signal/transform-report`
+- `anchor/rustdoc/sim-lib-numbers-signal/transform-resources`
+- `anchor/rustdoc/sim-lib-numbers-signal/transform_nd`
+- `anchor/rustdoc/sim-lib-numbers-signal/transform_nd_blocked`
 
 ## Specimens
 
 - `spec-test/sim-numbers/crates/sim-lib-numbers-signal/src/conformance`
+- `spec-test/sim-numbers/crates/sim-lib-numbers-signal/src/multidimensional_tests`
 
 ## Worked Example
 
