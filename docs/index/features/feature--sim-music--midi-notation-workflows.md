@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-midi-core`
 - Canonical key: `crate/sim-lib-midi-core/feature-sim-music-midi-notation-workflows`
 
-Lift, realize, lower, inspect, and export musical material across bounded lossless MIDI files, exact tempo/pedal/note timelines, live MIDI fixtures, and notation forms.
+Lift, realize, lower, inspect, and export musical material across bounded lossless MIDI files, exact tempo/pedal/note timelines, live MIDI fixtures, LilyPond, and MusicXML.
 
 ## Anchors
 
@@ -18,6 +18,7 @@ Lift, realize, lower, inspect, and export musical material across bounded lossle
 - `anchor/crate/sim-lib-midi-smf`
 - `anchor/crate/sim-lib-midi-sysex`
 - `anchor/crate/sim-lib-midi-wasm-frame`
+- `anchor/crate/sim-lib-music-notation`
 - `anchor/crate/sim-lib-stream-file`
 - `anchor/crate/sim-lib-stream-midi`
 - `anchor/runtime-lib/sim-lib-midi-ble/midi-ble-lib`
@@ -26,6 +27,7 @@ Lift, realize, lower, inspect, and export musical material across bounded lossle
 - `anchor/runtime-lib/sim-lib-midi-live/midi-live-lib`
 - `anchor/runtime-lib/sim-lib-midi-rtmidi/midi-rtmidi-lib`
 - `anchor/runtime-lib/sim-lib-midi-shapes/midi-shapes-lib`
+- `anchor/runtime-lib/sim-lib-music-notation/music-notation-lib`
 
 ## Surfaces
 
@@ -36,6 +38,7 @@ Lift, realize, lower, inspect, and export musical material across bounded lossle
 - `spec-test/sim-music/crates/sim-lib-midi-core/src/tests`
 - `spec-test/sim-music/crates/sim-lib-midi-smf/src/tests`
 - `spec-test/sim-music/crates/sim-lib-music-lift/src/tests`
+- `spec-test/sim-music/crates/sim-lib-music-notation/src/tests`
 
 ## Worked Example
 

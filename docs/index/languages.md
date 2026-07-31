@@ -272,6 +272,7 @@
 | `specimen` | `lisp` | crates/sim-lib-music-lift/recipes/01-basics/from-midi-track/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-lower/recipes/01-basics/to-midi-track/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-notation/recipes/01-basics/lilypond-export/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-music-notation/recipes/01-basics/musicxml-import/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-shapes/recipes/01-basics/shape-family/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-synth/recipes/01-basics/subtractive-preset/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-music-synth/recipes/02-dx7/synthetic-patch-render/recipe.toml |
@@ -512,6 +513,7 @@
 | `specimen` | `shape` | crates/sim-lib-lang-prolog/src/conformance.rs |
 | `specimen` | `shape` | crates/sim-lib-logic/src/tests/organ_proof.rs |
 | `specimen` | `shape` | crates/sim-lib-mcp/tests/serve_mcp.rs |
+| `specimen` | `shape` | crates/sim-lib-music-notation/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-cas/src/implementation/citizen.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-complex/src/implementation/literal.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-func/src/implementation/domain.rs |
