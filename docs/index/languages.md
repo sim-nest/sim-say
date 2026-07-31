@@ -171,6 +171,7 @@
 | `specimen` | `lisp` | crates/sim-lib-discrete-comb/recipes/01-basics/rankable-values/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-graph/recipes/01-basics/min-cost-assignment/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-graph/recipes/01-basics/tiny-graph/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-discrete-graph/recipes/02-scenarios/staged-alignment/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-rank/recipes/01-basics/combination-space/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-search/recipes/01-basics/constrained-word/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-search/src/cookbook.rs |
@@ -505,6 +506,7 @@
 | `specimen` | `shape` | crates/sim-lib-compute-wgpu/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-construction-project/src/citizen.rs |
 | `specimen` | `shape` | crates/sim-lib-construction-project/src/outcome_tests.rs |
+| `specimen` | `shape` | crates/sim-lib-discrete-graph/src/assignment/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-discrete/src/forms.rs |
 | `specimen` | `shape` | crates/sim-lib-incremental/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-interference-compute/src/hardware_tests.rs |

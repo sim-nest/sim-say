@@ -6,7 +6,7 @@
 - Subject: `local/sim-discrete/crate/sim-lib-discrete`
 - Canonical key: `crate/sim-lib-discrete/feature-sim-discrete-discrete-algebra`
 
-Provide algebra, certified minimum-cost assignment and graph paths, combinatorics, ranking, and spectral helpers as one reusable discrete-domain stack.
+Provide algebra, certified rectangular assignment, graph and staged paths, sequence alignment, combinatorics, ranking, and spectral helpers as one reusable discrete-domain stack.
 
 ## Anchors
 
@@ -18,193 +18,129 @@ Provide algebra, certified minimum-cost assignment and graph paths, combinatoric
 - `anchor/crate/sim-lib-discrete-search`
 - `anchor/crate/sim-lib-discrete-spectral`
 - `anchor/runtime-lib/sim-lib-discrete/discrete-lib`
+- `anchor/rustdoc/sim-lib-discrete-graph/algorithm-control`
+- `anchor/rustdoc/sim-lib-discrete-graph/dynamic_time_warp`
+- `anchor/rustdoc/sim-lib-discrete-graph/layered_shortest_path`
 - `anchor/rustdoc/sim-lib-discrete-graph/min_cost_assignment`
 - `anchor/rustdoc/sim-lib-discrete-graph/shortest_path`
 
 ## Specimens
 
+- `spec-test/sim-discrete/crates/sim-lib-discrete-graph/src/alignment/tests`
 - `spec-test/sim-discrete/crates/sim-lib-discrete-graph/src/assignment/tests`
+- `spec-test/sim-discrete/crates/sim-lib-discrete-graph/src/layered`
 - `spec-test/sim-discrete/crates/sim-lib-discrete/src/forms`
 
 ## Worked Example
 
-Specimen `spec-test/sim-discrete/crates/sim-lib-discrete-graph/src/assignment/tests` is checked by `cargo test`.
+Specimen `spec-test/sim-discrete/crates/sim-lib-discrete-graph/src/alignment/tests` is checked by `cargo test`.
 
-Source `crates/sim-lib-discrete-graph/src/assignment/tests.rs`:
+Source `crates/sim-lib-discrete-graph/src/alignment/tests.rs`:
 
 ```rust
 use super::*;
 
-// conformance: certified minimum-cost assignment with deterministic ties,
-// insertion, deletion, doubling, and voice-crossing policy
+// conformance: DTW/edit alignment verifies full and rolling certificates,
+// subsequence/window policies, deterministic ties, bounds, and finite costs.
 
-fn matrix(rows: &[&[i64]]) -> CostMatrix<i64> {
-    CostMatrix::try_from(rows.iter().map(|row| row.to_vec()).collect::<Vec<Vec<_>>>())
-        .expect("matrix")
+fn distance(left: &i32, right: &i32) -> i64 {
+    i64::from((left - right).abs())
 }
 
 #[test]
-fn unrestricted_assignment_is_optimal_and_certified() {
-    let costs = matrix(&[&[9, 2, 7], &[6, 4, 3], &[5, 8, 1]]);
-    let policy = AssignmentPolicy::new(vec![20; 3], vec![20; 3]);
-    let assignment = min_cost_assignment(&costs, policy.clone()).expect("assignment");
+fn full_alignment_returns_stable_edit_path_and_certificate() {
+    let left = [1, 2, 3];
+    let right = [1, 4, 3];
+    let policy = DtwPolicy::new(GapPolicy::new(3_i64, 3));
+    let alignment = dynamic_time_warp(&left, &right, distance, policy.clone()).expect("alignment");
 
-    assert_eq!(assignment.total_cost, 9);
+    assert_eq!(alignment.score, 2);
     assert_eq!(
-        assignment.operations,
-        vec![
-            AssignmentOperation::Match {
-                source: 0,
-                target: 1,
+        alignment.steps,
+        Some(vec![
+            AlignmentStep::Match {
+                left: 0,
+                right: 0,
+                cost: 0,
+            },
+            AlignmentStep::Match {
+                left: 1,
+                right: 1,
                 cost: 2,
             },
-            AssignmentOperation::Match {
-                source: 1,
-                target: 0,
-                cost: 6,
-            },
-            AssignmentOperation::Match {
-                source: 2,
-                target: 2,
-                cost: 1,
-            },
-        ]
-    );
-    verify_assignment(&costs, &policy, &assignment).expect("certificate");
-}
-
-#[test]
-fn insertion_deletion_and_doubling_are_jointly_optimized() {
-    let costs = matrix(&[&[1, 9, 2], &[8, 8, 8]]);
-    let policy = AssignmentPolicy::new(vec![7, 3, 7], vec![6, 4]).with_doubling(vec![2, 10]);
-    let assignment = min_cost_assignment(&costs, policy.clone()).expect("assignment");
-
-    assert_eq!(assignment.total_cost, 12);
-    assert_eq!(
-        assignment.operations,
-        vec![
-            AssignmentOperation::Match {
-                source: 0,
-                target: 0,
-                cost: 1,
-            },
-            AssignmentOperation::Double {
-                source: 0,
-                target: 2,
-                cost: 4,
-            },
-            AssignmentOperation::Delete { source: 1, cost: 4 },
-            AssignmentOperation::Insert { target: 1, cost: 3 },
-        ]
-    );
-    verify_assignment(&costs, &policy, &assignment).expect("certificate");
-}
-
-#[test]
-fn crossing_policy_changes_the_certified_optimum() {
-    let costs = matrix(&[&[50, 1], &[1, 50]]);
-    let base = AssignmentPolicy::new(vec![100; 2], vec![100; 2]);
-    let crossing = min_cost_assignment(&costs, base.clone()).expect("crossing");
-    let ordered = min_cost_assignment(
-        &costs,
-        base.with_voice_crossing(VoiceCrossingPolicy::Forbid),
-    )
-    .expect("ordered");
-
-    assert_eq!(crossing.total_cost, 2);
-    assert_eq!(ordered.total_cost, 100);
-    assert!(matches!(
-        crossing.certificate,
-        AssignmentCertificate::MinCostFlow { .. }
-    ));
-    assert!(matches!(
-        ordered.certificate,
-        AssignmentCertificate::OrderPreserving { .. }
-    ));
-}
-
-#[test]
-fn equal_cost_ties_have_a_stable_assignment() {
-    let costs = matrix(&[&[0, 0], &[0, 0]]);
-    let policy = AssignmentPolicy::new(vec![5; 2], vec![5; 2]);
-    let first = min_cost_assignment(&costs, policy.clone()).expect("first");
-    let replay = min_cost_assignment(&costs, policy).expect("replay");
-
-    assert_eq!(first, replay);
-    assert_eq!(
-        first.operations,
-        vec![
-            AssignmentOperation::Match {
-                source: 0,
-                target: 0,
+            AlignmentStep::Match {
+                left: 2,
+                right: 2,
                 cost: 0,
             },
-            AssignmentOperation::Match {
-                source: 1,
-                target: 1,
-                cost: 0,
-            },
-        ]
+        ])
     );
+    verify_alignment(&left, &right, distance, &policy, &alignment).expect("certificate");
 }
 
 #[test]
-fn empty_sides_produce_only_explicit_edits() {
-    let no_sources = CostMatrix::new(0, 2, Vec::<i64>::new()).expect("matrix");
-    let inserted = min_cost_assignment(&no_sources, AssignmentPolicy::new(vec![3, 4], Vec::new()))
-        .expect("insertions");
-    assert_eq!(inserted.total_cost, 7);
-    assert_eq!(
-        inserted.operations,
-        vec![
-            AssignmentOperation::Insert { target: 0, cost: 3 },
-            AssignmentOperation::Insert { target: 1, cost: 4 },
-        ]
-    );
+fn subsequence_window_and_rolling_memory_are_enforced() {
+    let left = [2, 3];
+    let right = [9, 2, 3, 9];
+    let policy = DtwPolicy::new(GapPolicy::new(5_i64, 5))
+        .with_boundary(AlignmentBoundary::Subsequence)
+        .with_memory(AlignmentMemory::RollingScoreOnly);
+    let alignment =
+        dynamic_time_warp(&left, &right, distance, policy.clone()).expect("subsequence");
 
-    let no_targets = CostMatrix::new(2, 0, Vec::<i64>::new()).expect("matrix");
-    let deleted = min_cost_assignment(&no_targets, AssignmentPolicy::new(Vec::new(), vec![5, 6]))
-        .expect("deletions");
-    assert_eq!(deleted.total_cost, 11);
-}
-
-#[test]
-fn tampered_flow_and_order_certificates_fail_closed() {
-    let costs = matrix(&[&[1, 3], &[2, 1]]);
-    let flow_policy = AssignmentPolicy::new(vec![5; 2], vec![5; 2]);
-    let mut flow = min_cost_assignment(&costs, flow_policy.clone()).expect("flow");
-    let AssignmentCertificate::MinCostFlow { potentials } = &mut flow.certificate else {
-        panic!("flow certificate");
-    };
-    potentials.fill(100);
-    potentials[0] = -100;
+    assert_eq!(alignment.score, 0);
+    assert_eq!(alignment.steps, None);
     assert!(matches!(
-        verify_assignment(&costs, &flow_policy, &flow),
-        Err(GraphError::CertificateInvalid(_))
+        alignment.certificate,
+        AlignmentCertificate::Rolling { endpoint: 3, .. }
     ));
+    assert_eq!(alignment.receipt.peak_memory_cells, 10);
+    verify_alignment(&left, &right, distance, &policy, &alignment).expect("rolling proof");
 
-    let ordered_policy = flow_policy.with_voice_crossing(VoiceCrossingPolicy::Forbid);
-    let mut ordered = min_cost_assignment(&costs, ordered_policy.clone()).expect("ordered");
-    let AssignmentCertificate::OrderPreserving { suffix_costs } = &mut ordered.certificate else {
-        panic!("ordered certificate");
-    };
-    suffix_costs[0][0] += 1;
+    let disconnected = policy
+        .clone()
+        .with_window(AlignmentWindow::Radius(0))
+        .with_boundary(AlignmentBoundary::Global);
     assert!(matches!(
-        verify_assignment(&costs, &ordered_policy, &ordered),
-        Err(GraphError::CertificateInvalid(_))
+        dynamic_time_warp(&left, &right, distance, disconnected),
+        Err(GraphError::Disconnected)
     ));
 }
 
 #[test]
-fn malformed_costs_and_overflow_fail_closed() {
-    let ragged = CostMatrix::try_from(vec![vec![1_i64], vec![1, 2]]);
-    assert!(matches!(ragged, Err(GraphError::InvalidAssignment(_))));
-
-    let costs = CostMatrix::new(2, 0, Vec::<i64>::new()).expect("matrix");
-    let policy = AssignmentPolicy::new(Vec::new(), vec![i64::MAX, i64::MAX]);
+fn alignment_control_and_non_finite_costs_fail_closed() {
+    let policy = DtwPolicy::new(GapPolicy::new(1_i64, 1));
     assert!(matches!(
-        min_cost_assignment(&costs, policy),
-        Err(GraphError::WeightOverflow(_))
+        dynamic_time_warp_with_control(
+            &[1, 2],
+            &[1, 2],
+            distance,
+            policy,
+            &AlgorithmControl::default().with_max_work(1),
+            &NeverInterrupt,
+        ),
+        Err(GraphError::ControlStopped(_))
+    ));
+
+    let non_finite = DtwPolicy::new(GapPolicy::new(1.0_f64, 1.0));
+    assert!(matches!(
+        dynamic_time_warp(&[1], &[1], |_left, _right| f64::NAN, non_finite),
+        Err(GraphError::NonFiniteCost(_))
+    ));
+}
+
+#[test]
+fn tampered_alignment_certificate_fails_closed() {
+    let policy = DtwPolicy::new(GapPolicy::new(2_i64, 2));
+    let mut alignment =
+        dynamic_time_warp(&[1, 2], &[1, 2], distance, policy.clone()).expect("alignment");
+    let AlignmentCertificate::Full { cells } = &mut alignment.certificate else {
+        panic!("full certificate");
+    };
+    cells[2][2].as_mut().expect("reachable").total_cost += 1;
+    assert!(matches!(
+        verify_alignment(&[1, 2], &[1, 2], distance, &policy, &alignment),
+        Err(GraphError::CertificateInvalid(_))
     ));
 }
 ```

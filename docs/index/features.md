@@ -53,7 +53,7 @@
 | [`feature/sim-construction/table-backed-project-books`](features/feature--sim-construction--table-backed-project-books.md) | `crate/sim-lib-construction-project` | 1 |
 | [`feature/sim-construction/work-package-procurement-awards`](features/feature--sim-construction--work-package-procurement-awards.md) | `crate/sim-lib-construction-project` | 2 |
 | [`feature/sim-discrete/bounded-search`](features/feature--sim-discrete--bounded-search.md) | `crate/sim-lib-discrete-search` | 1 |
-| [`feature/sim-discrete/discrete-algebra`](features/feature--sim-discrete--discrete-algebra.md) | `local/sim-discrete/crate/sim-lib-discrete` | 2 |
+| [`feature/sim-discrete/discrete-algebra`](features/feature--sim-discrete--discrete-algebra.md) | `local/sim-discrete/crate/sim-lib-discrete` | 4 |
 | [`feature/sim-discrete/finite-enumeration`](features/feature--sim-discrete--finite-enumeration.md) | `crate/sim-lib-discrete-comb` | 1 |
 | [`feature/sim-discrete/generated-docs`](features/feature--sim-discrete--generated-docs.md) | `local/sim-discrete/crate/xtask` | 0 |
 | [`feature/sim-expr-tree/codec-policy`](features/feature--sim-expr-tree--codec-policy.md) | `crate/sim-expr-tree-calc` | 2 |
