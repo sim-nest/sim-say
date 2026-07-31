@@ -171,7 +171,6 @@
 | `specimen` | `lisp` | crates/sim-lib-discrete-comb/recipes/01-basics/rankable-values/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-graph/recipes/01-basics/min-cost-assignment/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-graph/recipes/01-basics/tiny-graph/recipe.toml |
-| `specimen` | `lisp` | crates/sim-lib-discrete-graph/recipes/02-scenarios/staged-alignment/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-rank/recipes/01-basics/combination-space/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-search/recipes/01-basics/constrained-word/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete-search/src/cookbook.rs |
@@ -469,6 +468,7 @@
 | `specimen` | `lisp` | src/runtime/cookbook_directory.rs |
 | `specimen` | `mcp` | crates/sim-codec-mcp/recipes/01-basics/envelope-descriptor/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-agent-runner-core/recipes/01-basics/output-contract-repair/recipe.toml |
+| `specimen` | `rust` | crates/sim-lib-discrete-graph/recipes/02-scenarios/staged-alignment/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-interference-core/recipes/01-basics/alias-refusal/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-interference-core/recipes/01-basics/attenuation/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-interference-core/recipes/01-basics/checked-quantities/recipe.toml |
@@ -484,6 +484,7 @@
 | `specimen` | `rust` | crates/sim-lib-numbers-signal/recipes/01-basics/spectral-estimators/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-numbers-signal/recipes/01-basics/wavelet-smoothing/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-numbers-stats/recipes/01-basics/bounded-sequence-inference/recipe.toml |
+| `specimen` | `rust` | crates/sim-lib-numbers-stats/recipes/01-basics/clustering-evidence/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-view-interference/recipes/01-basics/interference-study/recipe.toml |
 | `specimen` | `rust` | recipes/00-overview/modeled-work-order/recipe.toml |
 | `specimen` | `rust` | recipes/01-basics/exact-bool-shape/recipe.toml |

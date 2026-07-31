@@ -53,7 +53,7 @@
 | [`feature/sim-construction/table-backed-project-books`](features/feature--sim-construction--table-backed-project-books.md) | `crate/sim-lib-construction-project` | 1 |
 | [`feature/sim-construction/work-package-procurement-awards`](features/feature--sim-construction--work-package-procurement-awards.md) | `crate/sim-lib-construction-project` | 2 |
 | [`feature/sim-discrete/bounded-search`](features/feature--sim-discrete--bounded-search.md) | `crate/sim-lib-discrete-search` | 1 |
-| [`feature/sim-discrete/discrete-algebra`](features/feature--sim-discrete--discrete-algebra.md) | `local/sim-discrete/crate/sim-lib-discrete` | 4 |
+| [`feature/sim-discrete/discrete-algebra`](features/feature--sim-discrete--discrete-algebra.md) | `local/sim-discrete/crate/sim-lib-discrete` | 5 |
 | [`feature/sim-discrete/finite-enumeration`](features/feature--sim-discrete--finite-enumeration.md) | `crate/sim-lib-discrete-comb` | 1 |
 | [`feature/sim-discrete/generated-docs`](features/feature--sim-discrete--generated-docs.md) | `local/sim-discrete/crate/xtask` | 0 |
 | [`feature/sim-expr-tree/codec-policy`](features/feature--sim-expr-tree--codec-policy.md) | `crate/sim-expr-tree-calc` | 2 |
@@ -113,7 +113,7 @@
 | [`feature/sim-numbers/numbers`](features/feature--sim-numbers--numbers.md) | `crate/sim-lib-numbers-core` | 4 |
 | [`feature/sim-numbers/numeric-pipelines`](features/feature--sim-numbers--numeric-pipelines.md) | `crate/sim-lib-numbers-numeric` | 1 |
 | [`feature/sim-numbers/signal-transforms`](features/feature--sim-numbers--signal-transforms.md) | `crate/sim-lib-numbers-signal` | 11 |
-| [`feature/sim-numbers/statistical-inference`](features/feature--sim-numbers--statistical-inference.md) | `crate/sim-lib-numbers-stats` | 3 |
+| [`feature/sim-numbers/statistical-inference`](features/feature--sim-numbers--statistical-inference.md) | `crate/sim-lib-numbers-stats` | 4 |
 | [`feature/sim-numbers/tensor-execution`](features/feature--sim-numbers--tensor-execution.md) | `local/sim-numbers/crate/sim-lib-numbers-tensor` | 3 |
 | [`feature/sim-numbers/tensor-ode`](features/feature--sim-numbers--tensor-ode.md) | `crate/sim-lib-numbers-numeric` | 2 |
 | [`feature/sim-numbers/tensors`](features/feature--sim-numbers--tensors.md) | `local/sim-numbers/crate/sim-lib-numbers-tensor` | 1 |

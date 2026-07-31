@@ -6,7 +6,7 @@
 - Subject: `local/sim-discrete/crate/sim-lib-discrete`
 - Canonical key: `crate/sim-lib-discrete/feature-sim-discrete-discrete-algebra`
 
-Provide algebra, certified rectangular assignment, graph and staged paths, sequence alignment, combinatorics, ranking, and spectral helpers as one reusable discrete-domain stack.
+Provide algebra, certified rectangular assignment, graph and staged paths, composable sequence alignment, combinatorics, ranking, and spectral helpers as one reusable discrete-domain stack.
 
 ## Anchors
 
@@ -19,6 +19,7 @@ Provide algebra, certified rectangular assignment, graph and staged paths, seque
 - `anchor/crate/sim-lib-discrete-spectral`
 - `anchor/runtime-lib/sim-lib-discrete/discrete-lib`
 - `anchor/rustdoc/sim-lib-discrete-graph/algorithm-control`
+- `anchor/rustdoc/sim-lib-discrete-graph/alignment_composition_demo`
 - `anchor/rustdoc/sim-lib-discrete-graph/dynamic_time_warp`
 - `anchor/rustdoc/sim-lib-discrete-graph/layered_shortest_path`
 - `anchor/rustdoc/sim-lib-discrete-graph/min_cost_assignment`
@@ -28,6 +29,7 @@ Provide algebra, certified rectangular assignment, graph and staged paths, seque
 
 - `spec-test/sim-discrete/crates/sim-lib-discrete-graph/src/alignment/tests`
 - `spec-test/sim-discrete/crates/sim-lib-discrete-graph/src/assignment/tests`
+- `spec-test/sim-discrete/crates/sim-lib-discrete-graph/src/cookbook`
 - `spec-test/sim-discrete/crates/sim-lib-discrete-graph/src/layered`
 - `spec-test/sim-discrete/crates/sim-lib-discrete/src/forms`
 
