@@ -117,6 +117,7 @@
 | `specimen` | `lisp` | crates/sim-lib-agent/recipes/40-atelier/atelier-radar-standard-crate/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-agent/recipes/40-atelier/atelier-runtime-operation/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-agent/recipes/40-atelier/atelier-shape-query-cache/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-audio-dsp/recipes/01-basics/bandlimited-resample/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-audio-dsp/recipes/01-basics/offline-chain/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-audio-dsp/recipes/30-agents/a30-020-audio-processing/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-audio-graph-core/recipes/01-basics/copy-node/recipe.toml |
@@ -392,6 +393,7 @@
 | `specimen` | `lisp` | crates/sim-lib-sound-dissonance/recipes/01-basics/sonance-fit/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-sound-gm/recipes/01-basics/acoustic-grand/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-sound-render/recipes/01-basics/offline-buffer/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-sound-render/recipes/01-basics/phase-vocoder-loudness/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-sound-shapes/recipes/01-basics/shape-family/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-sound-spectrum/recipes/01-basics/partial-list/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-sound-timbre/recipes/01-basics/bright-envelope/recipe.toml |
@@ -409,6 +411,7 @@
 | `specimen` | `lisp` | crates/sim-lib-stream-fabric/recipes/01-basics/chunk-events/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-stream-fabric/recipes/01-basics/content-addressed-fleet/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-stream-fabric/recipes/01-basics/ledgered-relay/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-stream-file/recipes/01-basics/pcm16-conversion/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-stream-file/recipes/01-basics/wav-smf/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-stream-jack-provider/recipes/01-basics/jack-hardware-smoke/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-stream-jack-provider/recipes/01-basics/jack-provider-load/recipe.toml |
