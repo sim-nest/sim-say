@@ -369,7 +369,6 @@
 | `specimen` | `lisp` | crates/sim-lib-pitch-ratio/recipes/01-basics/exact-ratio/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-scale/recipes/01-basics/major-degrees/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-scale/recipes/01-basics/scale-generate/recipe.toml |
-| `specimen` | `lisp` | crates/sim-lib-pitch-serial/recipes/01-basics/row-family-matrix/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-set/recipes/01-basics/neighborhood-walk/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-set/recipes/01-basics/set-relations/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-set/recipes/01-basics/triad-mask/recipe.toml |
@@ -498,6 +497,7 @@
 | `specimen` | `rust` | crates/sim-lib-numbers-signal/recipes/01-basics/wavelet-smoothing/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-numbers-stats/recipes/01-basics/bounded-sequence-inference/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-numbers-stats/recipes/01-basics/clustering-evidence/recipe.toml |
+| `specimen` | `rust` | crates/sim-lib-pitch-serial/recipes/01-basics/row-family-matrix/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-serial-core/recipes/01-basics/certified-transforms/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-view-interference/recipes/01-basics/interference-study/recipe.toml |
 | `specimen` | `rust` | recipes/00-overview/modeled-work-order/recipe.toml |
