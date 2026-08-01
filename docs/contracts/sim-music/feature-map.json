@@ -255,6 +255,11 @@
     {
       "features": [],
       "group": "workspace",
+      "package": "sim-lib-pitch-serial"
+    },
+    {
+      "features": [],
+      "group": "workspace",
       "package": "sim-lib-pitch-set"
     },
     {
@@ -279,6 +284,11 @@
       ],
       "group": "workspace",
       "package": "sim-lib-pitch-wasm-frame"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "sim-lib-serial-core"
     },
     {
       "features": [

@@ -369,6 +369,7 @@
 | `specimen` | `lisp` | crates/sim-lib-pitch-ratio/recipes/01-basics/exact-ratio/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-scale/recipes/01-basics/major-degrees/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-scale/recipes/01-basics/scale-generate/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-pitch-serial/recipes/01-basics/row-family-matrix/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-set/recipes/01-basics/neighborhood-walk/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-set/recipes/01-basics/set-relations/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-set/recipes/01-basics/triad-mask/recipe.toml |

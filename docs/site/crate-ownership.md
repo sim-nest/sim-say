@@ -148,6 +148,7 @@
 | `sim-lib-music-shapes` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-transform` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-wasm-frame` | [sim-music](../repos/sim-music.md) |
+| `sim-lib-serial-core` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-chord` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-core` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-dissonance` | [sim-music](../repos/sim-music.md) |
@@ -158,6 +159,7 @@
 | `sim-lib-pitch-namer-roman` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-ratio` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-scale` | [sim-music](../repos/sim-music.md) |
+| `sim-lib-pitch-serial` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-set` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-shapes` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-wasm-frame` | [sim-music](../repos/sim-music.md) |

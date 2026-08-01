@@ -1,6 +1,6 @@
 # sim-music
 
-Published commit: `9ce57e37438465819eaf35410f74f89bc44b7f59`.
+Published commit: `bcb7782228ab562974d452a81b13616edc19981c`.
 
 ## Crates
 
@@ -25,6 +25,7 @@ Published commit: `9ce57e37438465819eaf35410f74f89bc44b7f59`.
 - `sim-lib-music-shapes`
 - `sim-lib-music-transform`
 - `sim-lib-music-wasm-frame`
+- `sim-lib-serial-core`
 - `sim-lib-pitch-chord`
 - `sim-lib-pitch-core`
 - `sim-lib-pitch-dissonance`
@@ -35,6 +36,7 @@ Published commit: `9ce57e37438465819eaf35410f74f89bc44b7f59`.
 - `sim-lib-pitch-namer-roman`
 - `sim-lib-pitch-ratio`
 - `sim-lib-pitch-scale`
+- `sim-lib-pitch-serial`
 - `sim-lib-pitch-set`
 - `sim-lib-pitch-shapes`
 - `sim-lib-pitch-wasm-frame`

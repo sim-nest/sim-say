@@ -188,6 +188,7 @@
 | `crate/sim-lib-pitch-namer-roman` | `crate` | sim-lib-pitch-namer-roman |
 | `crate/sim-lib-pitch-ratio` | `crate` | sim-lib-pitch-ratio |
 | `crate/sim-lib-pitch-scale` | `crate` | sim-lib-pitch-scale |
+| `crate/sim-lib-pitch-serial` | `crate` | sim-lib-pitch-serial |
 | `crate/sim-lib-pitch-set` | `crate` | sim-lib-pitch-set |
 | `crate/sim-lib-pitch-wasm-frame` | `crate` | sim-lib-pitch-wasm-frame |
 | `crate/sim-lib-plugin-clap` | `crate` | sim-lib-plugin-clap |

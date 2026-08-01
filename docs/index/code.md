@@ -188,6 +188,7 @@
 | `crate/sim-lib-pitch-namer-roman` | `crate` | sim-lib-pitch-namer-roman | 0 |
 | `crate/sim-lib-pitch-ratio` | `crate` | sim-lib-pitch-ratio | 0 |
 | `crate/sim-lib-pitch-scale` | `crate` | sim-lib-pitch-scale | 0 |
+| `crate/sim-lib-pitch-serial` | `crate` | sim-lib-pitch-serial | 0 |
 | `crate/sim-lib-pitch-set` | `crate` | sim-lib-pitch-set | 0 |
 | `crate/sim-lib-pitch-wasm-frame` | `crate` | sim-lib-pitch-wasm-frame | 0 |
 | `crate/sim-lib-plugin-clap` | `crate` | sim-lib-plugin-clap | 1 |
@@ -463,7 +464,7 @@
 | `repo/sim-interference` | `repo` | sim-interference | 6 |
 | `repo/sim-kernel` | `repo` | sim-kernel | 3 |
 | `repo/sim-ledger` | `repo` | sim-ledger | 7 |
-| `repo/sim-music` | `repo` | sim-music | 53 |
+| `repo/sim-music` | `repo` | sim-music | 54 |
 | `repo/sim-numbers` | `repo` | sim-numbers | 35 |
 | `repo/sim-office` | `repo` | sim-office | 18 |
 | `repo/sim-run` | `repo` | sim-run | 9 |

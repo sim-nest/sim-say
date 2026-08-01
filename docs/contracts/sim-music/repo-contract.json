@@ -1,5 +1,5 @@
 {
-  "card_count": 54,
+  "card_count": 56,
   "cards": [
     {
       "id": "browse/catalog",
@@ -212,6 +212,12 @@
       "summary": "Scale and degree descriptors."
     },
     {
+      "id": "cookbook/pitch-serial",
+      "kind": "cookbook-recipe",
+      "owner": "sim-lib-pitch-serial",
+      "summary": "Strict twelve-tone rows, total operations, and explicit labels."
+    },
+    {
       "id": "cookbook/pitch-set",
       "kind": "cookbook-recipe",
       "owner": "sim-lib-pitch-set",
@@ -228,6 +234,12 @@
       "kind": "cookbook-recipe",
       "owner": "sim-lib-pitch-wasm-frame",
       "summary": "Browser-safe pitch facade descriptors."
+    },
+    {
+      "id": "cookbook/serial-core",
+      "kind": "cookbook-recipe",
+      "owner": "sim-lib-serial-core",
+      "summary": "Finite symbolic alphabets, aggregate evidence, and total transforms."
     },
     {
       "id": "cookbook/sim-music",
@@ -367,9 +379,11 @@
       "sim-lib-pitch-namer-roman",
       "sim-lib-pitch-ratio",
       "sim-lib-pitch-scale",
+      "sim-lib-pitch-serial",
       "sim-lib-pitch-set",
       "sim-lib-pitch-shapes",
       "sim-lib-pitch-wasm-frame",
+      "sim-lib-serial-core",
       "sim-lib-sound-audio-lift",
       "sim-lib-sound-bridge",
       "sim-lib-sound-core",
@@ -389,7 +403,7 @@
   },
   "non_citizen_exemption_count": 0,
   "non_citizen_exemptions": [],
-  "package_count": 50,
+  "package_count": 52,
   "packages": [
     {
       "crate_name": "music-algorithm-foundry",
@@ -1741,9 +1755,16 @@
           "package": "sim-lib-pitch-set",
           "rename": null,
           "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-serial-core",
+          "rename": null,
+          "target": null
         }
       ],
-      "description": "Text codecs, citizen descriptors, and runtime shapes for SIM music objects.",
+      "description": "Text codecs, citizen descriptors, runtime shapes, and symbolic serial adapters for SIM music.",
       "features": [],
       "group": "workspace",
       "manifest": "crates/sim-lib-music-shapes/Cargo.toml",
@@ -2626,6 +2647,70 @@
       ]
     },
     {
+      "crate_name": "sim_lib_pitch_serial",
+      "dependencies": [
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-pitch-core",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-serial-core",
+          "rename": null,
+          "target": null
+        }
+      ],
+      "description": "Strict twelve-tone rows, total row operations, and explicit label conventions for SIM.",
+      "features": [],
+      "group": "workspace",
+      "manifest": "crates/sim-lib-pitch-serial/Cargo.toml",
+      "name": "sim-lib-pitch-serial",
+      "publish": "true",
+      "root": "crates/sim-lib-pitch-serial",
+      "rustdoc_summary": "Strict twelve-tone rows, total operations, and explicit label conventions.",
+      "target_kinds": [
+        "custom-build",
+        "lib",
+        "test"
+      ],
+      "targets": [
+        {
+          "crate_types": [
+            "lib"
+          ],
+          "kind": [
+            "lib"
+          ],
+          "name": "sim_lib_pitch_serial",
+          "src": "crates/sim-lib-pitch-serial/src/lib.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "test"
+          ],
+          "name": "gate_row",
+          "src": "crates/sim-lib-pitch-serial/tests/gate_row.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "custom-build"
+          ],
+          "name": "build-script-build",
+          "src": "crates/sim-lib-pitch-serial/build.rs"
+        }
+      ]
+    },
+    {
       "crate_name": "sim_lib_pitch_set",
       "dependencies": [
         {
@@ -2692,6 +2777,13 @@
           "kind": "normal",
           "optional": false,
           "package": "sim-lib-pitch-scale",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-pitch-serial",
           "rename": null,
           "target": null
         },
@@ -2829,6 +2921,55 @@
           ],
           "name": "build-script-build",
           "src": "crates/sim-lib-pitch-wasm-frame/build.rs"
+        }
+      ]
+    },
+    {
+      "crate_name": "sim_lib_serial_core",
+      "dependencies": [],
+      "description": "Finite symbolic alphabets, aggregate rules, and certified total series transforms for SIM.",
+      "features": [],
+      "group": "workspace",
+      "manifest": "crates/sim-lib-serial-core/Cargo.toml",
+      "name": "sim-lib-serial-core",
+      "publish": "true",
+      "root": "crates/sim-lib-serial-core",
+      "rustdoc_summary": "Finite symbolic alphabets, validated series, and certified total transforms.",
+      "target_kinds": [
+        "custom-build",
+        "lib",
+        "test"
+      ],
+      "targets": [
+        {
+          "crate_types": [
+            "lib"
+          ],
+          "kind": [
+            "lib"
+          ],
+          "name": "sim_lib_serial_core",
+          "src": "crates/sim-lib-serial-core/src/lib.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "test"
+          ],
+          "name": "certified_transform_recipe",
+          "src": "crates/sim-lib-serial-core/tests/certified_transform_recipe.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "custom-build"
+          ],
+          "name": "build-script-build",
+          "src": "crates/sim-lib-serial-core/build.rs"
         }
       ]
     },
@@ -3879,10 +4020,10 @@
     "generated_by": "cargo run -p xtask -- simdoc",
     "generation_timestamp": "2026-07-15T20:01:50+02:00",
     "generator": "xtask repo-contract v1",
-    "git_commit": "7f88cabff827c46c6dea671605d5a144bc91c713",
+    "git_commit": "f26e25f592b80d149db7e89421ac7b5772935e79",
     "repo": "sim-music",
     "schema": "sim.provenance.v1",
-    "source_commit": "7f88cabff827c46c6dea671605d5a144bc91c713",
+    "source_commit": "f26e25f592b80d149db7e89421ac7b5772935e79",
     "source_remote": "https://github.com/sim-nest/sim-music",
     "validation_commands": [
       "cargo fmt --all --check",
@@ -3895,9 +4036,9 @@
       "cargo run -p xtask -- validation-matrix --check --repo .",
       "cargo run -p xtask -- crate-catalog --check --repo ."
     ],
-    "workspace_hash": "b232df42b77edd23",
+    "workspace_hash": "8863e1bbf069b9aa",
     "workspace_hash_algorithm": "fnv1a64",
-    "workspace_hash_input_count": 803,
+    "workspace_hash_input_count": 833,
     "workspace_hash_inputs": [
       "Cargo.toml",
       "crates/sim-lib-daw-session/Cargo.toml",
@@ -4208,8 +4349,10 @@
       "crates/sim-lib-music-shapes/src/codec/filter.rs",
       "crates/sim-lib-music-shapes/src/codec/lift.rs",
       "crates/sim-lib-music-shapes/src/codec/parse.rs",
+      "crates/sim-lib-music-shapes/src/codec/serial.rs",
       "crates/sim-lib-music-shapes/src/codec.rs",
       "crates/sim-lib-music-shapes/src/lib.rs",
+      "crates/sim-lib-music-shapes/src/runtime/serial.rs",
       "crates/sim-lib-music-shapes/src/runtime.rs",
       "crates/sim-lib-music-shapes/src/tests/custom_filter.rs",
       "crates/sim-lib-music-shapes/src/tests.rs",
@@ -4502,6 +4645,17 @@
       "crates/sim-lib-pitch-scale/src/model.rs",
       "crates/sim-lib-pitch-scale/src/player.rs",
       "crates/sim-lib-pitch-scale/src/tests.rs",
+      "crates/sim-lib-pitch-serial/Cargo.toml",
+      "crates/sim-lib-pitch-serial/build.rs",
+      "crates/sim-lib-pitch-serial/recipes/01-basics/row-family-matrix/recipe.toml",
+      "crates/sim-lib-pitch-serial/recipes/book.toml",
+      "crates/sim-lib-pitch-serial/src/alphabet.rs",
+      "crates/sim-lib-pitch-serial/src/error.rs",
+      "crates/sim-lib-pitch-serial/src/label.rs",
+      "crates/sim-lib-pitch-serial/src/lib.rs",
+      "crates/sim-lib-pitch-serial/src/operation.rs",
+      "crates/sim-lib-pitch-serial/src/row.rs",
+      "crates/sim-lib-pitch-serial/tests/gate_row.rs",
       "crates/sim-lib-pitch-set/Cargo.toml",
       "crates/sim-lib-pitch-set/build.rs",
       "crates/sim-lib-pitch-set/recipes/01-basics/neighborhood-walk/recipe.toml",
@@ -4530,6 +4684,23 @@
       "crates/sim-lib-pitch-wasm-frame/src/lib.rs",
       "crates/sim-lib-pitch-wasm-frame/src/model.rs",
       "crates/sim-lib-pitch-wasm-frame/src/tests.rs",
+      "crates/sim-lib-serial-core/Cargo.toml",
+      "crates/sim-lib-serial-core/build.rs",
+      "crates/sim-lib-serial-core/recipes/01-basics/certified-transforms/recipe.toml",
+      "crates/sim-lib-serial-core/recipes/01-basics/certified-transforms/setup.rs",
+      "crates/sim-lib-serial-core/recipes/01-basics/custom-alphabet/recipe.toml",
+      "crates/sim-lib-serial-core/recipes/book.toml",
+      "crates/sim-lib-serial-core/src/aggregate.rs",
+      "crates/sim-lib-serial-core/src/alphabet.rs",
+      "crates/sim-lib-serial-core/src/certificate.rs",
+      "crates/sim-lib-serial-core/src/error.rs",
+      "crates/sim-lib-serial-core/src/lib.rs",
+      "crates/sim-lib-serial-core/src/permutation.rs",
+      "crates/sim-lib-serial-core/src/series.rs",
+      "crates/sim-lib-serial-core/src/tests.rs",
+      "crates/sim-lib-serial-core/src/transform.rs",
+      "crates/sim-lib-serial-core/src/transform_tests.rs",
+      "crates/sim-lib-serial-core/tests/certified_transform_recipe.rs",
       "crates/sim-lib-sound-audio-lift/Cargo.toml",
       "crates/sim-lib-sound-audio-lift/build.rs",
       "crates/sim-lib-sound-audio-lift/recipes/01-basics/onset-beat-harmony/recipe.toml",
@@ -4704,7 +4875,7 @@
       "xtask/Cargo.toml"
     ]
   },
-  "recipe_book_count": 52,
+  "recipe_book_count": 54,
   "recipes": [
     {
       "book": "daw-session",
@@ -5720,6 +5891,26 @@
       "title": "Pitch Scale"
     },
     {
+      "book": "pitch-serial",
+      "book_toml": "crates/sim-lib-pitch-serial/recipes/book.toml",
+      "card_id": "cookbook/pitch-serial",
+      "group": "workspace",
+      "package": "sim-lib-pitch-serial",
+      "recipe_count": 1,
+      "recipes": [
+        {
+          "card_id": "pitch-serial/01-basics/row-family-matrix",
+          "codec": "lisp",
+          "id": "row-family-matrix",
+          "package": "sim-lib-pitch-serial",
+          "recipe_toml": "crates/sim-lib-pitch-serial/recipes/01-basics/row-family-matrix/recipe.toml",
+          "title": "Compare operation and label identities for an Op. 25 row"
+        }
+      ],
+      "summary": "Strict twelve-tone rows, total operations, and explicit labels.",
+      "title": "Pitch Serial"
+    },
+    {
       "book": "pitch-set",
       "book_toml": "crates/sim-lib-pitch-set/recipes/book.toml",
       "card_id": "cookbook/pitch-set",
@@ -5794,6 +5985,34 @@
       ],
       "summary": "Browser-safe pitch facade descriptors.",
       "title": "Pitch Wasm"
+    },
+    {
+      "book": "serial-core",
+      "book_toml": "crates/sim-lib-serial-core/recipes/book.toml",
+      "card_id": "cookbook/serial-core",
+      "group": "workspace",
+      "package": "sim-lib-serial-core",
+      "recipe_count": 2,
+      "recipes": [
+        {
+          "card_id": "serial-core/01-basics/certified-transforms",
+          "codec": "rust",
+          "id": "certified-transforms",
+          "package": "sim-lib-serial-core",
+          "recipe_toml": "crates/sim-lib-serial-core/recipes/01-basics/certified-transforms/recipe.toml",
+          "title": "Transform a symbolic series with inverse evidence"
+        },
+        {
+          "card_id": "serial-core/01-basics/custom-alphabet",
+          "codec": "lisp",
+          "id": "custom-alphabet",
+          "package": "sim-lib-serial-core",
+          "recipe_toml": "crates/sim-lib-serial-core/recipes/01-basics/custom-alphabet/recipe.toml",
+          "title": "Validate a five-symbol custom alphabet"
+        }
+      ],
+      "summary": "Finite symbolic alphabets, aggregate evidence, and total transforms.",
+      "title": "Serial Core"
     },
     {
       "book": "sound-audio-lift",

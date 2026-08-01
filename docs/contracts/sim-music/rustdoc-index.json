@@ -226,6 +226,13 @@
       "summary": "Scales, modes, and scale-locking for the SIM music libraries."
     },
     {
+      "crate_name": "sim_lib_pitch_serial",
+      "group": "workspace",
+      "manifest": "crates/sim-lib-pitch-serial/Cargo.toml",
+      "package": "sim-lib-pitch-serial",
+      "summary": "Strict twelve-tone rows, total operations, and explicit label conventions."
+    },
+    {
       "crate_name": "sim_lib_pitch_set",
       "group": "workspace",
       "manifest": "crates/sim-lib-pitch-set/Cargo.toml",
@@ -245,6 +252,13 @@
       "manifest": "crates/sim-lib-pitch-wasm-frame/Cargo.toml",
       "package": "sim-lib-pitch-wasm-frame",
       "summary": "Pitch binary-frame facade descriptors."
+    },
+    {
+      "crate_name": "sim_lib_serial_core",
+      "group": "workspace",
+      "manifest": "crates/sim-lib-serial-core/Cargo.toml",
+      "package": "sim-lib-serial-core",
+      "summary": "Finite symbolic alphabets, validated series, and certified total transforms."
     },
     {
       "crate_name": "sim_lib_sound_audio_lift",
