@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-serial-core`
 - Canonical key: `crate/sim-lib-serial-core/feature-sim-music-serial-series-calculus`
 
-Validate symbol-bearing finite alphabets and ordered series against explicit aggregate rules with retained evidence and shared permutation ranks.
+Validate symbol-bearing finite alphabets and ordered series, then apply total composable transforms with aggregate and inverse certificates.
 
 ## Anchors
 
@@ -20,21 +20,22 @@ Validate symbol-bearing finite alphabets and ordered series against explicit agg
 
 ## Specimens
 
+- `recipe/sim-music/crates/sim-lib-serial-core/01-basics/certified-transforms`
 - `recipe/sim-music/crates/sim-lib-serial-core/01-basics/custom-alphabet`
 
 ## Worked Example
 
-Specimen `recipe/sim-music/crates/sim-lib-serial-core/01-basics/custom-alphabet` is checked by `sh scripts/check-recipes.sh`.
+Specimen `recipe/sim-music/crates/sim-lib-serial-core/01-basics/certified-transforms` is checked by `sh scripts/check-recipes.sh`.
 
-Source `crates/sim-lib-serial-core/recipes/01-basics/custom-alphabet/recipe.toml`:
+Source `crates/sim-lib-serial-core/recipes/01-basics/certified-transforms/recipe.toml`:
 
 ```toml
-id = "custom-alphabet"
-title = "Validate a five-symbol custom alphabet"
-codec = "lisp"
-setup = "setup.siml"
+id = "certified-transforms"
+title = "Transform a symbolic series with inverse evidence"
+codec = "rust"
+setup = "setup.rs"
 purpose = "purpose.md"
-order = 10
-tags = ["serial", "alphabet", "aggregate", "non-pitch", "lisp", "framework"]
-requires = ["serial-core", "music-shapes", "discrete-rank", "codec/lisp"]
+order = 20
+tags = ["serial", "transform", "certificate", "bijection", "rust", "framework"]
+requires = ["serial-core", "discrete-rank"]
 ```
