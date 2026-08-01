@@ -107,6 +107,7 @@
 | [`feature/sim-music/midi-notation-workflows`](features/feature--sim-music--midi-notation-workflows.md) | `crate/sim-lib-midi-core` | 4 |
 | [`feature/sim-music/music-counterpoint`](features/feature--sim-music--music-counterpoint.md) | `crate/sim-lib-music-counterpoint` | 1 |
 | [`feature/sim-music/offline-audio-transform-and-loudness`](features/feature--sim-music--offline-audio-transform-and-loudness.md) | `crate/sim-lib-sound-render` | 2 |
+| [`feature/sim-music/open-serial-adaptation`](features/feature--sim-music--open-serial-adaptation.md) | `crate/sim-lib-music-serial` | 1 |
 | [`feature/sim-music/pitch-and-sound-vocabulary`](features/feature--sim-music--pitch-and-sound-vocabulary.md) | `crate/sim-lib-pitch-core` | 1 |
 | [`feature/sim-music/reversible-consonance-completion`](features/feature--sim-music--reversible-consonance-completion.md) | `crate/sim-lib-music-consonance` | 1 |
 | [`feature/sim-music/serial-practice`](features/feature--sim-music--serial-practice.md) | `crate/sim-lib-music-serial` | 2 |
