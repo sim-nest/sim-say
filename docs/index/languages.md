@@ -470,6 +470,7 @@
 | `specimen` | `lisp` | recipes/glasses/voice-site/recipe.toml |
 | `specimen` | `lisp` | recipes/gpu-math/modeled-matrix-ode-femm/recipe.toml |
 | `specimen` | `lisp` | recipes/interference/modeled-study/recipe.toml |
+| `specimen` | `lisp` | recipes/music-algorithms/foundry-plan/recipe.toml |
 | `specimen` | `lisp` | recipes/reference-project-control/recipe.toml |
 | `specimen` | `lisp` | recipes/watch/dual-quorum/recipe.toml |
 | `specimen` | `lisp` | recipes/watch/glance-pager/recipe.toml |

@@ -467,6 +467,7 @@
 | `` | `recipe/sim-sdk/glasses/voice-site` | `crate/sim-nest` | `recipe` | `recipes/glasses/voice-site/recipe.toml` | `lisp` | `` | `false` | `false` |
 | `` | `recipe/sim-sdk/gpu-math/modeled-matrix-ode-femm` | `crate/sim-nest` | `recipe` | `recipes/gpu-math/modeled-matrix-ode-femm/recipe.toml` | `lisp` | `` | `false` | `false` |
 | `` | `recipe/sim-sdk/interference/modeled-study` | `crate/sim-nest` | `recipe` | `recipes/interference/modeled-study/recipe.toml` | `lisp` | `` | `false` | `false` |
+| `` | `recipe/sim-sdk/music-algorithms/foundry-plan` | `crate/sim-nest` | `recipe` | `recipes/music-algorithms/foundry-plan/recipe.toml` | `lisp` | `` | `false` | `false` |
 | `` | `recipe/sim-sdk/watch/dual-quorum` | `crate/sim-nest` | `recipe` | `recipes/watch/dual-quorum/recipe.toml` | `lisp` | `` | `false` | `false` |
 | `` | `recipe/sim-sdk/watch/glance-pager` | `crate/sim-nest` | `recipe` | `recipes/watch/glance-pager/recipe.toml` | `lisp` | `` | `false` | `false` |
 | `` | `recipe/sim-sdk/watch/hold-last` | `crate/sim-nest` | `recipe` | `recipes/watch/hold-last/recipe.toml` | `lisp` | `` | `false` | `false` |
@@ -747,6 +748,7 @@
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/instrument_streams` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/instrument_streams.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-sdk/interference-composition` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/interference` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/interference.rs` | `shape` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/lib_lifecycle` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/lib_lifecycle.rs` | `` | `cargo test` | `true` | `true` |
+| `feature/sim-sdk/music-algorithm-composition` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/music_algorithms` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/music_algorithms.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/placement` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/placement.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/rust_intelligence` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/rust_intelligence.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/stream_matrix` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/stream_matrix.rs` | `` | `cargo test` | `true` | `true` |
