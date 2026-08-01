@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-music-serial`
 - Canonical key: `crate/sim-lib-music-serial/feature-sim-music-serial-practice`
 
-Freeze row instances, row ordinals, roles, parent evidence, simultaneous groups, and precedence into one validated serial plan before realization.
+Freeze row instances, row ordinals, roles, parent evidence, simultaneous groups, and precedence into one validated serial plan, then realize strict row statements without losing source identity.
 
 ## Anchors
 
@@ -23,6 +23,7 @@ Freeze row instances, row ordinals, roles, parent evidence, simultaneous groups,
 ## Specimens
 
 - `recipe/sim-music/crates/sim-lib-music-serial/01-basics/immutable-plan`
+- `recipe/sim-music/crates/sim-lib-music-serial/01-basics/strict-row-realization`
 
 ## Worked Example
 
