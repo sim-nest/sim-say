@@ -152,6 +152,7 @@
 | `crate/sim-lib-music-lift` | `crate` | sim-lib-music-lift |
 | `crate/sim-lib-music-lower` | `crate` | sim-lib-music-lower |
 | `crate/sim-lib-music-notation` | `crate` | sim-lib-music-notation |
+| `crate/sim-lib-music-serial` | `crate` | sim-lib-music-serial |
 | `crate/sim-lib-music-transform` | `crate` | sim-lib-music-transform |
 | `crate/sim-lib-music-wasm-frame` | `crate` | sim-lib-music-wasm-frame |
 | `crate/sim-lib-namespace` | `crate` | sim-lib-namespace |

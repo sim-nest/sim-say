@@ -497,6 +497,7 @@
 | `specimen` | `rust` | crates/sim-lib-numbers-signal/recipes/01-basics/wavelet-smoothing/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-numbers-stats/recipes/01-basics/bounded-sequence-inference/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-numbers-stats/recipes/01-basics/clustering-evidence/recipe.toml |
+| `specimen` | `rust` | crates/sim-lib-pitch-serial/recipes/01-basics/row-class-analysis/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-pitch-serial/recipes/01-basics/row-family-matrix/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-serial-core/recipes/01-basics/certified-transforms/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-view-interference/recipes/01-basics/interference-study/recipe.toml |

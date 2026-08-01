@@ -152,6 +152,7 @@
 | `crate/sim-lib-music-lift` | `crate` | sim-lib-music-lift | 1 |
 | `crate/sim-lib-music-lower` | `crate` | sim-lib-music-lower | 0 |
 | `crate/sim-lib-music-notation` | `crate` | sim-lib-music-notation | 1 |
+| `crate/sim-lib-music-serial` | `crate` | sim-lib-music-serial | 0 |
 | `crate/sim-lib-music-transform` | `crate` | sim-lib-music-transform | 0 |
 | `crate/sim-lib-music-wasm-frame` | `crate` | sim-lib-music-wasm-frame | 0 |
 | `crate/sim-lib-namespace` | `crate` | sim-lib-namespace | 0 |
@@ -464,7 +465,7 @@
 | `repo/sim-interference` | `repo` | sim-interference | 6 |
 | `repo/sim-kernel` | `repo` | sim-kernel | 3 |
 | `repo/sim-ledger` | `repo` | sim-ledger | 7 |
-| `repo/sim-music` | `repo` | sim-music | 54 |
+| `repo/sim-music` | `repo` | sim-music | 55 |
 | `repo/sim-numbers` | `repo` | sim-numbers | 35 |
 | `repo/sim-office` | `repo` | sim-office | 18 |
 | `repo/sim-run` | `repo` | sim-run | 9 |
