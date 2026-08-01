@@ -383,6 +383,7 @@
 | `specimen` | `lisp` | crates/sim-lib-rank/recipes/30-agents/a30-018-recommendation/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-scene/recipes/01-basics/text-node/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-sequence/recipes/01-basics/map-square/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-serial-core/recipes/01-basics/custom-alphabet/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-server/recipes/01-basics/request-descriptor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-sheet/recipes/01-basics/exact-sheet-formula/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-skill/recipes/01-basics/fixture-skill/recipe.toml |

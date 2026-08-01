@@ -195,6 +195,7 @@
 | `crate/sim-lib-plugin-vst3` | `crate` | sim-lib-plugin-vst3 |
 | `crate/sim-lib-plugin-wasm` | `crate` | sim-lib-plugin-wasm |
 | `crate/sim-lib-repl` | `crate` | sim-lib-repl |
+| `crate/sim-lib-serial-core` | `crate` | sim-lib-serial-core |
 | `crate/sim-lib-sheet` | `crate` | sim-lib-sheet |
 | `crate/sim-lib-sound-audio-lift` | `crate` | sim-lib-sound-audio-lift |
 | `crate/sim-lib-sound-bridge` | `crate` | sim-lib-sound-bridge |

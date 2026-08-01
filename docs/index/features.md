@@ -109,6 +109,7 @@
 | [`feature/sim-music/offline-audio-transform-and-loudness`](features/feature--sim-music--offline-audio-transform-and-loudness.md) | `crate/sim-lib-sound-render` | 2 |
 | [`feature/sim-music/pitch-and-sound-vocabulary`](features/feature--sim-music--pitch-and-sound-vocabulary.md) | `crate/sim-lib-pitch-core` | 1 |
 | [`feature/sim-music/reversible-consonance-completion`](features/feature--sim-music--reversible-consonance-completion.md) | `crate/sim-lib-music-consonance` | 1 |
+| [`feature/sim-music/serial-series-calculus`](features/feature--sim-music--serial-series-calculus.md) | `crate/sim-lib-serial-core` | 1 |
 | [`feature/sim-music/sound-spectrum-adapter`](features/feature--sim-music--sound-spectrum-adapter.md) | `crate/sim-lib-sound-spectrum` | 1 |
 | [`feature/sim-music/synth-performance-workbench`](features/feature--sim-music--synth-performance-workbench.md) | `local/sim-music/crate/sim-lib-music-synth` | 5 |
 | [`feature/sim-numbers/generated-docs`](features/feature--sim-numbers--generated-docs.md) | `local/sim-numbers/crate/xtask` | 0 |

@@ -195,6 +195,7 @@
 | `crate/sim-lib-plugin-vst3` | `crate` | sim-lib-plugin-vst3 | 1 |
 | `crate/sim-lib-plugin-wasm` | `crate` | sim-lib-plugin-wasm | 0 |
 | `crate/sim-lib-repl` | `crate` | sim-lib-repl | 1 |
+| `crate/sim-lib-serial-core` | `crate` | sim-lib-serial-core | 0 |
 | `crate/sim-lib-sheet` | `crate` | sim-lib-sheet | 0 |
 | `crate/sim-lib-sound-audio-lift` | `crate` | sim-lib-sound-audio-lift | 1 |
 | `crate/sim-lib-sound-bridge` | `crate` | sim-lib-sound-bridge | 1 |
@@ -462,7 +463,7 @@
 | `repo/sim-interference` | `repo` | sim-interference | 6 |
 | `repo/sim-kernel` | `repo` | sim-kernel | 3 |
 | `repo/sim-ledger` | `repo` | sim-ledger | 7 |
-| `repo/sim-music` | `repo` | sim-music | 52 |
+| `repo/sim-music` | `repo` | sim-music | 53 |
 | `repo/sim-numbers` | `repo` | sim-numbers | 35 |
 | `repo/sim-office` | `repo` | sim-office | 18 |
 | `repo/sim-run` | `repo` | sim-run | 9 |
