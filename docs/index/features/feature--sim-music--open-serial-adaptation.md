@@ -23,6 +23,7 @@ Land immutable serial plans onto modal or caller-defined scales while preserving
 ## Specimens
 
 - `recipe/sim-music/crates/sim-lib-music-serial/02-adaptation/modal-spine`
+- `recipe/sim-music/crates/sim-lib-music-serial/02-adaptation/third-party-adaptation`
 
 ## Worked Example
 
