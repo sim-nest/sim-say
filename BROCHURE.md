@@ -29,7 +29,7 @@ piece gives you.
 
 ### audio
 
-- **sim-lib-audio-dsp** -- A kit of ready-made sound-shaping blocks -- gain, filters, delay, and dynamics -- that you drop into a signal path.
+- **sim-lib-audio-dsp** -- Realtime-safe sound sources, sample-rate conversion, and ready-made shaping blocks for an audio signal path.
 - **sim-lib-audio-graph-core** -- The patch bay that connects your sound-shaping blocks into one signal flow and renders it start to finish.
 - **sim-lib-audio-graph-live** -- The engine that runs your effect chain in real time, feeding a sound card without stutters or dropouts.
 - **sim-lib-plugin-clap** -- A way to shape a SIM effect so it looks and behaves like a CLAP plugin, and to run CLAP-shaped effects inside SIM.
@@ -54,15 +54,18 @@ piece gives you.
 - **sim-lib-midi-smf** -- Reads and writes ordinary .mid files, the standard way music moves between programs.
 - **sim-lib-midi-sysex** -- Makes sense of the maker-specific MIDI messages that carry synth patches and tuning tables, turning raw bytes into readable settings.
 - **sim-lib-midi-wasm-frame** -- Compact, frame-safe descriptions of MIDI data ready to hand across to a browser or plugin boundary.
-- **sim-lib-music-analysis** -- Looks at a piece of music and reveals its structure -- what chords are sounding and how the notes move moment to moment.
+- **sim-lib-music-analysis** -- Looks at a piece of music and reveals its structure -- what chords are sounding, where the pulse is, how passages relate, and which patterns return.
 - **sim-lib-music-combinators** -- A shelf of generative players -- arpeggiators, basslines, drum patterns, step sequencers -- that turn simple inputs into steady streams of notes.
+- **sim-lib-music-consonance** -- Explains exact score-window sonance and proposes reversible additions without losing musical evidence.
 - **sim-lib-music-core** -- The heart of the music world in SIM: notes, chords, melodies, and scores, plus the timeline they live on.
+- **sim-lib-music-counterpoint** -- Explains contrapuntal mistakes, maps thematic overlap, and generates bounded reversible companion voices.
 - **sim-lib-music-lift** -- Raises a plain MIDI file into something richer -- a readable piano roll, a chord progression, or separated voices.
 - **sim-lib-music-lower** -- Takes a structured piece of music and renders it back down into a playable MIDI file.
-- **sim-lib-music-notation** -- Turns a score into readable notation text and reads it back, using a familiar LilyPond-style form.
+- **sim-lib-music-notation** -- Moves canonical SIM scores through readable LilyPond and bounded, security-reviewed MusicXML partwise notation.
+- **sim-lib-music-serial** -- keeps serial plans immutable, explicit, and honest through realization.
 - **sim-lib-music-shapes** -- Gives every music object a readable text form and makes it a first-class object the SIM runtime can hold and match.
 - **sim-lib-music-synth** -- A kit of software synthesizers -- from a DX7-style FM engine to modular System 55 and 700 rigs -- that you can play entirely in code.
-- **sim-lib-music-transform** -- Reworks musical material with the classic moves -- transpose, invert, reverse, stretch, and compress.
+- **sim-lib-music-transform** -- Reworks musical material with classic and exact score-aware moves, with an identity-addressed edit report every time.
 - **sim-lib-music-wasm-frame** -- Frame-safe descriptions of music objects, ready to carry across to a browser or plugin without dragging the whole engine along.
 - **sim-lib-pitch-chord** -- Builds chords from notes, scale degrees, or jazz symbols, voices them, and can harmonize a melody for you.
 - **sim-lib-pitch-core** -- The basic alphabet of pitch -- notes, note names, octaves, and the distances between them -- that the rest of the theory tools share.
@@ -74,22 +77,24 @@ piece gives you.
 - **sim-lib-pitch-namer-roman** -- Reads a chord in the context of a key and names its scale degree -- I, V7, and so on -- the way theory class does.
 - **sim-lib-pitch-ratio** -- Keeps just-intonation style intervals as exact reduced ratios.
 - **sim-lib-pitch-scale** -- Defines scales and modes and can snap incoming notes onto the scale you choose.
+- **sim-lib-pitch-serial** -- turns one exact chromatic aggregate into trustworthy P, I, R, and RI families without losing provenance.
 - **sim-lib-pitch-set** -- Packs a group of pitches into a compact bit pattern and runs the set-theory operations on it fast.
-- **sim-lib-pitch-shapes** -- Gives pitches, scales, chords, and keys a readable text form and makes them objects the SIM runtime can hold.
+- **sim-lib-pitch-shapes** -- Gives pitches, scales, chords, keys, and strict tone rows a readable text form and makes them objects the SIM runtime can hold.
 - **sim-lib-pitch-wasm-frame** -- Frame-safe descriptions of pitch data, ready to carry across to a browser or plugin boundary.
+- **sim-lib-serial-core** -- builds serial technique over the symbols the work actually uses.
 - **sim-lib-sound-audio-lift** -- Listens to raw audio and works out the notes hiding inside it.
 - **sim-lib-sound-bridge** -- Connects MIDI notes to actual sound, deciding which instrument, tuning, and voice each note plays through.
 - **sim-lib-sound-core** -- The basic building blocks of sound -- frequency, loudness, and the ingredients of a tone.
 - **sim-lib-sound-dissonance** -- Estimates how rough or smooth two or more sounds are together, using established psychoacoustic models.
 - **sim-lib-sound-gm** -- The standard General MIDI instrument and drum set, so program numbers map to the sounds everyone expects.
-- **sim-lib-sound-render** -- Turns synthesized tones into real audio samples and writes them out as a WAV file.
+- **sim-lib-sound-render** -- Renders sound, transforms time and pitch, and reports loudness, true peak, and normalization decisions.
 - **sim-lib-sound-shapes** -- Gives every sound ingredient -- tones, spectra, timbres, tunings -- a readable text form and makes it a runtime object.
 - **sim-lib-sound-spectrum** -- Breaks a sound into its frequencies and measures its character -- brightness, peaks, and how it changes.
 - **sim-lib-sound-timbre** -- A library of instrument voices and the filters that colour them, from pure sines to plucked strings and bells.
 - **sim-lib-sound-tuning** -- A collection of tuning systems, from modern equal temperament to historical temperaments, that decide the exact pitch of every note.
 - **sim-lib-sound-wasm-frame** -- Frame-safe descriptions of sound data, ready to carry across to a browser or plugin boundary.
 - **sim-lib-stream-bridge** -- Converts flowing streams between MIDI and audio so one kind of stream can feed the other.
-- **sim-lib-stream-file** -- Reads and writes streams to and from files on disk, with each access recorded and permission-checked.
+- **sim-lib-stream-file** -- Owns accountable stream files plus bounded, auditable channel mapping and PCM16 conversion.
 - **sim-lib-stream-midi** -- Wraps live MIDI sources and sinks so they plug into the SIM streaming pipeline as ordinary packets.
 
 ### auto
@@ -165,7 +170,8 @@ piece gives you.
 - **sim-lib-numbers-quad** -- It measures the area under a curve and estimates slopes by clever, careful sampling.
 - **sim-lib-numbers-rational** -- It keeps fractions exact, so one-third really stays one-third instead of a rounded decimal.
 - **sim-lib-numbers-rk** -- It follows how a changing system moves over time, step by careful step.
-- **sim-lib-numbers-stats** -- It summarizes your data with averages, spreads, probabilities, and fairness checks.
+- **sim-lib-numbers-signal** -- It transforms, combines, estimates, aligns, and safely unmixes sampled patterns with every convention stated.
+- **sim-lib-numbers-stats** -- It summarizes streams and infers finite sequences without hiding memory, error, or convergence.
 - **sim-lib-numbers-tensor** -- It gives you grids of numbers, from simple lists to multi-dimensional blocks, as one kind of value.
 - **sim-lib-numbers-tensor-bcast** -- It lets you combine grids of different shapes sensibly, stretching the smaller to match the larger.
 - **sim-lib-numbers-tensor-bit** -- It stores big grids of yes-or-no values tightly packed and combines them with logical operations.
@@ -418,9 +424,9 @@ This crate lets SIM treat a table that actually lives somewhere else as if it we
 
 #### sim-lib-audio-dsp
 
-A kit of ready-made sound-shaping blocks -- gain, filters, delay, and dynamics -- that you drop into a signal path.
+Realtime-safe sound sources, sample-rate conversion, and ready-made shaping blocks for an audio signal path.
 
-This is a stocked shelf of the tone-shaping tools an audio project reaches for again and again. You get level and pan controls, gentle smoothing so knob moves never click, one-pole and biquad and state-variable filters for carving tone, a delay line with comb and all-pass building blocks, and modulation colours like chorus, flanger, and vibrato. On the dynamics side there is a compressor, gate, limiter, soft clipper, and waveshaper. Every block is plain math with no hardware attached, so it sounds the same whether you preview it or run it live.
+This is a stocked shelf of the signal tools an audio project reaches for again and again. It supplies PolyBLEP bandlimited oscillators and a fixed-state polyphase resampler alongside level and pan controls, click-free smoothing, one-pole, biquad, and state-variable filters, delay, chorus, flanger, vibrato, compression, gating, limiting, soft clipping, and waveshaping. Every callback component is plain math with its storage prepared in advance, so it behaves the same in a preview and a live graph.
 
 #### sim-lib-audio-graph-core
 
@@ -804,7 +810,7 @@ This crate answers the everyday "how many ways" questions and then goes further.
 
 model anything as a network of connections and find out how the pieces link, reach, and cost.
 
-Whenever your problem is really a set of things joined by links -- roads between towns, dependencies between tasks, friendships between people -- this crate turns it into a graph you can question. You can walk it to see what is connected to what, check whether the whole thing hangs together or splits into islands, find the cheapest set of links that still joins everything, and trace the shortest route between any two points. Just as useful, many answers arrive with a certificate: a small piece of evidence you can independently re-check to confirm the result is genuinely correct rather than taken on trust.
+Whenever your problem is really a set of things joined by links -- roads between towns, dependencies between tasks, friendships between people -- this crate turns it into a graph you can question. You can walk it to see what is connected to what, check whether the whole thing hangs together or splits into islands, find the cheapest set of links that still joins everything, trace the shortest route between any two points, pair unequal collections while forbidding illegal matches, optimize a choice through staged layers, and align sequences under explicit window, gap, endpoint, and memory policies. Just as useful, these optimization answers arrive with evidence you can independently re-check instead of taking a result on trust.
 
 #### sim-lib-discrete-rank
 
@@ -1142,7 +1148,7 @@ This gives MIDI a readable text skin. Its encode and decode functions round-trip
 
 Reads and writes ordinary .mid files, the standard way music moves between programs.
 
-This handles the on-disk Standard MIDI File format in both directions. It parses .mid and .smf bytes into an in-memory song model and serialises that model straight back to bytes, reusing the shared MIDI event types. It covers all three file formats, the variable-length timing encoding, running-status compression, and cleaning up or merging tracks. Timing is read in the common ticks-per-quarter form; the rarer SMPTE timing is refused rather than mishandled.
+This handles the on-disk Standard MIDI File format in both directions. It parses .mid and .smf bytes into an in-memory song model and serialises that model straight back to bytes, reusing the shared MIDI event types. It preserves all three file formats, metrical and SMPTE time divisions, unknown valid meta and system events, variable-length timing, and running-status compression. Defensive read limits bound files, tracks, chunks, events, and payload allocation before untrusted sizes are copied.
 
 #### sim-lib-midi-sysex
 
@@ -1158,21 +1164,33 @@ This packages MIDI into simple, self-contained frames that survive a trip across
 
 #### sim-lib-music-analysis
 
-Looks at a piece of music and reveals its structure -- what chords are sounding and how the notes move moment to moment.
+Looks at a piece of music and reveals its structure -- what chords are sounding, where the pulse is, how passages relate, and which patterns return.
 
-This studies music material and produces structural views you can read. It turns a piano roll into per-moment frames showing which pitches are sounding, starting, ending, or held over, then segments that timeline into chord-bearing stretches with pitch ranges and pitch-class masks. With its spectral option it adds a Walsh-Hadamard analysis of melodies, contours, and pitch-class windows, giving a different angle on repetition and shape.
+This studies music material and produces structural views you can read. It turns a piano roll into per-moment frames showing which pitches are sounding, starting, ending, or held over, then segments that timeline into chord-bearing stretches with pitch ranges and pitch-class masks. Its harmonic feature adapter decodes built-in key/chord profiles or caller-declared templates through the shared finite HMM, retaining transition rows, likelihood, confidence, posterior alternatives, and bounded-work evidence. Exact metrical quantization globally aligns identified notes to a declared tempo, meter, swing, and tuplet lattice without hiding any movement. Named melody and rhythm extractors compare passages through reusable dynamic-time-warp and correlation engines while stating transposition and time-scale invariances. Bounded repeated-pattern discovery hashes candidates, exact-verifies them, and returns occurrence identities, spans, transforms, costs, support, overlap policy, and search receipts. Its Tonnetz analyst finds bounded P/L/R paths between canonical major and minor chord identities with reusable shortest-path certificates, while keeping Riemannian names as display-only projections. With its spectral option it adds a Walsh-Hadamard analysis of melodies, contours, and pitch-class windows, giving another angle on repetition and shape. It also supplies the loadable `music/algorithm-plan` application seam. A plan selects independently loaded stages by their argument Shapes, checks each result Shape, and retains the chosen implementation metadata plus every intermediate value. That makes a complete music-analysis application editable as data without turning this crate into a catch-all for MIDI, harmony, counterpoint, rendering, or realtime providers.
 
 #### sim-lib-music-combinators
 
 A shelf of generative players -- arpeggiators, basslines, drum patterns, step sequencers -- that turn simple inputs into steady streams of notes.
 
-This layers reusable players on top of the core music types. Feed each one musical raw material -- chords, scales, drum kits, step lanes -- and it renders a deterministic stream of play events with matching trace data, so the same settings always give the same performance. The collection covers arpeggiation in a couple of flavours, walking basslines, drum patterns including a Euclidean generator, polyphonic step sequencing, and multi-stream note generation, plus friendly builders for assembling the music objects they read.
+This layers reusable players on top of the core music types. Feed each one musical raw material -- chords, scales, drum kits, step lanes -- and it renders a deterministic stream of play events with matching trace data, so the same settings always give the same performance. The collection covers arpeggiation in a couple of flavours, walking basslines, drum patterns including a Euclidean generator, polyphonic step sequencing, and multi-stream note generation. It also joins editable harmony rules to the named pitch, ratio, sonance, and voice-leading measures, then applies exhaustive, factored, certified layered, or beam planning without hiding bounds, failures, cost, or optimality evidence. For higher-order composition, a music carpet arranges the same exact music values on named finite axes, delegates cell edits to transform chains, and converts pitch and time to audited relative forms. Bounded rewrite catalogs add context-aware musical grammars, scale-following pitch-map data, and stable progression-tree identities while retaining every limit and derivation.
+
+#### sim-lib-music-consonance
+
+Explains exact score-window sonance and proposes reversible additions without losing musical evidence.
+
+This library splits a canonical score, identity-bearing staff, or fully realized MIDI timeline at every exact onset and release. Each half-open window retains duplicate pitches as distinct events together with voice, note, event, onset, release, velocity, channel, articulation, and source evidence. Each window reports pitch, acoustic, exact-ratio, commonality, and voice-leading metrics separately. Roughness mass and normalized density remain different named components. There is no default weighted average hiding which model made a musical judgment. The loadable `music/consonance/evaluate` function returns the same structure as Lisp data, including exact rational spans and every retained identity. For completion, callers supply typed note, ornament, chord, pedal, doubling, and voice candidates together with named per-window metric thresholds, protected spans and identities, pitch ranges, style limits, and ordinary `SearchControl`. The selected `ConsonancePatch` is bound to the source staff's kernel content identity. Applying it only adds material; removing it verifies every added value before restoring the exact source, including all ids.
 
 #### sim-lib-music-core
 
 The heart of the music world in SIM: notes, chords, melodies, and scores, plus the timeline they live on.
 
-This supplies the concrete music domain the rest of the stack works with. It defines the music object model -- notes, chords, melodies, and scores -- along with the piano roll and time grid they sit on, events and lanes, players and playables, performances and takes, an arranger, freeze surfaces, and trace data. It also carries the descriptor metadata that spells out each component's ports and parameters, and registers all of it with the runtime as first-class citizens.
+This supplies the concrete music domain the rest of the stack works with. It defines the music object model -- notes, chords, melodies, and scores -- along with the piano roll and time grid they sit on, identity-bearing staffs, exact snapshots and change streams, events and lanes, players and playables, performances and takes, an arranger, freeze surfaces, and trace data. Its conversion lattice moves between catalog score forms with stable voice, note, and event identities; unrepresentable labels, rests, lanes, grids, or voice choices are returned as typed losses instead of disappearing.
+
+#### sim-lib-music-counterpoint
+
+Explains contrapuntal mistakes, maps thematic overlap, and generates bounded reversible companion voices.
+
+This library aligns every voice at exact rational note boundaries and checks inspectable species or caller-authored rules for intervals, motion, range, crossing, overlap, duration, and prepared or resolved dissonance. Each failure names the involved voices and notes, the exact time span, the rule, and the measurement that failed. Its stretto side derives bounded delayed and transformed entries, records legal pairs in the shared graph model, finds pairwise-compatible cliques and chains, and offers fused counterpoint views with transform provenance. These are analysis candidates, never silently presented as generated composition. Its generation side compiles the same rule set to inspectable finite CSP variables and pitch domains, then delegates propagation, scoring, deterministic seed order, work/frontier/result limits, and cancellation to the shared bounded search engine. Each legal result is a strictly additive, content-bound patch whose checked inverse restores the fixed cantus byte-for-byte.
 
 #### sim-lib-music-lift
 
@@ -1188,15 +1206,21 @@ Lowering is the reverse of lifting. This crate takes a structured music object o
 
 #### sim-lib-music-notation
 
-Turns a score into readable notation text and reads it back, using a familiar LilyPond-style form.
+Moves canonical SIM scores through readable LilyPond and bounded, security-reviewed MusicXML partwise notation.
 
-This is the notation surface for SIM music. It converts between a score -- and related pieces such as melodies, progressions, and counterpoint -- and a text rendering in a subset of the well-known LilyPond notation language. A single codec entry point offers import and export in both plain and diagnostic-carrying forms, so you can move fluidly between a music object and human-writable notation, and it installs as a loadable runtime library for on-demand use.
+This is the notation surface for SIM music. It converts between the canonical `Score` and two deliberately bounded exchange forms: a human-writable LilyPond subset and a MusicXML 4.0 `score-partwise` profile. MusicXML parsing rejects DTDs, entity declarations, unknown extensions, and resource overruns. Stable part/event ids travel in the report sidecar, and every accepted loss is named without introducing another score model. The loadable surface is one Shape-described `music/notation/import` function. Its result carries the existing `music/Score` citizen read-construct, retained ids, and losses; MusicXML is a profile of the notation organ, not a new codec family.
+
+#### sim-lib-music-serial
+
+keeps serial plans immutable, explicit, and honest through realization.
+
+This library is the structural source for serial practice. A plan retains exact row identity, stable event identity, role/origin provenance, parent evidence, voice identity, simultaneous groups for chords, and a validated precedence DAG for what must happen before what. It never fabricates a total onset order just to make a chord easy to store.
 
 #### sim-lib-music-shapes
 
 Gives every music object a readable text form and makes it a first-class object the SIM runtime can hold and match.
 
-This applies the SIM shape protocol to the music types. It provides read-and-construct citizen descriptors that round-trip music objects through canonical text forms, a bracketed codec that encodes and decodes every music representation, and a loadable library that registers documented shape values for the music namespace. The codec is the canonical text bridge: encode functions render a music value to its text form, and decode functions parse that text straight back into the matching type.
+This applies the SIM shape protocol to the music types. It provides read-and-construct citizen descriptors that round-trip music objects through canonical text forms, a bracketed codec that encodes and decodes every music representation, and a loadable library that registers documented shape values for the music namespace. The codec is the canonical text bridge: encode functions render a music value to its text form, and decode functions parse that text straight back into the matching type. The same library now exposes a deliberately narrow symbolic-serial bridge. A `#(SerialSeries ...)` value is decoded into `sim-lib-serial-core`, checked against its alphabet and aggregate rule, and returned through `music/serial/validate` with ledger and shared permutation-rank evidence. Shape code adapts the value; it does not copy serial policy or discrete algorithms.
 
 #### sim-lib-music-synth
 
@@ -1206,9 +1230,9 @@ You get a full bench of playable synth building blocks: oscillators, filters, en
 
 #### sim-lib-music-transform
 
-Reworks musical material with the classic moves -- transpose, invert, reverse, stretch, and compress.
+Reworks musical material with classic and exact score-aware moves, with an identity-addressed edit report every time.
 
-This applies transformations to music. It covers the classic operations a composer reaches for -- transpose, invert, retrograde, augment, and diminish -- plus configurable remaps of pitch and time, pattern mutators, and a gated custom event-filter pipeline for bespoke changes. Each transform reads a music object into a canonical piano roll and returns new music, optionally paired with diagnostics that describe what changed, so edits stay traceable rather than mysterious.
+This applies transformations to music. It covers the classic operations a composer reaches for -- transpose, invert, retrograde, augment, and diminish -- plus exact staff sustain, slur, expansion, delayed-note voice separation, register unwrapping, progression multiplication/overlay/slice/repeat, periodic rhythm masks, configurable remaps of pitch and time, pattern mutators, and a gated custom event-filter pipeline. Certified voice leading works directly over stable voice, note, and event identities, including unequal voice counts, doubling, crossing policy, deterministic ties, and adjacent-path evidence. Exact staff transforms keep rational time and report every duration, onset, articulation, pitch, voice, removal, and repeated-identity edit.
 
 #### sim-lib-music-wasm-frame
 
@@ -1220,7 +1244,7 @@ This packages music into simple frames that travel cleanly across an interface b
 
 Builds chords from notes, scale degrees, or jazz symbols, voices them, and can harmonize a melody for you.
 
-This is the chord workshop. It builds chords from raw pitches, from scale degrees, or from jazz-style symbols, then reshapes them with voicing and velocity policies to sit and sound the way you want. Generative players harmonize incoming pitches against a chosen scale, and on top sit a wire-serializable chord-progression sequencer and a roman-numeral-aware harmony suggester that proposes what might come next.
+This is the chord workshop. It builds chords from raw pitches, from scale degrees, or from jazz-style symbols, then reshapes them with voicing and velocity policies to sit and sound the way you want. Chord and voicing palettes remove exact duplicates while keeping stable identities. Complete harmony programs stay as editable data: cadence chains, hard rules, weighted preferences, voice changes, and render settings travel together with evidence for every decision. Optional learned-transition preferences are transparent finite counts with smoothing, held-out scores, stable serialization, and corpus provenance; they never become legality gates. The same finite harmonization problem runs through exhaustive, factored-backtracking, certified layered-DP, or beam strategies under explicit controls. Generative players harmonize incoming pitches against a chosen scale, and a chord-progression sequencer plus a roman-numeral-aware suggester carries a progression forward.
 
 #### sim-lib-pitch-core
 
@@ -1276,17 +1300,23 @@ Defines scales and modes and can snap incoming notes onto the scale you choose.
 
 This gives you scales and modes as working objects. It defines the diatonic and symmetric modes, anchors a mode to a tonic to make a concrete scale, and provides the diatonic operations built on them -- degree lookup, moving notes up and down within the scale, and mapping chord tones to scale tones. Performance-oriented players go further, quantizing, filtering, or remapping incoming pitches onto a chosen scale so a part stays in key.
 
+#### sim-lib-pitch-serial
+
+turns one exact chromatic aggregate into trustworthy P, I, R, and RI families without losing provenance.
+
+`sim-lib-pitch-serial` accepts only rows containing each of SIM's canonical twelve `PitchClass` values exactly once. It reuses the general serial aggregate validator, so malformed rows fail with typed evidence while pitch identity stays shared with the rest of the music stack.
+
 #### sim-lib-pitch-set
 
 Packs a group of pitches into a compact bit pattern and runs the set-theory operations on it fast.
 
-This models unordered groups of pitches as compact bitmasks. A twelve-slot mask packs the pitch classes into a small integer and supports transposition by rotation, inversion, numeric normalisation, conventional normal-order and prime-form classification, complement and inclusion checks, symmetry scans, Z-relation checks, and the interval-vector census that set theory leans on. A wider mask does the same across the full 128-key range. Companion types pair a mask with an optional root and encode chords as stacks of thirds, giving analysis tools a quick, exact representation.
+This models unordered groups of pitches as compact bitmasks. A twelve-slot mask packs the pitch classes into a small integer and supports transposition by rotation, inversion, numeric normalisation, conventional normal-order and prime-form classification, complement and inclusion checks, symmetry scans, Z-relation checks, and the interval-vector census that set theory leans on. Its typed relation report retains every exact Tn/TnI operator and keeps conventional T/TI equivalence, inclusion, common tones, complement classes, interval vectors, and Z-relations distinct. A wider mask does the same across the full 128-key range. Companion types pair a mask with an optional root and encode chords as stacks of thirds, giving analysis tools a quick, exact representation.
 
 #### sim-lib-pitch-shapes
 
-Gives pitches, scales, chords, and keys a readable text form and makes them objects the SIM runtime can hold.
+Gives pitches, scales, chords, keys, and strict tone rows a readable text form and makes them objects the SIM runtime can hold.
 
-This is the text and runtime surface for the pitch theory tools. It provides string round-trips for pitches, intervals, pitch-class masks, scales, keys, chords, and chord symbols, wraps each canonical form in a citizen descriptor for read-and-construct evaluation, and exposes the types as SIM shapes through a loadable library. In short, a scale or chord becomes something you can write down, read back exactly, and hand to the runtime as a named object.
+This is the text and runtime surface for the pitch theory tools. It provides string round-trips for pitches, intervals, pitch-class masks, scales, keys, chords, chord symbols, and strict twelve-class tone rows, wraps each canonical form in a citizen descriptor for read-and-construct evaluation, and exposes the types as SIM shapes through a loadable library. In short, a scale, chord, or row becomes something you can write down, read back exactly, and hand to the runtime as a named object.
 
 #### sim-lib-pitch-wasm-frame
 
@@ -1294,11 +1324,17 @@ Frame-safe descriptions of pitch data, ready to carry across to a browser or plu
 
 This packages pitch data into simple, self-contained frames that survive a trip across an interface boundary. Despite the name it compiles no WebAssembly and ships no browser glue; it defines the data descriptors that a web or plugin adapter can serialise and pass along. It is the neutral shape pitch information takes when it needs to leave the Rust core and be received by some other surface.
 
+#### sim-lib-serial-core
+
+builds serial technique over the symbols the work actually uses.
+
+`sim-lib-serial-core` validates and transforms ordered series over any finite alphabet, from pitch classes to gestures, durations, dynamics, registers, or a project's own symbol vocabulary. Aggregate intent remains explicit data: exactly-once, no-repeat, declared multiplicity, declared omissions, projected classes, or free order. Every accepted series carries an `AggregateLedger` showing what was observed and expected.
+
 #### sim-lib-sound-audio-lift
 
 Listens to raw audio and works out the notes hiding inside it.
 
-This analyses raw recorded audio and lifts it into pitched note candidates. Its analysers -- one tracking spectral peaks, one combing for harmonics -- break the sound into per-window frames and assemble candidate notes under configurable options, so you get a considered guess at what was played rather than just a waveform. With its music option turned on, the results convert straight into piano rolls, diff rolls, and counterpoint you can work with.
+This analyses raw recorded audio and lifts it into pitched note candidates and reviewable musical features. The loadable `sound/lift/pitch-track` call and matching Rust API run YIN and probabilistic YIN to recover a monophonic contour with confidence, frequency bounds, voiced probability, rejected alternatives, explicit interpolation policy, and exact frame provenance. The composed `sound/lift/analyze` call adds bounded onset strength and latency-aware peak picking, certified varying-tempo beat paths, meter hypotheses, zero-crossing rate, mel/Bark/ERB filterbanks, policy-complete MFCCs, chroma, and key/chord sequences with posterior alternatives. For polyphonic material, the existing spectral-peak and harmonic-comb candidates continue into identity-bearing partial tracks through certified assignment and DTW continuity evidence, with explicit birth, death, gap, crossing, work, and track-limit policy. Phase-preserving STFT and checked overlap-add reconstruction make those frames reusable, while tuning-anchored constant-Q and explicit chroma folding turn them into octave-independent musical evidence. With its music option turned on, note results convert straight into piano rolls, diff rolls, and counterpoint you can work with.
 
 #### sim-lib-sound-bridge
 
@@ -1326,9 +1362,9 @@ This provides the General MIDI sound set. It includes the standard drum map, nam
 
 #### sim-lib-sound-render
 
-Turns synthesized tones into real audio samples and writes them out as a WAV file.
+Renders sound, transforms time and pitch, and reports loudness, true peak, and normalization decisions.
 
-This renders tones into playable audio. It takes synthesized tones and produces interleaved PCM samples, rendering single tones and mixing scheduled tones with per-tone timing and panning, then encodes the mix as a standard 16-bit WAV. Options set the sample rate and channel count. It is the step that finally turns a described sound into something a speaker can play or a file can store.
+This renders tones into playable audio, then handles the policy-heavy offline work around that PCM. It can stretch duration and shift pitch independently through the existing phase-preserving STFT, measure EBU R128 momentary and integrated loudness with ITU-R BS.1770 K-weighting and true peak, and normalize through one fully reported gain. Its float output is never silently clipped or limited.
 
 #### sim-lib-sound-shapes
 
@@ -1340,7 +1376,7 @@ This gives the sound layer a text skin. Its encode and decode functions round-tr
 
 Breaks a sound into its frequencies and measures its character -- brightness, peaks, and how it changes.
 
-This gives you the frequency-domain view of a sound. It builds a spectrum -- a magnitude picture across frequency -- either from a synthesized tone or from recorded samples, then measures the common descriptors that summarise timbre: the peaks, the spectral centroid that tracks brightness, flatness, rolloff, and flux that tracks change over time. It turns a raw sound into a handful of readable numbers about its character.
+This gives you the frequency-domain view of a sound. It builds a spectrum -- a magnitude picture across frequency -- either from a synthesized tone or from recorded samples, then measures the common descriptors that summarise timbre: the peaks, the spectral centroid that tracks brightness, flatness, rolloff, and flux that tracks change over time. It turns a raw sound into a handful of readable numbers about its character. Recorded-sample transforms reuse the generic numbers-signal real FFT. This sound crate keeps the public `Spectrum` API, physical hertz bins, amplitude descriptors, and source provenance without maintaining a second Fourier implementation or convention.
 
 #### sim-lib-sound-timbre
 
@@ -1368,9 +1404,9 @@ This adapts finite streams of data packets between MIDI and PCM audio, leaning o
 
 #### sim-lib-stream-file
 
-Reads and writes streams to and from files on disk, with each access recorded and permission-checked.
+Owns accountable stream files plus bounded, auditable channel mapping and PCM16 conversion.
 
-This provides source and sink adapters backed by the filesystem, so a stream can be fed from a file or written out to one. Every read and write stays behind an explicit file capability and is recorded as a filesystem effect, keeping disk access accountable rather than silent. It reuses the in-tree MIDI file codec for SMF support, and covers WAV audio through the stream audio layer.
+This provides source and sink adapters backed by the filesystem, so a stream can be fed from a file or written out to one. Every read and write stays behind an explicit file capability and is recorded as a filesystem effect. Its WAV owner also maps finite channel layouts and quantizes float PCM with explicit clipping evidence and reproducible TPDF or first-order noise-shaped dither.
 
 #### sim-lib-stream-midi
 
@@ -1506,11 +1542,17 @@ It follows how a changing system moves over time, step by careful step.
 
 Many things are described not by where they are but by how they change: how fast something cools, how a population grows, how an object swings. Given that description, this traces the actual path forward through time. It advances the system in small increments, and it offers both steady fixed-size steps and adaptive ones that shorten where the motion is delicate and lengthen where it is calm, so you get accuracy where it matters and speed where it does not. The result is a faithful trajectory you can follow from a starting point onward as the system evolves.
 
+#### sim-lib-numbers-signal
+
+It transforms, combines, estimates, aligns, and safely unmixes sampled patterns with every convention stated.
+
+This library separates a signal into Fourier, cosine, or sine components and puts it back together again. It also convolves, cross-correlates, and performs regularized deconvolution over canonical real tensors. Direct definitions stay beside FFT paths, and automatic convolution exposes the cost comparison that made its choice. Linear full, same, and valid spans cannot be confused with circular geometry; boundary, normalization, and lag-order policies remain typed and reviewable. Overlap-add and overlap-save plans state their retained span, latency, padding, and discarded boundaries. Deconvolution always carries a Tikhonov or truncated spectral guard plus singular-bin and residual evidence. For classical spectral estimation it supplies rectangular, Hann, Hamming, Blackman-family, Kaiser, and caller-defined windows with explicit endpoint and normalization policy. Periodogram, Welch, cross-spectrum/coherence, Slepian multitaper, and uneven-sample Lomb-Scargle reports retain their frequency grid, scaling denominator, degrees of freedom, segment/taper counts, and admitted work ceiling. A result can therefore be reconstructed without guessing whether power was folded, gain-corrected, density-scaled, or variance-normalized. Burg autoregressive fits reject singular or unstable reflection stages by default, can deliberately reduce to the last stable order, and select fixed, AIC, BIC, or final-prediction-error order with every candidate score retained. Maximum-entropy spectra reuse the same bounded frequency-grid evidence, while forward and backward predictions enforce horizon, work, and amplitude ceilings. Complete DFT bins can be evaluated or integrated between sample points under an explicit origin, period, endpoint, wrapping, Nyquist, sign, and normalization contract. Single-bin evaluation, Hilbert analytic signals, phase unwrapping, instantaneous frequency, and attack/release envelopes use those conventions too. Multilevel Haar and Le Gall 5/3 wavelets preserve the chosen periodic, symmetric, or zero boundary policy and retain every odd reconstruction length. Savitzky-Golay filters expose their polynomial fit and always scale derivatives by factorial and physical sample spacing. Structured Toeplitz inputs use shared scaled-pivot linear algebra and return pivot conditioning and residual evidence. Linear, natural-cubic, and monotone-cubic interpolation make duplicate samples and reject, clamp, or linear extrapolation explicit. The transform side handles ordinary real samples and paired complex samples, including awkward prime lengths, with explicit scaling, direction, packing, padding, stride, and output placement. Multidimensional views preserve declared axes and physical strides, while bounded plans transform tensors larger than memory through a caller-selected Table or Dir block store.
+
 #### sim-lib-numbers-stats
 
-It summarizes your data with averages, spreads, probabilities, and fairness checks.
+It summarizes streams and infers finite sequences without hiding memory, error, or convergence.
 
-Point it at a set of numbers and it tells you the story they hold: the typical value, how spread out they are, and the shape of their likelihood. It covers the common descriptive summaries and probability helpers you reach for when making sense of data. It also computes fairness measures that flag when outcomes fall unevenly across groups. What sets it apart is that these results come with their evidence attached: a computed metric carries the inputs and reasoning behind it as inspectable data, so you can see not just the number but why it came out that way.
+Point it at a set of numbers and it tells you the story they hold: the typical value, how spread out they are, and the shape of their likelihood. Seeded k-means and regularized Gaussian mixtures expose their centroids, assignments, covariance, convergence, repair, restart, work, AIC, and BIC evidence. Mergeable streaming quantiles state their rank-error and memory policy and stay exact for small inputs. Finite Markov and hidden Markov models expose their transition and emission rows, while normalized forward/backward, Viterbi, posterior decoding, and bounded Baum-Welch retain likelihood, convergence, repairs, work, seed, and termination evidence. It also computes fairness measures that flag when outcomes fall unevenly across groups.
 
 #### sim-lib-numbers-tensor
 
