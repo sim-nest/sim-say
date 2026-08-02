@@ -472,23 +472,27 @@
 | `` | `recipe/sim-runtime/crates/sim-lib-pattern/01-basics/match-destructure` | `local/sim-runtime/crate/sim-lib-pattern` | `recipe` | `crates/sim-lib-pattern/recipes/01-basics/match-destructure/recipe.toml` | `lisp` | `` | `false` | `false` |
 | `` | `recipe/sim-runtime/crates/sim-lib-sequence/01-basics/map-square` | `local/sim-runtime/crate/sim-lib-sequence` | `recipe` | `crates/sim-lib-sequence/recipes/01-basics/map-square/recipe.toml` | `lisp` | `` | `false` | `false` |
 | `` | `recipe/sim-runtime/crates/sim-lib-standard-core/01-basics/profile-fidelity` | `local/sim-runtime/crate/sim-lib-standard-core` | `recipe` | `crates/sim-lib-standard-core/recipes/01-basics/profile-fidelity/recipe.toml` | `lisp` | `` | `false` | `false` |
-| `` | `recipe/sim-sdk/01-basics/boot-runtime` | `crate/sim-nest` | `recipe` | `recipes/01-basics/boot-runtime/recipe.toml` | `lisp` | `` | `false` | `false` |
-| `` | `recipe/sim-sdk/crates/sim-conformance/01-basics/run-contract` | `crate/sim-conformance` | `recipe` | `crates/sim-conformance/recipes/01-basics/run-contract/recipe.toml` | `shell` | `` | `false` | `false` |
-| `` | `recipe/sim-sdk/device/consent` | `crate/sim-nest` | `recipe` | `recipes/device/consent/recipe.toml` | `lisp` | `` | `false` | `false` |
-| `` | `recipe/sim-sdk/device/route-swap` | `crate/sim-nest` | `recipe` | `recipes/device/route-swap/recipe.toml` | `lisp` | `` | `false` | `false` |
-| `` | `recipe/sim-sdk/device/two-rate` | `crate/sim-nest` | `recipe` | `recipes/device/two-rate/recipe.toml` | `lisp` | `` | `false` | `false` |
-| `` | `recipe/sim-sdk/glasses/co-use` | `crate/sim-nest` | `recipe` | `recipes/glasses/co-use/recipe.toml` | `lisp` | `` | `false` | `false` |
-| `` | `recipe/sim-sdk/glasses/halo-glance-pager` | `crate/sim-nest` | `recipe` | `recipes/glasses/halo-glance-pager/recipe.toml` | `lisp` | `` | `false` | `false` |
-| `` | `recipe/sim-sdk/glasses/review-in-space` | `crate/sim-nest` | `recipe` | `recipes/glasses/review-in-space/recipe.toml` | `lisp` | `` | `false` | `false` |
-| `` | `recipe/sim-sdk/glasses/viture-two-rate` | `crate/sim-nest` | `recipe` | `recipes/glasses/viture-two-rate/recipe.toml` | `lisp` | `` | `false` | `false` |
-| `` | `recipe/sim-sdk/glasses/voice-site` | `crate/sim-nest` | `recipe` | `recipes/glasses/voice-site/recipe.toml` | `lisp` | `` | `false` | `false` |
-| `` | `recipe/sim-sdk/gpu-math/modeled-matrix-ode-femm` | `crate/sim-nest` | `recipe` | `recipes/gpu-math/modeled-matrix-ode-femm/recipe.toml` | `lisp` | `` | `false` | `false` |
-| `` | `recipe/sim-sdk/interference/modeled-study` | `crate/sim-nest` | `recipe` | `recipes/interference/modeled-study/recipe.toml` | `lisp` | `` | `false` | `false` |
-| `` | `recipe/sim-sdk/music-algorithms/foundry-plan` | `crate/sim-nest` | `recipe` | `recipes/music-algorithms/foundry-plan/recipe.toml` | `lisp` | `` | `false` | `false` |
-| `` | `recipe/sim-sdk/watch/dual-quorum` | `crate/sim-nest` | `recipe` | `recipes/watch/dual-quorum/recipe.toml` | `lisp` | `` | `false` | `false` |
-| `` | `recipe/sim-sdk/watch/glance-pager` | `crate/sim-nest` | `recipe` | `recipes/watch/glance-pager/recipe.toml` | `lisp` | `` | `false` | `false` |
-| `` | `recipe/sim-sdk/watch/hold-last` | `crate/sim-nest` | `recipe` | `recipes/watch/hold-last/recipe.toml` | `lisp` | `` | `false` | `false` |
-| `` | `recipe/sim-sdk/watch/privacy-reaper` | `crate/sim-nest` | `recipe` | `recipes/watch/privacy-reaper/recipe.toml` | `lisp` | `` | `false` | `false` |
+| `` | `recipe/sim-sdk/01-basics/boot-runtime` | `crate/sim-nest` | `recipe` | `recipes/01-basics/boot-runtime/recipe.toml` | `lisp` | `xtask check-recipes` | `true` | `true` |
+| `` | `recipe/sim-sdk/crates/sim-conformance/01-basics/run-contract` | `crate/sim-conformance` | `recipe` | `crates/sim-conformance/recipes/01-basics/run-contract/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
+| `` | `recipe/sim-sdk/device/consent` | `crate/sim-nest` | `recipe` | `recipes/device/consent/recipe.toml` | `lisp` | `xtask check-recipes` | `true` | `true` |
+| `` | `recipe/sim-sdk/device/route-swap` | `crate/sim-nest` | `recipe` | `recipes/device/route-swap/recipe.toml` | `lisp` | `xtask check-recipes` | `true` | `true` |
+| `` | `recipe/sim-sdk/device/two-rate` | `crate/sim-nest` | `recipe` | `recipes/device/two-rate/recipe.toml` | `lisp` | `xtask check-recipes` | `true` | `true` |
+| `` | `recipe/sim-sdk/glasses/co-use` | `crate/sim-nest` | `recipe` | `recipes/glasses/co-use/recipe.toml` | `lisp` | `xtask check-recipes` | `true` | `true` |
+| `` | `recipe/sim-sdk/glasses/halo-glance-pager` | `crate/sim-nest` | `recipe` | `recipes/glasses/halo-glance-pager/recipe.toml` | `lisp` | `xtask check-recipes` | `true` | `true` |
+| `` | `recipe/sim-sdk/glasses/review-in-space` | `crate/sim-nest` | `recipe` | `recipes/glasses/review-in-space/recipe.toml` | `lisp` | `xtask check-recipes` | `true` | `true` |
+| `` | `recipe/sim-sdk/glasses/viture-two-rate` | `crate/sim-nest` | `recipe` | `recipes/glasses/viture-two-rate/recipe.toml` | `lisp` | `xtask check-recipes` | `true` | `true` |
+| `` | `recipe/sim-sdk/glasses/voice-site` | `crate/sim-nest` | `recipe` | `recipes/glasses/voice-site/recipe.toml` | `lisp` | `xtask check-recipes` | `true` | `true` |
+| `` | `recipe/sim-sdk/gpu-math/modeled-matrix-ode-femm` | `crate/sim-nest` | `recipe` | `recipes/gpu-math/modeled-matrix-ode-femm/recipe.toml` | `lisp` | `xtask check-recipes` | `true` | `true` |
+| `` | `recipe/sim-sdk/interference/modeled-study` | `crate/sim-nest` | `recipe` | `recipes/interference/modeled-study/recipe.toml` | `lisp` | `xtask check-recipes` | `true` | `true` |
+| `` | `recipe/sim-sdk/music-algorithms/foundry-plan` | `crate/sim-nest` | `recipe` | `recipes/music-algorithms/foundry-plan/recipe.toml` | `lisp` | `xtask check-recipes` | `true` | `true` |
+| `feature/sim-sdk/serial-music-composition` | `recipe/sim-sdk/serial-music/index-discovery` | `crate/sim-nest` | `recipe` | `recipes/serial-music/index-discovery/recipe.toml` | `rust` | `xtask check-recipes` | `true` | `true` |
+| `feature/sim-sdk/serial-music-composition` | `recipe/sim-sdk/serial-music/modal-realization` | `crate/sim-nest` | `recipe` | `recipes/serial-music/modal-realization/recipe.toml` | `rust` | `xtask check-recipes` | `true` | `true` |
+| `feature/sim-sdk/serial-music-composition` | `recipe/sim-sdk/serial-music/reversible-completion` | `crate/sim-nest` | `recipe` | `recipes/serial-music/reversible-completion/recipe.toml` | `rust` | `xtask check-recipes` | `true` | `true` |
+| `feature/sim-sdk/serial-music-composition` | `recipe/sim-sdk/serial-music/row-matrix-analysis` | `crate/sim-nest` | `recipe` | `recipes/serial-music/row-matrix-analysis/recipe.toml` | `rust` | `xtask check-recipes` | `true` | `true` |
+| `` | `recipe/sim-sdk/watch/dual-quorum` | `crate/sim-nest` | `recipe` | `recipes/watch/dual-quorum/recipe.toml` | `lisp` | `xtask check-recipes` | `true` | `true` |
+| `` | `recipe/sim-sdk/watch/glance-pager` | `crate/sim-nest` | `recipe` | `recipes/watch/glance-pager/recipe.toml` | `lisp` | `xtask check-recipes` | `true` | `true` |
+| `` | `recipe/sim-sdk/watch/hold-last` | `crate/sim-nest` | `recipe` | `recipes/watch/hold-last/recipe.toml` | `lisp` | `xtask check-recipes` | `true` | `true` |
+| `` | `recipe/sim-sdk/watch/privacy-reaper` | `crate/sim-nest` | `recipe` | `recipes/watch/privacy-reaper/recipe.toml` | `lisp` | `xtask check-recipes` | `true` | `true` |
 | `` | `recipe/sim-shape/01-basics/exact-bool-shape` | `local/sim-shape/crate/sim-shape` | `recipe` | `recipes/01-basics/exact-bool-shape/recipe.toml` | `rust` | `` | `false` | `false` |
 | `` | `recipe/sim-shape/01-basics/shape-grammar-contract` | `local/sim-shape/crate/sim-shape` | `recipe` | `recipes/01-basics/shape-grammar-contract/recipe.toml` | `rust` | `` | `false` | `false` |
 | `` | `recipe/sim-storage/crates/sim-table-fs/01-basics/grep-tree` | `local/sim-storage/crate/sim-table-fs` | `recipe` | `crates/sim-table-fs/recipes/01-basics/grep-tree/recipe.toml` | `lisp` | `` | `false` | `false` |
@@ -768,6 +772,7 @@
 | `feature/sim-sdk/music-algorithm-composition` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/music_algorithms` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/music_algorithms.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/placement` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/placement.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/rust_intelligence` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/rust_intelligence.rs` | `` | `cargo test` | `true` | `true` |
+| `feature/sim-sdk/serial-music-composition` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/serial_music` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/serial_music.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/stream_matrix` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/stream_matrix.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/stream_matrix_helpers` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/stream_matrix_helpers.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/support` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/support.rs` | `shape` | `cargo test` | `true` | `true` |

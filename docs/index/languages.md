@@ -522,6 +522,10 @@
 | `specimen` | `rust` | recipes/auto-core-citizens/recipe.toml |
 | `specimen` | `rust` | recipes/citizen-roundtrip/recipe.toml |
 | `specimen` | `rust` | recipes/music-algorithm-foundry/recipe.toml |
+| `specimen` | `rust` | recipes/serial-music/index-discovery/recipe.toml |
+| `specimen` | `rust` | recipes/serial-music/modal-realization/recipe.toml |
+| `specimen` | `rust` | recipes/serial-music/reversible-completion/recipe.toml |
+| `specimen` | `rust` | recipes/serial-music/row-matrix-analysis/recipe.toml |
 | `specimen` | `scheme-r7rs-small` | crates/sim-lib-lang-scheme/recipes/01-basics/scheme-arithmetic/recipe.toml |
 | `specimen` | `shape` | crates/sim-citizen/src/tests.rs |
 | `specimen` | `shape` | crates/sim-conformance/tests/shape_grammar.rs |

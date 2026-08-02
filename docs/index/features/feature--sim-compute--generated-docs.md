@@ -10,7 +10,6 @@ Publish generated package, card, rustdoc, recipe, and Index facts for compute pr
 
 ## Anchors
 
-- `anchor/repo/sim-compute`
 - `local/sim-compute/anchor/cli/xtask`
 - `local/sim-compute/anchor/crate/xtask`
 - `local/sim-compute/anchor/doc/generated/card-index`
