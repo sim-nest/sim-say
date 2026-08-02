@@ -6,11 +6,14 @@
 - Subject: `local/sim-music/crate/sim-lib-music-synth`
 - Canonical key: `crate/sim-lib-music-synth/feature-sim-music-synth-performance-workbench`
 
-Describe synth presets, streaming render fixtures, and placement choices for local or browser-backed performance.
+Compose catalog synthesis, deterministic offline renders, bounded PCM interchange, and realtime graph previews without duplicating synth or DSP implementations.
 
 ## Anchors
 
 - `anchor/crate/sim-lib-music-synth`
+- `anchor/crate/sim-lib-sound-render`
+- `anchor/crate/sim-lib-sound-timbre`
+- `anchor/crate/sim-lib-stream-file`
 - `anchor/export/sim-lib-music-synth/view-instrument-dx7-editor`
 - `anchor/export/sim-lib-music-synth/view-instrument-ps3300-editor`
 - `anchor/export/sim-lib-music-synth/view-instrument-system55-editor`
@@ -25,6 +28,10 @@ Describe synth presets, streaming render fixtures, and placement choices for loc
 ## Specimens
 
 - `spec-test/sim-music/crates/sim-lib-music-synth/src/tests/daw`
+- `spec-test/sim-music/crates/sim-lib-music-synth/src/tests/reuse`
+- `spec-test/sim-music/crates/sim-lib-sound-render/src/tests`
+- `spec-test/sim-music/crates/sim-lib-sound-timbre/src/tests`
+- `spec-test/sim-music/crates/sim-lib-stream-file/src/tests`
 
 ## Worked Example
 

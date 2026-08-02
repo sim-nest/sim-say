@@ -1,0 +1,40 @@
+{
+  "generator": "xtask repo-contract v1",
+  "packages": [
+    {
+      "crate_name": "sim_lib_interference_compute",
+      "group": "workspace",
+      "manifest": "crates/sim-lib-interference-compute/Cargo.toml",
+      "package": "sim-lib-interference-compute",
+      "summary": "Normalized tile-local f32 lowering over the canonical Tensor executor."
+    },
+    {
+      "crate_name": "sim_lib_interference_core",
+      "group": "workspace",
+      "manifest": "crates/sim-lib-interference-core/Cargo.toml",
+      "package": "sim-lib-interference-core",
+      "summary": "Checked physical boundaries for coherent scalar wave-field studies."
+    },
+    {
+      "crate_name": "sim_lib_interference_runtime",
+      "group": "workspace",
+      "manifest": "crates/sim-lib-interference-runtime/Cargo.toml",
+      "package": "sim-lib-interference-runtime",
+      "summary": "Tensor-backed runtime records for coherent interference studies."
+    },
+    {
+      "crate_name": "sim_lib_interference_solve",
+      "group": "workspace",
+      "manifest": "crates/sim-lib-interference-solve/Cargo.toml",
+      "package": "sim-lib-interference-solve",
+      "summary": "Deterministic CPU f64 solving and certified observation of coherent scalar fields."
+    },
+    {
+      "crate_name": "xtask",
+      "group": "workspace",
+      "manifest": "xtask/Cargo.toml",
+      "package": "xtask",
+      "summary": "Repository automation wrapper for validation and generated documentation."
+    }
+  ]
+}

@@ -13,6 +13,7 @@ Tutorial links are generated from published repo contracts.
 - [sim-expr-tree tutorial lane](../repos/sim-expr-tree.md#tutorial-lane)
 - [sim-femm tutorial lane](../repos/sim-femm.md#tutorial-lane)
 - [sim-foundation tutorial lane](../repos/sim-foundation.md#tutorial-lane)
+- [sim-interference tutorial lane](../repos/sim-interference.md#tutorial-lane)
 - [sim-kernel tutorial lane](../repos/sim-kernel.md#tutorial-lane)
 - [sim-ledger tutorial lane](../repos/sim-ledger.md#tutorial-lane)
 - [sim-music tutorial lane](../repos/sim-music.md#tutorial-lane)

@@ -1,0 +1,42 @@
+{
+  "card_count": 6,
+  "cards": [
+    {
+      "id": "browse/catalog",
+      "kind": "browse-root",
+      "owner": "workspace",
+      "summary": "root browse catalog"
+    },
+    {
+      "id": "cookbook/interference-compute",
+      "kind": "cookbook-recipe",
+      "owner": "sim-lib-interference-compute",
+      "summary": "Route certified interference studies through scoped Tensor executors."
+    },
+    {
+      "id": "cookbook/interference-runtime",
+      "kind": "cookbook-recipe",
+      "owner": "sim-lib-interference-runtime",
+      "summary": "Shape-checked coherent field studies through the loadable CPU solver."
+    },
+    {
+      "id": "cookbook/sim-lib-interference-core",
+      "kind": "cookbook-recipe",
+      "owner": "sim-lib-interference-core",
+      "summary": ""
+    },
+    {
+      "id": "cookbook/sim-lib-interference-solve",
+      "kind": "cookbook-recipe",
+      "owner": "sim-lib-interference-solve",
+      "summary": ""
+    },
+    {
+      "id": "registry/catalog",
+      "kind": "browse-registry",
+      "owner": "workspace",
+      "summary": "registry catalog browse card"
+    }
+  ],
+  "generator": "xtask repo-contract v1"
+}

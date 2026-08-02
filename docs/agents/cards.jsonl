@@ -16,7 +16,7 @@
 {"card": {"id": "cookbook/table-remote", "kind": "cookbook-recipe", "owner": "sim-table-remote", "summary": "Remote table directory descriptors."}, "repo": "sim-agent-net"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-agent-net"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-audio-daw"}
-{"card": {"id": "cookbook/audio-dsp", "kind": "cookbook-recipe", "owner": "sim-lib-audio-dsp", "summary": "Offline DSP processor and fixture descriptors."}, "repo": "sim-audio-daw"}
+{"card": {"id": "cookbook/audio-dsp", "kind": "cookbook-recipe", "owner": "sim-lib-audio-dsp", "summary": "Offline and realtime-safe DSP processor and transform descriptors."}, "repo": "sim-audio-daw"}
 {"card": {"id": "cookbook/audio-graph-live", "kind": "cookbook-recipe", "owner": "sim-lib-audio-graph-live", "summary": "Live graph queue, transport, and fake-clock descriptors."}, "repo": "sim-audio-daw"}
 {"card": {"id": "cookbook/audio-graph/core", "kind": "cookbook-recipe", "owner": "sim-lib-audio-graph-core", "summary": "Hardware-free processor graph descriptors and offline blocks."}, "repo": "sim-audio-daw"}
 {"card": {"id": "cookbook/plugin-clap", "kind": "cookbook-recipe", "owner": "sim-lib-plugin-clap", "summary": "CLAP-shaped plugin descriptor and export metadata."}, "repo": "sim-audio-daw"}
@@ -60,15 +60,17 @@
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-codecs"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-compute"}
 {"card": {"id": "cookbook/compute-auto", "kind": "cookbook-recipe", "owner": "sim-lib-compute-auto", "summary": "Automatic tensor compute site selection with CPU fallback."}, "repo": "sim-compute"}
+{"card": {"id": "cookbook/compute-cli", "kind": "cookbook-recipe", "owner": "sim-lib-compute-cli", "summary": "Loadable CLI recipes for inspecting compute providers."}, "repo": "sim-compute"}
+{"card": {"id": "cookbook/compute-cuda", "kind": "cookbook-recipe", "owner": "sim-lib-compute-cuda", "summary": "CUDA device discovery and resident tensor execution."}, "repo": "sim-compute"}
+{"card": {"id": "cookbook/compute-femm", "kind": "cookbook-recipe", "owner": "sim-lib-compute-femm", "summary": "Provider-neutral resident CSR FEMM solver execution."}, "repo": "sim-compute"}
 {"card": {"id": "cookbook/compute-model", "kind": "cookbook-recipe", "owner": "sim-lib-compute-model", "summary": "Modeled resident tensor execution for provider and placement tests."}, "repo": "sim-compute"}
+{"card": {"id": "cookbook/compute-rocm", "kind": "cookbook-recipe", "owner": "sim-lib-compute-rocm", "summary": "ROCm device discovery and resident tensor execution."}, "repo": "sim-compute"}
 {"card": {"id": "cookbook/compute-wgpu", "kind": "cookbook-recipe", "owner": "sim-lib-compute-wgpu", "summary": "Evidence-based portable GPU adapter discovery."}, "repo": "sim-compute"}
-{"card": {"id": "cookbook/sim-lib-compute-cli", "kind": "cookbook-recipe", "owner": "sim-lib-compute-cli", "summary": ""}, "repo": "sim-compute"}
-{"card": {"id": "cookbook/sim-lib-compute-cuda", "kind": "cookbook-recipe", "owner": "sim-lib-compute-cuda", "summary": ""}, "repo": "sim-compute"}
-{"card": {"id": "cookbook/sim-lib-compute-femm", "kind": "cookbook-recipe", "owner": "sim-lib-compute-femm", "summary": ""}, "repo": "sim-compute"}
-{"card": {"id": "cookbook/sim-lib-compute-rocm", "kind": "cookbook-recipe", "owner": "sim-lib-compute-rocm", "summary": ""}, "repo": "sim-compute"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-compute"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-construction"}
-{"card": {"id": "cookbook/construction/project", "kind": "cookbook-recipe", "owner": "sim-lib-construction-project", "summary": "Project charter records, append-only facts, snapshots, lifecycle gates, decisions, and evidence readiness."}, "repo": "sim-construction"}
+{"card": {"id": "cookbook/construction/office-evidence", "kind": "cookbook-recipe", "owner": "sim-lib-construction-office", "summary": "Reference-only evidence joins and deterministic visibility-safe role packs over existing office values."}, "repo": "sim-construction"}
+{"card": {"id": "cookbook/construction/project", "kind": "cookbook-recipe", "owner": "sim-lib-construction-project", "summary": "Project charter records, append-only facts, snapshots, lifecycle and handover gates, decisions, commissioning evidence, and readiness."}, "repo": "sim-construction"}
+{"card": {"id": "cookbook/construction/reference-project-control", "kind": "cookbook-recipe", "owner": "sim-construction", "summary": "The one modeled-first recipe that connects construction control, schedule exchange, vendor placements, persistence, evidence, and office review."}, "repo": "sim-construction"}
 {"card": {"id": "cookbook/office/dalux-site", "kind": "cookbook-recipe", "owner": "sim-site-dalux", "summary": "Modeled Dalux project item reads with API identity live gates."}, "repo": "sim-construction"}
 {"card": {"id": "cookbook/office/mspdi", "kind": "cookbook-recipe", "owner": "sim-codec-mspdi", "summary": "Microsoft Project XML exchange for local Gantt documents."}, "repo": "sim-construction"}
 {"card": {"id": "cookbook/office/powerproject-site", "kind": "cookbook-recipe", "owner": "sim-site-powerproject", "summary": "Powerproject and Project for the web placements for Gantt plans."}, "repo": "sim-construction"}
@@ -77,13 +79,13 @@
 {"card": {"id": "cookbook/discrete", "kind": "cookbook-recipe", "owner": "sim-lib-discrete", "summary": "Runtime-facing discrete matrix, graph, and transform descriptors."}, "repo": "sim-discrete"}
 {"card": {"id": "cookbook/discrete-algebra", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-algebra", "summary": "Small semiring and matrix-view descriptors."}, "repo": "sim-discrete"}
 {"card": {"id": "cookbook/discrete-comb", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-comb", "summary": "Combination and permutation descriptors."}, "repo": "sim-discrete"}
-{"card": {"id": "cookbook/discrete-graph", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-graph", "summary": "Graph, edge, traversal, and certificate descriptors."}, "repo": "sim-discrete"}
+{"card": {"id": "cookbook/discrete-graph", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-graph", "summary": "Graph, traversal, certified assignment, staged paths, and sequence alignment."}, "repo": "sim-discrete"}
 {"card": {"id": "cookbook/discrete-rank", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-rank", "summary": "Rank-space descriptors for discrete objects."}, "repo": "sim-discrete"}
 {"card": {"id": "cookbook/discrete-search", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-search", "summary": "Bounded deterministic search recipes."}, "repo": "sim-discrete"}
 {"card": {"id": "cookbook/discrete-spectral", "kind": "cookbook-recipe", "owner": "sim-lib-discrete-spectral", "summary": "FWHT, Walsh signature, and spectral descriptor examples."}, "repo": "sim-discrete"}
 {"card": {"id": "discrete/algebra", "kind": "static-card", "owner": "workspace", "summary": "Semiring matrices, powers, and Kleene closure (the spine)."}, "repo": "sim-discrete"}
 {"card": {"id": "discrete/combinatorics", "kind": "static-card", "owner": "workspace", "summary": "Exact counts, lazy enumerators, and canonical ordinals."}, "repo": "sim-discrete"}
-{"card": {"id": "discrete/graph", "kind": "static-card", "owner": "workspace", "summary": "Graphs, MST, shortest paths, and certificates."}, "repo": "sim-discrete"}
+{"card": {"id": "discrete/graph", "kind": "static-card", "owner": "workspace", "summary": "Graphs, assignment, MST, shortest paths, and certificates."}, "repo": "sim-discrete"}
 {"card": {"id": "discrete/music-adapter", "kind": "static-card", "owner": "workspace", "summary": "FWHT-based melody analysis (consumes the spectral atlas)."}, "repo": "sim-discrete"}
 {"card": {"id": "discrete/rank", "kind": "static-card", "owner": "workspace", "summary": "Finite rank spaces, metrics, and invariant grade compilers."}, "repo": "sim-discrete"}
 {"card": {"id": "discrete/spectral", "kind": "static-card", "owner": "workspace", "summary": "FWHT, XOR/subset convolution, and Walsh signatures."}, "repo": "sim-discrete"}
@@ -96,9 +98,10 @@
 {"card": {"id": "rank/discrete/subset", "kind": "static-card", "owner": "workspace", "summary": "Subsets of a finite ground set."}, "repo": "sim-discrete"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-discrete"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-expr-tree"}
+{"card": {"id": "cookbook/sim-expr-tree", "kind": "cookbook-recipe", "owner": "sim-lib-expr-tree", "summary": "Build finite live calculation trees from ordinary SIM operations."}, "repo": "sim-expr-tree"}
 {"card": {"id": "cookbook/sim-expr-tree-calc", "kind": "cookbook-recipe", "owner": "sim-expr-tree-calc", "summary": ""}, "repo": "sim-expr-tree"}
 {"card": {"id": "cookbook/sim-expr-tree-core", "kind": "cookbook-recipe", "owner": "sim-expr-tree-core", "summary": ""}, "repo": "sim-expr-tree"}
-{"card": {"id": "cookbook/sim-lib-expr-tree", "kind": "cookbook-recipe", "owner": "sim-lib-expr-tree", "summary": ""}, "repo": "sim-expr-tree"}
+{"card": {"id": "cookbook/sim-expr-tree-server", "kind": "cookbook-recipe", "owner": "sim-expr-tree", "summary": "Open authoritative expression trees through standard SIM server and browser surfaces."}, "repo": "sim-expr-tree"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-expr-tree"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-femm"}
 {"card": {"id": "cookbook/femm-assembly", "kind": "cookbook-recipe", "owner": "sim-lib-femm-assembly", "summary": "Tiny element assembly descriptors."}, "repo": "sim-femm"}
@@ -125,6 +128,12 @@
 {"card": {"id": "cookbook/net-core", "kind": "cookbook-recipe", "owner": "sim-lib-net-core", "summary": "Side-effect-free HTTP and stream parsing descriptors."}, "repo": "sim-foundation"}
 {"card": {"id": "cookbook/surface/card", "kind": "cookbook-recipe", "owner": "sim-lib-surface-card", "summary": "Codec-neutral surface descriptors and external naming policy."}, "repo": "sim-foundation"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-foundation"}
+{"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-interference"}
+{"card": {"id": "cookbook/interference-compute", "kind": "cookbook-recipe", "owner": "sim-lib-interference-compute", "summary": "Route certified interference studies through scoped Tensor executors."}, "repo": "sim-interference"}
+{"card": {"id": "cookbook/interference-runtime", "kind": "cookbook-recipe", "owner": "sim-lib-interference-runtime", "summary": "Shape-checked coherent field studies through the loadable CPU solver."}, "repo": "sim-interference"}
+{"card": {"id": "cookbook/sim-lib-interference-core", "kind": "cookbook-recipe", "owner": "sim-lib-interference-core", "summary": ""}, "repo": "sim-interference"}
+{"card": {"id": "cookbook/sim-lib-interference-solve", "kind": "cookbook-recipe", "owner": "sim-lib-interference-solve", "summary": ""}, "repo": "sim-interference"}
+{"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-interference"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-kernel"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-kernel"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-ledger"}
@@ -141,19 +150,22 @@
 {"card": {"id": "cookbook/midi-live", "kind": "cookbook-recipe", "owner": "sim-lib-midi-live", "summary": "Live MIDI session descriptors using in-memory rings."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/midi-rtmidi", "kind": "cookbook-recipe", "owner": "sim-lib-midi-rtmidi", "summary": "RtMidi backend descriptors with virtual and ALSA sequencer ports."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/midi-shapes", "kind": "cookbook-recipe", "owner": "sim-lib-midi-shapes", "summary": "Citizen descriptor shapes for MIDI values."}, "repo": "sim-music"}
-{"card": {"id": "cookbook/midi-smf", "kind": "cookbook-recipe", "owner": "sim-lib-midi-smf", "summary": "Standard MIDI File structure and metadata descriptors."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/midi-smf", "kind": "cookbook-recipe", "owner": "sim-lib-midi-smf", "summary": "Bounded Standard MIDI File parsing, lossless time division, and metadata descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/midi-sysex", "kind": "cookbook-recipe", "owner": "sim-lib-midi-sysex", "summary": "System exclusive message descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/midi-wasm", "kind": "cookbook-recipe", "owner": "sim-lib-midi-wasm-frame", "summary": "Browser-safe MIDI facade descriptors."}, "repo": "sim-music"}
-{"card": {"id": "cookbook/music-analysis", "kind": "cookbook-recipe", "owner": "sim-lib-music-analysis", "summary": "Pitch-class, histogram, and chord-window analysis descriptors."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/music-analysis", "kind": "cookbook-recipe", "owner": "sim-lib-music-analysis", "summary": "Exact structural, harmonic, metrical, similarity, pattern, and transformational analysis descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-combinators", "kind": "cookbook-recipe", "owner": "sim-lib-music-combinators", "summary": "Sequence, parallel, repeat, and transform combinator descriptors."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/music-consonance", "kind": "cookbook-recipe", "owner": "sim-lib-music-consonance", "summary": "Identity-bearing sounding windows with separate consonance metrics."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-core", "kind": "cookbook-recipe", "owner": "sim-lib-music-core", "summary": "Score, melody, note, and duration descriptors."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/music-counterpoint", "kind": "cookbook-recipe", "owner": "sim-lib-music-counterpoint", "summary": "Exact rule evidence, graph-backed overlap, and bounded reversible generation."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-lift", "kind": "cookbook-recipe", "owner": "sim-lib-music-lift", "summary": "Lifting descriptors from MIDI-style tracks into music objects."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-lower", "kind": "cookbook-recipe", "owner": "sim-lib-music-lower", "summary": "Lowering descriptors from scores to MIDI-like tracks."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-notation", "kind": "cookbook-recipe", "owner": "sim-lib-music-notation", "summary": "Notation import and export descriptors."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/music-serial", "kind": "cookbook-recipe", "owner": "sim-lib-music-serial", "summary": "Immutable serial plans, practice ledgers, open adaptation, and reusable serial techniques."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-shapes", "kind": "cookbook-recipe", "owner": "sim-lib-music-shapes", "summary": "Citizen descriptor shapes for music objects."}, "repo": "sim-music"}
-{"card": {"id": "cookbook/music-transform", "kind": "cookbook-recipe", "owner": "sim-lib-music-transform", "summary": "Pure music transformation descriptors."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/music-transform", "kind": "cookbook-recipe", "owner": "sim-lib-music-transform", "summary": "Exact music transformation and voice-leading descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-wasm", "kind": "cookbook-recipe", "owner": "sim-lib-music-wasm-frame", "summary": "Browser-safe music facade descriptors."}, "repo": "sim-music"}
-{"card": {"id": "cookbook/pitch-chord", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-chord", "summary": "Chord spelling and quality descriptors."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/pitch-chord", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-chord", "summary": "Chord spelling, voicing, and declarative harmony descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-core", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-core", "summary": "Pitch values, names, MIDI notes, and frequency descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-dissonance", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-dissonance", "summary": "Interval and set dissonance descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-namer", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-namer", "summary": "Pitch and set naming registry descriptors."}, "repo": "sim-music"}
@@ -163,22 +175,25 @@
 {"card": {"id": "cookbook/pitch-namer-roman", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-namer-roman", "summary": "Roman numeral analysis descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-ratio", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-ratio", "summary": "Exact musical ratio interval descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-scale", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-scale", "summary": "Scale and degree descriptors."}, "repo": "sim-music"}
-{"card": {"id": "cookbook/pitch-set", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-set", "summary": "Pitch-class sets, masks, and normal-form descriptors."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/pitch-serial", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-serial", "summary": "Strict tone rows, complete operation families, matrices, and explicit labels."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/pitch-set", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-set", "summary": "Pitch-class sets, canonical forms, typed relations, and graph descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-shapes", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-shapes", "summary": "Citizen descriptor shapes for pitch values."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-wasm", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-wasm-frame", "summary": "Browser-safe pitch facade descriptors."}, "repo": "sim-music"}
-{"card": {"id": "cookbook/sound-audio-lift", "kind": "cookbook-recipe", "owner": "sim-lib-sound-audio-lift", "summary": "Descriptors that lift PCM into sound and music features."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/serial-core", "kind": "cookbook-recipe", "owner": "sim-lib-serial-core", "summary": "Finite symbolic alphabets, aggregate evidence, and total transforms."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/sim-music", "kind": "cookbook-recipe", "owner": "sim-music", "summary": "Runnable recipes composing the loadable SIM music libraries."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/sound-audio-lift", "kind": "cookbook-recipe", "owner": "sim-lib-sound-audio-lift", "summary": "Checked framed transforms and descriptors that lift PCM into sound and music features."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/sound-bridge", "kind": "cookbook-recipe", "owner": "sim-lib-sound-bridge", "summary": "Music and MIDI bridge descriptors for sound playback."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/sound-core", "kind": "cookbook-recipe", "owner": "sim-lib-sound-core", "summary": "Tone, oscillator, and amplitude descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/sound-dissonance", "kind": "cookbook-recipe", "owner": "sim-lib-sound-dissonance", "summary": "Roughness and spectrum-pair descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/sound-gm", "kind": "cookbook-recipe", "owner": "sim-lib-sound-gm", "summary": "General MIDI bank and preset descriptors."}, "repo": "sim-music"}
-{"card": {"id": "cookbook/sound-render", "kind": "cookbook-recipe", "owner": "sim-lib-sound-render", "summary": "Offline PCM render descriptors."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/sound-render", "kind": "cookbook-recipe", "owner": "sim-lib-sound-render", "summary": "Offline PCM render, phase-vocoder, loudness, and normalization descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/sound-shapes", "kind": "cookbook-recipe", "owner": "sim-lib-sound-shapes", "summary": "Citizen descriptor shapes for sound objects."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/sound-spectrum", "kind": "cookbook-recipe", "owner": "sim-lib-sound-spectrum", "summary": "Partial, centroid, and peak descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/sound-timbre", "kind": "cookbook-recipe", "owner": "sim-lib-sound-timbre", "summary": "Timbre, filter, and envelope descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/sound-tuning", "kind": "cookbook-recipe", "owner": "sim-lib-sound-tuning", "summary": "Tuning-system descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/sound-wasm", "kind": "cookbook-recipe", "owner": "sim-lib-sound-wasm-frame", "summary": "Browser-safe sound facade descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/stream-bridge", "kind": "cookbook-recipe", "owner": "sim-lib-stream-bridge", "summary": "Offline MIDI-to-PCM rendering and PCM-to-MIDI lifting descriptors."}, "repo": "sim-music"}
-{"card": {"id": "cookbook/stream-file", "kind": "cookbook-recipe", "owner": "sim-lib-stream-file", "summary": "Capability-gated WAV and SMF stream adapters."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/stream-file", "kind": "cookbook-recipe", "owner": "sim-lib-stream-file", "summary": "Capability-gated WAV and SMF streams with explicit PCM16 conversion policy."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/stream-midi", "kind": "cookbook-recipe", "owner": "sim-lib-stream-midi", "summary": "MIDI packetization and memory stream adapters."}, "repo": "sim-music"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-music"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-numbers"}
@@ -203,7 +218,8 @@
 {"card": {"id": "cookbook/numbers/quad", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-quad", "summary": "Quadrature algorithms for numeric integration."}, "repo": "sim-numbers"}
 {"card": {"id": "cookbook/numbers/rational", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-rational", "summary": "Exact rational values and constructor forms."}, "repo": "sim-numbers"}
 {"card": {"id": "cookbook/numbers/rk", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-rk", "summary": "Runge-Kutta ODE solver methods."}, "repo": "sim-numbers"}
-{"card": {"id": "cookbook/numbers/stats", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-stats", "summary": "Probability, descriptive statistics, and fairness metric helpers."}, "repo": "sim-numbers"}
+{"card": {"id": "cookbook/numbers/signal", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-signal", "summary": "Deterministic transforms, wavelets, smoothing, interpolation, spectral estimation, and guarded inverse examples."}, "repo": "sim-numbers"}
+{"card": {"id": "cookbook/numbers/stats", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-stats", "summary": "Probability, clustering, bounded inference, and inspectable evidence."}, "repo": "sim-numbers"}
 {"card": {"id": "cookbook/numbers/tensor", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor", "summary": "Generic tensor values and indexing."}, "repo": "sim-numbers"}
 {"card": {"id": "cookbook/numbers/tensor-bcast", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor-bcast", "summary": "Broadcasting helpers for tensor values."}, "repo": "sim-numbers"}
 {"card": {"id": "cookbook/numbers/tensor-bit", "kind": "cookbook-recipe", "owner": "sim-lib-numbers-tensor-bit", "summary": "Packed boolean tensor helpers."}, "repo": "sim-numbers"}
@@ -299,9 +315,11 @@
 {"card": {"id": "citizen/GatewayResponseValue", "kind": "citizen-class", "owner": "sim-lib-openai-server", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/GatewayRoutesValue", "kind": "citizen-class", "owner": "sim-lib-openai-server", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/GatewayRun", "kind": "citizen-class", "owner": "sim-lib-openai-server", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/GraphHandle", "kind": "citizen-class", "owner": "sim-lib-stream-prelude", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/I64NumberDomain", "kind": "citizen-class", "owner": "sim-lib-numbers-i64", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/IslispObject", "kind": "citizen-class", "owner": "sim-lib-lang-islisp", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/LazySequence", "kind": "citizen-class", "owner": "sim-lib-sequence", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/LiveCell", "kind": "citizen-class", "owner": "sim-lib-stream-prelude", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/LogicConfigState", "kind": "citizen-class", "owner": "sim-lib-logic", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/LogicDbState", "kind": "citizen-class", "owner": "sim-lib-logic", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/LogicStream", "kind": "citizen-class", "owner": "sim-lib-logic", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
@@ -324,7 +342,9 @@
 {"card": {"id": "citizen/SkillCard", "kind": "citizen-class", "owner": "sim-lib-skill", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/SkillRegistry", "kind": "citizen-class", "owner": "sim-lib-skill", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/SkillTransportValue", "kind": "citizen-class", "owner": "sim-lib-skill", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/StageHandle", "kind": "citizen-class", "owner": "sim-lib-stream-prelude", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/StoredTableValue", "kind": "citizen-class", "owner": "sim-lib-openai-server", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/StreamHandle", "kind": "citizen-class", "owner": "sim-lib-stream-prelude", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/StreamValue", "kind": "citizen-class", "owner": "sim-lib-stream-core", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/TaggedValue", "kind": "citizen-class", "owner": "sim-lib-pattern", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/TensorLiteralClass", "kind": "citizen-class", "owner": "sim-lib-numbers-tensor", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
@@ -358,6 +378,8 @@
 {"card": {"id": "citizen/discrete/SparseMatrix", "kind": "citizen-class", "owner": "sim-lib-discrete", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/discrete/SubsetSpace", "kind": "citizen-class", "owner": "sim-lib-discrete", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/doc/Article", "kind": "citizen-class", "owner": "sim-lib-view-doc", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/expr-tree/PolicyRecord", "kind": "citizen-class", "owner": "sim-lib-expr-tree", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/expr-tree/SourceRecord", "kind": "citizen-class", "owner": "sim-lib-expr-tree", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/femm/Field", "kind": "citizen-class", "owner": "sim-lib-femm-codec", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/femm/FuncPayload", "kind": "citizen-class", "owner": "sim-lib-femm-codec", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/femm/Function", "kind": "citizen-class", "owner": "sim-lib-femm-codec", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
@@ -375,6 +397,18 @@
 {"card": {"id": "citizen/femm/Tape", "kind": "citizen-class", "owner": "sim-lib-femm-codec", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/forge/CompiledIntent", "kind": "citizen-class", "owner": "sim-lib-forge", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/intent/Intent", "kind": "citizen-class", "owner": "sim-lib-intent", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/interference/Emitter", "kind": "citizen-class", "owner": "sim-lib-interference-runtime", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/interference/Medium", "kind": "citizen-class", "owner": "sim-lib-interference-runtime", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/interference/PhasorField", "kind": "citizen-class", "owner": "sim-lib-interference-runtime", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/interference/Plane", "kind": "citizen-class", "owner": "sim-lib-interference-runtime", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/interference/Problem", "kind": "citizen-class", "owner": "sim-lib-interference-runtime", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/interference/Projection", "kind": "citizen-class", "owner": "sim-lib-interference-runtime", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/interference/ProjectionCertificate", "kind": "citizen-class", "owner": "sim-lib-interference-runtime", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/interference/ProjectionRequest", "kind": "citizen-class", "owner": "sim-lib-interference-runtime", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/interference/SamplingCertificate", "kind": "citizen-class", "owner": "sim-lib-interference-runtime", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/interference/Study", "kind": "citizen-class", "owner": "sim-lib-interference-runtime", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/interference/StudyEvidence", "kind": "citizen-class", "owner": "sim-lib-interference-runtime", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/interference/WorkEstimate", "kind": "citizen-class", "owner": "sim-lib-interference-runtime", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/list/ConsList", "kind": "citizen-class", "owner": "sim-list-cell", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/list/LazyConsList", "kind": "citizen-class", "owner": "sim-list-lazy", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/list/LazyIterList", "kind": "citizen-class", "owner": "sim-list-lazy", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
@@ -556,7 +590,8 @@
 {"card": {"id": "cookbook/view/codec", "kind": "cookbook-recipe", "owner": "sim-lib-view-codec", "summary": "Multi-codec, round-trip, and Shape-aware lens descriptors."}, "repo": "sim-web"}
 {"card": {"id": "cookbook/view/daw", "kind": "cookbook-recipe", "owner": "sim-lib-view-daw", "summary": "Timeline, mixer, rack, waveform, and synth lens descriptors."}, "repo": "sim-web"}
 {"card": {"id": "cookbook/view/doc", "kind": "cookbook-recipe", "owner": "sim-lib-view-doc", "summary": "Scientific article values, source lenses, and export descriptors."}, "repo": "sim-web"}
-{"card": {"id": "cookbook/view/math", "kind": "cookbook-recipe", "owner": "sim-lib-view-math", "summary": "Plot, matrix, symbolic, and sweep lens descriptors."}, "repo": "sim-web"}
+{"card": {"id": "cookbook/view/interference", "kind": "cookbook-recipe", "owner": "sim-lib-view-interference", "summary": "Reversible, evidence-preserving views over solved interference studies."}, "repo": "sim-web"}
+{"card": {"id": "cookbook/view/math", "kind": "cookbook-recipe", "owner": "sim-lib-view-math", "summary": "Bounded heatmap, plot, matrix, symbolic, and sweep lens descriptors."}, "repo": "sim-web"}
 {"card": {"id": "cookbook/view/wasm", "kind": "cookbook-recipe", "owner": "sim-lib-view-wasm-frame", "summary": "Browser-side view host descriptors for local Scene and Intent flow."}, "repo": "sim-web"}
 {"card": {"id": "cookbook/web/bridge", "kind": "cookbook-recipe", "owner": "sim-lib-web-bridge", "summary": "Session bus, transports, history, and Scene update descriptors."}, "repo": "sim-web"}
 {"card": {"id": "cookbook/web/layout", "kind": "cookbook-recipe", "owner": "sim-lib-web-layout", "summary": "Workspace, panes, palette, and layout persistence values."}, "repo": "sim-web"}

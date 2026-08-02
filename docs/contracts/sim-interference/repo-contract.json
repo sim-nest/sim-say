@@ -1,0 +1,832 @@
+{
+  "card_count": 6,
+  "cards": [
+    {
+      "id": "browse/catalog",
+      "kind": "browse-root",
+      "owner": "workspace",
+      "summary": "root browse catalog"
+    },
+    {
+      "id": "cookbook/interference-compute",
+      "kind": "cookbook-recipe",
+      "owner": "sim-lib-interference-compute",
+      "summary": "Route certified interference studies through scoped Tensor executors."
+    },
+    {
+      "id": "cookbook/interference-runtime",
+      "kind": "cookbook-recipe",
+      "owner": "sim-lib-interference-runtime",
+      "summary": "Shape-checked coherent field studies through the loadable CPU solver."
+    },
+    {
+      "id": "cookbook/sim-lib-interference-core",
+      "kind": "cookbook-recipe",
+      "owner": "sim-lib-interference-core",
+      "summary": ""
+    },
+    {
+      "id": "cookbook/sim-lib-interference-solve",
+      "kind": "cookbook-recipe",
+      "owner": "sim-lib-interference-solve",
+      "summary": ""
+    },
+    {
+      "id": "registry/catalog",
+      "kind": "browse-registry",
+      "owner": "workspace",
+      "summary": "registry catalog browse card"
+    }
+  ],
+  "citizen_count": 0,
+  "citizens": [],
+  "generator": "xtask repo-contract v1",
+  "group_count": 1,
+  "group_order": [
+    "workspace"
+  ],
+  "groups": {
+    "workspace": [
+      "sim-lib-interference-compute",
+      "sim-lib-interference-core",
+      "sim-lib-interference-runtime",
+      "sim-lib-interference-solve",
+      "xtask"
+    ]
+  },
+  "non_citizen_exemption_count": 0,
+  "non_citizen_exemptions": [],
+  "package_count": 5,
+  "packages": [
+    {
+      "crate_name": "sim_lib_interference_compute",
+      "dependencies": [
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-interference-core",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-interference-runtime",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-interference-solve",
+          "rename": null,
+          "target": null
+        }
+      ],
+      "description": "Normalized tile-local f32 Tensor lowering for coherent interference.",
+      "features": [],
+      "group": "workspace",
+      "manifest": "crates/sim-lib-interference-compute/Cargo.toml",
+      "name": "sim-lib-interference-compute",
+      "publish": "true",
+      "root": "crates/sim-lib-interference-compute",
+      "rustdoc_summary": "Normalized tile-local f32 lowering over the canonical Tensor executor.",
+      "target_kinds": [
+        "custom-build",
+        "lib"
+      ],
+      "targets": [
+        {
+          "crate_types": [
+            "lib"
+          ],
+          "kind": [
+            "lib"
+          ],
+          "name": "sim_lib_interference_compute",
+          "src": "crates/sim-lib-interference-compute/src/lib.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "custom-build"
+          ],
+          "name": "build-script-build",
+          "src": "crates/sim-lib-interference-compute/build.rs"
+        }
+      ]
+    },
+    {
+      "crate_name": "sim_lib_interference_core",
+      "dependencies": [],
+      "description": "Validated physical boundary types for coherent scalar wave-field studies.",
+      "features": [],
+      "group": "workspace",
+      "manifest": "crates/sim-lib-interference-core/Cargo.toml",
+      "name": "sim-lib-interference-core",
+      "publish": "true",
+      "root": "crates/sim-lib-interference-core",
+      "rustdoc_summary": "Checked physical boundaries for coherent scalar wave-field studies.",
+      "target_kinds": [
+        "example",
+        "lib",
+        "test"
+      ],
+      "targets": [
+        {
+          "crate_types": [
+            "lib"
+          ],
+          "kind": [
+            "lib"
+          ],
+          "name": "sim_lib_interference_core",
+          "src": "crates/sim-lib-interference-core/src/lib.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "example"
+          ],
+          "name": "alias-refusal",
+          "src": "crates/sim-lib-interference-core/examples/alias_refusal.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "example"
+          ],
+          "name": "attenuation",
+          "src": "crates/sim-lib-interference-core/examples/attenuation.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "example"
+          ],
+          "name": "checked-quantities",
+          "src": "crates/sim-lib-interference-core/examples/checked_quantities.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "example"
+          ],
+          "name": "point-spreading",
+          "src": "crates/sim-lib-interference-core/examples/point_spreading.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "example"
+          ],
+          "name": "travelling-wave",
+          "src": "crates/sim-lib-interference-core/examples/travelling_wave.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "test"
+          ],
+          "name": "budget_conformance",
+          "src": "crates/sim-lib-interference-core/tests/budget_conformance.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "test"
+          ],
+          "name": "certificate_conformance",
+          "src": "crates/sim-lib-interference-core/tests/certificate_conformance.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "test"
+          ],
+          "name": "model_conformance",
+          "src": "crates/sim-lib-interference-core/tests/model_conformance.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "test"
+          ],
+          "name": "propagation_conformance",
+          "src": "crates/sim-lib-interference-core/tests/propagation_conformance.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "test"
+          ],
+          "name": "quantity_conformance",
+          "src": "crates/sim-lib-interference-core/tests/quantity_conformance.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "test"
+          ],
+          "name": "sampling_acceptance_conformance",
+          "src": "crates/sim-lib-interference-core/tests/sampling_acceptance_conformance.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "test"
+          ],
+          "name": "sampling_conformance",
+          "src": "crates/sim-lib-interference-core/tests/sampling_conformance.rs"
+        }
+      ]
+    },
+    {
+      "crate_name": "sim_lib_interference_runtime",
+      "dependencies": [
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-interference-core",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-interference-solve",
+          "rename": null,
+          "target": null
+        }
+      ],
+      "description": "Tensor-backed Citizen records and Shape contracts for coherent interference studies.",
+      "features": [],
+      "group": "workspace",
+      "manifest": "crates/sim-lib-interference-runtime/Cargo.toml",
+      "name": "sim-lib-interference-runtime",
+      "publish": "true",
+      "root": "crates/sim-lib-interference-runtime",
+      "rustdoc_summary": "Tensor-backed runtime records for coherent interference studies.",
+      "target_kinds": [
+        "custom-build",
+        "example",
+        "lib"
+      ],
+      "targets": [
+        {
+          "crate_types": [
+            "lib"
+          ],
+          "kind": [
+            "lib"
+          ],
+          "name": "sim_lib_interference_runtime",
+          "src": "crates/sim-lib-interference-runtime/src/lib.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "example"
+          ],
+          "name": "two_source_cancellation",
+          "src": "crates/sim-lib-interference-runtime/examples/two_source_cancellation.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "custom-build"
+          ],
+          "name": "build-script-build",
+          "src": "crates/sim-lib-interference-runtime/build.rs"
+        }
+      ]
+    },
+    {
+      "crate_name": "sim_lib_interference_solve",
+      "dependencies": [
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-interference-core",
+          "rename": null,
+          "target": null
+        }
+      ],
+      "description": "Deterministic CPU f64 reference solving for coherent scalar wave fields.",
+      "features": [],
+      "group": "workspace",
+      "manifest": "crates/sim-lib-interference-solve/Cargo.toml",
+      "name": "sim-lib-interference-solve",
+      "publish": "true",
+      "root": "crates/sim-lib-interference-solve",
+      "rustdoc_summary": "Deterministic CPU f64 solving and certified observation of coherent scalar fields.",
+      "target_kinds": [
+        "example",
+        "lib",
+        "test"
+      ],
+      "targets": [
+        {
+          "crate_types": [
+            "lib"
+          ],
+          "kind": [
+            "lib"
+          ],
+          "name": "sim_lib_interference_solve",
+          "src": "crates/sim-lib-interference-solve/src/lib.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "example"
+          ],
+          "name": "animation-projection",
+          "src": "crates/sim-lib-interference-solve/examples/animation_projection.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "example"
+          ],
+          "name": "aperture-refusal",
+          "src": "crates/sim-lib-interference-solve/examples/aperture_refusal.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "example"
+          ],
+          "name": "detector-reduction",
+          "src": "crates/sim-lib-interference-solve/examples/detector_reduction.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "example"
+          ],
+          "name": "fringe-analysis",
+          "src": "crates/sim-lib-interference-solve/examples/fringe_analysis.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "example"
+          ],
+          "name": "two-tone-beats",
+          "src": "crates/sim-lib-interference-solve/examples/two_tone_beats.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "test"
+          ],
+          "name": "analysis_scenario_conformance",
+          "src": "crates/sim-lib-interference-solve/tests/analysis_scenario_conformance.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "test"
+          ],
+          "name": "multitone_conformance",
+          "src": "crates/sim-lib-interference-solve/tests/multitone_conformance.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "test"
+          ],
+          "name": "projection_conformance",
+          "src": "crates/sim-lib-interference-solve/tests/projection_conformance.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "test"
+          ],
+          "name": "reference_conformance",
+          "src": "crates/sim-lib-interference-solve/tests/reference_conformance.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "test"
+          ],
+          "name": "verification_conformance",
+          "src": "crates/sim-lib-interference-solve/tests/verification_conformance.rs"
+        }
+      ]
+    },
+    {
+      "crate_name": "xtask",
+      "dependencies": [],
+      "description": "Repository validation and generated documentation tasks for sim-interference.",
+      "features": [],
+      "group": "workspace",
+      "manifest": "xtask/Cargo.toml",
+      "name": "xtask",
+      "publish": "false",
+      "root": "xtask",
+      "rustdoc_summary": "Repository automation wrapper for validation and generated documentation.",
+      "target_kinds": [
+        "bin"
+      ],
+      "targets": [
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "bin"
+          ],
+          "name": "xtask",
+          "src": "xtask/src/main.rs"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "api_docs": "target/doc/",
+    "generated_by": "cargo run -p xtask -- simdoc",
+    "generation_timestamp": "2026-07-28T11:56:13+02:00",
+    "generator": "xtask repo-contract v1",
+    "git_commit": "339a7b7271e2db70f295e616b023072a96140b4e",
+    "repo": "sim-interference",
+    "schema": "sim.provenance.v1",
+    "source_commit": "339a7b7271e2db70f295e616b023072a96140b4e",
+    "source_remote": "https://github.com/sim-nest/sim-interference",
+    "validation_commands": [
+      "cargo fmt --all --check",
+      "cargo test",
+      "cargo clippy --all-targets -- -D warnings",
+      "cargo doc --no-deps",
+      "cargo run -p xtask -- simdoc --check",
+      "cargo run -p xtask -- check-file-sizes",
+      "cargo run -p xtask -- repo-contract --check --repo .",
+      "cargo run -p xtask -- validation-matrix --check --repo .",
+      "cargo run -p xtask -- crate-catalog --check --repo ."
+    ],
+    "workspace_hash": "e2ab0629cf610908",
+    "workspace_hash_algorithm": "fnv1a64",
+    "workspace_hash_input_count": 127,
+    "workspace_hash_inputs": [
+      "Cargo.toml",
+      "crates/sim-lib-interference-compute/Cargo.toml",
+      "crates/sim-lib-interference-compute/build.rs",
+      "crates/sim-lib-interference-compute/recipes/01-basics/modeled-differential-matrix/recipe.toml",
+      "crates/sim-lib-interference-compute/recipes/01-basics/modeled-fault-containment/recipe.toml",
+      "crates/sim-lib-interference-compute/recipes/01-basics/modeled-resident-study/recipe.toml",
+      "crates/sim-lib-interference-compute/recipes/01-basics/wgpu-absence-refusal/recipe.toml",
+      "crates/sim-lib-interference-compute/recipes/01-basics/wgpu-differential-evidence/recipe.toml",
+      "crates/sim-lib-interference-compute/recipes/book.toml",
+      "crates/sim-lib-interference-compute/src/constants.rs",
+      "crates/sim-lib-interference-compute/src/coordinates.rs",
+      "crates/sim-lib-interference-compute/src/dense.rs",
+      "crates/sim-lib-interference-compute/src/diff.rs",
+      "crates/sim-lib-interference-compute/src/evidence.rs",
+      "crates/sim-lib-interference-compute/src/hardware_tests.rs",
+      "crates/sim-lib-interference-compute/src/lib.rs",
+      "crates/sim-lib-interference-compute/src/lower.rs",
+      "crates/sim-lib-interference-compute/src/modeled_tests.rs",
+      "crates/sim-lib-interference-compute/src/preflight.rs",
+      "crates/sim-lib-interference-compute/src/provider.rs",
+      "crates/sim-lib-interference-compute/src/resident.rs",
+      "crates/sim-lib-interference-compute/src/tests/dense.rs",
+      "crates/sim-lib-interference-compute/src/tests/preflight.rs",
+      "crates/sim-lib-interference-compute/src/tests.rs",
+      "crates/sim-lib-interference-compute/src/tile.rs",
+      "crates/sim-lib-interference-core/Cargo.toml",
+      "crates/sim-lib-interference-core/examples/alias_refusal.rs",
+      "crates/sim-lib-interference-core/examples/attenuation.rs",
+      "crates/sim-lib-interference-core/examples/checked_quantities.rs",
+      "crates/sim-lib-interference-core/examples/point_spreading.rs",
+      "crates/sim-lib-interference-core/examples/travelling_wave.rs",
+      "crates/sim-lib-interference-core/recipes/01-basics/alias-refusal/main.rs",
+      "crates/sim-lib-interference-core/recipes/01-basics/alias-refusal/recipe.toml",
+      "crates/sim-lib-interference-core/recipes/01-basics/attenuation/main.rs",
+      "crates/sim-lib-interference-core/recipes/01-basics/attenuation/recipe.toml",
+      "crates/sim-lib-interference-core/recipes/01-basics/checked-quantities/main.rs",
+      "crates/sim-lib-interference-core/recipes/01-basics/checked-quantities/recipe.toml",
+      "crates/sim-lib-interference-core/recipes/01-basics/point-spreading/main.rs",
+      "crates/sim-lib-interference-core/recipes/01-basics/point-spreading/recipe.toml",
+      "crates/sim-lib-interference-core/recipes/01-basics/travelling-wave/main.rs",
+      "crates/sim-lib-interference-core/recipes/01-basics/travelling-wave/recipe.toml",
+      "crates/sim-lib-interference-core/recipes/book.toml",
+      "crates/sim-lib-interference-core/src/budget.rs",
+      "crates/sim-lib-interference-core/src/certificate.rs",
+      "crates/sim-lib-interference-core/src/emitter.rs",
+      "crates/sim-lib-interference-core/src/error.rs",
+      "crates/sim-lib-interference-core/src/geometry.rs",
+      "crates/sim-lib-interference-core/src/lib.rs",
+      "crates/sim-lib-interference-core/src/medium.rs",
+      "crates/sim-lib-interference-core/src/problem.rs",
+      "crates/sim-lib-interference-core/src/propagation.rs",
+      "crates/sim-lib-interference-core/src/quantity.rs",
+      "crates/sim-lib-interference-core/src/sampling.rs",
+      "crates/sim-lib-interference-core/tests/budget_conformance.rs",
+      "crates/sim-lib-interference-core/tests/certificate_conformance.rs",
+      "crates/sim-lib-interference-core/tests/model_conformance.rs",
+      "crates/sim-lib-interference-core/tests/propagation_conformance.rs",
+      "crates/sim-lib-interference-core/tests/quantity_conformance.rs",
+      "crates/sim-lib-interference-core/tests/sampling_acceptance_conformance.rs",
+      "crates/sim-lib-interference-core/tests/sampling_conformance.rs",
+      "crates/sim-lib-interference-runtime/Cargo.toml",
+      "crates/sim-lib-interference-runtime/build.rs",
+      "crates/sim-lib-interference-runtime/examples/two_source_cancellation.rs",
+      "crates/sim-lib-interference-runtime/recipes/01-basics/two-source-cancellation/recipe.toml",
+      "crates/sim-lib-interference-runtime/recipes/book.toml",
+      "crates/sim-lib-interference-runtime/src/citizen.rs",
+      "crates/sim-lib-interference-runtime/src/evidence.rs",
+      "crates/sim-lib-interference-runtime/src/lib.rs",
+      "crates/sim-lib-interference-runtime/src/lib_impl.rs",
+      "crates/sim-lib-interference-runtime/src/ops.rs",
+      "crates/sim-lib-interference-runtime/src/ops_outputs.rs",
+      "crates/sim-lib-interference-runtime/src/ops_values.rs",
+      "crates/sim-lib-interference-runtime/src/projection_records.rs",
+      "crates/sim-lib-interference-runtime/src/records.rs",
+      "crates/sim-lib-interference-runtime/src/runtime_tests.rs",
+      "crates/sim-lib-interference-runtime/src/sampling.rs",
+      "crates/sim-lib-interference-runtime/src/shapes.rs",
+      "crates/sim-lib-interference-runtime/src/solver.rs",
+      "crates/sim-lib-interference-runtime/src/tensor_bridge.rs",
+      "crates/sim-lib-interference-runtime/src/tests.rs",
+      "crates/sim-lib-interference-solve/Cargo.toml",
+      "crates/sim-lib-interference-solve/examples/animation_projection.rs",
+      "crates/sim-lib-interference-solve/examples/aperture_refusal.rs",
+      "crates/sim-lib-interference-solve/examples/detector_reduction.rs",
+      "crates/sim-lib-interference-solve/examples/fringe_analysis.rs",
+      "crates/sim-lib-interference-solve/examples/two_tone_beats.rs",
+      "crates/sim-lib-interference-solve/recipes/01-basics/animation-projection/main.rs",
+      "crates/sim-lib-interference-solve/recipes/01-basics/animation-projection/recipe.toml",
+      "crates/sim-lib-interference-solve/recipes/01-basics/aperture-refusal/main.rs",
+      "crates/sim-lib-interference-solve/recipes/01-basics/aperture-refusal/recipe.toml",
+      "crates/sim-lib-interference-solve/recipes/01-basics/detector-reduction/main.rs",
+      "crates/sim-lib-interference-solve/recipes/01-basics/detector-reduction/recipe.toml",
+      "crates/sim-lib-interference-solve/recipes/01-basics/fringe-analysis/main.rs",
+      "crates/sim-lib-interference-solve/recipes/01-basics/fringe-analysis/recipe.toml",
+      "crates/sim-lib-interference-solve/recipes/01-basics/two-tone-beats/main.rs",
+      "crates/sim-lib-interference-solve/recipes/01-basics/two-tone-beats/recipe.toml",
+      "crates/sim-lib-interference-solve/recipes/book.toml",
+      "crates/sim-lib-interference-solve/src/analysis.rs",
+      "crates/sim-lib-interference-solve/src/analysis_tests.rs",
+      "crates/sim-lib-interference-solve/src/analytic.rs",
+      "crates/sim-lib-interference-solve/src/complex.rs",
+      "crates/sim-lib-interference-solve/src/error.rs",
+      "crates/sim-lib-interference-solve/src/field.rs",
+      "crates/sim-lib-interference-solve/src/helmholtz.rs",
+      "crates/sim-lib-interference-solve/src/lib.rs",
+      "crates/sim-lib-interference-solve/src/multitone.rs",
+      "crates/sim-lib-interference-solve/src/multitone_error.rs",
+      "crates/sim-lib-interference-solve/src/multitone_tests.rs",
+      "crates/sim-lib-interference-solve/src/observable.rs",
+      "crates/sim-lib-interference-solve/src/projection.rs",
+      "crates/sim-lib-interference-solve/src/projection_tests.rs",
+      "crates/sim-lib-interference-solve/src/reduce.rs",
+      "crates/sim-lib-interference-solve/src/reduce_tests.rs",
+      "crates/sim-lib-interference-solve/src/reference.rs",
+      "crates/sim-lib-interference-solve/src/scenario.rs",
+      "crates/sim-lib-interference-solve/src/scenario_admission.rs",
+      "crates/sim-lib-interference-solve/src/scenario_error.rs",
+      "crates/sim-lib-interference-solve/src/scenario_tests.rs",
+      "crates/sim-lib-interference-solve/src/verification.rs",
+      "crates/sim-lib-interference-solve/src/verify.rs",
+      "crates/sim-lib-interference-solve/tests/analysis_scenario_conformance.rs",
+      "crates/sim-lib-interference-solve/tests/multitone_conformance.rs",
+      "crates/sim-lib-interference-solve/tests/projection_conformance.rs",
+      "crates/sim-lib-interference-solve/tests/reference_conformance.rs",
+      "crates/sim-lib-interference-solve/tests/verification_conformance.rs",
+      "features.toml",
+      "xtask/Cargo.toml"
+    ]
+  },
+  "recipe_book_count": 4,
+  "recipes": [
+    {
+      "book": "interference-compute",
+      "book_toml": "crates/sim-lib-interference-compute/recipes/book.toml",
+      "card_id": "cookbook/interference-compute",
+      "group": "workspace",
+      "package": "sim-lib-interference-compute",
+      "recipe_count": 5,
+      "recipes": [
+        {
+          "card_id": "interference-compute/01-basics/modeled-differential-matrix",
+          "codec": "lisp",
+          "id": "modeled-differential-matrix",
+          "package": "sim-lib-interference-compute",
+          "recipe_toml": "crates/sim-lib-interference-compute/recipes/01-basics/modeled-differential-matrix/recipe.toml",
+          "title": "Compare modeled resident compute with the CPU oracle"
+        },
+        {
+          "card_id": "interference-compute/01-basics/modeled-fault-containment",
+          "codec": "lisp",
+          "id": "modeled-fault-containment",
+          "package": "sim-lib-interference-compute",
+          "recipe_toml": "crates/sim-lib-interference-compute/recipes/01-basics/modeled-fault-containment/recipe.toml",
+          "title": "Contain selected-provider faults without CPU restart"
+        },
+        {
+          "card_id": "interference-compute/01-basics/modeled-resident-study",
+          "codec": "lisp",
+          "id": "modeled-resident-study",
+          "package": "sim-lib-interference-compute",
+          "recipe_toml": "crates/sim-lib-interference-compute/recipes/01-basics/modeled-resident-study/recipe.toml",
+          "title": "Run an interference study on modeled resident compute"
+        },
+        {
+          "card_id": "interference-compute/01-basics/wgpu-absence-refusal",
+          "codec": "lisp",
+          "id": "wgpu-absence-refusal",
+          "package": "sim-lib-interference-compute",
+          "recipe_toml": "crates/sim-lib-interference-compute/recipes/01-basics/wgpu-absence-refusal/recipe.toml",
+          "title": "Refuse an unavailable wgpu site before submission"
+        },
+        {
+          "card_id": "interference-compute/01-basics/wgpu-differential-evidence",
+          "codec": "lisp",
+          "id": "wgpu-differential-evidence",
+          "package": "sim-lib-interference-compute",
+          "recipe_toml": "crates/sim-lib-interference-compute/recipes/01-basics/wgpu-differential-evidence/recipe.toml",
+          "title": "Capture bounded wgpu interference evidence"
+        }
+      ],
+      "summary": "Route certified interference studies through scoped Tensor executors.",
+      "title": "Interference on Compute Sites"
+    },
+    {
+      "book": "sim-lib-interference-core",
+      "book_toml": "crates/sim-lib-interference-core/recipes/book.toml",
+      "card_id": "cookbook/sim-lib-interference-core",
+      "group": "workspace",
+      "package": "sim-lib-interference-core",
+      "recipe_count": 5,
+      "recipes": [
+        {
+          "card_id": "sim-lib-interference-core/01-basics/alias-refusal",
+          "codec": "rust",
+          "id": "alias-refusal",
+          "package": "sim-lib-interference-core",
+          "recipe_toml": "crates/sim-lib-interference-core/recipes/01-basics/alias-refusal/recipe.toml",
+          "title": "Refuse an aliased physical sampling request"
+        },
+        {
+          "card_id": "sim-lib-interference-core/01-basics/attenuation",
+          "codec": "rust",
+          "id": "attenuation",
+          "package": "sim-lib-interference-core",
+          "recipe_toml": "crates/sim-lib-interference-core/recipes/01-basics/attenuation/recipe.toml",
+          "title": "Measure exponential field attenuation"
+        },
+        {
+          "card_id": "sim-lib-interference-core/01-basics/checked-quantities",
+          "codec": "rust",
+          "id": "checked-quantities",
+          "package": "sim-lib-interference-core",
+          "recipe_toml": "crates/sim-lib-interference-core/recipes/01-basics/checked-quantities/recipe.toml",
+          "title": "Construct checked interference quantities"
+        },
+        {
+          "card_id": "sim-lib-interference-core/01-basics/point-spreading",
+          "codec": "rust",
+          "id": "point-spreading",
+          "package": "sim-lib-interference-core",
+          "recipe_toml": "crates/sim-lib-interference-core/recipes/01-basics/point-spreading/recipe.toml",
+          "title": "Measure inverse-distance point spreading"
+        },
+        {
+          "card_id": "sim-lib-interference-core/01-basics/travelling-wave",
+          "codec": "rust",
+          "id": "travelling-wave",
+          "package": "sim-lib-interference-core",
+          "recipe_toml": "crates/sim-lib-interference-core/recipes/01-basics/travelling-wave/recipe.toml",
+          "title": "Follow the phase of an outgoing travelling wave"
+        }
+      ],
+      "summary": "",
+      "title": "Interference Core Recipes"
+    },
+    {
+      "book": "interference-runtime",
+      "book_toml": "crates/sim-lib-interference-runtime/recipes/book.toml",
+      "card_id": "cookbook/interference-runtime",
+      "group": "workspace",
+      "package": "sim-lib-interference-runtime",
+      "recipe_count": 1,
+      "recipes": [
+        {
+          "card_id": "interference-runtime/01-basics/two-source-cancellation",
+          "codec": "lisp",
+          "id": "two-source-cancellation",
+          "package": "sim-lib-interference-runtime",
+          "recipe_toml": "crates/sim-lib-interference-runtime/recipes/01-basics/two-source-cancellation/recipe.toml",
+          "title": "Two-source cancellation on the CPU"
+        }
+      ],
+      "summary": "Shape-checked coherent field studies through the loadable CPU solver.",
+      "title": "Coherent Interference Runtime"
+    },
+    {
+      "book": "sim-lib-interference-solve",
+      "book_toml": "crates/sim-lib-interference-solve/recipes/book.toml",
+      "card_id": "cookbook/sim-lib-interference-solve",
+      "group": "workspace",
+      "package": "sim-lib-interference-solve",
+      "recipe_count": 5,
+      "recipes": [
+        {
+          "card_id": "sim-lib-interference-solve/01-basics/animation-projection",
+          "codec": "rust",
+          "id": "animation-projection",
+          "package": "sim-lib-interference-solve",
+          "recipe_toml": "crates/sim-lib-interference-solve/recipes/01-basics/animation-projection/recipe.toml",
+          "title": "Project animation frames without re-solving"
+        },
+        {
+          "card_id": "sim-lib-interference-solve/01-basics/aperture-refusal",
+          "codec": "rust",
+          "id": "aperture-refusal",
+          "package": "sim-lib-interference-solve",
+          "recipe_toml": "crates/sim-lib-interference-solve/recipes/01-basics/aperture-refusal/recipe.toml",
+          "title": "Refuse a sparse aperture approximation"
+        },
+        {
+          "card_id": "sim-lib-interference-solve/01-basics/detector-reduction",
+          "codec": "rust",
+          "id": "detector-reduction",
+          "package": "sim-lib-interference-solve",
+          "recipe_toml": "crates/sim-lib-interference-solve/recipes/01-basics/detector-reduction/recipe.toml",
+          "title": "Reduce every source cell through a detector"
+        },
+        {
+          "card_id": "sim-lib-interference-solve/01-basics/fringe-analysis",
+          "codec": "rust",
+          "id": "fringe-analysis",
+          "package": "sim-lib-interference-solve",
+          "recipe_toml": "crates/sim-lib-interference-solve/recipes/01-basics/fringe-analysis/recipe.toml",
+          "title": "Build and analyze a certified standing wave"
+        },
+        {
+          "card_id": "sim-lib-interference-solve/01-basics/two-tone-beats",
+          "codec": "rust",
+          "id": "two-tone-beats",
+          "package": "sim-lib-interference-solve",
+          "recipe_toml": "crates/sim-lib-interference-solve/recipes/01-basics/two-tone-beats/recipe.toml",
+          "title": "Observe a certified two-tone beat"
+        }
+      ],
+      "summary": "",
+      "title": "Interference Solve Recipes"
+    }
+  ]
+}

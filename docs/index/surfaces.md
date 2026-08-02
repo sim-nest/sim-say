@@ -30,7 +30,9 @@
 | `cli/glasses` | `cli` | `crate/sim-run` |
 | `cli/index` | `cli` | `crate/sim-lib-index` |
 | `cli/mcp` | `cli` | `local/sim-agent-net/crate/sim-lib-mcp` |
+| `cli/music-algorithm-foundry` | `cli` | `crate/music-algorithm-foundry` |
 | `cli/repl` | `cli` | `crate/sim-lib-repl` |
+| `cli/serial-workbench` | `cli` | `crate/serial-workbench` |
 | `cli/serve` | `cli` | `crate/sim-web-shell` |
 | `cli/sim-auto` | `cli` | `crate/sim-auto` |
 | `cli/sim-codec-compare` | `cli` | `crate/sim-codec-compare` |
@@ -57,6 +59,7 @@
 | `docs/sim-expr-tree/generated` | `docs` | `doc-set/sim-expr-tree/generated` |
 | `docs/sim-femm/generated` | `docs` | `doc-set/sim-femm/generated` |
 | `docs/sim-foundation/generated` | `docs` | `doc-set/sim-foundation/generated` |
+| `docs/sim-interference/generated` | `docs` | `doc-set/sim-interference/generated` |
 | `docs/sim-kernel/generated` | `docs` | `doc-set/sim-kernel/generated` |
 | `docs/sim-ledger/generated` | `docs` | `doc-set/sim-ledger/generated` |
 | `docs/sim-music/generated` | `docs` | `doc-set/sim-music/generated` |
@@ -82,6 +85,7 @@
 | `local/sim-expr-tree/cli/xtask` | `cli` | `local/sim-expr-tree/crate/xtask` |
 | `local/sim-femm/cli/xtask` | `cli` | `local/sim-femm/crate/xtask` |
 | `local/sim-foundation/cli/xtask` | `cli` | `local/sim-foundation/crate/xtask` |
+| `local/sim-interference/cli/xtask` | `cli` | `local/sim-interference/crate/xtask` |
 | `local/sim-kernel/cli/xtask` | `cli` | `local/sim-kernel/crate/xtask` |
 | `local/sim-ledger/cli/xtask` | `cli` | `local/sim-ledger/crate/xtask` |
 | `local/sim-music/cli/xtask` | `cli` | `local/sim-music/crate/xtask` |
@@ -144,6 +148,7 @@
 | `site/sim-lib-compute-model` | `site` | `crate/sim-lib-compute-model` |
 | `site/sim-lib-compute-rocm` | `site` | `crate/sim-lib-compute-rocm` |
 | `site/sim-lib-compute-wgpu` | `site` | `crate/sim-lib-compute-wgpu` |
+| `site/sim-lib-expr-tree-server` | `site` | `crate/sim-lib-expr-tree-server` |
 | `site/sim-lib-numbers-f64` | `site` | `local/sim-numbers/crate/sim-lib-numbers-f64` |
 | `site/sim-lib-numbers-tensor` | `site` | `local/sim-numbers/crate/sim-lib-numbers-tensor` |
 | `site/sim-lib-stream-cpal` | `site` | `crate/sim-lib-stream-cpal` |
@@ -175,17 +180,22 @@
 | `syntax/ooxml` | `syntax` | `language/ooxml` |
 | `syntax/pratt` | `syntax` | `language/pratt` |
 | `syntax/uds` | `syntax` | `language/uds` |
+| `view-edit/sim-lib-expr-tree-server` | `view-edit` | `crate/sim-lib-expr-tree-server` |
 | `view-edit/sim-lib-view` | `view-edit` | `local/sim-web/crate/sim-lib-view` |
 | `view-edit/sim-lib-view-bridge` | `view-edit` | `crate/sim-lib-view-bridge` |
 | `view-edit/sim-lib-view-device` | `view-edit` | `crate/sim-lib-view-device` |
+| `view-edit/sim-lib-view-expr-tree` | `view-edit` | `crate/sim-lib-view-expr-tree` |
+| `view-edit/sim-lib-view-interference` | `view-edit` | `crate/sim-lib-view-interference` |
 | `view-edit/sim-lib-view-spatial` | `view-edit` | `crate/sim-lib-view-spatial` |
 | `view-edit/sim-lib-view-wasm-frame` | `view-edit` | `crate/sim-lib-view-wasm-frame` |
 | `view-edit/sim-lib-web-bridge` | `view-edit` | `crate/sim-lib-web-bridge` |
 | `view-edit/sim-nest` | `view-edit` | `crate/sim-nest` |
+| `view-edit/sim-web-shell` | `view-edit` | `crate/sim-web-shell` |
 | `view-edit/xtask` | `view-edit` | `local/sim-tooling/crate/xtask` |
 | `view/sim-lib-doc-core` | `view` | `crate/sim-lib-doc-core` |
 | `view/sim-lib-doc-markup` | `view` | `crate/sim-lib-doc-markup` |
 | `view/sim-lib-doc-surface` | `view` | `crate/sim-lib-doc-surface` |
+| `view/sim-lib-expr-tree-server` | `view` | `crate/sim-lib-expr-tree-server` |
 | `view/sim-lib-view` | `view` | `local/sim-web/crate/sim-lib-view` |
 | `view/sim-lib-view-agent` | `view` | `crate/sim-lib-view-agent` |
 | `view/sim-lib-view-bay` | `view` | `crate/sim-lib-view-bay` |
@@ -195,6 +205,7 @@
 | `view/sim-lib-view-device` | `view` | `crate/sim-lib-view-device` |
 | `view/sim-lib-view-doc` | `view` | `local/sim-web/crate/sim-lib-view-doc` |
 | `view/sim-lib-view-expr-tree` | `view` | `crate/sim-lib-view-expr-tree` |
+| `view/sim-lib-view-interference` | `view` | `crate/sim-lib-view-interference` |
 | `view/sim-lib-view-math` | `view` | `crate/sim-lib-view-math` |
 | `view/sim-lib-view-spatial` | `view` | `crate/sim-lib-view-spatial` |
 | `view/sim-lib-view-wasm-frame` | `view` | `crate/sim-lib-view-wasm-frame` |

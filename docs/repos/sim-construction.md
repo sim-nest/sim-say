@@ -1,10 +1,11 @@
 # sim-construction
 
-Published commit: `b9f4bc112f693acd3f291cf7e5d921b37bffe9c0`.
+Published commit: `6138be6682683903fe5594c6625e59156c1313fc`.
 
 ## Crates
 
 - `sim-codec-mspdi`
+- `sim-lib-construction-office`
 - `sim-lib-construction-project`
 - `sim-site-dalux`
 - `sim-site-powerproject`

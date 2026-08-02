@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-construction-project`
 - Canonical key: `crate/sim-lib-construction-project/feature-sim-construction-project-control`
 
-Describe construction phase gate and baseline control through as-of snapshot records, project charter identity, opportunity, bid/no-bid, customer-intent, collaboration charter, append-only fact books, lifecycle vocabulary, baselines, gates, actions, decisions, design/RFI/review/release/permit/authority control, deterministic deltas, governance, capabilities, shared obligations, bounded exceptions, graph-composed blockers, readiness with reference-only evidence, and baseline-aware Gantt schedule impact.
+Load complete construction project control as semantic Citizens, checked Shapes, and capability-minimal operations over append-only books, historical snapshots, lifecycle gates, schedule impact, readiness, exposure, handover, outcomes, and reference admission.
 
 ## Anchors
 
@@ -19,15 +19,19 @@ Describe construction phase gate and baseline control through as-of snapshot rec
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/control-graph-meets-gantt`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/customer-intent-to-collaboration`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/design-release-to-production`
+- `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/field-item-to-corrective-evidence`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/late-decision`
+- `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/loadable-project-control`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/mixed-obligation-gate`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/mobilization-gate`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/six-week-production-readiness`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/sustainability-to-reference-evidence`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/what-changed`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/work-package-award`
+- `recipe/sim-construction/reference-project-control`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/design_tests`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/fact_book_tests`
+- `spec-test/sim-construction/crates/sim-lib-construction-project/src/field_control_tests`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/opportunity_tests`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/procurement_tests`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/production_plan_tests`

@@ -1,6 +1,6 @@
 # sim-numbers
 
-Published commit: `cfe1699abfe3124f461dde2389f5df40dbad40b1`.
+Published commit: `9350403655c34f573156c98911299c23c15ba609`.
 
 ## Crates
 
@@ -25,6 +25,7 @@ Published commit: `cfe1699abfe3124f461dde2389f5df40dbad40b1`.
 - `sim-lib-numbers-quad`
 - `sim-lib-numbers-rational`
 - `sim-lib-numbers-rk`
+- `sim-lib-numbers-signal`
 - `sim-lib-numbers-stats`
 - `sim-lib-numbers-tensor`
 - `sim-lib-numbers-tensor-bcast`

@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-pitch-core`
 - Canonical key: `crate/sim-lib-pitch-core/feature-sim-music-pitch-and-sound-vocabulary`
 
-Name chords, generate bounded tetrachord scales, rank exact ratio intervals, walk pitch-set graphs, and describe timbres, spectra, and tuning facts through worked musical descriptors and bounded families.
+Name chords, build deterministic voicing palettes, classify pitch-set relations, generate bounded tetrachord scales, rank exact ratio intervals, walk pitch-set graphs, and describe timbres, spectra, and tuning facts through worked musical descriptors and bounded families.
 
 ## Anchors
 
@@ -70,6 +70,18 @@ fn midi_round_trip() {
     for midi in 0..=127u8 {
         assert_eq!(Pitch::from_midi(midi).to_midi(), Some(midi));
     }
+}
+
+#[test]
+fn pitch_order_follows_absolute_semitones_across_classes_and_octaves() {
+    let c5 = Pitch::from_midi(72);
+    let f4 = Pitch::from_midi(65);
+    let b3 = Pitch::from_midi(59);
+    assert!(c5 > f4);
+    assert!(f4 > b3);
+    let mut pitches = vec![c5, b3, f4];
+    pitches.sort();
+    assert_eq!(pitches, vec![b3, f4, c5]);
 }
 
 #[test]

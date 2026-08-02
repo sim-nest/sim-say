@@ -1,0 +1,30 @@
+{
+  "generator": "xtask repo-contract v1",
+  "packages": [
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "sim-lib-interference-compute"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "sim-lib-interference-core"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "sim-lib-interference-runtime"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "sim-lib-interference-solve"
+    },
+    {
+      "features": [],
+      "group": "workspace",
+      "package": "xtask"
+    }
+  ]
+}

@@ -6,13 +6,14 @@
 - Subject: `crate/sim-lib-sound-audio-lift`
 - Canonical key: `crate/sim-lib-sound-audio-lift/feature-sim-music-audio-lift-and-render`
 
-Lift PCM audio into sound features, reuse spectral summaries, and render finite sound buffers or WAV/SMF stream files through current sound libraries.
+Lift PCM through bounded pitch, onset, varying-tempo beat, zero-crossing, perceptual/MFCC, chroma, key, chord, spectral, and finite rendering workflows with alternatives and evidence.
 
 ## Anchors
 
 - `anchor/crate/sim-lib-sound-audio-lift`
 - `anchor/crate/sim-lib-sound-bridge`
 - `anchor/crate/sim-lib-sound-render`
+- `anchor/crate/sim-lib-sound-spectrum`
 - `anchor/crate/sim-lib-stream-bridge`
 - `anchor/runtime-lib/sim-lib-sound-audio-lift/sound-audio-lift-lib`
 - `anchor/runtime-lib/sim-lib-sound-bridge/sound-bridge-lib`
@@ -25,189 +26,292 @@ Lift PCM audio into sound features, reuse spectral summaries, and render finite 
 
 ## Specimens
 
+- `spec-test/sim-music/crates/sim-lib-sound-audio-lift/src/analysis_tests`
+- `spec-test/sim-music/crates/sim-lib-sound-audio-lift/src/partial_track_tests`
+- `spec-test/sim-music/crates/sim-lib-sound-audio-lift/src/pitch_fixture_tests`
+- `spec-test/sim-music/crates/sim-lib-sound-audio-lift/src/pitch_track_tests`
 - `spec-test/sim-music/crates/sim-lib-sound-audio-lift/src/tests`
+- `spec-test/sim-music/crates/sim-lib-sound-audio-lift/src/transform_tests`
 
 ## Worked Example
 
-Specimen `spec-test/sim-music/crates/sim-lib-sound-audio-lift/src/tests` is checked by `cargo test`.
+Specimen `spec-test/sim-music/crates/sim-lib-sound-audio-lift/src/analysis_tests` is checked by `cargo test`.
 
-Source `crates/sim-lib-sound-audio-lift/src/tests.rs`:
+Source `crates/sim-lib-sound-audio-lift/src/analysis_tests.rs`:
 
 ```rust
-use std::sync::Arc;
-
-// conformance: audio lift and render workflows expose checked audio analysis descriptors.
-
-use sim_kernel::{Cx, DefaultFactory, EagerPolicy, ExportKind, Symbol};
+use sim_lib_numbers_signal::{
+    Normalization, PaddingPolicy, SignConvention, WindowFunction, WindowSampling, WindowSpec,
+};
 use sim_lib_sound_tuning::EqualTemperament;
 
 use crate::{
-    AudioLiftOptions, AudioLifter, FftPeakLifter, HarmonicCombLifter, install_sound_audio_lift_lib,
+    AudioAnalysisControl, AudioAnalysisPlan, AudioFeatureSelection, BeatTrackingPlan,
+    CepstralNormalization, CqtPlan, CqtWeighting, DctNormalization, Filterbank, FilterbankPlan,
+    FrequencyScale, MfccPlan, OnsetPeak, OnsetPeaks, PeakPickingPlan, SpectralEnergy,
+    StftOverlapPolicy, StftPlan, ZeroCrossingPlan, analyze_audio, track_beats, zero_crossing_rate,
 };
 
-#[cfg(feature = "sound-music")]
-use crate::{lifted_notes_to_counterpoint, lifted_notes_to_diff_roll, lifted_notes_to_piano_roll};
+// conformance: generated click/chord audio proves timing and labels end to end.
 
 #[test]
-fn synthetic_a4_sine_lifts_with_high_confidence() {
-    let samples = sine_mix(&[(440.0, 1.0)], 48_000, 0.25, 0.0);
-    let tuning = EqualTemperament::default();
-    let report = HarmonicCombLifter::default()
-        .lift_report(&samples, 48_000, &tuning)
-        .unwrap();
-    let note = report
-        .value
-        .notes
-        .iter()
-        .max_by(|left, right| left.confidence.total_cmp(&right.confidence))
-        .expect("lifted note");
-    assert_eq!(note.pitch.to_midi(), Some(69));
-    assert!(note.confidence >= 0.75, "{note:?}");
-}
-
-#[test]
-fn simultaneous_sines_lift_to_two_pitch_candidates() {
-    let samples = sine_mix(&[(440.0, 1.0), (659.25, 0.8)], 48_000, 0.25, 0.0);
-    let tuning = EqualTemperament::default();
-    let report = FftPeakLifter::default()
-        .lift_report(&samples, 48_000, &tuning)
-        .unwrap();
-    let frame = report
-        .value
-        .frames
-        .iter()
-        .max_by_key(|frame| frame.pitch_candidates.len())
-        .expect("frame");
-    let lifted = frame
-        .pitch_candidates
-        .iter()
-        .filter_map(|candidate| candidate.pitch.to_midi())
-        .collect::<Vec<_>>();
-    assert!(lifted.contains(&69), "{lifted:?}");
-    assert!(lifted.contains(&76), "{lifted:?}");
-}
-
-#[test]
-fn noisy_audio_has_lower_confidence() {
-    let tuning = EqualTemperament::default();
-    let clean = sine_mix(&[(440.0, 1.0)], 48_000, 0.25, 0.0);
-    let noisy = sine_mix(&[(440.0, 1.0)], 48_000, 0.25, 0.35);
-    let lifter = HarmonicCombLifter::default();
-    let clean_note = lifter
-        .lift_report(&clean, 48_000, &tuning)
-        .unwrap()
-        .value
-        .notes
-        .into_iter()
-        .max_by(|left, right| left.confidence.total_cmp(&right.confidence))
-        .unwrap();
-    let noisy_note = lifter
-        .lift_report(&noisy, 48_000, &tuning)
-        .unwrap()
-        .value
-        .notes
-        .into_iter()
-        .max_by(|left, right| left.confidence.total_cmp(&right.confidence))
-        .unwrap();
-    assert!(noisy_note.confidence < clean_note.confidence);
-}
-
-#[test]
-fn note_candidates_include_onset_and_duration_estimates() {
-    let samples = stepped_sine(440.0, 48_000, 0.10, 0.10, 0.10);
-    let tuning = EqualTemperament::default();
-    let report = HarmonicCombLifter {
-        opts: AudioLiftOptions {
-            min_note_windows: 1,
-            ..AudioLiftOptions::default()
-        },
-    }
-    .lift_report(&samples, 48_000, &tuning)
+fn generated_click_chord_fixture_proves_timing_features_and_labels() {
+    let sample_rate = 8_000;
+    let beat_samples = 4_000;
+    let samples = click_chord_fixture(sample_rate, beat_samples);
+    let plan = compact_analysis_plan(sample_rate);
+    let control = AudioAnalysisControl {
+        max_work: 100_000_000,
+        max_results: 16,
+        seed: 21,
+    };
+    let analysis = analyze_audio(
+        &samples,
+        sample_rate,
+        &EqualTemperament::default(),
+        &AudioFeatureSelection::foundry(),
+        &plan,
+        &control,
+    )
     .unwrap();
-    assert!(!report.value.notes.is_empty());
-    let note = &report.value.notes[0];
-    assert!(note.onset_sample > 0);
-    assert!(note.duration_samples > 0);
-}
 
-#[cfg(feature = "sound-music")]
-#[test]
-fn lifted_notes_convert_to_music_views() {
-    let samples = sine_mix(&[(440.0, 1.0)], 48_000, 0.20, 0.0);
-    let tuning = EqualTemperament::default();
-    let report = HarmonicCombLifter::default()
-        .lift_report(&samples, 48_000, &tuning)
-        .unwrap();
-    let roll = lifted_notes_to_piano_roll(&report.value.notes).unwrap();
-    assert!(!roll.items.is_empty());
-    let diff = lifted_notes_to_diff_roll(&report.value.notes).unwrap();
-    assert!(!diff.frames.is_empty());
-    let counterpoint = lifted_notes_to_counterpoint(&report.value.notes).unwrap();
-    assert!(!counterpoint.voices.is_empty());
-}
-
-#[test]
-fn empty_audio_returns_diagnostics_and_no_notes() {
-    let tuning = EqualTemperament::default();
-    let report = FftPeakLifter::default()
-        .lift_report(&[], 48_000, &tuning)
-        .unwrap();
-    assert!(report.value.notes.is_empty());
-    assert!(!report.diagnostics.is_empty());
-}
-
-#[test]
-fn install_runtime_is_idempotent_and_registers_audio_lifters() {
-    let mut cx = Cx::new(Arc::new(EagerPolicy), Arc::new(DefaultFactory));
-    install_sound_audio_lift_lib(&mut cx).unwrap();
-    install_sound_audio_lift_lib(&mut cx).unwrap();
-
-    let loaded = cx
-        .registry()
-        .lib(&Symbol::new("sound-audio-lift"))
-        .expect("sound-audio-lift lib");
-    assert!(loaded.exports.iter().any(|record| {
-        record.kind == ExportKind::named("AudioLifter")
-            && record.symbol == Symbol::qualified("sound", "FftPeakLifter")
-    }));
-    assert!(loaded.exports.iter().any(|record| {
-        record.kind == ExportKind::named("AudioLifter")
-            && record.symbol == Symbol::qualified("sound", "HarmonicCombLifter")
-    }));
-}
-
-fn sine_mix(tones: &[(f64, f64)], sample_rate: u32, seconds: f64, noise: f64) -> Vec<f32> {
-    let samples = (seconds * f64::from(sample_rate)).round() as usize;
-    (0..samples)
-        .map(|index| {
-            let t = index as f64 / f64::from(sample_rate);
-            let signal = tones
+    let onsets = analysis.onsets.as_ref().unwrap();
+    assert!(onsets.peaks.len() >= 3, "{:#?}", onsets.peaks);
+    for expected in [beat_samples, beat_samples * 2, beat_samples * 3] {
+        assert!(
+            onsets
+                .peaks
                 .iter()
-                .map(|(hz, gain)| (std::f64::consts::TAU * hz * t).sin() * gain)
-                .sum::<f64>();
-            let hiss = if noise > 0.0 {
-                noise * pseudo_noise(index)
+                .any(|onset| onset.sample.abs_diff(expected as i64) <= 384),
+            "missing onset near {expected}: {:#?}",
+            onsets.peaks
+        );
+    }
+    assert!(onsets.peaks.iter().all(|onset| onset.confidence > 0.0));
+    assert!(onsets.latency_samples > 0);
+
+    let beats = analysis.beats.as_ref().unwrap();
+    assert!(
+        beats
+            .tempo_candidates
+            .iter()
+            .any(|candidate| { (candidate.bpm - 120.0).abs() < 2.0 && candidate.confidence > 0.0 })
+    );
+    assert!(beats.dynamic_programming.is_some());
+    assert!(beats.beats.iter().all(|beat| beat.confidence > 0.0));
+    assert!(
+        beats
+            .beats
+            .iter()
+            .skip(1)
+            .all(|beat| { beat.bpm.is_some() && !beat.alternatives.is_empty() })
+    );
+    assert!(beats.meter_hypotheses.len() > 1);
+
+    let mfcc = analysis.mfcc.as_ref().unwrap();
+    assert_eq!(mfcc.sample_rate, sample_rate);
+    assert_eq!(mfcc.plan.filterbank.scale, FrequencyScale::Mel);
+    assert_eq!(mfcc.frames[0].coefficients.len(), 13);
+    assert!(
+        mfcc.frames
+            .iter()
+            .flat_map(|frame| &frame.coefficients)
+            .all(|value| value.is_finite())
+    );
+
+    let keys = analysis.key.as_ref().unwrap();
+    let chords = analysis.chords.as_ref().unwrap();
+    assert!(keys.frames.iter().any(|frame| frame.label == "C major"));
+    assert!(chords.frames.iter().any(|frame| frame.label == "C:maj"));
+    assert!(chords.frames.iter().any(|frame| frame.label == "G:maj"));
+    for frame in keys.frames.iter().chain(&chords.frames) {
+        assert!(frame.confidence > 0.0);
+        assert!(frame.alternatives.len() > 1);
+        assert!(frame.alternatives.iter().all(|item| item.posterior > 0.0));
+    }
+    assert!(analysis.evidence.work_used <= analysis.evidence.work_limit);
+    assert_eq!(analysis.evidence.seed, 21);
+}
+
+#[test]
+fn beat_dp_preserves_changing_tempo_and_all_meter_alternatives() {
+    let onsets = OnsetPeaks {
+        plan: PeakPickingPlan::default(),
+        latency_samples: 64,
+        peaks: [0, 24_000, 44_000, 60_000]
+            .into_iter()
+            .enumerate()
+            .map(|(frame_index, sample)| OnsetPeak {
+                frame_index,
+                sample,
+                available_at_sample: sample + 64,
+                strength: if frame_index.is_multiple_of(2) {
+                    1.0
+                } else {
+                    0.7
+                },
+                confidence: 0.9,
+            })
+            .collect(),
+        alternatives: Vec::new(),
+        work_used: 1,
+    };
+    let tracked = track_beats(&onsets, 48_000, &BeatTrackingPlan::default()).unwrap();
+    let tempi = tracked
+        .beats
+        .iter()
+        .filter_map(|beat| beat.bpm)
+        .collect::<Vec<_>>();
+    assert_eq!(tempi.len(), 3);
+    assert!(tempi.windows(2).any(|pair| (pair[0] - pair[1]).abs() > 1.0));
+    assert!(tracked.dynamic_programming.is_some());
+    assert!(tracked.meter_hypotheses.len() >= 4);
+}
+
+#[test]
+fn zcr_and_each_perceptual_filterbank_retain_full_rate_policy() {
+    let samples = (0_usize..800)
+        .map(|index| if index.is_multiple_of(2) { -1.0 } else { 1.0 })
+        .collect::<Vec<_>>();
+    let zcr = zero_crossing_rate(
+        &samples,
+        8_000,
+        &ZeroCrossingPlan {
+            frame: 80,
+            hop: 40,
+            ..ZeroCrossingPlan::default()
+        },
+    )
+    .unwrap();
+    assert_eq!(zcr.sample_rate, 8_000);
+    assert!(zcr.frames[0].rate > 0.99);
+
+    for scale in [
+        FrequencyScale::Mel,
+        FrequencyScale::Bark,
+        FrequencyScale::Erb,
+    ] {
+        let bank = Filterbank::new(
+            48_000,
+            1_024,
+            &FilterbankPlan {
+                scale,
+                bands: 24,
+                minimum_hz: 20.0,
+                maximum_hz: Some(20_000.0),
+                max_weights: 100_000,
+            },
+        )
+        .unwrap();
+        assert_eq!(bank.sample_rate, 48_000);
+        assert_eq!(bank.bands.len(), 24);
+        assert!(
+            bank.bands
+                .windows(2)
+                .all(|pair| pair[0].center_hz < pair[1].center_hz)
+        );
+        assert!(
+            bank.weights
+                .iter()
+                .all(|row| row.iter().all(|weight| (0.0..=1.0).contains(weight)))
+        );
+    }
+}
+
+fn compact_analysis_plan(sample_rate: u32) -> AudioAnalysisPlan {
+    let mut window = WindowSpec::new(WindowFunction::Hann);
+    window.sampling = WindowSampling::Periodic;
+    AudioAnalysisPlan {
+        stft: StftPlan {
+            frame: 256,
+            hop: 64,
+            analysis_window: window.clone(),
+            synthesis_window: window.clone(),
+            center: true,
+            padding: PaddingPolicy::Zero,
+            phase: SignConvention::NegativeForward,
+            normalization: Normalization::Forward,
+            overlap: StftOverlapPolicy::RequireCola { tolerance: 1e-10 },
+            max_frames: 2_048,
+            max_cells: 1_000_000,
+        },
+        peak_picking: PeakPickingPlan {
+            local_max_before: 2,
+            local_max_after: 2,
+            average_before: 8,
+            average_after: 8,
+            threshold: 0.04,
+            minimum_distance_samples: 2_000,
+            max_peaks: 16,
+            max_work: 1_000_000,
+        },
+        zero_crossing: ZeroCrossingPlan {
+            frame: 256,
+            hop: 64,
+            ..ZeroCrossingPlan::default()
+        },
+        mfcc: MfccPlan {
+            filterbank: FilterbankPlan {
+                scale: FrequencyScale::Mel,
+                bands: 24,
+                minimum_hz: 20.0,
+                maximum_hz: Some(f64::from(sample_rate) / 2.0 - 1.0),
+                max_weights: 100_000,
+            },
+            energy: SpectralEnergy::Power,
+            log_floor: 1e-9,
+            coefficients: 13,
+            dct_normalization: DctNormalization::Orthonormal,
+            lifter: Some(22.0),
+            normalization: CepstralNormalization::MeanVariance {
+                variance_floor: 1e-12,
+            },
+            max_work: 20_000_000,
+        },
+        constant_q: CqtPlan {
+            hop: 256,
+            min_frequency_hz: 110.0,
+            max_frequency_hz: 1_760.0,
+            bins_per_octave: 12,
+            window,
+            center: true,
+            padding: PaddingPolicy::Zero,
+            phase: SignConvention::NegativeForward,
+            weighting: CqtWeighting::Power,
+            max_window: 4_096,
+            max_frames: 1_024,
+            max_bins: 128,
+            max_work: 50_000_000,
+        },
+        ..AudioAnalysisPlan::default()
+    }
+}
+
+fn click_chord_fixture(sample_rate: u32, beat_samples: usize) -> Vec<f32> {
+    let chords: [[f64; 3]; 4] = [
+        [261.625_565, 329.627_557, 391.995_436],
+        [261.625_565, 329.627_557, 391.995_436],
+        [195.997_718, 246.941_651, 293.664_768],
+        [195.997_718, 246.941_651, 293.664_768],
+    ];
+    (0..beat_samples * chords.len())
+        .map(|index| {
+            let beat = index / beat_samples;
+            let within = index % beat_samples;
+            let time = index as f64 / f64::from(sample_rate);
+            let chord = chords[beat]
+                .iter()
+                .map(|frequency| (std::f64::consts::TAU * frequency * time).sin())
+                .sum::<f64>()
+                * 0.18;
+            let click = if within < 24 {
+                0.9 * (1.0 - within as f64 / 24.0)
+                    * if within.is_multiple_of(2) { 1.0 } else { -1.0 }
             } else {
                 0.0
             };
-            (signal + hiss).clamp(-1.0, 1.0) as f32
+            (chord + click).clamp(-1.0, 1.0) as f32
         })
         .collect()
-}
-
-fn stepped_sine(hz: f64, sample_rate: u32, lead_silence: f64, tone: f64, tail: f64) -> Vec<f32> {
-    let silence = vec![0.0_f32; (lead_silence * f64::from(sample_rate)).round() as usize];
-    let mut out = silence;
-    out.extend(sine_mix(&[(hz, 1.0)], sample_rate, tone, 0.0));
-    out.extend(vec![
-        0.0_f32;
-        (tail * f64::from(sample_rate)).round() as usize
-    ]);
-    out
-}
-
-fn pseudo_noise(index: usize) -> f64 {
-    let x = ((index as u64).wrapping_mul(1103515245).wrapping_add(12345) % 65536) as f64;
-    (x / 32768.0) - 1.0
 }
 ```

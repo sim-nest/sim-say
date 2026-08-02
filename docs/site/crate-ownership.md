@@ -72,6 +72,7 @@
 | `sim-lib-compute-rocm` | [sim-compute](../repos/sim-compute.md) |
 | `sim-lib-compute-wgpu` | [sim-compute](../repos/sim-compute.md) |
 | `sim-codec-mspdi` | [sim-construction](../repos/sim-construction.md) |
+| `sim-lib-construction-office` | [sim-construction](../repos/sim-construction.md) |
 | `sim-lib-construction-project` | [sim-construction](../repos/sim-construction.md) |
 | `sim-site-dalux` | [sim-construction](../repos/sim-construction.md) |
 | `sim-site-powerproject` | [sim-construction](../repos/sim-construction.md) |
@@ -116,6 +117,10 @@
 | `sim-macros` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-table-core` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-value` | [sim-foundation](../repos/sim-foundation.md) |
+| `sim-lib-interference-compute` | [sim-interference](../repos/sim-interference.md) |
+| `sim-lib-interference-core` | [sim-interference](../repos/sim-interference.md) |
+| `sim-lib-interference-runtime` | [sim-interference](../repos/sim-interference.md) |
+| `sim-lib-interference-solve` | [sim-interference](../repos/sim-interference.md) |
 | `sim-kernel` | [sim-kernel](../repos/sim-kernel.md) |
 | `sim-ledger` | [sim-ledger](../repos/sim-ledger.md) |
 | `sim-ledger-cli` | [sim-ledger](../repos/sim-ledger.md) |
@@ -134,13 +139,17 @@
 | `sim-lib-midi-wasm-frame` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-analysis` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-combinators` | [sim-music](../repos/sim-music.md) |
+| `sim-lib-music-consonance` | [sim-music](../repos/sim-music.md) |
+| `sim-lib-music-counterpoint` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-core` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-lift` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-lower` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-notation` | [sim-music](../repos/sim-music.md) |
+| `sim-lib-music-serial` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-shapes` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-transform` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-wasm-frame` | [sim-music](../repos/sim-music.md) |
+| `sim-lib-serial-core` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-chord` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-core` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-dissonance` | [sim-music](../repos/sim-music.md) |
@@ -151,6 +160,7 @@
 | `sim-lib-pitch-namer-roman` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-ratio` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-scale` | [sim-music](../repos/sim-music.md) |
+| `sim-lib-pitch-serial` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-set` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-shapes` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-pitch-wasm-frame` | [sim-music](../repos/sim-music.md) |
@@ -189,6 +199,7 @@
 | `sim-lib-numbers-quad` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-rational` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-rk` | [sim-numbers](../repos/sim-numbers.md) |
+| `sim-lib-numbers-signal` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-stats` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-tensor` | [sim-numbers](../repos/sim-numbers.md) |
 | `sim-lib-numbers-tensor-bcast` | [sim-numbers](../repos/sim-numbers.md) |
@@ -283,6 +294,7 @@
 | `sim-lib-view-daw` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-view-device` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-view-doc` | [sim-web](../repos/sim-web.md) |
+| `sim-lib-view-interference` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-view-math` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-view-spatial` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-view-wasm-frame` | [sim-web](../repos/sim-web.md) |
