@@ -25,6 +25,7 @@
 | `crate/auto-site-xentry` | `crate` | auto-site-xentry | 0 |
 | `crate/citizen-roundtrip` | `crate` | citizen-roundtrip | 0 |
 | `crate/music-algorithm-foundry` | `crate` | music-algorithm-foundry | 1 |
+| `crate/serial-workbench` | `crate` | serial-workbench | 0 |
 | `crate/sim-auto` | `crate` | sim-auto | 1 |
 | `crate/sim-citizen` | `crate` | sim-citizen | 2 |
 | `crate/sim-citizen-derive` | `crate` | sim-citizen-derive | 0 |
@@ -465,7 +466,7 @@
 | `repo/sim-interference` | `repo` | sim-interference | 6 |
 | `repo/sim-kernel` | `repo` | sim-kernel | 3 |
 | `repo/sim-ledger` | `repo` | sim-ledger | 7 |
-| `repo/sim-music` | `repo` | sim-music | 55 |
+| `repo/sim-music` | `repo` | sim-music | 56 |
 | `repo/sim-numbers` | `repo` | sim-numbers | 35 |
 | `repo/sim-office` | `repo` | sim-office | 18 |
 | `repo/sim-run` | `repo` | sim-run | 9 |

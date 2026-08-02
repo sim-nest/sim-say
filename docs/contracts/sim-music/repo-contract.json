@@ -1,5 +1,5 @@
 {
-  "card_count": 56,
+  "card_count": 57,
   "cards": [
     {
       "id": "browse/catalog",
@@ -134,6 +134,12 @@
       "summary": "Notation import and export descriptors."
     },
     {
+      "id": "cookbook/music-serial",
+      "kind": "cookbook-recipe",
+      "owner": "sim-lib-music-serial",
+      "summary": ""
+    },
+    {
       "id": "cookbook/music-shapes",
       "kind": "cookbook-recipe",
       "owner": "sim-lib-music-shapes",
@@ -215,7 +221,7 @@
       "id": "cookbook/pitch-serial",
       "kind": "cookbook-recipe",
       "owner": "sim-lib-pitch-serial",
-      "summary": "Strict twelve-tone rows, total operations, and explicit labels."
+      "summary": "Strict tone rows, complete operation families, matrices, and explicit labels."
     },
     {
       "id": "cookbook/pitch-set",
@@ -365,6 +371,7 @@
       "sim-lib-music-lift",
       "sim-lib-music-lower",
       "sim-lib-music-notation",
+      "sim-lib-music-serial",
       "sim-lib-music-shapes",
       "sim-lib-music-synth",
       "sim-lib-music-transform",
@@ -403,7 +410,7 @@
   },
   "non_citizen_exemption_count": 0,
   "non_citizen_exemptions": [],
-  "package_count": 52,
+  "package_count": 53,
   "packages": [
     {
       "crate_name": "music-algorithm-foundry",
@@ -1627,6 +1634,20 @@
       "crate_name": "sim_lib_music_notation",
       "dependencies": [
         {
+          "kind": "dev",
+          "optional": false,
+          "package": "sim-lib-music-serial",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "dev",
+          "optional": false,
+          "package": "sim-lib-pitch-serial",
+          "rename": null,
+          "target": null
+        },
+        {
           "kind": "normal",
           "optional": false,
           "package": "sim-lib-music-core",
@@ -1680,6 +1701,167 @@
           ],
           "name": "build-script-build",
           "src": "crates/sim-lib-music-notation/build.rs"
+        }
+      ]
+    },
+    {
+      "crate_name": "sim_lib_music_serial",
+      "dependencies": [
+        {
+          "kind": "dev",
+          "optional": false,
+          "package": "sim-lib-pitch-namer",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-music-core",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-music-lower",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-pitch-chord",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-pitch-core",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-pitch-dissonance",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-pitch-namer-roman",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-pitch-ratio",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-pitch-scale",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-pitch-serial",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-pitch-set",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-serial-core",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-sound-tuning",
+          "rename": null,
+          "target": null
+        }
+      ],
+      "description": "Immutable serial plans with stable row and event identity, explicit provenance, and validated partial temporal order.",
+      "features": [],
+      "group": "workspace",
+      "manifest": "crates/sim-lib-music-serial/Cargo.toml",
+      "name": "sim-lib-music-serial",
+      "publish": "true",
+      "root": "crates/sim-lib-music-serial",
+      "rustdoc_summary": "Immutable serial plans with stable identity, provenance, and partial order.",
+      "target_kinds": [
+        "custom-build",
+        "lib",
+        "test"
+      ],
+      "targets": [
+        {
+          "crate_types": [
+            "lib"
+          ],
+          "kind": [
+            "lib"
+          ],
+          "name": "sim_lib_music_serial",
+          "src": "crates/sim-lib-music-serial/src/lib.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "test"
+          ],
+          "name": "modal_spine_recipe",
+          "src": "crates/sim-lib-music-serial/tests/modal_spine_recipe.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "test"
+          ],
+          "name": "serial_completion_recipe",
+          "src": "crates/sim-lib-music-serial/tests/serial_completion_recipe.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "test"
+          ],
+          "name": "strict_row_realization_recipe",
+          "src": "crates/sim-lib-music-serial/tests/strict_row_realization_recipe.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "custom-build"
+          ],
+          "name": "build-script-build",
+          "src": "crates/sim-lib-music-serial/build.rs"
         }
       ]
     },
@@ -1738,6 +1920,13 @@
         {
           "kind": "normal",
           "optional": false,
+          "package": "sim-lib-music-serial",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
           "package": "sim-lib-music-transform",
           "rename": null,
           "target": null
@@ -1746,6 +1935,13 @@
           "kind": "normal",
           "optional": false,
           "package": "sim-lib-pitch-scale",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-pitch-serial",
           "rename": null,
           "target": null
         },
@@ -1774,7 +1970,8 @@
       "rustdoc_summary": "Shape protocol surfaces for SIM music types.",
       "target_kinds": [
         "custom-build",
-        "lib"
+        "lib",
+        "test"
       ],
       "targets": [
         {
@@ -1786,6 +1983,16 @@
           ],
           "name": "sim_lib_music_shapes",
           "src": "crates/sim-lib-music-shapes/src/lib.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "test"
+          ],
+          "name": "third_party_adaptation",
+          "src": "crates/sim-lib-music-shapes/tests/third_party_adaptation.rs"
         },
         {
           "crate_types": [
@@ -1893,6 +2100,13 @@
         {
           "kind": "normal",
           "optional": false,
+          "package": "sim-lib-music-serial",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
           "package": "sim-lib-pitch-chord",
           "rename": null,
           "target": null
@@ -1908,6 +2122,13 @@
           "kind": "normal",
           "optional": false,
           "package": "sim-lib-pitch-scale",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-pitch-serial",
           "rename": null,
           "target": null
         }
@@ -2659,6 +2880,20 @@
         {
           "kind": "normal",
           "optional": false,
+          "package": "sim-lib-pitch-namer-forte",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
+          "package": "sim-lib-pitch-set",
+          "rename": null,
+          "target": null
+        },
+        {
+          "kind": "normal",
+          "optional": false,
           "package": "sim-lib-serial-core",
           "rename": null,
           "target": null
@@ -2671,7 +2906,7 @@
       "name": "sim-lib-pitch-serial",
       "publish": "true",
       "root": "crates/sim-lib-pitch-serial",
-      "rustdoc_summary": "Strict twelve-tone rows, total operations, and explicit label conventions.",
+      "rustdoc_summary": "Strict twelve-tone rows, complete families, matrices, and explicit labels.",
       "target_kinds": [
         "custom-build",
         "lib",
@@ -2697,6 +2932,36 @@
           ],
           "name": "gate_row",
           "src": "crates/sim-lib-pitch-serial/tests/gate_row.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "test"
+          ],
+          "name": "pitch_reservoir",
+          "src": "crates/sim-lib-pitch-serial/tests/pitch_reservoir.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "test"
+          ],
+          "name": "row_class_analysis_recipe",
+          "src": "crates/sim-lib-pitch-serial/tests/row_class_analysis_recipe.rs"
+        },
+        {
+          "crate_types": [
+            "bin"
+          ],
+          "kind": [
+            "test"
+          ],
+          "name": "row_family_matrix_recipe",
+          "src": "crates/sim-lib-pitch-serial/tests/row_family_matrix_recipe.rs"
         },
         {
           "crate_types": [
@@ -4020,10 +4285,10 @@
     "generated_by": "cargo run -p xtask -- simdoc",
     "generation_timestamp": "2026-07-15T20:01:50+02:00",
     "generator": "xtask repo-contract v1",
-    "git_commit": "f26e25f592b80d149db7e89421ac7b5772935e79",
+    "git_commit": "43eabaae7c8b8195f20aca188bd180816d710b7b",
     "repo": "sim-music",
     "schema": "sim.provenance.v1",
-    "source_commit": "f26e25f592b80d149db7e89421ac7b5772935e79",
+    "source_commit": "43eabaae7c8b8195f20aca188bd180816d710b7b",
     "source_remote": "https://github.com/sim-nest/sim-music",
     "validation_commands": [
       "cargo fmt --all --check",
@@ -4036,9 +4301,9 @@
       "cargo run -p xtask -- validation-matrix --check --repo .",
       "cargo run -p xtask -- crate-catalog --check --repo ."
     ],
-    "workspace_hash": "8863e1bbf069b9aa",
+    "workspace_hash": "302dc5da9cd0f1be",
     "workspace_hash_algorithm": "fnv1a64",
-    "workspace_hash_input_count": 833,
+    "workspace_hash_input_count": 935,
     "workspace_hash_inputs": [
       "Cargo.toml",
       "crates/sim-lib-daw-session/Cargo.toml",
@@ -4339,6 +4604,79 @@
       "crates/sim-lib-music-notation/src/runtime.rs",
       "crates/sim-lib-music-notation/src/spell.rs",
       "crates/sim-lib-music-notation/src/tests.rs",
+      "crates/sim-lib-music-serial/Cargo.toml",
+      "crates/sim-lib-music-serial/build.rs",
+      "crates/sim-lib-music-serial/recipes/01-basics/immutable-plan/recipe.toml",
+      "crates/sim-lib-music-serial/recipes/01-basics/immutable-plan/setup.rs",
+      "crates/sim-lib-music-serial/recipes/01-basics/strict-row-realization/recipe.toml",
+      "crates/sim-lib-music-serial/recipes/01-basics/strict-row-realization/setup.rs",
+      "crates/sim-lib-music-serial/recipes/02-adaptation/modal-spine/recipe.toml",
+      "crates/sim-lib-music-serial/recipes/02-adaptation/modal-spine/setup.rs",
+      "crates/sim-lib-music-serial/recipes/02-adaptation/serial-consonance-completion/recipe.toml",
+      "crates/sim-lib-music-serial/recipes/02-adaptation/serial-consonance-completion/setup.rs",
+      "crates/sim-lib-music-serial/recipes/02-adaptation/third-party-adaptation/recipe.toml",
+      "crates/sim-lib-music-serial/recipes/02-adaptation/third-party-adaptation/setup.rs",
+      "crates/sim-lib-music-serial/recipes/book.toml",
+      "crates/sim-lib-music-serial/src/additive.rs",
+      "crates/sim-lib-music-serial/src/allowance.rs",
+      "crates/sim-lib-music-serial/src/anchor.rs",
+      "crates/sim-lib-music-serial/src/array.rs",
+      "crates/sim-lib-music-serial/src/audition.rs",
+      "crates/sim-lib-music-serial/src/candidate_filter.rs",
+      "crates/sim-lib-music-serial/src/canon.rs",
+      "crates/sim-lib-music-serial/src/chromatic.rs",
+      "crates/sim-lib-music-serial/src/completion.rs",
+      "crates/sim-lib-music-serial/src/completion_search.rs",
+      "crates/sim-lib-music-serial/src/completion_types.rs",
+      "crates/sim-lib-music-serial/src/cycle.rs",
+      "crates/sim-lib-music-serial/src/deploy/components.rs",
+      "crates/sim-lib-music-serial/src/deploy/core.rs",
+      "crates/sim-lib-music-serial/src/deploy/schoenberg.rs",
+      "crates/sim-lib-music-serial/src/deploy.rs",
+      "crates/sim-lib-music-serial/src/derived.rs",
+      "crates/sim-lib-music-serial/src/error.rs",
+      "crates/sim-lib-music-serial/src/event.rs",
+      "crates/sim-lib-music-serial/src/evidence.rs",
+      "crates/sim-lib-music-serial/src/extract.rs",
+      "crates/sim-lib-music-serial/src/hypothesis.rs",
+      "crates/sim-lib-music-serial/src/integral.rs",
+      "crates/sim-lib-music-serial/src/invariant.rs",
+      "crates/sim-lib-music-serial/src/lib.rs",
+      "crates/sim-lib-music-serial/src/modal.rs",
+      "crates/sim-lib-music-serial/src/nesting.rs",
+      "crates/sim-lib-music-serial/src/order.rs",
+      "crates/sim-lib-music-serial/src/origin.rs",
+      "crates/sim-lib-music-serial/src/parameter.rs",
+      "crates/sim-lib-music-serial/src/pitch_map.rs",
+      "crates/sim-lib-music-serial/src/plan.rs",
+      "crates/sim-lib-music-serial/src/practice.rs",
+      "crates/sim-lib-music-serial/src/practice_builtin.rs",
+      "crates/sim-lib-music-serial/src/reading.rs",
+      "crates/sim-lib-music-serial/src/realization.rs",
+      "crates/sim-lib-music-serial/src/realizer.rs",
+      "crates/sim-lib-music-serial/src/referential.rs",
+      "crates/sim-lib-music-serial/src/registry.rs",
+      "crates/sim-lib-music-serial/src/render.rs",
+      "crates/sim-lib-music-serial/src/report.rs",
+      "crates/sim-lib-music-serial/src/spine.rs",
+      "crates/sim-lib-music-serial/src/strict.rs",
+      "crates/sim-lib-music-serial/src/techniques/derived_cells.rs",
+      "crates/sim-lib-music-serial/src/techniques/mod.rs",
+      "crates/sim-lib-music-serial/src/techniques/referential.rs",
+      "crates/sim-lib-music-serial/src/tests.rs",
+      "crates/sim-lib-music-serial/src/tests_array_time_point.rs",
+      "crates/sim-lib-music-serial/src/tests_audition.rs",
+      "crates/sim-lib-music-serial/src/tests_completion.rs",
+      "crates/sim-lib-music-serial/src/tests_completion_more.rs",
+      "crates/sim-lib-music-serial/src/tests_deploy.rs",
+      "crates/sim-lib-music-serial/src/tests_extract.rs",
+      "crates/sim-lib-music-serial/src/tests_integral.rs",
+      "crates/sim-lib-music-serial/src/tests_realizer.rs",
+      "crates/sim-lib-music-serial/src/tests_techniques.rs",
+      "crates/sim-lib-music-serial/src/time_point.rs",
+      "crates/sim-lib-music-serial/tests/modal_spine_recipe.rs",
+      "crates/sim-lib-music-serial/tests/serial_completion_recipe.rs",
+      "crates/sim-lib-music-serial/tests/strict_row_realization_recipe.rs",
       "crates/sim-lib-music-shapes/Cargo.toml",
       "crates/sim-lib-music-shapes/build.rs",
       "crates/sim-lib-music-shapes/recipes/01-basics/shape-family/recipe.toml",
@@ -4350,12 +4688,16 @@
       "crates/sim-lib-music-shapes/src/codec/lift.rs",
       "crates/sim-lib-music-shapes/src/codec/parse.rs",
       "crates/sim-lib-music-shapes/src/codec/serial.rs",
+      "crates/sim-lib-music-shapes/src/codec/serial_plan.rs",
       "crates/sim-lib-music-shapes/src/codec.rs",
       "crates/sim-lib-music-shapes/src/lib.rs",
       "crates/sim-lib-music-shapes/src/runtime/serial.rs",
       "crates/sim-lib-music-shapes/src/runtime.rs",
       "crates/sim-lib-music-shapes/src/tests/custom_filter.rs",
+      "crates/sim-lib-music-shapes/src/tests/serial_plan.rs",
       "crates/sim-lib-music-shapes/src/tests.rs",
+      "crates/sim-lib-music-shapes/src/tests_read_construct.rs",
+      "crates/sim-lib-music-shapes/tests/third_party_adaptation.rs",
       "crates/sim-lib-music-synth/Cargo.toml",
       "crates/sim-lib-music-synth/build.rs",
       "crates/sim-lib-music-synth/recipes/01-basics/subtractive-preset/recipe.toml",
@@ -4527,9 +4869,11 @@
       "crates/sim-lib-music-transform/src/pitch_map.rs",
       "crates/sim-lib-music-transform/src/player.rs",
       "crates/sim-lib-music-transform/src/remap.rs",
+      "crates/sim-lib-music-transform/src/serial.rs",
       "crates/sim-lib-music-transform/src/tests/exact.rs",
       "crates/sim-lib-music-transform/src/tests/filter.rs",
       "crates/sim-lib-music-transform/src/tests/remap.rs",
+      "crates/sim-lib-music-transform/src/tests/serial.rs",
       "crates/sim-lib-music-transform/src/tests.rs",
       "crates/sim-lib-music-wasm-frame/Cargo.toml",
       "crates/sim-lib-music-wasm-frame/build.rs",
@@ -4647,15 +4991,37 @@
       "crates/sim-lib-pitch-scale/src/tests.rs",
       "crates/sim-lib-pitch-serial/Cargo.toml",
       "crates/sim-lib-pitch-serial/build.rs",
+      "crates/sim-lib-pitch-serial/recipes/01-basics/row-class-analysis/recipe.toml",
+      "crates/sim-lib-pitch-serial/recipes/01-basics/row-class-analysis/setup.rs",
       "crates/sim-lib-pitch-serial/recipes/01-basics/row-family-matrix/recipe.toml",
+      "crates/sim-lib-pitch-serial/recipes/01-basics/row-family-matrix/setup.rs",
       "crates/sim-lib-pitch-serial/recipes/book.toml",
+      "crates/sim-lib-pitch-serial/src/affine.rs",
+      "crates/sim-lib-pitch-serial/src/all_interval.rs",
       "crates/sim-lib-pitch-serial/src/alphabet.rs",
+      "crates/sim-lib-pitch-serial/src/class.rs",
+      "crates/sim-lib-pitch-serial/src/combinatoriality.rs",
+      "crates/sim-lib-pitch-serial/src/derivation.rs",
       "crates/sim-lib-pitch-serial/src/error.rs",
+      "crates/sim-lib-pitch-serial/src/family.rs",
+      "crates/sim-lib-pitch-serial/src/interval.rs",
+      "crates/sim-lib-pitch-serial/src/invariance.rs",
       "crates/sim-lib-pitch-serial/src/label.rs",
       "crates/sim-lib-pitch-serial/src/lib.rs",
+      "crates/sim-lib-pitch-serial/src/matrix.rs",
+      "crates/sim-lib-pitch-serial/src/mosaic.rs",
+      "crates/sim-lib-pitch-serial/src/multiply.rs",
       "crates/sim-lib-pitch-serial/src/operation.rs",
+      "crates/sim-lib-pitch-serial/src/partition.rs",
+      "crates/sim-lib-pitch-serial/src/render.rs",
+      "crates/sim-lib-pitch-serial/src/reservoir.rs",
       "crates/sim-lib-pitch-serial/src/row.rs",
+      "crates/sim-lib-pitch-serial/src/segment.rs",
+      "crates/sim-lib-pitch-serial/src/vertical.rs",
       "crates/sim-lib-pitch-serial/tests/gate_row.rs",
+      "crates/sim-lib-pitch-serial/tests/pitch_reservoir.rs",
+      "crates/sim-lib-pitch-serial/tests/row_class_analysis_recipe.rs",
+      "crates/sim-lib-pitch-serial/tests/row_family_matrix_recipe.rs",
       "crates/sim-lib-pitch-set/Cargo.toml",
       "crates/sim-lib-pitch-set/build.rs",
       "crates/sim-lib-pitch-set/recipes/01-basics/neighborhood-walk/recipe.toml",
@@ -4676,6 +5042,7 @@
       "crates/sim-lib-pitch-shapes/src/codec.rs",
       "crates/sim-lib-pitch-shapes/src/lib.rs",
       "crates/sim-lib-pitch-shapes/src/runtime.rs",
+      "crates/sim-lib-pitch-shapes/src/serial_runtime.rs",
       "crates/sim-lib-pitch-shapes/src/tests.rs",
       "crates/sim-lib-pitch-wasm-frame/Cargo.toml",
       "crates/sim-lib-pitch-wasm-frame/build.rs",
@@ -4875,7 +5242,7 @@
       "xtask/Cargo.toml"
     ]
   },
-  "recipe_book_count": 54,
+  "recipe_book_count": 55,
   "recipes": [
     {
       "book": "daw-session",
@@ -5426,6 +5793,58 @@
       "title": "Music Notation"
     },
     {
+      "book": "music-serial",
+      "book_toml": "crates/sim-lib-music-serial/recipes/book.toml",
+      "card_id": "cookbook/music-serial",
+      "group": "workspace",
+      "package": "sim-lib-music-serial",
+      "recipe_count": 5,
+      "recipes": [
+        {
+          "card_id": "music-serial/01-basics/immutable-plan",
+          "codec": "",
+          "id": "immutable-plan",
+          "package": "sim-lib-music-serial",
+          "recipe_toml": "crates/sim-lib-music-serial/recipes/01-basics/immutable-plan/recipe.toml",
+          "title": "Immutable serial plan"
+        },
+        {
+          "card_id": "music-serial/01-basics/strict-row-realization",
+          "codec": "",
+          "id": "strict-row-realization",
+          "package": "sim-lib-music-serial",
+          "recipe_toml": "crates/sim-lib-music-serial/recipes/01-basics/strict-row-realization/recipe.toml",
+          "title": "Strict row realization"
+        },
+        {
+          "card_id": "music-serial/02-adaptation/modal-spine",
+          "codec": "",
+          "id": "modal-spine",
+          "package": "sim-lib-music-serial",
+          "recipe_toml": "crates/sim-lib-music-serial/recipes/02-adaptation/modal-spine/recipe.toml",
+          "title": "Modal spine realization"
+        },
+        {
+          "card_id": "music-serial/02-adaptation/serial-consonance-completion",
+          "codec": "",
+          "id": "serial-consonance-completion",
+          "package": "sim-lib-music-serial",
+          "recipe_toml": "crates/sim-lib-music-serial/recipes/02-adaptation/serial-consonance-completion/recipe.toml",
+          "title": "Serial completion with structural ledgers"
+        },
+        {
+          "card_id": "music-serial/02-adaptation/third-party-adaptation",
+          "codec": "",
+          "id": "third-party-adaptation",
+          "package": "sim-lib-music-serial",
+          "recipe_toml": "crates/sim-lib-music-serial/recipes/02-adaptation/third-party-adaptation/recipe.toml",
+          "title": "Third-party adaptation without source edits"
+        }
+      ],
+      "summary": "",
+      "title": "Music Serial"
+    },
+    {
       "book": "music-shapes",
       "book_toml": "crates/sim-lib-music-shapes/recipes/book.toml",
       "card_id": "cookbook/music-shapes",
@@ -5896,18 +6315,26 @@
       "card_id": "cookbook/pitch-serial",
       "group": "workspace",
       "package": "sim-lib-pitch-serial",
-      "recipe_count": 1,
+      "recipe_count": 2,
       "recipes": [
         {
+          "card_id": "pitch-serial/01-basics/row-class-analysis",
+          "codec": "rust",
+          "id": "row-class-analysis",
+          "package": "sim-lib-pitch-serial",
+          "recipe_toml": "crates/sim-lib-pitch-serial/recipes/01-basics/row-class-analysis/recipe.toml",
+          "title": "Analyze derivation, all-interval status, and combinatorial partners"
+        },
+        {
           "card_id": "pitch-serial/01-basics/row-family-matrix",
-          "codec": "lisp",
+          "codec": "rust",
           "id": "row-family-matrix",
           "package": "sim-lib-pitch-serial",
           "recipe_toml": "crates/sim-lib-pitch-serial/recipes/01-basics/row-family-matrix/recipe.toml",
-          "title": "Compare operation and label identities for an Op. 25 row"
+          "title": "Build the complete family and matrix for an Op. 25 row"
         }
       ],
-      "summary": "Strict twelve-tone rows, total operations, and explicit labels.",
+      "summary": "Strict tone rows, complete operation families, matrices, and explicit labels.",
       "title": "Pitch Serial"
     },
     {

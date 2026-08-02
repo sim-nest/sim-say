@@ -22,19 +22,26 @@ Freeze row instances, row ordinals, roles, parent evidence, simultaneous groups,
 
 ## Specimens
 
+- `recipe/sim-music/crates/sim-lib-music-serial/01-basics/arrays-time-points`
 - `recipe/sim-music/crates/sim-lib-music-serial/01-basics/immutable-plan`
 - `recipe/sim-music/crates/sim-lib-music-serial/01-basics/strict-row-realization`
+- `recipe/sim-music/crates/sim-lib-music-serial/02-techniques/counter-voices`
+- `recipe/sim-music/crates/sim-lib-music-serial/02-techniques/derived-invariant-practice`
+- `recipe/sim-music/crates/sim-lib-music-serial/02-techniques/referential-subsets`
+- `recipe/sim-music/crates/sim-lib-music-serial/02-techniques/simultaneous-forms`
+- `recipe/sim-music/crates/sim-lib-music-serial/03-parameters/integral-parameters`
 
 ## Worked Example
 
-Specimen `recipe/sim-music/crates/sim-lib-music-serial/01-basics/immutable-plan` is checked by `sh scripts/check-recipes.sh`.
+Specimen `recipe/sim-music/crates/sim-lib-music-serial/01-basics/arrays-time-points` is checked by `sh scripts/check-recipes.sh`.
 
-Source `crates/sim-lib-music-serial/recipes/01-basics/immutable-plan/recipe.toml`:
+Source `crates/sim-lib-music-serial/recipes/01-basics/arrays-time-points/recipe.toml`:
 
 ```toml
-title = "Immutable serial plan"
-summary = "Validate an immutable serial plan with simultaneous groups, structural coverage, and stable provenance."
+title = "Analyze serial arrays and time-point rows"
+summary = "Keep horizontal row order, vertical aggregate evidence, and onset order explicit without collapsing them into one score model."
 category = "Rust"
-tags = ["music", "serial", "twelve-tone", "plan", "provenance", "rust", "framework"]
-requires = ["music-serial", "pitch-serial", "music-core"]
+tags = ["music", "serial", "array", "time-point", "analysis", "rust", "framework"]
+requires = ["music-serial", "pitch-serial", "serial-core", "music-core"]
+purpose = "purpose.md"
 ```

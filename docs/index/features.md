@@ -111,11 +111,12 @@
 | [`feature/sim-music/pitch-and-sound-vocabulary`](features/feature--sim-music--pitch-and-sound-vocabulary.md) | `crate/sim-lib-pitch-core` | 1 |
 | [`feature/sim-music/reversible-consonance-completion`](features/feature--sim-music--reversible-consonance-completion.md) | `crate/sim-lib-music-consonance` | 1 |
 | [`feature/sim-music/serial-consonance-completion`](features/feature--sim-music--serial-consonance-completion.md) | `crate/sim-lib-music-serial` | 1 |
-| [`feature/sim-music/serial-practice`](features/feature--sim-music--serial-practice.md) | `crate/sim-lib-music-serial` | 2 |
+| [`feature/sim-music/serial-music-workbench`](features/feature--sim-music--serial-music-workbench.md) | `repo/sim-music` | 1 |
+| [`feature/sim-music/serial-practice`](features/feature--sim-music--serial-practice.md) | `crate/sim-lib-music-serial` | 8 |
 | [`feature/sim-music/serial-series-calculus`](features/feature--sim-music--serial-series-calculus.md) | `crate/sim-lib-serial-core` | 2 |
 | [`feature/sim-music/sound-spectrum-adapter`](features/feature--sim-music--sound-spectrum-adapter.md) | `crate/sim-lib-sound-spectrum` | 1 |
 | [`feature/sim-music/synth-performance-workbench`](features/feature--sim-music--synth-performance-workbench.md) | `local/sim-music/crate/sim-lib-music-synth` | 5 |
-| [`feature/sim-music/twelve-tone-row-theory`](features/feature--sim-music--twelve-tone-row-theory.md) | `crate/sim-lib-pitch-serial` | 1 |
+| [`feature/sim-music/twelve-tone-row-theory`](features/feature--sim-music--twelve-tone-row-theory.md) | `crate/sim-lib-pitch-serial` | 2 |
 | [`feature/sim-numbers/generated-docs`](features/feature--sim-numbers--generated-docs.md) | `local/sim-numbers/crate/xtask` | 0 |
 | [`feature/sim-numbers/numbers`](features/feature--sim-numbers--numbers.md) | `crate/sim-lib-numbers-core` | 4 |
 | [`feature/sim-numbers/numeric-pipelines`](features/feature--sim-numbers--numeric-pipelines.md) | `crate/sim-lib-numbers-numeric` | 1 |

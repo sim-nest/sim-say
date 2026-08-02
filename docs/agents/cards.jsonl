@@ -161,6 +161,7 @@
 {"card": {"id": "cookbook/music-lift", "kind": "cookbook-recipe", "owner": "sim-lib-music-lift", "summary": "Lifting descriptors from MIDI-style tracks into music objects."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-lower", "kind": "cookbook-recipe", "owner": "sim-lib-music-lower", "summary": "Lowering descriptors from scores to MIDI-like tracks."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-notation", "kind": "cookbook-recipe", "owner": "sim-lib-music-notation", "summary": "Notation import and export descriptors."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/music-serial", "kind": "cookbook-recipe", "owner": "sim-lib-music-serial", "summary": ""}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-shapes", "kind": "cookbook-recipe", "owner": "sim-lib-music-shapes", "summary": "Citizen descriptor shapes for music objects."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-transform", "kind": "cookbook-recipe", "owner": "sim-lib-music-transform", "summary": "Exact music transformation and voice-leading descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/music-wasm", "kind": "cookbook-recipe", "owner": "sim-lib-music-wasm-frame", "summary": "Browser-safe music facade descriptors."}, "repo": "sim-music"}
@@ -174,7 +175,7 @@
 {"card": {"id": "cookbook/pitch-namer-roman", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-namer-roman", "summary": "Roman numeral analysis descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-ratio", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-ratio", "summary": "Exact musical ratio interval descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-scale", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-scale", "summary": "Scale and degree descriptors."}, "repo": "sim-music"}
-{"card": {"id": "cookbook/pitch-serial", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-serial", "summary": "Strict twelve-tone rows, total operations, and explicit labels."}, "repo": "sim-music"}
+{"card": {"id": "cookbook/pitch-serial", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-serial", "summary": "Strict tone rows, complete operation families, matrices, and explicit labels."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-set", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-set", "summary": "Pitch-class sets, canonical forms, typed relations, and graph descriptors."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-shapes", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-shapes", "summary": "Citizen descriptor shapes for pitch values."}, "repo": "sim-music"}
 {"card": {"id": "cookbook/pitch-wasm", "kind": "cookbook-recipe", "owner": "sim-lib-pitch-wasm-frame", "summary": "Browser-safe pitch facade descriptors."}, "repo": "sim-music"}

@@ -1,5 +1,5 @@
 {
-  "card_count": 56,
+  "card_count": 57,
   "cards": [
     {
       "id": "browse/catalog",
@@ -134,6 +134,12 @@
       "summary": "Notation import and export descriptors."
     },
     {
+      "id": "cookbook/music-serial",
+      "kind": "cookbook-recipe",
+      "owner": "sim-lib-music-serial",
+      "summary": ""
+    },
+    {
       "id": "cookbook/music-shapes",
       "kind": "cookbook-recipe",
       "owner": "sim-lib-music-shapes",
@@ -215,7 +221,7 @@
       "id": "cookbook/pitch-serial",
       "kind": "cookbook-recipe",
       "owner": "sim-lib-pitch-serial",
-      "summary": "Strict twelve-tone rows, total operations, and explicit labels."
+      "summary": "Strict tone rows, complete operation families, matrices, and explicit labels."
     },
     {
       "id": "cookbook/pitch-set",

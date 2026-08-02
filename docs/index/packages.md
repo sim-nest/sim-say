@@ -25,6 +25,7 @@
 | `crate/auto-site-xentry` | `crate` | auto-site-xentry |
 | `crate/citizen-roundtrip` | `crate` | citizen-roundtrip |
 | `crate/music-algorithm-foundry` | `crate` | music-algorithm-foundry |
+| `crate/serial-workbench` | `crate` | serial-workbench |
 | `crate/sim-auto` | `crate` | sim-auto |
 | `crate/sim-citizen` | `crate` | sim-citizen |
 | `crate/sim-citizen-derive` | `crate` | sim-citizen-derive |

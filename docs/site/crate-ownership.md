@@ -145,6 +145,7 @@
 | `sim-lib-music-lift` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-lower` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-notation` | [sim-music](../repos/sim-music.md) |
+| `sim-lib-music-serial` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-shapes` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-transform` | [sim-music](../repos/sim-music.md) |
 | `sim-lib-music-wasm-frame` | [sim-music](../repos/sim-music.md) |

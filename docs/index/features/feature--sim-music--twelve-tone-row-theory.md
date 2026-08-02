@@ -23,6 +23,7 @@ Validate canonical twelve-pitch rows, preserve all 48 P/I/R/RI aliases across sy
 ## Specimens
 
 - `recipe/sim-music/crates/sim-lib-pitch-serial/01-basics/row-family-matrix`
+- `recipe/sim-music/crates/sim-lib-pitch-serial/02-partitions/partition-mosaic`
 
 ## Worked Example
 
