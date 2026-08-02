@@ -447,6 +447,7 @@
 {"card": {"id": "citizen/pitch/Pitch", "kind": "citizen-class", "owner": "sim-lib-pitch-shapes", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/pitch/PitchClassMask", "kind": "citizen-class", "owner": "sim-lib-pitch-shapes", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/pitch/Scale", "kind": "citizen-class", "owner": "sim-lib-pitch-shapes", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
+{"card": {"id": "citizen/pitch/ToneRow", "kind": "citizen-class", "owner": "sim-lib-pitch-shapes", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/plugin-core/PluginDescriptor", "kind": "citizen-class", "owner": "sim-lib-plugin-core", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/rank/Coord", "kind": "citizen-class", "owner": "sim-lib-rank", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
 {"card": {"id": "citizen/rank/Node", "kind": "citizen-class", "owner": "sim-lib-rank", "summary": "citizen class constructor surface"}, "repo": "sim-sdk"}
