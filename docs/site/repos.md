@@ -7,17 +7,17 @@
 | [sim-auto](../repos/sim-auto.md) | `653c112017cc398a204136ada87c0e9a7733f250` | [JSON](../contracts/sim-auto/repo-contract.json) |
 | [sim-citizen](../repos/sim-citizen.md) | `6c3177e74caa88b67c7295b6a124d601ac18e157` | [JSON](../contracts/sim-citizen/repo-contract.json) |
 | [sim-codecs](../repos/sim-codecs.md) | `68f760f2f7366374717e9a741ac16a12b0261ec4` | [JSON](../contracts/sim-codecs/repo-contract.json) |
-| [sim-compute](../repos/sim-compute.md) | `87c6ff436b230de5c0c88a7ff7e25525f7a012ed` | [JSON](../contracts/sim-compute/repo-contract.json) |
+| [sim-compute](../repos/sim-compute.md) | `c7ead0c8b8c65d6d1dc2239ff7b06b6d993716ba` | [JSON](../contracts/sim-compute/repo-contract.json) |
 | [sim-construction](../repos/sim-construction.md) | `0903aac3fba5463f7f0a4d577e1517f404ef88ee` | [JSON](../contracts/sim-construction/repo-contract.json) |
 | [sim-discrete](../repos/sim-discrete.md) | `4dbec61654cc73d7963da6c03ebb632b5b7e0eaa` | [JSON](../contracts/sim-discrete/repo-contract.json) |
-| [sim-expr-tree](../repos/sim-expr-tree.md) | `25f30f2239364ecdcce6288c115b6f3644987ee2` | [JSON](../contracts/sim-expr-tree/repo-contract.json) |
+| [sim-expr-tree](../repos/sim-expr-tree.md) | `c258c1f68d0190862d65dd0c93707e394c883c73` | [JSON](../contracts/sim-expr-tree/repo-contract.json) |
 | [sim-femm](../repos/sim-femm.md) | `ba6774b8fe60ab3deb06bb06993d7698fece12dd` | [JSON](../contracts/sim-femm/repo-contract.json) |
 | [sim-foundation](../repos/sim-foundation.md) | `701f5a27a1305c67364e9f7f62f8cdbbfa21ecb7` | [JSON](../contracts/sim-foundation/repo-contract.json) |
 | [sim-interference](../repos/sim-interference.md) | `ef4baac5113f50501b615ddab4644024c38862a2` | [JSON](../contracts/sim-interference/repo-contract.json) |
 | [sim-kernel](../repos/sim-kernel.md) | `de8b0f50a800c0655e2934fdbab42eca6aa2149d` | [JSON](../contracts/sim-kernel/repo-contract.json) |
 | [sim-ledger](../repos/sim-ledger.md) | `be788aa4637ee0177a17ee69a89b68804cb37ffa` | [JSON](../contracts/sim-ledger/repo-contract.json) |
 | [sim-music](../repos/sim-music.md) | `a9cba20b6c777993f54846f26c78f9e3f0345b30` | [JSON](../contracts/sim-music/repo-contract.json) |
-| [sim-numbers](../repos/sim-numbers.md) | `b91f7b89f70b5cbef98a5b71e7e73cc0cb0f8cb8` | [JSON](../contracts/sim-numbers/repo-contract.json) |
+| [sim-numbers](../repos/sim-numbers.md) | `ac0790db19079d1efd29302cadb28f68326008a5` | [JSON](../contracts/sim-numbers/repo-contract.json) |
 | [sim-office](../repos/sim-office.md) | `6c0f3b6b39843b0947f48c90192dcf045d64978b` | [JSON](../contracts/sim-office/repo-contract.json) |
 | [sim-run](../repos/sim-run.md) | `5e0897ccb59fc022f99959d8f71aa1db00323f62` | [JSON](../contracts/sim-run/repo-contract.json) |
 | [sim-runtime](../repos/sim-runtime.md) | `d11882bfe041f53c98d34d27806e803e07b7affd` | [JSON](../contracts/sim-runtime/repo-contract.json) |
@@ -27,4 +27,4 @@
 | [sim-stream](../repos/sim-stream.md) | `3b24c2f2d4286b1ddd88380f02b7c09eb6ee3a46` | [JSON](../contracts/sim-stream/repo-contract.json) |
 | [sim-stream-host](../repos/sim-stream-host.md) | `96566eb70d0ac54e0e798f8e3eccb759cc5399c8` | [JSON](../contracts/sim-stream-host/repo-contract.json) |
 | [sim-tooling](../repos/sim-tooling.md) | `7c4c7cbfe574ce3649a4763981499949809cb329` | [JSON](../contracts/sim-tooling/repo-contract.json) |
-| [sim-web](../repos/sim-web.md) | `9d929da25a2ad7fa5dcb3866a20ecc773e8770a4` | [JSON](../contracts/sim-web/repo-contract.json) |
+| [sim-web](../repos/sim-web.md) | `02d52eb3ce9eac7783ac14da8b81c37ef5a4be23` | [JSON](../contracts/sim-web/repo-contract.json) |
