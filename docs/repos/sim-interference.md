@@ -1,6 +1,6 @@
 # sim-interference
 
-Published commit: `ef4baac5113f50501b615ddab4644024c38862a2`.
+Published commit: `f0a408e0363fa4fdde31a02aed7c2536ee26e7d0`.
 
 ## Crates
 
