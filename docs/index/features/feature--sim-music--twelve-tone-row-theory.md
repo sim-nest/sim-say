@@ -10,15 +10,7 @@ Validate canonical twelve-pitch rows, preserve all 48 P/I/R/RI aliases across sy
 
 ## Anchors
 
-- `anchor/crate/sim-lib-pitch-core`
 - `anchor/crate/sim-lib-pitch-serial`
-- `anchor/crate/sim-lib-pitch-shapes`
-- `anchor/crate/sim-lib-serial-core`
-- `anchor/runtime-lib/sim-lib-pitch-shapes/pitch-shapes-lib`
-
-## Surfaces
-
-- `docs/sim-music/generated`
 
 ## Specimens
 

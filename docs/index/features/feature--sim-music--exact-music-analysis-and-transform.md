@@ -11,21 +11,14 @@ Convert exact score forms with loss and identity evidence, decode harmonic seque
 ## Anchors
 
 - `anchor/crate/sim-lib-music-analysis`
-- `anchor/crate/sim-lib-music-combinators`
 - `anchor/crate/sim-lib-music-core`
 - `anchor/crate/sim-lib-music-lift`
 - `anchor/crate/sim-lib-music-lower`
-- `anchor/crate/sim-lib-music-notation`
 - `anchor/crate/sim-lib-music-shapes`
 - `anchor/crate/sim-lib-music-transform`
 - `anchor/crate/sim-lib-music-wasm-frame`
 - `anchor/runtime-lib/sim-lib-music-lift/music-lift-lib`
-- `anchor/runtime-lib/sim-lib-music-notation/music-notation-lib`
 - `anchor/runtime-lib/sim-lib-music-shapes/music-shapes-lib`
-
-## Surfaces
-
-- `docs/sim-music/generated`
 
 ## Specimens
 

@@ -13,10 +13,6 @@ Slice canonical scores and realized MIDI into identity-bearing half-open soundin
 - `anchor/crate/sim-lib-music-consonance`
 - `anchor/runtime-lib/sim-lib-music-consonance/music-consonance-lib`
 
-## Surfaces
-
-- `docs/sim-music/generated`
-
 ## Specimens
 
 - `spec-test/sim-music/crates/sim-lib-music-consonance/src/tests`

@@ -8,11 +8,6 @@
 
 Reconcile exact accepted-contract, forecast, final-position, exposure, settlement, guarantee, retention, claim, and ledger Amount facts at one explained cutoff; close warranty/contact, retention-policy, unresolved-work, evidence-disposition, and lesson obligations; and admit only current, consent- and confidentiality-cleared aggregate people/property/city claims through a named authority into an immutable reference manifest.
 
-## Anchors
-
-- `anchor/crate/sim-lib-construction-project`
-- `anchor/rustdoc/sim-lib-construction-project/crate-root`
-
 ## Specimens
 
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/closeout-to-reference-admission`

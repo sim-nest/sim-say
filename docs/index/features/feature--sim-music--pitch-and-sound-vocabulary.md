@@ -10,7 +10,6 @@ Name chords, build deterministic voicing palettes, classify pitch-set relations,
 
 ## Anchors
 
-- `anchor/crate/sim-lib-pitch-chord`
 - `anchor/crate/sim-lib-pitch-core`
 - `anchor/crate/sim-lib-pitch-dissonance`
 - `anchor/crate/sim-lib-pitch-namer`
@@ -27,7 +26,6 @@ Name chords, build deterministic voicing palettes, classify pitch-set relations,
 - `anchor/crate/sim-lib-sound-dissonance`
 - `anchor/crate/sim-lib-sound-gm`
 - `anchor/crate/sim-lib-sound-shapes`
-- `anchor/crate/sim-lib-sound-spectrum`
 - `anchor/crate/sim-lib-sound-timbre`
 - `anchor/crate/sim-lib-sound-tuning`
 - `anchor/crate/sim-lib-sound-wasm-frame`
@@ -38,10 +36,6 @@ Name chords, build deterministic voicing palettes, classify pitch-set relations,
 - `anchor/runtime-lib/sim-lib-sound-shapes/sound-shapes-lib`
 - `anchor/runtime-lib/sim-lib-sound-timbre/sound-timbre-lib`
 - `anchor/runtime-lib/sim-lib-sound-tuning/sound-tuning-lib`
-
-## Surfaces
-
-- `docs/sim-music/generated`
 
 ## Specimens
 

@@ -171,6 +171,7 @@
 | `syntax/config` | `syntax` | `language/config` |
 | `syntax/doc` | `syntax` | `language/doc` |
 | `syntax/index` | `syntax` | `language/index` |
+| `syntax/javascript` | `syntax` | `language/javascript` |
 | `syntax/json` | `syntax` | `language/json` |
 | `syntax/lisp` | `syntax` | `language/lisp` |
 | `syntax/lua` | `syntax` | `language/lua` |
@@ -180,6 +181,7 @@
 | `syntax/ooxml` | `syntax` | `language/ooxml` |
 | `syntax/pratt` | `syntax` | `language/pratt` |
 | `syntax/python` | `syntax` | `language/python` |
+| `syntax/typescript` | `syntax` | `language/typescript` |
 | `syntax/uds` | `syntax` | `language/uds` |
 | `view-edit/sim-lib-expr-tree-server` | `view-edit` | `crate/sim-lib-expr-tree-server` |
 | `view-edit/sim-lib-view` | `view-edit` | `local/sim-web/crate/sim-lib-view` |

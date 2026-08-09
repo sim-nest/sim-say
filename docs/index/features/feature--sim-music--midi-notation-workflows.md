@@ -19,7 +19,6 @@ Lift, realize, lower, inspect, and export musical material across bounded lossle
 - `anchor/crate/sim-lib-midi-sysex`
 - `anchor/crate/sim-lib-midi-wasm-frame`
 - `anchor/crate/sim-lib-music-notation`
-- `anchor/crate/sim-lib-stream-file`
 - `anchor/crate/sim-lib-stream-midi`
 - `anchor/runtime-lib/sim-lib-midi-ble/midi-ble-lib`
 - `anchor/runtime-lib/sim-lib-midi-core/midi-digest-lib`
@@ -28,10 +27,6 @@ Lift, realize, lower, inspect, and export musical material across bounded lossle
 - `anchor/runtime-lib/sim-lib-midi-rtmidi/midi-rtmidi-lib`
 - `anchor/runtime-lib/sim-lib-midi-shapes/midi-shapes-lib`
 - `anchor/runtime-lib/sim-lib-music-notation/music-notation-lib`
-
-## Surfaces
-
-- `docs/sim-music/generated`
 
 ## Specimens
 

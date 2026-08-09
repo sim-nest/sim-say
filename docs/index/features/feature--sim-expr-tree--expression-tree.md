@@ -10,6 +10,7 @@ Build finite named source trees over mixed Table/Dir storage and calculate them 
 
 ## Anchors
 
+- `anchor/crate/sim-expr-tree`
 - `anchor/crate/sim-lib-expr-tree`
 - `anchor/runtime-lib/sim-lib-expr-tree/expr-tree-lib`
 - `anchor/rustdoc/sim-lib-expr-tree/crate-root`

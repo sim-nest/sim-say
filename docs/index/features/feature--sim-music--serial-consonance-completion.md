@@ -8,16 +8,6 @@
 
 Filter bounded additive completion candidates through serial allowances, preserve the immutable structural plan, and return separate structural and all-sounding post-completion ledgers.
 
-## Anchors
-
-- `anchor/crate/sim-lib-music-serial`
-- `anchor/crate/sim-lib-music-transform`
-- `anchor/repo/sim-music`
-
-## Surfaces
-
-- `docs/sim-music/generated`
-
 ## Specimens
 
 - `recipe/sim-music/crates/sim-lib-music-serial/02-adaptation/serial-consonance-completion`

@@ -10,13 +10,7 @@ Run canonical Tensor expressions, element-wise broadcast operations, reductions,
 
 ## Anchors
 
-- `anchor/crate/sim-lib-numbers-tensor`
-- `anchor/crate/sim-lib-numbers-tensor-bcast`
-- `anchor/crate/sim-lib-numbers-tensor-linalg`
 - `anchor/export/sim-lib-numbers-tensor/site/tensor`
-- `anchor/runtime-lib/sim-lib-numbers-tensor-bcast/tensor-broadcast-lib`
-- `anchor/runtime-lib/sim-lib-numbers-tensor-linalg/tensor-linalg-lib`
-- `anchor/runtime-lib/sim-lib-numbers-tensor/tensor-numbers-lib`
 - `anchor/rustdoc/sim-lib-numbers-tensor/active_tensor_executor`
 - `anchor/rustdoc/sim-lib-numbers-tensor/add_op_symbol`
 - `anchor/rustdoc/sim-lib-numbers-tensor/cos_op_symbol`

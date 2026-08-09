@@ -8,15 +8,9 @@
 
 Project current or historical construction snapshots into deterministic, evidence-linked, visibility-safe role-cadence packs on existing office surfaces.
 
-## Anchors
-
-- `anchor/crate/sim-lib-construction-office`
-- `anchor/rustdoc/sim-lib-construction-office/crate-root`
-
 ## Specimens
 
 - `recipe/sim-construction/crates/sim-lib-construction-office/01-basics/project-chief-weekly-pack`
-- `spec-test/sim-construction/crates/sim-lib-construction-office/src/tests`
 
 ## Worked Example
 

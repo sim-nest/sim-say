@@ -11,46 +11,32 @@ Load complete construction project control as semantic Citizens, checked Shapes,
 ## Anchors
 
 - `anchor/crate/sim-lib-construction-project`
+- `anchor/runtime-lib/sim-lib-construction-project/construction-project-lib`
 - `anchor/rustdoc/sim-lib-construction-project/crate-root`
 
 ## Specimens
 
-- `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/blocked-gate-graph`
-- `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/control-graph-meets-gantt`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/customer-intent-to-collaboration`
-- `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/design-release-to-production`
-- `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/field-item-to-corrective-evidence`
-- `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/late-decision`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/loadable-project-control`
-- `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/mixed-obligation-gate`
-- `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/mobilization-gate`
-- `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/six-week-production-readiness`
-- `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/sustainability-to-reference-evidence`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/what-changed`
-- `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/work-package-award`
 - `recipe/sim-construction/reference-project-control`
-- `spec-test/sim-construction/crates/sim-lib-construction-project/src/design_tests`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/fact_book_tests`
-- `spec-test/sim-construction/crates/sim-lib-construction-project/src/field_control_tests`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/opportunity_tests`
-- `spec-test/sim-construction/crates/sim-lib-construction-project/src/procurement_tests`
-- `spec-test/sim-construction/crates/sim-lib-construction-project/src/production_plan_tests`
-- `spec-test/sim-construction/crates/sim-lib-construction-project/src/schedule_tests`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/tests`
 
 ## Worked Example
 
-Specimen `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/blocked-gate-graph` is checked by `sh scripts/check-recipes.sh`.
+Specimen `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/customer-intent-to-collaboration` is checked by `sh scripts/check-recipes.sh`.
 
-Source `crates/sim-lib-construction-project/recipes/01-basics/blocked-gate-graph/recipe.toml`:
+Source `crates/sim-lib-construction-project/recipes/01-basics/customer-intent-to-collaboration/recipe.toml`:
 
 ```toml
-id = "blocked-gate-graph"
-title = "Blocked gate graph"
+id = "customer-intent-to-collaboration"
+title = "Customer intent to collaboration"
 codec = "lisp"
 setup = "setup.siml"
 purpose = "purpose.md"
-order = 36
-tags = ["construction", "project-control", "obligation", "dependency-graph", "blocker", "gate"]
-requires = ["construction.project.read", "construction.exception", "codec/lisp"]
+order = 45
+tags = ["construction", "project-control", "customer-intent", "bid", "collaboration", "gate"]
+requires = ["construction.project.read", "construction.project.write", "construction.project.accept", "codec/lisp"]
 ```

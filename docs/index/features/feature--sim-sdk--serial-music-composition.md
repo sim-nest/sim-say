@@ -10,9 +10,7 @@ Select the frozen serial-series, row-theory, immutable-plan, adaptation, and rev
 
 ## Anchors
 
-- `anchor/crate/sim-nest`
-- `anchor/rustdoc/sim-nest/crate-root`
-- `anchor/rustdoc/sim-nest/default_loadable_libs`
+- `anchor/runtime-lib/sim-nest/serial-music-cookbook-lib`
 
 ## Specimens
 

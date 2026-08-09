@@ -8,11 +8,6 @@
 
 Carry a construction work package procurement record from inquiry basis through supplier candidates and comparable tender facts to an accountable award decision while keeping commercial values on sim-ledger Amount and project-charter currency.
 
-## Anchors
-
-- `anchor/crate/sim-lib-construction-project`
-- `anchor/rustdoc/sim-lib-construction-project/crate-root`
-
 ## Specimens
 
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/work-package-award`

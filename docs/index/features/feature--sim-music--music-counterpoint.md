@@ -10,15 +10,8 @@ Analyze existing voices, derive graph-backed stretto relations, and generate one
 
 ## Anchors
 
-- `anchor/crate/sim-lib-music-consonance`
-- `anchor/crate/sim-lib-music-core`
 - `anchor/crate/sim-lib-music-counterpoint`
-- `anchor/crate/sim-lib-music-transform`
 - `anchor/runtime-lib/sim-lib-music-counterpoint/music-counterpoint-lib`
-
-## Surfaces
-
-- `docs/sim-music/generated`
 
 ## Specimens
 

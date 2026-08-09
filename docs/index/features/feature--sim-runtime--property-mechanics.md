@@ -15,7 +15,6 @@ Store ordered own properties and execute data or accessor descriptors with recei
 ## Specimens
 
 - `spec-test/sim-runtime/crates/sim-lib-dispatch/src/property_tests`
-- `spec-test/sim-runtime/crates/sim-lib-namespace/src/module/tests`
 
 ## Worked Example
 

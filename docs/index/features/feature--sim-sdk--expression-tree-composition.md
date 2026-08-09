@@ -8,11 +8,6 @@
 
 Expose the canonical finite-tree core, bounded calculator, loadable runtime, reversible view, and authoritative server behind one opt-in SDK feature.
 
-## Anchors
-
-- `anchor/crate/sim-nest`
-- `anchor/rustdoc/sim-nest/crate-root`
-
 ## Specimens
 
 - `spec-test/sim-sdk/crates/sim-conformance/tests/spec/expr_tree`

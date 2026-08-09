@@ -10,13 +10,7 @@ Start modeled and automatic compute inspection through the shared command bootlo
 
 ## Anchors
 
-- `anchor/cli/sim-run`
-- `anchor/crate/sim-run`
 - `anchor/runtime-lib/sim-run/compute-boot-codec`
-
-## Surfaces
-
-- `cli/sim-run`
 
 ## Specimens
 

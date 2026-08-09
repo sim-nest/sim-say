@@ -10,14 +10,19 @@ Run the expression-tree engine, reversible view, authoritative server, and gener
 
 ## Anchors
 
+- `anchor/card/cookbook/sim-expr-tree-server`
+- `anchor/cli/expr-tree`
 - `anchor/cli/sim-expr-tree`
 - `anchor/crate/sim-lib-expr-tree-serve`
 - `anchor/export/sim-lib-expr-tree-serve/cli/main/expr-tree`
+- `anchor/export/sim-lib-expr-tree-serve/codec/lisp`
+- `anchor/runtime-lib/sim-lib-expr-tree-serve/expr-tree-serve-lib`
 - `anchor/rustdoc/sim-lib-expr-tree-serve/expression-tree-product`
 - `anchor/rustdoc/sim-lib-expr-tree-serve/expression-tree-recipe`
 
 ## Surfaces
 
+- `cli/expr-tree`
 - `cli/sim-expr-tree`
 
 ## Specimens

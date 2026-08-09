@@ -10,16 +10,7 @@ Load chord palettes, cadence-template algebra, hard legality, declared and learn
 
 ## Anchors
 
-- `anchor/crate/sim-lib-music-combinators`
 - `anchor/crate/sim-lib-pitch-chord`
-- `anchor/crate/sim-lib-pitch-dissonance`
-- `anchor/crate/sim-lib-pitch-ratio`
-- `anchor/crate/sim-lib-pitch-scale`
-- `anchor/crate/sim-lib-pitch-set`
-
-## Surfaces
-
-- `docs/sim-music/generated`
 
 ## Specimens
 

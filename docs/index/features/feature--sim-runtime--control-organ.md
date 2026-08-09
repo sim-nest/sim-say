@@ -16,7 +16,6 @@ Drive bounded resumable frames, cleanup-safe unwind, and explicitly checkpointed
 ## Specimens
 
 - `spec-test/sim-runtime/crates/sim-lib-control/src/organ_tests`
-- `spec-test/sim-runtime/crates/sim-lib-namespace/src/module/tests`
 
 ## Worked Example
 

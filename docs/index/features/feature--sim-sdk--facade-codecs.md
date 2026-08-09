@@ -21,11 +21,13 @@ Expose public codec exports through the SDK facade while implementation crates k
 - `anchor/export/sim-nest/codec/clojure-edn`
 - `anchor/export/sim-nest/codec/common-lisp-lite`
 - `anchor/export/sim-nest/codec/intent`
+- `anchor/export/sim-nest/codec/javascript`
 - `anchor/export/sim-nest/codec/json`
 - `anchor/export/sim-nest/codec/lemonade`
 - `anchor/export/sim-nest/codec/lisp`
 - `anchor/export/sim-nest/codec/lm-studio`
 - `anchor/export/sim-nest/codec/mcp`
 - `anchor/export/sim-nest/codec/ollama`
+- `anchor/export/sim-nest/codec/python`
 - `anchor/export/sim-nest/codec/scene`
 - `anchor/export/sim-nest/codec/scheme-r7rs-small`

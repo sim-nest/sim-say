@@ -16,7 +16,6 @@ Bind declared calls and maintain lexical, dynamic, recursive, and live binding c
 ## Specimens
 
 - `spec-test/sim-runtime/crates/sim-lib-binding/src/tests`
-- `spec-test/sim-runtime/crates/sim-lib-namespace/src/module/tests`
 
 ## Worked Example
 

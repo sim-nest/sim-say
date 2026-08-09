@@ -11,8 +11,6 @@ Compose catalog synthesis, deterministic offline renders, bounded PCM interchang
 ## Anchors
 
 - `anchor/crate/sim-lib-music-synth`
-- `anchor/crate/sim-lib-sound-render`
-- `anchor/crate/sim-lib-sound-timbre`
 - `anchor/crate/sim-lib-stream-file`
 - `anchor/export/sim-lib-music-synth/view-instrument-dx7-editor`
 - `anchor/export/sim-lib-music-synth/view-instrument-ps3300-editor`
@@ -21,17 +19,11 @@ Compose catalog synthesis, deterministic offline renders, bounded PCM interchang
 - `anchor/export/sim-lib-music-synth/view/component`
 - `anchor/runtime-lib/sim-lib-music-synth/audio-synth-lib`
 
-## Surfaces
-
-- `docs/sim-music/generated`
-
 ## Specimens
 
 - `spec-test/sim-music/crates/sim-lib-music-synth/src/tests/daw`
 - `spec-test/sim-music/crates/sim-lib-music-synth/src/tests/reuse`
-- `spec-test/sim-music/crates/sim-lib-sound-render/src/tests`
 - `spec-test/sim-music/crates/sim-lib-sound-timbre/src/tests`
-- `spec-test/sim-music/crates/sim-lib-stream-file/src/tests`
 
 ## Worked Example
 

@@ -15,10 +15,6 @@ Compose exact music on finite named axes with sparse cells, algebraic layout tra
 - `anchor/rustdoc/sim-lib-music-combinators/encode_relative`
 - `anchor/rustdoc/sim-lib-music-combinators/music-carpet`
 
-## Surfaces
-
-- `docs/sim-music/generated`
-
 ## Specimens
 
 - `spec-test/sim-music/crates/sim-lib-music-combinators/src/carpet_conformance`

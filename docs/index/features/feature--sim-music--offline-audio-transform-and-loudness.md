@@ -11,7 +11,6 @@ Stretch and pitch PCM independently through a policy-complete STFT phase vocoder
 ## Anchors
 
 - `anchor/crate/sim-lib-sound-render`
-- `anchor/crate/sim-lib-stream-file`
 - `anchor/rustdoc/sim-lib-sound-render/loudness-report`
 - `anchor/rustdoc/sim-lib-sound-render/loudness-spec`
 - `anchor/rustdoc/sim-lib-sound-render/measure_loudness`

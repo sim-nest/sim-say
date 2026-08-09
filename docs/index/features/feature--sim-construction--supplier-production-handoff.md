@@ -8,11 +8,6 @@
 
 Derive project-scoped supplier qualification and production handoff readiness from subcontract-chain references, shared qualification obligations, restricted external evidence, accountable award decisions, production design releases, material lead time, production need dates, and explicit responsibility acceptance.
 
-## Anchors
-
-- `anchor/crate/sim-lib-construction-project`
-- `anchor/rustdoc/sim-lib-construction-project/crate-root`
-
 ## Specimens
 
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/supplier-to-production-handoff`

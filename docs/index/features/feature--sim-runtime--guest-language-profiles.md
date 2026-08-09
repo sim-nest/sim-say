@@ -10,10 +10,6 @@ Add source-language surfaces as readers, direct Expr lowering, checked eval poli
 
 ## Anchors
 
-- `anchor/crate/sim-lib-lang-lua`
-- `anchor/crate/sim-lib-lang-matrix`
-- `anchor/crate/sim-lib-lang-python`
-- `anchor/crate/sim-lib-standard-core`
 - `anchor/rustdoc/sim-lib-lang-lua/lua_core_profile`
 - `anchor/rustdoc/sim-lib-lang-lua/lua_reader_symbol`
 - `anchor/rustdoc/sim-lib-lang-matrix/language_matrix`

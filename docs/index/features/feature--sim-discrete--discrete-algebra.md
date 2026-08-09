@@ -12,10 +12,8 @@ Provide algebra, certified rectangular assignment, graph and staged paths, compo
 
 - `anchor/crate/sim-lib-discrete`
 - `anchor/crate/sim-lib-discrete-algebra`
-- `anchor/crate/sim-lib-discrete-comb`
 - `anchor/crate/sim-lib-discrete-graph`
 - `anchor/crate/sim-lib-discrete-rank`
-- `anchor/crate/sim-lib-discrete-search`
 - `anchor/crate/sim-lib-discrete-spectral`
 - `anchor/runtime-lib/sim-lib-discrete/discrete-lib`
 - `anchor/rustdoc/sim-lib-discrete-graph/algorithm-control`

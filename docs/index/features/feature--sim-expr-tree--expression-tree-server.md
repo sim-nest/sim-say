@@ -11,11 +11,14 @@ Serve bounded opaque expression tree sessions through one loadable EvalSite and 
 ## Anchors
 
 - `anchor/crate/sim-lib-expr-tree-server`
+- `anchor/export/sim-lib-expr-tree-server/site/sim-lib-expr-tree-server`
+- `anchor/runtime-lib/sim-lib-expr-tree-server/expression-tree-server-lib`
 - `anchor/rustdoc/sim-lib-expr-tree-server/crate-root`
 
 ## Surfaces
 
 - `site/sim-lib-expr-tree-server`
+- `view/sim-lib-expr-tree-server`
 
 ## Specimens
 

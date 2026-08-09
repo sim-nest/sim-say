@@ -11,6 +11,7 @@ Project revisioned expression-tree snapshots into a Mathematica-like expandable 
 ## Anchors
 
 - `anchor/crate/sim-lib-view-expr-tree`
+- `anchor/export/sim-lib-view-expr-tree/surface-expression-tree`
 - `anchor/rustdoc/sim-lib-view-expr-tree/crate-root`
 
 ## Surfaces

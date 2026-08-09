@@ -29,6 +29,7 @@ Serve isolated, bounded, phone-capable browser surfaces through loaded web shell
 - `cli/browse`
 - `cli/serve`
 - `cli/sim-web-shell`
+- `view-edit/sim-web-shell`
 
 ## Specimens
 

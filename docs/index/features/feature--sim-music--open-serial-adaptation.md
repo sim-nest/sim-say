@@ -8,18 +8,6 @@
 
 Land immutable serial plans onto modal or caller-defined scales while preserving plan and ordinal identity, recording aggregate relaxation explicitly, and reporting spine, pitch, and sonance facets independently.
 
-## Anchors
-
-- `anchor/crate/sim-lib-music-core`
-- `anchor/crate/sim-lib-music-serial`
-- `anchor/crate/sim-lib-music-transform`
-- `anchor/crate/sim-lib-pitch-dissonance`
-- `anchor/crate/sim-lib-pitch-scale`
-
-## Surfaces
-
-- `docs/sim-music/generated`
-
 ## Specimens
 
 - `recipe/sim-music/crates/sim-lib-music-serial/02-adaptation/modal-spine`

@@ -10,9 +10,7 @@ Drive browser and server sessions through one reversible SurfaceCodec contract f
 
 ## Anchors
 
-- `anchor/crate/sim-lib-view`
 - `anchor/crate/sim-lib-web-bridge`
-- `anchor/export/sim-lib-view/surface-default`
 
 ## Surfaces
 

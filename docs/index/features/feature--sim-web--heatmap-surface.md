@@ -10,7 +10,6 @@ Validate and project caller-prepared finite scalar grids into one budgeted Scene
 
 ## Anchors
 
-- `anchor/crate/sim-lib-scene`
 - `anchor/crate/sim-lib-view-math`
 
 ## Surfaces

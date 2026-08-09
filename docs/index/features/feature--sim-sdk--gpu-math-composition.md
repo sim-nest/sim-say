@@ -8,10 +8,6 @@
 
 Expose opt-in Tensor, ODE, compute-provider, and FEMM solver composition through direct SDK re-exports.
 
-## Anchors
-
-- `anchor/crate/sim-nest`
-
 ## Specimens
 
 - `spec-test/sim-sdk/crates/sim-conformance/tests/spec/gpu_math`

@@ -10,7 +10,6 @@ Observe a validated wall clock timestamp in Unix milliseconds through one inject
 
 ## Anchors
 
-- `anchor/crate/sim-lib-server`
 - `anchor/rustdoc/sim-lib-server/deterministic-wall-clock`
 - `anchor/rustdoc/sim-lib-server/system-wall-clock`
 - `anchor/rustdoc/sim-lib-server/wall-clock`

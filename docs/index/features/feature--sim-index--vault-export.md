@@ -8,15 +8,6 @@
 
 Project the public SIM Index into a managed Markdown vault namespace for portable, Obsidian, SeqLog, and Logseq profiles.
 
-## Anchors
-
-- `local/sim-tooling/anchor/cli/xtask`
-
-## Surfaces
-
-- `docs/sim-tooling/generated`
-- `local/sim-tooling/cli/xtask`
-
 ## Specimens
 
 - `spec-test/sim-tooling/src/index_vault_tests`

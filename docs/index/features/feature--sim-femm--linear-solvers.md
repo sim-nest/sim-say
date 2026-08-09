@@ -10,7 +10,6 @@ Provide FEMM linear solver contracts, opaque LinearFactor handles, dense fallbac
 
 ## Anchors
 
-- `anchor/crate/sim-lib-femm-core`
 - `anchor/crate/sim-lib-femm-solve`
 - `anchor/rustdoc/sim-lib-femm-core/csr-matrix`
 - `anchor/rustdoc/sim-lib-femm-solve/bicgstab_solve`

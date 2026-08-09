@@ -10,7 +10,6 @@ Compose the expression-tree SurfaceCodec and authoritative server site with Remo
 
 ## Anchors
 
-- `anchor/crate/sim-lib-expr-tree-server`
 - `anchor/rustdoc/sim-lib-expr-tree-server/expression-tree-web-surface`
 - `anchor/rustdoc/sim-lib-expr-tree-server/expression-tree-web-surface-factory`
 

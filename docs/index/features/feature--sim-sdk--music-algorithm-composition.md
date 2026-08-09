@@ -8,11 +8,6 @@
 
 Select frozen signal, bounded-search, exact-ratio, consonance, and counterpoint candidates through focused features or curated SDK groups.
 
-## Anchors
-
-- `anchor/crate/sim-nest`
-- `anchor/rustdoc/sim-nest/crate-root`
-
 ## Specimens
 
 - `spec-test/sim-sdk/crates/sim-conformance/tests/spec/music_algorithms`

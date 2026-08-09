@@ -10,7 +10,6 @@ Parse, normalize, resolve, and format bounded absolute and relative Table/Dir pa
 
 ## Anchors
 
-- `anchor/crate/sim-table-core`
 - `anchor/rustdoc/sim-table-core/table-path`
 - `anchor/rustdoc/sim-table-core/table-path-ref`
 - `anchor/rustdoc/sim-table-core/table-path-ref-error`

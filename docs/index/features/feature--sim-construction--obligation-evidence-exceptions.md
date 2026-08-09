@@ -8,11 +8,6 @@
 
 Evaluate shared construction requirements and project obligations across open lanes with stable evidence states, validity windows, graph-composed dependencies, source references, optional policy, bounded exceptions, and deterministic explanation paths.
 
-## Anchors
-
-- `anchor/crate/sim-lib-construction-project`
-- `anchor/rustdoc/sim-lib-construction-project/crate-root`
-
 ## Specimens
 
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/blocked-gate-graph`

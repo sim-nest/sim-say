@@ -12,17 +12,11 @@ Lift PCM through bounded pitch, onset, varying-tempo beat, zero-crossing, percep
 
 - `anchor/crate/sim-lib-sound-audio-lift`
 - `anchor/crate/sim-lib-sound-bridge`
-- `anchor/crate/sim-lib-sound-render`
-- `anchor/crate/sim-lib-sound-spectrum`
 - `anchor/crate/sim-lib-stream-bridge`
 - `anchor/runtime-lib/sim-lib-sound-audio-lift/sound-audio-lift-lib`
 - `anchor/runtime-lib/sim-lib-sound-bridge/sound-bridge-lib`
 - `anchor/runtime-lib/sim-lib-sound-render/sound-render-lib`
 - `anchor/runtime-lib/sim-lib-stream-bridge/stream-bridge-lib`
-
-## Surfaces
-
-- `docs/sim-music/generated`
 
 ## Specimens
 

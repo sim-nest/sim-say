@@ -15,6 +15,7 @@ Boot the public SIM facade and expose its command plus reversible view surface.
 - `anchor/crate/sim-nest`
 - `anchor/runtime-lib/sim-nest/core-runtime-lib`
 - `anchor/runtime-lib/sim-nest/native-class-lib`
+- `anchor/rustdoc/sim-nest/crate-root`
 
 ## Surfaces
 

@@ -8,18 +8,11 @@
 
 Derive construction phase gate baseline and obligation readiness from accepted project-control facts while keeping human approval and exceptions as separate accountable decisions.
 
-## Anchors
-
-- `anchor/crate/sim-lib-construction-project`
-- `anchor/rustdoc/sim-lib-construction-project/crate-root`
-
 ## Specimens
 
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/late-decision`
-- `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/mixed-obligation-gate`
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/mobilization-gate`
 - `spec-test/sim-construction/crates/sim-lib-construction-project/src/lifecycle_tests`
-- `spec-test/sim-construction/crates/sim-lib-construction-project/src/obligation_tests`
 
 ## Worked Example
 

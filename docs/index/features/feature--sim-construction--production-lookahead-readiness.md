@@ -8,11 +8,6 @@
 
 Derive six-week demand and three-week production commitments from accepted Gantt task joins, work packages, location/system breakdowns, shared requirements, validity windows, accountable exceptions, and separate human commitment facts.
 
-## Anchors
-
-- `anchor/crate/sim-lib-construction-project`
-- `anchor/rustdoc/sim-lib-construction-project/crate-root`
-
 ## Specimens
 
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/six-week-production-readiness`
