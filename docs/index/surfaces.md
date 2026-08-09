@@ -179,6 +179,7 @@
 | `syntax/odf` | `syntax` | `language/odf` |
 | `syntax/ooxml` | `syntax` | `language/ooxml` |
 | `syntax/pratt` | `syntax` | `language/pratt` |
+| `syntax/python` | `syntax` | `language/python` |
 | `syntax/uds` | `syntax` | `language/uds` |
 | `view-edit/sim-lib-expr-tree-server` | `view-edit` | `crate/sim-lib-expr-tree-server` |
 | `view-edit/sim-lib-view` | `view-edit` | `local/sim-web/crate/sim-lib-view` |

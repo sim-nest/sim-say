@@ -6,7 +6,7 @@
 - Subject: `local/sim-runtime/crate/sim-lib-mutation`
 - Canonical key: `crate/sim-lib-mutation/feature-sim-runtime-mutation-organ`
 
-Expose cells, boxes, mutable vectors, and mutable tables as capability-gated runtime mutation behavior.
+Expose capability-gated mutable containers plus a bounded, allocation-deterministic managed-object arena and versioned tracing contract.
 
 ## Anchors
 
@@ -15,279 +15,352 @@ Expose cells, boxes, mutable vectors, and mutable tables as capability-gated run
 
 ## Specimens
 
+- `spec-test/sim-runtime/crates/sim-lib-mutation/src/managed_tests`
 - `spec-test/sim-runtime/crates/sim-lib-mutation/src/tests`
 
 ## Worked Example
 
-Specimen `spec-test/sim-runtime/crates/sim-lib-mutation/src/tests` is checked by `cargo test`.
+Specimen `spec-test/sim-runtime/crates/sim-lib-mutation/src/managed_tests` is checked by `cargo test`.
 
-Source `crates/sim-lib-mutation/src/tests.rs`:
+Source `crates/sim-lib-mutation/src/managed_tests.rs`:
 
 ```rust
-// conformance: mutation organ capability gates, mutable values, and Card projection
+// conformance: bounded managed arena and versioned tracing contract.
 
-use std::sync::Arc;
+use std::collections::{BTreeMap, BTreeSet, VecDeque};
 
-use sim_kernel::{
-    Cx, Error, Expr, Object, ObjectCompat, Ref, Symbol, Table, Value,
-    card::{card_for_ref, card_kind_predicate},
-    force_list_to_vec,
-    standard::standard_organ_kind,
-};
-use sim_lib_sequence::{
-    RuntimeIndexSource, force_sequence_bounded, persistent_vector, runtime_index_sequence,
+use crate::{
+    ArenaError, EdgeId, EdgeVisitor, HardCappedRetainPolicy, ManagedArena, ManagedId,
+    ManagedObject, TraceSnapshot,
 };
 
-use crate::*;
-
-use sim_kernel::testing::bare_cx as cx;
-
-fn string(cx: &mut Cx, value: &str) -> Value {
-    cx.factory().string(value.to_owned()).unwrap()
+#[derive(Clone, Debug)]
+enum Edge {
+    Strong(ManagedId),
+    Weak(Option<ManagedId>),
+    Ephemeron { key: ManagedId, value: ManagedId },
 }
 
-fn int(cx: &mut Cx, value: i64) -> Value {
-    cx.factory()
-        .number_literal(Symbol::qualified("test", "i64"), value.to_string())
-        .unwrap()
+#[derive(Clone, Debug, Default)]
+struct Node(Vec<Edge>);
+
+impl ManagedObject for Node {
+    fn trace_edges(&self, visitor: &mut dyn EdgeVisitor) {
+        for (index, edge) in self.0.iter().enumerate() {
+            let edge_id = EdgeId(u32::try_from(index).expect("small test graph"));
+            match edge {
+                Edge::Strong(target) => visitor.strong(edge_id, *target),
+                Edge::Weak(Some(target)) => visitor.weak(edge_id, *target),
+                Edge::Weak(None) => {}
+                Edge::Ephemeron { key, value } => visitor.ephemeron(edge_id, *key, *value),
+            }
+        }
+    }
+
+    fn clear_weak_edge(&mut self, edge: EdgeId, expected: ManagedId) -> bool {
+        match self.0.get_mut(edge.0 as usize) {
+            Some(Edge::Weak(target)) if *target == Some(expected) => target.take().is_some(),
+            _ => false,
+        }
+    }
 }
 
-fn float(cx: &mut Cx, value: f64) -> Value {
-    cx.factory()
-        .number_literal(Symbol::qualified("test", "f64"), value.to_string())
-        .unwrap()
+#[derive(Default)]
+struct CollectedEdges {
+    strong: Vec<ManagedId>,
+    weak: Vec<(EdgeId, ManagedId)>,
+    ephemerons: Vec<(ManagedId, ManagedId)>,
 }
 
-fn bool_value(cx: &mut Cx, value: bool) -> Value {
-    cx.factory().bool(value).unwrap()
+impl EdgeVisitor for CollectedEdges {
+    fn strong(&mut self, _edge: EdgeId, target: ManagedId) {
+        self.strong.push(target);
+    }
+
+    fn weak(&mut self, edge: EdgeId, target: ManagedId) {
+        self.weak.push((edge, target));
+    }
+
+    fn ephemeron(&mut self, _edge: EdgeId, key: ManagedId, value: ManagedId) {
+        self.ephemerons.push((key, value));
+    }
 }
 
-fn expr(cx: &mut Cx, value: &Value) -> Expr {
-    value.object().as_expr(cx).unwrap()
+/// Deliberately tiny collector-shaped client used to validate the contract,
+/// not production collection policy.
+fn reference_trace(snapshot: &TraceSnapshot<'_, Node>) -> (BTreeSet<ManagedId>, usize) {
+    let mut marked = BTreeSet::new();
+    let mut queue = snapshot.roots().collect::<VecDeque<_>>();
+    let mut ephemerons = Vec::new();
+
+    while let Some(id) = queue.pop_front() {
+        if !marked.insert(id) {
+            continue;
+        }
+        let mut edges = CollectedEdges::default();
+        snapshot.visit_edges(id, &mut edges).unwrap();
+        queue.extend(edges.strong);
+        ephemerons.extend(edges.ephemerons);
+    }
+
+    let mut fixpoint_rounds = 0;
+    loop {
+        fixpoint_rounds += 1;
+        let additions = ephemerons
+            .iter()
+            .filter(|(key, value)| marked.contains(key) && !marked.contains(value))
+            .map(|(_, value)| *value)
+            .collect::<Vec<_>>();
+        if additions.is_empty() {
+            break;
+        }
+        queue.extend(additions);
+        while let Some(id) = queue.pop_front() {
+            if !marked.insert(id) {
+                continue;
+            }
+            let mut edges = CollectedEdges::default();
+            snapshot.visit_edges(id, &mut edges).unwrap();
+            queue.extend(edges.strong);
+            ephemerons.extend(edges.ephemerons);
+        }
+    }
+    (marked, fixpoint_rounds)
+}
+
+fn arena(cap: usize) -> ManagedArena<Node> {
+    ManagedArena::new(HardCappedRetainPolicy::new(cap).unwrap())
 }
 
 #[test]
-fn mutation_requires_capability_and_then_updates() {
-    let mut cx = cx();
-    let cell = Cell::new(string(&mut cx, "old"));
+fn allocation_ids_are_schedule_stable_and_cap_failure_is_atomic() {
+    let mut first = arena(2);
+    let first_a = first.allocate(Node::default()).unwrap();
+    let first_b = first.allocate(Node::default()).unwrap();
+    assert_eq!(first_a.id().allocation_ordinal(), 0);
+    assert_eq!(first_b.id().allocation_ordinal(), 1);
+    assert_eq!(
+        first.allocate(Node::default()),
+        Err(ArenaError::CapacityExceeded { cap: 2 })
+    );
+    assert_eq!(first.len(), 2);
+    assert_eq!(first.get(first_a).unwrap().0.len(), 0);
 
-    let new_value = string(&mut cx, "new");
-    let denied = cell.set(&mut cx, new_value).unwrap_err();
+    let mut replay = arena(2);
+    assert_eq!(replay.allocate(Node::default()).unwrap().id(), first_a.id());
+    assert_eq!(replay.allocate(Node::default()).unwrap().id(), first_b.id());
+}
+
+#[test]
+fn roots_churn_and_stale_handles_are_refused() {
+    let mut arena = arena(3);
+    let handle = arena.allocate(Node::default()).unwrap();
+    let weak = handle.downgrade();
+    let first_root = arena.root(handle).unwrap();
+    let second_root = arena.root(handle).unwrap();
+
+    assert!(matches!(
+        arena.remove(handle),
+        Err(ArenaError::ObjectRooted(id)) if id == handle.id()
+    ));
+    arena.release_root(first_root).unwrap();
+    assert_eq!(
+        arena.release_root(first_root),
+        Err(ArenaError::StaleRoot(first_root.root_id()))
+    );
+    arena.release_root(second_root).unwrap();
+    arena.remove(handle).unwrap();
+    assert_eq!(
+        arena.upgrade(weak),
+        Err(ArenaError::StaleHandle(handle.id()))
+    );
+    assert!(matches!(
+        arena.get(handle),
+        Err(ArenaError::StaleHandle(id)) if id == handle.id()
+    ));
+}
+
+#[test]
+fn tracing_is_complete_for_cycles_weak_edges_and_ephemeron_fixpoint() {
+    let mut arena = arena(7);
+    let root = arena.allocate(Node::default()).unwrap();
+    let cycle_a = arena.allocate(Node::default()).unwrap();
+    let cycle_b = arena.allocate(Node::default()).unwrap();
+    let eph_key = arena.allocate(Node::default()).unwrap();
+    let eph_mid = arena.allocate(Node::default()).unwrap();
+    let eph_value = arena.allocate(Node::default()).unwrap();
+    let dead = arena.allocate(Node::default()).unwrap();
+
+    arena.get_mut(root).unwrap().0 = vec![
+        Edge::Strong(cycle_a.id()),
+        Edge::Strong(eph_key.id()),
+        Edge::Weak(Some(dead.id())),
+        Edge::Ephemeron {
+            key: eph_mid.id(),
+            value: eph_value.id(),
+        },
+        Edge::Ephemeron {
+            key: eph_key.id(),
+            value: eph_mid.id(),
+        },
+    ];
+    arena.get_mut(cycle_a).unwrap().0 = vec![Edge::Strong(cycle_b.id())];
+    arena.get_mut(cycle_b).unwrap().0 = vec![Edge::Strong(cycle_a.id())];
+    let rooted = arena.root(root).unwrap();
+
+    let ((marked, rounds), receipt) = arena.safepoint(reference_trace).unwrap();
+    assert_eq!(receipt.sequence, 0);
+    assert_eq!(receipt.roots, vec![root.id()]);
+    assert_eq!(receipt.objects.len(), 7);
+    assert_eq!(rounds, 3);
+    assert_eq!(
+        marked,
+        [root, cycle_a, cycle_b, eph_key, eph_mid, eph_value]
+            .map(|handle| handle.id())
+            .into_iter()
+            .collect()
+    );
+    assert!(!marked.contains(&dead.id()));
+
     assert!(
-        matches!(denied, Error::CapabilityDenied { capability } if capability == standard_mutate_capability())
-    );
-
-    cx.grant(standard_mutate_capability());
-    let new_value = string(&mut cx, "new");
-    cell.set(&mut cx, new_value).unwrap();
-    assert_eq!(
-        cell.get().unwrap().object().as_expr(&mut cx).unwrap(),
-        Expr::String("new".to_owned())
-    );
-}
-
-#[test]
-fn mutable_vectors_do_not_mutate_persistent_sequence_values() {
-    let mut cx = cx();
-    let original_value = string(&mut cx, "old");
-    let original = persistent_vector(&mut cx, vec![original_value]).unwrap();
-    let original_expr = original.object().as_expr(&mut cx).unwrap();
-    let mutable = mutable_vector_from_value(&mut cx, &original).unwrap();
-    let vector = mutable_vector_value(&mutable).unwrap();
-
-    cx.grant(standard_mutate_capability());
-    let new_value = string(&mut cx, "new");
-    vector.set(&mut cx, 0, new_value).unwrap();
-
-    assert_eq!(original.object().as_expr(&mut cx).unwrap(), original_expr);
-    assert_eq!(
-        mutable.object().as_expr(&mut cx).unwrap(),
-        Expr::Vector(vec![Expr::String("new".to_owned())])
-    );
-}
-
-#[test]
-fn boxes_and_tables_are_capability_gated() {
-    let mut cx = cx();
-    let boxed = MutableBox::new(string(&mut cx, "old"));
-    let table_value = string(&mut cx, "old");
-    let table = mutable_table(&mut cx, vec![(Symbol::new("name"), table_value)]).unwrap();
-    let table = mutable_table_value(&table).unwrap();
-
-    let denied_box_value = string(&mut cx, "new");
-    assert!(matches!(
-        boxed.set(&mut cx, denied_box_value).unwrap_err(),
-        Error::CapabilityDenied { .. }
-    ));
-    let denied_table_value = string(&mut cx, "new");
-    assert!(matches!(
-        table
-            .set(&mut cx, Symbol::new("name"), denied_table_value)
-            .unwrap_err(),
-        Error::CapabilityDenied { .. }
-    ));
-
-    cx.grant(standard_mutate_capability());
-    let boxed_value = string(&mut cx, "new");
-    boxed.set(&mut cx, boxed_value).unwrap();
-    let table_value = string(&mut cx, "new");
-    table
-        .set(&mut cx, Symbol::new("name"), table_value)
-        .unwrap();
-    assert_eq!(
-        boxed.get().unwrap().object().as_expr(&mut cx).unwrap(),
-        Expr::String("new".to_owned())
-    );
-    assert_eq!(
-        table
-            .get(&mut cx, Symbol::new("name"))
+        arena
+            .clear_weak_edge(root, EdgeId(2), dead.downgrade())
             .unwrap()
-            .object()
-            .as_expr(&mut cx)
-            .unwrap(),
-        Expr::String("new".to_owned())
     );
+    assert!(
+        !arena
+            .clear_weak_edge(root, EdgeId(2), dead.downgrade())
+            .unwrap()
+    );
+    let dead_handle = arena.handle(dead.id()).unwrap();
+    arena.remove(dead_handle).unwrap();
+    assert_eq!(
+        arena.handle(dead.id()),
+        Err(ArenaError::StaleHandle(dead.id()))
+    );
+    arena.release_root(rooted).unwrap();
 }
 
 #[test]
-fn runtime_table_accepts_dict_keys_and_projects_array() {
-    let mut cx = cx();
-    let table = Arc::new(MutableRuntimeTable::new(DemoPolicy));
+fn trace_visitation_covers_every_declared_edge_once() {
+    let mut arena = arena(4);
+    let owner = arena.allocate(Node::default()).unwrap();
+    let a = arena.allocate(Node::default()).unwrap();
+    let b = arena.allocate(Node::default()).unwrap();
+    let c = arena.allocate(Node::default()).unwrap();
+    arena.get_mut(owner).unwrap().0 = vec![
+        Edge::Strong(a.id()),
+        Edge::Weak(Some(b.id())),
+        Edge::Ephemeron {
+            key: b.id(),
+            value: c.id(),
+        },
+    ];
+    arena.root(owner).unwrap();
 
-    let denied_key = int(&mut cx, 1);
-    let denied_value = string(&mut cx, "denied");
-    assert!(matches!(
-        table.set(&mut cx, denied_key, denied_value).unwrap_err(),
-        Error::CapabilityDenied { .. }
-    ));
-
-    cx.grant(standard_mutate_capability());
-    let one_key = int(&mut cx, 1);
-    let one = string(&mut cx, "one");
-    table.set(&mut cx, one_key, one).unwrap();
-    let two_key = int(&mut cx, 2);
-    let two = string(&mut cx, "two");
-    table.set(&mut cx, two_key, two).unwrap();
-    let gap_key = int(&mut cx, 4);
-    let gap = string(&mut cx, "after-gap");
-    table.set(&mut cx, gap_key, gap).unwrap();
-
-    let str_key = string(&mut cx, "name");
-    let str_value = string(&mut cx, "dict");
-    table.set(&mut cx, str_key.clone(), str_value).unwrap();
-    let bool_key = bool_value(&mut cx, true);
-    let bool_value = string(&mut cx, "truth");
-    table.set(&mut cx, bool_key, bool_value).unwrap();
-    let float_key = float(&mut cx, 1.5);
-    let float_value = string(&mut cx, "float");
-    table.set(&mut cx, float_key, float_value).unwrap();
-    let object_key = cx.factory().opaque(Arc::new(TestObject("id"))).unwrap();
-    let object_value = string(&mut cx, "object");
-    table
-        .set(&mut cx, object_key.clone(), object_value)
-        .unwrap();
-
-    let str_entry = table.get(&mut cx, &str_key).unwrap().unwrap();
-    assert_eq!(expr(&mut cx, &str_entry), Expr::String("dict".to_owned()));
-    let object_runtime_key = RuntimeKey::from_value(&mut cx, &object_key)
-        .unwrap()
-        .unwrap();
-    assert!(matches!(object_runtime_key, RuntimeKey::ObjectIdentity(_)));
-    assert_eq!(
-        expr(
-            &mut cx,
-            &table
-                .get_runtime_key(&object_runtime_key)
-                .unwrap()
-                .expect("object identity entry")
-        ),
-        Expr::String("object".to_owned())
-    );
-
-    let keys = table
-        .entries_in_key_order()
-        .unwrap()
-        .into_iter()
-        .map(|(key, _)| key)
-        .collect::<Vec<_>>();
-    assert!(keys.contains(&RuntimeKey::Bool(true)));
-    assert!(keys.contains(&RuntimeKey::Integer(1)));
-    assert!(keys.contains(&RuntimeKey::Str("name".to_owned())));
-    assert!(keys.contains(&RuntimeKey::FloatBits(1.5f64.to_bits())));
-
-    let sequence = runtime_index_sequence(&mut cx, table.clone(), 1).unwrap();
-    let values = force_sequence_bounded(&mut cx, &sequence, 8, "runtime table projection").unwrap();
-    let values = values
-        .iter()
-        .map(|value| expr(&mut cx, value))
-        .collect::<Vec<_>>();
-    assert_eq!(
-        values,
-        vec![
-            Expr::String("one".to_owned()),
-            Expr::String("two".to_owned())
-        ]
-    );
-}
-
-#[test]
-fn mutation_organ_claims_project_to_card() {
-    let mut cx = cx();
-    publish_mutation_organ_claims(&mut cx).unwrap();
-
-    let claims = cx
-        .query_facts(sim_kernel::ClaimPattern {
-            subject: Some(Ref::Symbol(mutation_organ_symbol())),
-            predicate: Some(card_kind_predicate()),
-            object: Some(Ref::Symbol(standard_organ_kind())),
-            include_revoked: false,
+    arena
+        .safepoint(|snapshot| {
+            let mut edges = CollectedEdges::default();
+            snapshot.visit_edges(owner.id(), &mut edges).unwrap();
+            assert_eq!(edges.strong, vec![a.id()]);
+            assert_eq!(edges.weak, vec![(EdgeId(1), b.id())]);
+            assert_eq!(edges.ephemerons, vec![(b.id(), c.id())]);
         })
         .unwrap();
-    assert_eq!(claims.len(), 1);
-
-    let card = card_for_ref(&mut cx, Ref::Symbol(mutation_organ_symbol())).unwrap();
-    let table = card.object().as_table(&mut cx).unwrap();
-    let entries = table.object().as_table_impl().unwrap();
-    let ops = entries.get(&mut cx, Symbol::new("ops")).unwrap();
-    let list = ops.object().as_list().unwrap();
-    let values = force_list_to_vec(&mut cx, list, "mutation organ ops").unwrap();
-
-    assert!(values.into_iter().any(|value| {
-        value.object().as_expr(&mut cx).unwrap()
-            == Expr::Symbol(Symbol::qualified("mutation", "set.v1"))
-    }));
 }
 
-#[derive(Clone, Copy)]
-struct DemoPolicy;
-
-impl RuntimeKeyPolicy for DemoPolicy {
-    fn key_for(&self, cx: &mut Cx, value: &Value) -> sim_kernel::Result<Option<RuntimeKey>> {
-        RuntimeKey::from_value(cx, value)
+#[test]
+fn teardown_receipts_are_allocation_deterministic() {
+    fn specimen() -> (Vec<ManagedId>, Vec<crate::RootId>) {
+        let mut arena = arena(3);
+        let a = arena.allocate(Node::default()).unwrap();
+        let b = arena.allocate(Node::default()).unwrap();
+        let c = arena.allocate(Node::default()).unwrap();
+        arena.root(c).unwrap();
+        arena.root(a).unwrap();
+        arena.remove(b).unwrap();
+        let receipt = arena.teardown();
+        assert!(arena.is_empty());
+        (receipt.objects, receipt.roots)
     }
+    assert_eq!(specimen(), specimen());
+    assert_eq!(specimen().0.len(), 2);
 }
 
-impl RuntimeIndexSource for MutableRuntimeTable<DemoPolicy> {
-    fn value_at_runtime_index(
-        &self,
-        _cx: &mut Cx,
-        index: i64,
-    ) -> sim_kernel::Result<Option<Value>> {
-        self.get_runtime_key(&RuntimeKey::Integer(index))
-    }
+#[test]
+fn root_enumeration_is_registration_order_not_object_order() {
+    let mut arena = arena(2);
+    let a = arena.allocate(Node::default()).unwrap();
+    let b = arena.allocate(Node::default()).unwrap();
+    arena.root(b).unwrap();
+    arena.root(a).unwrap();
+    let (roots, _) = arena
+        .safepoint(|snapshot| snapshot.roots().collect::<Vec<_>>())
+        .unwrap();
+    assert_eq!(roots, vec![b.id(), a.id()]);
 }
 
-struct TestObject(&'static str);
-
-impl Object for TestObject {
-    fn display(&self, _cx: &mut Cx) -> sim_kernel::Result<String> {
-        Ok(format!("#<test-object {}>", self.0))
-    }
-
-    fn as_any(&self) -> &dyn std::any::Any {
-        self
-    }
+#[test]
+fn object_inventory_is_allocation_order_even_after_removal() {
+    let mut arena = arena(3);
+    let a = arena.allocate(Node::default()).unwrap();
+    let b = arena.allocate(Node::default()).unwrap();
+    let c = arena.allocate(Node::default()).unwrap();
+    arena.remove(b).unwrap();
+    let (objects, _) = arena
+        .safepoint(|snapshot| snapshot.objects().collect::<Vec<_>>())
+        .unwrap();
+    assert_eq!(objects, vec![a.id(), c.id()]);
 }
 
-impl ObjectCompat for TestObject {}
+#[test]
+fn epoch_guarded_sweep_validates_every_slot_before_mutation() {
+    let mut arena = ManagedArena::new(HardCappedRetainPolicy::new(4).unwrap());
+    let live = arena.allocate(Node::default()).unwrap();
+    let garbage = arena.allocate(Node::default()).unwrap();
+    let epoch = arena.mutation_epoch();
+    let rooted = arena.root(live).unwrap();
+
+    assert!(matches!(
+        arena.sweep_at_epoch(epoch, &[garbage.id()]),
+        Err(ArenaError::MutationEpochChanged { .. })
+    ));
+    assert_eq!(arena.len(), 2);
+
+    let current = arena.mutation_epoch();
+    assert_eq!(
+        arena.sweep_at_epoch(current, &[garbage.id()]).unwrap(),
+        vec![garbage.id()]
+    );
+    assert_eq!(arena.len(), 1);
+    assert_eq!(arena.release_root(rooted).unwrap(), live);
+}
+
+#[test]
+fn invalid_policy_is_closed() {
+    assert_eq!(HardCappedRetainPolicy::new(0), Err(ArenaError::InvalidCap));
+    let policy = HardCappedRetainPolicy::new(9).unwrap();
+    assert_eq!(policy.max_objects(), 9);
+}
+
+#[test]
+fn collector_client_can_inventory_edges_without_language_types() {
+    let mut arena = arena(2);
+    let a = arena.allocate(Node::default()).unwrap();
+    let b = arena.allocate(Node::default()).unwrap();
+    arena.get_mut(a).unwrap().0.push(Edge::Strong(b.id()));
+    arena.root(a).unwrap();
+    let (inventory, _) = arena
+        .safepoint(|snapshot| {
+            let mut inventory = BTreeMap::new();
+            for object in snapshot.objects() {
+                let mut edges = CollectedEdges::default();
+                snapshot.visit_edges(object, &mut edges).unwrap();
+                inventory.insert(object, edges.strong);
+            }
+            inventory
+        })
+        .unwrap();
+    assert_eq!(inventory.get(&a.id()), Some(&vec![b.id()]));
+}
 ```

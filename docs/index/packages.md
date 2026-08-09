@@ -47,6 +47,7 @@
 | `crate/sim-codec-odf` | `crate` | sim-codec-odf |
 | `crate/sim-codec-ooxml` | `crate` | sim-codec-ooxml |
 | `crate/sim-codec-pratt` | `crate` | sim-codec-pratt |
+| `crate/sim-codec-python` | `crate` | sim-codec-python |
 | `crate/sim-codec-uds` | `crate` | sim-codec-uds |
 | `crate/sim-config` | `crate` | sim-config |
 | `crate/sim-conformance` | `crate` | sim-conformance |
@@ -120,6 +121,7 @@
 | `crate/sim-lib-femm-space` | `crate` | sim-lib-femm-space |
 | `crate/sim-lib-femm-tape` | `crate` | sim-lib-femm-tape |
 | `crate/sim-lib-gantt` | `crate` | sim-lib-gantt |
+| `crate/sim-lib-gc-tracing` | `crate` | sim-lib-gc-tracing |
 | `crate/sim-lib-incremental` | `crate` | sim-lib-incremental |
 | `crate/sim-lib-index` | `crate` | sim-lib-index |
 | `crate/sim-lib-interference-compute` | `crate` | sim-lib-interference-compute |
@@ -132,6 +134,7 @@
 | `crate/sim-lib-lang-lua` | `crate` | sim-lib-lang-lua |
 | `crate/sim-lib-lang-matrix` | `crate` | sim-lib-lang-matrix |
 | `crate/sim-lib-lang-prolog` | `crate` | sim-lib-lang-prolog |
+| `crate/sim-lib-lang-python` | `crate` | sim-lib-lang-python |
 | `crate/sim-lib-lang-ruby` | `crate` | sim-lib-lang-ruby |
 | `crate/sim-lib-lang-scheme` | `crate` | sim-lib-lang-scheme |
 | `crate/sim-lib-lang-typed-lazy` | `crate` | sim-lib-lang-typed-lazy |

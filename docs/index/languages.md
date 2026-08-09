@@ -23,6 +23,8 @@
 | `grammar` | `grammar/syntax/odf` | Document codec workflows |
 | `grammar` | `grammar/syntax/ooxml` | Document codec workflows |
 | `grammar` | `grammar/syntax/pratt` | Pratt operator parser |
+| `grammar` | `grammar/syntax/python` | Bounded Python 3.14 source codec |
+| `grammar` | `grammar/syntax/python` | Expression syntax grammars |
 | `grammar` | `grammar/wire/binary` | Wire protocol grammars |
 | `grammar` | `grammar/wire/binary-base64` | Wire protocol grammars |
 | `grammar` | `grammar/wire/bitwise` | Wire protocol grammars |
@@ -39,6 +41,7 @@
 | `specimen` | `codec` | crates/sim-codec-binary/src/tests.rs |
 | `specimen` | `codec` | crates/sim-codec-odf/src/tests.rs |
 | `specimen` | `codec` | crates/sim-codec-pratt/src/tests.rs |
+| `specimen` | `codec` | crates/sim-codec-python/src/tests.rs |
 | `specimen` | `codec` | crates/sim-codec/src/implementation/runtime.rs |
 | `specimen` | `codec` | crates/sim-run-loaders/src/native/codec_proxy_tests.rs |
 | `specimen` | `config` | crates/sim-codec-config/recipes/01-basics/per-lib-config/recipe.toml |
@@ -212,6 +215,7 @@
 | `specimen` | `lisp` | crates/sim-lib-forge/recipes/01-basics/eval-harness/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-forge/recipes/01-basics/forge-cli/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-gantt/recipes/01-basics/local-gantt-plan/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-gc-tracing/recipes/01-collection/bounded-cycle/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-incremental/recipes/01-basics/query-family/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-intent/recipes/01-basics/select-intent/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-interference-compute/recipes/01-basics/modeled-differential-matrix/recipe.toml |
@@ -479,6 +483,7 @@
 | `specimen` | `lisp` | recipes/watch/privacy-reaper/recipe.toml |
 | `specimen` | `lisp` | src/runtime/cookbook_directory.rs |
 | `specimen` | `mcp` | crates/sim-codec-mcp/recipes/01-basics/envelope-descriptor/recipe.toml |
+| `specimen` | `python` | crates/sim-lib-lang-python/recipes/01-basics/source-core/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-agent-runner-core/recipes/01-basics/output-contract-repair/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-discrete-graph/recipes/02-scenarios/staged-alignment/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-interference-core/recipes/01-basics/alias-refusal/recipe.toml |
@@ -559,6 +564,7 @@
 | `specimen` | `shape` | crates/sim-lib-mcp/tests/serve_mcp.rs |
 | `specimen` | `shape` | crates/sim-lib-music-counterpoint/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-music-notation/src/tests.rs |
+| `specimen` | `shape` | crates/sim-lib-mutation/src/managed_tests.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-cas/src/implementation/citizen.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-complex/src/implementation/literal.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-func/src/implementation/domain.rs |
@@ -622,6 +628,7 @@
 | `subject` | `crate/sim-codec-odf` | sim-codec-odf |
 | `subject` | `crate/sim-codec-ooxml` | sim-codec-ooxml |
 | `subject` | `crate/sim-codec-pratt` | sim-codec-pratt |
+| `subject` | `crate/sim-codec-python` | sim-codec-python |
 | `subject` | `crate/sim-codec-uds` | sim-codec-uds |
 | `subject` | `crate/sim-lib-numbers-codec` | sim-lib-numbers-codec |
 | `subject` | `crate/sim-lib-view-codec` | sim-lib-view-codec |
@@ -646,6 +653,7 @@
 | `subject` | `grammar/odf` | odf grammar |
 | `subject` | `grammar/ooxml` | ooxml grammar |
 | `subject` | `grammar/pratt` | pratt grammar |
+| `subject` | `grammar/python` | python grammar |
 | `subject` | `grammar/uds` | uds grammar |
 | `subject` | `language/algol` | algol |
 | `subject` | `language/binary` | binary |
@@ -666,6 +674,7 @@
 | `subject` | `language/odf` | odf |
 | `subject` | `language/ooxml` | ooxml |
 | `subject` | `language/pratt` | pratt |
+| `subject` | `language/python` | python |
 | `subject` | `language/uds` | uds |
 | `subject` | `local/sim-codecs/crate/sim-codec` | sim-codec |
 | `subject` | `local/sim-codecs/crate/sim-codec-mcp` | sim-codec-mcp |
@@ -694,6 +703,7 @@
 | `subject` | `runtime-lib/sim-codec-lisp/lisp-codec-lib` | lisp-codec-lib |
 | `subject` | `runtime-lib/sim-codec-lua/lua-codec-lib` | lua-codec-lib |
 | `subject` | `runtime-lib/sim-codec-mcp/mcp-codec-lib` | mcp-codec-lib |
+| `subject` | `runtime-lib/sim-codec-python/python-codec-lib` | python-codec-lib |
 | `subject` | `runtime-lib/sim-codec-uds/uds-codec-lib` | uds-codec-lib |
 | `subject` | `runtime-lib/sim-codec/domain-codec-lib` | domain-codec-lib |
 | `subject` | `runtime-lib/sim-lib-intent/intent-codec-lib` | intent-codec-lib |
