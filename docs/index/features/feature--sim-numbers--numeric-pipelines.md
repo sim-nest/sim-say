@@ -11,9 +11,7 @@ Compose differentiator, quadrature, and ODE methods into inspectable numeric pip
 ## Anchors
 
 - `anchor/crate/sim-lib-numbers-numeric`
-- `anchor/crate/sim-lib-numbers-rk`
 - `anchor/runtime-lib/sim-lib-numbers-numeric/numeric-numbers-lib`
-- `anchor/runtime-lib/sim-lib-numbers-rk/rk-numbers-lib`
 - `anchor/rustdoc/sim-lib-numbers-numeric/call_numeric_compose`
 - `anchor/rustdoc/sim-lib-numbers-numeric/call_numeric_run_composed`
 - `anchor/rustdoc/sim-lib-numbers-numeric/composed-pipeline`

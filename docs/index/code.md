@@ -40,6 +40,7 @@
 | `crate/sim-codec-config` | `crate` | sim-codec-config | 1 |
 | `crate/sim-codec-doc` | `crate` | sim-codec-doc | 2 |
 | `crate/sim-codec-index` | `crate` | sim-codec-index | 1 |
+| `crate/sim-codec-javascript` | `crate` | sim-codec-javascript | 1 |
 | `crate/sim-codec-json` | `crate` | sim-codec-json | 1 |
 | `crate/sim-codec-lisp` | `crate` | sim-codec-lisp | 1 |
 | `crate/sim-codec-lua` | `crate` | sim-codec-lua | 1 |
@@ -47,6 +48,8 @@
 | `crate/sim-codec-odf` | `crate` | sim-codec-odf | 0 |
 | `crate/sim-codec-ooxml` | `crate` | sim-codec-ooxml | 0 |
 | `crate/sim-codec-pratt` | `crate` | sim-codec-pratt | 0 |
+| `crate/sim-codec-python` | `crate` | sim-codec-python | 1 |
+| `crate/sim-codec-typescript` | `crate` | sim-codec-typescript | 0 |
 | `crate/sim-codec-uds` | `crate` | sim-codec-uds | 1 |
 | `crate/sim-config` | `crate` | sim-config | 0 |
 | `crate/sim-conformance` | `crate` | sim-conformance | 0 |
@@ -120,6 +123,7 @@
 | `crate/sim-lib-femm-space` | `crate` | sim-lib-femm-space | 0 |
 | `crate/sim-lib-femm-tape` | `crate` | sim-lib-femm-tape | 0 |
 | `crate/sim-lib-gantt` | `crate` | sim-lib-gantt | 0 |
+| `crate/sim-lib-gc-tracing` | `crate` | sim-lib-gc-tracing | 0 |
 | `crate/sim-lib-incremental` | `crate` | sim-lib-incremental | 1 |
 | `crate/sim-lib-index` | `crate` | sim-lib-index | 1 |
 | `crate/sim-lib-interference-compute` | `crate` | sim-lib-interference-compute | 1 |
@@ -128,13 +132,16 @@
 | `crate/sim-lib-lang-cl` | `crate` | sim-lib-lang-cl | 1 |
 | `crate/sim-lib-lang-clojure` | `crate` | sim-lib-lang-clojure | 1 |
 | `crate/sim-lib-lang-genconf` | `crate` | sim-lib-lang-genconf | 0 |
+| `crate/sim-lib-lang-javascript` | `crate` | sim-lib-lang-javascript | 0 |
 | `crate/sim-lib-lang-julia` | `crate` | sim-lib-lang-julia | 0 |
 | `crate/sim-lib-lang-lua` | `crate` | sim-lib-lang-lua | 0 |
 | `crate/sim-lib-lang-matrix` | `crate` | sim-lib-lang-matrix | 0 |
 | `crate/sim-lib-lang-prolog` | `crate` | sim-lib-lang-prolog | 1 |
+| `crate/sim-lib-lang-python` | `crate` | sim-lib-lang-python | 0 |
 | `crate/sim-lib-lang-ruby` | `crate` | sim-lib-lang-ruby | 0 |
 | `crate/sim-lib-lang-scheme` | `crate` | sim-lib-lang-scheme | 1 |
 | `crate/sim-lib-lang-typed-lazy` | `crate` | sim-lib-lang-typed-lazy | 0 |
+| `crate/sim-lib-lang-typescript` | `crate` | sim-lib-lang-typescript | 0 |
 | `crate/sim-lib-ledger-books` | `crate` | sim-lib-ledger-books | 0 |
 | `crate/sim-lib-ledger-close` | `crate` | sim-lib-ledger-close | 0 |
 | `crate/sim-lib-mail` | `crate` | sim-lib-mail | 0 |
@@ -456,7 +463,7 @@
 | `repo/sim-audio-daw` | `repo` | sim-audio-daw | 18 |
 | `repo/sim-auto` | `repo` | sim-auto | 30 |
 | `repo/sim-citizen` | `repo` | sim-citizen | 5 |
-| `repo/sim-codecs` | `repo` | sim-codecs | 21 |
+| `repo/sim-codecs` | `repo` | sim-codecs | 24 |
 | `repo/sim-compute` | `repo` | sim-compute | 9 |
 | `repo/sim-construction` | `repo` | sim-construction | 8 |
 | `repo/sim-discrete` | `repo` | sim-discrete | 9 |
@@ -470,7 +477,7 @@
 | `repo/sim-numbers` | `repo` | sim-numbers | 35 |
 | `repo/sim-office` | `repo` | sim-office | 18 |
 | `repo/sim-run` | `repo` | sim-run | 9 |
-| `repo/sim-runtime` | `repo` | sim-runtime | 26 |
+| `repo/sim-runtime` | `repo` | sim-runtime | 30 |
 | `repo/sim-sdk` | `repo` | sim-sdk | 74 |
 | `repo/sim-shape` | `repo` | sim-shape | 5 |
 | `repo/sim-storage` | `repo` | sim-storage | 11 |

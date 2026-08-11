@@ -8,11 +8,6 @@
 
 Calculate ordinary Expr sources into ordinary Value results through one bounded incremental engine with validated Table-backed restarts, explicit backend refresh, inherited triggers, immutable authority ceilings, restartable automatic work, standard progress streams, and inspectable receipts.
 
-## Anchors
-
-- `anchor/crate/sim-expr-tree-calc`
-- `anchor/rustdoc/sim-expr-tree-calc/crate-root`
-
 ## Specimens
 
 - `spec-test/sim-expr-tree/crates/sim-expr-tree-calc/src/tests`

@@ -8,11 +8,6 @@
 
 Control current project risks and opportunities through typed open ratings, method-bearing forecast consequences, exact comparable exposure, accepted Gantt joins, control dependencies, and deterministic attention recommendations.
 
-## Anchors
-
-- `anchor/crate/sim-lib-construction-project`
-- `anchor/rustdoc/sim-lib-construction-project/crate-root`
-
 ## Specimens
 
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/risk-to-project-chief-decision`

@@ -10,15 +10,7 @@ Freeze row instances, row ordinals, roles, parent evidence, simultaneous groups,
 
 ## Anchors
 
-- `anchor/crate/sim-lib-music-core`
 - `anchor/crate/sim-lib-music-serial`
-- `anchor/crate/sim-lib-music-shapes`
-- `anchor/crate/sim-lib-pitch-serial`
-- `anchor/runtime-lib/sim-lib-music-shapes/music-shapes-lib`
-
-## Surfaces
-
-- `docs/sim-music/generated`
 
 ## Specimens
 

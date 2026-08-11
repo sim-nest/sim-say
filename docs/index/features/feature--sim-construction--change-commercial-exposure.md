@@ -8,11 +8,6 @@
 
 Construction change commercial exposure ledger references stay versioned and read-only while one stable ChangeId runs from instruction or notice through scope, time, supplier exposure, customer recovery, quotation, authority, forecast, execution, settlement, and closure with exact non-duplicated Amount views.
 
-## Anchors
-
-- `anchor/crate/sim-lib-construction-project`
-- `anchor/rustdoc/sim-lib-construction-project/crate-root`
-
 ## Specimens
 
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/instruction-to-final-settlement`

@@ -6,7 +6,7 @@
 - Subject: `local/sim-shape/crate/sim-shape`
 - Canonical key: `crate/sim-shape/feature-sim-shape-shape`
 
-Define reusable Shape matching, binding, citizen projection, and grammar contracts for runtime values.
+Define reusable Shape matching, binding, browse-only callable signatures, citizen projection, and grammar contracts for runtime values.
 
 ## Anchors
 

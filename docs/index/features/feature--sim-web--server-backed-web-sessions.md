@@ -8,14 +8,6 @@
 
 Connect RemoteTransport to the existing SIM server transport so browser sessions read, commit, drain changes, reconnect, and report revision conflicts through ordinary server eval requests.
 
-## Anchors
-
-- `anchor/crate/sim-lib-web-bridge`
-
-## Surfaces
-
-- `view-edit/sim-lib-web-bridge`
-
 ## Specimens
 
 - `spec-test/sim-web/crates/sim-lib-web-bridge/src/remote_tests`

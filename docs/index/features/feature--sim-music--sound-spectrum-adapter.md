@@ -14,10 +14,6 @@ Retain physical frequency, amplitude, PCM/STFT provenance, and sound descriptors
 - `anchor/rustdoc/sim-lib-sound-spectrum/spectrum`
 - `anchor/rustdoc/sim-lib-sound-spectrum/spectrum-source`
 
-## Surfaces
-
-- `docs/sim-music/generated`
-
 ## Specimens
 
 - `spec-test/sim-music/crates/sim-lib-sound-spectrum/src/tests`

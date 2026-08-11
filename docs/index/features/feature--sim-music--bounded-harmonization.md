@@ -10,16 +10,10 @@ Plan legal chord progressions with exhaustive, factored-backtracking, certified 
 
 ## Anchors
 
-- `anchor/crate/sim-lib-music-combinators`
-- `anchor/crate/sim-lib-pitch-chord`
 - `anchor/rustdoc/sim-lib-music-combinators/harmonize`
 - `anchor/rustdoc/sim-lib-pitch-chord/harmonization-receipt`
 - `anchor/rustdoc/sim-lib-pitch-chord/harmonization-request`
 - `anchor/rustdoc/sim-lib-pitch-chord/plan_harmony`
-
-## Surfaces
-
-- `docs/sim-music/generated`
 
 ## Specimens
 

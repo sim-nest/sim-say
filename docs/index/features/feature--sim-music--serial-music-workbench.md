@@ -10,14 +10,12 @@ Assemble one immutable row plan, registry-selected realization components, rever
 
 ## Anchors
 
-- `anchor/crate/sim-lib-music-notation`
-- `anchor/crate/sim-lib-music-serial`
-- `anchor/crate/sim-lib-music-transform`
-- `anchor/repo/sim-music`
+- `anchor/cli/serial-workbench`
+- `anchor/crate/serial-workbench`
 
 ## Surfaces
 
-- `docs/sim-music/generated`
+- `cli/serial-workbench`
 
 ## Specimens
 

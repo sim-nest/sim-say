@@ -6,7 +6,7 @@
 - Subject: `crate/sim-codec-lisp`
 - Canonical key: `crate/sim-codec-lisp/feature-sim-codecs-expression-syntax-grammars`
 
-Read and write Lisp, JSON, Algol, Lua, Compare, and Bridge rendered expression grammars.
+Read and write Lisp, JSON, Algol, JavaScript, Lua, Python, Compare, and Bridge rendered expression grammars.
 
 ## Surfaces
 

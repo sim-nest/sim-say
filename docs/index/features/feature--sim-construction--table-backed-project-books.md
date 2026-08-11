@@ -8,11 +8,6 @@
 
 Persist one authoritative construction project fact book through a caller-injected Table or Dir, rebuild every historical snapshot from canonical fact paths, and treat verified projections as disposable caches.
 
-## Anchors
-
-- `anchor/crate/sim-lib-construction-project`
-- `anchor/rustdoc/sim-lib-construction-project/crate-root`
-
 ## Specimens
 
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/table-backed-project-book`

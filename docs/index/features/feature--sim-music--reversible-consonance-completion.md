@@ -8,15 +8,6 @@
 
 Search typed note, ornament, chord, pedal, doubling, and voice additions under explicit metric and style bounds, returning an exactly removable content-bound patch.
 
-## Anchors
-
-- `anchor/crate/sim-lib-music-consonance`
-- `anchor/crate/sim-lib-music-transform`
-
-## Surfaces
-
-- `docs/sim-music/generated`
-
 ## Specimens
 
 - `spec-test/sim-music/crates/sim-lib-music-consonance/src/completion_tests`

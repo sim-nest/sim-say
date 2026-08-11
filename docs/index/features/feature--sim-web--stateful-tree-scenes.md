@@ -11,8 +11,6 @@ Render expandable Scene outlines with explicit disclosure state and total budget
 ## Anchors
 
 - `anchor/crate/sim-lib-scene`
-- `anchor/crate/sim-lib-view`
-- `anchor/crate/sim-web-shell`
 
 ## Specimens
 

@@ -8,11 +8,6 @@
 
 Roll system, area, work-package, asset-group, and contractual-milestone readiness up from explicit commissioning, inspection/test, defect, O&M, as-built, training, certification, authority, customer-acceptance, and remaining-work evidence.
 
-## Anchors
-
-- `anchor/crate/sim-lib-construction-project`
-- `anchor/rustdoc/sim-lib-construction-project/crate-root`
-
 ## Specimens
 
 - `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/system-to-accepted-handover`

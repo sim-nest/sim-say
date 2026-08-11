@@ -8,15 +8,6 @@
 
 Load the standard expression-tree product recipe through the shared command bootloader.
 
-## Anchors
-
-- `anchor/cli/sim-run`
-- `anchor/crate/sim-run`
-
-## Surfaces
-
-- `cli/sim-run`
-
 ## Specimens
 
 - `spec-test/sim-run/crates/sim-run/tests/expr_tree`

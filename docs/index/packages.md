@@ -40,6 +40,7 @@
 | `crate/sim-codec-config` | `crate` | sim-codec-config |
 | `crate/sim-codec-doc` | `crate` | sim-codec-doc |
 | `crate/sim-codec-index` | `crate` | sim-codec-index |
+| `crate/sim-codec-javascript` | `crate` | sim-codec-javascript |
 | `crate/sim-codec-json` | `crate` | sim-codec-json |
 | `crate/sim-codec-lisp` | `crate` | sim-codec-lisp |
 | `crate/sim-codec-lua` | `crate` | sim-codec-lua |
@@ -47,6 +48,8 @@
 | `crate/sim-codec-odf` | `crate` | sim-codec-odf |
 | `crate/sim-codec-ooxml` | `crate` | sim-codec-ooxml |
 | `crate/sim-codec-pratt` | `crate` | sim-codec-pratt |
+| `crate/sim-codec-python` | `crate` | sim-codec-python |
+| `crate/sim-codec-typescript` | `crate` | sim-codec-typescript |
 | `crate/sim-codec-uds` | `crate` | sim-codec-uds |
 | `crate/sim-config` | `crate` | sim-config |
 | `crate/sim-conformance` | `crate` | sim-conformance |
@@ -120,6 +123,7 @@
 | `crate/sim-lib-femm-space` | `crate` | sim-lib-femm-space |
 | `crate/sim-lib-femm-tape` | `crate` | sim-lib-femm-tape |
 | `crate/sim-lib-gantt` | `crate` | sim-lib-gantt |
+| `crate/sim-lib-gc-tracing` | `crate` | sim-lib-gc-tracing |
 | `crate/sim-lib-incremental` | `crate` | sim-lib-incremental |
 | `crate/sim-lib-index` | `crate` | sim-lib-index |
 | `crate/sim-lib-interference-compute` | `crate` | sim-lib-interference-compute |
@@ -128,13 +132,16 @@
 | `crate/sim-lib-lang-cl` | `crate` | sim-lib-lang-cl |
 | `crate/sim-lib-lang-clojure` | `crate` | sim-lib-lang-clojure |
 | `crate/sim-lib-lang-genconf` | `crate` | sim-lib-lang-genconf |
+| `crate/sim-lib-lang-javascript` | `crate` | sim-lib-lang-javascript |
 | `crate/sim-lib-lang-julia` | `crate` | sim-lib-lang-julia |
 | `crate/sim-lib-lang-lua` | `crate` | sim-lib-lang-lua |
 | `crate/sim-lib-lang-matrix` | `crate` | sim-lib-lang-matrix |
 | `crate/sim-lib-lang-prolog` | `crate` | sim-lib-lang-prolog |
+| `crate/sim-lib-lang-python` | `crate` | sim-lib-lang-python |
 | `crate/sim-lib-lang-ruby` | `crate` | sim-lib-lang-ruby |
 | `crate/sim-lib-lang-scheme` | `crate` | sim-lib-lang-scheme |
 | `crate/sim-lib-lang-typed-lazy` | `crate` | sim-lib-lang-typed-lazy |
+| `crate/sim-lib-lang-typescript` | `crate` | sim-lib-lang-typescript |
 | `crate/sim-lib-ledger-books` | `crate` | sim-lib-ledger-books |
 | `crate/sim-lib-ledger-close` | `crate` | sim-lib-ledger-close |
 | `crate/sim-lib-mail` | `crate` | sim-lib-mail |

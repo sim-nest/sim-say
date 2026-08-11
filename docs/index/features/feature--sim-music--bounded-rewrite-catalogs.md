@@ -10,15 +10,10 @@ Derive context-aware musical grammars, scale-following pitch-map programs, and f
 
 ## Anchors
 
-- `anchor/crate/sim-lib-music-combinators`
 - `anchor/rustdoc/sim-lib-music-combinators/derive`
 - `anchor/rustdoc/sim-lib-music-combinators/lsystem`
 - `anchor/rustdoc/sim-lib-music-combinators/progression-tree-catalog`
 - `anchor/rustdoc/sim-lib-music-combinators/scale-rewrite-program`
-
-## Surfaces
-
-- `docs/sim-music/generated`
 
 ## Specimens
 

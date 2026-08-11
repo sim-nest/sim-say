@@ -10,6 +10,7 @@ Execute a data recipe by selecting independently loaded MIDI, analysis, harmony,
 
 ## Anchors
 
+- `anchor/cli/music-algorithm-foundry`
 - `anchor/crate/music-algorithm-foundry`
 - `anchor/runtime-lib/music-algorithm-foundry/stage-lib`
 - `anchor/runtime-lib/sim-lib-music-analysis/music-algorithm-plan-lib`
@@ -21,7 +22,7 @@ Execute a data recipe by selecting independently loaded MIDI, analysis, harmony,
 
 ## Surfaces
 
-- `docs/sim-music/generated`
+- `cli/music-algorithm-foundry`
 
 ## Specimens
 

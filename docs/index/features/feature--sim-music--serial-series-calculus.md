@@ -10,13 +10,7 @@ Validate symbol-bearing finite alphabets and ordered series, then apply total co
 
 ## Anchors
 
-- `anchor/crate/sim-lib-music-shapes`
 - `anchor/crate/sim-lib-serial-core`
-- `anchor/runtime-lib/sim-lib-music-shapes/music-shapes-lib`
-
-## Surfaces
-
-- `docs/sim-music/generated`
 
 ## Specimens
 

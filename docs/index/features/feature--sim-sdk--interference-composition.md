@@ -8,11 +8,6 @@
 
 Compose canonical interference records, solve/runtime, Tensor compute, and reversible view behavior through direct SDK re-exports.
 
-## Anchors
-
-- `anchor/crate/sim-nest`
-- `anchor/rustdoc/sim-nest/default_loadable_libs`
-
 ## Specimens
 
 - `spec-test/sim-sdk/crates/sim-conformance/tests/spec/interference`
