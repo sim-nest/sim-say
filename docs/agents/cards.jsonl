@@ -57,6 +57,9 @@
 {"card": {"id": "cookbook/codec/lua", "kind": "cookbook-recipe", "owner": "sim-codec-lua", "summary": "Lua expression parsing and round-trip recipes for SIM codec surfaces."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/mcp", "kind": "cookbook-recipe", "owner": "sim-codec-mcp", "summary": "MCP JSON-RPC request, response, notification, and error envelopes."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/pratt", "kind": "cookbook-recipe", "owner": "sim-codec-pratt", "summary": "Shared Pratt parsing substrate for codec lexers."}, "repo": "sim-codecs"}
+{"card": {"id": "cookbook/sim-codec-javascript", "kind": "cookbook-recipe", "owner": "sim-codec-javascript", "summary": "Bounded, lossless JavaScript source parsing."}, "repo": "sim-codecs"}
+{"card": {"id": "cookbook/sim-codec-python", "kind": "cookbook-recipe", "owner": "sim-codec-python", "summary": "Bounded lossless Python source parsing."}, "repo": "sim-codecs"}
+{"card": {"id": "cookbook/sim-codec-typescript", "kind": "cookbook-recipe", "owner": "sim-codec-typescript", "summary": "Bounded, lossless TypeScript and TSX source parsing."}, "repo": "sim-codecs"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-codecs"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-compute"}
 {"card": {"id": "cookbook/compute-auto", "kind": "cookbook-recipe", "owner": "sim-lib-compute-auto", "summary": "Automatic tensor compute site selection with CPU fallback."}, "repo": "sim-compute"}
@@ -255,16 +258,20 @@
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/control", "kind": "cookbook-recipe", "owner": "sim-lib-control", "summary": "Prompt, capture, abort, and resume surfaces."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/core", "kind": "cookbook-recipe", "owner": "sim-lib-core", "summary": "Quoting, evaluation, and collection basics."}, "repo": "sim-runtime"}
+{"card": {"id": "cookbook/gc-tracing", "kind": "cookbook-recipe", "owner": "sim-lib-gc-tracing", "summary": "Bound and audit managed-arena cycle collection."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/lang/clojure", "kind": "cookbook-recipe", "owner": "sim-lib-lang-clojure", "summary": "Clojure core profile, EDN reader, namespace, and sequence surfaces."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/lang/common-lisp", "kind": "cookbook-recipe", "owner": "sim-lib-lang-cl", "summary": "Common Lisp lite profile, reader, package, and condition surfaces."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/lang/genconf", "kind": "cookbook-recipe", "owner": "sim-lib-lang-genconf", "summary": "Shared expression-space generator and codec registry recipes."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/lang/islisp", "kind": "cookbook-recipe", "owner": "sim-lib-lang-islisp", "summary": "ISLISP profile descriptors and dispatch fidelity."}, "repo": "sim-runtime"}
+{"card": {"id": "cookbook/lang/javascript", "kind": "cookbook-recipe", "owner": "sim-lib-lang-javascript", "summary": "Embedded capability-scoped ECMAScript with explicit drains; no Node, DOM, timers, or ambient host IO."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/lang/julia", "kind": "cookbook-recipe", "owner": "sim-lib-lang-julia", "summary": "Julia core profile descriptors and dispatch behavior."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/lang/lua", "kind": "cookbook-recipe", "owner": "sim-lib-lang-lua", "summary": "Lua core profile descriptors, source conformance cases, tables, and coroutines."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/lang/matrix", "kind": "cookbook-recipe", "owner": "sim-lib-lang-matrix", "summary": "Shared conformance matrix assembly recipes."}, "repo": "sim-runtime"}
+{"card": {"id": "cookbook/lang/python", "kind": "cookbook-recipe", "owner": "sim-lib-lang-python", "summary": "Capability-scoped, agent-authored Python over SIM values; not a CPython replacement."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/lang/ruby", "kind": "cookbook-recipe", "owner": "sim-lib-lang-ruby", "summary": "Ruby DSL profile descriptors and block-control behavior."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/lang/scheme", "kind": "cookbook-recipe", "owner": "sim-lib-lang-scheme", "summary": "R7RS-small profile descriptors and reader surface."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/lang/typed-lazy", "kind": "cookbook-recipe", "owner": "sim-lib-lang-typed-lazy", "summary": "Typed lazy profile descriptors, ADTs, lazy refs, and typeclasses."}, "repo": "sim-runtime"}
+{"card": {"id": "cookbook/lang/typescript", "kind": "cookbook-recipe", "owner": "sim-lib-lang-typescript", "summary": "TypeScript notation over JavaScript evaluation; no type checker or independent runtime."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/logic", "kind": "cookbook-recipe", "owner": "sim-lib-logic", "summary": "Logic database, assertion, and query surfaces."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/organ/binding", "kind": "cookbook-recipe", "owner": "sim-lib-binding", "summary": "Binding surface concepts shared by language profiles."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/organ/dispatch", "kind": "cookbook-recipe", "owner": "sim-lib-dispatch", "summary": "Generic function and multimethod concepts."}, "repo": "sim-runtime"}
