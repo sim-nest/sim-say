@@ -19,7 +19,11 @@ Specimen `recipe/sim-music/crates/sim-lib-music-serial/02-adaptation/serial-cons
 Source `crates/sim-lib-music-serial/recipes/02-adaptation/serial-consonance-completion/recipe.toml`:
 
 ```toml
+id = "serial-consonance-completion"
 title = "Serial completion with structural ledgers"
+codec = "rust"
+setup = "setup.rs"
+purpose = "purpose.md"
 summary = "Filter additive completion candidates through serial allowances, preserve the structural plan, and audit the result through structural and all-sounding ledgers."
 category = "Rust"
 tags = ["music", "serial", "completion", "bounded-search", "reversible", "framework", "rust"]

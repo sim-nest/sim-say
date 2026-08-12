@@ -50,6 +50,7 @@
 | `specimen` | `codec` | crates/sim-run-loaders/src/native/codec_proxy_tests.rs |
 | `specimen` | `config` | crates/sim-codec-config/recipes/01-basics/per-lib-config/recipe.toml |
 | `specimen` | `doc` | crates/sim-codec-doc/tests/conformance.rs |
+| `specimen` | `javascript` | crates/sim-codec-javascript/recipes/01-basics/lossless-source/recipe.toml |
 | `specimen` | `javascript` | crates/sim-lib-lang-javascript/recipes/01-basics/source-core/recipe.toml |
 | `specimen` | `json` | crates/sim-codec-json/recipes/01-basics/tagged-string/recipe.toml |
 | `specimen` | `json` | crates/sim-codec-json/src/tests.rs |
@@ -489,6 +490,7 @@
 | `specimen` | `lisp` | recipes/watch/privacy-reaper/recipe.toml |
 | `specimen` | `lisp` | src/runtime/cookbook_directory.rs |
 | `specimen` | `mcp` | crates/sim-codec-mcp/recipes/01-basics/envelope-descriptor/recipe.toml |
+| `specimen` | `python` | crates/sim-codec-python/recipes/01-basics/lossless-source/recipe.toml |
 | `specimen` | `python` | crates/sim-lib-lang-python/recipes/01-basics/capability-eval/recipe.toml |
 | `specimen` | `python` | crates/sim-lib-lang-python/recipes/01-basics/source-core/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-agent-runner-core/recipes/01-basics/output-contract-repair/recipe.toml |
@@ -503,6 +505,17 @@
 | `specimen` | `rust` | crates/sim-lib-interference-solve/recipes/01-basics/detector-reduction/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-interference-solve/recipes/01-basics/fringe-analysis/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-interference-solve/recipes/01-basics/two-tone-beats/recipe.toml |
+| `specimen` | `rust` | crates/sim-lib-music-serial/recipes/01-basics/arrays-time-points/recipe.toml |
+| `specimen` | `rust` | crates/sim-lib-music-serial/recipes/01-basics/immutable-plan/recipe.toml |
+| `specimen` | `rust` | crates/sim-lib-music-serial/recipes/01-basics/strict-row-realization/recipe.toml |
+| `specimen` | `rust` | crates/sim-lib-music-serial/recipes/02-adaptation/modal-spine/recipe.toml |
+| `specimen` | `rust` | crates/sim-lib-music-serial/recipes/02-adaptation/serial-consonance-completion/recipe.toml |
+| `specimen` | `rust` | crates/sim-lib-music-serial/recipes/02-adaptation/third-party-adaptation/recipe.toml |
+| `specimen` | `rust` | crates/sim-lib-music-serial/recipes/02-techniques/counter-voices/recipe.toml |
+| `specimen` | `rust` | crates/sim-lib-music-serial/recipes/02-techniques/derived-invariant-practice/recipe.toml |
+| `specimen` | `rust` | crates/sim-lib-music-serial/recipes/02-techniques/referential-subsets/recipe.toml |
+| `specimen` | `rust` | crates/sim-lib-music-serial/recipes/02-techniques/simultaneous-forms/recipe.toml |
+| `specimen` | `rust` | crates/sim-lib-music-serial/recipes/03-parameters/integral-parameters/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-numbers-signal/recipes/01-basics/blocked-transform/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-numbers-signal/recipes/01-basics/burg-mem-evidence/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-numbers-signal/recipes/01-basics/spectral-estimators/recipe.toml |
@@ -511,6 +524,7 @@
 | `specimen` | `rust` | crates/sim-lib-numbers-stats/recipes/01-basics/clustering-evidence/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-pitch-serial/recipes/01-basics/row-class-analysis/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-pitch-serial/recipes/01-basics/row-family-matrix/recipe.toml |
+| `specimen` | `rust` | crates/sim-lib-pitch-serial/recipes/02-partitions/partition-mosaic/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-serial-core/recipes/01-basics/certified-transforms/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-view-interference/recipes/01-basics/interference-study/recipe.toml |
 | `specimen` | `rust` | recipes/00-overview/modeled-work-order/recipe.toml |
@@ -623,6 +637,7 @@
 | `specimen` | `shell` | recipes/02-scenarios/placement-report/recipe.toml |
 | `specimen` | `shell` | recipes/02-scenarios/server-verb/recipe.toml |
 | `specimen` | `shell` | recipes/publish-readiness/package-list/recipe.toml |
+| `specimen` | `typescript` | crates/sim-codec-typescript/recipes/01-basics/lossless-source/recipe.toml |
 | `specimen` | `typescript` | crates/sim-lib-lang-typescript/recipes/01-basics/browsable-metadata/recipe.toml |
 | `specimen` | `typescript` | crates/sim-lib-lang-typescript/recipes/01-basics/code-producing-syntax-gap/recipe.toml |
 | `specimen` | `typescript` | crates/sim-lib-lang-typescript/recipes/01-basics/erased-execution/recipe.toml |
