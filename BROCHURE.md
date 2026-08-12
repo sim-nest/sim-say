@@ -124,11 +124,14 @@ piece gives you.
 - **sim-codec-config** -- It turns small SIM configuration files into ordinary runtime maps and writes those maps back as clean text.
 - **sim-codec-doc** -- It reads and writes Markdown, Typst, AsciiDoc, and LaTeX as one structured document value.
 - **sim-codec-index** -- It gives the SIM Index one checked wire surface instead of many ad hoc readers.
+- **sim-codec-javascript** -- It gives SIM a bounded, lossless ECMAScript 2026 frontend whose source evidence survives every downstream decision.
 - **sim-codec-json** -- It reads and writes any value as JSON, so SIM data flows through the world's most common interchange format.
 - **sim-codec-lisp** -- It reads and writes values in parenthesized s-expression text, the plain nested form where structure is spelled out with brackets.
 - **sim-codec-lua** -- It lets SIM read Lua chunks into shared expression forms with source identity kept nearby.
 - **sim-codec-mcp** -- It reads and writes the message envelopes of the Model Context Protocol, checking each one is well formed.
 - **sim-codec-pratt** -- It gives SIM codecs one shared way to group infix tokens into expression trees.
+- **sim-codec-python** -- It admits Python 3.14.6 source into SIM as bounded, lossless syntax without importing a Python runtime.
+- **sim-codec-typescript** -- It layers bounded TypeScript 7.0.2 and TSX syntax over SIM's JavaScript frontend while keeping compiler-dependent decisions explicit.
 - **sim-test-support** -- It is the shared set of helpers the SIM formats use to test that they read and write values correctly.
 - **sim-wasm-abi** -- It is the shared handshake that lets SIM pass values to and from sandboxed WebAssembly modules.
 
@@ -228,18 +231,22 @@ piece gives you.
 - **sim-lib-core** -- It is the shared plumbing every SIM library uses to announce what it offers and get it installed once, cleanly.
 - **sim-lib-dispatch** -- It picks the right version of an operation based on the kinds of things you hand it.
 - **sim-lib-exec** -- It lets a trusted host run a specific outside process with clear permission and tight limits.
+- **sim-lib-gc-tracing** -- It reclaims unreachable managed-object cycles with deterministic, explicitly bounded tracing work.
 - **sim-lib-incremental** -- It loads incremental calculation into SIM as a capability-gated runtime organ for expression values.
 - **sim-lib-lang-cl** -- It lets you write for SIM in familiar Common Lisp style, with the parentheses and forms Lisp people expect.
 - **sim-lib-lang-clojure** -- It lets you write for SIM in Clojure style, using EDN data notation and an immutable, functional feel.
 - **sim-lib-lang-genconf** -- It generates a steady, repeatable set of test inputs for confirming that language surfaces behave correctly.
 - **sim-lib-lang-islisp** -- It lets you write for SIM in ISLISP, the small standardized Lisp with a deliberately compact core.
+- **sim-lib-lang-javascript** -- It runs bounded ECMAScript over SIM's shared values and organs without smuggling in a browser, Node, or ambient event loop.
 - **sim-lib-lang-julia** -- It lets you write for SIM in Julia style, the notation favored for technical and numerical work.
 - **sim-lib-lang-lua** -- It lets SIM run Lua-shaped source on the shared runtime with clear boundaries around host effects.
 - **sim-lib-lang-matrix** -- It gathers every language surface and checks them all against one shared standard so they agree.
 - **sim-lib-lang-prolog** -- It lets you write for SIM in Prolog style, stating facts and rules and letting the system find the answers.
+- **sim-lib-lang-python** -- It runs bounded, agent-authored Python over SIM values without importing CPython or granting ambient host authority.
 - **sim-lib-lang-ruby** -- It lets you write for SIM in an expressive Ruby style, with the readable, block-friendly flavor Ruby is known for.
 - **sim-lib-lang-scheme** -- It lets you write for SIM in Scheme, the small, clean Lisp dialect of the R7RS-small standard.
 - **sim-lib-lang-typed-lazy** -- It lets you write for SIM in a typed, lazy style where values are checked ahead and computed only when needed.
+- **sim-lib-lang-typescript** -- It lets SIM run faithfully erasable TypeScript through the existing JavaScript evaluator while preserving type notation for inspection.
 - **sim-lib-logic** -- It lets you state facts and rules, then ask questions and get every answer that fits.
 - **sim-lib-mutation** -- It lets programs change data in place while keeping every change tracked and permitted.
 - **sim-lib-namespace** -- It organizes names into separate modules so large programs do not trip over each other.
@@ -668,6 +675,12 @@ It gives the SIM Index one checked wire surface instead of many ad hoc readers.
 
 The SIM Index describes features, examples, surfaces, and routes across the whole constellation. This crate gives that graph a single codec that reads the canonical index form, validates every reference through the shared index model, and writes the same facts back as s-expression or JSON text.
 
+#### sim-codec-javascript
+
+It gives SIM a bounded, lossless ECMAScript 2026 frontend whose source evidence survives every downstream decision.
+
+The crate parses both Script and Module goals into a runtime-independent concrete tree. Byte spans, comments, trivia, parser-controlled division-versus-RegExp choices, and automatic-semicolon evidence remain attached, so diagnostics and source tools do not have to reconstruct what the parser knew. The loadable `codec/javascript` lowers accepted syntax to stable `javascript/*` expressions and offers plain, located, and recursively located tree lanes. Canonical encoding uses JavaScript text where the language can carry an expression and the shared tagged fallback where it cannot.
+
 #### sim-codec-json
 
 It reads and writes any value as JSON, so SIM data flows through the world's most common interchange format.
@@ -697,6 +710,18 @@ The Model Context Protocol is a standard way for tools and models to exchange me
 It gives SIM codecs one shared way to group infix tokens into expression trees.
 
 This crate keeps precedence parsing in one place for text surfaces that use infix operators. A codec supplies its own lexer and operator table, then receives a located expression tree with the same grouping rules, source spans, and resource limits each time. That keeps language-specific crates focused on their syntax while the common parser handles binding strength, calls, prefixes, postfixes, and nested input.
+
+#### sim-codec-python
+
+It admits Python 3.14.6 source into SIM as bounded, lossless syntax without importing a Python runtime.
+
+`sim-codec-python` tokenizes and parses modules into a concrete tree that retains exact text, comments, layout, literal spelling, byte locations, f-strings, template strings, and soft-keyword decisions. Its loadable `codec/python` lowers accepted syntax to stable `python/*` expression forms while preserving origins and marking runtime support separately. Plain, located, and recursively located tree lanes share one limits contract. Encoding emits canonical Python-compatible forms when possible and uses the established tagged expression fallback when ordinary Python source cannot represent a SIM value.
+
+#### sim-codec-typescript
+
+It layers bounded TypeScript 7.0.2 and TSX syntax over SIM's JavaScript frontend while keeping compiler-dependent decisions explicit.
+
+The crate reuses the public JavaScript token and node model for ECMAScript identity, then adds TypeScript declarations, annotations, modifiers, type nodes, and JSX metadata. Exact source, trivia, byte locations, and extension context survive in the returned tree. Direct lowering erases only syntax that needs no compiler judgment and builds `javascript/*` expressions through `JavascriptBuilder`, retaining annotation references and derivation origins. Checker-dependent assertions, code-producing constructs, decorators, and JSX transforms remain located `EvaluationGap` values instead of receiving approximate semantics.
 
 #### sim-test-support
 
@@ -1780,13 +1805,19 @@ This library is the quiet foundation the other libraries stand on. When a librar
 
 It picks the right version of an operation based on the kinds of things you hand it.
 
-This library lets one named operation have many implementations and choose the fitting one automatically. You describe several versions of an operation, each meant for a particular kind of value, and when the operation is called this crate looks at the actual arguments and runs the version that matches best. When more than one version could apply, it settles ties in a clear, stated order rather than by chance. The result is that you can add new behavior for new kinds of data without editing the places that already call the operation, keeping code open to growth.
+This library lets one named operation have many implementations and choose the fitting one automatically. You describe several versions of an operation, each meant for a particular kind of value, and when the operation is called this crate looks at the actual arguments and runs the version that matches best. It also supplies ordered own-property records and bounded receiver-aware data/accessor hooks while leaving inheritance order and precedence to each language profile. The result is that you can add new behavior for new kinds of data without editing the places that already call the operation, keeping code open to growth.
 
 #### sim-lib-exec
 
 It lets a trusted host run a specific outside process with clear permission and tight limits.
 
 Some useful work belongs outside the runtime: a formatter, a compiler, a small command-line helper, or another tool the host already trusts. This crate gives that work a narrow gate. The caller names the exact program and arguments, the host checks permission first, and the run is bounded by a working directory root, a timeout, and a byte limit on captured output.
+
+#### sim-lib-gc-tracing
+
+It reclaims unreachable managed-object cycles with deterministic, explicitly bounded tracing work.
+
+The crate supplies stop-the-world collection policy for `sim-lib-mutation`'s language-neutral managed arena. Marking is iterative rather than Rust-stack recursive, strong edges and ephemerons are handled in distinct phases, and object, edge, mark-stack, and total-work limits are admitted before sweeping begins. A refused collection produces a failure receipt before any destructive mutation. Successful receipts follow allocation order, making collection outcomes suitable for replay comparison and operational diagnosis.
 
 #### sim-lib-incremental
 
@@ -1818,6 +1849,12 @@ It lets you write for SIM in ISLISP, the small standardized Lisp with a delibera
 
 This library gives SIM an ISLISP face. ISLISP is a trim, standardized member of the Lisp family, built around a small and clearly defined core rather than a sprawling set of features. Writing in this profile means working with that compact, dependable vocabulary, which many people value for its clarity and its stable definition. It is a front for reading and writing in that style, not a separate interpreter tucked away; the meaning is carried by SIM's shared expression graph beneath. You get the tidy ISLISP notation while joining the same runtime as every other SIM surface.
 
+#### sim-lib-lang-javascript
+
+It runs bounded ECMAScript over SIM's shared values and organs without smuggling in a browser, Node, or ambient event loop.
+
+The loadable JavaScript profile evaluates lowered `codec/javascript` forms directly. Arrays, iterators, Map, Set, Symbol, descriptors, completions, modules, promises, and an exact UTF-16 string face compose the shared sequence, dispatch, control, namespace, mutation, and collection organs instead of forming a private VM. Promise and module work advances only at an explicit bounded drain-to-empty checkpoint. Hosts may deliberately supply capability-checked module roots and dynamic-source authority; source never acquires filesystem, process, network, timers, DOM, `fetch`, npm, CommonJS, or other host powers by implication. RegExp execution is deliberately narrower than parsing: literals, dot, anchors, simple classes, ASCII shorthand classes, and greedy or lazy `?`, `*`, and `+` use the bounded pattern organ. Flags and advanced ECMAScript pattern constructs fail explicitly rather than being approximated.
+
 #### sim-lib-lang-julia
 
 It lets you write for SIM in Julia style, the notation favored for technical and numerical work.
@@ -1842,6 +1879,12 @@ It lets you write for SIM in Prolog style, stating facts and rules and letting t
 
 This library gives SIM a Prolog face. In the Prolog way of working you do not spell out steps; you state what is true and what follows from what, then ask a question and let the system search for every set of values that fits. This profile brings that declarative style to SIM and connects it to the shared reasoning engine, so your rules and queries run alongside everything else. You get the familiar Prolog feel -- facts, rules, and questions with blanks to fill -- resting on a common foundation instead of a separate tool.
 
+#### sim-lib-lang-python
+
+It runs bounded, agent-authored Python over SIM values without importing CPython or granting ambient host authority.
+
+The profile directly interprets stable `codec/python` lowering and composes shared runtime organs for dispatch, control, namespaces, numbers, managed mutation, and optional tracing collection. Checked classes, C3 method resolution, descriptors, bound methods, exceptions, synchronous context cleanup, generators, structural matching, and cyclic values use those common contracts rather than a private Python VM. Dynamic `eval` and `exec` pass through the canonical diminished read-eval broker. The caller must hold every required capability, provide trusted policy, and choose the smaller authority set visible to decoded code. Imports resolve only through a caller-supplied `Dir` and the shared namespace lifecycle; there is no host path search. `pip`, CPython bytecode, compiler IR, `asyncio`, ambient IO, and host modules such as `os`, `subprocess`, and `socket` are explicit absences.
+
 #### sim-lib-lang-ruby
 
 It lets you write for SIM in an expressive Ruby style, with the readable, block-friendly flavor Ruby is known for.
@@ -1859,6 +1902,12 @@ This library gives SIM a Scheme face, following the R7RS-small standard. Scheme 
 It lets you write for SIM in a typed, lazy style where values are checked ahead and computed only when needed.
 
 This library gives SIM a typed, lazily-evaluated face. Here the kinds of your values are checked before the program runs, so many mistakes are caught early as clear messages rather than surprises during a run. And work is put off until its result is actually wanted, which lets you describe long or open-ended computations and still pay only for the parts you use. This profile brings that careful, on-demand style to SIM as a small language surface. It is a front for reading and writing in that manner, with the meaning carried by SIM's shared expression graph beneath.
+
+#### sim-lib-lang-typescript
+
+It lets SIM run faithfully erasable TypeScript through the existing JavaScript evaluator while preserving type notation for inspection.
+
+The loadable profile installs `language/typescript-notation` over `codec/typescript`. Syntax whose erasure requires no checker or emitter becomes the same `javascript/*` graph used by ordinary JavaScript, so values, effects, modules, jobs, and capabilities retain one runtime meaning. Type annotations survive as browse-only, non-enforcing Shape metadata with source provenance. Constructs that need compiler judgment or produce JavaScript--such as checker-dependent assertions, enums, namespaces, parameter properties, decorators, and JSX transforms--remain located gaps and are never guessed into executable behavior.
 
 #### sim-lib-logic
 
