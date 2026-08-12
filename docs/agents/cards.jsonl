@@ -52,14 +52,14 @@
 {"card": {"id": "cookbook/codec/config", "kind": "cookbook-recipe", "owner": "sim-codec-config", "summary": "Configuration tables for library defaults and shared launcher files."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/core", "kind": "cookbook-recipe", "owner": "sim-codec", "summary": "Shared codec runtime traits, positions, and limits."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/doc", "kind": "cookbook-recipe", "owner": "sim-codec-doc", "summary": "Document decoding and provenance-preserving chunk descriptors."}, "repo": "sim-codecs"}
+{"card": {"id": "cookbook/codec/javascript", "kind": "cookbook-recipe", "owner": "sim-codec-javascript", "summary": "Bounded, lossless JavaScript source parsing."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/json", "kind": "cookbook-recipe", "owner": "sim-codec-json", "summary": "Tagged JSON expression forms."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/lisp", "kind": "cookbook-recipe", "owner": "sim-codec-lisp", "summary": "Lisp surface forms for SIM expressions."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/lua", "kind": "cookbook-recipe", "owner": "sim-codec-lua", "summary": "Lua expression parsing and round-trip recipes for SIM codec surfaces."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/mcp", "kind": "cookbook-recipe", "owner": "sim-codec-mcp", "summary": "MCP JSON-RPC request, response, notification, and error envelopes."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/pratt", "kind": "cookbook-recipe", "owner": "sim-codec-pratt", "summary": "Shared Pratt parsing substrate for codec lexers."}, "repo": "sim-codecs"}
-{"card": {"id": "cookbook/sim-codec-javascript", "kind": "cookbook-recipe", "owner": "sim-codec-javascript", "summary": "Bounded, lossless JavaScript source parsing."}, "repo": "sim-codecs"}
-{"card": {"id": "cookbook/sim-codec-python", "kind": "cookbook-recipe", "owner": "sim-codec-python", "summary": "Bounded lossless Python source parsing."}, "repo": "sim-codecs"}
-{"card": {"id": "cookbook/sim-codec-typescript", "kind": "cookbook-recipe", "owner": "sim-codec-typescript", "summary": "Bounded, lossless TypeScript and TSX source parsing."}, "repo": "sim-codecs"}
+{"card": {"id": "cookbook/codec/python", "kind": "cookbook-recipe", "owner": "sim-codec-python", "summary": "Bounded lossless Python source parsing."}, "repo": "sim-codecs"}
+{"card": {"id": "cookbook/codec/typescript", "kind": "cookbook-recipe", "owner": "sim-codec-typescript", "summary": "Bounded, lossless TypeScript and TSX source parsing."}, "repo": "sim-codecs"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-codecs"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-compute"}
 {"card": {"id": "cookbook/compute-auto", "kind": "cookbook-recipe", "owner": "sim-lib-compute-auto", "summary": "Automatic tensor compute site selection with CPU fallback."}, "repo": "sim-compute"}
