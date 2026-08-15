@@ -1,6 +1,6 @@
 # sim-compute
 
-Published commit: `7ff155585a4588ecdb67df69b3b58f18db337d4e`.
+Published commit: `a3eb37b65bab1684f2134f92476e60e5748effc9`.
 
 ## Crates
 
