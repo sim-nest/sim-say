@@ -12,7 +12,6 @@ Start modeled, imported, or live watch plans through the shared command bootload
 
 - `anchor/cli/watch`
 - `anchor/export/sim-run/cli/main/watch`
-- `anchor/runtime-lib/sim-run/boot-codec`
 - `anchor/runtime-lib/sim-run/watch-lib`
 
 ## Surfaces

@@ -8,10 +8,6 @@
 
 Start modeled and automatic compute inspection through the shared command bootloader.
 
-## Anchors
-
-- `anchor/runtime-lib/sim-run/boot-codec`
-
 ## Specimens
 
 - `spec-test/sim-run/crates/sim-run/tests/compute`

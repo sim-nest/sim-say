@@ -12,7 +12,6 @@ Run the published JVM specimen through a host-registered JVM library and cli/mai
 
 - `anchor/cli/jvm`
 - `anchor/export/sim-run/cli/main/jvm`
-- `anchor/runtime-lib/sim-run/boot-codec`
 - `anchor/runtime-lib/sim-run/jvm-cli-lib`
 - `local/sim-run/anchor/bin/sim`
 
