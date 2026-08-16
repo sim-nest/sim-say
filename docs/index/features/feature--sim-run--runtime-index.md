@@ -14,7 +14,7 @@ Explore merged SIM Index graph and public source facts through the bootloader as
 - `anchor/crate/sim-lib-index`
 - `anchor/export/sim-lib-index/cli/main/index`
 - `anchor/runtime-lib/sim-lib-index/index-lib`
-- `anchor/runtime-lib/sim-run/index-boot-codec`
+- `anchor/runtime-lib/sim-run/boot-codec`
 
 ## Surfaces
 
