@@ -1,6 +1,6 @@
 # sim-expr-tree
 
-Published commit: `e6a3b9dafb76530c3c867a17e04efd5d11464926`.
+Published commit: `03eb2a3a69b188579a14629790daad6c070d846b`.
 
 ## Crates
 

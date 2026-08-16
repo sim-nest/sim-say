@@ -48,6 +48,7 @@
 {"card": {"id": "cookbook/codec/bitwise-base64", "kind": "cookbook-recipe", "owner": "sim-codec-bitwise-base64", "summary": "ASCII-safe Base64 text wrapper around canonical bitwise frames."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/bridge", "kind": "cookbook-recipe", "owner": "sim-codec-bridge", "summary": "Strict packet envelopes for checked exchanges."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/chat", "kind": "cookbook-recipe", "owner": "sim-codec-chat", "summary": "Chat transcript and provider projection forms."}, "repo": "sim-codecs"}
+{"card": {"id": "cookbook/codec/classfile", "kind": "cookbook-recipe", "owner": "sim-codec-classfile", "summary": "Inspect retained JVM classfiles without starting a JVM."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/compare", "kind": "cookbook-recipe", "owner": "sim-codec-compare", "summary": "Measured bitwise-vs-binary size and speed comparison."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/config", "kind": "cookbook-recipe", "owner": "sim-codec-config", "summary": "Configuration tables for library defaults and shared launcher files."}, "repo": "sim-codecs"}
 {"card": {"id": "cookbook/codec/core", "kind": "cookbook-recipe", "owner": "sim-codec", "summary": "Shared codec runtime traits, positions, and limits."}, "repo": "sim-codecs"}
@@ -275,13 +276,16 @@
 {"card": {"id": "cookbook/logic", "kind": "cookbook-recipe", "owner": "sim-lib-logic", "summary": "Logic database, assertion, and query surfaces."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/organ/binding", "kind": "cookbook-recipe", "owner": "sim-lib-binding", "summary": "Binding surface concepts shared by language profiles."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/organ/dispatch", "kind": "cookbook-recipe", "owner": "sim-lib-dispatch", "summary": "Generic function and multimethod concepts."}, "repo": "sim-runtime"}
-{"card": {"id": "cookbook/organ/incremental", "kind": "cookbook-recipe", "owner": "sim-lib-incremental", "summary": "Memoized expression queries with invalidation, missing observations, cutoff, snapshots, and metrics."}, "repo": "sim-runtime"}
+{"card": {"id": "cookbook/organ/incremental", "kind": "cookbook-recipe", "owner": "sim-lib-incremental", "summary": "Memoized expression queries plus immutable, proof-backed dataflow analysis projections."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/organ/mutation", "kind": "cookbook-recipe", "owner": "sim-lib-mutation", "summary": "Cells, boxes, mutable tables, and mutable vectors."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/organ/namespace", "kind": "cookbook-recipe", "owner": "sim-lib-namespace", "summary": "Package, module, import, export, and shadowing surfaces."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/organ/pattern", "kind": "cookbook-recipe", "owner": "sim-lib-pattern", "summary": "Pattern matching and algebraic data type declarations."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/organ/sequence", "kind": "cookbook-recipe", "owner": "sim-lib-sequence", "summary": "Sequence operations shared by language profiles."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/runtime/exec", "kind": "cookbook-recipe", "owner": "sim-lib-exec", "summary": "Permission-gated host process runs with time and output limits."}, "repo": "sim-runtime"}
-{"card": {"id": "cookbook/standard/core", "kind": "cookbook-recipe", "owner": "sim-lib-standard-core", "summary": "Language profiles, fidelity badges, and conformance helpers."}, "repo": "sim-runtime"}
+{"card": {"id": "cookbook/sim-lib-class", "kind": "cookbook-recipe", "owner": "sim-lib-class", "summary": "Language-neutral class lineage, browsing, read construction, and managed caches."}, "repo": "sim-runtime"}
+{"card": {"id": "cookbook/sim-lib-function", "kind": "cookbook-recipe", "owner": "sim-lib-function", "summary": "Language-neutral typed functions, managed captures, and optional dispatch."}, "repo": "sim-runtime"}
+{"card": {"id": "cookbook/sim-lib-lang-jvm", "kind": "cookbook-recipe", "owner": "sim-lib-lang-jvm", "summary": ""}, "repo": "sim-runtime"}
+{"card": {"id": "cookbook/standard/core", "kind": "cookbook-recipe", "owner": "sim-lib-standard-core", "summary": "Language profiles, fidelity badges, conformance helpers, and strict migration characterization."}, "repo": "sim-runtime"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-runtime"}
 {"card": {"id": "agent/effects", "kind": "surface-card", "owner": "sim", "summary": "agent effect requirement surface"}, "repo": "sim-sdk"}
 {"card": {"id": "agent/memory", "kind": "surface-card", "owner": "sim", "summary": "agent memory surface"}, "repo": "sim-sdk"}
