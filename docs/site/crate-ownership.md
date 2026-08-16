@@ -47,6 +47,7 @@
 | `sim-citizen-derive` | [sim-citizen](../repos/sim-citizen.md) |
 | `sim-codec` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-algol` | [sim-codecs](../repos/sim-codecs.md) |
+| `sim-codec-classfile` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-pratt` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-binary` | [sim-codecs](../repos/sim-codecs.md) |
 | `sim-codec-binary-base64` | [sim-codecs](../repos/sim-codecs.md) |
@@ -119,6 +120,7 @@
 | `sim-lib-surface-card` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-macros` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-table-core` | [sim-foundation](../repos/sim-foundation.md) |
+| `sim-text` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-value` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-lib-interference-compute` | [sim-interference](../repos/sim-interference.md) |
 | `sim-lib-interference-core` | [sim-interference](../repos/sim-interference.md) |
@@ -239,10 +241,12 @@
 | `sim-incremental-core` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-incremental` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-binding` | [sim-runtime](../repos/sim-runtime.md) |
+| `sim-lib-class` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-control` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-core` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-dispatch` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-exec` | [sim-runtime](../repos/sim-runtime.md) |
+| `sim-lib-function` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-gc-tracing` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-lang-cl` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-lang-clojure` | [sim-runtime](../repos/sim-runtime.md) |
@@ -250,6 +254,7 @@
 | `sim-lib-lang-islisp` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-lang-javascript` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-lang-julia` | [sim-runtime](../repos/sim-runtime.md) |
+| `sim-lib-lang-jvm` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-lang-lua` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-lang-matrix` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-lang-prolog` | [sim-runtime](../repos/sim-runtime.md) |
@@ -259,6 +264,7 @@
 | `sim-lib-lang-typed-lazy` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-lang-typescript` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-logic` | [sim-runtime](../repos/sim-runtime.md) |
+| `sim-lib-machine` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-mutation` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-namespace` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-pattern` | [sim-runtime](../repos/sim-runtime.md) |

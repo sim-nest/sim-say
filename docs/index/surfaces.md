@@ -29,9 +29,12 @@
 | `cli/expr-tree` | `cli` | `crate/sim-lib-expr-tree-serve` |
 | `cli/glasses` | `cli` | `crate/sim-run` |
 | `cli/index` | `cli` | `crate/sim-lib-index` |
+| `cli/jvm` | `cli` | `crate/sim-run` |
+| `cli/ledger` | `cli` | `crate/sim-ledger-cli` |
 | `cli/mcp` | `cli` | `local/sim-agent-net/crate/sim-lib-mcp` |
 | `cli/music-algorithm-foundry` | `cli` | `crate/music-algorithm-foundry` |
 | `cli/repl` | `cli` | `crate/sim-lib-repl` |
+| `cli/report` | `cli` | `crate/sim-codec-compare` |
 | `cli/serial-workbench` | `cli` | `crate/serial-workbench` |
 | `cli/serve` | `cli` | `crate/sim-web-shell` |
 | `cli/sim-auto` | `cli` | `crate/sim-auto` |
@@ -91,8 +94,10 @@
 | `local/sim-music/cli/xtask` | `cli` | `local/sim-music/crate/xtask` |
 | `local/sim-numbers/cli/xtask` | `cli` | `local/sim-numbers/crate/xtask` |
 | `local/sim-office/cli/xtask` | `cli` | `local/sim-office/crate/xtask` |
+| `local/sim-run/cli/sim` | `cli` | `crate/sim-run` |
 | `local/sim-run/cli/xtask` | `cli` | `local/sim-run/crate/xtask` |
 | `local/sim-runtime/cli/xtask` | `cli` | `local/sim-runtime/crate/xtask` |
+| `local/sim-sdk/cli/sim` | `cli` | `crate/sim-nest` |
 | `local/sim-sdk/cli/xtask` | `cli` | `local/sim-sdk/crate/xtask` |
 | `local/sim-sdk/site-device/glasses-hud` | `site-device` | `crate/sim-nest` |
 | `local/sim-sdk/site-device/glasses-luma-ultra` | `site-device` | `crate/sim-nest` |
@@ -167,6 +172,7 @@
 | `syntax/bitwise-base64` | `syntax` | `language/bitwise-base64` |
 | `syntax/bridge` | `syntax` | `language/bridge` |
 | `syntax/chat` | `syntax` | `language/chat` |
+| `syntax/classfile` | `syntax` | `language/classfile` |
 | `syntax/compare` | `syntax` | `language/compare` |
 | `syntax/config` | `syntax` | `language/config` |
 | `syntax/doc` | `syntax` | `language/doc` |

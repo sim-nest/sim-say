@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-index`
 - Canonical key: `crate/sim-lib-index/feature-sim-run-runtime-index`
 
-Explore the merged SIM Index through the bootloader as stable Table/Dir rows and structured query output.
+Explore merged SIM Index graph and public source facts through the bootloader as stable Table/Dir rows and structured query output.
 
 ## Anchors
 

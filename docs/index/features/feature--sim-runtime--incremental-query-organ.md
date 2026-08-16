@@ -6,12 +6,14 @@
 - Subject: `crate/sim-lib-incremental`
 - Canonical key: `crate/sim-lib-incremental/feature-sim-runtime-incremental-query-organ`
 
-Expose incremental expression queries as a loadable SIM organ with capability-gated registration, invalidation, verification, explanation, snapshots, and metrics.
+Expose incremental expression queries and immutable proof-backed dataflow analysis views as a loadable SIM organ.
 
 ## Anchors
 
 - `anchor/card/cookbook/organ/incremental`
 - `anchor/crate/sim-lib-incremental`
+- `anchor/export/sim-lib-incremental/model/analysis_view.rs`
+- `anchor/export/sim-lib-incremental/model/session.rs`
 - `anchor/runtime-lib/sim-lib-incremental/incremental-lib`
 
 ## Specimens
@@ -37,6 +39,14 @@ use sim_kernel::{
 use crate::*;
 
 use sim_kernel::testing::bare_cx as cx;
+
+use sim_incremental_core::{
+    QueryBudgets, ValueFingerprint,
+    dataflow::{
+        AdmittedTransfer, Boundary, DataflowGraph, EdgeClass, EdgeSpec, FixpointEngine,
+        GraphDirection, JoinSemilattice, NodeSpec, StateSize, TransferPolicy,
+    },
+};
 
 fn string(cx: &mut Cx, value: &str) -> Value {
     cx.factory().string(value.to_owned()).unwrap()
@@ -265,5 +275,151 @@ fn explanation_snapshot_and_card_projection_are_browseable() {
         value.object().as_expr(&mut cx).unwrap()
             == Expr::Symbol(Symbol::qualified("incremental", "register.v1"))
     }));
+}
+
+#[derive(Clone, Debug, Eq, Hash, PartialEq)]
+struct TestFacts(u8);
+
+impl StateSize for TestFacts {
+    fn state_size(&self) -> usize {
+        1
+    }
+}
+
+impl JoinSemilattice for TestFacts {
+    fn bottom(&self) -> Self {
+        Self(0)
+    }
+
+    fn join(&self, other: &Self) -> Self {
+        Self(self.0 | other.0)
+    }
+
+    fn less_equal(&self, other: &Self) -> bool {
+        self.0 & other.0 == self.0
+    }
+}
+
+#[derive(Clone)]
+struct IdentityTransfer;
+
+impl TransferPolicy<TestFacts> for IdentityTransfer {
+    fn fingerprint(&self) -> ValueFingerprint {
+        ValueFingerprint::new(19)
+    }
+
+    fn policy_size(&self) -> usize {
+        0
+    }
+
+    fn transfer(&self, state: &TestFacts) -> TestFacts {
+        state.clone()
+    }
+}
+
+#[test]
+fn completed_analysis_projects_browsable_boundary_states_and_proof_identity() {
+    let graph = DataflowGraph::build(
+        [
+            NodeSpec {
+                id: "entry".to_owned(),
+                location: "recipe.siml:1".to_owned(),
+                boundary: Boundary::Input,
+            },
+            NodeSpec {
+                id: "exit".to_owned(),
+                location: "recipe.siml:2".to_owned(),
+                boundary: Boundary::Output,
+            },
+        ],
+        [EdgeSpec {
+            id: "flow".to_owned(),
+            source: "entry".to_owned(),
+            target: "exit".to_owned(),
+            class: EdgeClass::<String>::Data,
+            direction: GraphDirection::Forward,
+        }],
+    )
+    .unwrap();
+    let transfer = AdmittedTransfer::admit(
+        IdentityTransfer,
+        &[TestFacts(0), TestFacts(1), TestFacts(3)],
+    )
+    .unwrap();
+    let proof = FixpointEngine::solve_proven(
+        &graph,
+        &transfer,
+        TestFacts(0),
+        [("entry".to_owned(), TestFacts(1))],
+        QueryBudgets::default(),
+    )
+    .unwrap();
+    let expected_identity = proof.identity().get().to_string();
+    let mut cx = cx();
+    install_incremental_lib(&mut cx).unwrap();
+    let analysis = DataflowAnalysisView::from_completion(&mut cx, &graph, proof, |state| {
+        Expr::Number(sim_kernel::NumberLiteral {
+            domain: Symbol::qualified("core", "u8"),
+            canonical: state.0.to_string(),
+        })
+    })
+    .unwrap();
+    let value = cx.factory().opaque(std::sync::Arc::new(analysis)).unwrap();
+
+    let inputs = table_get(&mut cx, &value, "input-states");
+    assert!(
+        !inputs
+            .object()
+            .as_dir()
+            .unwrap()
+            .is_dir(&mut cx, Symbol::new("entry"))
+            .unwrap()
+    );
+    assert_ne!(
+        table_get(&mut cx, &inputs, "entry")
+            .object()
+            .as_expr(&mut cx)
+            .unwrap(),
+        Expr::Nil
+    );
+    assert_eq!(
+        table_get(&mut cx, &inputs, "exit")
+            .object()
+            .as_expr(&mut cx)
+            .unwrap(),
+        Expr::Nil
+    );
+
+    let outputs = table_get(&mut cx, &value, "output-states");
+    assert_ne!(
+        table_get(&mut cx, &outputs, "exit")
+            .object()
+            .as_expr(&mut cx)
+            .unwrap(),
+        Expr::Nil
+    );
+    assert_eq!(
+        table_get(&mut cx, &outputs, "entry")
+            .object()
+            .as_expr(&mut cx)
+            .unwrap(),
+        Expr::Nil
+    );
+
+    let proof = table_get(&mut cx, &value, "proof");
+    let fingerprint = table_get(&mut cx, &proof, "fingerprint");
+    assert_eq!(number_text(&mut cx, &fingerprint), expected_identity);
+    let shape = cx
+        .resolve_shape(&incremental_analysis_shape_symbol())
+        .unwrap();
+    assert!(
+        shape
+            .object()
+            .as_shape()
+            .unwrap()
+            .check_value(&mut cx, value)
+            .unwrap()
+            .accepted
+    );
 }
 ```

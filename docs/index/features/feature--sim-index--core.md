@@ -6,7 +6,7 @@
 - Subject: `local/sim-tooling/crate/xtask`
 - Canonical key: `crate/xtask/feature-sim-index-core`
 
-Generate, query, route, prove, and check duplicate implementation overlap in the SIM Index graph as a checked constellation surface.
+Generate, query, route, prove, and check duplicate implementation overlap, benchmark ownership, and source-backed authored composition claims in the SIM Index graph as a checked constellation surface.
 
 ## Anchors
 
@@ -138,6 +138,8 @@ fn self_doc() -> IndexDoc {
             },
         ],
         anchors: Vec::new(),
+        declarations: Vec::new(),
+        protocol_relations: Vec::new(),
         surfaces: vec![
             DiscoveredSurface {
                 id: SurfaceId::new("cli/xtask"),

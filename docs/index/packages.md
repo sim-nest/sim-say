@@ -36,6 +36,7 @@
 | `crate/sim-codec-bitwise-base64` | `crate` | sim-codec-bitwise-base64 |
 | `crate/sim-codec-bridge` | `crate` | sim-codec-bridge |
 | `crate/sim-codec-chat` | `crate` | sim-codec-chat |
+| `crate/sim-codec-classfile` | `crate` | sim-codec-classfile |
 | `crate/sim-codec-compare` | `crate` | sim-codec-compare |
 | `crate/sim-codec-config` | `crate` | sim-codec-config |
 | `crate/sim-codec-doc` | `crate` | sim-codec-doc |
@@ -78,6 +79,7 @@
 | `crate/sim-lib-auto-vendor` | `crate` | sim-lib-auto-vendor |
 | `crate/sim-lib-binding` | `crate` | sim-lib-binding |
 | `crate/sim-lib-bridge` | `crate` | sim-lib-bridge |
+| `crate/sim-lib-class` | `crate` | sim-lib-class |
 | `crate/sim-lib-compute-auto` | `crate` | sim-lib-compute-auto |
 | `crate/sim-lib-compute-cli` | `crate` | sim-lib-compute-cli |
 | `crate/sim-lib-compute-cuda` | `crate` | sim-lib-compute-cuda |
@@ -122,6 +124,7 @@
 | `crate/sim-lib-femm-solve` | `crate` | sim-lib-femm-solve |
 | `crate/sim-lib-femm-space` | `crate` | sim-lib-femm-space |
 | `crate/sim-lib-femm-tape` | `crate` | sim-lib-femm-tape |
+| `crate/sim-lib-function` | `crate` | sim-lib-function |
 | `crate/sim-lib-gantt` | `crate` | sim-lib-gantt |
 | `crate/sim-lib-gc-tracing` | `crate` | sim-lib-gc-tracing |
 | `crate/sim-lib-incremental` | `crate` | sim-lib-incremental |
@@ -134,6 +137,7 @@
 | `crate/sim-lib-lang-genconf` | `crate` | sim-lib-lang-genconf |
 | `crate/sim-lib-lang-javascript` | `crate` | sim-lib-lang-javascript |
 | `crate/sim-lib-lang-julia` | `crate` | sim-lib-lang-julia |
+| `crate/sim-lib-lang-jvm` | `crate` | sim-lib-lang-jvm |
 | `crate/sim-lib-lang-lua` | `crate` | sim-lib-lang-lua |
 | `crate/sim-lib-lang-matrix` | `crate` | sim-lib-lang-matrix |
 | `crate/sim-lib-lang-prolog` | `crate` | sim-lib-lang-prolog |
@@ -144,6 +148,7 @@
 | `crate/sim-lib-lang-typescript` | `crate` | sim-lib-lang-typescript |
 | `crate/sim-lib-ledger-books` | `crate` | sim-lib-ledger-books |
 | `crate/sim-lib-ledger-close` | `crate` | sim-lib-ledger-close |
+| `crate/sim-lib-machine` | `crate` | sim-lib-machine |
 | `crate/sim-lib-mail` | `crate` | sim-lib-mail |
 | `crate/sim-lib-midi-ble` | `crate` | sim-lib-midi-ble |
 | `crate/sim-lib-midi-core` | `crate` | sim-lib-midi-core |
@@ -264,6 +269,7 @@
 | `crate/sim-table-core` | `crate` | sim-table-core |
 | `crate/sim-table-mount` | `crate` | sim-table-mount |
 | `crate/sim-test-support` | `crate` | sim-test-support |
+| `crate/sim-text` | `crate` | sim-text |
 | `crate/sim-value` | `crate` | sim-value |
 | `crate/sim-view-tty` | `crate` | sim-view-tty |
 | `crate/sim-viture-ffi` | `crate` | sim-viture-ffi |

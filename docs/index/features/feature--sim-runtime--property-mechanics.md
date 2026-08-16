@@ -10,7 +10,8 @@ Store ordered own properties and execute data or accessor descriptors with recei
 
 ## Anchors
 
-- `anchor/crate/sim-lib-dispatch`
+- `anchor/rustdoc/sim-lib-dispatch/descriptor`
+- `anchor/rustdoc/sim-lib-dispatch/property-store`
 
 ## Specimens
 

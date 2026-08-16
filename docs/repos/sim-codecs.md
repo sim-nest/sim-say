@@ -1,11 +1,12 @@
 # sim-codecs
 
-Published commit: `89320a0f0158e3399b08c8cf97df194912969233`.
+Published commit: `e73c8ddcf522be777deb5f6cd3d281f98ddcbb7d`.
 
 ## Crates
 
 - `sim-codec`
 - `sim-codec-algol`
+- `sim-codec-classfile`
 - `sim-codec-pratt`
 - `sim-codec-binary`
 - `sim-codec-binary-base64`
