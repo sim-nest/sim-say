@@ -15,6 +15,7 @@ Start product commands through the shared bootloader and loaded runtime librarie
 - `anchor/crate/sim-run-core`
 - `anchor/export/sim-run-core/codec/lisp`
 - `anchor/export/sim-run/codec/lisp`
+- `anchor/runtime-lib/sim-run/boot-codec`
 - `anchor/rustdoc/sim-run-core/bootloader`
 - `anchor/rustdoc/sim-run-core/run_with_session`
 

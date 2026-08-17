@@ -6,12 +6,13 @@
 - Subject: `crate/sim-lib-numbers-stats`
 - Canonical key: `crate/sim-lib-numbers-stats/feature-sim-numbers-statistical-inference`
 
-Cluster finite points, fit regularized mixtures, estimate mergeable streaming quantiles, and infer finite hidden-state sequences with explicit numerical, model-selection, convergence, memory, and termination evidence.
+Compute robust benchmark dispersion and seeded uncertainty, cluster finite points, fit regularized mixtures, estimate mergeable streaming quantiles, and infer finite hidden-state sequences with explicit numerical, model-selection, convergence, memory, and termination evidence.
 
 ## Anchors
 
 - `anchor/crate/sim-lib-numbers-stats`
 - `anchor/runtime-lib/sim-lib-numbers-stats/stats-numbers-lib`
+- `anchor/rustdoc/sim-lib-numbers-stats/bootstrap_mean_difference_interval`
 - `anchor/rustdoc/sim-lib-numbers-stats/fit_gmm`
 - `anchor/rustdoc/sim-lib-numbers-stats/fit_hmm`
 - `anchor/rustdoc/sim-lib-numbers-stats/fit_kmeans`
@@ -19,6 +20,7 @@ Cluster finite points, fit regularized mixtures, estimate mergeable streaming qu
 - `anchor/rustdoc/sim-lib-numbers-stats/gmm-model`
 - `anchor/rustdoc/sim-lib-numbers-stats/hidden-markov-model`
 - `anchor/rustdoc/sim-lib-numbers-stats/kmeans-control`
+- `anchor/rustdoc/sim-lib-numbers-stats/median_absolute_deviation`
 - `anchor/rustdoc/sim-lib-numbers-stats/quantile-sketch`
 - `anchor/rustdoc/sim-lib-numbers-stats/viterbi`
 

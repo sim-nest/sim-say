@@ -37,8 +37,11 @@
 | `grammar` | `grammar/wire/mcp` | Wire protocol grammars |
 | `specimen` | `algol` | crates/sim-codec-algol/recipes/01-basics/algol-arithmetic/recipe.toml |
 | `specimen` | `bridge` | crates/sim-codec-bridge/recipes/01-basics/packet-descriptor/recipe.toml |
+| `specimen` | `classfile` | crates/sim-codec-classfile/recipes/01-inspection/retained-classfile/recipe.toml |
 | `specimen` | `codec` | crates/sim-citizen/src/lib.rs |
 | `specimen` | `codec` | crates/sim-codec-binary/src/tests.rs |
+| `specimen` | `codec` | crates/sim-codec-classfile/tests/index_coverage.rs |
+| `specimen` | `codec` | crates/sim-codec-classfile/tests/recipe_conformance.rs |
 | `specimen` | `codec` | crates/sim-codec-javascript/tests/conformance.rs |
 | `specimen` | `codec` | crates/sim-codec-odf/src/tests.rs |
 | `specimen` | `codec` | crates/sim-codec-pratt/src/tests.rs |
@@ -51,6 +54,8 @@
 | `specimen` | `config` | crates/sim-codec-config/recipes/01-basics/per-lib-config/recipe.toml |
 | `specimen` | `doc` | crates/sim-codec-doc/tests/conformance.rs |
 | `specimen` | `javascript` | crates/sim-codec-javascript/recipes/01-basics/lossless-source/recipe.toml |
+| `specimen` | `javascript` | crates/sim-lib-lang-javascript/recipes/01-basics/collection-owner-composition/recipe.toml |
+| `specimen` | `javascript` | crates/sim-lib-lang-javascript/recipes/01-basics/json-codec-composition/recipe.toml |
 | `specimen` | `javascript` | crates/sim-lib-lang-javascript/recipes/01-basics/source-core/recipe.toml |
 | `specimen` | `json` | crates/sim-codec-json/recipes/01-basics/tagged-string/recipe.toml |
 | `specimen` | `json` | crates/sim-codec-json/src/tests.rs |
@@ -189,6 +194,7 @@
 | `specimen` | `lisp` | crates/sim-lib-discrete/recipes/01-basics/binomial-count/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-discrete/recipes/01-basics/matrix-runtime/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-dispatch/recipes/01-basics/select-overload/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-dispatch/src/tests.rs |
 | `specimen` | `lisp` | crates/sim-lib-doc-core/recipes/01-basics/doc-core-descriptor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-doc-ledger/recipes/01-basics/ledger-draft-preview/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-doc-markup/recipes/01-basics/markup-doc-codec/recipe.toml |
@@ -223,6 +229,8 @@
 | `specimen` | `lisp` | crates/sim-lib-forge/recipes/01-basics/forge-cli/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-gantt/recipes/01-basics/local-gantt-plan/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-gc-tracing/recipes/01-collection/bounded-cycle/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-gc-tracing/recipes/01-collection/managed-substrate/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-incremental/recipes/01-basics/completed-analysis/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-incremental/recipes/01-basics/query-family/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-intent/recipes/01-basics/select-intent/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-interference-compute/recipes/01-basics/modeled-differential-matrix/recipe.toml |
@@ -246,6 +254,7 @@
 | `specimen` | `lisp` | crates/sim-lib-lang-lua/recipes/01-basics/metatable-vector/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-lang-lua/recipes/01-basics/profile-descriptor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-lang-lua/recipes/01-basics/string-patterns/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-lang-matrix/recipes/01-basics/cross-language-callable/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-lang-matrix/recipes/01-basics/runtime-language-matrix/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-lang-ruby/recipes/01-basics/matrix-row/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-lang-ruby/recipes/01-basics/profile-descriptor/recipe.toml |
@@ -414,6 +423,7 @@
 | `specimen` | `lisp` | crates/sim-lib-sound-timbre/recipes/01-basics/bright-envelope/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-sound-tuning/recipes/01-basics/equal-temperament/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-sound-wasm-frame/recipes/01-basics/browser-facade/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-standard-core/recipes/01-basics/characterize-migration/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-standard-core/recipes/01-basics/profile-fidelity/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-stream-audio/recipes/01-basics/pcm-spec/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-stream-bridge/recipes/01-basics/offline-bridge/recipe.toml |
@@ -522,6 +532,7 @@
 | `specimen` | `rust` | crates/sim-lib-numbers-signal/recipes/01-basics/wavelet-smoothing/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-numbers-stats/recipes/01-basics/bounded-sequence-inference/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-numbers-stats/recipes/01-basics/clustering-evidence/recipe.toml |
+| `specimen` | `rust` | crates/sim-lib-numbers-stats/recipes/01-basics/robust-benchmark-statistics/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-pitch-serial/recipes/01-basics/row-class-analysis/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-pitch-serial/recipes/01-basics/row-family-matrix/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-pitch-serial/recipes/02-partitions/partition-mosaic/recipe.toml |
@@ -554,6 +565,7 @@
 | `specimen` | `rust` | recipes/serial-music/modal-realization/recipe.toml |
 | `specimen` | `rust` | recipes/serial-music/reversible-completion/recipe.toml |
 | `specimen` | `rust` | recipes/serial-music/row-matrix-analysis/recipe.toml |
+| `specimen` | `rust` | recipes/source-authority/dynamic-text/recipe.toml |
 | `specimen` | `rust` | recipes/typescript-notation/admitted-notation/recipe.toml |
 | `specimen` | `scheme-r7rs-small` | crates/sim-lib-lang-scheme/recipes/01-basics/scheme-arithmetic/recipe.toml |
 | `specimen` | `shape` | crates/sim-citizen/src/tests.rs |
@@ -569,6 +581,7 @@
 | `specimen` | `shape` | crates/sim-lib-auto-order/src/conformance.rs |
 | `specimen` | `shape` | crates/sim-lib-auto-order/src/lib.rs |
 | `specimen` | `shape` | crates/sim-lib-bridge/src/tests/ask.rs |
+| `specimen` | `shape` | crates/sim-lib-class/tests/neutral_class_specimens.rs |
 | `specimen` | `shape` | crates/sim-lib-compute-auto/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-compute-cuda/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-compute-rocm/src/tests.rs |
@@ -578,13 +591,24 @@
 | `specimen` | `shape` | crates/sim-lib-discrete-graph/src/assignment/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-discrete/src/forms.rs |
 | `specimen` | `shape` | crates/sim-lib-doc-site/src/register_tests.rs |
+| `specimen` | `shape` | crates/sim-lib-function/src/callable.rs |
+| `specimen` | `shape` | crates/sim-lib-function/src/instance.rs |
+| `specimen` | `shape` | crates/sim-lib-function/tests/contract_shape.rs |
+| `specimen` | `shape` | crates/sim-lib-function/tests/neutral_language_specimen.rs |
+| `specimen` | `shape` | crates/sim-lib-function/tests/ownership_guard.rs |
 | `specimen` | `shape` | crates/sim-lib-incremental/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-interference-compute/src/hardware_tests.rs |
 | `specimen` | `shape` | crates/sim-lib-interference-compute/src/modeled_tests.rs |
 | `specimen` | `shape` | crates/sim-lib-interference-compute/src/tests/dense.rs |
 | `specimen` | `shape` | crates/sim-lib-interference-compute/src/tests/preflight.rs |
 | `specimen` | `shape` | crates/sim-lib-interference-runtime/src/citizen.rs |
+| `specimen` | `shape` | crates/sim-lib-lang-cl/src/tests.rs |
+| `specimen` | `shape` | crates/sim-lib-lang-islisp/src/tests.rs |
+| `specimen` | `shape` | crates/sim-lib-lang-julia/src/tests.rs |
+| `specimen` | `shape` | crates/sim-lib-lang-jvm/tests/baseline.rs |
+| `specimen` | `shape` | crates/sim-lib-lang-jvm/tests/ownership_guard.rs |
 | `specimen` | `shape` | crates/sim-lib-lang-prolog/src/conformance.rs |
+| `specimen` | `shape` | crates/sim-lib-lang-python/src/objects.rs |
 | `specimen` | `shape` | crates/sim-lib-lang-typescript/src/lib.rs |
 | `specimen` | `shape` | crates/sim-lib-logic/src/tests/organ_proof.rs |
 | `specimen` | `shape` | crates/sim-lib-mcp/tests/serve_mcp.rs |
@@ -617,6 +641,7 @@
 | `specimen` | `shape` | src/citizen_tests.rs |
 | `specimen` | `shape` | src/feature_contract_tests.rs |
 | `specimen` | `shape` | src/index_vault_profile_tests.rs |
+| `specimen` | `shape` | src/lib.rs |
 | `specimen` | `shape` | src/runtime/tests/browse_conformance.rs |
 | `specimen` | `shell` | crates/sim-conformance/recipes/01-basics/run-contract/recipe.toml |
 | `specimen` | `shell` | recipes/01-basics/hello/recipe.toml |
@@ -649,6 +674,7 @@
 | `subject` | `crate/sim-codec-bitwise-base64` | sim-codec-bitwise-base64 |
 | `subject` | `crate/sim-codec-bridge` | sim-codec-bridge |
 | `subject` | `crate/sim-codec-chat` | sim-codec-chat |
+| `subject` | `crate/sim-codec-classfile` | sim-codec-classfile |
 | `subject` | `crate/sim-codec-compare` | sim-codec-compare |
 | `subject` | `crate/sim-codec-config` | sim-codec-config |
 | `subject` | `crate/sim-codec-doc` | sim-codec-doc |
@@ -675,6 +701,7 @@
 | `subject` | `grammar/bitwise-base64` | bitwise-base64 grammar |
 | `subject` | `grammar/bridge` | bridge grammar |
 | `subject` | `grammar/chat` | chat grammar |
+| `subject` | `grammar/classfile` | classfile grammar |
 | `subject` | `grammar/compare` | compare grammar |
 | `subject` | `grammar/config` | config grammar |
 | `subject` | `grammar/doc` | doc grammar |
@@ -698,6 +725,7 @@
 | `subject` | `language/bitwise-base64` | bitwise-base64 |
 | `subject` | `language/bridge` | bridge |
 | `subject` | `language/chat` | chat |
+| `subject` | `language/classfile` | classfile |
 | `subject` | `language/compare` | compare |
 | `subject` | `language/config` | config |
 | `subject` | `language/doc` | doc |
@@ -733,6 +761,7 @@
 | `subject` | `runtime-lib/sim-codec-chat/lm-studio-codec-lib` | lm-studio-codec-lib |
 | `subject` | `runtime-lib/sim-codec-chat/ollama-codec-lib` | ollama-codec-lib |
 | `subject` | `runtime-lib/sim-codec-chat/open-ai-codec-lib` | open-ai-codec-lib |
+| `subject` | `runtime-lib/sim-codec-classfile/classfile-codec-lib` | classfile-codec-lib |
 | `subject` | `runtime-lib/sim-codec-config/config-codec-lib` | config-codec-lib |
 | `subject` | `runtime-lib/sim-codec-doc/doc-codec-lib` | doc-codec-lib |
 | `subject` | `runtime-lib/sim-codec-doc/markup-codec-lib` | markup-codec-lib |
@@ -748,10 +777,8 @@
 | `subject` | `runtime-lib/sim-lib-intent/intent-codec-lib` | intent-codec-lib |
 | `subject` | `runtime-lib/sim-lib-lang-cl/cl-lite-reader-codec-lib` | cl-lite-reader-codec-lib |
 | `subject` | `runtime-lib/sim-lib-lang-clojure/clojure-edn-codec-lib` | clojure-edn-codec-lib |
+| `subject` | `runtime-lib/sim-lib-lang-jvm/jvm-language-lib` | jvm-language-lib |
 | `subject` | `runtime-lib/sim-lib-lang-scheme/scheme-codec-lib` | scheme-codec-lib |
 | `subject` | `runtime-lib/sim-lib-scene/scene-codec-lib` | scene-codec-lib |
 | `subject` | `runtime-lib/sim-lib-standard-core/language-profile-lib` | language-profile-lib |
-| `subject` | `runtime-lib/sim-run/compute-boot-codec` | compute-boot-codec |
-| `subject` | `runtime-lib/sim-run/glasses-boot-codec` | glasses-boot-codec |
-| `subject` | `runtime-lib/sim-run/index-boot-codec` | index-boot-codec |
-| `subject` | `runtime-lib/sim-run/watch-boot-codec` | watch-boot-codec |
+| `subject` | `runtime-lib/sim-run/boot-codec` | boot-codec |

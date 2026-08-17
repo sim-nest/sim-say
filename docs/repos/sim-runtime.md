@@ -1,16 +1,18 @@
 # sim-runtime
 
-Published commit: `c29464252dbaf3c247ba273c83eaf84532e7cd39`.
+Published commit: `dadcce7e3fefdd6a54ee8fafb2bf505cb3ad5cfd`.
 
 ## Crates
 
 - `sim-incremental-core`
 - `sim-lib-incremental`
 - `sim-lib-binding`
+- `sim-lib-class`
 - `sim-lib-control`
 - `sim-lib-core`
 - `sim-lib-dispatch`
 - `sim-lib-exec`
+- `sim-lib-function`
 - `sim-lib-gc-tracing`
 - `sim-lib-lang-cl`
 - `sim-lib-lang-clojure`
@@ -18,6 +20,7 @@ Published commit: `c29464252dbaf3c247ba273c83eaf84532e7cd39`.
 - `sim-lib-lang-islisp`
 - `sim-lib-lang-javascript`
 - `sim-lib-lang-julia`
+- `sim-lib-lang-jvm`
 - `sim-lib-lang-lua`
 - `sim-lib-lang-matrix`
 - `sim-lib-lang-prolog`
@@ -27,6 +30,7 @@ Published commit: `c29464252dbaf3c247ba273c83eaf84532e7cd39`.
 - `sim-lib-lang-typed-lazy`
 - `sim-lib-lang-typescript`
 - `sim-lib-logic`
+- `sim-lib-machine`
 - `sim-lib-mutation`
 - `sim-lib-namespace`
 - `sim-lib-pattern`

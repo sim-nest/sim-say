@@ -6,7 +6,7 @@
 | [sim-audio-daw](../repos/sim-audio-daw.md) | 18 | [card-index.json](../contracts/sim-audio-daw/card-index.json) |
 | [sim-auto](../repos/sim-auto.md) | 5 | [card-index.json](../contracts/sim-auto/card-index.json) |
 | [sim-citizen](../repos/sim-citizen.md) | 2 | [card-index.json](../contracts/sim-citizen/card-index.json) |
-| [sim-codecs](../repos/sim-codecs.md) | 21 | [card-index.json](../contracts/sim-codecs/card-index.json) |
+| [sim-codecs](../repos/sim-codecs.md) | 22 | [card-index.json](../contracts/sim-codecs/card-index.json) |
 | [sim-compute](../repos/sim-compute.md) | 9 | [card-index.json](../contracts/sim-compute/card-index.json) |
 | [sim-construction](../repos/sim-construction.md) | 8 | [card-index.json](../contracts/sim-construction/card-index.json) |
 | [sim-discrete](../repos/sim-discrete.md) | 22 | [card-index.json](../contracts/sim-discrete/card-index.json) |
@@ -20,7 +20,7 @@
 | [sim-numbers](../repos/sim-numbers.md) | 35 | [card-index.json](../contracts/sim-numbers/card-index.json) |
 | [sim-office](../repos/sim-office.md) | 18 | [card-index.json](../contracts/sim-office/card-index.json) |
 | [sim-run](../repos/sim-run.md) | 3 | [card-index.json](../contracts/sim-run/card-index.json) |
-| [sim-runtime](../repos/sim-runtime.md) | 28 | [card-index.json](../contracts/sim-runtime/card-index.json) |
+| [sim-runtime](../repos/sim-runtime.md) | 31 | [card-index.json](../contracts/sim-runtime/card-index.json) |
 | [sim-sdk](../repos/sim-sdk.md) | 278 | [card-index.json](../contracts/sim-sdk/card-index.json) |
 | [sim-shape](../repos/sim-shape.md) | 3 | [card-index.json](../contracts/sim-shape/card-index.json) |
 | [sim-storage](../repos/sim-storage.md) | 5 | [card-index.json](../contracts/sim-storage/card-index.json) |

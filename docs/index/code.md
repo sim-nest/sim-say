@@ -36,6 +36,7 @@
 | `crate/sim-codec-bitwise-base64` | `crate` | sim-codec-bitwise-base64 | 1 |
 | `crate/sim-codec-bridge` | `crate` | sim-codec-bridge | 1 |
 | `crate/sim-codec-chat` | `crate` | sim-codec-chat | 6 |
+| `crate/sim-codec-classfile` | `crate` | sim-codec-classfile | 1 |
 | `crate/sim-codec-compare` | `crate` | sim-codec-compare | 0 |
 | `crate/sim-codec-config` | `crate` | sim-codec-config | 1 |
 | `crate/sim-codec-doc` | `crate` | sim-codec-doc | 2 |
@@ -78,6 +79,7 @@
 | `crate/sim-lib-auto-vendor` | `crate` | sim-lib-auto-vendor | 1 |
 | `crate/sim-lib-binding` | `crate` | sim-lib-binding | 1 |
 | `crate/sim-lib-bridge` | `crate` | sim-lib-bridge | 1 |
+| `crate/sim-lib-class` | `crate` | sim-lib-class | 0 |
 | `crate/sim-lib-compute-auto` | `crate` | sim-lib-compute-auto | 1 |
 | `crate/sim-lib-compute-cli` | `crate` | sim-lib-compute-cli | 1 |
 | `crate/sim-lib-compute-cuda` | `crate` | sim-lib-compute-cuda | 1 |
@@ -122,6 +124,7 @@
 | `crate/sim-lib-femm-solve` | `crate` | sim-lib-femm-solve | 0 |
 | `crate/sim-lib-femm-space` | `crate` | sim-lib-femm-space | 0 |
 | `crate/sim-lib-femm-tape` | `crate` | sim-lib-femm-tape | 0 |
+| `crate/sim-lib-function` | `crate` | sim-lib-function | 0 |
 | `crate/sim-lib-gantt` | `crate` | sim-lib-gantt | 0 |
 | `crate/sim-lib-gc-tracing` | `crate` | sim-lib-gc-tracing | 0 |
 | `crate/sim-lib-incremental` | `crate` | sim-lib-incremental | 1 |
@@ -134,6 +137,7 @@
 | `crate/sim-lib-lang-genconf` | `crate` | sim-lib-lang-genconf | 0 |
 | `crate/sim-lib-lang-javascript` | `crate` | sim-lib-lang-javascript | 0 |
 | `crate/sim-lib-lang-julia` | `crate` | sim-lib-lang-julia | 0 |
+| `crate/sim-lib-lang-jvm` | `crate` | sim-lib-lang-jvm | 1 |
 | `crate/sim-lib-lang-lua` | `crate` | sim-lib-lang-lua | 0 |
 | `crate/sim-lib-lang-matrix` | `crate` | sim-lib-lang-matrix | 0 |
 | `crate/sim-lib-lang-prolog` | `crate` | sim-lib-lang-prolog | 1 |
@@ -144,6 +148,7 @@
 | `crate/sim-lib-lang-typescript` | `crate` | sim-lib-lang-typescript | 0 |
 | `crate/sim-lib-ledger-books` | `crate` | sim-lib-ledger-books | 0 |
 | `crate/sim-lib-ledger-close` | `crate` | sim-lib-ledger-close | 0 |
+| `crate/sim-lib-machine` | `crate` | sim-lib-machine | 0 |
 | `crate/sim-lib-mail` | `crate` | sim-lib-mail | 0 |
 | `crate/sim-lib-midi-ble` | `crate` | sim-lib-midi-ble | 1 |
 | `crate/sim-lib-midi-core` | `crate` | sim-lib-midi-core | 2 |
@@ -251,7 +256,7 @@
 | `crate/sim-mcp-server` | `crate` | sim-mcp-server | 0 |
 | `crate/sim-music` | `crate` | sim-music | 0 |
 | `crate/sim-nest` | `crate` | sim-nest | 6 |
-| `crate/sim-run` | `crate` | sim-run | 6 |
+| `crate/sim-run` | `crate` | sim-run | 4 |
 | `crate/sim-run-core` | `crate` | sim-run-core | 0 |
 | `crate/sim-run-loaders` | `crate` | sim-run-loaders | 3 |
 | `crate/sim-shape-recipe-exact-bool-shape` | `crate` | sim-shape-recipe-exact-bool-shape | 0 |
@@ -264,6 +269,7 @@
 | `crate/sim-table-core` | `crate` | sim-table-core | 0 |
 | `crate/sim-table-mount` | `crate` | sim-table-mount | 1 |
 | `crate/sim-test-support` | `crate` | sim-test-support | 0 |
+| `crate/sim-text` | `crate` | sim-text | 0 |
 | `crate/sim-value` | `crate` | sim-value | 0 |
 | `crate/sim-view-tty` | `crate` | sim-view-tty | 1 |
 | `crate/sim-viture-ffi` | `crate` | sim-viture-ffi | 0 |
@@ -463,13 +469,13 @@
 | `repo/sim-audio-daw` | `repo` | sim-audio-daw | 18 |
 | `repo/sim-auto` | `repo` | sim-auto | 30 |
 | `repo/sim-citizen` | `repo` | sim-citizen | 5 |
-| `repo/sim-codecs` | `repo` | sim-codecs | 24 |
+| `repo/sim-codecs` | `repo` | sim-codecs | 25 |
 | `repo/sim-compute` | `repo` | sim-compute | 9 |
 | `repo/sim-construction` | `repo` | sim-construction | 8 |
 | `repo/sim-discrete` | `repo` | sim-discrete | 9 |
 | `repo/sim-expr-tree` | `repo` | sim-expr-tree | 9 |
 | `repo/sim-femm` | `repo` | sim-femm | 21 |
-| `repo/sim-foundation` | `repo` | sim-foundation | 10 |
+| `repo/sim-foundation` | `repo` | sim-foundation | 11 |
 | `repo/sim-interference` | `repo` | sim-interference | 6 |
 | `repo/sim-kernel` | `repo` | sim-kernel | 3 |
 | `repo/sim-ledger` | `repo` | sim-ledger | 7 |
@@ -477,7 +483,7 @@
 | `repo/sim-numbers` | `repo` | sim-numbers | 35 |
 | `repo/sim-office` | `repo` | sim-office | 18 |
 | `repo/sim-run` | `repo` | sim-run | 9 |
-| `repo/sim-runtime` | `repo` | sim-runtime | 30 |
+| `repo/sim-runtime` | `repo` | sim-runtime | 34 |
 | `repo/sim-sdk` | `repo` | sim-sdk | 74 |
 | `repo/sim-shape` | `repo` | sim-shape | 5 |
 | `repo/sim-storage` | `repo` | sim-storage | 11 |

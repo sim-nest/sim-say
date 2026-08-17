@@ -1,6 +1,6 @@
 # sim-foundation
 
-Published commit: `545515c9fcbf17d1ed982756788b3f4c2363da3b`.
+Published commit: `5046fc4cdf131c51189b9d3b09d405134b33f974`.
 
 ## Crates
 
@@ -11,6 +11,7 @@ Published commit: `545515c9fcbf17d1ed982756788b3f4c2363da3b`.
 - `sim-lib-surface-card`
 - `sim-macros`
 - `sim-table-core`
+- `sim-text`
 - `sim-value`
 
 ## Contracts

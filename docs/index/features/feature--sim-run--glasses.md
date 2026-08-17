@@ -12,7 +12,6 @@ Start modeled or hardware-backed glasses plans through the shared command bootlo
 
 - `anchor/cli/glasses`
 - `anchor/export/sim-run/cli/main/glasses`
-- `anchor/runtime-lib/sim-run/glasses-boot-codec`
 - `anchor/runtime-lib/sim-run/glasses-lib`
 
 ## Surfaces

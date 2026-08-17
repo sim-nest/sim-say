@@ -6,12 +6,10 @@
 - Subject: `crate/sim-lib-binding`
 - Canonical key: `crate/sim-lib-binding/feature-sim-runtime-organs`
 
-Provide binding, control, logic, pattern, incremental, mutation, namespace, and sequence organs as reusable runtime behavior.
+Provide binding, function, control, logic, pattern, incremental, mutation, namespace, and sequence organs as reusable runtime behavior.
 
 ## Anchors
 
-- `anchor/crate/sim-lib-logic`
-- `anchor/crate/sim-lib-pattern`
 - `anchor/crate/sim-lib-sequence`
 - `anchor/runtime-lib/sim-lib-logic/logic-lib`
 - `anchor/runtime-lib/sim-lib-pattern/pattern-lib`
@@ -19,196 +17,315 @@ Provide binding, control, logic, pattern, incremental, mutation, namespace, and 
 
 ## Specimens
 
-- `spec-test/sim-runtime/crates/sim-lib-logic/src/tests/organ_proof`
+- `spec-test/sim-runtime/crates/sim-lib-pattern/tests/ownership_guard`
 
 ## Worked Example
 
-Specimen `spec-test/sim-runtime/crates/sim-lib-logic/src/tests/organ_proof` is checked by `cargo test`.
+Specimen `spec-test/sim-runtime/crates/sim-lib-pattern/tests/ownership_guard` is checked by `cargo test`.
 
-Source `crates/sim-lib-logic/src/tests/organ_proof.rs`:
+Source `crates/sim-lib-pattern/tests/ownership_guard.rs`:
 
 ```rust
-use std::sync::{
-    Arc,
-    atomic::{AtomicUsize, Ordering},
+// conformance: matcher implementation remains owned by the shared pattern organ.
+
+//! Source-fact ownership guard for the single shared matcher organ.
+
+use std::{
+    fs,
+    path::{Path, PathBuf},
 };
 
-// conformance: runtime organs prove facts through the logic library.
+const PRIVATE_MATCHER: &str = r#"
+pub struct GuestNfa {
+    states: Vec<State>,
+    transitions: Vec<Transition>,
+}
+fn match_here(input: &[u8]) { match_here(&input[1..]) }
+"#;
 
-use sim_kernel::{Cx, DefaultFactory, EagerPolicy, Expr, NumberLiteral, ShapeMatch, Symbol};
+const SYNTAX_PARSER: &str = r#"
+pub struct GuestPatternParser { cursor: usize }
+pub fn parse_pattern(source: &str) -> PatternProgram { lower(source) }
+"#;
 
-use crate::{
-    LogicConfig, LogicDb,
-    all_solutions::{FindallRequest, findall_through_sequence_with_probe},
-    env::LogicEnv,
-    query::query_all,
-};
-
-fn cx_with_number_tower() -> Cx {
-    let mut cx = Cx::new(Arc::new(EagerPolicy), Arc::new(DefaultFactory));
-    cx.load_lib(&sim_lib_numbers_arith::NumbersArithmeticLib::new())
-        .unwrap();
-    cx.load_lib(&sim_lib_numbers_i64::I64NumbersLib::new())
-        .unwrap();
-    cx.load_lib(&sim_lib_numbers_f64::F64NumbersLib::new())
-        .unwrap();
-    cx.load_lib(&sim_lib_numbers_bigint::BigIntNumbersLib::new())
-        .unwrap();
-    cx
+#[derive(Debug)]
+struct Relationship {
+    path: String,
+    class: String,
+    reason: String,
 }
 
-fn number(domain: &str, canonical: impl Into<String>) -> Expr {
-    Expr::Number(NumberLiteral {
-        domain: Symbol::qualified("numbers", domain),
-        canonical: canonical.into(),
-    })
+#[derive(Debug)]
+struct Policy {
+    owner: String,
+    remediation: String,
+    guest_crate_prefix: String,
+    roadmap_family_terms: Vec<String>,
+    state_fields: Vec<String>,
+    transition_fields: Vec<String>,
+    driver_names: Vec<String>,
+    relationships: Vec<Relationship>,
 }
 
-fn capture<'a>(answer: &'a ShapeMatch, name: &str) -> &'a Expr {
-    answer
-        .captures
-        .exprs()
-        .iter()
-        .find_map(|(symbol, expr)| (symbol == &Symbol::new(name)).then_some(expr))
-        .unwrap()
-}
-
-fn color_db() -> LogicDb {
-    let mut db = LogicDb::new();
-    for color in ["red", "green", "blue"] {
-        db.assert_clause_expr(Expr::List(vec![
-            Expr::Symbol(Symbol::new("fact")),
-            Expr::List(vec![
-                Expr::Symbol(Symbol::new("color")),
-                Expr::Symbol(Symbol::new(color)),
-            ]),
-        ]))
-        .unwrap();
+impl Policy {
+    fn load(root: &Path) -> Self {
+        let source = fs::read_to_string(root.join("pattern-ownership.toml"))
+            .expect("pattern ownership policy must exist");
+        assert_eq!(scalar(&source, "schema"), "sim.pattern-ownership/v1");
+        Self {
+            owner: scalar(&source, "owner"),
+            remediation: scalar(&source, "remediation"),
+            guest_crate_prefix: scalar(&source, "guest_crate_prefix"),
+            roadmap_family_terms: array(&source, "roadmap_family_terms"),
+            state_fields: array(&source, "state_fields"),
+            transition_fields: array(&source, "transition_fields"),
+            driver_names: array(&source, "driver_names"),
+            relationships: sections(&source, "[[approved_relationship]]")
+                .map(|row| Relationship {
+                    path: scalar(row, "path"),
+                    class: scalar(row, "class"),
+                    reason: scalar(row, "reason"),
+                })
+                .collect(),
+        }
     }
-    db
+
+    fn findings(&self, path: &Path, source: &str) -> Vec<String> {
+        let relative = path.to_string_lossy().replace('\\', "/");
+        let relationship = self
+            .relationships
+            .iter()
+            .find(|row| relative.ends_with(&row.path));
+        if let Some(row) = relationship {
+            assert!(matches!(
+                row.class.as_str(),
+                "syntax-parser" | "policy-adapter"
+            ));
+            assert!(!row.reason.is_empty());
+        }
+        let mut findings = structs(source).into_iter().filter_map(|item| {
+            let fields = field_names(&item);
+            let state = fields.iter().find(|field| self.state_fields.contains(field))?;
+            let transition = fields.iter().find(|field| self.transition_fields.contains(field))?;
+            Some(format!("{} retains private matcher fields `{state}` and `{transition}`; owner: {}; remediation: {}", relative, self.owner, self.remediation))
+        }).collect::<Vec<_>>();
+        for name in &self.driver_names {
+            if function_calls_itself(source, name)
+                || (name == "backtrack" && source.contains("backtrack_stack"))
+            {
+                findings.push(format!(
+                    "{relative} declares guest matcher driver `{name}`; owner: {}",
+                    self.owner
+                ));
+            }
+        }
+        for line in source.lines().filter(|line| is_public_diagnostic(line)) {
+            if let Some(term) = self
+                .roadmap_family_terms
+                .iter()
+                .find(|term| line.contains(term.as_str()))
+            {
+                findings.push(format!(
+                    "{relative} leaks roadmap family `{term}` in a public diagnostic"
+                ));
+            }
+        }
+        findings.sort();
+        findings.dedup();
+        findings
+    }
+}
+
+fn sections<'a>(source: &'a str, heading: &str) -> impl Iterator<Item = &'a str> {
+    source
+        .split(heading)
+        .skip(1)
+        .map(|row| row.split("[[").next().unwrap_or(row))
+}
+fn scalar(source: &str, key: &str) -> String {
+    source
+        .lines()
+        .map(str::trim)
+        .find_map(|line| line.strip_prefix(&format!("{key} = \"")))
+        .and_then(|rest| rest.strip_suffix('"'))
+        .unwrap_or_default()
+        .to_owned()
+}
+fn array(source: &str, key: &str) -> Vec<String> {
+    let Some(line) = source
+        .lines()
+        .map(str::trim)
+        .find(|line| line.starts_with(&format!("{key} = [")))
+    else {
+        return Vec::new();
+    };
+    line.split_once('[')
+        .and_then(|(_, rest)| rest.rsplit_once(']'))
+        .map(|(body, _)| body)
+        .unwrap_or_default()
+        .split(',')
+        .filter_map(|item| item.trim().strip_prefix('"')?.strip_suffix('"'))
+        .map(str::to_owned)
+        .collect()
+}
+fn structs(source: &str) -> Vec<String> {
+    let mut items = Vec::new();
+    let mut current = None::<(String, i32)>;
+    for line in source.lines() {
+        let trimmed = line.trim_start();
+        if current.is_none()
+            && (trimmed.starts_with("struct ") || trimmed.starts_with("pub struct "))
+        {
+            let depth = brace_delta(line);
+            current = Some((format!("{line}\n"), depth));
+            continue;
+        }
+        if let Some((text, depth)) = &mut current {
+            text.push_str(line);
+            text.push('\n');
+            *depth += brace_delta(line);
+            if *depth <= 0 {
+                items.push(std::mem::take(text));
+                current = None;
+            }
+        }
+    }
+    items
+}
+fn field_names(item: &str) -> Vec<String> {
+    item.lines()
+        .skip(1)
+        .filter_map(|line| {
+            line.trim()
+                .trim_start_matches("pub ")
+                .split_once(':')
+                .map(|(name, _)| name.trim())
+        })
+        .filter(|name| {
+            name.chars()
+                .all(|ch| ch.is_ascii_alphanumeric() || ch == '_')
+        })
+        .map(str::to_owned)
+        .collect()
+}
+fn brace_delta(line: &str) -> i32 {
+    line.bytes()
+        .map(|byte| match byte {
+            b'{' => 1,
+            b'}' => -1,
+            _ => 0,
+        })
+        .sum()
+}
+fn function_calls_itself(source: &str, name: &str) -> bool {
+    let declaration = format!("fn {name}(");
+    let call = format!("{name}(");
+    source.matches(&call).count() > source.matches(&declaration).count()
+}
+fn is_public_diagnostic(line: &str) -> bool {
+    let lower = line.to_ascii_lowercase();
+    line.contains('"')
+        && ["diagnostic", "error::", "error(", "format!(", "message"]
+            .iter()
+            .any(|term| lower.contains(term))
+}
+fn repository_root() -> PathBuf {
+    let mut path = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+        .join("src")
+        .canonicalize()
+        .expect("pattern source directory must resolve");
+    while !path.join("pattern-ownership.toml").is_file() {
+        assert!(path.pop(), "pattern ownership repository not found");
+    }
+    path
+}
+fn rust_sources(path: &Path) -> Vec<PathBuf> {
+    let mut files = Vec::new();
+    let mut pending = vec![path.to_owned()];
+    while let Some(path) = pending.pop() {
+        for entry in fs::read_dir(path).unwrap() {
+            let entry = entry.unwrap();
+            if entry.file_type().unwrap().is_dir() {
+                pending.push(entry.path());
+            } else if entry.path().extension().is_some_and(|ext| ext == "rs") {
+                files.push(entry.path());
+            }
+        }
+    }
+    files
 }
 
 #[test]
-fn is_routes_mixed_terms_through_number_tower() {
-    let mut cx = cx_with_number_tower();
-    let answers = query_all(
-        &mut cx,
-        &LogicDb::new(),
-        &LogicConfig::default(),
-        Expr::List(vec![
-            Expr::Symbol(Symbol::new("is")),
-            Expr::Local(Symbol::new("X")),
-            Expr::List(vec![
-                Expr::Symbol(Symbol::new("+")),
-                number("i64", "1"),
-                number("f64", "0.5"),
-            ]),
-        ]),
-        Some(1),
-    )
-    .unwrap();
-
-    assert_eq!(answers.len(), 1);
-    assert_eq!(capture(&answers[0], "X"), &number("f64", "1.5"));
-}
-
-#[test]
-fn is_widens_overflowing_integer_terms_through_number_tower() {
-    let mut cx = cx_with_number_tower();
-    let answers = query_all(
-        &mut cx,
-        &LogicDb::new(),
-        &LogicConfig::default(),
-        Expr::List(vec![
-            Expr::Symbol(Symbol::new("is")),
-            Expr::Local(Symbol::new("X")),
-            Expr::List(vec![
-                Expr::Symbol(Symbol::new("+")),
-                number("i64", i64::MAX.to_string()),
-                number("i64", "1"),
-            ]),
-        ]),
-        Some(1),
-    )
-    .unwrap();
-
-    assert_eq!(answers.len(), 1);
-    assert_eq!(
-        capture(&answers[0], "X"),
-        &number("bigint", "9223372036854775808")
+fn guard_rejects_private_matcher_and_admits_syntax_parser() {
+    let policy = Policy::load(&repository_root());
+    let findings = policy.findings(
+        Path::new("crates/sim-lib-lang-example/src/matcher.rs"),
+        PRIVATE_MATCHER,
+    );
+    assert!(
+        findings
+            .iter()
+            .any(|finding| finding.contains("private matcher"))
+    );
+    assert!(
+        findings
+            .iter()
+            .any(|finding| finding.contains("match_here"))
+    );
+    assert!(
+        policy
+            .findings(
+                Path::new("crates/sim-lib-lang-example/src/parser.rs"),
+                SYNTAX_PARSER
+            )
+            .is_empty()
     );
 }
 
 #[test]
-fn findall_collects_answers_forced_from_sequence_engine() {
-    let mut cx = Cx::new(Arc::new(EagerPolicy), Arc::new(DefaultFactory));
-    let db = color_db();
-    let config = LogicConfig::default();
-    let forced = Arc::new(AtomicUsize::new(0));
-    let probe = Arc::clone(&forced);
-    let template = Expr::Local(Symbol::new("X"));
-    let goal = Expr::List(vec![
-        Expr::Symbol(Symbol::new("color")),
-        Expr::Local(Symbol::new("X")),
-    ]);
-    let output = Expr::Local(Symbol::new("Xs"));
-    let env = LogicEnv::new();
-    let envs = findall_through_sequence_with_probe(
-        &mut cx,
-        FindallRequest {
-            db: &db,
-            config: &config,
-            template: &template,
-            goal: &goal,
-            output: &output,
-            env: &env,
-        },
-        |_| {
-            probe.fetch_add(1, Ordering::SeqCst);
-        },
-    )
-    .unwrap();
-
-    assert_eq!(forced.load(Ordering::SeqCst), 3);
-    assert_eq!(envs.len(), 1);
-    assert_eq!(
-        envs[0].get(&Symbol::new("Xs")),
-        Some(&Expr::List(vec![
-            Expr::Symbol(Symbol::new("red")),
-            Expr::Symbol(Symbol::new("green")),
-            Expr::Symbol(Symbol::new("blue")),
-        ]))
-    );
+fn guest_crates_have_no_private_matcher_or_roadmap_diagnostic() {
+    let root = repository_root();
+    let policy = Policy::load(&root);
+    for entry in fs::read_dir(root.join("crates")).unwrap() {
+        let entry = entry.unwrap();
+        if !entry
+            .file_name()
+            .to_string_lossy()
+            .starts_with(&policy.guest_crate_prefix)
+        {
+            continue;
+        }
+        for path in rust_sources(&entry.path().join("src")) {
+            let source = fs::read_to_string(&path).unwrap();
+            let findings = policy.findings(&path, &source);
+            assert!(findings.is_empty(), "{}", findings.join("\n"));
+        }
+    }
 }
 
 #[test]
-fn findall_query_projects_answer_template() {
-    let mut cx = Cx::new(Arc::new(EagerPolicy), Arc::new(DefaultFactory));
-    let answers = query_all(
-        &mut cx,
-        &color_db(),
-        &LogicConfig::default(),
-        Expr::List(vec![
-            Expr::Symbol(Symbol::new("findall")),
-            Expr::Local(Symbol::new("X")),
-            Expr::List(vec![
-                Expr::Symbol(Symbol::new("color")),
-                Expr::Local(Symbol::new("X")),
-            ]),
-            Expr::Local(Symbol::new("Xs")),
-        ]),
-        Some(1),
-    )
-    .unwrap();
-
-    assert_eq!(answers.len(), 1);
-    assert_eq!(
-        capture(&answers[0], "Xs"),
-        &Expr::List(vec![
-            Expr::Symbol(Symbol::new("red")),
-            Expr::Symbol(Symbol::new("green")),
-            Expr::Symbol(Symbol::new("blue")),
-        ])
-    );
+fn pattern_overlap_board_is_fully_classified() {
+    let root = repository_root();
+    let source = fs::read_to_string(root.join("pattern-ownership.toml")).unwrap();
+    let rows = sections(&source, "[[overlap]]").collect::<Vec<_>>();
+    assert!(!rows.is_empty());
+    for row in rows {
+        let name = scalar(row, "name");
+        let path = scalar(row, "path");
+        let class = scalar(row, "class");
+        let reason = scalar(row, "reason");
+        assert!(!name.is_empty() && !path.is_empty() && !reason.is_empty());
+        assert!(
+            matches!(
+                class.as_str(),
+                "shared-owner" | "syntax-parser" | "policy-adapter"
+            ),
+            "{name} is unclassified"
+        );
+        assert!(
+            root.join(path).is_file(),
+            "{name} points at a missing source fact"
+        );
+    }
 }
 ```

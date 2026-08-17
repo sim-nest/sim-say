@@ -1,6 +1,6 @@
 # sim-music
 
-Published commit: `9597b3fd2af61a81d73d26fec8d564a92c3083a5`.
+Published commit: `15725c92f268a4e59902c5a92a73a51944237145`.
 
 ## Crates
 

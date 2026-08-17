@@ -16,457 +16,250 @@ Gate diminished read-eval and surface packing through explicit runtime libraries
 
 ## Specimens
 
+- `spec-test/sim-runtime/crates/sim-lib-core/src/source_authority_ownership_tests`
 - `spec-test/sim-runtime/crates/sim-lib-standard-core/src/read_construct`
 
 ## Worked Example
 
-Specimen `spec-test/sim-runtime/crates/sim-lib-standard-core/src/read_construct` is checked by `cargo test`.
+Specimen `spec-test/sim-runtime/crates/sim-lib-core/src/source_authority_ownership_tests` is checked by `cargo test`.
 
-Source `crates/sim-lib-standard-core/src/read_construct.rs`:
+Source `crates/sim-lib-core/src/source_authority_ownership_tests.rs`:
 
 ```rust
-//! Read/construct support exposing profiles and badges as runtime objects.
+// conformance: source authority remains owned by the shared runtime core.
 
-use std::sync::Arc;
+//! Structural source-fact guard for the shared source-authority boundary.
 
-use sim_kernel::{
-    AbiVersion, Args, CORE_CLASS_CLASS_ID, CORE_FUNCTION_CLASS_ID, Callable, Class, ClassId,
-    ClassRef, Cx, DefaultFactory, Export, Expr, Factory, Lib, LibManifest, LibTarget, Linker,
-    Object, ObjectCompat, ObjectEncode, ObjectEncoding, ReadConstructor, ReadConstructorRef, Ref,
-    Result, ShapeRef, Symbol, TableRef, Value, Version,
+use std::{
+    fs,
+    path::{Path, PathBuf},
 };
 
-use crate::{
-    FidelityBadge, LanguageProfile, fidelity_badge_class_symbol, language_profile_class_symbol,
-};
-
-const PROFILE_CLASS_ID: ClassId = ClassId(6100);
-const FIDELITY_BADGE_CLASS_ID: ClassId = ClassId(6101);
-
-/// Runtime object wrapping a [`LanguageProfile`] as the `standard/Profile` class.
-#[derive(Clone)]
-pub struct LanguageProfileValue {
-    profile: LanguageProfile,
+#[derive(Debug)]
+struct Policy {
+    owner: String,
+    remediation: String,
+    guest_prefix: String,
+    forbidden_suffixes: Vec<String>,
+    authority_fields: Vec<String>,
+    guests: Vec<(String, String)>,
 }
 
-impl LanguageProfileValue {
-    /// Wrap `profile` as a runtime value.
-    pub fn new(profile: LanguageProfile) -> Self {
-        Self { profile }
-    }
-
-    /// The wrapped profile.
-    pub fn profile(&self) -> &LanguageProfile {
-        &self.profile
-    }
-}
-
-impl Object for LanguageProfileValue {
-    fn display(&self, _cx: &mut Cx) -> Result<String> {
-        Ok(format!("#<standard-profile {}>", self.profile.symbol))
-    }
-
-    fn as_any(&self) -> &dyn std::any::Any {
-        self
-    }
-}
-
-impl ObjectCompat for LanguageProfileValue {
-    fn class(&self, cx: &mut Cx) -> Result<ClassRef> {
-        class_value_or_stub(cx, PROFILE_CLASS_ID, language_profile_class_symbol())
-    }
-
-    fn as_expr(&self, _cx: &mut Cx) -> Result<Expr> {
-        Ok(Expr::Call {
-            operator: Box::new(Expr::Symbol(language_profile_class_symbol())),
-            args: self.profile.to_constructor_args(),
-        })
-    }
-
-    fn as_object_encoder(&self) -> Option<&dyn ObjectEncode> {
-        Some(self)
-    }
-}
-
-impl ObjectEncode for LanguageProfileValue {
-    fn object_encoding(&self, _cx: &mut Cx) -> Result<ObjectEncoding> {
-        Ok(ObjectEncoding::Constructor {
-            class: language_profile_class_symbol(),
-            args: self.profile.to_constructor_args(),
-        })
-    }
-}
-
-impl sim_citizen::Citizen for LanguageProfileValue {
-    fn citizen_symbol() -> Symbol {
-        language_profile_class_symbol()
-    }
-
-    fn citizen_version() -> u32 {
-        0
-    }
-
-    fn citizen_arity() -> usize {
-        11
-    }
-
-    fn citizen_fields() -> &'static [&'static str] {
-        &[
-            "symbol",
-            "reader",
-            "lowering",
-            "eval_policy",
-            "organs",
-            "backing_requirements",
-            "numeric_tower",
-            "capabilities",
-            "unsupported_forms",
-            "conformance_tests",
-            "fidelity_badges",
-        ]
-    }
-}
-
-/// Runtime object wrapping a [`FidelityBadge`] as the `standard/FidelityBadge` class.
-#[derive(Clone)]
-pub struct FidelityBadgeValue {
-    badge: FidelityBadge,
-}
-
-impl FidelityBadgeValue {
-    /// Wrap `badge` as a runtime value.
-    pub fn new(badge: FidelityBadge) -> Self {
-        Self { badge }
-    }
-
-    /// The wrapped badge.
-    pub fn badge(&self) -> &FidelityBadge {
-        &self.badge
-    }
-}
-
-impl Object for FidelityBadgeValue {
-    fn display(&self, _cx: &mut Cx) -> Result<String> {
-        Ok(format!("#<standard-fidelity {}>", self.badge.badge))
-    }
-
-    fn as_any(&self) -> &dyn std::any::Any {
-        self
-    }
-}
-
-impl ObjectCompat for FidelityBadgeValue {
-    fn class(&self, cx: &mut Cx) -> Result<ClassRef> {
-        class_value_or_stub(cx, FIDELITY_BADGE_CLASS_ID, fidelity_badge_class_symbol())
-    }
-
-    fn as_expr(&self, _cx: &mut Cx) -> Result<Expr> {
-        Ok(Expr::Call {
-            operator: Box::new(Expr::Symbol(fidelity_badge_class_symbol())),
-            args: self.badge.to_constructor_args(),
-        })
-    }
-
-    fn as_object_encoder(&self) -> Option<&dyn ObjectEncode> {
-        Some(self)
-    }
-}
-
-impl ObjectEncode for FidelityBadgeValue {
-    fn object_encoding(&self, _cx: &mut Cx) -> Result<ObjectEncoding> {
-        Ok(ObjectEncoding::Constructor {
-            class: fidelity_badge_class_symbol(),
-            args: self.badge.to_constructor_args(),
-        })
-    }
-}
-
-impl sim_citizen::Citizen for FidelityBadgeValue {
-    fn citizen_symbol() -> Symbol {
-        fidelity_badge_class_symbol()
-    }
-
-    fn citizen_version() -> u32 {
-        0
-    }
-
-    fn citizen_arity() -> usize {
-        4
-    }
-
-    fn citizen_fields() -> &'static [&'static str] {
-        &["subject", "badge", "level", "evidence"]
-    }
-}
-
-/// Register the `standard/Profile` and `standard/FidelityBadge` classes into the
-/// registry, idempotently.
-///
-/// This installs the read/construct surface that lets the standard distribution
-/// round-trip profiles and badges as runtime objects; classes already present
-/// are left untouched.
-pub fn install_standard_core_classes(cx: &mut Cx) -> Result<()> {
-    sim_lib_core::install_once(cx, &StandardCoreClassesLib).map(|_| ())
-}
-
-/// Manifest id for the standard read/construct class lib.
-pub fn standard_core_classes_lib_symbol() -> Symbol {
-    Symbol::qualified("standard", "classes")
-}
-
-struct StandardCoreClassesLib;
-
-impl Lib for StandardCoreClassesLib {
-    fn manifest(&self) -> LibManifest {
-        LibManifest {
-            id: standard_core_classes_lib_symbol(),
-            version: Version(env!("CARGO_PKG_VERSION").to_owned()),
-            abi: AbiVersion { major: 0, minor: 1 },
-            target: LibTarget::HostRegistered,
-            requires: Vec::new(),
-            capabilities: Vec::new(),
-            exports: [StandardClassKind::Profile, StandardClassKind::FidelityBadge]
-                .into_iter()
-                .map(|kind| Export::Class {
-                    symbol: kind.symbol(),
-                    class_id: Some(kind.id()),
-                })
+impl Policy {
+    fn load(root: &Path) -> Self {
+        let source = fs::read_to_string(root.join("source-authority.toml")).unwrap();
+        assert_eq!(
+            scalar(&source, "schema"),
+            "sim.source-authority-ownership/v1"
+        );
+        Self {
+            owner: scalar(&source, "owner"),
+            remediation: scalar(&source, "remediation"),
+            guest_prefix: scalar(&source, "guest_crate_prefix"),
+            forbidden_suffixes: array(&source, "forbidden_type_suffixes"),
+            authority_fields: array(&source, "authority_fields"),
+            guests: source
+                .split("[[guest]]")
+                .skip(1)
+                .map(|row| (scalar(row, "crate"), scalar(row, "status")))
                 .collect(),
         }
     }
 
-    fn load(&self, _cx: &mut sim_kernel::LoadCx, linker: &mut Linker<'_>) -> Result<()> {
-        register_standard_class(linker, StandardClassKind::Profile)?;
-        register_standard_class(linker, StandardClassKind::FidelityBadge)
+    fn findings(&self, relative: &Path, source: &str) -> Vec<String> {
+        let path = relative.to_string_lossy();
+        if !path
+            .split('/')
+            .any(|part| part.starts_with(&self.guest_prefix))
+        {
+            return Vec::new();
+        }
+        let mut findings = Vec::new();
+        for item in structs(source) {
+            let name = struct_name(&item);
+            let fields = field_names(&item);
+            let authority_count = fields
+                .iter()
+                .filter(|field| self.authority_fields.contains(field))
+                .count();
+            if authority_count > 1 {
+                findings.push(format!("{path} repeats {authority_count} source-authority fields in {name}; owner: {}; remediation: {}", self.owner, self.remediation));
+            }
+            if self
+                .forbidden_suffixes
+                .iter()
+                .any(|suffix| name.ends_with(suffix))
+            {
+                findings.push(format!("{path} declares generic guest admission type {name}; owner: {}; remediation: {}", self.owner, self.remediation));
+            }
+        }
+        findings
     }
 }
 
-#[derive(Clone, Copy)]
-enum StandardClassKind {
-    Profile,
-    FidelityBadge,
+fn scalar(source: &str, key: &str) -> String {
+    source
+        .lines()
+        .map(str::trim)
+        .find_map(|line| line.strip_prefix(&format!("{key} = \"")))
+        .and_then(|rest| rest.strip_suffix('"'))
+        .unwrap_or_default()
+        .to_owned()
 }
 
-impl StandardClassKind {
-    fn id(self) -> ClassId {
-        match self {
-            Self::Profile => PROFILE_CLASS_ID,
-            Self::FidelityBadge => FIDELITY_BADGE_CLASS_ID,
+fn array(source: &str, key: &str) -> Vec<String> {
+    source
+        .lines()
+        .map(str::trim)
+        .find(|line| line.starts_with(&format!("{key} = [")))
+        .and_then(|line| line.split_once('['))
+        .and_then(|(_, rest)| rest.rsplit_once(']'))
+        .map(|(body, _)| {
+            body.split(',')
+                .filter_map(|item| item.trim().strip_prefix('"')?.strip_suffix('"'))
+                .map(str::to_owned)
+                .collect()
+        })
+        .unwrap_or_default()
+}
+
+fn structs(source: &str) -> Vec<String> {
+    let mut result = Vec::new();
+    let mut current = None::<(String, i32)>;
+    for line in source.lines() {
+        let trimmed = line.trim_start();
+        if current.is_none()
+            && (trimmed.starts_with("struct ") || trimmed.starts_with("pub struct "))
+        {
+            current = Some((format!("{line}\n"), braces(line)));
+        } else if let Some((text, depth)) = &mut current {
+            text.push_str(line);
+            text.push('\n');
+            *depth += braces(line);
+            if *depth <= 0 {
+                result.push(std::mem::take(text));
+                current = None;
+            }
         }
     }
+    result
+}
 
-    fn symbol(self) -> Symbol {
-        match self {
-            Self::Profile => language_profile_class_symbol(),
-            Self::FidelityBadge => fidelity_badge_class_symbol(),
+fn braces(line: &str) -> i32 {
+    line.bytes()
+        .map(|b| match b {
+            b'{' => 1,
+            b'}' => -1,
+            _ => 0,
+        })
+        .sum()
+}
+fn struct_name(item: &str) -> String {
+    item.split_whitespace()
+        .skip_while(|word| *word != "struct")
+        .nth(1)
+        .unwrap_or("")
+        .split(['<', '{'])
+        .next()
+        .unwrap_or("")
+        .to_owned()
+}
+fn field_names(item: &str) -> Vec<String> {
+    item.lines()
+        .skip(1)
+        .filter_map(|line| {
+            line.trim()
+                .trim_start_matches("pub ")
+                .split_once(':')
+                .map(|(name, _)| name.trim())
+        })
+        .filter(|name| {
+            name.chars()
+                .all(|ch| ch.is_ascii_alphanumeric() || ch == '_')
+        })
+        .map(str::to_owned)
+        .collect()
+}
+fn root() -> PathBuf {
+    let manifest = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+    let mut path = fs::canonicalize(manifest.join("src"))
+        .ok()
+        .and_then(|path| path.parent().map(Path::to_path_buf))
+        .unwrap_or(manifest);
+    while !path.join("source-authority.toml").is_file() {
+        assert!(path.pop());
+    }
+    path
+}
+fn rust_sources(path: &Path) -> Vec<PathBuf> {
+    let mut files = Vec::new();
+    let mut pending = vec![path.to_owned()];
+    while let Some(path) = pending.pop() {
+        for entry in fs::read_dir(path).unwrap() {
+            let entry = entry.unwrap();
+            if entry.file_type().unwrap().is_dir() {
+                pending.push(entry.path());
+            } else if entry.path().extension().is_some_and(|ext| ext == "rs") {
+                files.push(entry.path());
+            }
         }
     }
-
-    fn display_name(self) -> &'static str {
-        match self {
-            Self::Profile => "standard/Profile",
-            Self::FidelityBadge => "standard/FidelityBadge",
-        }
-    }
+    files
 }
 
-#[derive(Clone)]
-struct StandardClass {
-    kind: StandardClassKind,
-}
-
-impl Object for StandardClass {
-    fn display(&self, _cx: &mut Cx) -> Result<String> {
-        Ok(format!("#<class {}>", self.kind.display_name()))
-    }
-
-    fn as_any(&self) -> &dyn std::any::Any {
-        self
-    }
-}
-
-impl ObjectCompat for StandardClass {
-    fn class(&self, cx: &mut Cx) -> Result<ClassRef> {
-        class_value_or_stub(cx, CORE_CLASS_CLASS_ID, Symbol::qualified("core", "Class"))
-    }
-
-    fn as_expr(&self, _cx: &mut Cx) -> Result<Expr> {
-        Ok(Expr::Symbol(self.kind.symbol()))
-    }
-
-    fn as_callable(&self) -> Option<&dyn Callable> {
-        Some(self)
-    }
-
-    fn as_class(&self) -> Option<&dyn Class> {
-        Some(self)
-    }
-}
-
-impl Callable for StandardClass {
-    fn call(&self, cx: &mut Cx, args: Args) -> Result<Value> {
-        construct_standard_value(cx, self.kind, args.into_vec())
-    }
-}
-
-impl Class for StandardClass {
-    fn id(&self) -> ClassId {
-        self.kind.id()
-    }
-
-    fn symbol(&self) -> Symbol {
-        self.kind.symbol()
-    }
-
-    fn constructor_shape(&self, cx: &mut Cx) -> Result<ShapeRef> {
-        cx.factory().nil()
-    }
-
-    fn instance_shape(&self, cx: &mut Cx) -> Result<ShapeRef> {
-        cx.factory().nil()
-    }
-
-    fn read_constructor(&self, _cx: &mut Cx) -> Result<Option<ReadConstructorRef>> {
-        Ok(Some(DefaultFactory.opaque(Arc::new(
-            StandardReadConstructor { kind: self.kind },
-        ))?))
-    }
-
-    fn members(&self, cx: &mut Cx) -> Result<TableRef> {
-        cx.factory().table(Vec::new())
-    }
-}
-
-#[derive(Clone)]
-struct StandardReadConstructor {
-    kind: StandardClassKind,
-}
-
-impl Object for StandardReadConstructor {
-    fn display(&self, _cx: &mut Cx) -> Result<String> {
-        Ok(format!("#<read-constructor {}>", self.kind.display_name()))
-    }
-
-    fn as_any(&self) -> &dyn std::any::Any {
-        self
-    }
-}
-
-impl ObjectCompat for StandardReadConstructor {
-    fn class(&self, cx: &mut Cx) -> Result<ClassRef> {
-        class_value_or_stub(
-            cx,
-            CORE_FUNCTION_CLASS_ID,
-            Symbol::qualified("core", "Function"),
-        )
-    }
-
-    fn as_read_constructor(&self) -> Option<&dyn ReadConstructor> {
-        Some(self)
-    }
-}
-
-impl ReadConstructor for StandardReadConstructor {
-    fn symbol(&self) -> Symbol {
-        self.kind.symbol()
-    }
-
-    fn args_shape(&self, cx: &mut Cx) -> Result<ShapeRef> {
-        cx.factory().nil()
-    }
-
-    fn construct_read(&self, cx: &mut Cx, args: Vec<Value>) -> Result<Value> {
-        construct_standard_value(cx, self.kind, args)
-    }
-}
-
-fn construct_standard_value(
-    cx: &mut Cx,
-    kind: StandardClassKind,
-    args: Vec<Value>,
-) -> Result<Value> {
-    let exprs = value_exprs(cx, args)?;
-    match kind {
-        StandardClassKind::Profile => cx.factory().opaque(Arc::new(LanguageProfileValue::new(
-            LanguageProfile::from_constructor_args(exprs)?,
-        ))),
-        StandardClassKind::FidelityBadge => cx.factory().opaque(Arc::new(FidelityBadgeValue::new(
-            FidelityBadge::from_constructor_args(exprs)?,
-        ))),
-    }
-}
-
-fn value_exprs(cx: &mut Cx, args: Vec<Value>) -> Result<Vec<Expr>> {
-    let mut exprs = Vec::with_capacity(args.len());
-    for value in args {
-        exprs.push(value.object().as_expr(cx)?);
-    }
-    Ok(exprs)
-}
-
-fn register_standard_class(linker: &mut Linker<'_>, kind: StandardClassKind) -> Result<()> {
-    let class = DefaultFactory
-        .opaque(Arc::new(StandardClass { kind }))
-        .expect("standard class should be boxable");
-    linker.class_value(kind.symbol(), class)?;
-    Ok(())
-}
-
-fn install_language_profile_citizen(linker: &mut Linker<'_>) -> Result<()> {
-    register_standard_class(linker, StandardClassKind::Profile)
-}
-
-fn install_fidelity_badge_citizen(linker: &mut Linker<'_>) -> Result<()> {
-    register_standard_class(linker, StandardClassKind::FidelityBadge)
-}
-
-fn conformance_language_profile_citizen(cx: &mut Cx) -> Result<()> {
-    let profile = LanguageProfile::new(Symbol::qualified("standard-citizen", "profile"));
-    let value = cx
-        .factory()
-        .opaque(Arc::new(LanguageProfileValue::new(profile)))?;
-    sim_citizen::check_value_fixture(cx, value)
-}
-
-fn conformance_fidelity_badge_citizen(cx: &mut Cx) -> Result<()> {
-    let badge = FidelityBadge::new(
-        Ref::Symbol(Symbol::qualified("standard-citizen", "subject")),
-        Symbol::qualified("standard-citizen", "badge"),
-        2,
-        Ref::Symbol(Symbol::qualified("standard-citizen", "evidence")),
+#[test]
+fn fixture_allows_semantic_wrapper_but_rejects_shadow_authority() {
+    let policy = Policy::load(&root());
+    assert!(
+        policy
+            .findings(
+                Path::new("crates/sim-lib-lang-example/src/eval.rs"),
+                "struct GuestEvalSemantics {\n    mode: EvalMode,\n}"
+            )
+            .is_empty()
     );
-    let value = cx
-        .factory()
-        .opaque(Arc::new(FidelityBadgeValue::new(badge)))?;
-    sim_citizen::check_value_fixture(cx, value)
+    let findings = policy.findings(
+        Path::new("crates/sim-lib-lang-example/src/eval.rs"),
+        "struct DynamicAdmission {\n    read_policy: ReadPolicy,\n    requires: Vec<CapabilityName>,\n    allow: CapabilitySet,\n}",
+    );
+    assert!(
+        findings
+            .iter()
+            .any(|finding| finding.contains("repeats 3 source-authority fields"))
+    );
+    assert!(
+        findings
+            .iter()
+            .any(|finding| finding.contains("generic guest admission type"))
+    );
 }
 
-sim_citizen::inventory::submit! {
-    sim_citizen::CitizenInfo {
-        symbol: "standard/Profile",
-        version: 0,
-        crate_name: env!("CARGO_PKG_NAME"),
-        arity: 10,
-        install: install_language_profile_citizen,
-        conformance: conformance_language_profile_citizen,
+#[test]
+fn every_registered_guest_is_classified_and_sources_have_no_shadow_envelope() {
+    let root = root();
+    let policy = Policy::load(&root);
+    let profiles = fs::read_to_string(root.join("guest-profiles.toml")).unwrap();
+    let registered = profiles
+        .split("[[guest]]")
+        .skip(1)
+        .map(|row| scalar(row, "crate"))
+        .collect::<Vec<_>>();
+    assert_eq!(registered.len(), policy.guests.len());
+    for guest in registered {
+        assert!(
+            policy
+                .guests
+                .iter()
+                .any(|(name, status)| name == &guest
+                    && matches!(status.as_str(), "wired" | "unwired")),
+            "unclassified guest {guest}"
+        );
     }
-}
-
-sim_citizen::inventory::submit! {
-    sim_citizen::CitizenInfo {
-        symbol: "standard/FidelityBadge",
-        version: 0,
-        crate_name: env!("CARGO_PKG_NAME"),
-        arity: 4,
-        install: install_fidelity_badge_citizen,
-        conformance: conformance_fidelity_badge_citizen,
+    let mut findings = Vec::new();
+    for path in rust_sources(&root.join("crates")) {
+        let relative = path.strip_prefix(&root).unwrap();
+        findings.extend(policy.findings(relative, &fs::read_to_string(&path).unwrap()));
     }
-}
-
-fn class_value_or_stub(cx: &mut Cx, id: ClassId, symbol: Symbol) -> Result<Value> {
-    if let Some(value) = cx.registry().class_by_symbol(&symbol) {
-        return Ok(value.clone());
-    }
-    cx.factory().class_stub(id, symbol)
+    assert!(findings.is_empty(), "{}", findings.join("\n"));
 }
 ```

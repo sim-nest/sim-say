@@ -1,6 +1,6 @@
 # sim-tooling
 
-Published commit: `4308d0165087c299467b147128c45505f055a228`.
+Published commit: `adbe1f96c1979f1c06199e41943aaf878680a093`.
 
 ## Crates
 
