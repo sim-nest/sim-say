@@ -120,6 +120,7 @@ piece gives you.
 - **sim-codec-bitwise-base64** -- It carries the canonical minimal bit-packed form as plain text, so it can travel anywhere only text is allowed.
 - **sim-codec-bridge** -- It gives SIM, people, and model seats one checked packet format for requests, replies, reviews, and receipts.
 - **sim-codec-chat** -- It reads and writes model conversations -- prompts, replies, and events -- in one neutral, provider-independent form.
+- **sim-codec-classfile** -- It turns JVM classfiles into bounded, lossless SIM data that can be inspected, edited, and written back without running Java code.
 - **sim-codec-compare** -- the honest scoreboard that tells you when the bit-packed wire format actually beats the plain one, and when it just wastes your time.
 - **sim-codec-config** -- It turns small SIM configuration files into ordinary runtime maps and writes those maps back as clean text.
 - **sim-codec-doc** -- It reads and writes Markdown, Typst, AsciiDoc, and LaTeX as one structured document value.
@@ -147,6 +148,7 @@ piece gives you.
 - **sim-lib-surface-card** -- The shared name-translator that presents SIM's tools cleanly to outside systems and people.
 - **sim-macros** -- A set of labels that let an author declare SIM building blocks in plain Rust and have the wiring written for them.
 - **sim-table-core** -- The shared rulebook for naming and requesting table data across SIM.
+- **sim-text** -- One lossless home for exact text that may contain code units which ordinary Unicode strings cannot represent.
 - **sim-value** -- A friendly toolkit for building and reading the small data shapes that flow through SIM.
 - **sim-shape** -- it is the single component that decides whether a piece of data fits a described pattern, and tells you exactly what it found inside.
 
@@ -227,10 +229,12 @@ piece gives you.
 
 - **sim-incremental-core** -- It is the small, generic calculation engine that remembers what a query read and recomputes only the parts whose evidence changed.
 - **sim-lib-binding** -- It keeps track of what every name in a program stands for, and exactly where that meaning holds.
+- **sim-lib-class** -- It gives SIM language-neutral classes with bounded lineage, checked member views, and cache invalidation tied to real descriptor revisions.
 - **sim-lib-control** -- It manages how a running program moves -- pausing, resuming, retrying, and recovering when something goes wrong.
 - **sim-lib-core** -- It is the shared plumbing every SIM library uses to announce what it offers and get it installed once, cleanly.
 - **sim-lib-dispatch** -- It picks the right version of an operation based on the kinds of things you hand it.
 - **sim-lib-exec** -- It lets a trusted host run a specific outside process with clear permission and tight limits.
+- **sim-lib-function** -- It separates reusable function shape and capture mechanics from the guest-language policy that executes a function body.
 - **sim-lib-gc-tracing** -- It reclaims unreachable managed-object cycles with deterministic, explicitly bounded tracing work.
 - **sim-lib-incremental** -- It loads incremental calculation into SIM as a capability-gated runtime organ for expression values.
 - **sim-lib-lang-cl** -- It lets you write for SIM in familiar Common Lisp style, with the parentheses and forms Lisp people expect.
@@ -239,6 +243,7 @@ piece gives you.
 - **sim-lib-lang-islisp** -- It lets you write for SIM in ISLISP, the small standardized Lisp with a deliberately compact core.
 - **sim-lib-lang-javascript** -- It runs bounded ECMAScript over SIM's shared values and organs without smuggling in a browser, Node, or ambient event loop.
 - **sim-lib-lang-julia** -- It lets you write for SIM in Julia style, the notation favored for technical and numerical work.
+- **sim-lib-lang-jvm** -- It executes explicitly supplied JVM classfiles through checked verification, linking, managed objects, and capability-scoped SIM runtime services.
 - **sim-lib-lang-lua** -- It lets SIM run Lua-shaped source on the shared runtime with clear boundaries around host effects.
 - **sim-lib-lang-matrix** -- It gathers every language surface and checks them all against one shared standard so they agree.
 - **sim-lib-lang-prolog** -- It lets you write for SIM in Prolog style, stating facts and rules and letting the system find the answers.
@@ -248,6 +253,7 @@ piece gives you.
 - **sim-lib-lang-typed-lazy** -- It lets you write for SIM in a typed, lazy style where values are checked ahead and computed only when needed.
 - **sim-lib-lang-typescript** -- It lets SIM run faithfully erasable TypeScript through the existing JavaScript evaluator while preserving type notation for inspection.
 - **sim-lib-logic** -- It lets you state facts and rules, then ask questions and get every answer that fits.
+- **sim-lib-machine** -- It gives guest runtimes one bounded instruction-machine skeleton while leaving opcode meaning and language policy to the guest.
 - **sim-lib-mutation** -- It lets programs change data in place while keeping every change tracked and permitted.
 - **sim-lib-namespace** -- It organizes names into separate modules so large programs do not trip over each other.
 - **sim-lib-pattern** -- It takes data apart by its shape and handles each case, warning you when a case is missed.
@@ -650,6 +656,12 @@ BRIDGE makes an exchange inspectable from the first byte. A packet names who spe
 It reads and writes model conversations -- prompts, replies, and events -- in one neutral, provider-independent form.
 
 Conversations with a model come in many shapes: a request you send, the answer that comes back, events along the way, and the record cards that summarize them. This gives all of those a single, tidy text form that does not belong to any one provider. It also understands native provider payloads for OpenAI, Anthropic, Ollama, LM Studio, Lemonade, and OpenAI-compatible local servers, while keeping the saved conversation in the same neutral record. You can capture a whole exchange, store it, move it, or read it later, and it means the same thing regardless of which service produced it. Because the form is consistent, transcripts from different sources line up the same way, so they can be compared, replayed, or archived without special handling for each origin. It keeps the parts of a conversation clearly separated -- who asked, what answered, what happened -- so the record stays legible.
+
+#### sim-codec-classfile
+
+It turns JVM classfiles into bounded, lossless SIM data that can be inspected, edited, and written back without running Java code.
+
+This codec reads the complete byte-oriented structure of a Java Virtual Machine classfile into explicit SIM values. Constant-pool entries, methods, fields, attributes, stack maps, annotations, modules, records, bootstrap data, and every opcode retain the evidence needed to understand their original layout. Instruction rows carry absolute byte offsets, modified UTF-8 preserves code units that ordinary text cannot represent, and bounded readers reject malformed or oversized inputs predictably. A validated shell supports controlled edits while tracking which offsets and nested layouts must be rebuilt. Encoding restores a retained projection to classfile bytes instead of silently discarding unfamiliar data.
 
 #### sim-codec-compare
 
@@ -1058,6 +1070,12 @@ Adding a new capability to SIM normally means writing a pile of repetitive regis
 The shared rulebook for naming and requesting table data across SIM.
 
 Many parts of SIM store and fetch data arranged as tables, and they need to agree on three things: which names are allowed for a location, how relative references resolve, and how a request to read or change a table is spelled out on the wire. This crate is the single home for those rules. It checks that a path segment is a real, safe name -- not empty, not a sneaky parent escape, not carrying a stray separator -- and it resolves absolute and relative references into one canonical path. It also describes each table request in one agreed form and translates it to and from SIM data using the exact spellings the remote backends already use, so a local store and a distant one understand each other without guesswork.
+
+#### sim-text
+
+One lossless home for exact text that may contain code units which ordinary Unicode strings cannot represent.
+
+Some language and file formats must preserve UTF-16 code units exactly, including lone surrogates and NUL. `sim-text` gives those formats a shared, dependency-light value instead of making every runtime or codec invent its own.
 
 #### sim-value
 
@@ -1789,11 +1807,17 @@ It keeps track of what every name in a program stands for, and exactly where tha
 
 This library is the part of SIM that remembers which value each name points to as a program runs. It supports names that stay put inside the block that created them, names whose meaning can be swapped for the length of a call and then restored, and names defined together so they can refer to each other. When you read a name, you get the right value for the place you are standing in the code. When a temporary setting ends, the earlier one comes back on its own, so surprises stay rare and behavior stays predictable.
 
+#### sim-lib-class
+
+It gives SIM language-neutral classes with bounded lineage, checked member views, and cache invalidation tied to real descriptor revisions.
+
+This library turns class structure into an explicit runtime organ instead of leaving every guest language to invent its own hierarchy machinery. A descriptor names parents, members, construction policy, and revision evidence. Lineage can follow declared order or bounded C3 linearization, with typed failures for cycles, inconsistent precedence, missing nodes, and exhausted budgets. Derived member views are cached only while every parent and member revision still agrees. Managed ephemeron storage lets the collector reclaim both a class and its cached projection when the final strong root disappears. Subclass questions return evidence that callers can inspect rather than an unexplained boolean.
+
 #### sim-lib-control
 
 It manages how a running program moves -- pausing, resuming, retrying, and recovering when something goes wrong.
 
-This library shapes the flow of work inside SIM. It lets a computation pause and pick up later, hand values back and forth as it goes, explore several possibilities and back out of the ones that fail, and jump straight out of deep nesting when that is the clearest thing to do. It also handles trouble in an orderly way, offering named ways to recover instead of simply stopping. Together these turn awkward control situations -- long-running steps, search, cleanup, and error handling -- into ordinary, describable pieces you can reason about.
+This library shapes the flow of work inside SIM. It lets a computation pause and pick up later, hand values back and forth as it goes, explore several possibilities and back out of the ones that fail, and jump straight out of deep nesting when that is the clearest thing to do. It also handles trouble in an orderly way, offering named ways to recover instead of simply stopping. Together these turn awkward control situations -- long-running steps, search, cleanup, and error handling -- into ordinary, describable pieces you can reason about. Every guest raises the same non-recursive `Raised` envelope. It obtains the raised class from the guest's class descriptor, keeps the ordinary guest object as the payload, and records causes, contexts, groups, and suppressed values as stable managed edges through `ManagedException`. The bounded class matcher then selects handlers from descriptor lineage. A new guest composes these three parts instead of declaring another throwable carrier or recursive relation chain.
 
 #### sim-lib-core
 
@@ -1812,6 +1836,12 @@ This library lets one named operation have many implementations and choose the f
 It lets a trusted host run a specific outside process with clear permission and tight limits.
 
 Some useful work belongs outside the runtime: a formatter, a compiler, a small command-line helper, or another tool the host already trusts. This crate gives that work a narrow gate. The caller names the exact program and arguments, the host checks permission first, and the run is bounded by a working directory root, a timeout, and a byte limit on captured output.
+
+#### sim-lib-function
+
+It separates reusable function shape and capture mechanics from the guest-language policy that executes a function body.
+
+This library describes functions as checked plans and managed instances. A plan records positional, named, optional, rest, and keyword parameters together with capture descriptors, call mode, browse projection, and stable validation errors. Binding keeps argument origins visible and produces one ordered result that dispatch can consume without guessing how inputs arrived. Instances validate captured bindings before retaining them and delegate body behavior through an explicit policy type, so a Java lambda, Python closure, Lisp function, or native adapter can share mechanics without sharing semantics. The resulting callable body enters SIM through the ordinary method dispatch contract.
 
 #### sim-lib-gc-tracing
 
@@ -1860,6 +1890,12 @@ The loadable JavaScript profile evaluates lowered `codec/javascript` forms direc
 It lets you write for SIM in Julia style, the notation favored for technical and numerical work.
 
 This library gives SIM a Julia face. Julia's notation is popular with people doing calculation-heavy and scientific work, and this profile lets you express your ideas in that familiar shape and run them on SIM. It is a front for reading and writing in the Julia style, not a separate engine copied inside; the meaning of what you write is carried by SIM's shared expression graph underneath. So you keep the clean, math-friendly look you already know while your code joins the same runtime that every other SIM surface shares, side by side with them.
+
+#### sim-lib-lang-jvm
+
+It executes explicitly supplied JVM classfiles through checked verification, linking, managed objects, and capability-scoped SIM runtime services.
+
+The JVM profile consumes lossless classfile data and prepares it for bounded execution. It owns loader-local class spaces, verifier evidence, fields and arrays, initialization, invocation, exceptions, monitors, numeric instructions, bootstrap linkage, method handles, lambdas, string concatenation, frame pools, and guarded outcome caches. Every entry path carries resource limits and distinguishes admission, verification, linking, and execution failures. Class sources are supplied deliberately; there is no ambient classpath. Java strings retain exact code units, objects live in the shared managed heap, and guest failures use the common raised-value boundary. Browsing and fidelity reports expose what was proved and what the installed profile admits.
 
 #### sim-lib-lang-lua
 
@@ -1914,6 +1950,12 @@ The loadable profile installs `language/typescript-notation` over `codec/typescr
 It lets you state facts and rules, then ask questions and get every answer that fits.
 
 This library brings rule-based reasoning to SIM. You record facts and the rules that connect them, then pose a question with blanks in it, and the engine finds the values that make the question true. It works by matching shapes against each other and filling in the blanks consistently, and it can hold extra conditions that the answers must also satisfy. Results arrive as a stream you can take from one at a time, so a question with many answers stays manageable. It turns "what combinations satisfy all of this" into a direct thing you can ask.
+
+#### sim-lib-machine
+
+It gives guest runtimes one bounded instruction-machine skeleton while leaving opcode meaning and language policy to the guest.
+
+This library defines the reusable mechanics of a decoded-instruction machine without baking in a particular bytecode. A guest supplies instruction and value types, logical width rules, frame behavior, handler lookup, and effect policy. The shared driver accounts for work, advances frames, records deterministic receipts, exposes safepoints, and keeps managed roots visible while execution is in flight. Effect-free preparation can be admitted separately from effectful work, so verification and optimization do not silently acquire runtime powers. Typed outcomes distinguish completion, suspension, raised values, budget exhaustion, and policy refusal.
 
 #### sim-lib-mutation
 
