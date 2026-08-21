@@ -10,10 +10,10 @@ Run exact process benchmarks and compare, inspect, or policy-check durable repor
 
 ## Anchors
 
-- `anchor/rustdoc/xtask/command-spec`
-- `anchor/rustdoc/xtask/counter-sample`
-- `anchor/rustdoc/xtask/report-view`
-- `anchor/rustdoc/xtask/run-request`
+- `anchor/rustdoc/xtask/bench/cli/command-spec`
+- `anchor/rustdoc/xtask/bench/cli/report-view`
+- `anchor/rustdoc/xtask/bench/cli/run-request`
+- `anchor/rustdoc/xtask/bench/report/counter-sample`
 
 ## Specimens
 

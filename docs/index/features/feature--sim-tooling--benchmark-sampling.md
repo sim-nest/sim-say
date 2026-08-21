@@ -10,14 +10,14 @@ Run setup, calibration, warmup, and measured benchmark phases through an injecta
 
 ## Anchors
 
-- `anchor/rustdoc/xtask/calibration-decision`
-- `anchor/rustdoc/xtask/monotonic-clock`
-- `anchor/rustdoc/xtask/run-config`
-- `anchor/rustdoc/xtask/run-phase`
-- `anchor/rustdoc/xtask/run-record`
-- `anchor/rustdoc/xtask/sample-record`
-- `anchor/rustdoc/xtask/sample-status`
-- `anchor/rustdoc/xtask/workload`
+- `anchor/rustdoc/xtask/bench/run/calibration-decision`
+- `anchor/rustdoc/xtask/bench/run/monotonic-clock`
+- `anchor/rustdoc/xtask/bench/run/run-config`
+- `anchor/rustdoc/xtask/bench/run/run-phase`
+- `anchor/rustdoc/xtask/bench/run/run-record`
+- `anchor/rustdoc/xtask/bench/run/sample-record`
+- `anchor/rustdoc/xtask/bench/run/sample-status`
+- `anchor/rustdoc/xtask/bench/run/workload`
 
 ## Specimens
 

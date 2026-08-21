@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-lang-javascript`
 - Canonical key: `crate/sim-lib-lang-javascript/feature-sim-runtime-javascript-core-profile`
 
-Run embedded, capability-scoped ECMAScript over SIM values with ordinary objects, exact UTF-16 strings, explicit drain-to-empty jobs, and JavaScript-named constructors for shared source-module and dynamic-source policies, with no private authority envelopes, Node, DOM, timers, ambient host IO, or implicit event loop.
+Run embedded, capability-scoped ECMAScript over SIM values with one authoritative finite work budget, ordinary objects, exact UTF-16 strings, explicit drain-to-empty jobs, and JavaScript-named constructors for shared source-module and dynamic-source policies, with no private authority envelopes, Node, DOM, timers, ambient host IO, or implicit event loop.
 
 ## Anchors
 

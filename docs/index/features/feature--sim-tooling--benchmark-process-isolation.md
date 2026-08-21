@@ -10,13 +10,13 @@ Execute benchmark workloads as exact argument vectors with controlled directorie
 
 ## Anchors
 
-- `anchor/rustdoc/xtask/cpu-affinity`
-- `anchor/rustdoc/xtask/execute`
-- `anchor/rustdoc/xtask/execute_adapter`
-- `anchor/rustdoc/xtask/isolation-record`
-- `anchor/rustdoc/xtask/process-declaration`
-- `anchor/rustdoc/xtask/process-sample`
-- `anchor/rustdoc/xtask/workload-adapter`
+- `anchor/rustdoc/xtask/bench/exec/cpu-affinity`
+- `anchor/rustdoc/xtask/bench/exec/execute`
+- `anchor/rustdoc/xtask/bench/exec/execute_adapter`
+- `anchor/rustdoc/xtask/bench/exec/isolation-record`
+- `anchor/rustdoc/xtask/bench/exec/process-declaration`
+- `anchor/rustdoc/xtask/bench/exec/process-sample`
+- `anchor/rustdoc/xtask/bench/exec/workload-adapter`
 
 ## Specimens
 

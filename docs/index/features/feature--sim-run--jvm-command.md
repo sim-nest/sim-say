@@ -6,7 +6,7 @@
 - Subject: `crate/sim-run`
 - Canonical key: `crate/sim-run/feature-sim-run-jvm-command`
 
-Run the published JVM specimen through a host-registered JVM library and cli/main/jvm adapter in the standard bootloader session.
+Run caller-supplied classfile bytes, exact class, member, descriptor, and integer arguments through the host-registered JVM library and cli/main/jvm adapter.
 
 ## Anchors
 

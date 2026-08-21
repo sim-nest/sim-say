@@ -10,11 +10,10 @@ Probe typed host and build evidence and refuse benchmark comparisons when policy
 
 ## Anchors
 
-- `anchor/rustdoc/xtask/compatibility-policy`
-- `anchor/rustdoc/xtask/compatibility_mismatches`
-- `anchor/rustdoc/xtask/declared-host`
-- `anchor/rustdoc/xtask/environment-probe`
-- `anchor/rustdoc/xtask/probe_environment`
+- `anchor/rustdoc/xtask/bench/env/compatibility_mismatches`
+- `anchor/rustdoc/xtask/bench/env/declared-host`
+- `anchor/rustdoc/xtask/bench/env/environment-probe`
+- `anchor/rustdoc/xtask/bench/env/probe_environment`
 
 ## Specimens
 

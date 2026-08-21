@@ -10,11 +10,11 @@ Apply declared sample, MAD outlier, dispersion, environment, and threshold polic
 
 ## Anchors
 
-- `anchor/rustdoc/xtask/compare`
-- `anchor/rustdoc/xtask/comparison-report`
-- `anchor/rustdoc/xtask/excluded-sample`
-- `anchor/rustdoc/xtask/robust-comparison-policy`
-- `anchor/rustdoc/xtask/robust-summary`
+- `anchor/rustdoc/xtask/bench/compare/compare`
+- `anchor/rustdoc/xtask/bench/compare/comparison-report`
+- `anchor/rustdoc/xtask/bench/compare/excluded-sample`
+- `anchor/rustdoc/xtask/bench/compare/robust-comparison-policy`
+- `anchor/rustdoc/xtask/bench/compare/robust-summary`
 
 ## Specimens
 

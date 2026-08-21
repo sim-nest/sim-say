@@ -11,8 +11,6 @@ Select base, local, and provider GenAI dependency bundles through SDK Cargo feat
 ## Anchors
 
 - `anchor/export/sim-nest/agent/01-basics/genai-assembly`
-- `anchor/rustdoc/sim-nest/cookbook_directory`
-- `anchor/rustdoc/sim-nest/default_loadable_libs`
 
 ## Specimens
 

@@ -6,7 +6,7 @@
 - Subject: `local/sim-runtime/crate/sim-lib-pattern`
 - Canonical key: `crate/sim-lib-pattern/feature-sim-runtime-pattern-cursor-domains`
 
-Execute bounded patterns over byte, Unicode scalar, or exact UTF-16 code-unit subjects while retaining the offset domain in every match and capture position.
+Execute or search bounded patterns over byte, Unicode scalar, or exact UTF-16 code-unit subjects while retaining the offset domain in every match and capture position.
 
 ## Anchors
 
