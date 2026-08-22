@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-doc-site`
 - Canonical key: `crate/sim-lib-doc-site/feature-sim-office-office-site-workflows`
 
-Model document stores, mail and calendar summaries, and enterprise office site reads.
+Run portable document, mail, Graph, SharePoint, and LibreOffice workflows over modeled or explicitly supplied platform ports.
 
 ## Anchors
 

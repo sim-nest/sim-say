@@ -99,6 +99,50 @@ Source `src/lib.rs`:
 #![allow(deprecated)]
 extern crate self as sim;
 
+#[cfg(feature = "platform")]
+/// Provider-neutral platform records and authoring contracts.
+pub mod platform {
+    pub use sim_lib_platform::{
+        Activation, BoundServices, BundleComposition, BundleContent, BundleManifest, BundleRefusal,
+        CapsuleArtifact, CapsuleAttestation, CapsuleManifest, ComposedBundle, ContractProvenance,
+        ExecutionEvidence, FactPort, LibraryLoadPlan, Lifecycle, OpenSymbol, PlatformCard,
+        PlatformProviderAuthor, PlatformRecordError, PlatformRequest, PlatformSupportRow,
+        PureBootEnvelope, RefusalKind, Requirement, RequirementBuilder, ResolutionReceipt,
+        ResolutionRefusal, ServiceBinding, ServiceOffer, compose_bundle, platform_require,
+        platform_support_matrix,
+    };
+
+    /// SDK entry paths consume the same pure load plan as the bootloader.
+    #[must_use]
+    pub fn sdk_load_plan(envelope: &PureBootEnvelope) -> &LibraryLoadPlan {
+        &envelope.load_plan
+    }
+
+    #[cfg(test)]
+    mod tests {
+        use super::*;
+
+        #[test]
+        fn sdk_preserves_the_canonical_boot_load_plan() {
+            let application = BundleContent {
+                id: OpenSymbol("application/portable".into()),
+                content_digest: "sha256:portable".into(),
+                capabilities: vec![],
+            };
+            let envelope = PureBootEnvelope {
+                schema: OpenSymbol("boot/envelope/v1".into()),
+                capsule: OpenSymbol("platform/site/model".into()),
+                bootstrap: OpenSymbol("bootstrap/sim-native-abi-v1".into()),
+                load_plan: LibraryLoadPlan {
+                    application: application.clone(),
+                    libraries: vec![],
+                },
+            };
+            assert_eq!(sdk_load_plan(&envelope).application, application);
+        }
+    }
+}
+
 #[rustfmt::skip]
 #[cfg(any(feature = "femm-assembly", feature = "femm-codec", feature = "femm-core", feature = "femm-fixtures", feature = "femm-field", feature = "femm-flow", feature = "femm-function", feature = "femm-geometry", feature = "femm-material", feature = "femm-mesh", feature = "femm-ode", feature = "femm-physics", feature = "femm-post", feature = "femm-prelude", feature = "femm-sensitiv", feature = "femm-solve", feature = "femm-space", feature = "femm-tape"))]
 pub use femm_exports::*;

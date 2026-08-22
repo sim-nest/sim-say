@@ -56,15 +56,18 @@
 | `crate/sim-conformance` | `crate` | sim-conformance | 0 |
 | `crate/sim-construction` | `crate` | sim-construction | 0 |
 | `crate/sim-cookbook` | `crate` | sim-cookbook | 0 |
+| `crate/sim-cookbook-build` | `crate` | sim-cookbook-build | 0 |
 | `crate/sim-expr-tree` | `crate` | sim-expr-tree | 0 |
 | `crate/sim-expr-tree-calc` | `crate` | sim-expr-tree-calc | 0 |
 | `crate/sim-expr-tree-core` | `crate` | sim-expr-tree-core | 0 |
+| `crate/sim-host-core` | `crate` | sim-host-core | 0 |
 | `crate/sim-incremental-core` | `crate` | sim-incremental-core | 0 |
 | `crate/sim-index-core` | `crate` | sim-index-core | 0 |
 | `crate/sim-kernel` | `crate` | sim-kernel | 0 |
 | `crate/sim-ledger` | `crate` | sim-ledger | 0 |
 | `crate/sim-ledger-cli` | `crate` | sim-ledger-cli | 0 |
 | `crate/sim-ledger-odb` | `crate` | sim-ledger-odb | 0 |
+| `crate/sim-ledger-test-support` | `crate` | sim-ledger-test-support | 0 |
 | `crate/sim-lib-agent-runner-core-recipe-output-contract-repair` | `crate` | sim-lib-agent-runner-core-recipe-output-contract-repair | 0 |
 | `crate/sim-lib-agent-runner-http` | `crate` | sim-lib-agent-runner-http | 0 |
 | `crate/sim-lib-agent-runner-local` | `crate` | sim-lib-agent-runner-local | 2 |
@@ -205,6 +208,7 @@
 | `crate/sim-lib-pitch-serial` | `crate` | sim-lib-pitch-serial | 0 |
 | `crate/sim-lib-pitch-set` | `crate` | sim-lib-pitch-set | 0 |
 | `crate/sim-lib-pitch-wasm-frame` | `crate` | sim-lib-pitch-wasm-frame | 0 |
+| `crate/sim-lib-platform` | `crate` | sim-lib-platform | 1 |
 | `crate/sim-lib-plugin-clap` | `crate` | sim-lib-plugin-clap | 1 |
 | `crate/sim-lib-plugin-lv2` | `crate` | sim-lib-plugin-lv2 | 0 |
 | `crate/sim-lib-plugin-vst3` | `crate` | sim-lib-plugin-vst3 | 1 |
@@ -256,6 +260,24 @@
 | `crate/sim-mcp-server` | `crate` | sim-mcp-server | 0 |
 | `crate/sim-music` | `crate` | sim-music | 0 |
 | `crate/sim-nest` | `crate` | sim-nest | 6 |
+| `crate/sim-platform-amazfit` | `crate` | sim-platform-amazfit | 0 |
+| `crate/sim-platform-android` | `crate` | sim-platform-android | 0 |
+| `crate/sim-platform-audio` | `crate` | sim-platform-audio | 0 |
+| `crate/sim-platform-bootstrap` | `crate` | sim-platform-bootstrap | 0 |
+| `crate/sim-platform-browser` | `crate` | sim-platform-browser | 0 |
+| `crate/sim-platform-construction` | `crate` | sim-platform-construction | 0 |
+| `crate/sim-platform-core` | `crate` | sim-platform-core | 0 |
+| `crate/sim-platform-halo` | `crate` | sim-platform-halo | 0 |
+| `crate/sim-platform-ios` | `crate` | sim-platform-ios | 0 |
+| `crate/sim-platform-linux` | `crate` | sim-platform-linux | 0 |
+| `crate/sim-platform-macos` | `crate` | sim-platform-macos | 0 |
+| `crate/sim-platform-midi` | `crate` | sim-platform-midi | 0 |
+| `crate/sim-platform-model` | `crate` | sim-platform-model | 0 |
+| `crate/sim-platform-ubuntu-pc` | `crate` | sim-platform-ubuntu-pc | 0 |
+| `crate/sim-platform-ubuntu-rpi` | `crate` | sim-platform-ubuntu-rpi | 0 |
+| `crate/sim-platform-wasi` | `crate` | sim-platform-wasi | 0 |
+| `crate/sim-platform-web-shell` | `crate` | sim-platform-web-shell | 0 |
+| `crate/sim-platform-windows` | `crate` | sim-platform-windows | 0 |
 | `crate/sim-run` | `crate` | sim-run | 4 |
 | `crate/sim-run-core` | `crate` | sim-run-core | 0 |
 | `crate/sim-run-loaders` | `crate` | sim-run-loaders | 3 |
@@ -266,15 +288,14 @@
 | `crate/sim-site-msgraph` | `crate` | sim-site-msgraph | 0 |
 | `crate/sim-site-powerproject` | `crate` | sim-site-powerproject | 0 |
 | `crate/sim-site-sharepoint` | `crate` | sim-site-sharepoint | 0 |
+| `crate/sim-storage-port` | `crate` | sim-storage-port | 0 |
 | `crate/sim-table-core` | `crate` | sim-table-core | 0 |
 | `crate/sim-table-mount` | `crate` | sim-table-mount | 1 |
 | `crate/sim-test-support` | `crate` | sim-test-support | 0 |
 | `crate/sim-text` | `crate` | sim-text | 0 |
 | `crate/sim-value` | `crate` | sim-value | 0 |
 | `crate/sim-view-tty` | `crate` | sim-view-tty | 1 |
-| `crate/sim-viture-ffi` | `crate` | sim-viture-ffi | 0 |
 | `crate/sim-wasm-abi` | `crate` | sim-wasm-abi | 1 |
-| `crate/sim-web-shell` | `crate` | sim-web-shell | 3 |
 | `doc-set/sim-agent-net/generated` | `doc-set` | sim-agent-net generated docs | 0 |
 | `doc-set/sim-audio-daw/generated` | `doc-set` | sim-audio-daw generated docs | 0 |
 | `doc-set/sim-auto/generated` | `doc-set` | sim-auto generated docs | 0 |
@@ -292,6 +313,7 @@
 | `doc-set/sim-music/generated` | `doc-set` | sim-music generated docs | 0 |
 | `doc-set/sim-numbers/generated` | `doc-set` | sim-numbers generated docs | 0 |
 | `doc-set/sim-office/generated` | `doc-set` | sim-office generated docs | 0 |
+| `doc-set/sim-platform/generated` | `doc-set` | sim-platform generated docs | 0 |
 | `doc-set/sim-run/generated` | `doc-set` | sim-run generated docs | 0 |
 | `doc-set/sim-runtime/generated` | `doc-set` | sim-runtime generated docs | 0 |
 | `doc-set/sim-sdk/generated` | `doc-set` | sim-sdk generated docs | 0 |
@@ -356,6 +378,10 @@
 | `local/sim-numbers/crate/sim-lib-numbers-tensor` | `crate` | sim-lib-numbers-tensor | 1 |
 | `local/sim-numbers/crate/xtask` | `crate` | xtask | 0 |
 | `local/sim-office/crate/xtask` | `crate` | xtask | 0 |
+| `local/sim-platform/crate/sim-table-fs` | `crate` | sim-table-fs | 0 |
+| `local/sim-platform/crate/sim-viture-ffi` | `crate` | sim-viture-ffi | 0 |
+| `local/sim-platform/crate/sim-web-shell` | `crate` | sim-web-shell | 0 |
+| `local/sim-platform/crate/xtask` | `crate` | xtask | 0 |
 | `local/sim-run/crate/sim` | `crate` | sim | 0 |
 | `local/sim-run/crate/xtask` | `crate` | xtask | 0 |
 | `local/sim-runtime/crate/sim-lib-control` | `crate` | sim-lib-control | 1 |
@@ -441,12 +467,12 @@
 | `local/sim-storage/crate/sim-list-cell` | `crate` | sim-list-cell | 1 |
 | `local/sim-storage/crate/sim-list-lazy` | `crate` | sim-list-lazy | 1 |
 | `local/sim-storage/crate/sim-table-db` | `crate` | sim-table-db | 0 |
-| `local/sim-storage/crate/sim-table-fs` | `crate` | sim-table-fs | 0 |
 | `local/sim-storage/crate/sim-table-hash` | `crate` | sim-table-hash | 1 |
 | `local/sim-storage/crate/sim-table-http` | `crate` | sim-table-http | 0 |
 | `local/sim-storage/crate/sim-table-lazy` | `crate` | sim-table-lazy | 1 |
 | `local/sim-storage/crate/sim-table-override` | `crate` | sim-table-override | 1 |
 | `local/sim-storage/crate/xtask` | `crate` | xtask | 0 |
+| `local/sim-stream-host/crate/sim-viture-ffi` | `crate` | sim-viture-ffi | 0 |
 | `local/sim-stream-host/crate/xtask` | `crate` | xtask | 0 |
 | `local/sim-stream/crate/sim-lib-rank` | `crate` | sim-lib-rank | 1 |
 | `local/sim-stream/crate/sim-lib-stream-audio` | `crate` | sim-lib-stream-audio | 0 |
@@ -464,6 +490,7 @@
 | `local/sim-web/crate/sim-lib-view` | `crate` | sim-lib-view | 0 |
 | `local/sim-web/crate/sim-lib-view-doc` | `crate` | sim-lib-view-doc | 0 |
 | `local/sim-web/crate/sim-lib-web-layout` | `crate` | sim-lib-web-layout | 0 |
+| `local/sim-web/crate/sim-web-shell` | `crate` | sim-web-shell | 3 |
 | `local/sim-web/crate/xtask` | `crate` | xtask | 0 |
 | `repo/sim-agent-net` | `repo` | sim-agent-net | 18 |
 | `repo/sim-audio-daw` | `repo` | sim-audio-daw | 18 |
@@ -475,13 +502,14 @@
 | `repo/sim-discrete` | `repo` | sim-discrete | 9 |
 | `repo/sim-expr-tree` | `repo` | sim-expr-tree | 9 |
 | `repo/sim-femm` | `repo` | sim-femm | 21 |
-| `repo/sim-foundation` | `repo` | sim-foundation | 11 |
+| `repo/sim-foundation` | `repo` | sim-foundation | 13 |
 | `repo/sim-interference` | `repo` | sim-interference | 6 |
 | `repo/sim-kernel` | `repo` | sim-kernel | 3 |
-| `repo/sim-ledger` | `repo` | sim-ledger | 7 |
+| `repo/sim-ledger` | `repo` | sim-ledger | 8 |
 | `repo/sim-music` | `repo` | sim-music | 56 |
 | `repo/sim-numbers` | `repo` | sim-numbers | 35 |
 | `repo/sim-office` | `repo` | sim-office | 18 |
+| `repo/sim-platform` | `repo` | sim-platform | 24 |
 | `repo/sim-run` | `repo` | sim-run | 9 |
 | `repo/sim-runtime` | `repo` | sim-runtime | 34 |
 | `repo/sim-sdk` | `repo` | sim-sdk | 74 |

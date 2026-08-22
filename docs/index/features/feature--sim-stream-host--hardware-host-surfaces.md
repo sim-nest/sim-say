@@ -14,7 +14,7 @@ Collect stream-host placement, Viture glasses, Halo glasses, watch bridge, and n
 - `anchor/crate/sim-lib-stream-host`
 - `anchor/crate/sim-lib-stream-viture`
 - `anchor/crate/sim-lib-stream-wristbridge`
-- `anchor/crate/sim-viture-ffi`
+- `local/sim-stream-host/anchor/crate/sim-viture-ffi`
 
 ## Surfaces
 

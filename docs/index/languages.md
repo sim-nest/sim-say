@@ -394,6 +394,8 @@
 | `specimen` | `lisp` | crates/sim-lib-pitch-set/recipes/01-basics/triad-mask/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-shapes/recipes/01-basics/shape-family/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-pitch-wasm-frame/recipes/01-basics/browser-facade/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-platform/recipes/01-basics/modeled-requirement/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-platform/recipes/01-basics/ubuntu-requirement/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-plugin-clap/recipes/01-basics/clap-gain/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-plugin-core/recipes/01-basics/gain-plugin/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-plugin-lv2/recipes/01-basics/lv2-gain/recipe.toml |
@@ -467,6 +469,8 @@
 | `specimen` | `lisp` | crates/sim-lib-web-bridge/recipes/01-basics/session-fixture/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-web-layout/recipes/01-basics/workspace-pane/recipe.toml |
 | `specimen` | `lisp` | crates/sim-mcp-server/recipes/01-basics/stdio-bootloader/recipe.toml |
+| `specimen` | `lisp` | crates/sim-platform-core/recipes/01-basics/fictional-capsule/recipe.toml |
+| `specimen` | `lisp` | crates/sim-platform-web-shell/recipes/01-basics/modeled-boundary/recipe.toml |
 | `specimen` | `lisp` | crates/sim-site-dalux/recipes/01-basics/dalux-modeled-items/recipe.toml |
 | `specimen` | `lisp` | crates/sim-site-libreoffice/recipes/01-basics/libreoffice-helper-modeled/recipe.toml |
 | `specimen` | `lisp` | crates/sim-site-msgraph/recipes/01-basics/msgraph-modeled-read/recipe.toml |
