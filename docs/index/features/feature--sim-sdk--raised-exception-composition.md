@@ -99,6 +99,20 @@ Source `src/lib.rs`:
 #![allow(deprecated)]
 extern crate self as sim;
 
+/// Portable estate vocabulary, exposure compiler, organ, projection, and calls.
+/// Concrete controller bindings are intentionally absent; providers are opt-in.
+#[cfg(feature = "estate")]
+pub mod estate {
+    pub use sim_estate_core as core;
+    pub use sim_estate_project as project;
+    pub use sim_lib_estate as organ;
+    pub use sim_lib_estate_serve as serve;
+    #[cfg(feature = "estate-view")]
+    pub use sim_lib_view_estate as view;
+    #[cfg(feature = "estate-provider-model")]
+    pub use sim_site_estate_model as provider_model;
+}
+
 #[cfg(feature = "platform")]
 /// Provider-neutral platform records and authoring contracts.
 pub mod platform {
@@ -163,6 +177,109 @@ pub use interference_exports::*;
 pub use expr_tree_exports::*;
 #[cfg(feature = "agent")]
 pub use sim_lib_agent::{self as lib_agent, install_agent_lib};
+/// Pure, codec-stable agent conduct records and durable lifecycle contracts.
+#[cfg(feature = "agent-conduct-core")]
+pub mod agent_conduct_core {
+    pub use sim_lib_agent_conduct_core::*;
+}
+/// Certified topology-backed agent conducts and the shipped conduct catalog.
+#[cfg(feature = "agent-conduct")]
+pub mod agent_conduct {
+    pub use sim_lib_agent_conduct::*;
+}
+#[cfg(feature = "topology-core")]
+pub use sim_lib_topology as lib_topology;
+/// Stable opt-in provider control facade. This is intentionally excluded from
+/// the minimal/default SDK feature set.
+#[cfg(feature = "provider")]
+pub mod provider {
+    pub use sim_lib_provider::{
+        AuthMetadata, AuthMethod, AuthOwner, CensusEvidence, CensusRow, CensusState,
+        CredentialSource, Fanout, FanoutMode, FanoutReport, FanoutRow, FanoutSeat, FanoutStatus,
+        ProviderFamilyCard, ProviderInventory, ProviderRegistry, ProviderSeatCard,
+        ProviderSeatConfig, ProviderSeatId, SessionStatus, TermsAcknowledgement, discover,
+        families, open, seats, show_family, show_seat,
+    };
+}
+/// Domain-neutral durable study lifecycle, design, decision, and command product.
+#[cfg(feature = "study")]
+pub mod study {
+    pub use sim_lib_study::*;
+}
+
+/// Model observatory types and its loadable product command.
+#[cfg(feature = "model-test")]
+pub mod model_test {
+    pub use sim_lib_model_test::*;
+}
+/// Provider-neutral web research composition.
+///
+/// This facade intentionally exposes stable plans, receipts, records, and host
+/// boundaries. Provider-specific wire DTOs remain in their codec crates.
+#[cfg(feature = "web-search")]
+pub mod web_search {
+    /// Neutral HTTP request policy and injectable connector contracts.
+    pub mod http {
+        pub use sim_lib_net_http::{
+            Cancellation, Client, Connector, Error, Header, Method, Policy, ProxyPolicy,
+            RedirectPolicy, Request, RequestBody, Response, TlsRoots, Url,
+        };
+    }
+    /// Immutable raw and normalized web evidence records.
+    pub mod web {
+        pub use sim_lib_web_core::{
+            DecodeLimits, EvidenceSelector, PolicyDecision, PolicyKind, PolicyReceipt,
+            PolicyVerdict, RepresentationMetadata, WebCapture, WebExchange, WebRepresentation,
+        };
+    }
+    /// Provider-neutral query, observation, citation, and wire contracts.
+    pub mod records {
+        pub use sim_lib_search_core::{
+            AliasEvidence, Citation, ProviderClaim, RankContribution, ResearchBundle, SearchNotice,
+            SearchObservation, SearchPage, SearchQuery, SearchRun, SearchSite, SearchWireCodec,
+        };
+    }
+    /// Bounded provider transport host contracts and receipts.
+    pub mod search_host {
+        pub use sim_lib_search_http::{
+            CallMode, HttpRequest, HttpResponse, HttpSearchTransport, PrincipalRef,
+            RawResponseCapture, SearchHttpClient, SearchHttpError, SearchHttpNotice,
+            SearchHttpReceipt, SearchSiteConfig, SecretResolver, SiteLimits,
+        };
+    }
+    /// Independently authorized fetch host, plans, and receipts.
+    pub mod fetch_host {
+        pub use sim_lib_web_fetch::{
+            CaptureDir, EgressPolicy, ExchangeReceipt, FetchError, FetchMode, FetchPlan,
+            FetchReceipt, HttpExecutor, MemoryCaptureDir, PolicyReceipt, PublicWebEgress,
+            RepresentationOutcome, RobotsReceipt, StoredCapture, StoredRobots, WebFetcher,
+        };
+    }
+    /// Deterministic federation, ranking, inspection, and replay records.
+    pub mod research {
+        pub use sim_lib_search::{
+            AliasCluster, AliasRule, CapturedPage, Judge, JudgeReceipt, JudgeRequest, PageCapturer,
+            PlanLimits, PlanOmission, PlanReceipt, PlannedSite, ResearchBundle, RetrieverSite,
+            SearchCancellation, SearchFailure, SearchPlan, SearchRun, SiteOutcome, TypedOmission,
+            call_judge, cluster_aliases, dispatch, fenced_capture, fenced_claim, fuse, inspect,
+            local_corpus_page, plan_search, query, research,
+        };
+    }
+    /// Office evidence anchors derived only from checked web representations.
+    pub mod office {
+        pub use sim_lib_doc_web::{
+            AnchorInput, AnchorKind, CitationFormat, EvidenceAnchor, WebEvidenceError, anchor_doc,
+            load_anchor, load_representation, save_anchor, save_capture, save_representation,
+        };
+    }
+    /// Inert, offline audit view over canonical records.
+    pub mod audit_view {
+        pub use sim_lib_view_search::{
+            AuditError, AuditRecords, CaptureEvidence, Layout, SEARCH_AUDIT_SURFACE_ID,
+            SearchAction, ViewState, apply_action, render,
+        };
+    }
+}
 /// Native class authoring helpers: a `Class` implementation plus the lib
 /// wrapper that registers a host-defined class, its constructor, and members.
 #[cfg(all(feature = "core", feature = "shape"))]
