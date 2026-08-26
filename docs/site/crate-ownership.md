@@ -373,7 +373,6 @@
 | `sim-list-cell` | [sim-storage](../repos/sim-storage.md) |
 | `sim-list-lazy` | [sim-storage](../repos/sim-storage.md) |
 | `sim-table-db` | [sim-storage](../repos/sim-storage.md) |
-| `sim-table-fs` | [sim-storage](../repos/sim-storage.md) |
 | `sim-table-hash` | [sim-storage](../repos/sim-storage.md) |
 | `sim-table-http` | [sim-storage](../repos/sim-storage.md) |
 | `sim-table-lazy` | [sim-storage](../repos/sim-storage.md) |
@@ -400,7 +399,6 @@
 | `sim-lib-stream-halo` | [sim-stream-host](../repos/sim-stream-host.md) |
 | `sim-lib-stream-viture` | [sim-stream-host](../repos/sim-stream-host.md) |
 | `sim-lib-stream-wristbridge` | [sim-stream-host](../repos/sim-stream-host.md) |
-| `sim-viture-ffi` | [sim-stream-host](../repos/sim-stream-host.md) |
 | `xtask` | [sim-tooling](../repos/sim-tooling.md) |
 | `sim-lib-intent` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-scene` | [sim-web](../repos/sim-web.md) |

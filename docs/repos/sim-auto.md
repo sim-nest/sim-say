@@ -1,6 +1,6 @@
 # sim-auto
 
-Published commit: `756abbac5a9d509c0b4c1f0c7824b651b556eb0f`.
+Published commit: `ee1b3a15f9e61c385aa50584f55013ee83c2c964`.
 
 ## Crates
 

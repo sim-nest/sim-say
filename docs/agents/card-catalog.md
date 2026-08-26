@@ -2,7 +2,7 @@
 
 | Repository | Cards | Contract |
 | --- | ---: | --- |
-| [sim-agent-net](../repos/sim-agent-net.md) | 35 | [card-index.json](../contracts/sim-agent-net/card-index.json) |
+| [sim-agent-net](../repos/sim-agent-net.md) | 43 | [card-index.json](../contracts/sim-agent-net/card-index.json) |
 | [sim-audio-daw](../repos/sim-audio-daw.md) | 18 | [card-index.json](../contracts/sim-audio-daw/card-index.json) |
 | [sim-auto](../repos/sim-auto.md) | 5 | [card-index.json](../contracts/sim-auto/card-index.json) |
 | [sim-citizen](../repos/sim-citizen.md) | 2 | [card-index.json](../contracts/sim-citizen/card-index.json) |
@@ -13,20 +13,20 @@
 | [sim-expr-tree](../repos/sim-expr-tree.md) | 6 | [card-index.json](../contracts/sim-expr-tree/card-index.json) |
 | [sim-femm](../repos/sim-femm.md) | 21 | [card-index.json](../contracts/sim-femm/card-index.json) |
 | [sim-foundation](../repos/sim-foundation.md) | 9 | [card-index.json](../contracts/sim-foundation/card-index.json) |
-| [sim-interference](../repos/sim-interference.md) | 6 | [card-index.json](../contracts/sim-interference/card-index.json) |
+| [sim-interference](../repos/sim-interference.md) | 7 | [card-index.json](../contracts/sim-interference/card-index.json) |
 | [sim-kernel](../repos/sim-kernel.md) | 2 | [card-index.json](../contracts/sim-kernel/card-index.json) |
 | [sim-ledger](../repos/sim-ledger.md) | 3 | [card-index.json](../contracts/sim-ledger/card-index.json) |
 | [sim-music](../repos/sim-music.md) | 57 | [card-index.json](../contracts/sim-music/card-index.json) |
-| [sim-numbers](../repos/sim-numbers.md) | 35 | [card-index.json](../contracts/sim-numbers/card-index.json) |
-| [sim-office](../repos/sim-office.md) | 18 | [card-index.json](../contracts/sim-office/card-index.json) |
+| [sim-numbers](../repos/sim-numbers.md) | 46 | [card-index.json](../contracts/sim-numbers/card-index.json) |
+| [sim-office](../repos/sim-office.md) | 19 | [card-index.json](../contracts/sim-office/card-index.json) |
 | [sim-physics](../repos/sim-physics.md) | 4 | [card-index.json](../contracts/sim-physics/card-index.json) |
 | [sim-platform](../repos/sim-platform.md) | 20 | [card-index.json](../contracts/sim-platform/card-index.json) |
 | [sim-run](../repos/sim-run.md) | 3 | [card-index.json](../contracts/sim-run/card-index.json) |
-| [sim-runtime](../repos/sim-runtime.md) | 32 | [card-index.json](../contracts/sim-runtime/card-index.json) |
-| [sim-sdk](../repos/sim-sdk.md) | 278 | [card-index.json](../contracts/sim-sdk/card-index.json) |
+| [sim-runtime](../repos/sim-runtime.md) | 33 | [card-index.json](../contracts/sim-runtime/card-index.json) |
+| [sim-sdk](../repos/sim-sdk.md) | 303 | [card-index.json](../contracts/sim-sdk/card-index.json) |
 | [sim-shape](../repos/sim-shape.md) | 3 | [card-index.json](../contracts/sim-shape/card-index.json) |
-| [sim-storage](../repos/sim-storage.md) | 5 | [card-index.json](../contracts/sim-storage/card-index.json) |
+| [sim-storage](../repos/sim-storage.md) | 6 | [card-index.json](../contracts/sim-storage/card-index.json) |
 | [sim-stream](../repos/sim-stream.md) | 12 | [card-index.json](../contracts/sim-stream/card-index.json) |
 | [sim-stream-host](../repos/sim-stream-host.md) | 3 | [card-index.json](../contracts/sim-stream-host/card-index.json) |
 | [sim-tooling](../repos/sim-tooling.md) | 2 | [card-index.json](../contracts/sim-tooling/card-index.json) |
-| [sim-web](../repos/sim-web.md) | 19 | [card-index.json](../contracts/sim-web/card-index.json) |
+| [sim-web](../repos/sim-web.md) | 21 | [card-index.json](../contracts/sim-web/card-index.json) |

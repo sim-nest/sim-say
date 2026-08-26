@@ -12,23 +12,50 @@ piece gives you.
 ### agents
 
 - **sim-lib-agent** -- The part of SIM that lets an assistant use tools, remember things, and pick which model answers.
+- **sim-lib-agent-conduct** -- Validated agent-conduct profile over SIM topology packages.
+- **sim-lib-agent-conduct-core** -- Pure, codec-stable agent conduct records for SIM.
 - **sim-lib-agent-runner-core** -- The shared rulebook that lets any model, from any provider, plug into SIM the same way.
 - **sim-lib-agent-runner-http** -- The connector that lets SIM reach hosted and local models through provider-shaped HTTP profiles.
 - **sim-lib-agent-runner-local** -- The piece that lets SIM run a model right on your own machine, in the same process.
 - **sim-lib-agent-runner-process** -- The connector that lets SIM use a model or tool that runs as a separate program on your computer.
 - **sim-lib-bridge** -- It keeps model-facing BRIDGE packets from leaving or entering SIM unless their local checks agree.
+- **sim-lib-capability-pack** -- Content-addressed, authority-bounded runtime capability-pack composition for SIM.
+- **sim-lib-continuity** -- Pure, replayable continuity planning for intermittent SIM sessions.
 - **sim-lib-cookbook** -- A built-in collection of worked recipes you can browse, search, and actually run inside SIM.
 - **sim-lib-forge** -- It compiles a plain-English task into a reusable, checked model program you can trust and cache instead of re-prompting.
-- **sim-lib-mcp** -- The piece that turns SIM's own tools and skills into safe listings other assistants can discover.
+- **sim-lib-mcp** -- Library-only MCP surface projection for SIM.
+- **sim-lib-mcp-client** -- Modern-first, transport-neutral MCP client for SIM.
+- **sim-lib-mcp-http** -- Final-protocol Streamable HTTP adapter for SIM MCP services.
+- **sim-lib-mcp-legacy** -- Initialize-era MCP compatibility adapter for SIM.
+- **sim-lib-mcp-stdio** -- Bounded request-lifetime stdio adapter for stateless SIM MCP.
+- **sim-lib-model-test** -- Loadable self-checking model tasks and honest candidate identity for SIM studies.
+- **sim-lib-model-test-packs** -- Immutable public and private-local task packs for SIM model tests.
+- **sim-lib-oauth-core** -- Effect-free OAuth 2.1 resource and client state machines for SIM.
+- **sim-lib-oauth-http** -- Bounded OAuth metadata and JWK retrieval over SIM HTTP.
+- **sim-lib-oauth-jose** -- Local JOSE access-token verification for SIM OAuth.
 - **sim-lib-openai-server** -- A gateway that lets OpenAI-shaped clients reach SIM's model and agent surface.
+- **sim-lib-provider** -- Discover and select every model-provider seat without coupling provider setup to an agent.
+- **sim-lib-provider-cli** -- Loadable provider command surface for the SIM bootloader.
+- **sim-lib-roadmap** -- Bounded native SIM value faces for grounded work plans.
+- **sim-lib-roadmap-runner** -- Durable journal adapter for SIM work plan executions.
+- **sim-lib-search** -- Deterministic, policy-bounded federation and research bundles for SIM.
+- **sim-lib-search-http** -- Provider-neutral, policy-bounded HTTP transport for SIM search codecs.
 - **sim-lib-server** -- The part of SIM that serves evaluation and agents to callers and streams the replies back.
 - **sim-lib-skill** -- The system that describes each thing an agent can do and lets it call that ability like any other command.
 - **sim-lib-stream-fabric** -- The layer that lets SIM place work on other machines and share streaming results without minding where they run.
+- **sim-lib-web-fetch** -- Policy-gated immutable web capture for SIM.
 - **sim-mcp-server** -- A ready-to-run program that lets other assistants reach SIM through the common Model Context Protocol.
+- **sim-roadmap-core** -- Pure content-addressed work plan specifications and implementation guides for SIM.
+- **sim-roadmap-exec-core** -- Pure execution and reconciliation laws for SIM work plans.
+- **sim-roadmap-plan** -- Grounded, explainable compilation of immutable SIM work plans.
+- **sim-roadmap-refine** -- Certified, immutable refinement of grounded SIM work plans.
+- **sim-source-deck** -- Immutable bounded source-context values for SIM.
 - **sim-table-remote** -- The piece that makes a table living on another machine look and act like a local table in SIM.
+- **sim-transport-ports** -- Host-neutral socket, DNS, and local IPC ports for SIM transports.
 
 ### audio
 
+- **sim-audio-ports** -- Provider-neutral native audio device and plugin realization ports for SIM.
 - **sim-lib-audio-dsp** -- Realtime-safe sound sources, sample-rate conversion, and ready-made shaping blocks for an audio signal path.
 - **sim-lib-audio-graph-core** -- The patch bay that connects your sound-shaping blocks into one signal flow and renders it start to finish.
 - **sim-lib-audio-graph-live** -- The engine that runs your effect chain in real time, feeding a sound card without stutters or dropouts.
@@ -124,7 +151,9 @@ piece gives you.
 - **sim-codec-compare** -- the honest scoreboard that tells you when the bit-packed wire format actually beats the plain one, and when it just wastes your time.
 - **sim-codec-config** -- It turns small SIM configuration files into ordinary runtime maps and writes those maps back as clean text.
 - **sim-codec-doc** -- It reads and writes Markdown, Typst, AsciiDoc, and LaTeX as one structured document value.
+- **sim-codec-feed** -- Bounded inert RSS, Atom, and JSON Feed codec for SIM.
 - **sim-codec-index** -- It gives the SIM Index one checked wire surface instead of many ad hoc readers.
+- **sim-codec-index-vault** -- Pure v2 Markdown bundle codec for complete SIM Index vault projections.
 - **sim-codec-javascript** -- It gives SIM a bounded, lossless ECMAScript 2026 frontend whose source evidence survives every downstream decision.
 - **sim-codec-json** -- It reads and writes any value as JSON, so SIM data flows through the world's most common interchange format.
 - **sim-codec-lisp** -- It reads and writes values in parenthesized s-expression text, the plain nested form where structure is spelled out with brackets.
@@ -132,6 +161,9 @@ piece gives you.
 - **sim-codec-mcp** -- It reads and writes the message envelopes of the Model Context Protocol, checking each one is well formed.
 - **sim-codec-pratt** -- It gives SIM codecs one shared way to group infix tokens into expression trees.
 - **sim-codec-python** -- It admits Python 3.14.6 source into SIM as bounded, lossless syntax without importing a Python runtime.
+- **sim-codec-robots** -- Bounded RFC 9309 robots.txt parser and matcher for SIM.
+- **sim-codec-search-searxng** -- Pure bounded SearXNG request and response codec for SIM.
+- **sim-codec-sql** -- Bounded SQL projection for admitted SIM relational plans and schema evolution steps.
 - **sim-codec-typescript** -- It layers bounded TypeScript 7.0.2 and TSX syntax over SIM's JavaScript frontend while keeping compiler-dependent decisions explicit.
 - **sim-test-support** -- It is the shared set of helpers the SIM formats use to test that they read and write values correctly.
 - **sim-wasm-abi** -- It is the shared handshake that lets SIM pass values to and from sandboxed WebAssembly modules.
@@ -141,15 +173,29 @@ piece gives you.
 - **sim-kernel** -- the small, steady center that lets every SIM piece connect.
 - **sim-citizen** -- The layer that lets a domain's own data types show up as first-class, well-behaved values inside SIM.
 - **sim-citizen-derive** -- A one-line marker that writes all the wiring needed to make your data type a full SIM value for you.
+- **sim-cancel** -- Executor-neutral hierarchical cancellation for SIM request lifetimes.
 - **sim-config** -- layered SIM settings stay inspectable because every source becomes the same table-shaped data before it is merged.
 - **sim-cookbook** -- The engine behind SIM's built-in lessons that teach each library from the inside.
+- **sim-cookbook-build** -- Portable host build tool for embedding SIM cookbook recipes.
+- **sim-host-core** -- Neutral host-port contracts for SIM domain libraries.
 - **sim-index-core** -- the checked map that lets every SIM surface describe the same features, examples, and routes.
+- **sim-index-vault-core** -- Pure, complete vault projection and exact claim certificates for the SIM Index.
 - **sim-lib-net-core** -- The quiet reading room that turns raw web traffic into clean, understandable pieces.
+- **sim-lib-net-http** -- Policy-complete blocking HTTP client for SIM capsule transports.
+- **sim-lib-protected-state** -- Bounded, binding-authenticated opaque state envelopes for SIM protocols.
+- **sim-lib-search-core** -- Pure open search, observation, ranking-evidence, and research bundle records for SIM.
 - **sim-lib-surface-card** -- The shared name-translator that presents SIM's tools cleanly to outside systems and people.
+- **sim-lib-web-core** -- Pure web capture, representation, selector, policy, and receipt records for SIM.
 - **sim-macros** -- A set of labels that let an author declare SIM building blocks in plain Rust and have the wiring written for them.
+- **sim-relation-core** -- Open relational domain, row, and canonical identity records for SIM.
+- **sim-relation-migrate** -- Checked schema schema evolution programs and adoption attestations for SIM.
+- **sim-relation-plan** -- Admission and sealed checked logical relational plans for SIM.
+- **sim-relation-schema** -- Validated logical and normalized physical relational schemas for SIM.
+- **sim-study-core** -- Pure canonical study identity, evidence, transition, and decision records for SIM.
 - **sim-table-core** -- The shared rulebook for naming and requesting table data across SIM.
 - **sim-text** -- One lossless home for exact text that may contain code units which ordinary Unicode strings cannot represent.
 - **sim-value** -- A friendly toolkit for building and reading the small data shapes that flow through SIM.
+- **sim-relation-shape** -- Shape projection and runtime admission for SIM relational records.
 - **sim-shape** -- it is the single component that decides whether a piece of data fits a described pattern, and tells you exactly what it found inside.
 
 ### math
@@ -163,24 +209,35 @@ piece gives you.
 - **sim-lib-numbers-cas-eval** -- It takes a symbolic formula and works out its value once you supply what the unknowns stand for.
 - **sim-lib-numbers-codec** -- It is how a new kind of number announces itself so the system knows how to read and write it.
 - **sim-lib-numbers-complex** -- It gives you complex numbers, the two-part numbers that engineering and physics rely on.
+- **sim-lib-numbers-continuation** -- Bounded pseudo-arclength continuation with reviewable predictor/corrector evidence.
 - **sim-lib-numbers-core** -- It is the shared groundwork that lets every kind of number in the system behave consistently.
 - **sim-lib-numbers-exotic** -- It represents numbers to unlimited precision by unfolding them only as far as you actually need.
+- **sim-lib-numbers-extended** -- Normalized double-double scalar and runtime number domain for SIM.
 - **sim-lib-numbers-f64** -- It gives you everyday decimal numbers, the fast, general-purpose values most calculations use.
 - **sim-lib-numbers-fixed** -- It offers whole numbers in specific sizes, so you can match the exact range and storage a task needs.
 - **sim-lib-numbers-float** -- It provides compact decimal numbers that trade a little accuracy for smaller size and speed.
 - **sim-lib-numbers-func** -- It turns a function itself into a value you can name, pass around, and call whenever you like.
 - **sim-lib-numbers-i64** -- It provides the standard whole numbers, positive and negative, that most counting and indexing use.
+- **sim-lib-numbers-implicit** -- Evidence-carrying Radau IIA integration for stiff ODEs and index-1 DAEs.
+- **sim-lib-numbers-interval** -- Sealed, evidence-carrying interval certification for SIM.
+- **sim-lib-numbers-method** -- Validated bounded numerical method plans and canonical cross-domain evidence.
 - **sim-lib-numbers-numeric** -- It solves the hard calculus problems by careful number-crunching when a neat formula is out of reach.
+- **sim-lib-numbers-optimize** -- Bounded optimization and evidence-carrying least squares for SIM.
+- **sim-lib-numbers-poly** -- Evidence-carrying dense coefficient polynomials for SIM.
 - **sim-lib-numbers-prelude** -- It switches on the whole math toolkit in a single step, so everything is ready at once.
 - **sim-lib-numbers-quad** -- It measures the area under a curve and estimates slopes by clever, careful sampling.
+- **sim-lib-numbers-quantity** -- Exact semantic dimensions, units, and generic physical quantities for SIM.
 - **sim-lib-numbers-rational** -- It keeps fractions exact, so one-third really stays one-third instead of a rounded decimal.
 - **sim-lib-numbers-rk** -- It follows how a changing system moves over time, step by careful step.
+- **sim-lib-numbers-root** -- Bracketed and residual-carrying scalar and vector root finding for SIM.
 - **sim-lib-numbers-signal** -- It transforms, combines, estimates, aligns, and safely unmixes sampled patterns with every convention stated.
+- **sim-lib-numbers-special** -- Evidence-carrying real special functions for the SIM number stack.
 - **sim-lib-numbers-stats** -- It summarizes streams and infers finite sequences without hiding memory, error, or convergence.
 - **sim-lib-numbers-tensor** -- It gives you grids of numbers, from simple lists to multi-dimensional blocks, as one kind of value.
 - **sim-lib-numbers-tensor-bcast** -- It lets you combine grids of different shapes sensibly, stretching the smaller to match the larger.
 - **sim-lib-numbers-tensor-bit** -- It stores big grids of yes-or-no values tightly packed and combines them with logical operations.
 - **sim-lib-numbers-tensor-cmplxf** -- It holds grids of complex numbers efficiently, for signal and wave work done in bulk.
+- **sim-lib-numbers-tensor-decomp** -- Bounded, evidence-carrying dense matrix decompositions for SIM tensors.
 - **sim-lib-numbers-tensor-f32** -- It gives you compact single-precision grids for data and model math that do not need f64 storage.
 - **sim-lib-numbers-tensor-f64** -- It gives you fast grids of ordinary decimal numbers, the common case for number-heavy work.
 - **sim-lib-numbers-tensor-half** -- It gives you compact half-precision tensor storage with explicit f32 widening for CPU work.
@@ -222,6 +279,7 @@ piece gives you.
 - **sim-lib-femm-tape** -- It remembers work already done so repeated solves do not start from scratch every time.
 - **sim-lib-interference-compute** -- accurate coherent-wave geometry is reduced on the host so ordinary portable `f32` Tensor operations can evaluate it without large-world phase loss.
 - **sim-lib-interference-core** -- this crate validates scalar-wave physics, sampling truth, and bounded work before solving begins.
+- **sim-lib-interference-physics** -- Interference observation adapter for shared physics audits.
 - **sim-lib-interference-runtime** -- this crate makes certified interference studies ordinary, Shape-checked SIM values without giving up tensor residency or provenance.
 - **sim-lib-interference-solve** -- this crate turns an admitted coherent wave problem into a deterministic host phasor field with inseparable solve evidence.
 
@@ -256,21 +314,31 @@ piece gives you.
 - **sim-lib-machine** -- It gives guest runtimes one bounded instruction-machine skeleton while leaving opcode meaning and language policy to the guest.
 - **sim-lib-mutation** -- It lets programs change data in place while keeping every change tracked and permitted.
 - **sim-lib-namespace** -- It organizes names into separate modules so large programs do not trip over each other.
+- **sim-lib-operation-gate** -- Domain-neutral capability and exact-approval gate for effectful SIM operations.
 - **sim-lib-pattern** -- It takes data apart by its shape and handles each case, warning you when a case is missed.
 - **sim-lib-sequence** -- It works with collections of items -- even endless ones -- without copying them over and over.
 - **sim-lib-standard-core** -- It is the batteries-included default bundle that makes SIM useful the moment it starts.
+- **sim-lib-study** -- Domain-neutral durable study lifecycle over sealed coordinates.
+- **sim-lib-journal** -- Domain-free atomic content journal contract for SIM.
+- **sim-lib-relation-cli** -- Loadable, checked relational command surface for SIM.
 - **sim-list-cell** -- A classic linked-list store that holds items in order so a program can keep and change sequences.
 - **sim-list-lazy** -- A list that figures out its contents only when you ask, so huge or endless sequences cost little until read.
+- **sim-mutual-projection** -- Two-key copied projections without shared archive authority.
+- **sim-relation-site** -- Bounded provider-neutral relation effect site for SIM.
+- **sim-storage-port** -- Portable host-directory port contracts for SIM storage.
 - **sim-table-db** -- A file-cabinet style store that keeps named values in a tree of folders you reach by path.
-- **sim-table-fs** -- Turns a folder on disk into a lookup table where each entry is a file and each subfolder is a nested table.
 - **sim-table-hash** -- A quick name-to-value lookup store that finds any entry by its key almost instantly.
 - **sim-table-http** -- It lets a trusted host treat direct HTTP resources as table entries under explicit network permission.
 - **sim-table-lazy** -- A lookup table whose values are worked out the first time you ask and then remembered.
 - **sim-table-mount** -- It turns several Table and Dir backends into one predictable namespace without weakening each backend's authority checks.
 - **sim-table-override** -- A stack of lookup tables where the top layers can cover entries in the ones beneath.
+- **sim-table-relation** -- Relation-backed Table/Dir namespace and keyed read-only relation views for SIM.
+- **sim-table-sealed** -- Authenticated encryption decorator for SIM Table and Dir backends.
 - **sim-ledger** -- clear yearly books with exact money values and balance checks at the center.
 - **sim-ledger-cli** -- a direct terminal path from exported books to checked yearly reports.
 - **sim-ledger-odb** -- bring LibreOffice Base bookkeeping exports into the ledger model without changing the books by hand.
+- **sim-ledger-store-port** -- Provider-neutral relational year-file port for SIM ledger.
+- **sim-ledger-test-support** -- Deterministic model mounts for ledger conformance tests.
 - **sim-lib-ledger-books** -- a review desk for bookkeeping drafts before they enter the books.
 - **sim-lib-ledger-close** -- exact year-end statements from local ledger files.
 
@@ -290,10 +358,10 @@ piece gives you.
 - **sim-lib-stream-host** -- It plugs SIM's live streams into the real audio and MIDI gear on your machine and across your network.
 - **sim-lib-stream-viture** -- A local VITURE glasses bridge turns headset pose and display controls into SIM device-stream records.
 - **sim-lib-stream-wristbridge** -- A local wrist bridge turns watch exports into SIM worn events without cloud accounts.
-- **sim-viture-ffi** -- A small boundary crate keeps VITURE glasses SDK loading out of the safe stream host.
 
 ### surface
 
+- **sim-lib-hotload** -- Structured offline sandboxed native library builds for SIM.
 - **sim-lib-index** -- sim-lib-index lets the SIM command answer what exists, where it lives, and which examples prove it.
 - **sim-lib-repl** -- The interactive prompt where you type a line and SIM answers back.
 - **sim-run** -- The `sim` program you launch from a terminal to start a SIM session.
@@ -311,6 +379,7 @@ piece gives you.
 - **sim-lib-doc-site** -- the office bridge that makes external document places loadable without making them the frontend.
 - **sim-lib-doc-store** -- a local office document cache that keeps edits tied to the ledger that produced them.
 - **sim-lib-doc-surface** -- a suite-facing document surface that turns office records into renderable panes and checked edits.
+- **sim-lib-doc-web** -- Durable web-capture evidence adapters for SIM office documents.
 - **sim-lib-gantt** -- local project schedules that can be checked and reopened without a vendor system.
 - **sim-lib-mail** -- mail and calendar records stay useful without carrying private bodies around.
 - **sim-lib-office-pack** -- It packages a closed ledger year into review-ready office exports without sending anything live.
@@ -327,17 +396,21 @@ piece gives you.
 - **sim-lib-view-agent** -- it lets you wire up and watch a network of agents on a canvas, live, alongside the agents themselves.
 - **sim-lib-view-bridge** -- it lets people review and change BRIDGE packets in the same form agents use.
 - **sim-lib-view-codec** -- it shows one value written several ways at once and lets you inspect how it matches a shape.
+- **sim-lib-view-continuity-phone** -- Replayable phone interaction surface for SIM continuity turns.
 - **sim-lib-view-daw** -- it brings a full music studio -- timeline, mixer, effects, and synths -- into the browser workspace.
 - **sim-lib-view-device** -- it turns open surface claims into a clear device envelope, so small screens and wearable edges degrade honestly.
 - **sim-lib-view-doc** -- it is a writing surface where article structure, equations, figures, source text, and live results stay together.
+- **sim-lib-view-estate** -- Reversible SurfaceCodec scenes for the SIM estate organ.
 - **sim-lib-view-interference** -- it opens a solved interference field as an honest heatmap you can inspect, edit, and recompute without losing the evidence behind the picture.
 - **sim-lib-view-math** -- it turns numbers, scalar fields, matrices, and formulas into bounded plots and grids you can see and adjust.
+- **sim-lib-view-search** -- Offline, evidence-preserving search audit surface for SIM Web.
 - **sim-lib-view-spatial** -- Glasses surfaces get the right SIM Scene form for stereo panels, mono HUD cards, and simple mirrored displays.
 - **sim-lib-view-wasm-frame** -- it is the local helper that renders a value to a screen picture, folds your gestures into edits, and commits them in place.
+- **sim-lib-view-worktable** -- Rebuildable projection for reversible expedition products.
 - **sim-lib-view-wrist** -- Round watch glance budgets that reuse the shared device glance path for haptic wrist feedback.
 - **sim-lib-web-bridge** -- it is the pipe that carries your edits out and the fresh pictures back, no matter where the runtime actually runs.
 - **sim-lib-web-layout** -- it holds the whole arrangement of your workspace -- panes, tabs, and docks -- as data you can save and restore.
-- **sim-web-shell** -- it is the program you run to open the SIM workspace in a browser.
+- **sim-web-shell** -- Host-neutral routing and reversible-session library for the SIM WebUI shell.
 
 ## Every crate at a glance
 
@@ -348,6 +421,18 @@ piece gives you.
 The part of SIM that lets an assistant use tools, remember things, and pick which model answers.
 
 This is the home base for agents inside SIM. It brings together the pieces an assistant needs to do real work: the tools it can call, the memory it keeps between turns, the patterns that shape its behavior, and the fixtures for trying things out safely. It also decides where a model request actually runs, choosing from a catalog of placements you have set up, whether that is a model on your own machine or one reached across a network. When a request has been answered once, it can keep that reply and hand back the same result for the same question, so you are not paying to ask twice. Everything stays fair and orderly when many requests arrive at once.
+
+#### sim-lib-agent-conduct
+
+Validated agent-conduct profile over SIM topology packages.
+
+Turn a delivered `.simtopo` package into an agent conduct without inventing a second workflow engine. Certification proves the public frame boundary, Card coverage, outcome routes, roles, capabilities, and finish-or-stop admission. Execution remains the job of SIM's topology engine, including exact stepping and resumable continuations. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-agent-conduct-core
+
+Pure, codec-stable agent conduct records for SIM.
+
+Build resumable agent protocols without importing an agent runtime. Open symbols keep steps, roles, outcomes, events, usage, and stops extensible. Integer, unit-qualified usage avoids floating-point accounting. Pointwise limits compose safely across caller, agent, and conduct layers. Canonical SHA-256 journal records detect gaps and divergent duplicates. Citizen registration supplies Shapes and codec-stable read constructors. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
 
 #### sim-lib-agent-runner-core
 
@@ -379,6 +464,18 @@ It keeps model-facing BRIDGE packets from leaving or entering SIM unless their l
 
 This crate is the runtime guard around BRIDGE packets. On send, it stamps a stable identity, proves the line form can be read back, checks that every byte belongs to the packet, and runs the same receive checks the other side will use. When an answer comes back, it reads the final model content as another BRIDGE packet and checks the move, parts, capabilities, and declared return contract before accepting it.
 
+#### sim-lib-capability-pack
+
+Content-addressed, authority-bounded runtime capability-pack composition for SIM.
+
+Compose loadable SIM behavior as a content-addressed graph, not a hard-coded room type. Imports only diminish authority and the complete closure is checked before load. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-continuity
+
+Pure, replayable continuity planning for intermittent SIM sessions.
+
+`sim-lib-continuity` turns an intermittent multi-role session into durable, replayable data. Plans declare services, fallbacks, freshness, retention, disclosure, and network limits. A pure reducer then emits intents for a host to interpret; candidate routes never become capabilities. Fenced journal appends make restart and hostile replay deterministic without introducing another log. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
 #### sim-lib-cookbook
 
 A built-in collection of worked recipes you can browse, search, and actually run inside SIM.
@@ -393,15 +490,105 @@ FORGE turns prose into a named, verified artifact. You hand it a task in ordinar
 
 #### sim-lib-mcp
 
-The piece that turns SIM's own tools and skills into safe listings other assistants can discover.
+Library-only MCP surface projection for SIM.
 
-The Model Context Protocol is a common way for assistants to find out what tools and resources are available to them. This crate takes SIM's internal catalog, its browse cards and its skill descriptions, and presents each one as a tidy, protocol-shaped listing. As it does so it strips out details that should not be shared, so what goes out is a redacted, presentable summary rather than raw internals. The result is a clean inventory of what SIM can offer to an outside assistant, described in terms that assistant already understands, without exposing the machinery behind each entry.
+The Model Context Protocol is a common way for assistants to discover and invoke tools and resources. This crate takes SIM's internal catalog, browse cards, and skill descriptions and presents them through one immutable application service. Each decoded request arrives with a fresh execution context and complete caller, negotiation, and cache facts. The same canonical path performs lookup, argument Shape checking, execution, content validation, and result mapping without retaining connection state. SIM's tools and skills become visible to any assistant that speaks this common protocol. Sensitive internals are filtered out. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-mcp-client
+
+Modern-first, transport-neutral MCP client for SIM.
+
+Start modern, fall back safely before application traffic, and project HTTP or stdio peers into the same SIM runtime objects. `sim-lib-mcp-client` brings validated discovery, Card import, one callable path, bounded MRTR, checked subscriptions, cancellation, deadlines, ledger events, and principal-scoped caching without duplicating transports or credentials. It is deliberately boring where security matters: no speculative replay, no icon fetches, no cache of partial or effecting results, and no ambient input or persistent-storage authority. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-mcp-http
+
+Final-protocol Streamable HTTP adapter for SIM MCP services.
+
+Put the stateless SIM MCP service behind a real HTTP boundary while retaining the same typed application outcome as direct invocation. The adapter validates origin and wire authority before dispatch, supports backpressured JSON or SSE, and cancels exactly the request whose delivery disappears. Client traffic uses SIM's bounded, policy-complete HTTP organ with credentials marked sensitive. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-mcp-legacy
+
+Initialize-era MCP compatibility adapter for SIM.
+
+The adapter retains initialize-era negotiation and shutdown facts, then constructs a complete immutable request context and calls the canonical stateless MCP service. compatibility behavior is isolated and removable. Modern and compatibility clients share the same service dispatch and validation path. Connection state cannot leak into the reusable service object. Use this package at an old MCP connection boundary. New integrations depend directly on `sim-lib-mcp`. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-mcp-stdio
+
+Bounded request-lifetime stdio adapter for stateless SIM MCP.
+
+Run modern or compatibility MCP peers over real stdio while keeping the application service stateless. `sim-lib-mcp-stdio` supplies strict bounded JSON line framing, isolated request cancellation, out-of-order execution, one ordered writer, stderr-only diagnostics, discovery-aware process clients, and explicit compatibility construction policy. Use it when a bootloader or process host needs a trustworthy stdio boundary--not another protocol implementation or a connection-shaped authority cache. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-model-test
+
+Loadable self-checking model tasks and honest candidate identity for SIM studies.
+
+Know exactly which callable model product produced every study observation. SIM preserves seats, artifacts, routes, harness revisions, and hosted epochs in one canonical candidate revision while keeping credentials and endpoints out. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-model-test-packs
+
+Immutable public and private-local task packs for SIM model tests.
+
+Grow model-test task data without changing an engine. Each public pack binds licenses, toolchain, lockfile, complete source closure, graders, work bounds, and exact smoke-through-reproduction selections to an immutable epoch rebuilt from Git objects. Private task bytes stay behind a control-plane loader and cannot enter public registry or export records. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-oauth-core
+
+Effect-free OAuth 2.1 resource and client state machines for SIM.
+
+`sim-lib-oauth-core` validates resource and authorization-server metadata, builds PKCE S256 authorization requests, checks issuer/state/resource binding, and returns immutable verified principals. Secrets are opaque and redacted. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-oauth-http
+
+Bounded OAuth metadata and JWK retrieval over SIM HTTP.
+
+`sim-lib-oauth-http` makes every metadata/JWK byte cap, redirect decision, refresh interval, and stale-key generation visible. It accepts only HTTPS discovery targets and composes the constellation's one HTTP policy boundary. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-oauth-jose
+
+Local JOSE access-token verification for SIM OAuth.
+
+`sim-lib-oauth-jose` verifies signed JWT access tokens against bounded injected JWK sets with explicit algorithms, key ids, rotation generations, and clock skew. It performs no network or storage I/O and never formats token bytes. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
 
 #### sim-lib-openai-server
 
 A gateway that lets OpenAI-shaped clients reach SIM's model and agent surface.
 
 Many programs already know the request and response shapes used by OpenAI-style model services. This crate gives SIM a gateway in that shape for chat, response, embedding, model listing, streaming, replay, and inspection flows. It also includes SIM fixture and subset routes for file records, audio transcription and speech, image references, and text-vector search, so tests and demos can exercise those object families without pretending to be a full media or multipart provider. Stored responses can be fetched again by id, replayed, or branched for inspection. The model listing reports the models SIM actually has available, so local, fixture, and remote model entries appear together when they are installed.
+
+#### sim-lib-provider
+
+Discover and select every model-provider seat without coupling provider setup to an agent.
+
+Open family and seat cards describe provider identity, principals, endpoints, harnesses, and limits without baking a vendor list into SIM. A narrow adapter contract discovers available seats and opens a selected seat through the shared model runner interface.
+
+#### sim-lib-provider-cli
+
+Loadable provider command surface for the SIM bootloader.
+
+Operator-facing parsing and rendering for provider inventory and status without copying registry, authentication, probing, opening, or fan-out behavior into the bootloader. Output is bounded and safe for terminals and automation. CLI behavior stays a thin projection over one provider authority. Credentials and private transport details never enter inventory output. New provider adapters remain discoverable without bootloader changes. This crate is the command surface for sim-lib-provider. The bootloader loads it; provider policy and installed adapters remain with their existing owners. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-roadmap
+
+Bounded native SIM value faces for grounded work plans.
+
+`sim-lib-work plan` makes work plan reading, grounding, planning, exact comparison, certified refinement, rendering, and bounded explanation ordinary SIM values. Every operation is pure and Shape-checked: callers retain the source bytes and host authority, while the library returns reviewable values or typed refusals. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-roadmap-runner
+
+Durable journal adapter for SIM work plan executions.
+
+One bounded, redacted, hash-linked record family captures every work plan execution decision. Large data is stored once as content-addressed objects; replay verifies identity, order, legality, and complete object closure without repeating an effect. The same runner loads bounded work plan-refiner conduct as content-pinned data. Default and third-party strategies may suggest different decompositions, while one strict BRIDGE Shape and the public machine validator retain exclusive authority over grounding, lower-rank descent, complete promise coverage, global limits, and admission certificates. The loadable `work plan/implementer-v1` conduct turns grounded source and guide data into an. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-search
+
+Deterministic, policy-bounded federation and research bundles for SIM.
+
+Search several open or local sources without letting timing, failure, or model influence disappear. SIM freezes authority and budgets before dispatch, keeps partial provider evidence, fuses exact URI clusters with an auditable shared RRF implementation, and turns only independently captured page selectors into research evidence. Every omission stays typed and replayable. The same product is loadable as `sim search` and projected from exact Skill Cards through MCP. Query, fetch, research, and store-only show return one canonical record identity across live-fake, cassette, and offline execution. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-search-http
+
+Provider-neutral, policy-bounded HTTP transport for SIM search codecs.
+
+Turn any safe `SearchWireCodec` into a discoverable Retriever and Tool without changing agents, CLI, or MCP code. Each configured site has explicit concurrency, interval, timeout, response, pagination, and egress limits. Live calls and cassette replay share stable search records, while secrets remain behind an opaque principal reference and never enter cards, cache keys, captures, or audit. The fixture recipe demonstrates the extension seam before any provider adapter is selected. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
 
 #### sim-lib-server
 
@@ -421,11 +608,47 @@ The layer that lets SIM place work on other machines and share streaming results
 
 This crate lets SIM spread evaluation across a group of machines while the code asking for that work stays unaware of where it happens. It carries streams between peers, packing them into bounded messages for the trip and unpacking them on arrival, with control signals to open, advance, pause, cancel, and report on each stream. Its central idea is simple: a finished reply is saved by the exact question that produced it, so any machine that already holds that answer can serve it, and asking becomes a matter of finding who holds a given result rather than tracking a routing map. Because a saved answer never changes, the record of who holds what needs no central agreement and heals itself by replaying its log. Sensitive inputs are hidden before work is placed elsewhere.
 
+#### sim-lib-web-fetch
+
+Policy-gated immutable web capture for SIM.
+
+Capture a landing page through explicit egress, robots, redirect, media, rate, and research-budget decisions. Keep the raw exchange and every normalized representation content-addressed in caller-owned storage, then replay it offline without touching DNS or a socket. Model-facing text is fenced to the exact evidence identity, so hostile page text remains data. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
 #### sim-mcp-server
 
 A ready-to-run program that lets other assistants reach SIM through the common Model Context Protocol.
 
 This crate is a standalone program that puts SIM on the other end of the Model Context Protocol, the shared way assistants discover and call tools. You start it, it reads its options, and it builds a running SIM with the protocol's codec and library already in place, then serves that protocol over a standard input and output channel. The result is a single command that exposes SIM's tools and skills to any assistant able to speak this protocol, with no extra assembly on your part. It is the packaged, launch-and-go form of SIM's protocol support, meant to be pointed at and used rather than built up from parts.
+
+#### sim-roadmap-core
+
+Pure content-addressed work plan specifications and implementation guides for SIM.
+
+`sim-work plan-core` turns authored intent into small, immutable values. Each revision pins its imports, bounds its size, names its acceptance obligations, and gives implementers reviewed guidance tied to exact source evidence. The crate deliberately stops at meaning. Sketches are useful guidance, never proof; acceptance projects into SIM's shared Claim vocabulary without smuggling execution state into the work plan; canonical identities remain stable when unordered authored collections are inserted in a different order. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-roadmap-exec-core
+
+Pure execution and reconciliation laws for SIM work plans.
+
+`sim-work plan-exec-core` gives work plan runners and auditors one shared set of execution laws. It turns observations into deterministic state and explicit effect requests while keeping authority, adapter handles, and I/O outside the crate. Strict correlation checks and a forged-success-resistant receipt gate make reconciliation reusable across local runners, supervisors, and audits. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-roadmap-plan
+
+Grounded, explainable compilation of immutable SIM work plans.
+
+Turn authored intent plus exact source witnesses into a deterministic, inspectable plan. Every ready phase, blocker, invalidation, promise, and completion decision traces to bounded facts rather than scheduler state. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-roadmap-refine
+
+Certified, immutable refinement of grounded SIM work plans.
+
+Pure refinement admission derived from exact grounded phase facts. A valid proposal yields one content-addressed successor and a verifiable strict-descent certificate; invalid rank, scope, or acceptance changes return structured refusals without mutation. Refinement cannot manufacture its own complexity evidence. Every accepted split preserves the parent acceptance boundary. Failure is effect-free and leaves the original work plan untouched. This crate owns refinement mathematics and records only. Models may propose, adapters may store, and runners may execute, but none of those authorities live here. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-source-deck
+
+Immutable bounded source-context values for SIM.
+
+Build compact source decks whose declarations, excerpts, and specimens are tied to exact immutable bytes. Every relationship is checked before an identity is minted, limits are explicit, and incomplete syntax evidence stays visibly incomplete. The value is deterministic and portable across hosts and checkouts. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
 
 #### sim-table-remote
 
@@ -433,7 +656,19 @@ The piece that makes a table living on another machine look and act like a local
 
 This crate lets SIM treat a table that actually lives somewhere else as if it were right at hand. It presents a remote table as an ordinary table object, so the code that reads and works with it does not need to know the data sits on another machine. Alongside the table it provides a small record that describes what the remote table is, and the adapter that connects the local view to the remote source behind it. The effect is that distance disappears from the caller's point of view: you work with the table through the same everyday moves you would use for one held locally, and the crossing of the gap is handled underneath.
 
+#### sim-transport-ports
+
+Host-neutral socket, DNS, and local IPC ports for SIM transports.
+
+Run unchanged SIM protocols over deterministic modeled networks or an explicitly bound platform capsule. Script fragmentation, loss, pressure, resolution failures, collisions, cancellation, and half-close without touching the host. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
 ### sim-audio-daw
+
+#### sim-audio-ports
+
+Provider-neutral native audio device and plugin realization ports for SIM.
+
+One strict boundary keeps native media APIs out of audio semantics while making device and plugin failures, realtime budgets, and lifecycle behavior testable. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
 
 #### sim-lib-audio-dsp
 
@@ -681,11 +916,23 @@ It reads and writes Markdown, Typst, AsciiDoc, and LaTeX as one structured docum
 
 This treats a document as more than a flat wall of text. It reads Markdown, Typst, AsciiDoc, and LaTeX into one organized value with real parts -- blocks, sections, math, tables, source fragments, and chunks -- that the runtime can hold and hand around. It can write that structure back out through the supported markup formats. Along the way it can split a document into chunks while keeping track of where each piece came from, so a passage always remembers its place in the whole. That makes it easy to pull a document apart for review, search, or processing and still trust the origin of every fragment. It names any loss or preserved raw material instead of pretending everything translated cleanly.
 
+#### sim-codec-feed
+
+Bounded inert RSS, Atom, and JSON Feed codec for SIM.
+
+Interpret RSS, Atom, and JSON Feed as one bounded `FeedDoc`, retaining identity, authorship, time, content, attachments, extensions, dialect, and warnings without fetching a byte. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
 #### sim-codec-index
 
 It gives the SIM Index one checked wire surface instead of many ad hoc readers.
 
 The SIM Index describes features, examples, surfaces, and routes across the whole constellation. This crate gives that graph a single codec that reads the canonical index form, validates every reference through the shared index model, and writes the same facts back as s-expression or JSON text.
+
+#### sim-codec-index-vault
+
+Pure v2 Markdown bundle codec for complete SIM Index vault projections.
+
+Turn one checked SIM Index projection into deterministic portable, Obsidian, Seqlog, or Logseq Markdown bundles. Every canonical row is retained, links and metadata use explicit v2 dialects, and semantic identity stays independent of presentation bytes. The library is pure: callers decide where bytes go. It reads bounded historical v1 bundles for checked schema evolution and rejects valid Markdown whose semantic claims were corrupted. Decode never imports notes or writes a vault. Compatibility covers CommonMark, Obsidian Markdown, SeqLog Markdown files, and Logseq file graphs -- not Logseq DB graphs. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
 
 #### sim-codec-javascript
 
@@ -728,6 +975,24 @@ This crate keeps precedence parsing in one place for text surfaces that use infi
 It admits Python 3.14.6 source into SIM as bounded, lossless syntax without importing a Python runtime.
 
 `sim-codec-python` tokenizes and parses modules into a concrete tree that retains exact text, comments, layout, literal spelling, byte locations, f-strings, template strings, and soft-keyword decisions. Its loadable `codec/python` lowers accepted syntax to stable `python/*` expression forms while preserving origins and marking runtime support separately. Plain, located, and recursively located tree lanes share one limits contract. Encoding emits canonical Python-compatible forms when possible and uses the established tagged expression fallback when ordinary Python source cannot represent a SIM value.
+
+#### sim-codec-robots
+
+Bounded RFC 9309 robots.txt parser and matcher for SIM.
+
+Make deterministic RFC 9309 allow decisions with grouped agents, percent-aware case-sensitive paths, longest-match precedence, wildcards, end anchors, and allow-on-equal rules. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-codec-search-searxng
+
+Pure bounded SearXNG request and response codec for SIM.
+
+Connect the generic SIM search contract to an operator-selected SearXNG site without giving provider syntax ownership of transport, ranking, fetching, or citations. Requests default to private form-encoded POST; responses preserve raw JSON, provider claims, open fields, and honest partial-failure notices. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-codec-sql
+
+Bounded SQL projection for admitted SIM relational plans and schema evolution steps.
+
+Project admitted relational queries, mutations, and schema evolution steps to SQLite or PostgreSQL with deterministic text, explicit dialect capabilities, sealed fragments, ordered bindings, and cache-complete identities. Inspect bounded DDL as an untrusted draft without turning arbitrary statement text back into plans. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
 
 #### sim-codec-typescript
 
@@ -887,6 +1152,12 @@ It observes expression evaluation, records which named paths were read, and uses
 
 It owns the finite namespace records for expression-tree storage: path references, generated-name reservation, rename and move semantics, mount epochs, source-control stamps, typed adapters, read-only mounts, and policy inheritance. The crate keeps table leaves as table leaves, detects corrupt state, and makes finite reads safe without allocating new namespace state.
 
+#### sim-lib-expedition-book
+
+Editable semantic expedition books over immutable SIM evidence references.
+
+Turn an evolving investigation into a durable, editable decision book without copying its evidence. Optimistic revisions expose stale edits, seals refuse mutation, and replay reports missing content identities instead of silently reattaching substitutes. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
 #### sim-lib-expr-tree
 
 `sim-lib-expr-tree` gives any SIM runtime a checked, loadable expression-tree engine.
@@ -1029,6 +1300,12 @@ Solving a model is real effort, and much of that effort is wasted when you solve
 
 ### sim-foundation
 
+#### sim-cancel
+
+Executor-neutral hierarchical cancellation for SIM request lifetimes.
+
+One bounded, race-safe request-lifetime primitive: idempotent terminal reason, child propagation, and prompt dropped-waker removal. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
 #### sim-config
 
 layered SIM settings stay inspectable because every source becomes the same table-shaped data before it is merged.
@@ -1041,11 +1318,29 @@ The engine behind SIM's built-in lessons that teach each library from the inside
 
 Learning a system is easiest when the lessons live next to the thing they explain. This crate powers that library-owned teaching lane. A lesson -- a setup file paired with a short note on its purpose -- ships inside the library it teaches. When that library loads, its lessons register themselves, and this engine gathers them into books and chapters that any SIM surface can show: the command line, the web view, the in-product help, or an assistant. It reads and checks each lesson collection, embeds it at build time, keeps a searchable store, works out what to read next, and lets a person layer their own notes on top in a steady, repeatable way. The result is one consistent library of examples drawn from across the whole system.
 
+#### sim-cookbook-build
+
+Portable host build tool for embedding SIM cookbook recipes.
+
+A portable build-script helper that checks recipe books, setup files, and purpose notes before packaging their exact bytes for sim-cookbook. Invalid trees fail the build; runtime libraries consume supplied data and never acquire filesystem authority. Broken or incomplete lessons fail before release. Embedded recipes stay byte-identical to their reviewed sources. Host build mechanics remain outside product runtime code. This is foundation-owned build tooling. It prepares cookbook assets at compile time; sim-cookbook owns their runtime model and projection. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-host-core
+
+Neutral host-port contracts for SIM domain libraries.
+
+Open provider and service identities, explicit mechanical limits, sanitized provenance, stable refusals, and lexical environment binding. Domain crates can request opaque ports as data while platform libraries choose and realize the concrete service. Domain behavior stays portable and testable. Missing or over-capable host services fail explicitly. Provenance can be inspected without exposing native handles or secrets. This crate is the shared vocabulary between portable libraries and platform adapters. It performs no operating-system calls and owns no provider or product policy. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
 #### sim-index-core
 
 the checked map that lets every SIM surface describe the same features, examples, and routes.
 
 A shared home for the SIM Index's facts: what each feature is, where it lives, which surfaces expose it, which runnable specimen proves it, and which route helps a reader reach it. The graph is checked before other tools build pages, cards, or search views from it.
+
+#### sim-index-vault-core
+
+Pure, complete vault projection and exact claim certificates for the SIM Index.
+
+Project every canonical SIM Index fact into a deterministic note plan without copying its schema. Exact claim certificates distinguish missing, duplicate, unknown, and derived-only claims, including later row families exposed by the canonical inventory. Build later projections from `IndexDoc::inventory()` and `IndexRowRef`; admit later note targets only through the closed claim certificate. Syntax, profile selection, decoding, and filesystem writes remain separate owner layers. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
 
 #### sim-lib-net-core
 
@@ -1053,17 +1348,71 @@ The quiet reading room that turns raw web traffic into clean, understandable pie
 
 When SIM talks to web services, the bytes arriving over the wire are messy: addresses to pick apart, response headers to read, a body whose length is signalled in one of several ways, and streams that dribble in one line or one record at a time. This crate does that careful reading and nothing else. It splits addresses, parses the head of a response, works out how the body is delivered, frames incoming lines even when a line is cut across two arrivals, and decodes the common streaming formats that live services push. It touches no socket, opens no connection, and makes no decisions about what a message means; the caller keeps full control of the network and the meaning, while this crate handles the fiddly framing correctly and the same way every time.
 
+#### sim-lib-net-http
+
+Policy-complete blocking HTTP client for SIM capsule transports.
+
+`sim-lib-net-http` gives storage, model runners, bootloaders, OAuth, and MCP one auditable client: bounded streaming, injected capsule transport, explicit authority, cancellation, deadlines, hostile framing rejection, and redaction-safe types. Applications keep their domain APIs without growing private HTTP stacks. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-protected-state
+
+Bounded, binding-authenticated opaque state envelopes for SIM protocols.
+
+Carry opaque continuation state without inventing protocol-specific cryptography. Stable, strictly bounded, versioned XChaCha20-Poly1305 envelopes. Exact purpose/audience/subject/context/expiry binding. Injected key ring, rotation policy, cryptographic RNG, and platform clock. Uniform rejection diagnostics that disclose no key, binding, or parse detail. Optional atomic single-use claims over the canonical Table compare-exchange contract. Serialization stays with the caller. Keys stay with the host. Replay guarantees exist only when the consumption ledger is used. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-search-core
+
+Pure open search, observation, ranking-evidence, and research bundle records for SIM.
+
+`sim-lib-search-core` keeps provider claims distinct from retrieved observations and exact citations. It carries ranking contributions without choosing a rank algorithm and exposes a pure object-safe wire boundary with stable identity. The records can cross any installed general-purpose Datum Lisp or JSON codec. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
 #### sim-lib-surface-card
 
 The shared name-translator that presents SIM's tools cleanly to outside systems and people.
 
 Inside SIM a tool carries a structured name with a group and a dotted path. Outside systems each want that name in their own style: one tool platform allows only letters and underscores, while a human reading a menu wants the natural slashed-and-dotted form. This crate holds the single agreed rule for that translation, so a given SIM name always turns into the same external name for the same audience. It also carries a plain description spine -- a codec-neutral record of what a surface offers -- built only from core types. Concrete surfaces draw their outward names through this one door, which keeps a single source of truth for the naming rules instead of each surface bending them a little differently.
 
+#### sim-lib-web-core
+
+Pure web capture, representation, selector, policy, and receipt records for SIM.
+
+`sim-lib-web-core` separates retrieved bytes from normalized text and gives each its own canonical identity. A quote is usable only when its Unicode-scalar range and exact text still match that immutable representation. Complete typed policy receipts make missing authorization a denial, never an ambient default. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
 #### sim-macros
 
 A set of labels that let an author declare SIM building blocks in plain Rust and have the wiring written for them.
 
 Adding a new capability to SIM normally means writing a pile of repetitive registration code so the runtime can find and call it. This crate lets an author skip that chore. You mark your items with simple labels -- this is a class, this is a function, this is a constructor, this is a codec, and so on -- and then point one wrapper at the module holding them. The wrapper reads the labels, checks that each declaration is complete and consistent, and generates the connecting code and, when needed, the native bridge for other languages. Mistakes such as a malformed shape or a class missing its constructor are refused right when the code is built, so a broken contract never slips through quietly.
+
+#### sim-relation-core
+
+Open relational domain, row, and canonical identity records for SIM.
+
+`sim-relation-core` gives tables, domains, cells, and rows stable vocabulary while retaining SIM's ordinary data and content identity. Providers can add a logical domain without changing this crate, and every record remains visible to Card and Lisp surfaces as a canonical `Datum`. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-relation-migrate
+
+Checked schema schema evolution programs and adoption attestations for SIM.
+
+schema evolution programs whose every step names exact input and output schemas, plus adoption attestations for existing stores. Lossless additions may be derived; destructive or ambiguous changes must be authored and admitted explicitly. Schema drift becomes a typed refusal instead of a surprise. Providers advertise the transactional and introspection support a schema evolution needs. Canonical identities make schema evolution evidence reproducible. This foundation crate defines schema evolution data and admission. Relation sites and storage providers execute admitted programs; they do not reinterpret them. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-relation-plan
+
+Admission and sealed checked logical relational plans for SIM.
+
+A typed algebra for queries and mutations whose admission resolves every field, binding, domain, and operation against an exact schema. Successful admission yields opaque plans with canonical identities suitable for provider requests and evidence. Invalid bindings and type mismatches fail before provider execution. One logical plan works across installed relation providers. Canonical plan identity supports caching, receipts, and replay. This crate owns pure relational planning and admission. Schemas and domains come from foundation records; relation sites execute only checked plans. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-relation-schema
+
+Validated logical and normalized physical relational schemas for SIM.
+
+`sim-relation-schema` captures portable relational intent separately from a normalized observation of a provider catalog. It preserves meaningful column and key order, canonicalizes unordered collections, and rejects broken schema graphs before they cross a codec or provider boundary. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-study-core
+
+Pure canonical study identity, evidence, transition, and decision records for SIM.
+
+`sim-study-core` gives every SIM domain the same small vocabulary for naming a subject revision, a study coordinate, its outcomes, measurements, evidence, decisions, and selections. Records have deterministic kernel `Datum` identities and fail-closed privacy/export rules, without pulling in a database, statistics engine, runtime, or AI stack. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
 
 #### sim-table-core
 
@@ -1096,6 +1445,12 @@ accurate coherent-wave geometry is reduced on the host so ordinary portable `f32
 this crate validates scalar-wave physics, sampling truth, and bounded work before solving begins.
 
 Focused `f64` wrappers feed one coherent source model and exact Green-function convention. `SamplingPlane` defines finite pixel centres; `SamplingCertificate` records carrier, power-fringe, and point-envelope adequacy; `RequestPreflight` applies sampling policy and `WorkBudget`.
+
+#### sim-lib-interference-physics
+
+Interference observation adapter for shared physics audits.
+
+Carry certified wave samples into a common physics audit without relabeling a normalized wave observable as physical intensity or power. Provider evidence, sampling evidence, model assumptions, origin, and influences remain visible. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
 
 #### sim-lib-interference-runtime
 
@@ -1136,6 +1491,18 @@ a direct terminal path from exported books to checked yearly reports.
 bring LibreOffice Base bookkeeping exports into the ledger model without changing the books by hand.
 
 `sim-ledger-odb` reads the table layout and id counters that LibreOffice Base stores beside a personal ledger, then turns the familiar account, voucher, and posting exports into the shared ledger input format. It keeps the source numbering visible and lets the ledger importer enforce the same balance rules as every other path.
+
+#### sim-ledger-store-port
+
+Provider-neutral relational year-file port for SIM ledger.
+
+`sim-ledger-store-port` lets a platform materialize per-year relational files behind opaque mounts while ledger code retains schema, plans, and accounting policy. Applications receive narrow ledger methods rather than driver access. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-ledger-test-support
+
+Deterministic model mounts for ledger conformance tests.
+
+Exercise ledger persistence and commands against supplied content without host filesystem, temporary-directory, environment, or clock access. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
 
 #### sim-lib-ledger-books
 
@@ -1513,6 +1880,12 @@ It gives you complex numbers, the two-part numbers that engineering and physics 
 
 Some problems, like waves, signals, and rotations, are far easier to describe with numbers that have both a real and an imaginary part. This gives you those complex numbers and the arithmetic that goes with them, so you can add, multiply, and combine them naturally. Just as importantly, ordinary whole numbers, decimals, and fractions can rise into complex form whenever a calculation needs it, so you can freely mix a plain value with a complex one and get a sensible answer. It is the meeting point where the everyday number kinds gain their extra dimension.
 
+#### sim-lib-numbers-continuation
+
+Bounded pseudo-arclength continuation with reviewable predictor/corrector evidence.
+
+`sim-lib-numbers-continuation` follows a residual manifold through turning points using secant/tangent prediction and a bordered Newton corrector. Every accepted point carries its residual, tangent, normal, corrector report, and fold classification; rejected predictions and adaptive step decisions remain reviewable. Work, domain, and loop limits are explicit, so traces are bounded and a recorded pair of points can resume deterministically. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
 #### sim-lib-numbers-core
 
 It is the shared groundwork that lets every kind of number in the system behave consistently.
@@ -1524,6 +1897,12 @@ Every number kind, whether whole numbers, decimals, or fractions, needs the same
 It represents numbers to unlimited precision by unfolding them only as far as you actually need.
 
 Some numbers, like certain famous constants, have digits that never end. This holds such values in a form that can, in principle, go on forever, yet it only computes the detail you ask for. You can request an ordinary decimal approximation and it will unfold just enough to give you one, without ever pretending the value was finite in the first place. Built-in constants come ready to use. It is a way to keep endlessly-precise real numbers around and draw from them on demand, so accuracy is a dial you turn rather than a limit you hit.
+
+#### sim-lib-numbers-extended
+
+Normalized double-double scalar and runtime number domain for SIM.
+
+`sim-lib-numbers-extended` injects a normalized double-double scalar through SIM's shared numerical algorithm contract. It retains about 106 significant binary digits across cancellation-heavy work, preserves exact component bits in runtime records, and participates in the canonical promotion lattice. Use it when binary64 is almost sufficient and an arbitrary-precision engine would obscure bounded numerical work. The checked convergence specimen runs root, quadrature, ODE, polynomial, and decomposition kernels over both scalar types through the same generic implementations. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
 
 #### sim-lib-numbers-f64
 
@@ -1555,11 +1934,41 @@ It provides the standard whole numbers, positive and negative, that most countin
 
 Counting, indexing, tallying, tracking positions: this is the ordinary whole-number kind that handles all of it. It covers a very wide range of positive and negative values and does the everyday arithmetic on them quickly. When a calculation turns a whole number into something that needs a decimal or an exact fraction, it rises smoothly into those kinds so precision is preserved rather than dropped. This is the go-to integer for typical work, the dependable middle ground that is roomy enough for almost any count yet fast and simple to use.
 
+#### sim-lib-numbers-implicit
+
+Evidence-carrying Radau IIA integration for stiff ODEs and index-1 DAEs.
+
+`sim-lib-numbers-implicit` advances stiff ODEs and genuine index-1 DAEs with three-stage, fifth-order Radau IIA. Every result explains where its Jacobian came from, why it was rebuilt, how often its factor was reused, whether Newton failed, and what rank and conditioning the accepted linear systems exhibited. Collocation polynomials provide continuous output and event location. Dense output is never manufactured from an unconverged stage, while singular Jacobians and work exhaustion are explicit refusals rather than dubious values. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-numbers-interval
+
+Sealed, evidence-carrying interval certification for SIM.
+
+Make numerical proof a type boundary. `EstimateInterval` reports useful uncertainty without claiming containment. `CertifiedInterval` is issued only by reviewed kernels, carries replayable evidence, and is the only input accepted by definite threshold classification and verified root tests. Directed binary64 operations cover every exceptional case explicitly; exact rational intervals provide an independent oracle. Unsupported elementary functions refuse certification instead of dressing a library approximation as proof. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-numbers-method
+
+Validated bounded numerical method plans and canonical cross-domain evidence.
+
+`sim-lib-numbers-method` gives every numerical algorithm the same durable answers to the questions that matter: which registered method ran, what bound admitted it, why it stopped, which exact criterion converged, what error it achieved, at what precision, and under which execution identity. Success cannot be forged from a boolean. Convergence must name a requested criterion and carry an achieved value within its threshold. Work counters saturate safely. Canonical `Datum` projections preserve every finite binary64 bit--including signed zero--and reject ambiguous NaNs. Existing dense-solve, statistics, and signal reports remain the authoritative domain evidence. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
 #### sim-lib-numbers-numeric
 
 It solves the hard calculus problems by careful number-crunching when a neat formula is out of reach.
 
 Many real problems have no tidy formula answer: you still need the slope of something, the area under a curve, or how a changing system evolves over time. This computes those by numerical means. It can estimate rates of change, add up areas through integration, and step a system forward through equations that describe motion or growth. Better still, it lets you assemble these into a small pipeline: pair a function with a method and a task, and get back a runnable job you can inspect and execute. Because the underlying methods are interchangeable, you can pick the approach that suits your accuracy and speed needs.
+
+#### sim-lib-numbers-optimize
+
+Bounded optimization and evidence-carrying least squares for SIM.
+
+Minimize scalar and smooth multivariate objectives, fit nonlinear models, and solve bounded linear least squares without hiding bounds behind clipping. SIM returns brackets, active sets, rank, residuals, covariance availability, termination, and resource use. Optional assignment conversion delegates to the single certified discrete solver and preserves its certificate and work receipt. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-numbers-poly
+
+Evidence-carrying dense coefficient polynomials for SIM.
+
+`sim-lib-numbers-poly` provides ordinary, Laurent, and Puiseux coefficient records without confusing their exponent domains. It evaluates by Horner with error bounds, performs exact rational division and GCD, recovers complex roots with multiplicity and backward-error evidence, and constructs Pade approximants only when their defining system is numerically full rank. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
 
 #### sim-lib-numbers-prelude
 
@@ -1573,6 +1982,12 @@ It measures the area under a curve and estimates slopes by clever, careful sampl
 
 When you need the total accumulated by a quantity, the area beneath its curve, this works it out by sampling the curve and adding up the pieces. It offers both steady, evenly-spaced approaches and smarter adaptive ones that spend extra effort only where the curve is tricky, so you get accuracy without wasted work. It also estimates how fast a quantity is changing by comparing values at nearby points. These are the practical tools for integration and slope-finding when the shape is known only by the values it produces, and you can choose the rule that fits your precision and cost.
 
+#### sim-lib-numbers-quantity
+
+Exact semantic dimensions, units, and generic physical quantities for SIM.
+
+`sim-lib-numbers-quantity` keeps magnitude, dimension, semantic kind, unit, and measurement role separate. Exact unit conversions stay in the installed scalar domain, affine temperature points obey affine laws, and energy cannot be silently accepted as torque merely because both have the same SI exponents. Use it for durable scientific APIs, checked physical data exchange, and runtime values that must survive Shape admission and general expression codecs without growing the SIM kernel. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
 #### sim-lib-numbers-rational
 
 It keeps fractions exact, so one-third really stays one-third instead of a rounded decimal.
@@ -1585,17 +2000,29 @@ It follows how a changing system moves over time, step by careful step.
 
 Many things are described not by where they are but by how they change: how fast something cools, how a population grows, how an object swings. Given that description, this traces the actual path forward through time. It advances the system in small increments, and it offers both steady fixed-size steps and adaptive ones that shorten where the motion is delicate and lengthen where it is calm, so you get accuracy where it matters and speed where it does not. The result is a faithful trajectory you can follow from a starting point onward as the system evolves.
 
+#### sim-lib-numbers-root
+
+Bracketed and residual-carrying scalar and vector root finding for SIM.
+
+`sim-lib-numbers-root` does not collapse every plausible answer into a bare number. Bisection and Brent-Dekker return a sign-changing bracket; safeguarded Newton and secant return a residual-certified estimate. Vector Newton reports SVD-derived rank and every damped step, while bounded Broyden reports exactly when it refreshed its Jacobian. Invalid brackets are rejected before iteration. Analytic, automatic, and finite-difference derivatives remain distinguishable. Non-finite values, discontinuities, flat derivatives, cycling, stagnation, rank loss, and exhausted budgets are separate outcomes. Execution identity and work counts make deterministic replay reviewable. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
 #### sim-lib-numbers-signal
 
 It transforms, combines, estimates, aligns, and safely unmixes sampled patterns with every convention stated.
 
 This library separates a signal into Fourier, cosine, or sine components and puts it back together again. It also convolves, cross-correlates, and performs regularized deconvolution over canonical real tensors. Direct definitions stay beside FFT paths, and automatic convolution exposes the cost comparison that made its choice. Linear full, same, and valid spans cannot be confused with circular geometry; boundary, normalization, and lag-order policies remain typed and reviewable. Overlap-add and overlap-save plans state their retained span, latency, padding, and discarded boundaries. Deconvolution always carries a Tikhonov or truncated spectral guard plus singular-bin and residual evidence. For classical spectral estimation it supplies rectangular, Hann, Hamming, Blackman-family, Kaiser, and caller-defined windows with explicit endpoint and normalization policy. Periodogram, Welch, cross-spectrum/coherence, Slepian multitaper, and uneven-sample Lomb-Scargle reports retain their frequency grid, scaling denominator, degrees of freedom, segment/taper counts, and admitted work ceiling. A result can therefore be reconstructed without guessing whether power was folded, gain-corrected, density-scaled, or variance-normalized. Burg autoregressive fits reject singular or unstable reflection stages by default, can deliberately reduce to the last stable order, and select fixed, AIC, BIC, or final-prediction-error order with every candidate score retained. Maximum-entropy spectra reuse the same bounded frequency-grid evidence, while forward and backward predictions enforce horizon, work, and amplitude ceilings. Complete DFT bins can be evaluated or integrated between sample points under an explicit origin, period, endpoint, wrapping, Nyquist, sign, and normalization contract. Single-bin evaluation, Hilbert analytic signals, phase unwrapping, instantaneous frequency, and attack/release envelopes use those conventions too. Multilevel Haar and Le Gall 5/3 wavelets preserve the chosen periodic, symmetric, or zero boundary policy and retain every odd reconstruction length. Savitzky-Golay filters expose their polynomial fit and always scale derivatives by factorial and physical sample spacing. Structured Toeplitz inputs use shared scaled-pivot linear algebra and return pivot conditioning and residual evidence. Linear, natural-cubic, and monotone-cubic interpolation make duplicate samples and reject, clamp, or linear extrapolation explicit. The transform side handles ordinary real samples and paired complex samples, including awkward prime lengths, with explicit scaling, direction, packing, padding, stride, and output placement. Multidimensional views preserve declared axes and physical strides, while bounded plans transform tensors larger than memory through a caller-selected Table or Dir block store.
 
+#### sim-lib-numbers-special
+
+Evidence-carrying real special functions for the SIM number stack.
+
+Compute error, gamma, beta, and complete elliptic functions while retaining the selected numerical region, iteration count, and an error estimate. Direct complements keep extreme probabilities meaningful instead of subtracting from one. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
 #### sim-lib-numbers-stats
 
 It summarizes streams and infers finite sequences without hiding memory, error, or convergence.
 
-Point it at a set of numbers and it tells you the story they hold: the typical value, how spread out they are, and the shape of their likelihood. Seeded k-means and regularized Gaussian mixtures expose their centroids, assignments, covariance, convergence, repair, restart, work, AIC, and BIC evidence. Mergeable streaming quantiles state their rank-error and memory policy and stay exact for small inputs. Finite Markov and hidden Markov models expose their transition and emission rows, while normalized forward/backward, Viterbi, posterior decoding, and bounded Baum-Welch retain likelihood, convergence, repairs, work, seed, and termination evidence. It also computes fairness measures that flag when outcomes fall unevenly across groups.
+Point it at a set of numbers and it tells you the story they hold: the typical value, how spread out they are, and the shape of their likelihood. Seeded k-means and regularized Gaussian mixtures expose their centroids, assignments, covariance, convergence, repair, restart, work, AIC, and BIC evidence. Mergeable streaming quantiles state their rank-error and memory policy and stay exact for small inputs. Finite Markov and hidden Markov models expose their transition and emission rows, while normalized forward/backward, Viterbi, posterior decoding, and bounded Baum-Welch retain likelihood, convergence, repairs, work, seed, and termination evidence. It also computes fairness measures that flag when outcomes fall unevenly across groups. One public, versioned deterministic sampler now drives clustering, HMM fitting, and every bootstrap policy without hiding replay state or consumed work. Bounded Latin hypercubes and reviewed four-dimensional Sobol nets return sequence, stratum, boundary, duplicate, sampler, and caller-owned untested-region evidence. Standardized moment conventions and one-/two-sample Kolmogorov-Smirnov reports make finite-sample and asymptotic interpretation explicit.
 
 #### sim-lib-numbers-tensor
 
@@ -1620,6 +2047,12 @@ When you have a large grid where every cell is simply on or off, storing each as
 It holds grids of complex numbers efficiently, for signal and wave work done in bulk.
 
 Fields like signal processing and physics work with whole arrays of complex numbers, each having a real and an imaginary part. This provides a grid specialized to carry exactly those two-part values compactly and to operate on them as a unit. Instead of scattering the pairs loosely, it keeps them in a tight, ordered arrangement suited to fast bulk work, and it converts cleanly to and from the system's general grid form so it stays fully compatible. If the number of values does not match the declared shape, it refuses rather than guess, so your data stays trustworthy.
+
+#### sim-lib-numbers-tensor-decomp
+
+Bounded, evidence-carrying dense matrix decompositions for SIM tensors.
+
+Factor matrices without surrendering the evidence. QR supports optional column pivoting and numerical-rank reporting; symmetric eigen refuses unapproved asymmetry and returns ordered values with optional vectors. Both preserve their inputs, honor hard work and dimension limits, and certify their results. General real spectra use balanced Hessenberg reduction and bounded paired-shift Schur iteration, including canonical complex conjugate eigenvalues. Stable one-sided Jacobi SVD handles rectangular and rank-deficient matrices without forming normal equations. One explicit cutoff governs rank, two-norm condition, pseudoinverse, least squares, and null spaces. Exhausted factors are either rejected or explicitly. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
 
 #### sim-lib-numbers-tensor-f32
 
@@ -1713,6 +2146,12 @@ a suite-facing document surface that turns office records into renderable panes 
 
 This crate gives office documents a shared scene for screens, decks, tables, and embedded document panes. It makes document previews visible through the existing view stack and turns user intent into clear edit records that a host can inspect before it commits anything.
 
+#### sim-lib-doc-web
+
+Durable web-capture evidence adapters for SIM office documents.
+
+`sim-lib-doc-web` turns an offline capture into a durable office citation. Every quote remains bound to exact Unicode scalar offsets in one content-addressed representation, while the raw bytes, codec version, policy receipt, source URI, retrieval time, provider claim, and fidelity warnings remain inspectable. The same checked anchor renders as text, Markdown, Lisp, or JSON and is revalidated after restart. Changed bytes, a changed representation id, or a stale selector fail closed instead of producing a plausible-looking citation. The same representation and selector contracts now admit offline public-domain or private editions for. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
 #### sim-lib-gantt
 
 local project schedules that can be checked and reopened without a vendor system.
@@ -1755,7 +2194,203 @@ SharePoint lists and drive folders become reviewable SIM office records.
 
 This crate turns SharePoint list rows into local sheet documents and drive children into external references that keep their web links and ETags. A host can read the Graph response, inspect the shape, and decide what to do before any write is attempted.
 
+### sim-physics
+
+#### sim-lib-physics-adapter
+
+Domain-neutral conformance contract for physics model adapters.
+
+Feed heterogeneous model results into one audit contract while retaining semantic quantities, explicit boundaries, provenance, influences, and solver certificates. Missing boundaries, evidence lanes, or required lumped ports are refused instead of inferred. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-physics-audit
+
+Independent stored-energy audits with typed residual and uncertainty lanes.
+
+Endpoint stored-energy evaluation and immutable energy-balance records with separate transfer, residual, uncertainty, and evidence lanes. Audits remain independent of the solver that produced the trajectory. Missing energy cannot hide inside one aggregate error number. Uncertainty stays explicit rather than being mistaken for residual. Evidence references make every verdict traceable. This crate consumes physics-core study records and numerical results, then produces audit evidence. It owns neither the model nor the solver. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-physics-core
+
+Immutable boundary and event graph contracts for lumped physical systems.
+
+A solve-independent graph of physical structure where every scalar carries a semantic quantity. Ordered events and explicit boundaries let solvers, audits, and power accounting agree on the same model without sharing implementation policy. Units and physical meaning travel with every scalar. Model identity is stable before any numerical method is chosen. Events and boundaries remain explicit across solvers and audits. This is the foundational data contract for SIM's lumped-physics family. Specialized crates add power, solving, proof, and audit behavior around these immutable records. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-physics-findings
+
+Immutable branch-preserving histories for physics findings.
+
+Turn a surprising sweep result into an immutable, content-identified record. Explanations, confirmations, reclassifications, resolutions, and withdrawals cite their evidence and predecessors, while competing branches remain visible. Swap injected storage backends or rebuild every query view without changing the history's identity. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-physics-influence
+
+Proof-producing no-energy-selection audit for physical studies.
+
+Know why a design choice is independent of energy--not merely that a token says so. Content-identified study graphs preserve energy, work, power, passivity, and balance-residual influence through arithmetic, adapters, branches, joins, loops, and dimension changes. The shared incremental engine supplies the completion proof and exact refusal path; opaque computation fails closed. Only a proven-clean sink can become `SelectionInput`. There is no privileged escape hatch that can relabel a different scientific policy as conforming. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-physics-power
+
+Boundary-relative conjugate ports and event-split signed-work audits.
+
+Immutable conjugate-port descriptions and boundary-relative signed-work audits. Continuous work is split exactly at declared events, retained per port, and kept separate from impulse transfers. Sign conventions are tied to explicit boundaries. Event discontinuities cannot masquerade as numerical spikes. Per-port evidence makes conservation failures diagnosable. This crate adds power and work semantics to physics-core records. Solvers provide trajectories and events; audit and proof crates consume the resulting evidence. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-physics-proof
+
+Orthogonal numerical refinement and certified model verdicts for physical studies.
+
+Orthogonal refinement plans, event-exact output meshes, independent numerical gates, continuation diagnoses, and immutable verdict records. Definite threshold claims require certified intervals; ordinary estimates remain unresolved. A plausible estimate cannot be promoted into a proof. Space, time, event, and solver refinements stay independently visible. Failed certification returns actionable diagnosis instead of false certainty. This crate sits above physical models and numerical solvers. It evaluates their evidence and emits certified or explicitly unresolved verdicts without owning either model construction or execution. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-physics-runtime
+
+Loadable composition of SIM physics surfaces without domain-policy duplication.
+
+Load exactly the scientific layers an application needs through the same SIM library mechanism used by every other domain. The runtime crate publishes discoverable layer-owned Cards while keeping solvers, certification policy, placement, persistence, and codecs in their proper owners. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-physics-study
+
+Immutable physics study plans and placement-transparent sweep evidence.
+
+`sim-lib-physics-study` turns a parameter sweep into immutable reviewable data. It preserves exact boundary cases, explicit untested regions, partition separation, sampler replay evidence, placement identity, partial failures, and provider-aware comparisons. Selection requires the existing proof-backed clean input, while energy audits remain useful after selection without becoming a hidden objective. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+### sim-platform
+
+#### sim-lib-platform
+
+Pure loadable-facing platform manifest API.
+
+A closed thirteen-function platform facade over environment-bound `EvalFabric` sites. Portable SIM expressions bind canonical domain services, inspect public Cards, and request bounded effects without learning which host provides them. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-platform-amazfit
+
+Bounded Amazfit and Zepp OS proxy capsule.
+
+Model a possible consent-bound Amazfit proxy without claiming that the delivered watch shell reaches Android Rust. Versioned frames, reconnect sessions, duplicate suppression, and hard queue and payload limits make the model predictable and fail-closed; physical watch-provider and worn-view roles remain explicitly unsupported until the missing local handoff is implemented and attested offline. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-platform-android
+
+Android AOT platform capsule and thin shell contract.
+
+A thin Android shell hosts the same loadable SIM platform Card and native byte ABI used by desktop capsules, with bounded shared-document references and typed mobile lifecycle inputs. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-platform-audio
+
+Ubuntu native audio and plugin capsule adapters for SIM.
+
+Explicit Ubuntu media bindings turn available native APIs into bounded audio ports and return `Unsupported` for everything the capsule does not provide. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-platform-bootstrap
+
+Bounded bootstrap rind for one content-bound SIM platform capsule.
+
+The uniquely classified bootstrap package. OS5.00 reserves its narrow boundary but deliberately installs no host behavior. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-platform-browser
+
+Capability-honest browser Wasm capsule and byte-frame host membrane.
+
+Run the same capability-honest SIM platform model in windows and workers. The browser capsule offers only detected storage, transport, clipboard, notification, permission, and wake-lock handles while `sim-web` retains every presentation decision. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-platform-construction
+
+Platform capsule realization for construction integration ports.
+
+`sim-platform-construction` supplies bounded Dalux HTTPS and explicitly configured Powerproject desktop automation to portable construction sites. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-platform-core
+
+Pure manifest and package-role contracts for SIM platform capsules.
+
+Parse and validate the closed package-role model and versioned capsule/bundle contracts. Validation uses discovered repository and dependency context, so a manifest cannot grant itself host authority. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-platform-halo
+
+Official-contract bounded Halo proxy capsule.
+
+`sim-platform-halo` connects Brilliant Labs Halo through its official host SDK model while keeping behavior in the companion. Android, iOS, and browser hosts share one bounded codec; apps keep using SIM's ordinary glasses Device/Stream profile and Surface protocol. Deterministic model and emulator fixtures exercise the path without pretending that unregistered physical glasses were tested. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-platform-ios
+
+iOS AOT platform capsule and thin shell contract.
+
+A thin iOS scene shell hosts the same SIM platform Card and native byte ABI as desktop and Android capsules, with explicit security-scoped document lifetime, closed service refusals, and no hidden background worker. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-platform-linux
+
+Private bounded Linux mechanics for SIM platform capsules.
+
+Explicit clocks, deterministic entropy, preopened XDG mounts, lifecycle, budgets, and an injected desktop portal behind the platform-capsule boundary. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-platform-macos
+
+macOS platform capsule and deterministic unsigned bundle.
+
+One explicit macOS provider composes filesystem, process, loading, transport, desktop, permission, audio, MIDI, and compute ports behind SIM's stable native ABI. It produces reproducible unsigned development bundles for Intel and Apple Silicon while keeping every Apple framework detail out of portable crates. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-platform-midi
+
+Native MIDI realization for SIM platform capsules.
+
+`sim-platform-midi` realizes ALSA/RtMidi and BlueZ BLE-MIDI endpoints behind the portable music port, with typed denial, loss, backpressure, reconnect, and cleanup. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-platform-model
+
+Fictional platform records for deterministic SIM tests.
+
+Deterministic fictional capsule and bundle records for tests and examples. It does not claim a real provider, physical evidence, or host access. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-platform-sqlite
+
+Attesting SQLite relation capsule for SIM.
+
+Run the same checked relational plans against memory or durable preopened SQLite files without making SQL or native paths part of the application. Schema state is re-introspected and content-attested, schema evolution steps are atomic, attached sources are named and bounded, and provider failures become stable relation errors. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-platform-ubuntu-pc
+
+Ubuntu PC reference platform capsule.
+
+One bounded, physically evidenced membrane for Ubuntu desktop and headless PCs. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-platform-ubuntu-rpi
+
+Ubuntu Raspberry Pi platform capsule.
+
+Deploy the same provider-neutral SIM products to a headless Raspberry Pi with an exact, reviewable Card and fail-closed hardware bindings. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-platform-wasi
+
+Least-authority WASI component capsule for SIM.
+
+Run portable components with an import list that says exactly which existing SIM services they may reach. Named Table/Dir preopens and explicit service bindings make the component reproducible, inspectable, and fail-closed. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-platform-web-shell
+
+Native Linux process capsule for the host-neutral SIM web shell.
+
+This capsule is the Linux process rind for the host-neutral `sim-web-shell` library. It realizes socket and DNS transport, explicit mounted-file reads, monotonic time, entropy, and external URL opening. Reversible Surface, Scene, Intent, session, and layout behavior remains replaceable in `sim-web`. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-platform-windows
+
+Windows platform capsule and content-bound package.
+
+A content-bound Windows provider with bounded process trees, explicit preopens, capability-gated desktop/media services, and deterministic packaging. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-table-fs
+
+Turns a folder on disk into a lookup table where each entry is a file and each subfolder is a nested table.
+
+This exposes a host directory as a SIM table: every table key maps to a file, and nested tables map to subdirectories, so a folder tree becomes a structured store you can read and write by key. Access is gated by the kernel's table capabilities and passes through the configured codec. With its format options enabled, recognised extensions -- for example MIDI, music, tone, and tuning files -- round-trip automatically through their domain shapes.
+
+#### sim-viture-ffi
+
+A platform capsule keeps VITURE SDK transport behind a narrow physical device port.
+
+The crate gives SIM one narrow place to find and open the VITURE glasses SDK at runtime. It checks explicit local configuration, ordinary dynamic-library lookup, and Linux USB device hints, then reports a clear unavailable result when no SDK is present. It also gives stream providers a safe physical port. Device sessions can ask for poses and device-control setup without carrying raw handles, linking vendor objects at build time, or spreading unsafe code through normal provider logic.
+
 ### sim-run
+
+#### sim-lib-hotload
+
+Structured offline sandboxed native library builds for SIM.
+
+Build native SIM extensions without exposing a shell or mutable output path. `sim-lib-hotload` validates a sealed Cargo package, requires offline locked execution under proven sandbox controls, selects the single Cargo-reported `cdylib`, and publishes verified bytes by content identity. Before activation, candidates are re-verified, inspected through the loader membrane, checked against the managed generation and live dependency relation, and exercised with bounded conformance tests in an isolated shadow context. Operate the whole lifecycle without receiving shell or filesystem authority. Five loadable, Card-described functions share one typed record contract across Rust and. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
 
 #### sim-lib-index
 
@@ -1835,7 +2470,7 @@ This library lets one named operation have many implementations and choose the f
 
 It lets a trusted host run a specific outside process with clear permission and tight limits.
 
-Some useful work belongs outside the runtime: a formatter, a compiler, a small command-line helper, or another tool the host already trusts. This crate gives that work a narrow gate. The caller names the exact program and arguments, the host checks permission first, and the run is bounded by a working directory root, a timeout, and a byte limit on captured output.
+Some useful work belongs outside the runtime: a formatter, a compiler, a small command-line helper, or another tool the host already trusts. This crate gives that work a narrow gate. The caller supplies a boot-trusted program reference, whole arguments, an opaque project root, and an empty-by-default sealed environment. The physical capsule resolves native resources; portable callers never receive a host path.
 
 #### sim-lib-function
 
@@ -1969,6 +2604,12 @@ It organizes names into separate modules so large programs do not trip over each
 
 As a program grows, many parts want to use short, natural names, and those names start to collide. This library keeps them apart. It lets each area of code hold its own set of names, decide which ones to share, and pull in names from elsewhere on clear terms. You can bring in another module's names as they are, rename them to avoid a clash, or deliberately shadow one with your own. Because the rules for importing, exporting, and renaming are explicit, you always know where a given name came from and what it refers to.
 
+#### sim-lib-operation-gate
+
+Domain-neutral capability and exact-approval gate for effectful SIM operations.
+
+A domain-neutral gate for content-identified operations. Callers provide the required capability, the exact operation request, and an approval bound to that request; mismatched, stale, missing, or over-broad authority fails closed before an effect adapter runs. Approval cannot silently drift to a different operation. Capability checks and human review remain separate, inspectable facts. Domain libraries reuse one gate instead of inventing approval policy. This runtime organ sits immediately before effectful adapters. It owns admission records and checks, never the effect itself. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
 #### sim-lib-pattern
 
 It takes data apart by its shape and handles each case, warning you when a case is missed.
@@ -1987,6 +2628,12 @@ It is the batteries-included default bundle that makes SIM useful the moment it 
 
 This library gathers the everyday behaviors most people expect a working system to already have. It sets up the permissions and claims that say who may do what, provides ways to compare two values and measure how faithfully one form was turned into another, and includes the harness that checks the system is behaving to standard. It brings the reading and construction of values from text, the Lisp surface for writing them, and the support that lets several language profiles share one core. In short, it wires the pieces together into a distribution you can pick up and use.
 
+#### sim-lib-study
+
+Domain-neutral durable study lifecycle over sealed coordinates.
+
+Seal an exact experiment matrix once, resume it after failure, and inject any effect owner through one object-safe executor. Fenced claims, closure revalidation, content-bound replies, explicit retries, and replay-derived projections prevent duplicate samples and accidental reinterpretation. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
 ### sim-sdk
 
 #### sim-conformance
@@ -2003,6 +2650,12 @@ This is the one-stop crate you depend on to work with SIM. Instead of hunting do
 
 ### sim-shape
 
+#### sim-relation-shape
+
+Shape projection and runtime admission for SIM relational records.
+
+Runtime adapters that resolve relational Shape references through Cx, admit typed cells and rows, and expose inspectable record Shapes. Relational declarations remain ordinary data rather than growing a private matcher or registry. Relation values use the same checking and browsing machinery as the rest of SIM. Domain mismatches are reported at the shared Shape boundary. Tools can inspect row contracts without learning provider details. This crate connects pure relation records to sim-shape. It owns projection and admission only; planning, storage, and provider execution remain separate. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
 #### sim-shape
 
 it is the single component that decides whether a piece of data fits a described pattern, and tells you exactly what it found inside.
@@ -2010,6 +2663,18 @@ it is the single component that decides whether a piece of data fits a described
 sim-shape gives SIM one shared way to describe the form a value should take and then check any value against that description. A shape can say "any number", "exactly this word", "a list of these", or a named class, and it can be combined with and, or, and not to build richer descriptions. When a value is checked, the shape does two jobs at once: it reports whether the value matches, and it captures the interesting parts by name so the rest of the system can use them. The same descriptions also compare against each other, so you can tell when one pattern is stricter than another. Because one engine does all this, matching stays consistent everywhere it is used.
 
 ### sim-storage
+
+#### sim-lib-journal
+
+Domain-free atomic content journal contract for SIM.
+
+`sim-lib-journal` gives every SIM domain the same small foundation for immutable objects, fenced writers, atomic batches, verified replay, and disposable read-only projections. A deterministic memory backend is supplied as a law reference, never as durable production storage. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-lib-relation-cli
+
+Loadable, checked relational command surface for SIM.
+
+`sim-lib-relation-cli` makes sites, schemas, schema evolution steps, checked queries, checked mutations, and mounts discoverable through one loadable command. Every action names admitted artifacts, carries bounds, and requires explicit product authorization before adoption or mutation. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
 
 #### sim-list-cell
 
@@ -2023,17 +2688,29 @@ A list that figures out its contents only when you ask, so huge or endless seque
 
 This backend holds lists that stay unread until someone looks at them. Each step computes its own item and the rest of the list on demand, so a sequence can be enormous, or even without a fixed end, while only the parts you touch are ever worked out. It can also wrap a running source of values, turning a stream into a list you read one item at a time. Work is done as late as possible and no sooner, which saves effort when a program peeks at only the first few results. It loads into SIM as an optional part, present when a program wants deferred sequences.
 
+#### sim-mutual-projection
+
+Two-key copied projections without shared archive authority.
+
+`sim-mutual-projection` lets two people exchange one chosen fact while their private archives remain wholly separate. Each person accepts with an independently held key. The invitation fixes exactly which fields may cross, where they came from, and when access ends, so neither side can silently widen the exchange. The result is a copied view, not a mounted store: no table, directory, query, sibling row, adjacent claim, or key-provider handle crosses the boundary. Refusal and silence reveal nothing. Expiry or revocation removes the payload and retains only the minimum receipt identity and. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-relation-site
+
+Bounded provider-neutral relation effect site for SIM.
+
+Run the same admitted logical plan against any loaded database provider without letting SQL text, provider locators, unbounded results, or raw transaction state escape into application code. Typed bindings, pushed rows, capability checks, kernel effects, redacted receipts, and total rollback live at one durable seam. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-storage-port
+
+Portable host-directory port contracts for SIM storage.
+
+Validated relative components, deterministic directory entries, sanitized errors, cancellation, atomic replacement, and compare-exchange through one HostDirPort. Platform adapters retain native filesystem authority while table and directory policy sees only the bounded contract. Mounted-root escape and special files have explicit refusal categories. Atomic writes and compare-exchange are testable without exposing host paths. Portable storage policy remains independent of operating-system APIs. This crate is the host seam beneath SIM's file-backed table and directory implementations. Platforms implement it; storage libraries consume it. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
 #### sim-table-db
 
 A file-cabinet style store that keeps named values in a tree of folders you reach by path.
 
 This backend arranges named values as a directory tree, the way folders hold files on a computer. Each value has a name, and folders can hold more folders, so you reach a value by walking a path from the top. Reading and writing pass through permission checks, so a program only touches the parts it has been allowed to touch. It behaves both as a table of names and as a browsable tree, which suits settings, records, and anything that reads better when grouped and nested. It joins SIM as a loadable part, added when a program needs path-addressed storage under access control.
-
-#### sim-table-fs
-
-Turns a folder on disk into a lookup table where each entry is a file and each subfolder is a nested table.
-
-This exposes a host directory as a SIM table: every table key maps to a file, and nested tables map to subdirectories, so a folder tree becomes a structured store you can read and write by key. Access is gated by the kernel's table capabilities and passes through the configured codec. With its format options enabled, recognised extensions -- for example MIDI, music, tone, and tuning files -- round-trip automatically through their domain shapes.
 
 #### sim-table-hash
 
@@ -2064,6 +2741,18 @@ Applications often need one namespace assembled from several storage places: an 
 A stack of lookup tables where the top layers can cover entries in the ones beneath.
 
 This backend lets you lay one or more tables over a base table and treat the pile as a single table. A lookup checks the layers from top to bottom and returns the first match, so an upper layer shadows whatever a lower one holds under the same name. That makes it easy to keep a shared base untouched while a thin layer on top adds or replaces a few entries just for one setting or one run. Removing the top layer brings the original values back. It loads into SIM as an optional part, present when a program wants layered, overridable storage.
+
+#### sim-table-relation
+
+Relation-backed Table/Dir namespace and keyed read-only relation views for SIM.
+
+`RelationDir` turns a durable D9 node relation into the ordinary Table/Dir surface: atomic mutations, codec-identified bytes, strict path handling, and a CAS-published namespace head. `RelationView` exposes admitted relational results as a deterministic read-only keyed table without weakening relation authority. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
+#### sim-table-sealed
+
+Authenticated encryption decorator for SIM Table and Dir backends.
+
+without replacing the store or teaching the kernel about encryption. `SealedTable` wraps a persistent Table or Dir. Values are authenticated and encrypted before reaching the backend, while logical names become keyed, lane-separated physical names. Purpose-separated keys prevent cross-protocol key reuse. A record copied to another key, lane, generation, or metadata class is rejected. The host retains control of keys, revocation, and secure nonce generation. Finance, private notes, and other lanes can have independent grants. Any conforming backend remains responsible for its own proven persistence and deletion behavior. Corruption and substitution. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
 
 ### sim-stream
 
@@ -2153,12 +2842,6 @@ A local wrist bridge turns watch exports into SIM worn events without cloud acco
 
 The crate gives SIM one watch provider surface for four local routes: Linux BLE, a phone relay, a Zepp companion bridge, and file imports. Each route speaks the same worn-event shape and accepts the same notification, haptic, face, alarm, and privacy commands, so a watch integration can swap transport without changing the rest of the stream host. It also gives test and CI runs a clean hardware-free path. Synthetic imports and scripted link samples produce stable event sequences, while the stub route says plainly that no device is available.
 
-#### sim-viture-ffi
-
-A small boundary crate keeps VITURE glasses SDK loading out of the safe stream host.
-
-The crate gives SIM one narrow place to find and open the VITURE glasses SDK at runtime. It checks explicit local configuration, ordinary dynamic-library lookup, and Linux USB device hints, then reports a clear unavailable result when no SDK is present. It also gives the rest of the stream host a safe surface. Device sessions can ask for poses and device-control setup without carrying raw handles, linking vendor objects at build time, or spreading unsafe code through normal provider logic.
-
 ### sim-web
 
 #### sim-lib-intent
@@ -2197,6 +2880,12 @@ it shows one value written several ways at once and lets you inspect how it matc
 
 Open a single value and see it rendered side by side in several notations -- a Lisp-style form, JSON, a compact binary, an Algol-like form -- all at the same time. A probe panel checks that a value survives a round trip through each notation and back unchanged, so you can trust that what you read is faithful. A companion shape lens draws the matching tree, shows how parts bind, and, when a match fails, shows you a clear counterexample of what would not fit. The safe construction path is highlighted as the preferred way to rebuild a value, while broader evaluation stays behind a permission gate.
 
+#### sim-lib-view-continuity-phone
+
+Replayable phone interaction surface for SIM continuity turns.
+
+The phone stays useful in silence. Hold-to-talk and optional playback share the same replayable interaction as typing, transcript review, result review, submission, deferral, cancellation, and the always-present stop. Rebuilding the screen from the continuity journal yields the same turn every time. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
 #### sim-lib-view-daw
 
 it brings a full music studio -- timeline, mixer, effects, and synths -- into the browser workspace.
@@ -2215,6 +2904,12 @@ it is a writing surface where article structure, equations, figures, source text
 
 This lens gives you a proper authoring workspace for technical writing, not a plain text box. A document is built from meaningful blocks -- sections, prose, equations, figures, tables, citations, and blocks that run live inside the page. You navigate by an outline and arrange blocks on a canvas. You can look at the same article two ways at once: the clean formatted reading view and the underlying source, side by side, each a lens on the one document. Because the document is one stored markup value, an embedded live block shows a real computed result right where it belongs in your argument.
 
+#### sim-lib-view-estate
+
+Reversible SurfaceCodec scenes for the SIM estate organ.
+
+One Surface lens makes plan identity, targets, risk, expiry, preview, and verification policy visible, then refuses stale edits before any organ call is issued. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
 #### sim-lib-view-interference
 
 it opens a solved interference field as an honest heatmap you can inspect, edit, and recompute without losing the evidence behind the picture.
@@ -2227,6 +2922,12 @@ it turns numbers, scalar fields, matrices, and formulas into bounded plots and g
 
 This lens family makes math visual and hands-on. Bounded scalar fields become masked heatmap Scenes with an honest detector label and advisory; the generic view refuses oversized input instead of guessing how a scientific domain should reduce it. Detail means the caller kept its source cells. Detector integration means the owning domain already combined every covered source cell under a declared rule. The math view validates either prepared grid but never turns one into the other or invents evidence for it. Numeric series and functions become plots you can read at a glance. Matrices and tensors open as editable grids, so you can change a slice and see the effect. A symbolic formula shows as a tree you can explore. Sliders and knobs let you sweep a parameter and watch the result move, then snapshot a setting and compare it against another. Throughout, the display reads numbers from SIM's own number kinds, while the runtime value stays the single source of truth -- so what you tweak on screen is the same number the system actually holds.
 
+#### sim-lib-view-search
+
+Offline, evidence-preserving search audit surface for SIM Web.
+
+`sim-lib-view-search` makes the whole evidence chain visible on compact, tablet, and desktop surfaces. A reviewer can expand a result to inspect its rank contributions, provider claims, fetch and robots decisions, immutable raw capture, normalized representation, exact selector, fidelity warnings, policy receipts, optional judge receipt, and office anchor--fully offline. Provider snippets are unmistakably unverified. Only selector-checked captured characters receive quotation styling. Remote strings stay inert until a user asks a policy host to open one. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+
 #### sim-lib-view-spatial
 
 Glasses surfaces get the right SIM Scene form for stereo panels, mono HUD cards, and simple mirrored displays.
@@ -2238,6 +2939,12 @@ Different glasses need different shapes of the same information. A stereo pair c
 it is the local helper that renders a value to a screen picture, folds your gestures into edits, and commits them in place.
 
 This crate is the plain glue that a browser shell leans on to do the everyday view loop against a value held right here in the process. It renders a value into the shared scene picture, gathers raw gestures and folds them into clear edit requests, applies an accepted edit to the value, and reports back the small difference so the screen can update just the part that changed. It shares the same view, edit, and scene rules the rest of the workspace uses, so its behavior lines up with the browser adapters without carrying any separate display logic of its own.
+
+#### sim-lib-view-worktable
+
+Rebuildable projection for reversible expedition products.
+
+Compose an expedition into one quiet surface without turning the surface into an application core. Every visible change is replayable, effects are visibly armed or unavailable, and deleting the view loses no authoritative evidence. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
 
 #### sim-lib-view-wrist
 
@@ -2259,6 +2966,6 @@ Your entire workspace layout is kept as one piece of SIM data: the panes, tabs, 
 
 #### sim-web-shell
 
-it is the program you run to open the SIM workspace in a browser.
+Host-neutral routing and reversible-session library for the SIM WebUI shell.
 
-This is the server that serves the SIM browser workspace. It bundles the browser assets it needs and exposes the shared cookbook services, so starting it gives you a running front door to the whole view stack. In the browser, the shell stays deliberately thin: it paints the scene pictures it receives and sends your gestures back as edit requests, nothing more. It also offers a cache view over the generated site graph, the constellation index, the retrieval radar, and the guideline firewall reports, so you can browse those alongside your work. It carries no second data model and no second set of rules.
+This library routes the SIM browser workspace after a platform capsule supplies transport, mounted files, model time, entropy, and external open. It bundles the browser assets and exposes the shared cookbook services without owning a native process or socket. In the browser, the shell stays deliberately thin: it paints Scene values and sends Intent values back through the shared reversible surface contract. One host-neutral shell shared by modeled, native, and later browser capsules. Products can inject a fresh transport, codec, resource alias, and diminished authority per opaque browser session. The. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
