@@ -19,3 +19,13 @@ Publish generated package, card, recipe, and index facts for agent, bridge, MCP,
 
 - `docs/sim-agent-net/generated`
 - `local/sim-agent-net/cli/xtask`
+
+## Specimens
+
+- `recipe/sim-agent-net/crates/sim-lib-agent-runner-core/01-basics/fake-runner-descriptor`
+
+## Worked Example
+
+Specimen `recipe/sim-agent-net/crates/sim-lib-agent-runner-core/01-basics/fake-runner-descriptor` is checked by `xtask check-recipes`.
+
+Source path: `crates/sim-lib-agent-runner-core/recipes/01-basics/fake-runner-descriptor/recipe.toml`.

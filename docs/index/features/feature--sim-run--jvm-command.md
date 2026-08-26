@@ -29,10 +29,4 @@ Run caller-supplied classfile bytes, exact class, member, descriptor, and intege
 
 Specimen `recipe/sim-run/02-scenarios/jvm-product` is checked by `xtask check-recipes`.
 
-Source `recipes/02-scenarios/jvm-product/recipe.toml`:
-
-```toml
-title = "Run the bounded JVM product specimen"
-kind = "shell"
-entry = "setup.sh"
-```
+Source path: `recipes/02-scenarios/jvm-product/recipe.toml`.

@@ -6,7 +6,7 @@
 - Subject: `crate/sim-platform-amazfit`
 - Canonical key: `crate/sim-platform-amazfit/feature-sim-platform-amazfit-proxy-capsule`
 
-Bridge a minimal Zepp OS event, sensor, haptic, and glance shell through the Android capsule without running SIM behavior on the watch.
+Model a bounded Zepp OS proxy while keeping the unproved watch-to-Android-Rust route explicitly unsupported.
 
 ## Anchors
 

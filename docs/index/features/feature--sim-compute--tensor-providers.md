@@ -67,20 +67,4 @@ Run canonical Tensor requests through modeled, automatic, and capsule-probed wgp
 
 Specimen `recipe/sim-compute/crates/sim-lib-compute-auto/01-basics/measured-profile-routing` is checked by `xtask check-recipes`.
 
-Source `crates/sim-lib-compute-auto/recipes/01-basics/measured-profile-routing/recipe.toml`:
-
-```toml
-id = "measured-profile-routing"
-title = "Measured profile routing"
-codec = "lisp"
-setup = "setup.siml"
-purpose = "purpose.md"
-expected = "expected.txt"
-order = 20
-tags = ["compute", "tensor", "auto", "profile", "routing"]
-requires = ["compute/model", "compute/auto", "table/hash", "numbers/tensor"]
-
-[[expect]]
-form = 0
-result = "(expr:call compute auto-profile (expr:call table supplied) (expr:call synthetic bounded upload download launch element reduction matmul) (expr:call physical-device required) (expr:call else cpu) (expr:call ledger provider materialization-bytes synchronizations))"
-```
+Source path: `crates/sim-lib-compute-auto/recipes/01-basics/measured-profile-routing/recipe.toml`.

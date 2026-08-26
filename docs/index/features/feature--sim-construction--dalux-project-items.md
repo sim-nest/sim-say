@@ -23,15 +23,4 @@ Read Dalux project items into local office documents through ledgered site effec
 
 Specimen `recipe/sim-construction/crates/sim-site-dalux/01-basics/dalux-modeled-items` is checked by `sh scripts/check-recipes.sh`.
 
-Source `crates/sim-site-dalux/recipes/01-basics/dalux-modeled-items/recipe.toml`:
-
-```toml
-id = "dalux-modeled-items"
-title = "Modeled Dalux items"
-codec = "lisp"
-setup = "setup.siml"
-purpose = "purpose.md"
-order = 10
-tags = ["construction", "office", "dalux", "site", "api-identity", "sandbox-descriptor"]
-requires = ["office/doc-site", "site/dalux", "codec/lisp"]
-```
+Source path: `crates/sim-site-dalux/recipes/01-basics/dalux-modeled-items/recipe.toml`.

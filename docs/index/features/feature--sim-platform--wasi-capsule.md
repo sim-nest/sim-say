@@ -10,5 +10,5 @@ Inspect a closed WASI import surface and realize it through explicit Table/Dir a
 
 ## Anchors
 
-- `anchor/card/cookbook/sim-platform-wasi`
+- `anchor/card/cookbook/platform/wasi`
 - `anchor/crate/sim-platform-wasi`

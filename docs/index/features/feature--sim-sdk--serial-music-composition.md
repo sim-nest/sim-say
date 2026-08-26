@@ -24,15 +24,4 @@ Select the frozen serial-series, row-theory, immutable-plan, adaptation, and rev
 
 Specimen `recipe/sim-sdk/serial-music/index-discovery` is checked by `xtask check-recipes`.
 
-Source `recipes/serial-music/index-discovery/recipe.toml`:
-
-```toml
-id = "index-discovery"
-title = "Check serial facade feature and route discovery in the generated SDK index"
-codec = "rust"
-setup = "setup.rs"
-purpose = "purpose.md"
-order = 40
-tags = ["serial", "index", "discovery", "sdk", "rust", "docs"]
-requires = ["serial-music"]
-```
+Source path: `recipes/serial-music/index-discovery/recipe.toml`.

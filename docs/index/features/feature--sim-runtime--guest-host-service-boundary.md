@@ -7,3 +7,13 @@
 - Canonical key: `repo/sim-runtime/feature-sim-runtime-guest-host-service-boundary`
 
 Keep guest OS, source, import, native, and process surfaces behind explicit capabilities, supplied configuration, loader authority, and platform ports.
+
+## Specimens
+
+- `recipe/sim-runtime/crates/sim-lib-exec/01-basics/bounded-process`
+
+## Worked Example
+
+Specimen `recipe/sim-runtime/crates/sim-lib-exec/01-basics/bounded-process` is checked by `sh scripts/check-recipes.sh`.
+
+Source path: `crates/sim-lib-exec/recipes/01-basics/bounded-process/recipe.toml`.

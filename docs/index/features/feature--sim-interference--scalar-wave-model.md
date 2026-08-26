@@ -34,18 +34,4 @@ Describe one-frequency coherent point and forward-plane emitters in a homogeneou
 
 Specimen `recipe/sim-interference/crates/sim-lib-interference-core/01-basics/attenuation` is checked by `xtask check-recipes`.
 
-Source `crates/sim-lib-interference-core/recipes/01-basics/attenuation/recipe.toml`:
-
-```toml
-id = "attenuation"
-title = "Measure exponential field attenuation"
-codec = "rust"
-setup = "main.rs"
-purpose = "purpose.md"
-expected = "expected.txt"
-order = 50
-tags = ["interference", "cpu", "attenuation", "homogeneous-medium", "free-field"]
-harness = "cargo-example"
-package = "sim-lib-interference-core"
-example = "attenuation"
-```
+Source path: `crates/sim-lib-interference-core/recipes/01-basics/attenuation/recipe.toml`.

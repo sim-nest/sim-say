@@ -6,7 +6,7 @@
 - Subject: `crate/sim-storage-port`
 - Canonical key: `crate/sim-storage-port/feature-sim-storage-host-storage-primitives`
 
-Define the portable HostDirPort boundary used by Table/Dir policy, alongside pure database and HTTP storage contracts.
+Define the portable HostDirPort boundary used by Table/Dir policy, including byte-level compare-exchange at the platform-owned atomic publication boundary.
 
 ## Anchors
 

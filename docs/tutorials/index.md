@@ -19,6 +19,8 @@ Tutorial links are generated from published repo contracts.
 - [sim-music tutorial lane](../repos/sim-music.md#tutorial-lane)
 - [sim-numbers tutorial lane](../repos/sim-numbers.md#tutorial-lane)
 - [sim-office tutorial lane](../repos/sim-office.md#tutorial-lane)
+- [sim-physics tutorial lane](../repos/sim-physics.md#tutorial-lane)
+- [sim-platform tutorial lane](../repos/sim-platform.md#tutorial-lane)
 - [sim-run tutorial lane](../repos/sim-run.md#tutorial-lane)
 - [sim-runtime tutorial lane](../repos/sim-runtime.md#tutorial-lane)
 - [sim-sdk tutorial lane](../repos/sim-sdk.md#tutorial-lane)

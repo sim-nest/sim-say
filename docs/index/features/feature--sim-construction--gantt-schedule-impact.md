@@ -17,15 +17,4 @@ Join stable construction controls to canonical Gantt task ids and explain baseli
 
 Specimen `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/control-graph-meets-gantt` is checked by `sh scripts/check-recipes.sh`.
 
-Source `crates/sim-lib-construction-project/recipes/01-basics/control-graph-meets-gantt/recipe.toml`:
-
-```toml
-id = "control-graph-meets-gantt"
-title = "Control graph meets Gantt"
-codec = "lisp"
-setup = "setup.siml"
-purpose = "purpose.md"
-order = 95
-tags = ["construction", "project-control", "gantt", "critical-path", "powerproject"]
-requires = ["construction.project.read", "construction.project.write", "codec/lisp"]
-```
+Source path: `crates/sim-lib-construction-project/recipes/01-basics/control-graph-meets-gantt/recipe.toml`.

@@ -15,22 +15,10 @@ Decode and re-encode retained JVM classfiles while browsing bounded constants, a
 
 ## Specimens
 
-- `recipe/sim-codecs/crates/sim-codec-classfile/01-inspection/retained-classfile`
 - `spec-test/sim-codecs/crates/sim-codec-classfile/tests/index_coverage`
 
 ## Worked Example
 
-Specimen `recipe/sim-codecs/crates/sim-codec-classfile/01-inspection/retained-classfile` is checked by `sh scripts/check-recipes.sh`.
+Specimen `spec-test/sim-codecs/crates/sim-codec-classfile/tests/index_coverage` is checked by `cargo test`.
 
-Source `crates/sim-codec-classfile/recipes/01-inspection/retained-classfile/recipe.toml`:
-
-```toml
-id = "retained-classfile"
-title = "Inspect a retained classfile without a JVM"
-codec = "classfile"
-setup = "positive.class"
-purpose = "purpose.md"
-order = 10
-tags = ["codec", "classfile", "inspect", "jvm-free"]
-requires = ["codec/classfile"]
-```
+Source path: `crates/sim-codec-classfile/tests/index_coverage.rs`.

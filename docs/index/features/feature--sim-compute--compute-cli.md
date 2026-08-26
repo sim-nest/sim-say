@@ -32,23 +32,4 @@ Export a bounded loadable `cli/main/compute` command for inspecting injected com
 
 Specimen `recipe/sim-compute/crates/sim-lib-compute-cli/01-basics/inspect-compute-device` is checked by `xtask check-recipes`.
 
-Source `crates/sim-lib-compute-cli/recipes/01-basics/inspect-compute-device/recipe.toml`:
-
-```toml
-id = "inspect-compute-device"
-title = "Inspect compute device"
-codec = "lisp"
-setup = "setup.siml"
-purpose = "purpose.md"
-expected = "expected.txt"
-order = 10
-tags = ["compute", "cli", "device", "profile"]
-requires = ["compute/model", "compute/auto", "compute/cli", "table/hash"]
-capabilities = ["compute.device"]
-assert_capabilities = ["compute.device"]
-assert_setup_codec = "lisp"
-
-[[expect]]
-form = 0
-result = "(expr:call compute devices (expr:call model installed) (expr:call auto installed) (expr:call profiles table-supplied))"
-```
+Source path: `crates/sim-lib-compute-cli/recipes/01-basics/inspect-compute-device/recipe.toml`.

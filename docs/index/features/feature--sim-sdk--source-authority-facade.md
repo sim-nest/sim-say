@@ -20,15 +20,4 @@ Build diminished source requests through the canonical runtime authority, broker
 
 Specimen `recipe/sim-sdk/source-authority/dynamic-text` is checked by `xtask check-recipes`.
 
-Source `recipes/source-authority/dynamic-text/recipe.toml`:
-
-```toml
-id = "dynamic-text-source-authority"
-title = "Admit dynamic text with shared source authority"
-codec = "rust"
-setup = "setup.rs"
-purpose = "purpose.md"
-order = 10
-tags = ["source", "authority", "read-eval", "capability", "sdk"]
-requires = ["core", "shape", "codec-lisp"]
-```
+Source path: `recipes/source-authority/dynamic-text/recipe.toml`.

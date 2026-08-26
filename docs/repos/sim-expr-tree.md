@@ -1,6 +1,6 @@
 # sim-expr-tree
 
-Published commit: `9b64f255e908e85c4c4b08458aba92133c26f734`.
+Published commit: `beb11653763e90ed41c6f6fc534b5bc66c5d4633`.
 
 ## Crates
 
@@ -11,6 +11,7 @@ Published commit: `9b64f255e908e85c4c4b08458aba92133c26f734`.
 - `sim-lib-expr-tree-serve`
 - `sim-lib-expr-tree-server`
 - `sim-lib-view-expr-tree`
+- `sim-lib-expedition-book`
 
 ## Contracts
 

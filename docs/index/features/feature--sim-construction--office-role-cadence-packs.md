@@ -16,15 +16,4 @@ Project current or historical construction snapshots into deterministic, evidenc
 
 Specimen `recipe/sim-construction/crates/sim-lib-construction-office/01-basics/project-chief-weekly-pack` is checked by `sh scripts/check-recipes.sh`.
 
-Source `crates/sim-lib-construction-office/recipes/01-basics/project-chief-weekly-pack/recipe.toml`:
-
-```toml
-id = "project-chief-weekly-pack"
-title = "Project-chief weekly office pack"
-codec = "lisp"
-setup = "setup.siml"
-purpose = "purpose.md"
-order = 20
-tags = ["construction", "office", "project-chief", "weekly", "status", "visibility", "suite"]
-requires = ["construction.project.read", "codec/lisp"]
-```
+Source path: `crates/sim-lib-construction-office/recipes/01-basics/project-chief-weekly-pack/recipe.toml`.

@@ -8,10 +8,10 @@
       "summary": "root browse catalog"
     },
     {
-      "id": "cookbook/storage/table-fs",
+      "id": "cookbook/sim-table-relation",
       "kind": "cookbook-recipe",
-      "owner": "sim-table-fs",
-      "summary": "Host directory reads, writes, edits, and searches through the table surface."
+      "owner": "sim-table-relation",
+      "summary": ""
     },
     {
       "id": "cookbook/storage/table-http",

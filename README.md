@@ -214,6 +214,8 @@ The full constellation, generated from each repo's pinned contract files:
 - [sim-music](docs/repos/sim-music.md)
 - [sim-numbers](docs/repos/sim-numbers.md)
 - [sim-office](docs/repos/sim-office.md)
+- [sim-physics](docs/repos/sim-physics.md)
+- [sim-platform](docs/repos/sim-platform.md)
 - [sim-run](docs/repos/sim-run.md)
 - [sim-runtime](docs/repos/sim-runtime.md)
 - [sim-sdk](docs/repos/sim-sdk.md)
@@ -226,7 +228,7 @@ The full constellation, generated from each repo's pinned contract files:
 
 See also: [repository map](docs/site/repos.md), [crate ownership](docs/site/crate-ownership.md), [agent-card catalog](docs/site/agent-card-catalog.md), [SIM Index features](docs/site/index-features.md), [constellation diagram](docs/site/constellation.md).
 
-The SIM Index contributes 224 feature rows and 229 surface rows to this navigation.
+The SIM Index contributes 404 feature rows and 272 surface rows to this navigation.
 
 The two SIM entry points -- sim-say = this generated public welcome; sim-sdk = the developer entry point and umbrella `sim` crate.
 

@@ -25,18 +25,4 @@ Assemble one immutable row plan, registry-selected realization components, rever
 
 Specimen `recipe/sim-music/serial-workbench/01-end-to-end/row-to-audition` is checked by `sh scripts/check-recipes.sh`.
 
-Source `recipes/serial-workbench/01-end-to-end/row-to-audition/recipe.toml`:
-
-```toml
-title = "Run a serial music workbench from row to audition"
-summary = "Load replaceable realization components, build a row plan, realize it strictly and modally, complete it reversibly, audit ledgers, export MIDI and LilyPond notation, and audition it."
-category = "Rust"
-tags = ["music", "serial", "workbench", "end-to-end", "notation", "midi", "rust", "framework"]
-requires = [
-  "music-serial",
-  "music-notation",
-  "music-transform",
-  "pitch-scale",
-]
-purpose = "purpose.md"
-```
+Source path: `recipes/serial-workbench/01-end-to-end/row-to-audition/recipe.toml`.

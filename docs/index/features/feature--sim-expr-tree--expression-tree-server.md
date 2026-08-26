@@ -28,13 +28,4 @@ Serve bounded opaque expression tree sessions through one loadable EvalSite and 
 
 Specimen `spec-test/sim-expr-tree/crates/sim-lib-expr-tree-server/src/tests` is checked by `cargo test`.
 
-Source `crates/sim-lib-expr-tree-server/src/tests.rs`:
-
-```rust
-//! conformance: authoritative expression-tree EvalSite sessions and lifecycle.
-
-mod conformance;
-mod lifecycle;
-mod support;
-mod web;
-```
+Source path: `crates/sim-lib-expr-tree-server/src/tests.rs`.

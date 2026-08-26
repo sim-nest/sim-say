@@ -16,15 +16,4 @@ TypeScript notation; does not type-check. Compose bounded syntax, JavaScript era
 
 Specimen `recipe/sim-sdk/typescript-notation/admitted-notation` is checked by `xtask check-recipes`.
 
-Source `recipes/typescript-notation/admitted-notation/recipe.toml`:
-
-```toml
-id = "admitted-notation"
-title = "Evaluate and browse TypeScript notation"
-codec = "rust"
-setup = "setup.rs"
-purpose = "purpose.md"
-order = 10
-tags = ["typescript", "notation", "javascript", "shape", "checker-gap"]
-requires = ["language/typescript-notation"]
-```
+Source path: `recipes/typescript-notation/admitted-notation/recipe.toml`.

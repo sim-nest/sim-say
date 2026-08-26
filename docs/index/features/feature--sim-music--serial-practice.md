@@ -27,16 +27,4 @@ Freeze row instances, row ordinals, roles, parent evidence, simultaneous groups,
 
 Specimen `recipe/sim-music/crates/sim-lib-music-serial/01-basics/arrays-time-points` is checked by `sh scripts/check-recipes.sh`.
 
-Source `crates/sim-lib-music-serial/recipes/01-basics/arrays-time-points/recipe.toml`:
-
-```toml
-id = "arrays-time-points"
-title = "Analyze serial arrays and time-point rows"
-codec = "rust"
-setup = "setup.rs"
-summary = "Keep horizontal row order, vertical aggregate evidence, and onset order explicit without collapsing them into one score model."
-category = "Rust"
-tags = ["music", "serial", "array", "time-point", "analysis", "rust", "framework"]
-requires = ["music-serial", "pitch-serial", "serial-core", "music-core"]
-purpose = "purpose.md"
-```
+Source path: `crates/sim-lib-music-serial/recipes/01-basics/arrays-time-points/recipe.toml`.

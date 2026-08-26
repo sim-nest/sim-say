@@ -30,16 +30,4 @@ Explore merged SIM Index graph and public source facts through the bootloader as
 
 Specimen `recipe/sim-run/02-scenarios/index-examples` is checked by `xtask check-recipes`.
 
-Source `recipes/02-scenarios/index-examples/recipe.toml`:
-
-```toml
-id = "index-examples"
-title = "Index Feature Examples"
-codec = "shell"
-setup = "setup.sh"
-purpose = "purpose.md"
-order = 73
-tags = ["cli", "index", "examples", "offline", "deterministic"]
-requires = ["sim-run", "sim-lib-index"]
-network = false
-```
+Source path: `recipes/02-scenarios/index-examples/recipe.toml`.

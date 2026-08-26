@@ -1,6 +1,6 @@
 # sim-run
 
-Published commit: `03dfa348d1e0082c6f987d79fc43bb861c1282d2`.
+Published commit: `ab7101d394d0b308d33ec6f477655b0f92fa6489`.
 
 ## Crates
 
@@ -10,6 +10,7 @@ Published commit: `03dfa348d1e0082c6f987d79fc43bb861c1282d2`.
 - `sim-lib-index`
 - `sim-lib-repl`
 - `sim-view-tty`
+- `sim-lib-hotload`
 
 ## Contracts
 

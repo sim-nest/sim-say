@@ -24,6 +24,8 @@
         | sim-music
         | sim-numbers
         | sim-office
+        | sim-physics
+        | sim-platform
         | sim-run
         | sim-runtime
         | sim-sdk

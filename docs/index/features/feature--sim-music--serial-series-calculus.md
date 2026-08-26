@@ -21,15 +21,4 @@ Validate symbol-bearing finite alphabets and ordered series, then apply total co
 
 Specimen `recipe/sim-music/crates/sim-lib-serial-core/01-basics/certified-transforms` is checked by `sh scripts/check-recipes.sh`.
 
-Source `crates/sim-lib-serial-core/recipes/01-basics/certified-transforms/recipe.toml`:
-
-```toml
-id = "certified-transforms"
-title = "Transform a symbolic series with inverse evidence"
-codec = "rust"
-setup = "setup.rs"
-purpose = "purpose.md"
-order = 20
-tags = ["serial", "transform", "certificate", "bijection", "rust", "framework"]
-requires = ["serial-core", "discrete-rank"]
-```
+Source path: `crates/sim-lib-serial-core/recipes/01-basics/certified-transforms/recipe.toml`.

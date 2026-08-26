@@ -29,10 +29,4 @@ Decode caller-authorized classfile bytes and execute caller-selected exact class
 
 Specimen `recipe/sim-runtime/crates/sim-lib-lang-jvm/01-basics/authorized-static-call` is checked by `sh scripts/check-recipes.sh`.
 
-Source `crates/sim-lib-lang-jvm/recipes/01-basics/authorized-static-call/recipe.toml`:
-
-```toml
-title = "Define authorized class bytes and call a static method"
-kind = "lisp"
-entry = "setup.siml"
-```
+Source path: `crates/sim-lib-lang-jvm/recipes/01-basics/authorized-static-call/recipe.toml`.

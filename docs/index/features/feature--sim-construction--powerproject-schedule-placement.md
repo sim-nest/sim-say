@@ -22,15 +22,4 @@ Place construction Gantt schedules at Powerproject desktop and Project for the w
 
 Specimen `recipe/sim-construction/crates/sim-site-powerproject/01-basics/powerproject-placement` is checked by `sh scripts/check-recipes.sh`.
 
-Source `crates/sim-site-powerproject/recipes/01-basics/powerproject-placement/recipe.toml`:
-
-```toml
-id = "powerproject-placement"
-title = "Powerproject placement"
-codec = "lisp"
-setup = "setup.siml"
-purpose = "purpose.md"
-order = 10
-tags = ["office", "gantt", "powerproject", "dataverse", "site", "sandbox-descriptor"]
-requires = ["office/gantt", "office/doc-site", "codec/mspdi", "site/powerproject"]
-```
+Source path: `crates/sim-site-powerproject/recipes/01-basics/powerproject-placement/recipe.toml`.

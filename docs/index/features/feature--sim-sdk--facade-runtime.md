@@ -31,9 +31,4 @@ Boot the public SIM facade and expose its command plus reversible view surface.
 
 Specimen `spec-test/sim-sdk/crates/sim-conformance/tests/cli_boot` is checked by `cargo test`.
 
-Source `crates/sim-conformance/tests/cli_boot.rs`:
-
-```rust
-#[path = "spec/cli_boot.rs"]
-mod cli_boot;
-```
+Source path: `crates/sim-conformance/tests/cli_boot.rs`.

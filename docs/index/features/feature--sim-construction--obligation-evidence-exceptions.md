@@ -18,15 +18,4 @@ Evaluate shared construction requirements and project obligations across open la
 
 Specimen `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/blocked-gate-graph` is checked by `sh scripts/check-recipes.sh`.
 
-Source `crates/sim-lib-construction-project/recipes/01-basics/blocked-gate-graph/recipe.toml`:
-
-```toml
-id = "blocked-gate-graph"
-title = "Blocked gate graph"
-codec = "lisp"
-setup = "setup.siml"
-purpose = "purpose.md"
-order = 36
-tags = ["construction", "project-control", "obligation", "dependency-graph", "blocker", "gate"]
-requires = ["construction.project.read", "construction.exception", "codec/lisp"]
-```
+Source path: `crates/sim-lib-construction-project/recipes/01-basics/blocked-gate-graph/recipe.toml`.

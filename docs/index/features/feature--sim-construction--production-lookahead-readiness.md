@@ -17,15 +17,4 @@ Derive six-week demand and three-week production commitments from accepted Gantt
 
 Specimen `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/six-week-production-readiness` is checked by `sh scripts/check-recipes.sh`.
 
-Source `crates/sim-lib-construction-project/recipes/01-basics/six-week-production-readiness/recipe.toml`:
-
-```toml
-id = "six-week-production-readiness"
-title = "Six-week production readiness"
-codec = "lisp"
-setup = "setup.siml"
-purpose = "purpose.md"
-order = 95
-tags = ["construction", "project-control", "production", "lookahead", "readiness", "gantt"]
-requires = ["construction.project.read", "construction.project.write", "codec/lisp"]
-```
+Source path: `crates/sim-lib-construction-project/recipes/01-basics/six-week-production-readiness/recipe.toml`.

@@ -6,7 +6,7 @@
 - Subject: `local/sim-platform/crate/sim-table-fs`
 - Canonical key: `crate/sim-table-fs/feature-sim-platform-host-directory-realization`
 
-Realize storage-owned HostDirPort semantics with one deterministic model and one confined Ubuntu adapter.
+Realize storage-owned HostDirPort semantics, including linearizable leaf compare-exchange, with one deterministic model and one confined Ubuntu adapter.
 
 ## Anchors
 

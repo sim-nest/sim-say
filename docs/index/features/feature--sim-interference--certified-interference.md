@@ -50,19 +50,4 @@ Construct, solve, project, analyze, scenario-build, and compose coherent interfe
 
 Specimen `recipe/sim-interference/crates/sim-lib-interference-runtime/01-basics/two-source-cancellation` is checked by `xtask check-recipes`.
 
-Source `crates/sim-lib-interference-runtime/recipes/01-basics/two-source-cancellation/recipe.toml`:
-
-```toml
-id = "two-source-cancellation"
-title = "Two-source cancellation on the CPU"
-codec = "lisp"
-setup = "setup.siml"
-purpose = "purpose.md"
-order = 10
-tags = ["interference", "coherent", "cpu", "realize", "shape-checked", "deterministic"]
-requires = ["interference/runtime", "codec/lisp", "core", "organ/binding", "numbers/tensor"]
-harness = "cargo-example"
-package = "sim-lib-interference-runtime"
-example = "two_source_cancellation"
-expected = "expected.txt"
-```
+Source path: `crates/sim-lib-interference-runtime/recipes/01-basics/two-source-cancellation/recipe.toml`.

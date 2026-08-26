@@ -18,15 +18,4 @@ Derive construction phase gate baseline and obligation readiness from accepted p
 
 Specimen `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/late-decision` is checked by `sh scripts/check-recipes.sh`.
 
-Source `crates/sim-lib-construction-project/recipes/01-basics/late-decision/recipe.toml`:
-
-```toml
-id = "late-decision"
-title = "Late accountable decision"
-codec = "lisp"
-setup = "setup.siml"
-purpose = "purpose.md"
-order = 40
-tags = ["construction", "project-control", "decision", "action", "escalation"]
-requires = ["construction.project.read", "construction.project.write", "codec/lisp"]
-```
+Source path: `crates/sim-lib-construction-project/recipes/01-basics/late-decision/recipe.toml`.

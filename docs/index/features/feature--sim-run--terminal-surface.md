@@ -27,16 +27,4 @@ Render and interpret terminal view intents through the loaded TTY surface librar
 
 Specimen `recipe/sim-run/02-scenarios/host-verb` is checked by `xtask check-recipes`.
 
-Source `recipes/02-scenarios/host-verb/recipe.toml`:
-
-```toml
-id = "host-verb"
-title = "Host library verb"
-codec = "shell"
-setup = "setup.sh"
-purpose = "purpose.md"
-order = 20
-tags = ["cli", "host", "verb", "offline", "deterministic"]
-requires = ["sim-run-core", "host:scenario/host"]
-network = false
-```
+Source path: `recipes/02-scenarios/host-verb/recipe.toml`.
