@@ -8,10 +8,6 @@
 
 Compose a twenty-second common-care capture, flock-level normal observation, factual deviation handoff, attention, and one copied egg claim without measuring an animal's worth.
 
-## Anchors
-
-- `anchor/crate/sim-nest`
-
 ## Specimens
 
 - `recipe/sim-sdk/stewardship/calm-flock-care`

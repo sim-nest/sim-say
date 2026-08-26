@@ -10,7 +10,13 @@ Resolve immutable runtime compositions into one deterministic, authority-diminis
 
 ## Anchors
 
+- `anchor/cli/sim-lib-capability-pack-recipe-checked-pack`
 - `anchor/crate/sim-lib-capability-pack`
+- `anchor/crate/sim-lib-capability-pack-recipe-checked-pack`
+
+## Surfaces
+
+- `cli/sim-lib-capability-pack-recipe-checked-pack`
 
 ## Specimens
 

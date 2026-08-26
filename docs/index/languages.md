@@ -61,6 +61,7 @@
 | `specimen` | `codec` | crates/sim-conformance/tests/web_search_offline.rs |
 | `specimen` | `codec` | crates/sim-lib-lang-javascript/src/lib.rs |
 | `specimen` | `codec` | crates/sim-lib-lang-python/src/lib.rs |
+| `specimen` | `codec` | crates/sim-platform-wasi/src/lib.rs |
 | `specimen` | `codec` | crates/sim-run-loaders/src/native/codec_proxy_tests.rs |
 | `specimen` | `config` | crates/sim-codec-config/recipes/01-basics/per-lib-config/recipe.toml |
 | `specimen` | `doc` | crates/sim-codec-doc/src/html.rs |
@@ -680,6 +681,7 @@
 | `specimen` | `shape` | crates/sim-conformance/tests/spec/forge_eval.rs |
 | `specimen` | `shape` | crates/sim-conformance/tests/spec/interference.rs |
 | `specimen` | `shape` | crates/sim-conformance/tests/spec/support.rs |
+| `specimen` | `shape` | crates/sim-estate-project/src/lib.rs |
 | `specimen` | `shape` | crates/sim-ledger/src/reconciliation.rs |
 | `specimen` | `shape` | crates/sim-lib-agent-conduct/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-agent-runner-http/src/runner.rs |
@@ -706,6 +708,7 @@
 | `specimen` | `shape` | crates/sim-lib-discrete/src/forms.rs |
 | `specimen` | `shape` | crates/sim-lib-doc-ledger/src/reconciliation.rs |
 | `specimen` | `shape` | crates/sim-lib-doc-site/src/register_tests.rs |
+| `specimen` | `shape` | crates/sim-lib-estate-serve/src/lib.rs |
 | `specimen` | `shape` | crates/sim-lib-expedition-book/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-femm-ode/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-function/src/callable.rs |
@@ -751,6 +754,7 @@
 | `specimen` | `shape` | crates/sim-lib-numbers-tensor/src/implementation/citizen.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-tensor/src/tests/execution.rs |
 | `specimen` | `shape` | crates/sim-lib-physics-power/tests/work.rs |
+| `specimen` | `shape` | crates/sim-lib-platform/src/runtime.rs |
 | `specimen` | `shape` | crates/sim-lib-provider/src/conformance.rs |
 | `specimen` | `shape` | crates/sim-lib-roadmap-runner/src/local_command.rs |
 | `specimen` | `shape` | crates/sim-lib-roadmap-runner/src/proof.rs |
@@ -764,6 +768,7 @@
 | `specimen` | `shape` | crates/sim-lib-stream-fabric/tests/cassette_replay.rs |
 | `specimen` | `shape` | crates/sim-lib-stream-wrist/src/citizen.rs |
 | `specimen` | `shape` | crates/sim-lib-stream-xr/src/citizen.rs |
+| `specimen` | `shape` | crates/sim-lib-view-estate/src/lib.rs |
 | `specimen` | `shape` | crates/sim-lib-view/src/surface_tests.rs |
 | `specimen` | `shape` | crates/sim-lib-view/src/universal_tests.rs |
 | `specimen` | `shape` | crates/sim-mutual-projection/src/tests.rs |
@@ -771,12 +776,15 @@
 | `specimen` | `shape` | crates/sim-relation-schema/tests/schema_contract.rs |
 | `specimen` | `shape` | crates/sim-relation-shape/src/tests.rs |
 | `specimen` | `shape` | crates/sim-roadmap-exec-core/src/tests.rs |
+| `specimen` | `shape` | crates/sim-site-estate-command/src/lib.rs |
+| `specimen` | `shape` | crates/sim-study-core/tests/study_contract.rs |
 | `specimen` | `shape` | crates/sim-value/src/tests.rs |
 | `specimen` | `shape` | src/citizen/inventory.rs |
 | `specimen` | `shape` | src/citizen_tests.rs |
 | `specimen` | `shape` | src/device_tests.rs |
 | `specimen` | `shape` | src/feature_contract_tests.rs |
 | `specimen` | `shape` | src/lib.rs |
+| `specimen` | `shape` | src/loaders/tests/registry.rs |
 | `specimen` | `shape` | src/runtime/tests/browse_conformance.rs |
 | `specimen` | `shape` | tests/device_authority.rs |
 | `specimen` | `shell` | crates/sim-conformance/recipes/01-basics/run-contract/recipe.toml |

@@ -12,10 +12,13 @@ Compose continuity plans, platform capsules, sites, phone surfaces, and optional
 
 - `anchor/cli/continuity`
 - `anchor/export/sim-run/cli/main/continuity`
+- `anchor/export/sim-run/site/android-root`
+- `anchor/export/sim-run/surface/phone`
+- `anchor/runtime-lib/sim-run/continuity-command-lib`
 
 ## Surfaces
 
-- `cli/sim-run`
+- `cli/continuity`
 
 ## Specimens
 

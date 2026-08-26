@@ -10,6 +10,7 @@ Store surprising observations and every successor by content identity while pres
 
 ## Anchors
 
+- `anchor/crate/physics-sweep-to-finding-recipe`
 - `anchor/crate/sim-lib-physics-findings`
 
 ## Specimens

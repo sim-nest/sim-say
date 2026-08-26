@@ -11,3 +11,4 @@ Projects independently selectable physics layer surfaces through the ordinary SI
 ## Anchors
 
 - `anchor/crate/sim-lib-physics-runtime`
+- `anchor/runtime-lib/sim-lib-physics-runtime/physics-runtime-lib`

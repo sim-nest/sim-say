@@ -10,6 +10,7 @@ Validate immutable boundaries, stores, declared ports, semantic time spans, orde
 
 ## Anchors
 
+- `anchor/crate/boundary-event`
 - `anchor/crate/sim-lib-physics-core`
 
 ## Specimens

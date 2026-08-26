@@ -8,10 +8,6 @@
 
 Realize the runtime sandbox contract with an anonymous root, network namespace, declared mounts, rlimits, bounded pipes, and proven process-tree cleanup.
 
-## Anchors
-
-- `anchor/crate/sim-platform-ubuntu-pc`
-
 ## Specimens
 
 - `spec-test/sim-platform/crates/sim-platform-ubuntu-pc/src/sandbox`

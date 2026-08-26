@@ -12,6 +12,10 @@ One disposable projection presents room cards, expedition identity, evidence, ob
 
 - `anchor/crate/sim-lib-view-worktable`
 
+## Surfaces
+
+- `view/sim-lib-view-worktable`
+
 ## Specimens
 
 - `spec-test/sim-web/crates/sim-lib-view-worktable/src/lib`

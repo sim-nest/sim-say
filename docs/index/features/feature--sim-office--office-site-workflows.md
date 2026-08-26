@@ -11,7 +11,6 @@ Run portable document, mail, Graph, SharePoint, and LibreOffice workflows over m
 ## Anchors
 
 - `anchor/crate/sim-lib-doc-site`
-- `anchor/crate/sim-lib-doc-store`
 - `anchor/crate/sim-lib-gantt`
 - `anchor/crate/sim-lib-mail`
 - `anchor/crate/sim-site-libreoffice`

@@ -8,10 +8,6 @@
 
 Compose exact quantities, freshness-bounded claims, questions, preparation options, and shopping drafts as pure data while meal choice and commerce remain impossible effects.
 
-## Anchors
-
-- `anchor/crate/sim-nest`
-
 ## Specimens
 
 - `recipe/sim-sdk/stewardship/taste-led-kitchen`

@@ -14,6 +14,7 @@ Load exact native, wasm, source, re-exported, and AOT artifacts through the run-
 - `anchor/runtime-lib/sim-run-loaders/loaded-native-lib`
 - `anchor/runtime-lib/sim-run-loaders/reexport-lib`
 - `anchor/runtime-lib/sim-run-loaders/source-lib`
+- `anchor/runtime-lib/sim-run/component-lib`
 
 ## Specimens
 

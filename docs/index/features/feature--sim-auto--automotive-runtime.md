@@ -36,7 +36,6 @@ Load bounded automotive diagnostics, vehicle information, parts, service orderin
 - `anchor/crate/sim-lib-auto-order`
 - `anchor/crate/sim-lib-auto-parts`
 - `anchor/crate/sim-lib-auto-vehicle`
-- `anchor/crate/sim-lib-auto-vendor`
 - `anchor/crate/sim-lib-view-bay`
 - `anchor/export/sim-auto/cli/main/auto`
 - `anchor/export/sim-auto/codec/lisp`

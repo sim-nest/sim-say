@@ -11,6 +11,7 @@ Bounded scalar, smooth multivariate, nonlinear, and linear least-squares methods
 ## Anchors
 
 - `anchor/crate/sim-lib-numbers-optimize`
+- `anchor/runtime-lib/sim-lib-numbers-optimize/optimize-lib`
 - `anchor/rustdoc/sim-lib-numbers-optimize/least-squares-plan`
 - `anchor/rustdoc/sim-lib-numbers-optimize/linear_least_squares`
 - `anchor/rustdoc/sim-lib-numbers-optimize/minimize_scalar`

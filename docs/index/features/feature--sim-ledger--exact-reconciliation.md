@@ -10,7 +10,6 @@ Enumerate bounded exact match candidates, preserve Mia's immutable set decisions
 
 ## Anchors
 
-- `anchor/crate/sim-ledger`
 - `anchor/rustdoc/sim-ledger/reconciliation`
 - `anchor/rustdoc/sim-ledger/reconciliation/generate_candidates`
 - `anchor/rustdoc/sim-ledger/reconciliation/verify_certificate`

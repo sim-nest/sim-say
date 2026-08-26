@@ -8,10 +8,6 @@
 
 A networkless conformance pilot composes all five current memo families through the disposable web worktable with fake model and device placements.
 
-## Anchors
-
-- `anchor/crate/sim-nest`
-
 ## Specimens
 
 - `recipe/sim-sdk/atelier/reversible-product`

@@ -10,7 +10,7 @@ Review semantic sweep plans before execution and retain sampling, partition, pla
 
 ## Anchors
 
-- `anchor/crate/sim-lib-physics-study`
+- `anchor/crate/physics-placement-sweep-recipe`
 
 ## Specimens
 

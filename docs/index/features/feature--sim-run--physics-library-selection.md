@@ -8,10 +8,6 @@
 
 Routes the physics verb through the ordinary host-library load session without embedding scientific behavior in the bootloader.
 
-## Anchors
-
-- `local/sim-run/anchor/bin/sim`
-
 ## Specimens
 
 - `spec-test/sim-run/crates/sim-run/tests/physics`

@@ -8,10 +8,6 @@
 
 Opt into pure conduct records or certified topology-backed conduct packages through direct canonical re-exports.
 
-## Anchors
-
-- `anchor/crate/sim-nest`
-
 ## Specimens
 
 - `spec-test/sim-sdk/tests/agent_conduct_exports`

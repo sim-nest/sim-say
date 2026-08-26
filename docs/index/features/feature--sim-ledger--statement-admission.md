@@ -10,7 +10,6 @@ Admit delimited bank exports through versioned profile data into exact, cutoff-f
 
 ## Anchors
 
-- `anchor/crate/sim-ledger`
 - `anchor/rustdoc/sim-ledger/statement`
 - `anchor/rustdoc/sim-ledger/statement/admit_statement`
 

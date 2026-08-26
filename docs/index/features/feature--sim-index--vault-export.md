@@ -8,6 +8,10 @@
 
 Load the public SIM Index, delegate complete vault projection and Markdown bundle encoding to their public owners, and materialize the resulting artifacts in one managed namespace.
 
+## Anchors
+
+- `anchor/export/xtask/codec/index-vault`
+
 ## Specimens
 
 - `spec-test/sim-tooling/src/index_vault_tests`

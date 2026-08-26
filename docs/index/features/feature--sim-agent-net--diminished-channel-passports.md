@@ -8,10 +8,6 @@
 
 Move expedition thoughts between surfaces with payload-free passports whose claim references, expiry, and grants can only diminish.
 
-## Anchors
-
-- `anchor/crate/sim-lib-agent`
-
 ## Specimens
 
 - `spec-test/sim-agent-net/crates/sim-lib-agent/src/atelier/channel`

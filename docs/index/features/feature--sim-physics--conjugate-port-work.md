@@ -11,6 +11,7 @@ Declare boundary-relative effort/flow pairs and audit continuous work per port w
 ## Anchors
 
 - `anchor/crate/sim-lib-physics-power`
+- `anchor/crate/switched-two-port`
 
 ## Specimens
 

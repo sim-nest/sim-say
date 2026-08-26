@@ -8,10 +8,6 @@
 
 Compose separate daily, weekly, monthly, and seasonal projections from minimum copied claims under strict time, card, reconciliation, and channel-disclosure ceilings.
 
-## Anchors
-
-- `anchor/crate/sim-nest`
-
 ## Specimens
 
 - `recipe/sim-sdk/stewardship/quiet-cadence`

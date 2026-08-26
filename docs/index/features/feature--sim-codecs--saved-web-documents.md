@@ -10,9 +10,10 @@ Interpret saved HTML, RSS 2.0, Atom 1.0, JSON Feed, and RFC 9309 robots bytes as
 
 ## Anchors
 
-- `anchor/crate/sim-codec-doc`
 - `anchor/crate/sim-codec-feed`
 - `anchor/crate/sim-codec-robots`
+- `anchor/export/sim-codec-feed/codec/feed`
+- `anchor/export/sim-codec-robots/codec/robots`
 
 ## Specimens
 

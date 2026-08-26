@@ -10,7 +10,8 @@ Admit only reviewed MIDI send, audio route open/close, and emergency-stop adapte
 
 ## Anchors
 
-- `anchor/crate/sim-lib-stream-host`
+- `anchor/export/sim-lib-stream-host/shape/device-effect`
+- `anchor/export/sim-lib-stream-host/shape/music-effect`
 
 ## Specimens
 

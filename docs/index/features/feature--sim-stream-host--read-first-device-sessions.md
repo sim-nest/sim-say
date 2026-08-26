@@ -8,13 +8,6 @@
 
 Separate observation authority from registered, bounded, named device effects through reachable session types and versioned provider manifests.
 
-## Anchors
-
-- `anchor/crate/sim-lib-stream-halo`
-- `anchor/crate/sim-lib-stream-host`
-- `anchor/crate/sim-lib-stream-viture`
-- `anchor/crate/sim-lib-stream-wristbridge`
-
 ## Specimens
 
 - `spec-test/sim-stream-host/src/device_tests`

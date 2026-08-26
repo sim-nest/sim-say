@@ -10,6 +10,7 @@ Refuse selection, ranking, sizing, and control inputs influenced by energy-deriv
 
 ## Anchors
 
+- `anchor/crate/physics-refused-selection-recipe`
 - `anchor/crate/sim-lib-physics-influence`
 
 ## Specimens

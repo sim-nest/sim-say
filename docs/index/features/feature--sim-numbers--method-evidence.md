@@ -11,6 +11,7 @@ Plan numerical work with validated limits and criterion-specific tolerances, the
 ## Anchors
 
 - `anchor/crate/sim-lib-numbers-method`
+- `anchor/runtime-lib/sim-lib-numbers-method/method-numbers-lib`
 - `anchor/rustdoc/sim-lib-numbers-core/real-scalar`
 - `anchor/rustdoc/sim-lib-numbers-method/method-evidence`
 - `anchor/rustdoc/sim-lib-numbers-method/method-plan`

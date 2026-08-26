@@ -13,7 +13,6 @@ Run caller-supplied classfile bytes, exact class, member, descriptor, and intege
 - `anchor/cli/jvm`
 - `anchor/export/sim-run/cli/main/jvm`
 - `anchor/runtime-lib/sim-run/jvm-cli-lib`
-- `local/sim-run/anchor/bin/sim`
 
 ## Surfaces
 

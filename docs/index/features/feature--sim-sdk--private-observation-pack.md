@@ -8,10 +8,6 @@
 
 Compose opt-in exact observations, explicit missingness and concurrency, sealed private storage, and reviewable export without medical inference or advice.
 
-## Anchors
-
-- `anchor/crate/sim-nest`
-
 ## Specimens
 
 - `recipe/sim-sdk/stewardship/private-observation`

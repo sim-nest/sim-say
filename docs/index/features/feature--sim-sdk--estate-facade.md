@@ -8,6 +8,23 @@
 
 Opt-in features re-export estate core, authoring, organ, projection, provider, and Surface crates without enabling private controller bindings by default.
 
-## Anchors
+## Specimens
 
-- `anchor/crate/sim-nest`
+- `spec-test/sim-sdk/src/estate_facade_tests`
+
+## Worked Example
+
+Specimen `spec-test/sim-sdk/src/estate_facade_tests` is checked by `cargo test`.
+
+Source `src/estate_facade_tests.rs`:
+
+```rust
+// conformance: the estate facade exposes portable identities without selecting a provider.
+
+#[test]
+fn estate_facade_preserves_portable_project_identity() {
+    let first = crate::estate::core::ProjectFingerprint::of(b"portable-estate");
+    let second = crate::estate::core::ProjectFingerprint::of(b"portable-estate");
+    assert_eq!(first, second);
+}
+```

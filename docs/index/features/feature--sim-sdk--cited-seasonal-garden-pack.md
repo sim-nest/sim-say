@@ -8,10 +8,6 @@
 
 Compose independent garden Shapes, dated jurisdictional guidance, optional weather evidence, calendar projections, exact harvest quantities, and copied claims without turning uncertain evidence into instructions.
 
-## Anchors
-
-- `anchor/crate/sim-nest`
-
 ## Specimens
 
 - `recipe/sim-sdk/stewardship/cited-seasonal-garden`

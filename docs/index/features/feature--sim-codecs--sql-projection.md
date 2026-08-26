@@ -11,6 +11,8 @@ Lower admitted relational plans and migrations through sealed SQLite and Postgre
 ## Anchors
 
 - `anchor/crate/sim-codec-sql`
+- `anchor/export/sim-codec-sql/codec/sql-ddl`
+- `anchor/export/sim-codec-sql/codec/sql-statement`
 
 ## Specimens
 

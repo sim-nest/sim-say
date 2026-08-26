@@ -10,6 +10,7 @@ Refine independent numerical and model axes, retain signed comparisons, and issu
 
 ## Anchors
 
+- `anchor/crate/physics-certified-refinement-recipe`
 - `anchor/crate/sim-lib-physics-proof`
 
 ## Specimens

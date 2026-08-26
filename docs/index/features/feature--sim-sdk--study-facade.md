@@ -11,3 +11,27 @@ Expose the canonical study lifecycle, staged design, report graph, selection, an
 ## Anchors
 
 - `anchor/rustdoc/sim-nest/study`
+
+## Specimens
+
+- `spec-test/sim-sdk/src/study_facade_tests`
+
+## Worked Example
+
+Specimen `spec-test/sim-sdk/src/study_facade_tests` is checked by `cargo test`.
+
+Source `src/study_facade_tests.rs`:
+
+```rust
+// conformance: the SDK study feature re-exports the canonical bounded command vocabulary.
+
+#[test]
+fn study_facade_preserves_execution_and_write_boundaries() {
+    use crate::study::StudyVerb;
+
+    assert_eq!(StudyVerb::parse("run"), Some(StudyVerb::Run));
+    assert!(StudyVerb::Run.may_execute());
+    assert!(!StudyVerb::Report.may_execute());
+    assert!(!StudyVerb::Plan.may_write(false));
+}
+```

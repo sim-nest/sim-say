@@ -8,10 +8,6 @@
 
 Arbitrate worn prompts through one visible body-level slot with quiet hours, coalescing, interruption budgets, and explicit evidence.
 
-## Anchors
-
-- `anchor/crate/sim-lib-view-device`
-
 ## Specimens
 
 - `spec-test/sim-web/crates/sim-lib-view-device/src/attention`

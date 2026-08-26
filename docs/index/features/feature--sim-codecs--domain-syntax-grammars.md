@@ -22,360 +22,557 @@ Read and write binary, bitwise, chat, config, document, index, and MCP grammar s
 
 ## Specimens
 
-- `spec-test/sim-codecs/crates/sim-codec-doc/tests/conformance`
 - `spec-test/sim-codecs/crates/sim-codec-json/src/tests`
 
 ## Worked Example
 
-Specimen `spec-test/sim-codecs/crates/sim-codec-doc/tests/conformance` is checked by `cargo test`.
+Specimen `spec-test/sim-codecs/crates/sim-codec-json/src/tests` is checked by `cargo test`.
 
-Source `crates/sim-codec-doc/tests/conformance.rs`:
+Source `crates/sim-codec-json/src/tests.rs`:
 
 ```rust
-use std::collections::BTreeSet;
+use std::sync::Arc;
 
-use sim_codec_doc::{
-    AsciiDocBackend, AttributeEnvelope, BackendStatus, DialectMarkdownBackend, Inline,
-    LatexBackend, LinkDialect, MarkdownBackend, MarkdownDialect, MarkupBackend, MarkupBlock,
-    MarkupDecodeOptions, MarkupDoc, MarkupEncodeOptions, TypstBackend, backend_catalog,
+// conformance: domain syntax grammars round-trip JSON values.
+
+use serde_json::{Value as JsonValue, json};
+use sim_codec::{
+    CodecRuntime, DecodeBudget, DecodeLimits, DecodePosition, DecodedForm, Input,
+    decode_datum_with_codec, decode_default_with_codec, decode_with_codec,
+    decode_with_codec_and_limits, encode_datum_with_codec, encode_tree_with_codec,
+    encode_with_codec,
 };
-use sim_kernel::Expr;
+use sim_kernel::{
+    Datum, DefaultFactory, EagerPolicy, EncodeOptions, Expr, LocatedExpr, LocatedExprTree,
+    NumberLiteral, Origin, QuoteMode, ReadPolicy, SourceId, Span, Symbol, Trivia,
+};
 
-struct Fixture {
-    id: &'static str,
-    backend: Box<dyn MarkupBackend>,
-    simple: &'static str,
-    math_table: &'static str,
-    raw_preserve: &'static str,
-}
+use crate::helpers::base64_encode;
+use crate::{
+    JsonCodecLib, JsonTree, expr_to_json, json_escape, json_to_expr, json_to_located_expr,
+    located_expr_to_json, parse_json, parse_json_with_limits, render_json,
+};
 
-fn fixtures() -> Vec<Fixture> {
-    vec![
-        Fixture {
-            id: "asciidoc",
-            backend: Box::new(AsciiDocBackend),
-            simple: include_str!("fixtures/simple.adoc"),
-            math_table: include_str!("fixtures/math-table.adoc"),
-            raw_preserve: include_str!("fixtures/raw-preserve.adoc"),
-        },
-        Fixture {
-            id: "latex",
-            backend: Box::new(LatexBackend),
-            simple: include_str!("fixtures/simple.tex"),
-            math_table: include_str!("fixtures/math-table.tex"),
-            raw_preserve: include_str!("fixtures/raw-preserve.tex"),
-        },
-        Fixture {
-            id: "markdown",
-            backend: Box::new(MarkdownBackend),
-            simple: include_str!("fixtures/simple.md"),
-            math_table: include_str!("fixtures/math-table.md"),
-            raw_preserve: include_str!("fixtures/raw-preserve.md"),
-        },
-        Fixture {
-            id: "typst",
-            backend: Box::new(TypstBackend),
-            simple: include_str!("fixtures/simple.typ"),
-            math_table: include_str!("fixtures/math-table.typ"),
-            raw_preserve: include_str!("fixtures/raw-preserve.typ"),
-        },
-    ]
+fn cx() -> sim_kernel::Cx {
+    let mut cx = sim_kernel::Cx::new(
+        Arc::new(EagerPolicy),
+        Arc::new(DefaultFactory),
+        sim_kernel::HandleSeed::new(1),
+    );
+    sim_test_support::register_core_classes(&mut cx);
+    let lib = JsonCodecLib::new(cx.registry_mut().fresh_codec_id());
+    cx.load_lib(&lib).unwrap();
+    cx
 }
 
 #[test]
-fn all_implemented_backends_roundtrip_simple_fixture() {
-    assert_fixture_coverage();
-    for fixture in fixtures() {
-        assert_semantic_roundtrip(fixture.id, fixture.backend.as_ref(), fixture.simple);
-    }
+fn codec_registers() {
+    let cx = cx();
+    assert!(
+        cx.registry()
+            .codec_by_symbol(&Symbol::qualified("codec", "json"))
+            .is_some()
+    );
 }
 
-#[test]
-fn all_implemented_backends_roundtrip_math_table_fixture() {
-    assert_fixture_coverage();
-    for fixture in fixtures() {
-        assert_semantic_roundtrip(fixture.id, fixture.backend.as_ref(), fixture.math_table);
-    }
+fn codec_id(cx: &mut sim_kernel::Cx, symbol: &Symbol) -> sim_kernel::CodecId {
+    cx.resolve_codec(symbol)
+        .unwrap()
+        .object()
+        .as_any()
+        .downcast_ref::<CodecRuntime>()
+        .unwrap()
+        .id
 }
 
-#[test]
-fn raw_preserve_fixture_names_every_loss() {
-    assert_fixture_coverage();
-    for fixture in fixtures() {
-        let preserve = MarkupDecodeOptions {
-            preserve_source: false,
-            preserve_raw: true,
-        };
-        let (_doc, fidelity) = fixture
-            .backend
-            .decode(fixture.raw_preserve, &preserve)
-            .unwrap_or_else(|err| panic!("{} raw preserve fixture failed: {err}", fixture.id));
-        assert!(
-            fidelity.dropped.is_empty(),
-            "{} should preserve raw fragments when requested: {:?}",
-            fixture.id,
-            fidelity.dropped
-        );
-        assert!(
-            !fidelity.preserved_raw.is_empty(),
-            "{} should report preserved raw fragments",
-            fixture.id
-        );
-
-        let report = MarkupDecodeOptions {
-            preserve_source: false,
-            preserve_raw: false,
-        };
-        let (_doc, fidelity) = fixture
-            .backend
-            .decode(fixture.raw_preserve, &report)
-            .unwrap_or_else(|err| panic!("{} raw report fixture failed: {err}", fixture.id));
-        assert!(
-            !fidelity.dropped.is_empty(),
-            "{} should report raw-fragment losses",
-            fixture.id
-        );
-        for loss in &fidelity.dropped {
-            assert!(
-                !loss.path.trim().is_empty(),
-                "{} reported an unnamed raw loss",
-                fixture.id
-            );
-            assert!(
-                !loss.reason.trim().is_empty(),
-                "{} reported a raw loss without a reason",
-                fixture.id
-            );
+fn assert_codec_error(err: sim_kernel::Error, expected: sim_kernel::CodecId, needle: &str) {
+    match err {
+        sim_kernel::Error::CodecError { codec, message } => {
+            assert_eq!(codec, expected);
+            assert_ne!(codec, sim_kernel::CodecId(0));
+            assert!(message.contains(needle), "{message}");
         }
+        other => panic!("unexpected error {other:?}"),
     }
 }
 
-fn assert_semantic_roundtrip(id: &str, backend: &dyn MarkupBackend, source: &str) {
-    let decode_opts = MarkupDecodeOptions {
-        preserve_source: false,
-        preserve_raw: true,
-    };
-    let (doc, decode_fidelity) = backend
-        .decode(source, &decode_opts)
-        .unwrap_or_else(|err| panic!("{id} fixture decode failed: {err}"));
-    assert!(
-        decode_fidelity.dropped.is_empty(),
-        "{id} fixture decode dropped semantic content: {:?}",
-        decode_fidelity.dropped
-    );
+#[test]
+fn invalid_utf8_input_reports_json_codec_id() {
+    let mut cx = cx();
+    let symbol = Symbol::qualified("codec", "json");
+    let expected = codec_id(&mut cx, &symbol);
 
-    let encode_opts = MarkupEncodeOptions {
-        fail_on_loss: true,
-        preserve_raw: true,
-    };
-    let (encoded, encode_fidelity) = backend
-        .encode(&doc, &encode_opts)
-        .unwrap_or_else(|err| panic!("{id} fixture encode failed: {err}"));
-    assert!(
-        encode_fidelity.dropped.is_empty(),
-        "{id} fixture encode dropped semantic content: {:?}",
-        encode_fidelity.dropped
-    );
+    let err = decode_with_codec(
+        &mut cx,
+        &symbol,
+        Input::Bytes(vec![0xff]),
+        ReadPolicy::default(),
+    )
+    .unwrap_err();
 
-    let (decoded, second_fidelity) = backend
-        .decode(&encoded, &decode_opts)
-        .unwrap_or_else(|err| panic!("{id} encoded fixture decode failed: {err}"));
-    assert!(
-        second_fidelity.dropped.is_empty(),
-        "{id} encoded fixture decode dropped semantic content: {:?}",
-        second_fidelity.dropped
-    );
-    assert_eq!(semantic_doc(decoded), semantic_doc(doc), "{id} round-trip");
-}
-
-fn assert_fixture_coverage() {
-    let implemented: BTreeSet<String> = backend_catalog()
-        .into_iter()
-        .filter(|info| info.status == BackendStatus::Implemented && info.can_read && info.can_write)
-        .map(|info| info.id.to_string())
-        .collect();
-    let fixture_ids: BTreeSet<String> = fixtures()
-        .into_iter()
-        .map(|fixture| fixture.id.to_owned())
-        .collect();
-    assert_eq!(fixture_ids, implemented);
-}
-
-fn semantic_doc(mut doc: MarkupDoc) -> MarkupDoc {
-    doc.source = None;
-    doc.blocks = doc.blocks.into_iter().map(block_without_span).collect();
-    doc
+    assert_codec_error(err, expected, "not valid UTF-8");
 }
 
 #[test]
-fn markdown_dialect_matrix_roundtrips_attrs_and_links() {
-    let mut attrs = std::collections::BTreeMap::new();
-    attrs.insert("empty".to_owned(), Expr::String(String::new()));
-    attrs.insert(
-        "quote\"unicode".to_owned(),
-        Expr::String("räksmörgås\\\nline".to_owned()),
-    );
-    attrs.insert(
-        "values".to_owned(),
-        Expr::List(vec![
-            Expr::Nil,
-            Expr::Bool(true),
-            Expr::String("[]|()".to_owned()),
-        ]),
-    );
-    let doc = MarkupDoc {
-        title: None,
-        blocks: vec![MarkupBlock::Paragraph {
-            content: vec![Inline::Link {
-                label: vec![Inline::Text("label | [] () \\ 世界".to_owned())],
-                target: "target-unicode-世界".to_owned(),
-            }],
-            span: None,
-        }],
-        attrs,
-        source: None,
-    };
-    for attributes in [
-        AttributeEnvelope::JsonFrontMatter,
-        AttributeEnvelope::DoubleColon,
-    ] {
-        for links in [LinkDialect::CommonMark, LinkDialect::WikiLink] {
-            let backend = DialectMarkdownBackend::new(MarkdownDialect {
-                attributes,
-                links,
-                ..MarkdownDialect::default()
-            })
-            .unwrap();
-            let (encoded, fidelity) = backend
-                .encode(&doc, &MarkupEncodeOptions::default())
-                .unwrap();
-            assert!(fidelity.dropped.is_empty());
-            let (decoded, fidelity) = backend
-                .decode(
-                    &encoded,
-                    &MarkupDecodeOptions {
-                        preserve_source: false,
-                        preserve_raw: true,
-                    },
-                )
-                .unwrap();
-            assert!(fidelity.dropped.is_empty());
-            assert_eq!(decoded.attrs, doc.attrs);
-            assert_eq!(first_link(&decoded), first_link(&doc));
-        }
-    }
-}
-
-fn first_link(doc: &MarkupDoc) -> (String, String) {
-    let MarkupBlock::Paragraph { content, .. } = &doc.blocks[0] else {
-        panic!("expected paragraph")
-    };
-    let Inline::Link { label, target } = &content[0] else {
-        panic!("expected link")
-    };
-    let label = label
-        .iter()
-        .map(|inline| match inline {
-            Inline::Text(text) => text.as_str(),
-            _ => panic!("expected plain link label"),
-        })
-        .collect();
-    (label, target.clone())
-}
-
-#[test]
-fn markdown_default_is_byte_identical_and_dialect_errors_are_typed() {
-    let source = include_str!("fixtures/simple.md");
-    let opts = MarkupDecodeOptions {
-        preserve_source: false,
-        preserve_raw: true,
-    };
-    let (doc, old_fidelity) = MarkdownBackend.decode(source, &opts).unwrap();
-    let configured = DialectMarkdownBackend::new(MarkdownDialect::default()).unwrap();
-    let (same_doc, new_fidelity) = configured.decode(source, &opts).unwrap();
-    assert_eq!(doc, same_doc);
-    assert_eq!(old_fidelity, new_fidelity);
+fn json_escape_returns_a_json_string_fragment() {
     assert_eq!(
-        MarkdownBackend
-            .encode(&doc, &MarkupEncodeOptions::default())
-            .unwrap(),
-        configured
-            .encode(&doc, &MarkupEncodeOptions::default())
-            .unwrap()
+        json_escape("quote\" slash\\ lf\n cr\r tab\t back\u{08} form\u{0c} nul\u{0}"),
+        "quote\\\" slash\\\\ lf\\n cr\\r tab\\t back\\b form\\f nul\\u0000"
     );
+    assert_eq!(json_escape("plain utf8 cafe"), "plain utf8 cafe");
+}
 
-    let json = DialectMarkdownBackend::new(MarkdownDialect {
-        attributes: AttributeEnvelope::JsonFrontMatter,
-        ..MarkdownDialect::default()
-    })
-    .unwrap();
-    assert!(
-        json.decode(
-            "---json\n{\"x\":{\"$expr\":\"nil\"},\"x\":{\"$expr\":\"nil\"}}\n---\nbody",
-            &opts
+#[test]
+fn public_tree_and_runtime_share_the_frozen_corpus() {
+    let mut cx = cx();
+    let symbol = Symbol::qualified("codec", "json");
+    let codec = codec_id(&mut cx, &symbol);
+    let corpus = [
+        Expr::Nil,
+        Expr::Bool(true),
+        Expr::String("cafe\njson".to_owned()),
+        Expr::Bytes(vec![0, 127, 255]),
+        Expr::List(vec![Expr::Bool(false), Expr::String("x".to_owned())]),
+        Expr::Map(vec![(Expr::String("key".to_owned()), Expr::Nil)]),
+    ];
+
+    for expr in corpus {
+        let runtime = encode_with_codec(&mut cx, &symbol, &expr, Default::default())
+            .unwrap()
+            .into_text()
+            .unwrap();
+        let tree = parse_json(codec, &runtime).unwrap();
+        assert_eq!(render_json(codec, &tree).unwrap(), runtime);
+        let decoded = decode_with_codec(
+            &mut cx,
+            &symbol,
+            Input::Text(render_json(codec, &tree).unwrap()),
+            ReadPolicy::default(),
         )
-        .is_err()
-    );
-    let wiki = DialectMarkdownBackend::new(MarkdownDialect {
-        links: LinkDialect::WikiLink,
-        ..MarkdownDialect::default()
-    })
-    .unwrap();
-    for malformed in ["[[", "[[]]", "[[bad\0link]]", "[[bad\\q]]"] {
-        assert!(
-            wiki.decode(malformed, &opts).is_err(),
-            "accepted {malformed:?}"
-        );
+        .unwrap();
+        assert_eq!(decoded, expr);
     }
 }
 
-fn block_without_span(block: MarkupBlock) -> MarkupBlock {
-    match block {
-        MarkupBlock::Heading {
-            level, text, id, ..
-        } => MarkupBlock::Heading {
-            level,
-            text,
-            id,
-            span: None,
+#[test]
+fn public_tree_is_dependency_neutral_and_bounded() {
+    let codec = sim_kernel::CodecId(41);
+    let tree = JsonTree::Object(vec![
+        ("answer".to_owned(), JsonTree::Number("42".to_owned())),
+        (
+            "values".to_owned(),
+            JsonTree::Array(vec![JsonTree::Null, JsonTree::Bool(true)]),
+        ),
+    ]);
+    assert_eq!(
+        parse_json(codec, &render_json(codec, &tree).unwrap()).unwrap(),
+        tree
+    );
+
+    let limits = DecodeLimits {
+        max_collection_len: 1,
+        ..DecodeLimits::default()
+    };
+    let error = parse_json_with_limits(codec, "[null,true]", limits).unwrap_err();
+    assert!(
+        matches!(error, sim_kernel::Error::CodecError { message, .. } if message.contains("collection length"))
+    );
+}
+
+#[test]
+fn public_tree_owns_f64_number_validation_and_rendering() {
+    let codec = sim_kernel::CodecId(42);
+    let number = JsonTree::number_from_f64(codec, 2.0).unwrap();
+    assert_eq!(number.number_as_f64(codec).unwrap(), 2.0);
+    assert_eq!(render_json(codec, &number).unwrap(), "2.0");
+    assert!(JsonTree::number_from_f64(codec, f64::NAN).is_err());
+    assert!(JsonTree::number_from_f64(codec, f64::INFINITY).is_err());
+}
+
+#[test]
+fn call_roundtrips() {
+    let mut cx = cx();
+    let expr = Expr::Call {
+        operator: Box::new(Expr::Symbol(Symbol::new("+"))),
+        args: vec![
+            Expr::Number(NumberLiteral {
+                domain: Symbol::qualified("numbers", "f64"),
+                canonical: "1".to_owned(),
+            }),
+            Expr::Number(NumberLiteral {
+                domain: Symbol::qualified("numbers", "f64"),
+                canonical: "2".to_owned(),
+            }),
+        ],
+    };
+
+    assert_eq!(sim_test_support::roundtrip(&mut cx, "json", &expr), expr);
+}
+
+#[test]
+fn full_expr_surface_roundtrips() {
+    let mut cx = cx();
+    let expr = Expr::Annotated {
+        expr: Box::new(Expr::Extension {
+            tag: Symbol::qualified("demo", "tag"),
+            payload: Box::new(Expr::Map(vec![
+                (
+                    Expr::Symbol(Symbol::new("x")),
+                    Expr::Vector(vec![
+                        Expr::Bool(true),
+                        Expr::Bytes(vec![1, 2, 3, 4]),
+                        Expr::Quote {
+                            mode: QuoteMode::Syntax,
+                            expr: Box::new(Expr::Infix {
+                                operator: Symbol::new("+"),
+                                left: Box::new(Expr::Prefix {
+                                    operator: Symbol::new("-"),
+                                    arg: Box::new(Expr::Number(NumberLiteral {
+                                        domain: Symbol::qualified("numbers", "f64"),
+                                        canonical: "4".to_owned(),
+                                    })),
+                                }),
+                                right: Box::new(Expr::Postfix {
+                                    operator: Symbol::new("!"),
+                                    arg: Box::new(Expr::Symbol(Symbol::new("n"))),
+                                }),
+                            }),
+                        },
+                    ]),
+                ),
+                (
+                    Expr::String("set".to_owned()),
+                    Expr::Set(vec![
+                        Expr::String("b".to_owned()),
+                        Expr::String("a".to_owned()),
+                    ]),
+                ),
+            ])),
+        }),
+        annotations: vec![
+            (
+                Symbol::qualified("meta", "origin"),
+                Expr::String("test".to_owned()),
+            ),
+            (
+                Symbol::new("count"),
+                Expr::Number(NumberLiteral {
+                    domain: Symbol::qualified("numbers", "f64"),
+                    canonical: "2".to_owned(),
+                }),
+            ),
+        ],
+    };
+
+    let decoded = sim_test_support::roundtrip(&mut cx, "json", &expr);
+    assert!(decoded.canonical_eq(&expr));
+}
+
+#[test]
+fn datum_roundtrip_preserves_content_id() {
+    let mut cx = cx();
+    let datum = sample_datum();
+    let content_id = datum.content_id().unwrap();
+
+    let output = encode_datum_with_codec(
+        &mut cx,
+        &Symbol::qualified("codec", "json"),
+        &datum,
+        EncodeOptions::default(),
+    )
+    .unwrap();
+    let decoded = decode_datum_with_codec(
+        &mut cx,
+        &Symbol::qualified("codec", "json"),
+        Input::Text(output.into_text().unwrap()),
+        Default::default(),
+    )
+    .unwrap();
+
+    assert_eq!(decoded, datum);
+    assert_eq!(decoded.content_id().unwrap(), content_id);
+}
+
+#[test]
+fn default_decode_returns_datum_even_in_eval_position() {
+    let mut cx = cx();
+    let datum = sample_datum();
+    let output = encode_datum_with_codec(
+        &mut cx,
+        &Symbol::qualified("codec", "json"),
+        &datum,
+        EncodeOptions::default(),
+    )
+    .unwrap();
+
+    let decoded = decode_default_with_codec(
+        &mut cx,
+        &Symbol::qualified("codec", "json"),
+        Input::Text(output.into_text().unwrap()),
+        Default::default(),
+        DecodePosition::Eval,
+    )
+    .unwrap();
+
+    assert_eq!(decoded, DecodedForm::Datum(datum));
+}
+
+#[test]
+fn slash_named_symbols_round_trip_structurally() {
+    // The division operator is the symbol `/`; flattening operators through
+    // `to_string()`/`split_once('/')` mangled it to `qualified("", "")`. The
+    // structured symbol form must round-trip it (and every other symbol-bearing
+    // position) exactly.
+    let mut cx = cx();
+    let expr = Expr::Annotated {
+        expr: Box::new(Expr::Extension {
+            tag: Symbol::new("/"),
+            payload: Box::new(Expr::Infix {
+                operator: Symbol::new("/"),
+                left: Box::new(Expr::Prefix {
+                    operator: Symbol::new("/"),
+                    arg: Box::new(Expr::Local(Symbol::new("/"))),
+                }),
+                right: Box::new(Expr::Postfix {
+                    operator: Symbol::qualified("ops", "/"),
+                    arg: Box::new(Expr::Symbol(Symbol::new("/"))),
+                }),
+            }),
+        }),
+        annotations: vec![(Symbol::new("/"), Expr::String("v".to_owned()))],
+    };
+    let decoded = sim_test_support::roundtrip(&mut cx, "json", &expr);
+    assert!(decoded.canonical_eq(&expr), "got {decoded:?}");
+
+    // Direct encode/decode also round-trips the bare division operator.
+    let infix = Expr::Infix {
+        operator: Symbol::new("/"),
+        left: Box::new(Expr::Symbol(Symbol::new("a"))),
+        right: Box::new(Expr::Symbol(Symbol::new("b"))),
+    };
+    let json = expr_to_json(&infix);
+    let back = json_to_expr(
+        sim_kernel::CodecId(1),
+        &json,
+        &mut DecodeBudget::new(DecodeLimits::default()),
+        0,
+    )
+    .unwrap();
+    assert_eq!(back, infix);
+}
+
+#[test]
+fn compatibility_string_operator_still_decodes() {
+    // Old payloads encoded operators/tags as bare strings; decode must remain
+    // backward compatible with that flattened form.
+    let compatibility_form = json!({
+        "$expr": "infix",
+        "operator": "+",
+        "left": { "$expr": "symbol", "name": "a" },
+        "right": { "$expr": "symbol", "name": "b" },
+    });
+    let decoded = json_to_expr(
+        sim_kernel::CodecId(1),
+        &compatibility_form,
+        &mut DecodeBudget::new(DecodeLimits::default()),
+        0,
+    )
+    .unwrap();
+    assert_eq!(
+        decoded,
+        Expr::Infix {
+            operator: Symbol::new("+"),
+            left: Box::new(Expr::Symbol(Symbol::new("a"))),
+            right: Box::new(Expr::Symbol(Symbol::new("b"))),
+        }
+    );
+}
+
+#[test]
+fn bytes_use_base64() {
+    let json = expr_to_json(&Expr::Bytes(vec![0xfb, 0xef]));
+    assert_eq!(json["base64"], JsonValue::String("++8=".to_owned()));
+    assert_eq!(
+        json_to_expr(
+            sim_kernel::CodecId(1),
+            &json,
+            &mut DecodeBudget::new(DecodeLimits::default()),
+            0,
+        )
+        .unwrap(),
+        Expr::Bytes(vec![0xfb, 0xef])
+    );
+}
+
+#[test]
+fn base64_rejects_noncanonical_padding() {
+    use crate::helpers::base64_decode;
+    let codec = sim_kernel::CodecId(1);
+    for bad in ["AA=A", "AA==AAAA", "=AAA", "A=AA", "AAAA=AAA"] {
+        assert!(
+            base64_decode(codec, bad).is_err(),
+            "accepted bad padding: {bad}"
+        );
+    }
+    // Canonical encodings still decode.
+    assert_eq!(base64_decode(codec, "Zm9v").unwrap(), b"foo");
+    assert_eq!(base64_decode(codec, "Zg==").unwrap(), b"f");
+}
+
+fn sample_datum() -> Datum {
+    Datum::Map(vec![
+        (
+            Datum::Symbol(Symbol::new("name")),
+            Datum::String("json".to_owned()),
+        ),
+        (
+            Datum::Symbol(Symbol::new("payload")),
+            Datum::Vector(vec![Datum::Bool(true), Datum::Bytes(vec![0xfb, 0xef])]),
+        ),
+    ])
+}
+
+#[test]
+fn unknown_tags_fail() {
+    let err = json_to_expr(
+        sim_kernel::CodecId(7),
+        &json!({ "$expr": "mystery" }),
+        &mut DecodeBudget::new(DecodeLimits::default()),
+        0,
+    )
+    .unwrap_err();
+    match err {
+        sim_kernel::Error::CodecError { codec, message } => {
+            assert_eq!(codec, sim_kernel::CodecId(7));
+            assert!(message.contains("unknown expr tag mystery"));
+        }
+        other => panic!("unexpected error {other:?}"),
+    }
+}
+
+#[test]
+fn located_expr_roundtrips_with_origin() {
+    let located = LocatedExpr {
+        expr: Expr::String("hello".to_owned()),
+        origin: Some(Origin {
+            codec: sim_kernel::CodecId(9),
+            source: SourceId("test.lisp".to_owned()),
+            span: Span { start: 3, end: 8 },
+            trivia: vec![
+                Trivia::Whitespace(" ".to_owned()),
+                Trivia::LineComment("; hi".to_owned()),
+            ],
+        }),
+    };
+
+    let value = located_expr_to_json(&located, true);
+    let decoded = json_to_located_expr(
+        sim_kernel::CodecId(9),
+        &value,
+        &mut DecodeBudget::new(DecodeLimits::default()),
+        0,
+    )
+    .unwrap();
+    assert_eq!(decoded, located);
+}
+
+#[test]
+fn json_decode_rejects_excessive_collection_len() {
+    let mut cx = cx();
+    let limits = DecodeLimits {
+        max_collection_len: 1,
+        ..DecodeLimits::default()
+    };
+    let err = decode_with_codec_and_limits(
+        &mut cx,
+        &Symbol::qualified("codec", "json"),
+        Input::Text(
+            "{\"$expr\":\"list\",\"items\":[{\"$expr\":\"nil\"},{\"$expr\":\"nil\"}]}".to_owned(),
+        ),
+        Default::default(),
+        limits,
+    )
+    .unwrap_err();
+    assert!(
+        matches!(err, sim_kernel::Error::CodecError { message, .. } if message.contains("collection length"))
+    );
+}
+
+#[test]
+fn json_decode_rejects_excessive_depth() {
+    let mut cx = cx();
+    let mut wrapped = "{\"$expr\":\"nil\"}".to_owned();
+    for _ in 0..10 {
+        wrapped = format!("{{\"$expr\":\"list\",\"items\":[{wrapped}]}}");
+    }
+    let limits = DecodeLimits {
+        max_depth: 4,
+        ..DecodeLimits::default()
+    };
+    let err = decode_with_codec_and_limits(
+        &mut cx,
+        &Symbol::qualified("codec", "json"),
+        Input::Text(wrapped),
+        Default::default(),
+        limits,
+    )
+    .unwrap_err();
+    assert!(
+        matches!(err, sim_kernel::Error::CodecError { message, .. } if message.contains("recursion depth"))
+    );
+}
+
+#[test]
+fn json_decode_rejects_excessive_blob_bytes() {
+    let mut cx = cx();
+    let payload = base64_encode(&[0u8; 32]);
+    let limits = DecodeLimits {
+        max_blob_bytes: 8,
+        ..DecodeLimits::default()
+    };
+    let err = decode_with_codec_and_limits(
+        &mut cx,
+        &Symbol::qualified("codec", "json"),
+        Input::Text(format!("{{\"$expr\":\"bytes\",\"base64\":\"{payload}\"}}")),
+        Default::default(),
+        limits,
+    )
+    .unwrap_err();
+    assert!(
+        matches!(err, sim_kernel::Error::CodecError { message, .. } if message.contains("blob bytes"))
+    );
+}
+
+#[test]
+fn malformed_tree_encode_returns_error() {
+    let mut cx = cx();
+    let tree = LocatedExprTree {
+        expr: Expr::Call {
+            operator: Box::new(Expr::Symbol(Symbol::new("f"))),
+            args: vec![Expr::Bool(true)],
         },
-        MarkupBlock::Paragraph { content, .. } => MarkupBlock::Paragraph {
-            content,
-            span: None,
+        origin: None,
+        children: vec![LocatedExprTree::without_children(
+            Expr::Symbol(Symbol::new("f")),
+            None,
+        )],
+    };
+
+    let err = encode_tree_with_codec(
+        &mut cx,
+        &Symbol::qualified("codec", "json"),
+        &tree,
+        EncodeOptions {
+            lossless_origin: true,
+            ..EncodeOptions::default()
         },
-        MarkupBlock::CodeBlock { lang, code, .. } => MarkupBlock::CodeBlock {
-            lang,
-            code,
-            span: None,
-        },
-        MarkupBlock::MathBlock { source, .. } => MarkupBlock::MathBlock { source, span: None },
-        MarkupBlock::Quote { blocks, .. } => MarkupBlock::Quote {
-            blocks: blocks.into_iter().map(block_without_span).collect(),
-            span: None,
-        },
-        MarkupBlock::List { ordered, items, .. } => MarkupBlock::List {
-            ordered,
-            items: items
-                .into_iter()
-                .map(|item| item.into_iter().map(block_without_span).collect())
-                .collect(),
-            span: None,
-        },
-        MarkupBlock::Table { header, rows, .. } => MarkupBlock::Table {
-            header,
-            rows,
-            span: None,
-        },
-        MarkupBlock::Figure { src, caption, .. } => MarkupBlock::Figure {
-            src,
-            caption,
-            span: None,
-        },
-        MarkupBlock::Raw { backend, text, .. } => MarkupBlock::Raw {
-            backend,
-            text,
-            span: None,
-        },
+    )
+    .unwrap_err();
+    match err {
+        sim_kernel::Error::CodecError { message, .. } => {
+            assert!(message.contains("call tree expected 2 children"));
+        }
+        other => panic!("unexpected error {other:?}"),
     }
 }
 ```

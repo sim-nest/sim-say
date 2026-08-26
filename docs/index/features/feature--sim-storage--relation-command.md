@@ -12,6 +12,7 @@ Discover and operate loaded relational sites through named schemas, migrations, 
 
 - `anchor/crate/sim-lib-relation-cli`
 - `anchor/export/sim-lib-relation-cli/cli/main/relation`
+- `anchor/runtime-lib/sim-lib-relation-cli/relation-command-lib`
 
 ## Specimens
 

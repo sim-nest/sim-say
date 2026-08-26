@@ -11,8 +11,13 @@ Project canonical search, ranking, capture, selector, fidelity, policy, and offi
 ## Anchors
 
 - `anchor/crate/sim-lib-view-search`
+- `anchor/export/sim-lib-view-search/view-search-audit`
 - `anchor/rustdoc/sim-lib-view-search/render`
 - `anchor/rustdoc/sim-lib-view-search/search_audit_surface_id`
+
+## Surfaces
+
+- `view/sim-lib-view-search`
 
 ## Specimens
 

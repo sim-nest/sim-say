@@ -12,6 +12,11 @@ Render and control a complete silent-capable phone interaction from the authorit
 
 - `anchor/crate/sim-lib-view-continuity-phone`
 
+## Surfaces
+
+- `view-edit/sim-lib-view-continuity-phone`
+- `view/sim-lib-view-continuity-phone`
+
 ## Specimens
 
 - `spec-test/sim-web/crates/sim-lib-view-continuity-phone/src/tests`

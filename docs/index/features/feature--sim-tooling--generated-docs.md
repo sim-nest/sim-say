@@ -25,7 +25,6 @@ Generate repo contracts, feature maps, card indexes, index fragments and claim c
 ## Specimens
 
 - `spec-test/sim-tooling/src/index_render_tests`
-- `spec-test/sim-tooling/src/index_vault_write_tests`
 - `spec-test/sim-tooling/src/repo_contract_tests`
 
 ## Worked Example

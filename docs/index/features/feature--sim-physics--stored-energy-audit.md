@@ -10,6 +10,7 @@ Evaluate endpoint stores independently and preserve typed residual and uncertain
 
 ## Anchors
 
+- `anchor/crate/physics-stored-energy-recipe`
 - `anchor/crate/sim-lib-physics-audit`
 
 ## Specimens

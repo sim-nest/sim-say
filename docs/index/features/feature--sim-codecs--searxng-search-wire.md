@@ -11,6 +11,7 @@ Translate generic search queries and caller-supplied SearXNG config and JSON sea
 ## Anchors
 
 - `anchor/crate/sim-codec-search-searxng`
+- `anchor/export/sim-codec-search-searxng/codec/search-searxng`
 
 ## Specimens
 

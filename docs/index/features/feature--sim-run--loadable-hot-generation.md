@@ -11,6 +11,7 @@ Inspect, build, admit, activate, and explain native generations through Shape-ch
 ## Anchors
 
 - `anchor/crate/sim-lib-hotload`
+- `anchor/runtime-lib/sim-lib-hotload/hotload-lib`
 - `anchor/rustdoc/sim-lib-hotload/crate-root`
 
 ## Specimens

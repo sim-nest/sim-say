@@ -10,8 +10,6 @@ Bind offline captures and legally supplied editions to normalized representation
 
 ## Anchors
 
-- `anchor/crate/sim-lib-doc-core`
-- `anchor/crate/sim-lib-doc-store`
 - `anchor/crate/sim-lib-doc-web`
 
 ## Specimens

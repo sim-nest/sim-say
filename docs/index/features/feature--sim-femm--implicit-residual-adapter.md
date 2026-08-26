@@ -10,7 +10,6 @@ Expose semantically implicit FEMM transient and flow systems as the public resid
 
 ## Anchors
 
-- `anchor/crate/sim-lib-femm-ode`
 - `anchor/rustdoc/sim-lib-femm-ode/as_implicit_problem`
 - `anchor/rustdoc/sim-lib-femm-ode/femm-implicit-residual`
 

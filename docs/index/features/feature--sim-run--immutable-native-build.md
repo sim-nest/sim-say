@@ -8,11 +8,6 @@
 
 Build one locked offline cdylib, publish verified bytes by content identity, and admit compatible candidates through an isolated loader preflight.
 
-## Anchors
-
-- `anchor/crate/sim-lib-hotload`
-- `anchor/rustdoc/sim-lib-hotload/crate-root`
-
 ## Specimens
 
 - `spec-test/sim-run/crates/sim-lib-hotload/src/admission`

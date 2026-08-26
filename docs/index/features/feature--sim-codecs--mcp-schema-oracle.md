@@ -11,6 +11,7 @@ Own the final MCP 2026-07-28 and delivered 2025-03-26 wire profiles, typed metad
 ## Anchors
 
 - `anchor/crate/sim-codec-mcp`
+- `anchor/export/sim-codec-mcp/server/discover`
 
 ## Specimens
 

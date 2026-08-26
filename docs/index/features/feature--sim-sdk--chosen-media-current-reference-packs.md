@@ -8,10 +8,6 @@
 
 Compose explicitly selected media traces, Mia-authored meanings, current jurisdictional citations, local rebuildable search, and honest removal without remote scraping or taste inference.
 
-## Anchors
-
-- `anchor/crate/sim-nest`
-
 ## Specimens
 
 - `recipe/sim-sdk/stewardship/chosen-media-traces`

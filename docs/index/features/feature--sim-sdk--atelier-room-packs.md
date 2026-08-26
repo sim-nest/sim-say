@@ -8,10 +8,6 @@
 
 Six data-authored intellectual rooms compose existing music, physics, model, cited-reading, mutual-projection, and identity routes through the canonical capability-pack graph.
 
-## Anchors
-
-- `anchor/crate/sim-nest`
-
 ## Specimens
 
 - `spec-test/sim-sdk/tests/validate_atelier_packs`

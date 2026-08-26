@@ -8,10 +8,6 @@
 
 Dispatch the loadable study product through sim study without adding study behavior to the bootloader.
 
-## Surfaces
-
-- `cli/sim-run`
-
 ## Specimens
 
 - `spec-test/sim-run/crates/sim-run/src/study`

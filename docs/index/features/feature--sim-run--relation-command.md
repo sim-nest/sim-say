@@ -8,14 +8,6 @@
 
 Register the standard loadable relation command and hand the relation verb to storage-owned behavior.
 
-## Anchors
-
-- `anchor/cli/sim-run`
-
-## Surfaces
-
-- `cli/sim-run`
-
 ## Specimens
 
 - `spec-test/sim-run/crates/sim-run/src/relation`
