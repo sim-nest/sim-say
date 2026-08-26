@@ -20,4 +20,15 @@ Review semantic sweep plans before execution and retain sampling, partition, pla
 
 Specimen `recipe/sim-physics/05-study/placement-sweep` is checked by `xtask check-recipes`.
 
-Source path: `recipes/05-study/placement-sweep/recipe.toml`.
+Source `recipes/05-study/placement-sweep/recipe.toml`:
+
+```toml
+id = "placement-sweep"
+title = "Review an immutable placement-transparent sweep"
+codec = "rust"
+setup = "src/main.rs"
+purpose = "README.md"
+order = 60
+tags = ["physics", "study", "sweep", "placement", "coverage"]
+requires = ["sim-lib-physics-study"]
+```

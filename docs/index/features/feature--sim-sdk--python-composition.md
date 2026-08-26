@@ -16,4 +16,15 @@ Compose the Python source codec, thin runtime profile, and tracing collector thr
 
 Specimen `recipe/sim-sdk/python/capability-scoped` is checked by `xtask check-recipes`.
 
-Source path: `recipes/python/capability-scoped/recipe.toml`.
+Source `recipes/python/capability-scoped/recipe.toml`:
+
+```toml
+id = "capability-scoped-python"
+title = "Evaluate capability-scoped embedded Python"
+codec = "rust"
+setup = "setup.rs"
+purpose = "purpose.md"
+order = 10
+tags = ["python", "sdk", "eval", "exec", "capability", "fidelity"]
+requires = ["python"]
+```

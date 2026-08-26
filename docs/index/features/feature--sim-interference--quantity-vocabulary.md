@@ -30,4 +30,18 @@ Admit finite scalar-wave inputs through explicit distance, frequency, speed, att
 
 Specimen `recipe/sim-interference/crates/sim-lib-interference-core/01-basics/checked-quantities` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-interference-core/recipes/01-basics/checked-quantities/recipe.toml`.
+Source `crates/sim-lib-interference-core/recipes/01-basics/checked-quantities/recipe.toml`:
+
+```toml
+id = "checked-quantities"
+title = "Construct checked interference quantities"
+codec = "rust"
+setup = "main.rs"
+purpose = "purpose.md"
+expected = "expected.txt"
+order = 10
+tags = ["interference", "physics", "quantities", "validation"]
+harness = "cargo-example"
+package = "sim-lib-interference-core"
+example = "checked-quantities"
+```

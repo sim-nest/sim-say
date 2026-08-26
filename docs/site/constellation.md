@@ -15,6 +15,7 @@
         | sim-compute
         | sim-construction
         | sim-discrete
+        | sim-estate
         | sim-expr-tree
         | sim-femm
         | sim-foundation

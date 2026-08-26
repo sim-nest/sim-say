@@ -21,4 +21,16 @@ Compose exact quantities, freshness-bounded claims, questions, preparation optio
 
 Specimen `recipe/sim-sdk/stewardship/taste-led-kitchen` is checked by `xtask check-recipes`.
 
-Source path: `recipes/stewardship/taste-led-kitchen/recipe.toml`.
+Source `recipes/stewardship/taste-led-kitchen/recipe.toml`:
+
+```toml
+id = "taste-led-kitchen"
+title = "Prepare a taste-led shopping draft"
+codec = "lisp"
+setup = "input.lisp"
+purpose = "README.md"
+order = 10
+tags = ["sdk", "stewardship", "kitchen", "offline", "exact"]
+requires = ["core", "codec/lisp", "numbers/rational", "claims"]
+network = false
+```

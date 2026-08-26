@@ -17,4 +17,15 @@ Trace current design revisions, RFIs, reviews, purpose-specific releases, permit
 
 Specimen `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/design-release-to-production` is checked by `sh scripts/check-recipes.sh`.
 
-Source path: `crates/sim-lib-construction-project/recipes/01-basics/design-release-to-production/recipe.toml`.
+Source `crates/sim-lib-construction-project/recipes/01-basics/design-release-to-production/recipe.toml`:
+
+```toml
+id = "design-release-to-production"
+title = "Design release to production"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 65
+tags = ["construction", "project-control", "design", "rfi", "release", "permit", "authority"]
+requires = ["construction.project.read", "construction.project.write", "codec/lisp"]
+```

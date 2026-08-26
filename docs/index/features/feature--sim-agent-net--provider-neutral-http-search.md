@@ -20,4 +20,15 @@ A bounded HTTP effect owner turns any SearchWireCodec into ordinary Retriever an
 
 Specimen `recipe/sim-agent-net/crates/sim-lib-search-http/01-basics/fixture-site` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-search-http/recipes/01-basics/fixture-site/recipe.toml`.
+Source `crates/sim-lib-search-http/recipes/01-basics/fixture-site/recipe.toml`:
+
+```toml
+id = "fixture-site"
+title = "Provider-neutral fixture search site"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 10
+tags = ["search", "http", "skill", "cassette", "fixture"]
+requires = ["search-http", "net/http"]
+```

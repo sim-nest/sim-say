@@ -22,4 +22,16 @@ Inspect, build, admit, activate, and explain native generations through Shape-ch
 
 Specimen `recipe/sim-run/02-scenarios/hotload-generation-lifecycle` is checked by `xtask check-recipes`.
 
-Source path: `recipes/02-scenarios/hotload-generation-lifecycle/recipe.toml`.
+Source `recipes/02-scenarios/hotload-generation-lifecycle/recipe.toml`:
+
+```toml
+id = "hotload-generation-lifecycle"
+title = "Browse the Hot Generation Lifecycle"
+codec = "shell"
+setup = "setup.sh"
+purpose = "purpose.md"
+order = 73
+tags = ["hotload", "library", "capability", "offline", "deterministic"]
+requires = ["sim-lib-hotload"]
+network = false
+```

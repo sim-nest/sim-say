@@ -21,4 +21,11 @@ A networkless conformance pilot composes all five current memo families through 
 
 Specimen `recipe/sim-sdk/atelier/reversible-product` is checked by `xtask check-recipes`.
 
-Source path: `recipes/atelier/reversible-product/recipe.toml`.
+Source `recipes/atelier/reversible-product/recipe.toml`:
+
+```toml
+name = "reversible-product"
+description = "Replay all generic memo pilots through one disposable worktable"
+entry = "../../../tests/reversible_product.rs"
+command = "cargo test --manifest-path tests/reversible-product-focused/Cargo.toml"
+```

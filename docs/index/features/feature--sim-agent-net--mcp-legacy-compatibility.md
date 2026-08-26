@@ -20,4 +20,21 @@ Retain initialize, initialized notification, negotiated connection facts, and sh
 
 Specimen `recipe/sim-agent-net/crates/sim-lib-mcp-legacy/01-basics/legacy-lifecycle` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-mcp-legacy/recipes/01-basics/legacy-lifecycle/recipe.toml`.
+Source `crates/sim-lib-mcp-legacy/recipes/01-basics/legacy-lifecycle/recipe.toml`:
+
+```toml
+id = "legacy-lifecycle"
+title = "Legacy lifecycle adapter"
+summary = "Initialize an old MCP connection and dispatch through the stateless service."
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+expected = "expected.txt"
+order = 10
+tags = ["mcp", "legacy", "compatibility", "sandbox-descriptor"]
+requires = ["mcp"]
+
+[[expect]]
+form = 0
+result = "(mcp-legacy (initialize 2025-03-26) (context fresh-per-request) (service stateless) (shutdown adapter-owned))"
+```

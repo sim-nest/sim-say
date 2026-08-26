@@ -27,4 +27,16 @@ Execute query, fetch, research, and store-only show once and project the same ca
 
 Specimen `recipe/sim-agent-net/crates/sim-lib-search/01-fixture/cli-mcp-parity` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-search/recipes/01-fixture/cli-mcp-parity/recipe.toml`.
+Source `crates/sim-lib-search/recipes/01-fixture/cli-mcp-parity/recipe.toml`:
+
+```toml
+id = "cli-mcp-parity"
+title = "Run one canonical search through CLI and MCP"
+purpose = "purpose.md"
+setup = "setup.siml"
+expected = "expected.txt"
+
+[[expect]]
+form = 0
+result = "(search/query search/fetch search/research search/show)"
+```

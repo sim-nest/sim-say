@@ -70,6 +70,10 @@
 | `crate/sim-construction` | `crate` | sim-construction |
 | `crate/sim-cookbook` | `crate` | sim-cookbook |
 | `crate/sim-cookbook-build` | `crate` | sim-cookbook-build |
+| `crate/sim-estate` | `crate` | sim-estate |
+| `crate/sim-estate-acceptance` | `crate` | sim-estate-acceptance |
+| `crate/sim-estate-core` | `crate` | sim-estate-core |
+| `crate/sim-estate-project` | `crate` | sim-estate-project |
 | `crate/sim-expr-tree` | `crate` | sim-expr-tree |
 | `crate/sim-expr-tree-calc` | `crate` | sim-expr-tree-calc |
 | `crate/sim-expr-tree-core` | `crate` | sim-expr-tree-core |
@@ -129,6 +133,9 @@
 | `crate/sim-lib-doc-store` | `crate` | sim-lib-doc-store |
 | `crate/sim-lib-doc-surface` | `crate` | sim-lib-doc-surface |
 | `crate/sim-lib-doc-web` | `crate` | sim-lib-doc-web |
+| `crate/sim-lib-estate` | `crate` | sim-lib-estate |
+| `crate/sim-lib-estate-book` | `crate` | sim-lib-estate-book |
+| `crate/sim-lib-estate-serve` | `crate` | sim-lib-estate-serve |
 | `crate/sim-lib-exec` | `crate` | sim-lib-exec |
 | `crate/sim-lib-expedition-book` | `crate` | sim-lib-expedition-book |
 | `crate/sim-lib-expr-tree-serve` | `crate` | sim-lib-expr-tree-serve |
@@ -370,6 +377,9 @@
 | `crate/sim-shape-recipe-exact-bool-shape` | `crate` | sim-shape-recipe-exact-bool-shape |
 | `crate/sim-shape-recipe-shape-grammar-contract` | `crate` | sim-shape-recipe-shape-grammar-contract |
 | `crate/sim-site-dalux` | `crate` | sim-site-dalux |
+| `crate/sim-site-estate-ansible` | `crate` | sim-site-estate-ansible |
+| `crate/sim-site-estate-command` | `crate` | sim-site-estate-command |
+| `crate/sim-site-estate-model` | `crate` | sim-site-estate-model |
 | `crate/sim-site-libreoffice` | `crate` | sim-site-libreoffice |
 | `crate/sim-site-msgraph` | `crate` | sim-site-msgraph |
 | `crate/sim-site-powerproject` | `crate` | sim-site-powerproject |
@@ -397,6 +407,7 @@
 | `doc-set/sim-compute/generated` | `doc-set` | sim-compute generated docs |
 | `doc-set/sim-construction/generated` | `doc-set` | sim-construction generated docs |
 | `doc-set/sim-discrete/generated` | `doc-set` | sim-discrete generated docs |
+| `doc-set/sim-estate/generated` | `doc-set` | sim-estate generated docs |
 | `doc-set/sim-expr-tree/generated` | `doc-set` | sim-expr-tree generated docs |
 | `doc-set/sim-femm/generated` | `doc-set` | sim-femm generated docs |
 | `doc-set/sim-foundation/generated` | `doc-set` | sim-foundation generated docs |
@@ -443,6 +454,7 @@
 | `local/sim-construction/crate/xtask` | `crate` | xtask |
 | `local/sim-discrete/crate/sim-lib-discrete` | `crate` | sim-lib-discrete |
 | `local/sim-discrete/crate/xtask` | `crate` | xtask |
+| `local/sim-estate/crate/xtask` | `crate` | xtask |
 | `local/sim-expr-tree/crate/sim-lib-expr-tree` | `crate` | sim-lib-expr-tree |
 | `local/sim-expr-tree/crate/xtask` | `crate` | xtask |
 | `local/sim-femm/crate/sim-lib-femm-codec` | `crate` | sim-lib-femm-codec |
@@ -597,6 +609,7 @@
 | `repo/sim-compute` | `repo` | sim-compute |
 | `repo/sim-construction` | `repo` | sim-construction |
 | `repo/sim-discrete` | `repo` | sim-discrete |
+| `repo/sim-estate` | `repo` | sim-estate |
 | `repo/sim-expr-tree` | `repo` | sim-expr-tree |
 | `repo/sim-femm` | `repo` | sim-femm |
 | `repo/sim-foundation` | `repo` | sim-foundation |

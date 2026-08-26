@@ -20,4 +20,15 @@ Define queries, sites, provider claims, observations, pages, notices, alias evid
 
 Specimen `recipe/sim-foundation/crates/sim-lib-search-core/01-basics/checked-citation` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-search-core/recipes/01-basics/checked-citation/recipe.toml`.
+Source `crates/sim-lib-search-core/recipes/01-basics/checked-citation/recipe.toml`:
+
+```toml
+id = "checked-citation"
+title = "Claim versus checked citation"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 10
+tags = ["search", "claim", "citation", "sandbox-descriptor"]
+requires = ["search-core", "web-core", "codec/lisp"]
+```

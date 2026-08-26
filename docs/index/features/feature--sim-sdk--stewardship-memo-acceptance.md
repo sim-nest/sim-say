@@ -17,4 +17,16 @@ Classify the four stewardship memo families and replay their complete synthetic 
 
 Specimen `recipe/sim-sdk/stewardship/memo-acceptance` is checked by `xtask check-recipes`.
 
-Source path: `recipes/stewardship/memo-acceptance/recipe.toml`.
+Source `recipes/stewardship/memo-acceptance/recipe.toml`:
+
+```toml
+id = "memo-acceptance"
+title = "Execute the stewardship memo acceptance matrix"
+codec = "text"
+setup = "scenario.tsv"
+purpose = "README.md"
+order = 80
+tags = ["sdk", "stewardship", "acceptance", "offline", "privacy", "reversible"]
+requires = ["stewardship", "continuity", "claims"]
+network = false
+```

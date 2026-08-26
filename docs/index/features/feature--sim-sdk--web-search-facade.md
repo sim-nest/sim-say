@@ -21,4 +21,15 @@ Expose neutral HTTP, web, search, fetch, rank, office-evidence, and audit-view c
 
 Specimen `recipe/sim-sdk/web-search/configured-searxng` is checked by `xtask check-recipes`.
 
-Source path: `recipes/web-search/configured-searxng/recipe.toml`.
+Source `recipes/web-search/configured-searxng/recipe.toml`:
+
+```toml
+id = "configured-searxng"
+title = "Configured SearXNG diagnostic"
+codec = "rust"
+setup = "setup.rs"
+purpose = "purpose.md"
+order = 10
+tags = ["web-search", "searxng", "operator-diagnostic", "opt-in", "network"]
+requires = ["web-search", "SIM_SEARXNG_ENDPOINT", "SIM_SEARXNG_SITE_CONFIG"]
+```

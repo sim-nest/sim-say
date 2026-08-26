@@ -22,4 +22,21 @@ Frame one bounded JSON message per newline, isolate cancellation by live request
 
 Specimen `recipe/sim-agent-net/crates/sim-lib-mcp-stdio/01-basics/legacy-stdio` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-mcp-stdio/recipes/01-basics/legacy-stdio/recipe.toml`.
+Source `crates/sim-lib-mcp-stdio/recipes/01-basics/legacy-stdio/recipe.toml`:
+
+```toml
+id = "legacy-stdio"
+title = "Enable initialize-era compatibility explicitly"
+summary = "Compose the removable legacy adapter only at construction."
+codec = "lisp"
+purpose = "purpose.md"
+setup = "setup.siml"
+expected = "expected.txt"
+order = 20
+tags = ["mcp", "stdio", "legacy", "sandbox-descriptor"]
+requires = ["mcp"]
+
+[[expect]]
+form = 0
+result = "(mcp-stdio (legacy construction-time) (auto-upgrade false) (stdout protocol-only))"
+```

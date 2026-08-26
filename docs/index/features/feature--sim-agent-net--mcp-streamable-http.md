@@ -22,4 +22,21 @@ Serve and call final-protocol MCP over bounded, stateless Streamable HTTP.
 
 Specimen `recipe/sim-agent-net/crates/sim-lib-mcp-http/01-basics/http-client` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-mcp-http/recipes/01-basics/http-client/recipe.toml`.
+Source `crates/sim-lib-mcp-http/recipes/01-basics/http-client/recipe.toml`:
+
+```toml
+id = "mcp-http-client"
+title = "Call a stateless endpoint"
+summary = "Build exact MCP headers and classify JSON, SSE, notification, and discovery responses over sim-lib-net-http."
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+expected = "expected.txt"
+order = 20
+tags = ["mcp", "http", "client", "sandbox-descriptor"]
+requires = ["mcp", "net-http"]
+
+[[expect]]
+form = 0
+result = "(mcp-http-client (headers exact) (response classified) (cancellation request-owned))"
+```

@@ -119,6 +119,15 @@
 | `sim-lib-discrete-rank` | [sim-discrete](../repos/sim-discrete.md) |
 | `sim-lib-discrete-search` | [sim-discrete](../repos/sim-discrete.md) |
 | `sim-lib-discrete-spectral` | [sim-discrete](../repos/sim-discrete.md) |
+| `sim-estate-core` | [sim-estate](../repos/sim-estate.md) |
+| `sim-estate-project` | [sim-estate](../repos/sim-estate.md) |
+| `sim-lib-estate-book` | [sim-estate](../repos/sim-estate.md) |
+| `sim-lib-estate` | [sim-estate](../repos/sim-estate.md) |
+| `sim-lib-estate-serve` | [sim-estate](../repos/sim-estate.md) |
+| `sim-site-estate-model` | [sim-estate](../repos/sim-estate.md) |
+| `sim-site-estate-command` | [sim-estate](../repos/sim-estate.md) |
+| `sim-site-estate-ansible` | [sim-estate](../repos/sim-estate.md) |
+| `sim-estate-acceptance` | [sim-estate](../repos/sim-estate.md) |
 | `sim-expr-tree` | [sim-expr-tree](../repos/sim-expr-tree.md) |
 | `sim-expr-tree-calc` | [sim-expr-tree](../repos/sim-expr-tree.md) |
 | `sim-expr-tree-core` | [sim-expr-tree](../repos/sim-expr-tree.md) |

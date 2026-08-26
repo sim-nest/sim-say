@@ -28,4 +28,15 @@ Publish generated package, card, recipe, and index facts for agent, bridge, MCP,
 
 Specimen `recipe/sim-agent-net/crates/sim-lib-agent-runner-core/01-basics/fake-runner-descriptor` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-agent-runner-core/recipes/01-basics/fake-runner-descriptor/recipe.toml`.
+Source `crates/sim-lib-agent-runner-core/recipes/01-basics/fake-runner-descriptor/recipe.toml`:
+
+```toml
+id = "fake-runner-descriptor"
+title = "Fake runner descriptor"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 10
+tags = ["agent", "runner", "fake", "descriptor", "sandbox-descriptor"]
+requires = ["core", "codec/lisp"]
+```

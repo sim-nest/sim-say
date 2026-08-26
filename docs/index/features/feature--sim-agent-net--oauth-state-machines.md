@@ -20,4 +20,21 @@ Validate authority metadata and run resource-bound PKCE authorization-code trans
 
 Specimen `recipe/sim-agent-net/crates/sim-lib-oauth-core/01-basics/authorization-code` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-oauth-core/recipes/01-basics/authorization-code/recipe.toml`.
+Source `crates/sim-lib-oauth-core/recipes/01-basics/authorization-code/recipe.toml`:
+
+```toml
+id = "oauth-authorization-code"
+title = "Build a resource-bound authorization request"
+summary = "Compose injected entropy, consent, browser, storage, PKCE S256, state, issuer, least scopes, and one exact resource."
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+expected = "expected.txt"
+order = 10
+tags = ["oauth", "pkce", "client"]
+requires = ["oauth-core"]
+
+[[expect]]
+form = 0
+result = "(oauth-code (pkce S256) (state unpredictable) (resource exact) (effects injected))"
+```

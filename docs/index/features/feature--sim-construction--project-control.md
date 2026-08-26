@@ -28,4 +28,15 @@ Load complete construction project control as semantic Citizens, checked Shapes,
 
 Specimen `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/customer-intent-to-collaboration` is checked by `sh scripts/check-recipes.sh`.
 
-Source path: `crates/sim-lib-construction-project/recipes/01-basics/customer-intent-to-collaboration/recipe.toml`.
+Source `crates/sim-lib-construction-project/recipes/01-basics/customer-intent-to-collaboration/recipe.toml`:
+
+```toml
+id = "customer-intent-to-collaboration"
+title = "Customer intent to collaboration"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 45
+tags = ["construction", "project-control", "customer-intent", "bid", "collaboration", "gate"]
+requires = ["construction.project.read", "construction.project.write", "construction.project.accept", "codec/lisp"]
+```

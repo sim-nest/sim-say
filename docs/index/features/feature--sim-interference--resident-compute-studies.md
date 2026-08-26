@@ -37,4 +37,19 @@ Route an admitted interference Study through the active Env-bound Tensor executo
 
 Specimen `recipe/sim-interference/crates/sim-lib-interference-compute/01-basics/modeled-differential-matrix` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-interference-compute/recipes/01-basics/modeled-differential-matrix/recipe.toml`.
+Source `crates/sim-lib-interference-compute/recipes/01-basics/modeled-differential-matrix/recipe.toml`:
+
+```toml
+id = "modeled-differential-matrix"
+title = "Compare modeled resident compute with the CPU oracle"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 30
+tags = ["interference", "compute", "modeled", "differential", "headless", "evidence", "sandbox-descriptor"]
+requires = ["interference/runtime", "interference/compute", "compute/model", "numbers/tensor"]
+harness = "cargo-test"
+package = "sim-lib-interference-compute"
+test = "hardware_tests::f64_dense_and_modeled_share_one_differential_matrix"
+expected = "expected.txt"
+```

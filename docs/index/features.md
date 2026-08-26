@@ -123,6 +123,14 @@
 | [`feature/sim-discrete/discrete-algebra`](features/feature--sim-discrete--discrete-algebra.md) | `local/sim-discrete/crate/sim-lib-discrete` | 5 |
 | [`feature/sim-discrete/finite-enumeration`](features/feature--sim-discrete--finite-enumeration.md) | `crate/sim-lib-discrete-comb` | 1 |
 | [`feature/sim-discrete/generated-docs`](features/feature--sim-discrete--generated-docs.md) | `local/sim-discrete/crate/xtask` | 0 |
+| [`feature/sim-estate/ansible-provider-site`](features/feature--sim-estate--ansible-provider-site.md) | `crate/sim-site-estate-ansible` | 0 |
+| [`feature/sim-estate/composable-product-surface`](features/feature--sim-estate--composable-product-surface.md) | `crate/sim-lib-estate-serve` | 0 |
+| [`feature/sim-estate/durable-operation-book`](features/feature--sim-estate--durable-operation-book.md) | `crate/sim-lib-estate-book` | 0 |
+| [`feature/sim-estate/estate-vocabulary`](features/feature--sim-estate--estate-vocabulary.md) | `crate/sim-estate-core` | 0 |
+| [`feature/sim-estate/exposure-authoring`](features/feature--sim-estate--exposure-authoring.md) | `crate/sim-estate-project` | 0 |
+| [`feature/sim-estate/guarded-operation-lifecycle`](features/feature--sim-estate--guarded-operation-lifecycle.md) | `crate/sim-lib-estate` | 0 |
+| [`feature/sim-estate/model-provider-conformance`](features/feature--sim-estate--model-provider-conformance.md) | `crate/sim-site-estate-model` | 0 |
+| [`feature/sim-estate/sealed-command-site`](features/feature--sim-estate--sealed-command-site.md) | `crate/sim-site-estate-command` | 0 |
 | [`feature/sim-expr-tree/codec-policy`](features/feature--sim-expr-tree--codec-policy.md) | `crate/sim-expr-tree-calc` | 1 |
 | [`feature/sim-expr-tree/expedition-book`](features/feature--sim-expr-tree--expedition-book.md) | `crate/sim-lib-expedition-book` | 1 |
 | [`feature/sim-expr-tree/expression-tree`](features/feature--sim-expr-tree--expression-tree.md) | `local/sim-expr-tree/crate/sim-lib-expr-tree` | 3 |

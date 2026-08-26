@@ -20,4 +20,15 @@ Bound request and provider lifetimes with one idempotent terminal transition, bo
 
 Specimen `recipe/sim-foundation/crates/sim-cancel/01-basics/request-lifetime` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-cancel/recipes/01-basics/request-lifetime/recipe.toml`.
+Source `crates/sim-cancel/recipes/01-basics/request-lifetime/recipe.toml`:
+
+```toml
+id = "request-lifetime"
+title = "Bound a request lifetime"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 10
+tags = ["request", "cancellation", "lifetime", "sandbox-descriptor"]
+requires = ["cancel", "codec/lisp"]
+```

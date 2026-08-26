@@ -32,4 +32,18 @@ Define exact finite plane samples, classify carrier, power-fringe, and point-env
 
 Specimen `recipe/sim-interference/crates/sim-lib-interference-core/01-basics/alias-refusal` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-interference-core/recipes/01-basics/alias-refusal/recipe.toml`.
+Source `crates/sim-lib-interference-core/recipes/01-basics/alias-refusal/recipe.toml`:
+
+```toml
+id = "alias-refusal"
+title = "Refuse an aliased physical sampling request"
+codec = "rust"
+setup = "main.rs"
+purpose = "purpose.md"
+expected = "expected.txt"
+order = 60
+tags = ["interference", "cpu", "sampling", "alias", "fail-closed"]
+harness = "cargo-example"
+package = "sim-lib-interference-core"
+example = "alias-refusal"
+```

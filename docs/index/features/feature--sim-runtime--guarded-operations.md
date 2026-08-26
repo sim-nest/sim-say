@@ -20,4 +20,20 @@ Guard domain-neutral operations with explicit capability, execution mode, exact-
 
 Specimen `recipe/sim-runtime/crates/sim-lib-operation-gate/01-basics/two-manifests` is checked by `sh scripts/check-recipes.sh`.
 
-Source path: `crates/sim-lib-operation-gate/recipes/01-basics/two-manifests/recipe.toml`.
+Source `crates/sim-lib-operation-gate/recipes/01-basics/two-manifests/recipe.toml`:
+
+```toml
+id = "two-manifests"
+title = "Declare two unrelated guarded operations"
+codec = "rust"
+setup = "src/main.rs"
+purpose = "README.md"
+expected = "expected.txt"
+order = 10
+tags = ["operation", "gate", "manifest", "domain-neutral", "rust"]
+requires = ["sim-lib-operation-gate", "sim-kernel"]
+
+[[expect]]
+form = 0
+result = "warehouse mode: Recorded\nmicroscope mode: Reviewed\nautomotive assumptions: 0"
+```

@@ -22,4 +22,11 @@ Expose the classfile decoder, bounded JVM profile, source authority, invocation 
 
 Specimen `recipe/sim-sdk/jvm/lambda-interop` is checked by `xtask check-recipes`.
 
-Source path: `recipes/jvm/lambda-interop/recipe.toml`.
+Source `recipes/jvm/lambda-interop/recipe.toml`:
+
+```toml
+title = "Reach both JVM lambda interop directions"
+kind = "rust"
+entry = "setup.rs"
+required_features = ["standard-jvm"]
+```

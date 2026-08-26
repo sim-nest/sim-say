@@ -38,4 +38,20 @@ Describe agent run frames, open lifecycle vocabulary, exact domain budgets, step
 
 Specimen `recipe/sim-agent-net/crates/sim-lib-agent-conduct-core/01-basics/pure-journal` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-agent-conduct-core/recipes/01-basics/pure-journal/recipe.toml`.
+Source `crates/sim-lib-agent-conduct-core/recipes/01-basics/pure-journal/recipe.toml`:
+
+```toml
+id = "pure-conduct-journal"
+title = "Pure conduct journal"
+codec = "rust"
+setup = "src/main.rs"
+purpose = "README.md"
+expected = "expected.txt"
+order = 10
+tags = ["agent", "conduct", "journal", "pure", "rust"]
+requires = ["sim-lib-agent-conduct-core"]
+
+[[expect]]
+form = 0
+result = "verified journal records: 2"
+```

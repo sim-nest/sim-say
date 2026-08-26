@@ -24,4 +24,18 @@ Discover, explain, run, suspend, resume, replay, fork, and extend topology-backe
 
 Specimen `recipe/sim-agent-net/crates/sim-lib-agent/50-conducts/default` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-agent/recipes/50-conducts/default/recipe.toml`.
+Source `crates/sim-lib-agent/recipes/50-conducts/default/recipe.toml`:
+
+```toml
+id = "conduct-default"
+title = "default conduct"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+requires = ["agent", "codec/lisp", "sim-lib-agent-conduct"]
+runner_mode = "fake"
+capabilities = ["fixture-tools", "cassette", "modeled-effects"]
+[[expect]]
+form = 0
+result = "(conduct-spec (kind default) (runner fake) (cassette fixture) (effects modeled))"
+```

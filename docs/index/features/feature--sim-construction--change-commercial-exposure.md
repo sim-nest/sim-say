@@ -17,4 +17,15 @@ Construction change commercial exposure ledger references stay versioned and rea
 
 Specimen `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/instruction-to-final-settlement` is checked by `sh scripts/check-recipes.sh`.
 
-Source path: `crates/sim-lib-construction-project/recipes/01-basics/instruction-to-final-settlement/recipe.toml`.
+Source `crates/sim-lib-construction-project/recipes/01-basics/instruction-to-final-settlement/recipe.toml`:
+
+```toml
+id = "instruction-to-final-settlement"
+title = "Instruction to final settlement"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 98
+tags = ["construction", "project-control", "change", "commercial", "exposure", "settlement"]
+requires = ["construction.project.read", "construction.project.write", "codec/lisp"]
+```

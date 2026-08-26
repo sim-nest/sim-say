@@ -23,4 +23,20 @@ Export a provider-neutral FEMM LinearSolver that keeps CSR and Krylov work vecto
 
 Specimen `recipe/sim-compute/crates/sim-lib-compute-femm/01-basics/resident-csr-solve` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-compute-femm/recipes/01-basics/resident-csr-solve/recipe.toml`.
+Source `crates/sim-lib-compute-femm/recipes/01-basics/resident-csr-solve/recipe.toml`:
+
+```toml
+id = "resident-csr-solve"
+title = "Resident CSR solve"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+expected = "expected.txt"
+order = 10
+tags = ["compute", "femm", "csr", "krylov", "certificate"]
+requires = ["compute/femm", "femm-core"]
+
+[[expect]]
+form = 0
+result = "(expr:call compute femm resident-csr (expr:call method cg) (expr:call upload-reuse fingerprint) (expr:call work-vectors resident) (expr:call sync residual-scalar-per-iteration final-f64-residual) (expr:call certificate femm-solve))"
+```

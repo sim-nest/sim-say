@@ -232,6 +232,12 @@
 | `` | `recipe/sim-discrete/crates/sim-lib-discrete-spectral/01-basics/fwht-signal` | `crate/sim-lib-discrete-spectral` | `recipe` | `crates/sim-lib-discrete-spectral/recipes/01-basics/fwht-signal/recipe.toml` | `lisp` | `` | `false` | `false` |
 | `` | `recipe/sim-discrete/crates/sim-lib-discrete/01-basics/binomial-count` | `local/sim-discrete/crate/sim-lib-discrete` | `recipe` | `crates/sim-lib-discrete/recipes/01-basics/binomial-count/recipe.toml` | `lisp` | `` | `false` | `false` |
 | `` | `recipe/sim-discrete/crates/sim-lib-discrete/01-basics/matrix-runtime` | `local/sim-discrete/crate/sim-lib-discrete` | `recipe` | `crates/sim-lib-discrete/recipes/01-basics/matrix-runtime/recipe.toml` | `lisp` | `` | `false` | `false` |
+| `` | `recipe/sim-estate/ansible-controller-loss` | `repo/sim-estate` | `recipe` | `recipes/ansible-controller-loss/recipe.toml` | `` | `` | `false` | `false` |
+| `` | `recipe/sim-estate/model-rollout` | `repo/sim-estate` | `recipe` | `recipes/model-rollout/recipe.toml` | `` | `` | `false` | `false` |
+| `` | `recipe/sim-estate/observe-history` | `repo/sim-estate` | `recipe` | `recipes/observe-history/recipe.toml` | `` | `` | `false` | `false` |
+| `` | `recipe/sim-estate/reconcile-unknown` | `repo/sim-estate` | `recipe` | `recipes/reconcile-unknown/recipe.toml` | `` | `` | `false` | `false` |
+| `` | `recipe/sim-estate/resolve-quarantine` | `repo/sim-estate` | `recipe` | `recipes/resolve-quarantine/recipe.toml` | `` | `` | `false` | `false` |
+| `` | `recipe/sim-estate/reviewed-model-change` | `repo/sim-estate` | `recipe` | `recipes/reviewed-model-change/recipe.toml` | `` | `` | `false` | `false` |
 | `feature/sim-expr-tree/server-backed-web-ui` | `recipe/sim-expr-tree/03-server/web-session` | `crate/sim-expr-tree` | `recipe` | `recipes/03-server/web-session/recipe.toml` | `lisp` | `xtask check-recipes` | `true` | `true` |
 | `` | `recipe/sim-expr-tree/04-expedition-book/decision-book` | `crate/sim-expr-tree` | `recipe` | `recipes/04-expedition-book/decision-book/recipe.toml` | `lisp` | `xtask check-recipes` | `true` | `true` |
 | `` | `recipe/sim-expr-tree/crates/sim-expr-tree-calc/01-basics/scaffold` | `crate/sim-expr-tree-calc` | `recipe` | `crates/sim-expr-tree-calc/recipes/01-basics/scaffold/recipe.toml` | `` | `xtask check-recipes` | `true` | `true` |

@@ -131,6 +131,9 @@
 {"card": {"id": "rank/discrete/simple-graph", "kind": "static-card", "owner": "workspace", "summary": "Labeled simple undirected graphs on n nodes."}, "repo": "sim-discrete"}
 {"card": {"id": "rank/discrete/subset", "kind": "static-card", "owner": "workspace", "summary": "Subsets of a finite ground set."}, "repo": "sim-discrete"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-discrete"}
+{"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-estate"}
+{"card": {"id": "cookbook/sim-estate", "kind": "cookbook-recipe", "owner": "sim-estate", "summary": "Runnable recipes for modeled and sealed physical estate providers."}, "repo": "sim-estate"}
+{"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-estate"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-expr-tree"}
 {"card": {"id": "cookbook/expr-tree/calc", "kind": "cookbook-recipe", "owner": "sim-expr-tree-calc", "summary": "Evaluate bounded incremental expression trees."}, "repo": "sim-expr-tree"}
 {"card": {"id": "cookbook/expr-tree/core", "kind": "cookbook-recipe", "owner": "sim-expr-tree-core", "summary": "Build and inspect expression-tree namespaces and stores."}, "repo": "sim-expr-tree"}

@@ -27,4 +27,16 @@ Run a SIM read-eval-print loop through the loaded REPL library and command surfa
 
 Specimen `recipe/sim-run/01-basics/hello` is checked by `xtask check-recipes`.
 
-Source path: `recipes/01-basics/hello/recipe.toml`.
+Source `recipes/01-basics/hello/recipe.toml`:
+
+```toml
+id = "hello"
+title = "REPL Hello"
+codec = "shell"
+setup = "setup.sh"
+purpose = "purpose.md"
+order = 20
+tags = ["cli", "repl", "hello"]
+requires = ["sim-lib-repl"]
+network = false
+```

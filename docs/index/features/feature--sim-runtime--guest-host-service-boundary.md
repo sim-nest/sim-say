@@ -16,4 +16,15 @@ Keep guest OS, source, import, native, and process surfaces behind explicit capa
 
 Specimen `recipe/sim-runtime/crates/sim-lib-exec/01-basics/bounded-process` is checked by `sh scripts/check-recipes.sh`.
 
-Source path: `crates/sim-lib-exec/recipes/01-basics/bounded-process/recipe.toml`.
+Source `crates/sim-lib-exec/recipes/01-basics/bounded-process/recipe.toml`:
+
+```toml
+id = "bounded-process"
+title = "Bounded process descriptor"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 10
+tags = ["exec", "process", "capability", "host"]
+requires = ["core"]
+```

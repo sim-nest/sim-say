@@ -17,4 +17,16 @@ Compose existing workshop and stewardship contracts into reviewable adoption, ep
 
 Specimen `recipe/sim-sdk/stewardship/adopt-subtract-composition` is checked by `xtask check-recipes`.
 
-Source path: `recipes/stewardship/adopt-subtract-composition/recipe.toml`.
+Source `recipes/stewardship/adopt-subtract-composition/recipe.toml`:
+
+```toml
+id = "adopt-subtract-composition"
+title = "Adopt and subtract a stewardship composition"
+codec = "lisp"
+setup = "input.lisp"
+purpose = "README.md"
+order = 70
+tags = ["sdk", "stewardship", "workshop", "adoption", "subtraction", "offline"]
+requires = ["atelier", "continuity", "claims"]
+network = false
+```

@@ -20,4 +20,15 @@ Refine independent numerical and model axes, retain signed comparisons, and issu
 
 Specimen `recipe/sim-physics/03-proof/certified-refinement` is checked by `xtask check-recipes`.
 
-Source path: `recipes/03-proof/certified-refinement/recipe.toml`.
+Source `recipes/03-proof/certified-refinement/recipe.toml`:
+
+```toml
+id = "certified-refinement"
+title = "Certified orthogonal refinement"
+codec = "rust"
+setup = "src/main.rs"
+purpose = "README.md"
+order = 40
+tags = ["physics", "proof", "refinement", "interval"]
+requires = ["sim-lib-physics-proof"]
+```

@@ -23,4 +23,18 @@ Project canonical search, ranking, capture, selector, fidelity, policy, and offi
 
 Specimen `recipe/sim-web/crates/sim-lib-view-search/01-basics/offline-audit` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-view-search/recipes/01-basics/offline-audit/recipe.toml`.
+Source `crates/sim-lib-view-search/recipes/01-basics/offline-audit/recipe.toml`:
+
+```toml
+schema = "sim.recipe"
+id = "search/offline-audit"
+title = "Review search provenance without network authority"
+purpose = "Audit canonical search provenance and captured evidence without network access."
+summary = "Render a canonical SearchRun, immutable capture, normalized representation, checked selector, policy receipt, and office anchor as an offline audit Scene."
+entry = "README.md"
+
+[[checks]]
+kind = "file-contains"
+path = "README.md"
+contains = "PROVIDER CLAIM"
+```

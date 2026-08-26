@@ -28,4 +28,16 @@ Expose generated package, card, surface, and recipe facts as a checked SIM Index
 
 Specimen `recipe/sim-run/publish-readiness/package-list` is checked by `xtask check-recipes`.
 
-Source path: `recipes/publish-readiness/package-list/recipe.toml`.
+Source `recipes/publish-readiness/package-list/recipe.toml`:
+
+```toml
+id = "package-list"
+title = "Package list dry run"
+codec = "shell"
+setup = "setup.sh"
+purpose = "purpose.md"
+order = 10
+tags = ["cli", "package", "crates-io", "dry-run"]
+requires = ["SIM_META_WORKSPACE_MANIFEST", "workspace-metadata"]
+network = false
+```

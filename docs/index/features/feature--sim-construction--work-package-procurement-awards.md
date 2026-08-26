@@ -17,4 +17,15 @@ Carry a construction work package procurement record from inquiry basis through 
 
 Specimen `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/work-package-award` is checked by `sh scripts/check-recipes.sh`.
 
-Source path: `crates/sim-lib-construction-project/recipes/01-basics/work-package-award/recipe.toml`.
+Source `crates/sim-lib-construction-project/recipes/01-basics/work-package-award/recipe.toml`:
+
+```toml
+id = "work-package-award"
+title = "Work-package award"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 70
+tags = ["construction", "project-control", "procurement", "work-package", "tender", "award"]
+requires = ["construction.project.read", "construction.project.write", "codec/lisp"]
+```

@@ -23,4 +23,15 @@ Expose immutable native build, admission, compatibility, atomic activation, and 
 
 Specimen `recipe/sim-sdk/hotload/conversational-instrument-adoption` is checked by `xtask check-recipes`.
 
-Source path: `recipes/hotload/conversational-instrument-adoption/recipe.toml`.
+Source `recipes/hotload/conversational-instrument-adoption/recipe.toml`:
+
+```toml
+id = "conversational-instrument-adoption"
+title = "Adopt a conversationally proposed instrument reproducibly"
+codec = "rust"
+setup = "setup.rs"
+purpose = "purpose.md"
+order = 20
+tags = ["agent", "bridge", "change-capsule", "pack", "hotload", "offline", "reproducible"]
+requires = ["agent", "hotload"]
+```

@@ -24,4 +24,21 @@ Consume final and delivered legacy MCP over HTTP or stdio without replaying appl
 
 Specimen `recipe/sim-agent-net/crates/sim-lib-mcp-client/01-basics/http-client` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-mcp-client/recipes/01-basics/http-client/recipe.toml`.
+Source `crates/sim-lib-mcp-client/recipes/01-basics/http-client/recipe.toml`:
+
+```toml
+id = "mcp-client-http"
+title = "Compose a loopback HTTP peer"
+summary = "Adapt sim-lib-mcp-http to BindingPeer and let Client probe before one call."
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+expected = "expected.txt"
+order = 10
+tags = ["mcp", "client", "http"]
+requires = ["mcp"]
+
+[[expect]]
+form = 0
+result = "(:endpoint \"http://127.0.0.1:8080/mcp\" :probe \"server/discover\" :calls 1)"
+```

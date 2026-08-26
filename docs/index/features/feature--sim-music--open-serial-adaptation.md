@@ -17,4 +17,16 @@ Land immutable serial plans onto modal or caller-defined scales while preserving
 
 Specimen `recipe/sim-music/crates/sim-lib-music-serial/02-adaptation/modal-spine` is checked by `sh scripts/check-recipes.sh`.
 
-Source path: `crates/sim-lib-music-serial/recipes/02-adaptation/modal-spine/recipe.toml`.
+Source `crates/sim-lib-music-serial/recipes/02-adaptation/modal-spine/recipe.toml`:
+
+```toml
+id = "modal-spine"
+title = "Modal spine realization"
+codec = "rust"
+setup = "setup.rs"
+purpose = "purpose.md"
+summary = "Land one immutable serial plan onto modal and caller-defined scales while preserving ordinal identity and reporting aggregate relaxation explicitly."
+category = "Rust"
+tags = ["music", "serial", "modal", "adaptation", "realization", "rust", "framework"]
+requires = ["music-serial", "pitch-scale", "music-core"]
+```

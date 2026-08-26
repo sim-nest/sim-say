@@ -20,4 +20,21 @@ Verify JWT access tokens locally against injected JWK generations and return imm
 
 Specimen `recipe/sim-agent-net/crates/sim-lib-oauth-jose/01-basics/verify-token` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-oauth-jose/recipes/01-basics/verify-token/recipe.toml`.
+Source `crates/sim-lib-oauth-jose/recipes/01-basics/verify-token/recipe.toml`:
+
+```toml
+id = "oauth-verify-token"
+title = "Verify a rotated resource-bound token"
+summary = "Select one allowlisted algorithm and kid, then bind issuer, audience, resource, scope, expiry, and JWK generation."
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+expected = "expected.txt"
+order = 10
+tags = ["oauth", "jose", "jwt"]
+requires = ["oauth-jose"]
+
+[[expect]]
+form = 0
+result = "(verified-principal (token redacted) (authority exact) (key-generation current))"
+```

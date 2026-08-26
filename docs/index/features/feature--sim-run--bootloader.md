@@ -34,4 +34,15 @@ Start product commands through the shared bootloader and loaded runtime librarie
 
 Specimen `recipe/sim-run/01-basics/version` is checked by `xtask check-recipes`.
 
-Source path: `recipes/01-basics/version/recipe.toml`.
+Source `recipes/01-basics/version/recipe.toml`:
+
+```toml
+id = "version"
+title = "Version"
+codec = "shell"
+setup = "setup.sh"
+purpose = "purpose.md"
+order = 10
+tags = ["cli", "version"]
+requires = ["sim-run"]
+```

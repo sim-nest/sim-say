@@ -17,4 +17,15 @@ Derive project-scoped supplier qualification and production handoff readiness fr
 
 Specimen `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/supplier-to-production-handoff` is checked by `sh scripts/check-recipes.sh`.
 
-Source path: `crates/sim-lib-construction-project/recipes/01-basics/supplier-to-production-handoff/recipe.toml`.
+Source `crates/sim-lib-construction-project/recipes/01-basics/supplier-to-production-handoff/recipe.toml`:
+
+```toml
+id = "supplier-to-production-handoff"
+title = "Supplier to production handoff"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 80
+tags = ["construction", "project-control", "supplier", "qualification", "handoff", "production"]
+requires = ["construction.project.read", "construction.supplier.read", "codec/lisp"]
+```

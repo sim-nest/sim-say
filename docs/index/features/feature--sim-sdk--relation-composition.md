@@ -27,4 +27,11 @@ Expose the canonical relational model, admission, migration, Shape, bounded site
 
 Specimen `recipe/sim-sdk/relation/additive-migration` is checked by `xtask check-recipes`.
 
-Source path: `recipes/relation/additive-migration/recipe.toml`.
+Source `recipes/relation/additive-migration/recipe.toml`:
+
+```toml
+title = "Admit an additive relational migration"
+kind = "rust"
+entry = "setup.rs"
+required_features = ["relation"]
+```

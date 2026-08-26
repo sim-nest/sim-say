@@ -16,4 +16,15 @@ Compose the JavaScript codec, direct profile, and tracing collector through ordi
 
 Specimen `recipe/sim-sdk/javascript/bounded-module` is checked by `xtask check-recipes`.
 
-Source path: `recipes/javascript/bounded-module/recipe.toml`.
+Source `recipes/javascript/bounded-module/recipe.toml`:
+
+```toml
+id = "bounded-javascript-module"
+title = "Evaluate a bounded JavaScript module"
+codec = "rust"
+setup = "setup.rs"
+purpose = "purpose.md"
+order = 10
+tags = ["javascript", "sdk", "module", "promise", "fidelity"]
+requires = ["javascript"]
+```

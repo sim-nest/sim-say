@@ -20,4 +20,15 @@ Store surprising observations and every successor by content identity while pres
 
 Specimen `recipe/sim-physics/06-findings/sweep-to-finding` is checked by `xtask check-recipes`.
 
-Source path: `recipes/06-findings/sweep-to-finding/recipe.toml`.
+Source `recipes/06-findings/sweep-to-finding/recipe.toml`:
+
+```toml
+id = "sweep-to-finding"
+title = "Preserve a surprising sweep result as an immutable finding"
+codec = "rust"
+setup = "src/main.rs"
+purpose = "README.md"
+order = 70
+tags = ["physics", "finding", "history", "evidence"]
+requires = ["sim-lib-physics-findings"]
+```

@@ -55,4 +55,15 @@ Register open provider families, preserve independently selectable seats, valida
 
 Specimen `recipe/sim-agent-net/crates/sim-lib-provider/01-basics/open-seat` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-provider/recipes/01-basics/open-seat/recipe.toml`.
+Source `crates/sim-lib-provider/recipes/01-basics/open-seat/recipe.toml`:
+
+```toml
+id = "open-seat"
+title = "Open provider seat"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 10
+tags = ["provider", "seat", "setup", "model-runner"]
+requires = ["core", "codec/lisp"]
+```

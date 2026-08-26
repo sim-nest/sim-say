@@ -25,4 +25,12 @@ Compose immutable function declarations with concrete guest body policies, colle
 
 Specimen `recipe/sim-runtime/crates/sim-lib-function/01-basics/neutral-language` is checked by `sh scripts/check-recipes.sh`.
 
-Source path: `crates/sim-lib-function/recipes/01-basics/neutral-language/recipe.toml`.
+Source `crates/sim-lib-function/recipes/01-basics/neutral-language/recipe.toml`:
+
+```toml
+id = "neutral-language"
+title = "A function for a language that does not exist yet"
+purpose = "Compose language-neutral function policy, capture, arguments, and dispatch."
+summary = "Compose typed body policy, lexical capture, arguments, browsing, collection, and dispatch."
+tags = ["function", "language-neutral", "managed", "dispatch", "sandbox-descriptor"]
+```

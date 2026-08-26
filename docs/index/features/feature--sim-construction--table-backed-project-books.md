@@ -16,4 +16,15 @@ Persist one authoritative construction project fact book through a caller-inject
 
 Specimen `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/table-backed-project-book` is checked by `sh scripts/check-recipes.sh`.
 
-Source path: `crates/sim-lib-construction-project/recipes/01-basics/table-backed-project-book/recipe.toml`.
+Source `crates/sim-lib-construction-project/recipes/01-basics/table-backed-project-book/recipe.toml`:
+
+```toml
+id = "table-backed-project-book"
+title = "Table-backed construction project book"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 22
+tags = ["construction", "project-control", "table", "dir", "persistence", "snapshot"]
+requires = ["construction.project.read", "construction.project.write", "codec/lisp"]
+```

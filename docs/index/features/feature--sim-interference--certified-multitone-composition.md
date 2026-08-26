@@ -28,4 +28,18 @@ Combine independently certified coherent frequency studies on identical physical
 
 Specimen `recipe/sim-interference/crates/sim-lib-interference-solve/01-basics/two-tone-beats` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-interference-solve/recipes/01-basics/two-tone-beats/recipe.toml`.
+Source `crates/sim-lib-interference-solve/recipes/01-basics/two-tone-beats/recipe.toml`:
+
+```toml
+id = "two-tone-beats"
+title = "Observe a certified two-tone beat"
+codec = "rust"
+setup = "main.rs"
+purpose = "purpose.md"
+expected = "expected.txt"
+order = 100
+tags = ["interference", "cpu", "multitone", "beats", "instant"]
+harness = "cargo-example"
+package = "sim-lib-interference-solve"
+example = "two-tone-beats"
+```

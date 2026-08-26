@@ -20,4 +20,16 @@ Six data-authored intellectual rooms compose existing music, physics, model, cit
 
 Specimen `spec-test/sim-sdk/tests/validate_atelier_packs` is checked by `cargo test`.
 
-Source path: `tests/validate_atelier_packs.rs`.
+Source `tests/validate_atelier_packs.rs`:
+
+```rust
+// conformance: Atelier room packs remain independent, bounded, and networkless.
+
+#[path = "support/python_conformance.rs"]
+mod python_conformance;
+
+#[test]
+fn validate_atelier_packs() {
+    python_conformance::run("tests/validate_atelier_packs.py");
+}
+```

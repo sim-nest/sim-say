@@ -21,4 +21,25 @@ Compose the expression-tree SurfaceCodec and authoritative server site with Remo
 
 Specimen `recipe/sim-expr-tree/03-server/web-session` is checked by `xtask check-recipes`.
 
-Source path: `recipes/03-server/web-session/recipe.toml`.
+Source `recipes/03-server/web-session/recipe.toml`:
+
+```toml
+id = "web-session"
+title = "Open one authoritative tree on desktop and phone"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 10
+tags = ["expression-tree", "server", "web", "phone", "reconnect", "runnable"]
+requires = [
+  "codec/lisp",
+  "lib/expr-tree",
+  "site/sim-lib-expr-tree-server",
+  "feature/sim-web/server-backed-web-sessions",
+  "feature/sim-web/web-shell-host",
+]
+harness = "cargo-test"
+package = "sim-lib-expr-tree-server"
+test = "tests::web::recipe_server_backed_web_session_runs_desktop_phone_and_failure_paths"
+expected = "expected.txt"
+```

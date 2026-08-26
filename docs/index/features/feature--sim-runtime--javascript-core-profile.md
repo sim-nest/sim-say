@@ -23,4 +23,15 @@ Run embedded, capability-scoped ECMAScript over SIM values with one authoritativ
 
 Specimen `recipe/sim-runtime/crates/sim-lib-lang-javascript/01-basics/collection-owner-composition` is checked by `sh scripts/check-recipes.sh`.
 
-Source path: `crates/sim-lib-lang-javascript/recipes/01-basics/collection-owner-composition/recipe.toml`.
+Source `crates/sim-lib-lang-javascript/recipes/01-basics/collection-owner-composition/recipe.toml`:
+
+```toml
+id = "collection-owner-composition"
+title = "Compose JavaScript collections with shared sequence storage"
+codec = "javascript"
+setup = "setup.js"
+purpose = "purpose.md"
+order = 30
+tags = ["javascript", "array", "map", "set", "sequence", "composition"]
+requires = ["codec/javascript", "lang/javascript-core/v1", "organ/sequence/v1"]
+```

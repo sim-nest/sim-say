@@ -17,4 +17,15 @@ Control Dalux construction field item incident quality reports alongside local o
 
 Specimen `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/field-item-to-corrective-evidence` is checked by `sh scripts/check-recipes.sh`.
 
-Source path: `crates/sim-lib-construction-project/recipes/01-basics/field-item-to-corrective-evidence/recipe.toml`.
+Source `crates/sim-lib-construction-project/recipes/01-basics/field-item-to-corrective-evidence/recipe.toml`:
+
+```toml
+id = "field-item-to-corrective-evidence"
+title = "Field item to corrective evidence"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 96
+tags = ["construction", "field-control", "dalux", "incident", "inspection", "corrective-evidence", "safety"]
+requires = ["construction.project.read", "construction.project.write", "site/dalux", "codec/lisp"]
+```

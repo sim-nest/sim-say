@@ -21,4 +21,16 @@ Compose separate daily, weekly, monthly, and seasonal projections from minimum c
 
 Specimen `recipe/sim-sdk/stewardship/quiet-cadence` is checked by `xtask check-recipes`.
 
-Source path: `recipes/stewardship/quiet-cadence/recipe.toml`.
+Source `recipes/stewardship/quiet-cadence/recipe.toml`:
+
+```toml
+id = "quiet-cadence"
+title = "Compose a quiet week from copied claims"
+codec = "toml"
+setup = "week.toml"
+purpose = "README.md"
+order = 60
+tags = ["sdk", "stewardship", "cadence", "offline", "privacy"]
+requires = ["continuity", "attention", "mission"]
+network = false
+```

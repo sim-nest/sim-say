@@ -21,4 +21,16 @@ Compose explicitly selected media traces, Mia-authored meanings, current jurisdi
 
 Specimen `recipe/sim-sdk/stewardship/chosen-media-traces` is checked by `xtask check-recipes`.
 
-Source path: `recipes/stewardship/chosen-media-traces/recipe.toml`.
+Source `recipes/stewardship/chosen-media-traces/recipe.toml`:
+
+```toml
+id = "chosen-media-traces"
+title = "Keep only chosen media traces"
+codec = "lisp"
+setup = "input.lisp"
+purpose = "README.md"
+order = 50
+tags = ["sdk", "stewardship", "media", "offline", "privacy"]
+requires = ["core", "codec/lisp"]
+network = false
+```

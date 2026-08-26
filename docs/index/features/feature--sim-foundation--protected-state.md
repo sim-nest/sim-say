@@ -20,4 +20,15 @@ Protect bounded opaque caller bytes under exact state bindings, injected retaine
 
 Specimen `recipe/sim-foundation/crates/sim-lib-protected-state/01-basics/exact-binding` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-protected-state/recipes/01-basics/exact-binding/recipe.toml`.
+Source `crates/sim-lib-protected-state/recipes/01-basics/exact-binding/recipe.toml`:
+
+```toml
+id = "exact-binding"
+title = "Exact protected-state binding"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 10
+tags = ["state", "aead", "binding", "rotation", "sandbox-descriptor"]
+requires = ["protected-state", "host-time", "table", "codec/lisp"]
+```

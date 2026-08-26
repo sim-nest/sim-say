@@ -27,4 +27,18 @@ Encode complete interference Studies as evidence-preserving heatmap Scenes and c
 
 Specimen `recipe/sim-web/crates/sim-lib-view-interference/01-basics/interference-study` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-view-interference/recipes/01-basics/interference-study/recipe.toml`.
+Source `crates/sim-lib-view-interference/recipes/01-basics/interference-study/recipe.toml`:
+
+```toml
+id = "interference-study"
+title = "Explore and edit a solved interference field"
+codec = "rust"
+setup = "main.rs"
+purpose = "purpose.md"
+expected = "expected.txt"
+order = 10
+tags = ["interference", "view", "heatmap", "edit", "realize", "detector"]
+harness = "cargo-example"
+package = "sim-lib-view-interference"
+example = "interference-study"
+```

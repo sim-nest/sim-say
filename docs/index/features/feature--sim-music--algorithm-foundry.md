@@ -32,4 +32,23 @@ Execute a data recipe by selecting independently loaded MIDI, analysis, harmony,
 
 Specimen `recipe/sim-music/music-algorithm-foundry` is checked by `sh scripts/check-recipes.sh`.
 
-Source path: `recipes/music-algorithm-foundry/recipe.toml`.
+Source `recipes/music-algorithm-foundry/recipe.toml`:
+
+```toml
+id = "music-algorithm-foundry"
+title = "Compose a music algorithm plan from replaceable stages"
+codec = "rust"
+setup = "src/main.rs"
+purpose = "README.md"
+order = 10
+tags = ["music", "algorithm", "shape", "foundry"]
+requires = [
+  "sim-lib-midi-smf",
+  "sim-lib-music-analysis",
+  "sim-lib-music-counterpoint",
+  "sim-lib-music-lift",
+  "sim-lib-music-lower",
+  "sim-lib-pitch-chord",
+  "sim-lib-sound-render",
+]
+```

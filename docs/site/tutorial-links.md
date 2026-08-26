@@ -8,6 +8,7 @@
 - [sim-compute human docs](../repos/sim-compute.md#tutorial-lane)
 - [sim-construction human docs](../repos/sim-construction.md#tutorial-lane)
 - [sim-discrete human docs](../repos/sim-discrete.md#tutorial-lane)
+- [sim-estate human docs](../repos/sim-estate.md#tutorial-lane)
 - [sim-expr-tree human docs](../repos/sim-expr-tree.md#tutorial-lane)
 - [sim-femm human docs](../repos/sim-femm.md#tutorial-lane)
 - [sim-foundation human docs](../repos/sim-foundation.md#tutorial-lane)

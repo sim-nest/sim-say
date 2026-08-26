@@ -26,4 +26,15 @@ Round-trip Microsoft Project XML schedules through the portable construction Gan
 
 Specimen `recipe/sim-construction/crates/sim-codec-mspdi/01-basics/mspdi-round-trip` is checked by `sh scripts/check-recipes.sh`.
 
-Source path: `crates/sim-codec-mspdi/recipes/01-basics/mspdi-round-trip/recipe.toml`.
+Source `crates/sim-codec-mspdi/recipes/01-basics/mspdi-round-trip/recipe.toml`:
+
+```toml
+id = "mspdi-round-trip"
+title = "MSPDI round trip"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 10
+tags = ["office", "gantt", "mspdi", "project", "codec", "sandbox-descriptor"]
+requires = ["office/gantt", "office/doc-core", "codec/mspdi"]
+```

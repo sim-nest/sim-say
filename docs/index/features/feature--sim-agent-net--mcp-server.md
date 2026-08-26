@@ -43,4 +43,24 @@ Serve final MCP over stdio by default or explicitly configured Streamable HTTP t
 
 Specimen `recipe/sim-agent-net/crates/sim-mcp-server/01-basics/final-stack` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-mcp-server/recipes/01-basics/final-stack/recipe.toml`.
+Source `crates/sim-mcp-server/recipes/01-basics/final-stack/recipe.toml`:
+
+```toml
+id = "final-stack"
+title = "Final MCP product combinations"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+expected = "expected.txt"
+order = 20
+tags = ["mcp", "stdio", "http", "oauth", "legacy", "mrtr", "subscription", "cancellation", "table", "extension"]
+requires = ["mcp", "codec/lisp"]
+capabilities = ["mcp/serve"]
+assert_tags = ["mcp", "stdio", "http"]
+assert_capabilities = ["mcp/serve"]
+assert_setup_codec = "lisp"
+
+[[expect]]
+form = 0
+result = "(mcp-final-recipes (stdio server client) (http authenticated server client) (legacy modern-to-legacy probe) (mrtr protected) (subscription concurrent) (cancellation explicit) (table explicit-shared) (extension custom))"
+```

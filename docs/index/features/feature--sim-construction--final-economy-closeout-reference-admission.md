@@ -19,4 +19,15 @@ Reconcile exact accepted-contract, forecast, final-position, exposure, settlemen
 
 Specimen `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/closeout-to-reference-admission` is checked by `sh scripts/check-recipes.sh`.
 
-Source path: `crates/sim-lib-construction-project/recipes/01-basics/closeout-to-reference-admission/recipe.toml`.
+Source `crates/sim-lib-construction-project/recipes/01-basics/closeout-to-reference-admission/recipe.toml`:
+
+```toml
+id = "closeout-to-reference-admission"
+title = "Closeout to reference admission"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 99
+tags = ["construction", "final-economy", "closeout", "learning", "people", "place", "reference"]
+requires = ["construction.project.read", "construction.project.write", "construction.project.accept", "construction.reference.publish", "codec/lisp"]
+```

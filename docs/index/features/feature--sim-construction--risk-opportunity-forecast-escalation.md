@@ -19,4 +19,15 @@ Control current project risks and opportunities through typed open ratings, meth
 
 Specimen `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/risk-to-project-chief-decision` is checked by `sh scripts/check-recipes.sh`.
 
-Source path: `crates/sim-lib-construction-project/recipes/01-basics/risk-to-project-chief-decision/recipe.toml`.
+Source `crates/sim-lib-construction-project/recipes/01-basics/risk-to-project-chief-decision/recipe.toml`:
+
+```toml
+id = "risk-to-project-chief-decision"
+title = "Risk to project-chief decision attention"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 97
+tags = ["construction", "project-control", "risk", "opportunity", "forecast", "escalation"]
+requires = ["construction.project.read", "construction.project.write", "codec/lisp"]
+```

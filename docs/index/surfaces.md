@@ -52,6 +52,7 @@
 | `cli/serial-workbench` | `cli` | `crate/serial-workbench` |
 | `cli/serve` | `cli` | `local/sim-web/crate/sim-web-shell` |
 | `cli/sim-codec-compare` | `cli` | `crate/sim-codec-compare` |
+| `cli/sim-estate-acceptance` | `cli` | `crate/sim-estate-acceptance` |
 | `cli/sim-expr-tree` | `cli` | `crate/sim-expr-tree` |
 | `cli/sim-lib-agent-conduct-core-recipe-pure-journal` | `cli` | `crate/sim-lib-agent-conduct-core-recipe-pure-journal` |
 | `cli/sim-lib-agent-conduct-recipe-echo` | `cli` | `crate/sim-lib-agent-conduct-recipe-echo` |
@@ -78,6 +79,7 @@
 | `docs/sim-compute/generated` | `docs` | `doc-set/sim-compute/generated` |
 | `docs/sim-construction/generated` | `docs` | `doc-set/sim-construction/generated` |
 | `docs/sim-discrete/generated` | `docs` | `doc-set/sim-discrete/generated` |
+| `docs/sim-estate/generated` | `docs` | `doc-set/sim-estate/generated` |
 | `docs/sim-expr-tree/generated` | `docs` | `doc-set/sim-expr-tree/generated` |
 | `docs/sim-femm/generated` | `docs` | `doc-set/sim-femm/generated` |
 | `docs/sim-foundation/generated` | `docs` | `doc-set/sim-foundation/generated` |
@@ -106,6 +108,7 @@
 | `local/sim-compute/cli/xtask` | `cli` | `local/sim-compute/crate/xtask` |
 | `local/sim-construction/cli/xtask` | `cli` | `local/sim-construction/crate/xtask` |
 | `local/sim-discrete/cli/xtask` | `cli` | `local/sim-discrete/crate/xtask` |
+| `local/sim-estate/cli/xtask` | `cli` | `local/sim-estate/crate/xtask` |
 | `local/sim-expr-tree/cli/xtask` | `cli` | `local/sim-expr-tree/crate/xtask` |
 | `local/sim-femm/cli/xtask` | `cli` | `local/sim-femm/crate/xtask` |
 | `local/sim-foundation/cli/xtask` | `cli` | `local/sim-foundation/crate/xtask` |
@@ -171,6 +174,7 @@
 | `model/sim-lib-openai-server` | `model-exchange` | `local/sim-agent-net/crate/sim-lib-openai-server` |
 | `model/sim-lib-view-agent` | `model-exchange` | `crate/sim-lib-view-agent` |
 | `model/sim-platform-model` | `model-exchange` | `crate/sim-platform-model` |
+| `model/sim-site-estate-model` | `model-exchange` | `crate/sim-site-estate-model` |
 | `site/sim-kernel` | `site` | `crate/sim-kernel` |
 | `site/sim-lib-agent-runner-local` | `site` | `crate/sim-lib-agent-runner-local` |
 | `site/sim-lib-auto-diag` | `site` | `crate/sim-lib-auto-diag` |

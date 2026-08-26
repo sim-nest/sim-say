@@ -20,4 +20,15 @@ Provide one bounded, streaming, cancellation-aware blocking HTTP boundary over i
 
 Specimen `recipe/sim-foundation/crates/sim-lib-net-http/01-basics/bounded-get` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-net-http/recipes/01-basics/bounded-get/recipe.toml`.
+Source `crates/sim-lib-net-http/recipes/01-basics/bounded-get/recipe.toml`:
+
+```toml
+id = "bounded-get"
+title = "Bounded capsule request descriptor"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 10
+tags = ["net", "http", "policy", "sandbox-descriptor"]
+requires = ["net-http", "codec/lisp"]
+```

@@ -20,4 +20,15 @@ Refuse selection, ranking, sizing, and control inputs influenced by energy-deriv
 
 Specimen `recipe/sim-physics/04-influence/refused-selection` is checked by `xtask check-recipes`.
 
-Source path: `recipes/04-influence/refused-selection/recipe.toml`.
+Source `recipes/04-influence/refused-selection/recipe.toml`:
+
+```toml
+id = "refused-selection"
+title = "Refuse energy-influenced selection"
+codec = "rust"
+setup = "src/main.rs"
+purpose = "README.md"
+order = 50
+tags = ["physics", "energy", "dataflow", "selection", "audit"]
+requires = ["sim-lib-physics-influence"]
+```

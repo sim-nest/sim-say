@@ -17,4 +17,15 @@ Trace project-chartered certification, climate, efficiency, reuse, waste, respon
 
 Specimen `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/sustainability-to-reference-evidence` is checked by `sh scripts/check-recipes.sh`.
 
-Source path: `crates/sim-lib-construction-project/recipes/01-basics/sustainability-to-reference-evidence/recipe.toml`.
+Source `crates/sim-lib-construction-project/recipes/01-basics/sustainability-to-reference-evidence/recipe.toml`:
+
+```toml
+id = "sustainability-to-reference-evidence"
+title = "Sustainability to reference evidence"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 95
+tags = ["construction", "sustainability", "certification", "climate", "reuse", "place", "evidence"]
+requires = ["construction.project.read", "construction.reference.publish", "codec/lisp"]
+```

@@ -40,4 +40,18 @@ Summarize amplitude-like fields without losing provenance and construct bounded 
 
 Specimen `recipe/sim-interference/crates/sim-lib-interference-solve/01-basics/aperture-refusal` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-interference-solve/recipes/01-basics/aperture-refusal/recipe.toml`.
+Source `crates/sim-lib-interference-solve/recipes/01-basics/aperture-refusal/recipe.toml`:
+
+```toml
+id = "aperture-refusal"
+title = "Refuse a sparse aperture approximation"
+codec = "rust"
+setup = "main.rs"
+purpose = "purpose.md"
+expected = "expected.txt"
+order = 70
+tags = ["interference", "cpu", "aperture", "sampling", "fail-closed"]
+harness = "cargo-example"
+package = "sim-lib-interference-solve"
+example = "aperture-refusal"
+```

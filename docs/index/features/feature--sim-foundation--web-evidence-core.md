@@ -20,4 +20,15 @@ Separate raw capture and normalized representation identities, exact Unicode-sca
 
 Specimen `recipe/sim-foundation/crates/sim-lib-web-core/01-basics/exact-selector` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-web-core/recipes/01-basics/exact-selector/recipe.toml`.
+Source `crates/sim-lib-web-core/recipes/01-basics/exact-selector/recipe.toml`:
+
+```toml
+id = "exact-selector"
+title = "Exact normalized-text selector"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 10
+tags = ["web", "evidence", "selector", "sandbox-descriptor"]
+requires = ["web-core", "codec/lisp"]
+```

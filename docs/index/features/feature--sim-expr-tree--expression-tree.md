@@ -25,4 +25,19 @@ Build finite named source trees over mixed Table/Dir storage and calculate them 
 
 Specimen `recipe/sim-expr-tree/crates/sim-lib-expr-tree/01-basics/finite-tree` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-expr-tree/recipes/01-basics/finite-tree/recipe.toml`.
+Source `crates/sim-lib-expr-tree/recipes/01-basics/finite-tree/recipe.toml`:
+
+```toml
+id = "finite-tree"
+title = "Build a finite mixed-backend tree"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 10
+tags = ["expression-tree", "framework", "storage", "shape-checked", "citizen", "runnable"]
+requires = ["codec/lisp", "lib/expr-tree"]
+harness = "cargo-test"
+package = "sim-lib-expr-tree"
+test = "tests::recipe_finite_tree_runs_checked_lisp_surface"
+expected = "expected.txt"
+```

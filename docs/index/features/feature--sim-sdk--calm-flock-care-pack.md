@@ -21,4 +21,16 @@ Compose a twenty-second common-care capture, flock-level normal observation, fac
 
 Specimen `recipe/sim-sdk/stewardship/calm-flock-care` is checked by `xtask check-recipes`.
 
-Source path: `recipes/stewardship/calm-flock-care/recipe.toml`.
+Source `recipes/stewardship/calm-flock-care/recipe.toml`:
+
+```toml
+id = "calm-flock-care"
+title = "Record calm flock care"
+codec = "lisp"
+setup = "input.lisp"
+purpose = "README.md"
+order = 30
+tags = ["sdk", "stewardship", "flock", "offline", "attention"]
+requires = ["core", "codec/lisp", "claims"]
+network = false
+```

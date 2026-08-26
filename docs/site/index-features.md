@@ -123,6 +123,14 @@ Generated from `docs/index/index.cards.jsonl`.
 | `feature/sim-discrete/discrete-algebra` | `local/sim-discrete/crate/sim-lib-discrete` | [features/feature--sim-discrete--discrete-algebra.md](../index/features/feature--sim-discrete--discrete-algebra.md) | 5 | Provide algebra, certified rectangular assignment, graph and staged paths, composable sequence alignment, combinatorics, ranking, and spectral helpers as one reusable discrete-domain stack. |
 | `feature/sim-discrete/finite-enumeration` | `crate/sim-lib-discrete-comb` | [features/feature--sim-discrete--finite-enumeration.md](../index/features/feature--sim-discrete--finite-enumeration.md) | 1 | Enumerate fixed-alphabet words lazily, adapt words to mixed-radix digits, canonicalize cyclic patterns, and keep longest candidates. |
 | `feature/sim-discrete/generated-docs` | `local/sim-discrete/crate/xtask` | [features/feature--sim-discrete--generated-docs.md](../index/features/feature--sim-discrete--generated-docs.md) | 0 | Publish generated package, card, rustdoc, and index facts for the discrete algebra crates. |
+| `feature/sim-estate/ansible-provider-site` | `crate/sim-site-estate-ansible` | [features/feature--sim-estate--ansible-provider-site.md](../index/features/feature--sim-estate--ansible-provider-site.md) | 0 | Decorate ProcessPort with fixed inventory discovery, literal Make operations, an injected aggregate callback, and hash-chained private evidence. |
+| `feature/sim-estate/composable-product-surface` | `crate/sim-lib-estate-serve` | [features/feature--sim-estate--composable-product-surface.md](../index/features/feature--sim-estate--composable-product-surface.md) | 0 | One read-only Dir and one typed call vocabulary serve terminal, Surface, SDK, and capability-shaped automation without command injection. |
+| `feature/sim-estate/durable-operation-book` | `crate/sim-lib-estate-book` | [features/feature--sim-estate--durable-operation-book.md](../index/features/feature--sim-estate--durable-operation-book.md) | 0 | Store immutable plans and event envelopes before atomically advancing linked run heads, with projections rebuilt solely from durable history. |
+| `feature/sim-estate/estate-vocabulary` | `crate/sim-estate-core` | [features/feature--sim-estate--estate-vocabulary.md](../index/features/feature--sim-estate--estate-vocabulary.md) | 0 | Versioned, bounded records and a provider contract cover estate planning through reconciliation without native identities. |
+| `feature/sim-estate/exposure-authoring` | `crate/sim-estate-project` | [features/feature--sim-estate--exposure-authoring.md](../index/features/feature--sim-estate--exposure-authoring.md) | 0 | Compile strict declarations into operations whose callers can supply only shaped parameter values. |
+| `feature/sim-estate/guarded-operation-lifecycle` | `crate/sim-lib-estate` | [features/feature--sim-estate--guarded-operation-lifecycle.md](../index/features/feature--sim-estate--guarded-operation-lifecycle.md) | 0 | Compose content-bound plans, reviewed single-use approvals, canonical leases, ledgered provider effects, typed verification, and durable quarantine. |
+| `feature/sim-estate/model-provider-conformance` | `crate/sim-site-estate-model` | [features/feature--sim-estate--model-provider-conformance.md](../index/features/feature--sim-estate--model-provider-conformance.md) | 0 | Exercise the shared provider suite against a clocked scripted model with every dispatch and verification fault. |
+| `feature/sim-estate/sealed-command-site` | `crate/sim-site-estate-command` | [features/feature--sim-estate--sealed-command-site.md](../index/features/feature--sim-estate--sealed-command-site.md) | 0 | Compose closed exposure operations with the canonical ProcessPort using only bound programs, roots, whole atoms, and explicit budgets. |
 | `feature/sim-expr-tree/codec-policy` | `crate/sim-expr-tree-calc` | [features/feature--sim-expr-tree--codec-policy.md](../index/features/feature--sim-expr-tree--codec-policy.md) | 1 | Decode edited source and encode source/result faces through installed codecs with field-wise tree/directory/cell policy, explicit positions, trusted diminished read policy, and independent hard-clamped byte/depth/item budgets. |
 | `feature/sim-expr-tree/expedition-book` | `crate/sim-lib-expedition-book` | [features/feature--sim-expr-tree--expedition-book.md](../index/features/feature--sim-expr-tree--expedition-book.md) | 1 | Branch, compare, object, choose, seal, reopen, retain, export, project, delete projections, and replay editorial meaning while immutable run, claim, source, and artifact evidence remains external and content-addressed. |
 | `feature/sim-expr-tree/expression-tree` | `local/sim-expr-tree/crate/sim-lib-expr-tree` | [features/feature--sim-expr-tree--expression-tree.md](../index/features/feature--sim-expr-tree--expression-tree.md) | 3 | Build finite named source trees over mixed Table/Dir storage and calculate them through a capability-gated runtime library with Shape and Card contracts, durable Citizens, bounded receipts, and standard streams. |
@@ -461,6 +469,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `cli/serial-workbench` | `cli` | `crate/serial-workbench` |
 | `cli/serve` | `cli` | `local/sim-web/crate/sim-web-shell` |
 | `cli/sim-codec-compare` | `cli` | `crate/sim-codec-compare` |
+| `cli/sim-estate-acceptance` | `cli` | `crate/sim-estate-acceptance` |
 | `cli/sim-expr-tree` | `cli` | `crate/sim-expr-tree` |
 | `cli/sim-lib-agent-conduct-core-recipe-pure-journal` | `cli` | `crate/sim-lib-agent-conduct-core-recipe-pure-journal` |
 | `cli/sim-lib-agent-conduct-recipe-echo` | `cli` | `crate/sim-lib-agent-conduct-recipe-echo` |
@@ -487,6 +496,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `docs/sim-compute/generated` | `docs` | `doc-set/sim-compute/generated` |
 | `docs/sim-construction/generated` | `docs` | `doc-set/sim-construction/generated` |
 | `docs/sim-discrete/generated` | `docs` | `doc-set/sim-discrete/generated` |
+| `docs/sim-estate/generated` | `docs` | `doc-set/sim-estate/generated` |
 | `docs/sim-expr-tree/generated` | `docs` | `doc-set/sim-expr-tree/generated` |
 | `docs/sim-femm/generated` | `docs` | `doc-set/sim-femm/generated` |
 | `docs/sim-foundation/generated` | `docs` | `doc-set/sim-foundation/generated` |
@@ -515,6 +525,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `local/sim-compute/cli/xtask` | `cli` | `local/sim-compute/crate/xtask` |
 | `local/sim-construction/cli/xtask` | `cli` | `local/sim-construction/crate/xtask` |
 | `local/sim-discrete/cli/xtask` | `cli` | `local/sim-discrete/crate/xtask` |
+| `local/sim-estate/cli/xtask` | `cli` | `local/sim-estate/crate/xtask` |
 | `local/sim-expr-tree/cli/xtask` | `cli` | `local/sim-expr-tree/crate/xtask` |
 | `local/sim-femm/cli/xtask` | `cli` | `local/sim-femm/crate/xtask` |
 | `local/sim-foundation/cli/xtask` | `cli` | `local/sim-foundation/crate/xtask` |
@@ -580,6 +591,7 @@ Generated from `docs/index/index.cards.jsonl`.
 | `model/sim-lib-openai-server` | `model-exchange` | `local/sim-agent-net/crate/sim-lib-openai-server` |
 | `model/sim-lib-view-agent` | `model-exchange` | `crate/sim-lib-view-agent` |
 | `model/sim-platform-model` | `model-exchange` | `crate/sim-platform-model` |
+| `model/sim-site-estate-model` | `model-exchange` | `crate/sim-site-estate-model` |
 | `site/sim-kernel` | `site` | `crate/sim-kernel` |
 | `site/sim-lib-agent-runner-local` | `site` | `crate/sim-lib-agent-runner-local` |
 | `site/sim-lib-auto-diag` | `site` | `crate/sim-lib-auto-diag` |

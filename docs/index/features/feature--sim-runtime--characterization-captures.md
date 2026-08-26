@@ -21,4 +21,15 @@ Intern bounded semantic scenario observations as immutable evidence and compare 
 
 Specimen `recipe/sim-runtime/crates/sim-lib-standard-core/01-basics/characterize-migration` is checked by `sh scripts/check-recipes.sh`.
 
-Source path: `crates/sim-lib-standard-core/recipes/01-basics/characterize-migration/recipe.toml`.
+Source `crates/sim-lib-standard-core/recipes/01-basics/characterize-migration/recipe.toml`:
+
+```toml
+id = "characterize-migration"
+title = "Characterize a migration"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 20
+tags = ["standard", "characterization", "migration", "contract"]
+requires = ["core", "codec/lisp"]
+```

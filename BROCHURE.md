@@ -1132,6 +1132,62 @@ break a pattern over on-or-off choices into its building blocks and read how it 
 
 When your data is a pattern indexed by yes-or-no combinations -- which switches are on, which features are present -- this crate lets you look at it in a second, revealing way. It rewrites the pattern as a blend of simple underlying components, so you can see which broad tendencies dominate and which fine details barely register. From that view you can measure how concentrated or how spread out a pattern is, combine two patterns by their toggled differences, and roll information up or down across every subset of choices. It moves between the plain view and the component view quickly and exactly, so nothing is approximated away.
 
+### sim-estate
+
+#### sim-estate-acceptance
+
+Bounded physical-controller acceptance driver for SIM estate operations.
+
+Exercise the integrated estate stack against an explicitly selected controller and private project root while emitting only sanitized, digest-bound acceptance evidence. The driver composes discovery, compiled operations, bounded process execution, durable history, read-only projections, model refusals, and offline verification. Fixed program and artifact registries keep arbitrary shell, path, and environment authority outside the test surface. Read-only capture proves provider wiring without making an estate change or claiming a private operational outcome.
+
+#### sim-estate-core
+
+Pure portable estate records and provider contract for SIM.
+
+Represent plans, approvals, runs, verification, reconciliation, leases, quarantine, and outcomes with one deterministic vocabulary. Provider implementations share the same records and typed failure boundary, so a modeled site and a physical site can be compared without translating between private control formats. Content identities bind evidence to the exact operation it describes. Bounded fields and closed states keep malformed or ambiguous input from becoming authority. The crate carries portable facts only: host access, command execution, and product policy remain with higher layers.
+
+#### sim-estate-project
+
+Pure closed exposure compiler for SIM estate operations.
+
+Compile a reviewed operation description into a closed, typed exposure without handing callers a shell-shaped escape hatch. Strict schemas and deterministic encoders bind provider, target, risk, input, and output identities while rejecting unknown fields and unsafe combinations. The result can be inspected, hashed, stored, and compared before any effect-capable site sees it. Extensible identities preserve room for new providers and risk classes while the executable shape stays deliberately narrow.
+
+#### sim-lib-estate
+
+Guarded plan, apply, and reconcile organ for SIM estates.
+
+Preview and review a content-bound change, then apply it exactly once through a capability-checked organ. Durable history records intent before dispatch and captures verification, cleanup, and reconciliation afterward. Target exclusion prevents conflicting work from proceeding concurrently. Ambiguous dispatch, controller loss, and unverifiable outcomes enter quarantine rather than being reported as success. The organ composes provider contracts, approvals, the durable book, and policy without baking host-specific behavior into its core.
+
+#### sim-lib-estate-book
+
+CAS-backed durable evidence for SIM estate operations.
+
+Audit an estate operation from its content-bound plan through approval, dispatch, verification, cleanup, reconciliation, and final outcome. Compare-and-swap storage makes approval consumption and state transitions atomic across competing processes. Events remain append-only, while readable projections are rebuilt from canonical records instead of trusted as mutable summaries. The Table boundary keeps storage portable across memory, files, and other durable implementations without moving policy into the storage adapter.
+
+#### sim-lib-estate-serve
+
+Read-only estate Dir projection and capability-shaped organ calls.
+
+Inspect providers, inventory, plans, review state, runs, events, quarantine, and rebuilt summaries through one coherent directory surface. Rows are projections of durable records, so readers do not gain hidden mutation authority. Effects remain explicit typed calls into the guarded organ, with capability checks and exact arguments at the boundary. Terminal, visual, SDK, and automation surfaces can therefore share the same product model without each growing a private command protocol.
+
+#### sim-site-estate-ansible
+
+Sealed Ansible provider site for SIM estate operations.
+
+Discover and operate an estate through sanitized identities and durable typed evidence while keeping private provider material behind a narrow site boundary. Raw inventory, task arguments, facts, diffs, exceptions, and human logs stay in caller-owned private artifacts rather than portable records. Fixed operation bindings and bounded process requests prevent product callers from selecting arbitrary programs, paths, environment variables, or shell syntax. Dispatch uncertainty and controller loss remain explicit provider outcomes.
+
+#### sim-site-estate-command
+
+Sealed ProcessPort adapter for compiled SIM estate operations.
+
+Run declared estate operations through the canonical bounded process port without granting callers shell, path, program, or environment authority. The adapter accepts only compiled operation bindings and maps them to fixed program references, project roots, argument atoms, budgets, cancellation, and private artifact references. Process receipts retain bounded output and exact dispatch evidence, including the unknown-after-dispatch case. This keeps command execution reusable while preserving the estate organ's stronger review and reconciliation rules.
+
+#### sim-site-estate-model
+
+Deterministic host-free model site for SIM estate providers.
+
+Script stale plans, disappearing targets, unsupported previews, ambiguous dispatch, malformed events, cancellation, verification failure, controller loss, and reconciliation without host variability. The model implements the same provider contract as a physical site, so the guarded organ can be tested against exact state transitions and failure evidence. Deterministic scenarios make difficult races repeatable and let conformance tests prove that uncertainty enters quarantine instead of being silently accepted.
+
 ### sim-expr-tree
 
 #### sim-expr-tree

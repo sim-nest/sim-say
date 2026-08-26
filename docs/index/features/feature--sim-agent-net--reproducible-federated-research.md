@@ -16,4 +16,15 @@ Immutable plans compose authorized Retriever cards, deterministic partial federa
 
 Specimen `recipe/sim-agent-net/crates/sim-lib-search/01-fixture/fixture-research` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-search/recipes/01-fixture/fixture-research/recipe.toml`.
+Source `crates/sim-lib-search/recipes/01-fixture/fixture-research/recipe.toml`:
+
+```toml
+id = "fixture-research"
+title = "Replay a bounded federated research run"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 10
+tags = ["search", "federation", "research", "replay", "fixture"]
+requires = ["search", "skill", "rank"]
+```

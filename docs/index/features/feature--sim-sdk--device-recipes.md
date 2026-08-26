@@ -27,4 +27,12 @@ Exercise modeled device, watch, and glasses workflows through SDK-level recipe e
 
 Specimen `recipe/sim-sdk/atelier/expedition-first-light` is checked by `xtask check-recipes`.
 
-Source path: `recipes/atelier/expedition-first-light/recipe.toml`.
+Source `recipes/atelier/expedition-first-light/recipe.toml`:
+
+```toml
+title = "First light after deleting every convenience"
+kind = "rust"
+entry = "../../../tests/expedition_first_light.rs"
+required_features = ["continuity"]
+book = "sim-sdk"
+```

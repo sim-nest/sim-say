@@ -21,4 +21,15 @@ Validate canonical twelve-pitch rows, preserve all 48 P/I/R/RI aliases across sy
 
 Specimen `recipe/sim-music/crates/sim-lib-pitch-serial/01-basics/row-family-matrix` is checked by `sh scripts/check-recipes.sh`.
 
-Source path: `crates/sim-lib-pitch-serial/recipes/01-basics/row-family-matrix/recipe.toml`.
+Source `crates/sim-lib-pitch-serial/recipes/01-basics/row-family-matrix/recipe.toml`:
+
+```toml
+id = "row-family-matrix"
+title = "Build the complete family and matrix for an Op. 25 row"
+codec = "rust"
+setup = "setup.rs"
+purpose = "purpose.md"
+order = 10
+tags = ["pitch", "serial", "tone-row", "P", "I", "R", "RI", "family", "matrix", "rust", "framework"]
+requires = ["pitch-serial", "pitch-core", "serial-core"]
+```

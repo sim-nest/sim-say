@@ -18,4 +18,15 @@ Roll system, area, work-package, asset-group, and contractual-milestone readines
 
 Specimen `recipe/sim-construction/crates/sim-lib-construction-project/01-basics/system-to-accepted-handover` is checked by `sh scripts/check-recipes.sh`.
 
-Source path: `crates/sim-lib-construction-project/recipes/01-basics/system-to-accepted-handover/recipe.toml`.
+Source `crates/sim-lib-construction-project/recipes/01-basics/system-to-accepted-handover/recipe.toml`:
+
+```toml
+id = "system-to-accepted-handover"
+title = "System to accepted handover"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 99
+tags = ["construction", "project-control", "handover", "commissioning", "acceptance", "readiness"]
+requires = ["construction.project.read", "construction.project.write", "construction.project.accept", "codec/lisp"]
+```

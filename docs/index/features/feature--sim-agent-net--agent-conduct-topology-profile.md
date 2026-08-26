@@ -38,4 +38,17 @@ Certify delivered topology packages as agent/conduct-v1 workflows, browse the st
 
 Specimen `recipe/sim-agent-net/crates/sim-lib-agent-conduct/01-basics/echo-conduct` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-agent-conduct/recipes/01-basics/echo-conduct/recipe.toml`.
+Source `crates/sim-lib-agent-conduct/recipes/01-basics/echo-conduct/recipe.toml`:
+
+```toml
+id = "echo-conduct"
+title = "Certify and run an echo conduct"
+purpose = "Bind and execute a certified echo conduct through the topology runtime."
+summary = "Load one agent/conduct-v1 topology, bind its Card, and run it through sim-lib-topology."
+language = "rust"
+entry = "src/main.rs"
+expected = "expected.txt"
+
+[[expect]]
+result = "completed"
+```

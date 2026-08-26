@@ -20,4 +20,21 @@ Retrieve metadata and keys through the shared HTTP policy while pure core and JO
 
 Specimen `recipe/sim-agent-net/crates/sim-lib-oauth-http/01-basics/metadata-refresh` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-oauth-http/recipes/01-basics/metadata-refresh/recipe.toml`.
+Source `crates/sim-lib-oauth-http/recipes/01-basics/metadata-refresh/recipe.toml`:
+
+```toml
+id = "oauth-metadata-refresh"
+title = "Retrieve bounded discovery and rotating keys"
+summary = "Use the shared HTTP policy with HTTPS, byte caps, redirects off, and an explicit refresh clock."
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+expected = "expected.txt"
+order = 10
+tags = ["oauth", "http", "discovery"]
+requires = ["oauth-http", "net-http"]
+
+[[expect]]
+form = 0
+result = "(oauth-discovery (https required) (redirect off) (bytes bounded) (refresh explicit))"
+```

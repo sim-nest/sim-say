@@ -10,6 +10,7 @@
 | [sim-compute](../repos/sim-compute.md) | 9 | [card-index.json](../contracts/sim-compute/card-index.json) |
 | [sim-construction](../repos/sim-construction.md) | 8 | [card-index.json](../contracts/sim-construction/card-index.json) |
 | [sim-discrete](../repos/sim-discrete.md) | 22 | [card-index.json](../contracts/sim-discrete/card-index.json) |
+| [sim-estate](../repos/sim-estate.md) | 3 | [card-index.json](../contracts/sim-estate/card-index.json) |
 | [sim-expr-tree](../repos/sim-expr-tree.md) | 6 | [card-index.json](../contracts/sim-expr-tree/card-index.json) |
 | [sim-femm](../repos/sim-femm.md) | 21 | [card-index.json](../contracts/sim-femm/card-index.json) |
 | [sim-foundation](../repos/sim-foundation.md) | 9 | [card-index.json](../contracts/sim-foundation/card-index.json) |

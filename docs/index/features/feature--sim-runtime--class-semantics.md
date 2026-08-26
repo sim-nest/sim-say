@@ -22,4 +22,12 @@ Own checked declared-parent class descriptors projected onto the kernel Class pr
 
 Specimen `recipe/sim-runtime/crates/sim-lib-class/01-basics/neutral-class` is checked by `sh scripts/check-recipes.sh`.
 
-Source path: `crates/sim-lib-class/recipes/01-basics/neutral-class/recipe.toml`.
+Source `crates/sim-lib-class/recipes/01-basics/neutral-class/recipe.toml`:
+
+```toml
+id = "neutral-class"
+title = "Classes for a language that does not exist yet"
+purpose = "Exercise language-neutral class lineage, Shape, caching, and construction."
+summary = "Exercise lineage, failures, managed caching, Shape browsing, and read construction without a guest runtime."
+tags = ["class", "language-neutral", "lineage", "managed", "shape", "read-construction"]
+```

@@ -22,4 +22,15 @@ The office evidence construction bridge attaches project-scoped fact evidence to
 
 Specimen `recipe/sim-construction/crates/sim-lib-construction-office/01-basics/construction-office-evidence` is checked by `sh scripts/check-recipes.sh`.
 
-Source path: `crates/sim-lib-construction-office/recipes/01-basics/construction-office-evidence/recipe.toml`.
+Source `crates/sim-lib-construction-office/recipes/01-basics/construction-office-evidence/recipe.toml`:
+
+```toml
+id = "construction-office-evidence"
+title = "Attach office evidence to construction control"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 10
+tags = ["construction", "office", "evidence", "document", "provenance"]
+requires = ["construction.project.read", "office.evidence.read", "office.evidence.write", "codec/lisp"]
+```

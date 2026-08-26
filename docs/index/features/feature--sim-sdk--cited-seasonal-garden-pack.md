@@ -21,4 +21,16 @@ Compose independent garden Shapes, dated jurisdictional guidance, optional weath
 
 Specimen `recipe/sim-sdk/stewardship/cited-seasonal-garden` is checked by `xtask check-recipes`.
 
-Source path: `recipes/stewardship/cited-seasonal-garden/recipe.toml`.
+Source `recipes/stewardship/cited-seasonal-garden/recipe.toml`:
+
+```toml
+id = "cited-seasonal-garden"
+title = "Rebuild a cited garden season"
+codec = "lisp"
+setup = "input.lisp"
+purpose = "README.md"
+order = 20
+tags = ["sdk", "stewardship", "garden", "offline", "seasonal"]
+requires = ["core", "codec/lisp", "numbers/rational", "claims"]
+network = false
+```

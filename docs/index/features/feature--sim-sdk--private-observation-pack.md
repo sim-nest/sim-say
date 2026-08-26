@@ -21,4 +21,16 @@ Compose opt-in exact observations, explicit missingness and concurrency, sealed 
 
 Specimen `recipe/sim-sdk/stewardship/private-observation` is checked by `xtask check-recipes`.
 
-Source path: `recipes/stewardship/private-observation/recipe.toml`.
+Source `recipes/stewardship/private-observation/recipe.toml`:
+
+```toml
+id = "private-observation"
+title = "Keep and erase a private observation"
+codec = "lisp"
+setup = "input.lisp"
+purpose = "README.md"
+order = 40
+tags = ["sdk", "stewardship", "private-observation", "offline", "sealed"]
+requires = ["core", "codec/lisp", "sealed-storage", "exact-rational"]
+network = false
+```

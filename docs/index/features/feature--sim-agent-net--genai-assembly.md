@@ -17,4 +17,15 @@ Compose one checked generative exchange from BRIDGE packets, model placement, pr
 
 Specimen `recipe/sim-agent-net/crates/sim-lib-agent/01-basics/genai-assembly` is checked by `xtask check-recipes`.
 
-Source path: `crates/sim-lib-agent/recipes/01-basics/genai-assembly/recipe.toml`.
+Source `crates/sim-lib-agent/recipes/01-basics/genai-assembly/recipe.toml`:
+
+```toml
+id = "genai-assembly"
+title = "Checked generative exchange assembly"
+codec = "lisp"
+setup = "setup.siml"
+purpose = "purpose.md"
+order = 20
+tags = ["genai", "bridge", "shape", "model-runner", "composition"]
+requires = ["core", "agent", "sim/bridge", "codec/lisp", "codec/json"]
+```
