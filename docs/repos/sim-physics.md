@@ -1,6 +1,6 @@
 # sim-physics
 
-Published commit: `b4bd1aee4f16be1e1af77d9850a50b9fb367051c`.
+Published commit: `f6b321ecc758aa0acbdb8f7c37f90d3f845d69eb`.
 
 ## Crates
 
