@@ -998,7 +998,7 @@
 | `feature/sim-platform/ubuntu-pc-capsule` | `spec-test/sim-platform/crates/sim-platform-ubuntu-pc/tests/conformance` | `crate/sim-platform-ubuntu-pc` | `spec-test` | `crates/sim-platform-ubuntu-pc/tests/conformance.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-platform/process-realization` | `spec-test/sim-platform/crates/sim-platform-ubuntu-pc/tests/physical_attestation` | `crate/sim-platform-ubuntu-pc` | `spec-test` | `crates/sim-platform-ubuntu-pc/tests/physical_attestation.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-platform/ubuntu-rpi-capsule` | `spec-test/sim-platform/crates/sim-platform-ubuntu-rpi/tests/conformance` | `crate/sim-platform-ubuntu-rpi` | `spec-test` | `crates/sim-platform-ubuntu-rpi/tests/conformance.rs` | `` | `cargo test` | `true` | `true` |
-| `feature/sim-platform/wasi-capsule` | `spec-test/sim-platform/crates/sim-platform-wasi/src/lib` | `crate/sim-platform-wasi` | `spec-test` | `crates/sim-platform-wasi/src/lib.rs` | `codec` | `cargo test` | `true` | `true` |
+| `feature/sim-platform/wasi-capsule` | `spec-test/sim-platform/crates/sim-platform-wasi/src/lib` | `crate/sim-platform-wasi` | `spec-test` | `crates/sim-platform-wasi/src/lib.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-platform/web-shell-realization` | `spec-test/sim-platform/crates/sim-platform-web-shell/src/main` | `crate/sim-platform-web-shell` | `spec-test` | `crates/sim-platform-web-shell/src/main.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-platform/windows-capsule` | `spec-test/sim-platform/crates/sim-platform-windows/tests/conformance` | `crate/sim-platform-windows` | `spec-test` | `crates/sim-platform-windows/tests/conformance.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-platform/ledger-command-realization` | `spec-test/sim-platform/crates/sim-table-fs/src/tests/authority` | `local/sim-platform/crate/sim-table-fs` | `spec-test` | `crates/sim-table-fs/src/tests/authority.rs` | `` | `cargo test` | `true` | `true` |
@@ -1113,6 +1113,7 @@
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/forge_author` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/forge_author.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/forge_eval` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/forge_eval.rs` | `shape` | `cargo test` | `true` | `true` |
 | `feature/sim-sdk/gpu-math-composition` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/gpu_math` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/gpu_math.rs` | `` | `cargo test` | `true` | `true` |
+| `` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/helpers` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/helpers.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/instrument_streams` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/instrument_streams.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-sdk/interference-composition` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/interference` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/interference.rs` | `shape` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/spec/lib_lifecycle` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/spec/lib_lifecycle.rs` | `` | `cargo test` | `true` | `true` |
@@ -1128,7 +1129,6 @@
 | `feature/sim-sdk/estate-facade` | `spec-test/sim-sdk/src/estate_facade_tests` | `crate/sim-nest` | `spec-test` | `src/estate_facade_tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-sdk/genai-feature-bundles` | `spec-test/sim-sdk/src/feature_contract_tests` | `crate/sim-nest` | `spec-test` | `src/feature_contract_tests.rs` | `shape` | `cargo test` | `true` | `true` |
 | `feature/sim-sdk/standard-gc-policy` | `spec-test/sim-sdk/src/gc` | `crate/sim-nest` | `spec-test` | `src/gc.rs` | `` | `cargo test` | `true` | `true` |
-| `feature/sim-sdk/raised-exception-composition` | `spec-test/sim-sdk/src/lib` | `crate/sim-nest` | `spec-test` | `src/lib.rs` | `shape` | `cargo test` | `true` | `true` |
 | `feature/sim-sdk/platform-composition` | `spec-test/sim-sdk/src/loaders/tests/registry` | `crate/sim-nest` | `spec-test` | `src/loaders/tests/registry.rs` | `shape` | `cargo test` | `true` | `true` |
 | `feature/sim-sdk/model-test-facade` | `spec-test/sim-sdk/src/model_test_facade_tests` | `crate/sim-nest` | `spec-test` | `src/model_test_facade_tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-sdk/media-edge-music-vertical` | `spec-test/sim-sdk/src/music_vertical` | `crate/sim-nest` | `spec-test` | `src/music_vertical.rs` | `` | `cargo test` | `true` | `true` |
@@ -1139,6 +1139,7 @@
 | `feature/sim-sdk/characterization-facade` | `spec-test/sim-sdk/tests/characterization` | `crate/sim-nest` | `spec-test` | `tests/characterization.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-sdk/device-recipes` | `spec-test/sim-sdk/tests/continuity_exports` | `crate/sim-nest` | `spec-test` | `tests/continuity_exports.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-sdk/hotload-facade` | `spec-test/sim-sdk/tests/conversational_instrument_adoption` | `crate/sim-nest` | `spec-test` | `tests/conversational_instrument_adoption.rs` | `` | `cargo test` | `true` | `true` |
+| `feature/sim-sdk/raised-exception-composition` | `spec-test/sim-sdk/tests/exceptions_facade` | `crate/sim-nest` | `spec-test` | `tests/exceptions_facade.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-sdk/hotload-facade` | `spec-test/sim-sdk/tests/hotload_generation` | `crate/sim-nest` | `spec-test` | `tests/hotload_generation.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-sdk/jvm-composition` | `spec-test/sim-sdk/tests/jvm_exports` | `crate/sim-nest` | `spec-test` | `tests/jvm_exports.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-sdk/stewardship-memo-acceptance` | `spec-test/sim-sdk/tests/memo_acceptance` | `crate/sim-nest` | `spec-test` | `tests/memo_acceptance.rs` | `` | `cargo test` | `true` | `true` |

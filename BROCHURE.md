@@ -2370,7 +2370,7 @@ A thin iOS scene shell hosts the same SIM platform Card and native byte ABI as d
 
 #### sim-platform-linux
 
-Private bounded Linux mechanics for SIM platform capsules.
+Bounded Linux mechanics for SIM platform capsules.
 
 Explicit clocks, deterministic entropy, preopened XDG mounts, lifecycle, budgets, and an injected desktop portal behind the platform-capsule boundary. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
 
