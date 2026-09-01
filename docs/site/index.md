@@ -7,6 +7,6 @@
 - [Tutorial links](tutorial-links.md)
 - [Constellation diagram](constellation.md)
 
-Published repo count: 26.
-Index feature rows: 224.
-Index surface rows: 229.
+Published repo count: 29.
+Index feature rows: 416.
+Index surface rows: 276.

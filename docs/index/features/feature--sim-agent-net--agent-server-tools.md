@@ -6,12 +6,11 @@
 - Subject: `local/sim-agent-net/crate/sim-lib-server`
 - Canonical key: `crate/sim-lib-server/feature-sim-agent-net-agent-server-tools`
 
-Expose agent-facing server, skill, and OpenAI gateway libraries for model-connected hosts.
+Expose agent-facing server, skill, and OpenAI gateway libraries for model-connected hosts using the shared authoritative Draft 2020-12 schema organ.
 
 ## Anchors
 
 - `anchor/crate/sim-lib-openai-server`
-- `anchor/crate/sim-lib-server`
 - `anchor/crate/sim-lib-skill`
 - `anchor/export/sim-lib-server/server/address`
 - `anchor/export/sim-lib-server/server/connect`

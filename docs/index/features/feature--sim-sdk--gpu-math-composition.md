@@ -106,4 +106,5 @@ fn map_value<'a>(expr: &'a Expr, key: &str) -> &'a Expr {
         })
         .expect("map key present")
 }
+// conformance: GPU math specimens prove placement parity and bounded provider behavior.
 ```

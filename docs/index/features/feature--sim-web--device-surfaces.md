@@ -11,7 +11,6 @@ Rank and project view surfaces against desktop, phone, watch, and glasses device
 ## Anchors
 
 - `anchor/crate/sim-lib-view-device`
-- `anchor/crate/sim-lib-view-wrist`
 
 ## Surfaces
 

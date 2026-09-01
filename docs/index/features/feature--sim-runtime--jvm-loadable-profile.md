@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-lang-jvm`
 - Canonical key: `crate/sim-lib-lang-jvm/feature-sim-runtime-jvm-loadable-profile`
 
-Decode caller-authorized classfile bytes and execute bounded JVM calls, managed objects, arrays, exceptions, exact Java text, and bidirectional functional-interface adapters through one host-registered library, with exact whole-class proofs required by the verified fidelity tier.
+Decode caller-authorized classfile bytes and execute caller-selected exact class, member, descriptor, and integer arguments with distinct value, throwable, and refusal outcomes, plus bounded managed objects, arrays, exact Java text, and bidirectional functional-interface adapters through one host-registered library.
 
 ## Anchors
 
@@ -35,4 +35,5 @@ Source `crates/sim-lib-lang-jvm/recipes/01-basics/authorized-static-call/recipe.
 title = "Define authorized class bytes and call a static method"
 kind = "lisp"
 entry = "setup.siml"
+purpose = "purpose.md"
 ```

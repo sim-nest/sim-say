@@ -1,6 +1,6 @@
 # sim-codecs
 
-Published commit: `a230d4de5b8d2203d9b18809e914fa66c8971ef9`.
+Published commit: `03b43e2c026b3a680752be4b0a99408d598b145a`.
 
 ## Crates
 
@@ -27,6 +27,11 @@ Published commit: `a230d4de5b8d2203d9b18809e914fa66c8971ef9`.
 - `sim-codec-typescript`
 - `sim-test-support`
 - `sim-wasm-abi`
+- `sim-codec-feed`
+- `sim-codec-index-vault`
+- `sim-codec-robots`
+- `sim-codec-search-searxng`
+- `sim-codec-sql`
 
 ## Contracts
 

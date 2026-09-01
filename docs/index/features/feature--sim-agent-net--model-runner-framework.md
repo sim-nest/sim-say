@@ -6,14 +6,13 @@
 - Subject: `local/sim-agent-net/crate/sim-lib-agent-runner-core`
 - Canonical key: `crate/sim-lib-agent-runner-core/feature-sim-agent-net-model-runner-framework`
 
-Run local GenAI requests through provider-neutral runner contracts, HTTP profiles, process adapters, and loadable model sites.
+Run GenAI requests through provider-neutral runner contracts, named direct-API families, HTTP profiles, process adapters, and loadable model sites.
 
 ## Anchors
 
 - `anchor/crate/sim-lib-agent-runner-core`
 - `anchor/crate/sim-lib-agent-runner-http`
 - `anchor/crate/sim-lib-agent-runner-local`
-- `anchor/crate/sim-lib-agent-runner-process`
 - `anchor/export/sim-lib-agent-runner-local/model/local`
 - `anchor/runtime-lib/sim-lib-agent-runner-local/local-model-lib`
 - `anchor/runtime-lib/sim-lib-agent-runner-local/wasm-model-lib`
@@ -22,6 +21,8 @@ Run local GenAI requests through provider-neutral runner contracts, HTTP profile
 - `anchor/rustdoc/sim-lib-agent-runner-core/model-response`
 - `anchor/rustdoc/sim-lib-agent-runner-core/model-runner`
 - `anchor/rustdoc/sim-lib-agent-runner-http/anthropic_profile`
+- `anchor/rustdoc/sim-lib-agent-runner-http/http-provider-call`
+- `anchor/rustdoc/sim-lib-agent-runner-http/http-provider-outcome`
 - `anchor/rustdoc/sim-lib-agent-runner-http/http-runner`
 - `anchor/rustdoc/sim-lib-agent-runner-http/lemonade_profile`
 - `anchor/rustdoc/sim-lib-agent-runner-http/lm_studio_profile`
@@ -32,7 +33,10 @@ Run local GenAI requests through provider-neutral runner contracts, HTTP profile
 - `anchor/rustdoc/sim-lib-agent-runner-http/provider_profiles`
 - `anchor/rustdoc/sim-lib-agent-runner-local/local-model-backend`
 - `anchor/rustdoc/sim-lib-agent-runner-local/wasm-model-backend`
-- `anchor/rustdoc/sim-lib-agent-runner-process/process-command-spec`
+- `anchor/rustdoc/sim-lib-agent-runner-process/broker-process-spec`
+- `anchor/rustdoc/sim-lib-agent-runner-process/broker-session-controller`
+- `anchor/rustdoc/sim-lib-agent-runner-process/codex-cli-adapter`
+- `anchor/rustdoc/sim-lib-agent-runner-process/open-code-cli-adapter`
 - `anchor/rustdoc/sim-lib-agent-runner-process/process-runner`
 - `anchor/rustdoc/sim-lib-agent/ai_runner_placement_capability`
 - `anchor/rustdoc/sim-lib-agent/runner-backend`
@@ -46,308 +50,693 @@ Run local GenAI requests through provider-neutral runner contracts, HTTP profile
 
 ## Specimens
 
+- `spec-test/sim-agent-net/crates/sim-lib-agent-runner-http/src/runner`
+- `spec-test/sim-agent-net/crates/sim-lib-agent-runner-process/src/broker`
 - `spec-test/sim-agent-net/crates/sim-lib-agent/src/tests/agent_ai_placement_swap`
 
 ## Worked Example
 
-Specimen `spec-test/sim-agent-net/crates/sim-lib-agent/src/tests/agent_ai_placement_swap` is checked by `cargo test`.
+Specimen `spec-test/sim-agent-net/crates/sim-lib-agent-runner-http/src/runner` is checked by `cargo test`.
 
-Source `crates/sim-lib-agent/src/tests/agent_ai_placement_swap.rs`:
+Source `crates/sim-lib-agent-runner-http/src/runner.rs`:
 
 ```rust
-use super::support::{eval_cx, flatten_text, install_agent_lib, install_test_codec};
-use crate::{AI_RUNNER_PLACEMENT_CAPABILITY, components::cached_model_fabric_value};
-use sim_codec_chat::validate_chat_transcript;
-use sim_kernel::{
-    AbiVersion, Args, Callable, Consistency, EvalMode, EvalReply, EvalRequest, Export, Expr, Lib,
-    LibManifest, LibTarget, Linker, LoadCx, Object, ObjectCompat, Result, Symbol, Value, Version,
+use crate::ProviderAuth;
+use crate::client::{HttpRunnerRequest, post_json, post_json_stream};
+use crate::config::{ProviderConfig, compatibility_secret};
+use crate::model_params::attach_bridge_model_params_to_body;
+use crate::redact::redact_text;
+use crate::stream::HttpStreamDecoder;
+
+// conformance: direct and split HTTP provider paths are identical and thread-safe.
+use sim_codec_chat::{
+    AnthropicRequestOptions, LemonadeRequestOptions, LmStudioRequestOptions, OllamaRequestOptions,
+    OpenAiRequestOptions, decode_anthropic_response, decode_anthropic_stream,
+    decode_lemonade_response, decode_lemonade_stream, decode_lm_studio_response,
+    decode_lm_studio_stream, decode_ollama_response, decode_ollama_stream, decode_openai_response,
+    decode_openai_responses_response, encode_anthropic_request, encode_lemonade_request,
+    encode_lm_studio_request, encode_ollama_request, encode_openai_request,
+    encode_openai_responses_request, model_error_expr,
 };
-use sim_lib_agent_runner_core::ModelResponse;
-use sim_lib_stream_fabric::{ContentKey, EvalCassette, EvalCassetteLedger};
-use sim_value::access::field as map_field;
-use std::sync::{Arc, Mutex};
+use sim_kernel::{
+    CapabilityName, Cx, Datum, DatumStore, Effect, Error, Expr, Ref, Result, Symbol, core_any_ref,
+    effect, value_from_ref,
+};
+use sim_lib_agent_runner_core::{
+    ModelCard, ModelEvent, ModelEventSink, ModelRequest, ModelResponse, ModelRunner,
+    OUTPUT_GRAMMAR_DIALECT_EXTRA, OUTPUT_GRAMMAR_EXTRA, OUTPUT_GRAMMAR_REQUIRED_EXTRA,
+    RETURN_CODEC_EXTRA, RETURN_SHAPE_EXTRA, grammar_dialect_symbol,
+};
+use sim_lib_provider::{
+    ProviderCall, ProviderDispatch, ProviderOutcome, ProviderSeatExecution, Secret,
+};
+use sim_shape::GrammarDialect;
+use std::time::Duration;
 
-// conformance: model runner framework realizes one prompt through open placements.
+mod request_policy;
+use request_policy::*;
 
-#[derive(Default)]
-struct MemoryLedger {
-    entries: Mutex<Vec<(ContentKey, EvalReply)>>,
-}
-
-impl EvalCassetteLedger for MemoryLedger {
-    fn append_eval_result(&self, key: &ContentKey, reply: &EvalReply) -> Result<()> {
-        self.entries
-            .lock()
-            .unwrap()
-            .push((key.clone(), reply.clone()));
-        Ok(())
-    }
-
-    fn replay_eval_results(&self) -> Result<Vec<(ContentKey, EvalReply)>> {
-        Ok(self.entries.lock().unwrap().clone())
-    }
-}
-
-#[derive(Clone)]
-struct StubLoadedModelSite {
-    runner: String,
+/// HTTP-backed [`ModelRunner`] for OpenAI-compatible and Ollama endpoints.
+#[derive(Clone, Debug)]
+pub struct HttpRunner {
+    runner: Symbol,
     model: String,
-    answer_prefix: String,
-    calls: Option<Arc<Mutex<usize>>>,
+    provider: Symbol,
+    locality: Symbol,
+    runner_label: &'static str,
+    request_path: &'static str,
+    endpoint: String,
+    secret: Option<Secret>,
+    auth: ProviderAuth,
+    codec: Symbol,
+    timeout: Duration,
+    stream: bool,
+    tools: bool,
+    max_response_bytes: usize,
+    grammar_dialects: Vec<GrammarDialect>,
 }
 
-impl Object for StubLoadedModelSite {
-    fn display(&self, _cx: &mut sim_kernel::Cx) -> Result<String> {
-        Ok(format!("#<stub-model-site {}>", self.model))
-    }
-
-    fn as_any(&self) -> &dyn std::any::Any {
-        self
-    }
+/// Owned HTTP dispatch payload produced by [`HttpRunner::plan`].
+#[derive(Clone, Debug)]
+pub struct HttpProviderCall {
+    request: HttpRunnerRequest,
+    secret: Option<Secret>,
+    include_raw: bool,
 }
 
-impl ObjectCompat for StubLoadedModelSite {
-    fn as_callable(&self) -> Option<&dyn Callable> {
-        Some(self)
-    }
+/// Owned HTTP outcome consumed by [`HttpRunner::land`].
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub struct HttpProviderOutcome {
+    response: crate::client::HttpRunnerResponse,
+    include_raw: bool,
 }
 
-impl Callable for StubLoadedModelSite {
-    fn call(&self, cx: &mut sim_kernel::Cx, args: Args) -> Result<Value> {
-        let [request] = args.values() else {
-            return Err(sim_kernel::Error::Eval(
-                "stub model site expects one request argument".to_owned(),
+impl HttpRunner {
+    /// Builds a runner from an open provider config without changing the HTTP
+    /// transport path.
+    pub fn new_provider(config: ProviderConfig) -> Self {
+        let auth = config.profile.auth.clone();
+        Self {
+            runner: config.runner,
+            model: config.model,
+            provider: config.profile.provider,
+            locality: config.locality,
+            runner_label: "runner/provider",
+            request_path: config.profile.chat_path,
+            endpoint: config.endpoint,
+            secret: config.secret,
+            auth,
+            codec: config.codec,
+            timeout: config.timeout,
+            stream: config.stream,
+            tools: config.tools,
+            max_response_bytes: config.max_output_bytes,
+            grammar_dialects: config.grammar_dialects,
+        }
+    }
+
+    /// Builds a runner targeting an OpenAI-compatible `/chat/completions`
+    /// endpoint, reading its API key from the `api_key_env` environment
+    /// variable.
+    #[allow(clippy::too_many_arguments)]
+    pub fn new_openai_compatible(
+        runner: Symbol,
+        model: impl Into<String>,
+        endpoint: impl Into<String>,
+        api_key_env: impl Into<String>,
+        codec: Symbol,
+        timeout: Duration,
+        stream: bool,
+        tools: bool,
+        max_response_bytes: usize,
+    ) -> Self {
+        let api_key_env = api_key_env.into();
+        let secret = compatibility_secret(&api_key_env).expect(
+            "historical OpenAI-compatible constructor requires its credential at construction time",
+        );
+        Self {
+            runner,
+            model: model.into(),
+            provider: Symbol::new("openai-compatible"),
+            locality: Symbol::new("network"),
+            runner_label: "runner/openai-compatible",
+            request_path: "/chat/completions",
+            endpoint: endpoint.into(),
+            secret: Some(secret),
+            auth: ProviderAuth::BearerEnv { env: api_key_env },
+            codec,
+            timeout,
+            stream,
+            tools,
+            max_response_bytes,
+            grammar_dialects: Vec::new(),
+        }
+    }
+
+    /// Builds a runner targeting an Ollama endpoint at the given `locality`.
+    #[allow(clippy::too_many_arguments)]
+    pub fn new_ollama(
+        runner: Symbol,
+        model: impl Into<String>,
+        locality: Symbol,
+        endpoint: impl Into<String>,
+        codec: Symbol,
+        timeout: Duration,
+        stream: bool,
+        tools: bool,
+        max_response_bytes: usize,
+    ) -> Self {
+        Self {
+            runner,
+            model: model.into(),
+            provider: Symbol::new("ollama"),
+            locality,
+            runner_label: "runner/ollama",
+            request_path: "/api/chat",
+            endpoint: endpoint.into(),
+            secret: None,
+            auth: ProviderAuth::None,
+            codec,
+            timeout,
+            stream,
+            tools,
+            max_response_bytes,
+            grammar_dialects: vec![GrammarDialect::Gbnf],
+        }
+    }
+
+    fn infer_inner(&self, cx: &mut Cx, request: ModelRequest) -> Result<ModelResponse> {
+        let include_raw = self.include_raw(cx, &request);
+        let api_key = self.secret.as_ref().map(Secret::expose);
+        let headers = self.request_headers(api_key);
+        let body = self.encode_request(request, self.stream)?;
+        let response = post_json(
+            HttpRunnerRequest {
+                runner_label: self.runner_label,
+                endpoint: self.endpoint.clone(),
+                path: self.request_path,
+                headers,
+                timeout: self.timeout,
+                body,
+                max_response_bytes: self.max_response_bytes,
+            },
+            api_key,
+        )?;
+        self.decode_response(&response.body, include_raw)
+    }
+
+    fn infer_stream_inner(
+        &self,
+        cx: &mut Cx,
+        request: ModelRequest,
+        sink: &mut dyn ModelEventSink,
+    ) -> Result<ModelResponse> {
+        if !self.stream {
+            let response = self.infer_inner(cx, request)?;
+            sink.emit(ModelEvent::final_of(&response))?;
+            return Ok(response);
+        }
+        let include_raw = self.include_raw(cx, &request);
+        let api_key = self.secret.as_ref().map(Secret::expose);
+        let headers = self.request_headers(api_key);
+        let body = self.encode_request(request, true)?;
+        let mut decoder = self.stream_decoder(include_raw)?;
+        sink.emit(decoder.start_event())?;
+        let response = post_json_stream(
+            HttpRunnerRequest {
+                runner_label: self.runner_label,
+                endpoint: self.endpoint.clone(),
+                path: self.request_path,
+                headers,
+                timeout: self.timeout,
+                body,
+                max_response_bytes: self.max_response_bytes,
+            },
+            api_key,
+            &mut |chunk| decoder.feed(chunk, sink),
+        )?;
+        let model_response = if decoder.has_stream_output() {
+            decoder.finish(sink)?
+        } else {
+            self.decode_response(&response.body, include_raw)?
+        };
+        sink.emit(ModelEvent::final_of(&model_response))?;
+        Ok(model_response)
+    }
+
+    fn encode_request(&self, request: ModelRequest, stream: bool) -> Result<Vec<u8>> {
+        let openai_codec = Symbol::qualified("codec", "openai");
+        let openai_responses_codec = Symbol::qualified("codec", "openai-responses");
+        let anthropic_codec = Symbol::qualified("codec", "anthropic");
+        let ollama_codec = Symbol::qualified("codec", "ollama");
+        let lm_studio_codec = Symbol::qualified("codec", "lm-studio");
+        let lemonade_codec = Symbol::qualified("codec", "lemonade");
+        let request = self.prepare_output_grammar(request);
+        let request_extra = request.extra.clone();
+        let request_expr: Expr = request.into();
+        let body = if self.codec == openai_responses_codec {
+            encode_openai_responses_request(
+                &request_expr,
+                &OpenAiRequestOptions::new(self.model.clone(), stream, self.tools),
+            )
+        } else if self.codec == openai_codec {
+            encode_openai_request(
+                &request_expr,
+                &OpenAiRequestOptions::new(self.model.clone(), stream, self.tools),
+            )
+        } else if self.codec == anthropic_codec {
+            encode_anthropic_request(
+                &request_expr,
+                &AnthropicRequestOptions::new(
+                    self.model.clone(),
+                    DEFAULT_ANTHROPIC_MAX_TOKENS,
+                    stream,
+                    self.tools,
+                ),
+            )
+        } else if self.codec == ollama_codec {
+            encode_ollama_request(
+                &request_expr,
+                &OllamaRequestOptions::new(self.model.clone(), stream, self.tools),
+            )
+        } else if self.codec == lm_studio_codec {
+            encode_lm_studio_request(
+                &request_expr,
+                &LmStudioRequestOptions::new(self.model.clone(), stream, self.tools),
+            )
+        } else if self.codec == lemonade_codec {
+            encode_lemonade_request(
+                &request_expr,
+                &LemonadeRequestOptions::new(self.model.clone(), stream, self.tools),
+            )
+        } else {
+            Err(Error::Eval(format!(
+                "{} unsupported codec {}",
+                self.runner_label, self.codec
+            )))
+        }?;
+        attach_bridge_model_params_to_body(&self.codec, &request_extra, body, self.runner_label)
+    }
+
+    fn request_headers(&self, secret: Option<&str>) -> Vec<(String, Secret)> {
+        if self.provider == Symbol::new("anthropic")
+            && matches!(self.auth, ProviderAuth::HeaderEnv { .. })
+            && let Some(secret) = secret
+        {
+            return anthropic_headers(secret);
+        }
+
+        let mut headers = vec![content_type_header()];
+        match (&self.auth, secret) {
+            (
+                ProviderAuth::BearerEnv { .. } | ProviderAuth::OptionalBearerEnv { .. },
+                Some(secret),
+            ) => {
+                headers.push((
+                    "Authorization".to_owned(),
+                    Secret::new(format!("Bearer {secret}")).expect("valid bearer header"),
+                ));
+            }
+            (ProviderAuth::HeaderEnv { header, .. }, Some(secret)) => {
+                headers.push((
+                    header.clone(),
+                    Secret::new(secret).expect("validated provider secret"),
+                ));
+            }
+            _ => {}
+        }
+        if self.provider == Symbol::new("anthropic") {
+            headers.push((
+                "anthropic-version".to_owned(),
+                Secret::new(ANTHROPIC_VERSION).expect("valid fixed header"),
             ));
-        };
-        if let Some(calls) = &self.calls {
-            *calls.lock().unwrap() += 1;
         }
-        let request = request.object().as_expr(cx)?;
-        let expr = map_field(&request, "expr").ok_or_else(|| {
-            sim_kernel::Error::Eval("stub model site request missing expr".to_owned())
-        })?;
-        let task = match map_field(expr, "task") {
-            Some(Expr::String(task)) => task.as_str(),
-            _ => "request",
+        headers
+    }
+
+    fn decode_response(&self, body: &[u8], include_raw: bool) -> Result<ModelResponse> {
+        let openai_codec = Symbol::qualified("codec", "openai");
+        let openai_responses_codec = Symbol::qualified("codec", "openai-responses");
+        let anthropic_codec = Symbol::qualified("codec", "anthropic");
+        let ollama_codec = Symbol::qualified("codec", "ollama");
+        let lm_studio_codec = Symbol::qualified("codec", "lm-studio");
+        let lemonade_codec = Symbol::qualified("codec", "lemonade");
+        let expr = if self.codec == openai_responses_codec {
+            decode_openai_responses_response(self.runner.clone(), &self.model, body, include_raw)?
+        } else if self.codec == openai_codec {
+            decode_openai_response(self.runner.clone(), &self.model, body, include_raw)?
+        } else if self.codec == anthropic_codec {
+            if self.stream {
+                decode_anthropic_stream(self.runner.clone(), &self.model, body, include_raw)?
+            } else {
+                decode_anthropic_response(self.runner.clone(), &self.model, body, include_raw)?
+            }
+        } else if self.codec == ollama_codec {
+            if self.stream {
+                decode_ollama_stream(self.runner.clone(), &self.model, body, include_raw)?
+            } else {
+                decode_ollama_response(self.runner.clone(), &self.model, body, include_raw)?
+            }
+        } else if self.codec == lm_studio_codec {
+            if self.stream {
+                decode_lm_studio_stream(self.runner.clone(), &self.model, body, include_raw)?
+            } else {
+                decode_lm_studio_response(self.runner.clone(), &self.model, body, include_raw)?
+            }
+        } else if self.codec == lemonade_codec {
+            if self.stream {
+                decode_lemonade_stream(self.runner.clone(), &self.model, body, include_raw)?
+            } else {
+                decode_lemonade_response(self.runner.clone(), &self.model, body, include_raw)?
+            }
+        } else {
+            unreachable!("codec checked above")
         };
-        let response = ModelResponse::new(
-            Symbol::new(self.runner.clone()),
+        ModelResponse::try_from(expr)
+    }
+
+    fn include_raw(&self, cx: &mut Cx, request: &ModelRequest) -> bool {
+        cx.require(&CapabilityName::new("ai-runner-raw-log"))
+            .is_ok()
+            && !request_privacy_no_raw(request)
+    }
+
+    fn direct_capabilities(&self) -> Vec<CapabilityName> {
+        let mut capabilities = vec![CapabilityName::new(AI_RUNNER_CAPABILITY)];
+        if self.locality == Symbol::new("local") {
+            capabilities.push(CapabilityName::new(AI_RUNNER_LOCAL_CAPABILITY));
+        } else {
+            capabilities.push(CapabilityName::new(AI_RUNNER_NETWORK_CAPABILITY));
+        }
+        if self.secret.is_some() {
+            capabilities.push(CapabilityName::new(AI_RUNNER_SECRET_CAPABILITY));
+        }
+        capabilities
+    }
+
+    fn stream_decoder(&self, include_raw: bool) -> Result<HttpStreamDecoder> {
+        let openai_codec = Symbol::qualified("codec", "openai");
+        let openai_responses_codec = Symbol::qualified("codec", "openai-responses");
+        let anthropic_codec = Symbol::qualified("codec", "anthropic");
+        let ollama_codec = Symbol::qualified("codec", "ollama");
+        let lm_studio_codec = Symbol::qualified("codec", "lm-studio");
+        let lemonade_codec = Symbol::qualified("codec", "lemonade");
+        if self.codec == openai_responses_codec {
+            Err(Error::Eval(
+                "streaming OpenAI Responses seats are not yet supported".to_owned(),
+            ))
+        } else if self.codec == openai_codec {
+            Ok(HttpStreamDecoder::openai(
+                self.runner.clone(),
+                self.model.clone(),
+                include_raw,
+            ))
+        } else if self.codec == anthropic_codec {
+            Ok(HttpStreamDecoder::anthropic(
+                self.runner.clone(),
+                self.model.clone(),
+                include_raw,
+            ))
+        } else if self.codec == ollama_codec {
+            Ok(HttpStreamDecoder::ollama(
+                self.runner.clone(),
+                self.model.clone(),
+                include_raw,
+            ))
+        } else if self.codec == lm_studio_codec || self.codec == lemonade_codec {
+            Ok(HttpStreamDecoder::openai(
+                self.runner.clone(),
+                self.model.clone(),
+                include_raw,
+            ))
+        } else {
+            Err(Error::Eval(format!(
+                "{} unsupported codec {}",
+                self.runner_label, self.codec
+            )))
+        }
+    }
+
+    fn error_response(&self, message: impl Into<String>) -> Result<ModelResponse> {
+        ModelResponse::try_from(model_error_expr(
+            self.runner.clone(),
             self.model.clone(),
-            vec![text_content(format!("{}: {task}", self.answer_prefix))],
-            Symbol::new("stop"),
+            message.into(),
+        ))
+    }
+
+    fn prepare_output_grammar(&self, mut request: ModelRequest) -> ModelRequest {
+        let Some(dialect) = self.preferred_grammar_dialect() else {
+            strip_output_grammar(&mut request.extra);
+            return request;
+        };
+        if extra_field(&request.extra, RETURN_SHAPE_EXTRA).is_none()
+            && !explicit_output_grammar_matches(&request.extra, dialect)
+        {
+            strip_output_grammar(&mut request.extra);
+            return request;
+        }
+        let return_codec = extra_symbol(&request.extra, RETURN_CODEC_EXTRA);
+        if return_codec.as_ref() != Some(&Symbol::qualified("codec", "json")) {
+            strip_output_grammar(&mut request.extra);
+            return request;
+        }
+        if !explicit_output_grammar_matches(&request.extra, dialect) {
+            remove_extra(&mut request.extra, OUTPUT_GRAMMAR_EXTRA);
+        }
+        normalize_return_shape_for_output_grammar(&mut request.extra);
+        upsert_extra(
+            &mut request.extra,
+            OUTPUT_GRAMMAR_DIALECT_EXTRA,
+            Expr::Symbol(grammar_dialect_symbol(dialect)),
         );
-        cx.factory().expr(response.into())
+        request
+    }
+
+    fn preferred_grammar_dialect(&self) -> Option<GrammarDialect> {
+        if self.grammar_dialects.contains(&GrammarDialect::JsonSchema) {
+            Some(GrammarDialect::JsonSchema)
+        } else if self.grammar_dialects.contains(&GrammarDialect::Gbnf) {
+            Some(GrammarDialect::Gbnf)
+        } else {
+            None
+        }
     }
 }
 
-struct StubLoadedModelSiteLib {
-    symbol: Symbol,
-    site: Value,
+const ANTHROPIC_VERSION: &str = "2023-06-01";
+const DEFAULT_ANTHROPIC_MAX_TOKENS: u64 = 1024;
+const AI_RUNNER_CAPABILITY: &str = "ai-runner";
+const AI_RUNNER_NETWORK_CAPABILITY: &str = "ai-runner-network";
+const AI_RUNNER_LOCAL_CAPABILITY: &str = "ai-runner-local";
+const AI_RUNNER_SECRET_CAPABILITY: &str = "ai-runner-secret";
+
+fn anthropic_headers(secret: &str) -> Vec<(String, Secret)> {
+    vec![
+        (
+            "x-api-key".to_owned(),
+            Secret::new(secret).expect("validated provider secret"),
+        ),
+        (
+            "anthropic-version".to_owned(),
+            Secret::new(ANTHROPIC_VERSION).expect("valid fixed header"),
+        ),
+        content_type_header(),
+    ]
 }
 
-impl Lib for StubLoadedModelSiteLib {
-    fn manifest(&self) -> LibManifest {
-        LibManifest {
-            id: Symbol::qualified("test", format!("placement-swap-{}", self.symbol.name)),
-            version: Version("0.1.0".to_owned()),
-            abi: AbiVersion { major: 0, minor: 1 },
-            target: LibTarget::HostRegistered,
-            requires: Vec::new(),
-            capabilities: Vec::new(),
-            exports: vec![Export::Site {
-                symbol: self.symbol.clone(),
-                runtime_id: None,
-            }],
+fn content_type_header() -> (String, Secret) {
+    (
+        "content-type".to_owned(),
+        Secret::new("application/json").expect("valid fixed header"),
+    )
+}
+
+impl ModelRunner for HttpRunner {
+    fn card(&self) -> ModelCard {
+        let mut card = ModelCard::new(
+            self.runner.clone(),
+            self.model.clone(),
+            self.provider.clone(),
+            self.locality.clone(),
+        );
+        if !self.grammar_dialects.is_empty() {
+            card.extra.push((
+                Expr::Symbol(Symbol::new("output-grammar-dialects")),
+                Expr::Vector(
+                    self.grammar_dialects
+                        .iter()
+                        .copied()
+                        .map(grammar_dialect_symbol)
+                        .map(Expr::Symbol)
+                        .collect(),
+                ),
+            ));
+        }
+        card
+    }
+
+    fn infer(&self, cx: &mut Cx, request: ModelRequest) -> Result<ModelResponse> {
+        match self.resolve_network_effect(cx, request, |runner, cx, request| {
+            if runner.stream {
+                runner.infer_inner(cx, request)
+            } else {
+                runner.execute(cx, request)
+            }
+        }) {
+            Ok(response) => Ok(response),
+            Err(error) => self.error_response(redact_text(&error.to_string(), &[])),
         }
     }
 
-    fn load(&self, _cx: &mut LoadCx, linker: &mut Linker<'_>) -> Result<()> {
-        linker.site_value(self.symbol.clone(), self.site.clone())?;
-        Ok(())
+    fn infer_stream(
+        &self,
+        cx: &mut Cx,
+        request: ModelRequest,
+        sink: &mut dyn ModelEventSink,
+    ) -> Result<ModelResponse> {
+        match self.resolve_network_effect(cx, request, {
+            let sink = &mut *sink;
+            |runner, cx, request| runner.infer_stream_inner(cx, request, sink)
+        }) {
+            Ok(response) => Ok(response),
+            Err(error) => {
+                let message = redact_text(&error.to_string(), &[]);
+                sink.emit(ModelEvent::error_text(
+                    self.runner.clone(),
+                    self.model.clone(),
+                    Expr::String("http-stream-error".to_owned()),
+                    message.clone(),
+                ))?;
+                let response = self.error_response(message)?;
+                sink.emit(ModelEvent::final_of(&response))?;
+                Ok(response)
+            }
+        }
     }
 }
 
-fn model_request(task: &str) -> EvalRequest {
-    EvalRequest {
-        expr: model_request_expr(task),
-        result_shape: None,
-        required_capabilities: Vec::new(),
-        deadline: None,
-        consistency: Consistency::LocalFirst,
-        mode: EvalMode::Eval,
-        answer_limit: None,
-        stream_buffer: None,
-        stream: false,
-        trace: false,
-    }
-}
+impl ProviderDispatch for HttpRunner {
+    type Call = HttpProviderCall;
+    type Outcome = HttpProviderOutcome;
 
-fn model_request_expr(task: &str) -> Expr {
-    Expr::Map(vec![
-        key_expr("model-request", Expr::Bool(true)),
-        key_expr("task", Expr::String(task.to_owned())),
-        key_expr("messages", Expr::List(Vec::new())),
-    ])
-}
-
-fn fake_runner(cx: &mut sim_kernel::Cx, text: &str) -> Value {
-    cx.call_function(
-        &Symbol::qualified("runner", "fake"),
-        Args::new(vec![
-            cx.factory().symbol(Symbol::new(":script")).unwrap(),
-            cx.factory()
-                .expr(Expr::List(vec![Expr::String(text.to_owned())]))
-                .unwrap(),
-        ]),
-    )
-    .unwrap()
-}
-
-fn mock_http_runner(cx: &mut sim_kernel::Cx) -> Value {
-    cx.call_function(
-        &Symbol::qualified("runner", "echo"),
-        Args::new(vec![
-            cx.factory().symbol(Symbol::new(":name")).unwrap(),
-            cx.factory()
-                .symbol(Symbol::new("mock-http-runner"))
-                .unwrap(),
-            cx.factory().symbol(Symbol::new(":model")).unwrap(),
-            cx.factory().string("remote/mock-http".to_owned()).unwrap(),
-        ]),
-    )
-    .unwrap()
-}
-
-fn place_runner(cx: &mut sim_kernel::Cx, key: &str, runner: Value) {
-    cx.grant_named(AI_RUNNER_PLACEMENT_CAPABILITY);
-    cx.call_function(
-        &Symbol::qualified("runner", "place"),
-        Args::new(vec![cx.factory().string(key.to_owned()).unwrap(), runner]),
-    )
-    .unwrap();
-}
-
-fn model_at(cx: &mut sim_kernel::Cx, key: &str) -> Value {
-    cx.call_function(
-        &Symbol::qualified("model", "at"),
-        Args::new(vec![cx.factory().string(key.to_owned()).unwrap()]),
-    )
-    .unwrap()
-}
-
-fn cached_with_ledger(cx: &mut sim_kernel::Cx, fabric: Value, ledger: Arc<MemoryLedger>) -> Value {
-    let cassette = Arc::new(EvalCassette::new(ledger));
-    cached_model_fabric_value(cx, fabric, cassette).unwrap()
-}
-
-fn register_loaded_model_site(
-    cx: &mut sim_kernel::Cx,
-    key: &str,
-    model: &str,
-    answer_prefix: &str,
-    calls: Option<Arc<Mutex<usize>>>,
-) {
-    let site = cx
-        .factory()
-        .opaque(Arc::new(StubLoadedModelSite {
-            runner: key.replace(':', "/"),
-            model: model.to_owned(),
-            answer_prefix: answer_prefix.to_owned(),
-            calls,
+    fn dispatch(call: ProviderCall<Self::Call>) -> Result<ProviderOutcome<Self::Outcome>> {
+        let HttpProviderCall {
+            request,
+            secret,
+            include_raw,
+        } = call.payload;
+        let response = post_json(request, secret.as_ref().map(Secret::expose))?;
+        Ok(ProviderOutcome::new(HttpProviderOutcome {
+            response,
+            include_raw,
         }))
-        .unwrap();
-    cx.load_lib(&StubLoadedModelSiteLib {
-        symbol: Symbol::new(key.to_owned()),
-        site,
-    })
-    .unwrap();
-}
-
-fn realize_on(cx: &mut sim_kernel::Cx, fabric: Value, request: EvalRequest) -> Expr {
-    let reply = fabric
-        .object()
-        .as_eval_fabric()
-        .unwrap()
-        .realize(cx, request)
-        .unwrap();
-    reply.value.object().as_expr(cx).unwrap()
-}
-
-fn key_expr(key: &str, value: Expr) -> (Expr, Expr) {
-    (Expr::Symbol(Symbol::new(key)), value)
-}
-
-fn text_content(text: String) -> Expr {
-    Expr::Map(vec![
-        key_expr("type", Expr::Symbol(Symbol::new("text"))),
-        key_expr("text", Expr::String(text)),
-    ])
-}
-
-#[test]
-fn one_prompt_graph_realizes_against_three_placements() {
-    let mut cx = eval_cx();
-    install_test_codec(&mut cx);
-    install_agent_lib(&mut cx).unwrap();
-
-    let fake = fake_runner(&mut cx, "ok-fake");
-    place_runner(&mut cx, "model-site:fake", fake);
-    register_loaded_model_site(
-        &mut cx,
-        "model-site:local",
-        "sim-local-modeled",
-        "ok-local",
-        None,
-    );
-    let remote = mock_http_runner(&mut cx);
-    place_runner(&mut cx, "model-site:remote", remote);
-
-    let request = model_request("summarize src/lib.rs");
-    let original_expr = request.expr.clone();
-    let cases = [
-        ("model-site:fake", "ok-fake"),
-        ("model-site:local", "ok-local: summarize src/lib.rs"),
-        ("model-site:remote", "summarize src/lib.rs"),
-    ];
-    for (key, expected_text) in cases {
-        let placement = model_at(&mut cx, key);
-        let reply = realize_on(&mut cx, placement, request.clone());
-        validate_chat_transcript(&reply).unwrap();
-        ModelResponse::try_from(reply.clone()).unwrap();
-        assert_eq!(request.expr, original_expr);
-        assert!(
-            flatten_text(&reply).contains(expected_text),
-            "{key} reply did not include {expected_text:?}: {reply:?}"
-        );
     }
 }
 
-#[test]
-fn cached_local_placement_skips_second_inference() {
-    let mut cx = eval_cx();
-    install_test_codec(&mut cx);
-    install_agent_lib(&mut cx).unwrap();
+impl ProviderSeatExecution for HttpRunner {
+    fn plan(&self, cx: &mut Cx, request: ModelRequest) -> Result<ProviderCall<Self::Call>> {
+        if self.stream {
+            return Err(Error::Eval(format!(
+                "{} split-mode streaming is unsupported",
+                self.runner_label
+            )));
+        }
+        let include_raw = self.include_raw(cx, &request);
+        let secret = self.secret.clone();
+        let headers = self.request_headers(secret.as_ref().map(Secret::expose));
+        let body = self.encode_request(request, false)?;
+        Ok(ProviderCall::new(HttpProviderCall {
+            request: HttpRunnerRequest {
+                runner_label: self.runner_label,
+                endpoint: self.endpoint.clone(),
+                path: self.request_path,
+                headers,
+                timeout: self.timeout,
+                body,
+                max_response_bytes: self.max_response_bytes,
+            },
+            secret,
+            include_raw,
+        }))
+    }
 
-    let calls = Arc::new(Mutex::new(0usize));
-    register_loaded_model_site(
-        &mut cx,
-        "model-site:cached-local",
-        "sim-local-modeled",
-        "cached-local",
-        Some(calls.clone()),
-    );
-    let ledger = Arc::new(MemoryLedger::default());
-    let placement = model_at(&mut cx, "model-site:cached-local");
-    let cached = cached_with_ledger(&mut cx, placement, ledger);
-
-    let first = realize_on(&mut cx, cached.clone(), model_request("same local prompt"));
-    let second = realize_on(&mut cx, cached, model_request("same local prompt"));
-
-    validate_chat_transcript(&first).unwrap();
-    validate_chat_transcript(&second).unwrap();
-    assert_eq!(map_field(&first, "cache-hit"), Some(&Expr::Bool(false)));
-    assert_eq!(map_field(&second, "cache-hit"), Some(&Expr::Bool(true)));
-    assert_eq!(*calls.lock().unwrap(), 1);
-    assert!(flatten_text(&second).contains("cached-local: same local prompt"));
+    fn land(&self, _cx: &mut Cx, outcome: ProviderOutcome<Self::Outcome>) -> Result<ModelResponse> {
+        self.decode_response(&outcome.payload.response.body, outcome.payload.include_raw)
+    }
 }
+
+impl HttpRunner {
+    fn resolve_network_effect<F>(
+        &self,
+        cx: &mut Cx,
+        request: ModelRequest,
+        perform: F,
+    ) -> Result<ModelResponse>
+    where
+        F: FnOnce(&Self, &mut Cx, ModelRequest) -> Result<ModelResponse>,
+    {
+        let effect = self.network_effect(cx, &request)?;
+        let result = effect::resolve_effect(cx, effect, |cx, _effect| {
+            let response = perform(self, cx, request)?;
+            response_ref(cx, response)
+        })?;
+        response_from_ref(cx, &result)
+    }
+
+    fn network_effect(&self, cx: &mut Cx, request: &ModelRequest) -> Result<Effect> {
+        let input = Datum::Node {
+            tag: Symbol::qualified("agent", "HttpRunnerInput"),
+            fields: vec![
+                (Symbol::new("runner"), Datum::Symbol(self.runner.clone())),
+                (Symbol::new("model"), Datum::String(self.model.clone())),
+                (
+                    Symbol::new("provider"),
+                    Datum::Symbol(self.provider.clone()),
+                ),
+                (
+                    Symbol::new("endpoint"),
+                    Datum::String(self.endpoint.clone()),
+                ),
+                (
+                    Symbol::new("request"),
+                    Datum::try_from(Expr::from(request.clone()))?,
+                ),
+            ],
+        };
+        let input = Ref::Content(cx.datum_store_mut().intern(input)?);
+        Effect::new(
+            cx.fresh_handle(),
+            network_effect_kind(),
+            Ref::Symbol(self.runner.clone()),
+            input,
+            core_any_ref(),
+            effect::effect_resume_op_key(),
+            effect::effect_abort_op_key(),
+        )
+        .with_requirements(self.direct_capabilities())
+        .with_replay_key(Some(Ref::Symbol(Symbol::qualified(
+            "agent",
+            "http-runner-v1",
+        ))))
+    }
+}
+
+fn network_effect_kind() -> Symbol {
+    Symbol::qualified("effect", "network")
+}
+
+fn response_ref(cx: &mut Cx, response: ModelResponse) -> Result<Ref> {
+    Ok(Ref::Content(
+        cx.datum_store_mut()
+            .intern(Datum::try_from(Expr::from(response))?)?,
+    ))
+}
+
+fn response_from_ref(cx: &mut Cx, reference: &Ref) -> Result<ModelResponse> {
+    ModelResponse::try_from(value_from_ref(cx, reference)?.object().as_expr(cx)?)
+}
+
+#[cfg(test)]
+mod tests;
 ```

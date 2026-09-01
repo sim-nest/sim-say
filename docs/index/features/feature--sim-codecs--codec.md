@@ -16,17 +16,13 @@ Define codec positions, limits, syntax surfaces, wire surfaces, and loadable cod
 - `anchor/crate/sim-codec-binary-base64`
 - `anchor/crate/sim-codec-bitwise`
 - `anchor/crate/sim-codec-bitwise-base64`
-- `anchor/crate/sim-codec-chat`
 - `anchor/crate/sim-codec-compare`
 - `anchor/crate/sim-codec-config`
 - `anchor/crate/sim-codec-doc`
 - `anchor/crate/sim-codec-index`
-- `anchor/crate/sim-codec-json`
 - `anchor/crate/sim-codec-lisp`
 - `anchor/crate/sim-codec-lua`
-- `anchor/crate/sim-codec-mcp`
 - `anchor/crate/sim-test-support`
-- `anchor/crate/sim-wasm-abi`
 - `anchor/export/sim-codec-binary-base64/codec/binary-base64`
 - `anchor/export/sim-codec-binary/codec/binary`
 - `anchor/export/sim-codec-bitwise-base64/codec/bitwise-base64`
@@ -48,7 +44,6 @@ Define codec positions, limits, syntax surfaces, wire surfaces, and loadable cod
 - `anchor/runtime-lib/sim-codec-chat/lemonade-codec-lib`
 - `anchor/runtime-lib/sim-codec-chat/lm-studio-codec-lib`
 - `anchor/runtime-lib/sim-codec-chat/ollama-codec-lib`
-- `anchor/runtime-lib/sim-codec-chat/open-ai-codec-lib`
 - `anchor/runtime-lib/sim-codec-config/config-codec-lib`
 - `anchor/runtime-lib/sim-codec-doc/doc-codec-lib`
 - `anchor/runtime-lib/sim-codec-doc/markup-codec-lib`
@@ -58,7 +53,6 @@ Define codec positions, limits, syntax surfaces, wire surfaces, and loadable cod
 - `anchor/runtime-lib/sim-codec-lua/lua-codec-lib`
 - `anchor/runtime-lib/sim-codec-mcp/mcp-codec-lib`
 - `anchor/runtime-lib/sim-codec/domain-codec-lib`
-- `anchor/runtime-lib/sim-wasm-abi/wasm-lib`
 
 ## Specimens
 

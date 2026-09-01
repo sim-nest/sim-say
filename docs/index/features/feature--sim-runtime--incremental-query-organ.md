@@ -12,8 +12,6 @@ Expose incremental expression queries and immutable proof-backed dataflow analys
 
 - `anchor/card/cookbook/organ/incremental`
 - `anchor/crate/sim-lib-incremental`
-- `anchor/export/sim-lib-incremental/model/analysis_view.rs`
-- `anchor/export/sim-lib-incremental/model/session.rs`
 - `anchor/runtime-lib/sim-lib-incremental/incremental-lib`
 
 ## Specimens

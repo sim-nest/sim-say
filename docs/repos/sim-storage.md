@@ -1,18 +1,24 @@
 # sim-storage
 
-Published commit: `76fcbd30d5e19f4306ce3d664bf53f41701eb131`.
+Published commit: `322a1fb0b7d320767c25a245d768fd3a6203d1f9`.
 
 ## Crates
 
 - `sim-list-cell`
 - `sim-list-lazy`
 - `sim-table-db`
-- `sim-table-fs`
 - `sim-table-hash`
 - `sim-table-http`
 - `sim-table-lazy`
 - `sim-table-mount`
 - `sim-table-override`
+- `sim-storage-port`
+- `sim-lib-journal`
+- `sim-lib-relation-cli`
+- `sim-mutual-projection`
+- `sim-relation-site`
+- `sim-table-relation`
+- `sim-table-sealed`
 
 ## Contracts
 

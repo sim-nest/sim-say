@@ -6,7 +6,7 @@
 - Subject: `crate/sim-run-loaders`
 - Canonical key: `crate/sim-run-loaders/feature-sim-run-loaders`
 
-Load native, source, and re-exported runtime libraries as bootloader inputs.
+Load exact native, wasm, source, re-exported, and AOT artifacts through the run-owned object-safe LoaderPort.
 
 ## Anchors
 
@@ -14,6 +14,7 @@ Load native, source, and re-exported runtime libraries as bootloader inputs.
 - `anchor/runtime-lib/sim-run-loaders/loaded-native-lib`
 - `anchor/runtime-lib/sim-run-loaders/reexport-lib`
 - `anchor/runtime-lib/sim-run-loaders/source-lib`
+- `anchor/runtime-lib/sim-run/component-lib`
 
 ## Specimens
 
@@ -54,7 +55,11 @@ impl NativeGuest for MockGuest {
 }
 
 fn test_cx() -> Cx {
-    Cx::new(Arc::new(NoopEvalPolicy), Arc::new(DefaultFactory))
+    Cx::new(
+        Arc::new(NoopEvalPolicy),
+        Arc::new(DefaultFactory),
+        sim_kernel::HandleSeed::new(0x2459_4890_7aea_f0fa),
+    )
 }
 
 #[test]

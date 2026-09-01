@@ -1,6 +1,6 @@
 # sim-numbers
 
-Published commit: `892907b2c16bb053cd3f875d035456a40fd9bdda`.
+Published commit: `645a3b5e404d007f84f819adf46431c5fd7d3418`.
 
 ## Crates
 
@@ -37,6 +37,17 @@ Published commit: `892907b2c16bb053cd3f875d035456a40fd9bdda`.
 - `sim-lib-numbers-tensor-i64`
 - `sim-lib-numbers-tensor-linalg`
 - `sim-lib-numbers-tensor-rat64`
+- `sim-lib-numbers-continuation`
+- `sim-lib-numbers-extended`
+- `sim-lib-numbers-implicit`
+- `sim-lib-numbers-interval`
+- `sim-lib-numbers-method`
+- `sim-lib-numbers-optimize`
+- `sim-lib-numbers-poly`
+- `sim-lib-numbers-quantity`
+- `sim-lib-numbers-root`
+- `sim-lib-numbers-special`
+- `sim-lib-numbers-tensor-decomp`
 
 ## Contracts
 

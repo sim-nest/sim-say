@@ -21,7 +21,6 @@ Collect finite-element mesh, field, material, geometry, solve, post-processing, 
 - `anchor/crate/sim-lib-femm-material`
 - `anchor/crate/sim-lib-femm-mesh`
 - `anchor/crate/sim-lib-femm-ode`
-- `anchor/crate/sim-lib-femm-physics`
 - `anchor/crate/sim-lib-femm-post`
 - `anchor/crate/sim-lib-femm-prelude`
 - `anchor/crate/sim-lib-femm-query`

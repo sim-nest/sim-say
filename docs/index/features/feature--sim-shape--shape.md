@@ -11,11 +11,6 @@ Define reusable Shape matching, binding, browse-only callable signatures, citize
 ## Anchors
 
 - `anchor/crate/sim-shape`
-- `anchor/export/sim-shape/citizen/class.rs`
-- `anchor/export/sim-shape/citizen/codec.rs`
-- `anchor/export/sim-shape/citizen/construct.rs`
-- `anchor/export/sim-shape/citizen/inventory.rs`
-- `anchor/export/sim-shape/citizen/recursive_codec.rs`
 - `anchor/export/sim-shape/shape/accept-on-no-diagnostics-hook`
 - `anchor/export/sim-shape/shape/and`
 - `anchor/export/sim-shape/shape/any`

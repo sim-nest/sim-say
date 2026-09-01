@@ -20,8 +20,6 @@ Generate, query, route, prove, and check duplicate implementation overlap, bench
 ## Specimens
 
 - `spec-test/sim-tooling/src/index_fixpoint_tests`
-- `spec-test/sim-tooling/src/index_vault_graph_tests`
-- `spec-test/sim-tooling/src/index_vault_profile_tests`
 
 ## Worked Example
 
@@ -125,6 +123,7 @@ fn self_doc() -> IndexDoc {
         schema: "sim.index".to_owned(),
         generated_by: "test".to_owned(),
         visibility: Visibility::Public,
+        source_units: Vec::new(),
         subjects: vec![
             SubjectRecord {
                 id: SubjectId::new("crate/xtask"),

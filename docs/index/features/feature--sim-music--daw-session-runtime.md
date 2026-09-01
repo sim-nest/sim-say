@@ -6,7 +6,7 @@
 - Subject: `local/sim-music/crate/sim-lib-daw-session`
 - Canonical key: `crate/sim-lib-daw-session/feature-sim-music-daw-session-runtime`
 
-Represent tracks, clips, instruments, buses, and offline or live schedules as a loadable music session runtime.
+Represent tracks, clips, instruments, buses, provenance-bearing audification and artistic mappings, and route-independent offline or live schedules as a loadable music session runtime.
 
 ## Anchors
 
@@ -15,389 +15,464 @@ Represent tracks, clips, instruments, buses, and offline or live schedules as a 
 
 ## Specimens
 
+- `spec-test/sim-music/crates/sim-lib-daw-session/src/listening`
 - `spec-test/sim-music/crates/sim-lib-daw-session/src/tests`
 
 ## Worked Example
 
-Specimen `spec-test/sim-music/crates/sim-lib-daw-session/src/tests` is checked by `cargo test`.
+Specimen `spec-test/sim-music/crates/sim-lib-daw-session/src/listening` is checked by `cargo test`.
 
-Source `crates/sim-lib-daw-session/src/tests.rs`:
+Source `crates/sim-lib-daw-session/src/listening.rs`:
 
 ```rust
-use std::sync::Arc;
+//! Provenance and route history for scientific and artistic listening sessions.
 
-use sim_kernel::{Cx, DefaultFactory, EagerPolicy, Expr, Symbol};
-use sim_lib_audio_graph_core::{Patch, PatchNode};
-use sim_lib_music_core::{
-    Arranger, ArrangerPlacement, Articulation, Channel, Music, Note, PlayableRef,
-};
-use sim_lib_plugin_core::{PluginFormat, PluginId, PluginState};
-use sim_value::access::field_q;
+// conformance: listening tests prove stable identity, typed mappings, and route substitutions.
 
-use crate::{
-    COMPONENT_BUILDER_PATCH_FORMAT, ClipSource, DawClip, DawInstrumentKind, DawSession,
-    DawSessionDescriptor, DawSessionRouteKind, DawTrack, DawTrackKind, PluginChain, PluginSlot,
-    browse_session_graph, daw_prelude_operations, daw_session_topology_package,
-    install_daw_session_lib, instrument_session_fixture, instrument_session_fixture_names,
-    instrument_session_render_smoke_command, session_help_card_expr,
-};
+use std::str::FromStr;
 
-// conformance: DAW sessions preserve graph identity through save, load, and rendering.
+use sim_kernel::{Error, Result};
 
-#[test]
-fn session_can_be_created_saved_loaded_and_rendered_offline() {
-    let session = fixture_session();
-    let saved = session.save_expr();
-    let loaded = DawSession::load_expr(&saved).expect("load session");
-    let rendered = loaded.render_offline(4).expect("offline render");
-
-    assert_eq!(loaded.name(), "Song");
-    assert_eq!(rendered.tracks_rendered(), 1);
-    assert_eq!(rendered.clips_rendered(), 1);
-    assert_eq!(rendered.buffer().frames(), 4);
-    assert_eq!(
-        rendered.buffer().samples_f32(),
-        &[0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5]
-    );
+/// One measured scalar series before it is mapped to sound.
+#[derive(Clone, Debug, PartialEq)]
+pub struct MeasuredSeries {
+    /// Stable content key supplied by the measurement owner.
+    pub content_key: String,
+    /// Physical or observational quantity represented by each sample.
+    pub quantity_kind: String,
+    /// Unit attached to the source values.
+    pub unit: String,
+    /// Ordered measured values.
+    pub values: Vec<f64>,
 }
 
-#[test]
-fn offline_render_rejects_frame_channel_overflow() {
-    let session = fixture_session();
-
-    let err = session.render_offline(usize::MAX).unwrap_err();
-
-    assert!(format!("{err}").contains("sample buffer is too large"));
+/// Normalization applied before a measured series drives sound.
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum Normalization {
+    /// Preserve source values without rescaling.
+    None,
+    /// Map the declared source interval onto `[0, 1]`.
+    Linear {
+        /// Lower endpoint of the measured source interval.
+        source_min: f64,
+        /// Upper endpoint of the measured source interval.
+        source_max: f64,
+    },
 }
 
-#[test]
-fn plugin_chain_state_and_patch_metadata_roundtrip() {
-    let mut state = PluginState::new();
-    state.set_param(1, 0.75);
-    let slot = PluginSlot::new(
-        "gain-slot",
-        PluginId::new(PluginFormat::Sim, "sim.gain").unwrap(),
-        state,
-    )
-    .unwrap()
-    .bypassed(true);
-    let track = DawTrack::audio("track-with-plugin", "Track With Plugin", 2)
-        .unwrap()
-        .with_plugin_chain(PluginChain::default().with_slot(slot));
-    let mut session = DawSession::new("plugin-song", "Plugin Song", 48_000)
-        .unwrap()
-        .with_patch(Patch {
-            nodes: vec![PatchNode {
-                id: "gain".to_owned(),
-                in_channels: 2,
-                out_channels: 2,
-            }],
-            cables: Vec::new(),
-        });
-    session.add_track(track).unwrap();
-
-    let loaded = DawSession::from_expr(&session.to_expr()).unwrap();
-    let loaded_slot = &loaded.tracks()[0].plugin_chain().slots()[0];
-
-    assert_eq!(loaded.patch().nodes[0].id, "gain");
-    assert_eq!(loaded_slot.plugin().stable_id, "sim.gain");
-    assert_eq!(loaded_slot.state().param(1), Some(0.75));
-    assert!(loaded_slot.is_bypassed());
+/// Policy for values outside the normalized target interval.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Clipping {
+    /// Reject values outside the interval.
+    Reject,
+    /// Clamp values and record that the mapping is lossy.
+    Clamp,
 }
 
-#[test]
-fn component_builder_patch_records_stable_ids_save_load_and_preview_hooks() {
-    let mut session = DawSession::new("builder-song", "Builder Song", 48_000)
-        .unwrap()
-        .with_patch(Patch {
-            nodes: vec![
-                PatchNode {
-                    id: "osc".to_owned(),
-                    in_channels: 1,
-                    out_channels: 2,
-                },
-                PatchNode {
-                    id: "amp".to_owned(),
-                    in_channels: 2,
-                    out_channels: 2,
-                },
-            ],
-            cables: Vec::new(),
-        });
-    let track = DawTrack::audio("preview-track", "Preview Track", 2)
-        .unwrap()
-        .with_clip(DawClip::new("preview", 0, 4, ClipSource::Constant(0.25), 1.0).unwrap());
-    session.add_track(track).unwrap();
-
-    let builder = session.component_builder_patch_expr();
-    assert_eq!(
-        builder_field_value(&builder, "format"),
-        Some(&Expr::String(COMPONENT_BUILDER_PATCH_FORMAT.to_owned()))
-    );
-    assert_eq!(
-        builder_field_value(&builder, "stable-component-ids"),
-        Some(&Expr::Vector(vec![
-            Expr::String("osc".to_owned()),
-            Expr::String("amp".to_owned()),
-        ]))
-    );
-    assert_eq!(
-        builder_field_value(builder_field_value(&builder, "hooks").unwrap(), "save"),
-        Some(&action_symbol("save"))
-    );
-    assert_eq!(
-        builder_field_value(builder_field_value(&builder, "hooks").unwrap(), "load"),
-        Some(&action_symbol("load"))
-    );
-    assert_eq!(
-        builder_field_value(
-            builder_field_value(&builder, "hooks").unwrap(),
-            "live-preview"
-        ),
-        Some(&action_symbol("live-preview"))
-    );
-
-    let saved = builder_field_value(&builder, "saved-session").expect("saved session");
-    let loaded = DawSession::load_expr(saved).expect("load saved builder session");
-    assert_eq!(loaded.patch().nodes[0].id, "osc");
-    assert_eq!(loaded.patch().nodes[1].id, "amp");
-
-    let preview = session
-        .component_builder_preview_expr(4)
-        .expect("builder preview");
-    assert_eq!(
-        builder_field_value(&preview, "hook"),
-        Some(&action_symbol("live-preview"))
-    );
-    assert_eq!(builder_number(&preview, "tracks-rendered"), Some("1"));
-    assert_eq!(builder_number(&preview, "clips-rendered"), Some("1"));
+/// Interpolation used between measured samples.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum Interpolation {
+    /// Hold each sample until the next sample arrives.
+    Step,
+    /// Linearly interpolate adjacent samples.
+    Linear,
 }
 
-#[test]
-fn arranger_clip_and_track_round_trip_without_audio_preview() {
-    let arranger = Arranger::new(
-        vec![
-            ArrangerPlacement::new(
-                "note",
-                PlayableRef::inline(Music::Note(
-                    Note::new(
-                        sim_lib_music_core::Time::new(1, 4),
-                        sim_lib_music_core::Pitch::from_midi(60),
-                        100,
-                        Channel::new(0).unwrap(),
-                        Articulation::Normal,
-                    )
-                    .unwrap(),
-                )),
-                sim_lib_music_core::Time::new(0, 1),
-            )
-            .unwrap(),
-        ],
-        vec![sim_lib_music_core::LaneId::new("notes")],
-    )
-    .unwrap();
-    let track = DawTrack::new(
-        "arranger-track",
-        "Arranger Track",
-        DawTrackKind::Arranger,
-        2,
-    )
-    .unwrap()
-    .with_clip(DawClip::arranger("arranger-clip", 0, 480, arranger.clone()).unwrap());
-    let mut session = DawSession::new("arranger-song", "Arranger Song", 48_000).unwrap();
-    session.add_track(track).unwrap();
-
-    let loaded = DawSession::load_expr(&session.save_expr()).unwrap();
-    assert_eq!(loaded, session);
-    let ClipSource::Arranger(loaded_arranger) = loaded.tracks()[0].clips()[0].source() else {
-        panic!("arranger source");
-    };
-    assert_eq!(loaded_arranger, &arranger);
-    let render = loaded.render_offline(4).unwrap();
-    assert_eq!(render.tracks_rendered(), 0);
-    assert_eq!(render.clips_rendered(), 0);
+/// Whether and how the source values can be recovered.
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub enum InverseMapping {
+    /// The named inverse recovers the measured values within the stated tolerance.
+    Available {
+        /// Stable name of the inverse operation.
+        operation: String,
+        /// Declared recovery tolerance and unit.
+        tolerance: String,
+    },
+    /// No inverse exists; the reason is durable evidence rather than an implication.
+    Lossy {
+        /// Evidence explaining why the mapping cannot be inverted.
+        reason: String,
+    },
 }
 
-#[test]
-fn instrument_session_load_render_reopen_smoke() {
-    let session = instrument_session_fixture();
-    let saved = session.save_expr();
-    let loaded = DawSession::load_expr(&saved).expect("load instrument session");
-    let render = loaded.render_offline(4).expect("render preview");
-    let reopened = DawSession::load_expr(&loaded.save_expr()).expect("reopen session");
-    let builder = loaded.component_builder_patch_expr();
-    let preview = loaded.component_builder_preview_expr(4).unwrap();
-    let package = daw_session_topology_package(&loaded);
+/// Audification receipt tying a sounding result to measured evidence.
+#[derive(Clone, Debug, PartialEq)]
+pub struct AudificationMapping {
+    /// Measured input and its scientific identity.
+    pub input: MeasuredSeries,
+    /// Quantity produced by the mapping, such as frequency or amplitude.
+    pub output_quantity_kind: String,
+    /// Unit of the mapped output.
+    pub output_unit: String,
+    /// Normalization applied to the input.
+    pub normalization: Normalization,
+    /// Out-of-range policy.
+    pub clipping: Clipping,
+    /// Between-sample interpolation.
+    pub interpolation: Interpolation,
+    /// Exact inverse or explicit loss evidence.
+    pub inverse: InverseMapping,
+}
 
-    assert_eq!(loaded, reopened);
-    assert_eq!(
-        instrument_session_fixture_names(),
-        ["instrument-session-default", "generic-synth-graph-session",]
-    );
-    assert_eq!(
-        instrument_session_render_smoke_command(),
-        "cargo test -p sim-lib-daw-session instrument_session_load_render_reopen_smoke"
-    );
-    assert_eq!(loaded.instrument_instances().len(), 5);
-    assert!(
-        loaded
-            .instrument_instances()
-            .iter()
-            .any(|instrument| instrument.kind() == DawInstrumentKind::Dx7
-                && instrument.graph_node_id() == "dx7-voice")
-    );
-    for kind in [
-        DawSessionRouteKind::Midi,
-        DawSessionRouteKind::ParameterAutomation,
-        DawSessionRouteKind::PatchEdit,
-        DawSessionRouteKind::Trace,
-        DawSessionRouteKind::Preview,
-    ] {
-        assert!(
-            loaded.routes().iter().any(|route| route.kind() == kind),
-            "missing route kind {}",
-            kind.as_str()
-        );
+/// Authored sonification which must never be presented as a physical result.
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub struct ArtisticMapping {
+    /// Stable input content keys used by the work.
+    pub input_content_keys: Vec<String>,
+    /// Stable keys of the authored choices applied to those inputs.
+    pub authored_choice_keys: Vec<String>,
+}
+
+impl ArtisticMapping {
+    /// The unambiguous category label persisted with every artistic mapping.
+    pub const KIND: &'static str = "artistic-mapping";
+}
+
+/// Durable content of a listening session, independent of any playback route.
+#[derive(Clone, Debug, PartialEq)]
+pub struct ListeningContent {
+    /// Score content key.
+    pub score: String,
+    /// Audio graph content key.
+    pub graph: String,
+    /// Instrument patch content key.
+    pub patch: String,
+    /// Tuning content key.
+    pub tuning: String,
+    /// Scientific mapping receipt, when this is audification.
+    pub audification: Option<AudificationMapping>,
+    /// Creative mapping receipt, when this is authored sonification.
+    pub artistic_mapping: Option<ArtisticMapping>,
+    /// Additional authored-choice content keys.
+    pub choices: Vec<String>,
+}
+
+/// A playback target substitution known to the music owner.
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub enum ListeningTarget {
+    /// Deterministic render without a live device.
+    OfflineRender,
+    /// Media-edge execution host.
+    MediaEdgeHost,
+    /// Heavy DAW execution host.
+    HeavyDawHost,
+    /// Yamaha RX-V777 receiver.
+    RxV777,
+    /// Korg OASYS workstation.
+    Oasys,
+    /// Exact refusal retained when no adapter exists.
+    Unsupported {
+        /// Requested target that could not be resolved.
+        requested: String,
+        /// Durable refusal evidence.
+        evidence: String,
+    },
+}
+
+/// Append-only route lifecycle event.
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub enum RouteEventKind {
+    /// A route opened successfully.
+    Open,
+    /// A route closed.
+    Close,
+    /// A route failed with the recorded detail.
+    Fail,
+    /// A previously failed route reconnected.
+    Reconnect,
+    /// Playback substituted another target.
+    Fallback,
+}
+
+/// One durable route event. Live handles are deliberately absent.
+#[derive(Clone, Debug, PartialEq, Eq)]
+pub struct RouteEvent {
+    /// Monotonic sequence within this session.
+    pub sequence: u64,
+    /// Route lifecycle transition.
+    pub kind: RouteEventKind,
+    /// Target involved in the transition.
+    pub target: ListeningTarget,
+    /// Exact diagnostic, adapter name, or substitution reason.
+    pub detail: String,
+}
+
+/// Route-independent listening session with append-only delivery history.
+#[derive(Clone, Debug, PartialEq)]
+pub struct ListeningSession {
+    /// Stable musical identity selected by the author or expedition.
+    pub musical_id: String,
+    /// Stable expedition identity, when scientific work owns the observation.
+    pub expedition_id: Option<String>,
+    /// Durable musical and mapping content.
+    pub content: ListeningContent,
+    route_events: Vec<RouteEvent>,
+    live_handle: Option<String>,
+}
+
+impl ListeningSession {
+    /// Creates a route-independent session.
+    pub fn new(
+        musical_id: impl Into<String>,
+        expedition_id: Option<String>,
+        content: ListeningContent,
+    ) -> Result<Self> {
+        let musical_id = non_empty(musical_id.into(), "musical id")?;
+        if content.audification.is_some() == content.artistic_mapping.is_some() {
+            return Err(Error::Eval(
+                "listening content must contain exactly one mapping family".to_owned(),
+            ));
+        }
+        Ok(Self {
+            musical_id,
+            expedition_id,
+            content,
+            route_events: Vec::new(),
+            live_handle: None,
+        })
     }
-    assert_eq!(render.tracks_rendered(), 1);
-    assert_eq!(render.clips_rendered(), 1);
-    assert_eq!(render.buffer().frames(), 4);
-    assert_eq!(
-        metadata_number(&package.metadata, "instrument-count"),
-        Some("5")
-    );
-    assert_eq!(metadata_number(&package.metadata, "route-count"), Some("5"));
-    assert!(builder_list_contains(
-        &builder,
-        "instrument-instances",
-        "dx7:dx7-voice"
-    ));
-    assert!(builder_list_contains(&builder, "routes", "midi:dx7-voice"));
-    assert!(builder_list_contains(&preview, "routes", "preview"));
+
+    /// Appends a route event, assigning the next monotonic sequence number.
+    pub fn append_route_event(
+        &mut self,
+        kind: RouteEventKind,
+        target: ListeningTarget,
+        detail: impl Into<String>,
+    ) -> Result<()> {
+        let sequence = u64::try_from(self.route_events.len())
+            .map_err(|_| Error::Eval("route event sequence overflow".to_owned()))?;
+        self.route_events.push(RouteEvent {
+            sequence,
+            kind,
+            target,
+            detail: non_empty(detail.into(), "route event detail")?,
+        });
+        Ok(())
+    }
+
+    /// Replaces the ephemeral live handle without changing durable content.
+    pub fn set_live_handle(&mut self, handle: Option<String>) {
+        self.live_handle = handle;
+    }
+
+    /// Returns the append-only route history.
+    pub fn route_events(&self) -> &[RouteEvent] {
+        &self.route_events
+    }
+
+    /// Returns the current ephemeral route handle.
+    pub fn live_handle(&self) -> Option<&str> {
+        self.live_handle.as_deref()
+    }
+
+    /// Returns the route-independent identity projection.
+    pub fn identity(&self) -> (&str, Option<&str>, &ListeningContent) {
+        (
+            &self.musical_id,
+            self.expedition_id.as_deref(),
+            &self.content,
+        )
+    }
 }
 
-#[test]
-fn citizen_daw_session_descriptor_round_trips_and_fails_closed() {
-    let session = fixture_session();
-    let descriptor = DawSessionDescriptor::new(session.clone());
+/// Predicate accepted only by scientific audification listeners.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum ScientificListeningPredicate {
+    /// Require a reversible mapping.
+    Reversible,
+    /// Accept a mapping only when loss is explicit.
+    LossDeclared,
+}
 
-    assert_eq!(descriptor.session().unwrap(), session);
+impl FromStr for ScientificListeningPredicate {
+    type Err = Error;
 
-    let mut expr = descriptor.as_expr().clone();
-    let Expr::Map(entries) = &mut expr else {
-        panic!("DAW session descriptor should be a map");
-    };
-    for (key, value) in entries {
-        if key == &Expr::Symbol(Symbol::qualified("daw-session", "sample-rate-hz")) {
-            *value = Expr::String("0".to_owned());
+    fn from_str(value: &str) -> Result<Self> {
+        match value {
+            "scientific:reversible" => Ok(Self::Reversible),
+            "scientific:loss-declared" => Ok(Self::LossDeclared),
+            _ => Err(Error::Eval(
+                "not a scientific listening predicate".to_owned(),
+            )),
         }
     }
-    let err = DawSessionDescriptor::from_expr(expr).unwrap_err();
-    assert!(format!("{err}").contains("sample rate"));
 }
 
-#[test]
-fn browse_graph_exposes_session_tracks_buses_and_help() {
-    let session = fixture_session();
-    let cards = browse_session_graph(&session);
-    let help = session_help_card_expr();
-
-    assert!(cards.iter().any(|card| card_has_subject(card, "song")));
-    assert!(cards.iter().any(|card| card_has_subject(card, "track-1")));
-    assert!(cards.iter().any(|card| card_has_subject(card, "master")));
-    assert!(format!("{help:?}").contains("render-offline"));
+/// Predicate accepted only by artistic-mapping listeners.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum ArtisticListeningPredicate {
+    /// Require links to the input material.
+    InputsLinked,
+    /// Require authored choices to be named.
+    ChoicesAttributed,
 }
 
-#[test]
-fn daw_prelude_lists_lisp_facing_operations() {
-    let operations = daw_prelude_operations();
+impl FromStr for ArtisticListeningPredicate {
+    type Err = Error;
 
-    assert!(operations.contains(&Symbol::qualified("daw", "session")));
-    assert!(operations.contains(&Symbol::qualified("daw", "render-offline")));
-    assert!(operations.contains(&Symbol::qualified("daw", "topology-package")));
+    fn from_str(value: &str) -> Result<Self> {
+        match value {
+            "artistic:inputs-linked" => Ok(Self::InputsLinked),
+            "artistic:choices-attributed" => Ok(Self::ChoicesAttributed),
+            _ => Err(Error::Eval(
+                "not an artistic listening predicate".to_owned(),
+            )),
+        }
+    }
 }
 
-#[test]
-fn topology_package_can_launch_from_session_data() {
-    let session = fixture_session();
-    let package = daw_session_topology_package(&session);
-
-    assert_eq!(package.name(), &Symbol::new("daw-song"));
-    assert_eq!(package.graph.nodes.len(), 4);
-    assert_eq!(package.graph.edges.len(), 3);
-    assert_eq!(
-        package.metadata[0].0,
-        Symbol::qualified("daw-session", "session-id")
-    );
+fn non_empty(value: String, label: &str) -> Result<String> {
+    if value.trim().is_empty() {
+        Err(Error::Eval(format!("{label} must not be empty")))
+    } else {
+        Ok(value)
+    }
 }
 
-#[test]
-fn install_daw_session_lib_registers_runtime_exports() {
-    let mut cx = Cx::new(Arc::new(EagerPolicy), Arc::new(DefaultFactory));
-    install_daw_session_lib(&mut cx).expect("install");
-    install_daw_session_lib(&mut cx).expect("idempotent install");
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-    assert!(
-        cx.registry()
-            .lib(&Symbol::new("daw-session"))
-            .expect("registered")
-            .manifest
-            .exports
-            .iter()
-            .any(|export| *export.symbol() == Symbol::qualified("daw-session", "DawSession"))
-    );
-}
+    fn content() -> ListeningContent {
+        ListeningContent {
+            score: "score:ice-core-17".to_owned(),
+            graph: "graph:stereo".to_owned(),
+            patch: "patch:sine".to_owned(),
+            tuning: "tuning:12edo".to_owned(),
+            audification: Some(AudificationMapping {
+                input: MeasuredSeries {
+                    content_key: "series:temperature".to_owned(),
+                    quantity_kind: "temperature".to_owned(),
+                    unit: "kelvin".to_owned(),
+                    values: vec![260.0, 261.5, 263.0],
+                },
+                output_quantity_kind: "frequency".to_owned(),
+                output_unit: "hertz".to_owned(),
+                normalization: Normalization::Linear {
+                    source_min: 250.0,
+                    source_max: 280.0,
+                },
+                clipping: Clipping::Reject,
+                interpolation: Interpolation::Linear,
+                inverse: InverseMapping::Available {
+                    operation: "linear-denormalize".to_owned(),
+                    tolerance: "1e-12 kelvin".to_owned(),
+                },
+            }),
+            artistic_mapping: None,
+            choices: vec!["choice:register-4".to_owned()],
+        }
+    }
 
-fn fixture_session() -> DawSession {
-    let mut session = DawSession::new("song", "Song", 48_000).unwrap();
-    let track = DawTrack::audio("track-1", "Track 1", 2)
-        .unwrap()
-        .with_clip(DawClip::new("clip-1", 0, 4, ClipSource::Constant(0.5), 1.0).unwrap());
-    session.add_track(track).unwrap();
-    session
-}
+    #[test]
+    fn route_churn_preserves_musical_and_expedition_identity() {
+        let mut session = ListeningSession::new(
+            "music:ice-core",
+            Some("expedition:2026-north".to_owned()),
+            content(),
+        )
+        .unwrap();
+        let identity = session.identity();
+        let expected = (
+            identity.0.to_owned(),
+            identity.1.map(str::to_owned),
+            identity.2.clone(),
+        );
 
-fn card_has_subject(card: &Expr, subject: &str) -> bool {
-    let Expr::Map(entries) = card else {
-        return false;
-    };
-    entries.iter().any(|(key, value)| {
-        key == &Expr::Symbol(Symbol::new("subject")) && value == &Expr::Symbol(Symbol::new(subject))
-    })
-}
+        for (kind, target, detail) in [
+            (
+                RouteEventKind::Open,
+                ListeningTarget::MediaEdgeHost,
+                "edge opened",
+            ),
+            (
+                RouteEventKind::Fail,
+                ListeningTarget::RxV777,
+                "adapter unavailable",
+            ),
+            (
+                RouteEventKind::Fallback,
+                ListeningTarget::OfflineRender,
+                "render substituted",
+            ),
+            (
+                RouteEventKind::Close,
+                ListeningTarget::OfflineRender,
+                "render complete",
+            ),
+            (
+                RouteEventKind::Reconnect,
+                ListeningTarget::HeavyDawHost,
+                "DAW restored",
+            ),
+            (
+                RouteEventKind::Open,
+                ListeningTarget::Oasys,
+                "workstation opened",
+            ),
+        ] {
+            session.append_route_event(kind, target, detail).unwrap();
+        }
+        session.set_live_handle(Some("ephemeral:device-42".to_owned()));
 
-fn builder_field_value<'a>(expr: &'a Expr, name: &'static str) -> Option<&'a Expr> {
-    field_q(expr, "daw-session/component-builder", name)
-}
+        assert_eq!(
+            session.identity(),
+            (expected.0.as_str(), expected.1.as_deref(), &expected.2)
+        );
+        assert_eq!(session.route_events().len(), 6);
+        assert_eq!(session.route_events()[5].sequence, 5);
+    }
 
-fn builder_number<'a>(expr: &'a Expr, name: &'static str) -> Option<&'a str> {
-    let Expr::Number(number) = builder_field_value(expr, name)? else {
-        return None;
-    };
-    Some(&number.canonical)
-}
+    #[test]
+    fn scientific_and_artistic_predicates_cannot_decode_as_each_other() {
+        assert!(
+            "scientific:reversible"
+                .parse::<ScientificListeningPredicate>()
+                .is_ok()
+        );
+        assert!(
+            "scientific:reversible"
+                .parse::<ArtisticListeningPredicate>()
+                .is_err()
+        );
+        assert!(
+            "artistic:choices-attributed"
+                .parse::<ArtisticListeningPredicate>()
+                .is_ok()
+        );
+        assert!(
+            "artistic:choices-attributed"
+                .parse::<ScientificListeningPredicate>()
+                .is_err()
+        );
+    }
 
-fn builder_list_contains(expr: &Expr, name: &'static str, expected: &str) -> bool {
-    matches!(
-        builder_field_value(expr, name),
-        Some(Expr::Vector(items))
-            if items
-                .iter()
-                .any(|item| matches!(item, Expr::String(text) if text == expected))
-    )
-}
-
-fn metadata_number<'a>(metadata: &'a [(Symbol, Expr)], name: &str) -> Option<&'a str> {
-    metadata.iter().find_map(|(key, value)| {
-        let Expr::Number(number) = value else {
-            return None;
+    #[test]
+    fn artistic_mapping_is_labelled_and_linked_to_inputs_and_choices() {
+        let mapping = ArtisticMapping {
+            input_content_keys: vec!["series:temperature".to_owned()],
+            authored_choice_keys: vec!["choice:orchestration".to_owned()],
         };
-        (key.namespace.as_deref() == Some("daw-session") && key.name.as_ref() == name)
-            .then_some(number.canonical.as_str())
-    })
-}
+        let mut artistic = content();
+        artistic.audification = None;
+        artistic.artistic_mapping = Some(mapping.clone());
+        let session = ListeningSession::new("music:art", None, artistic).unwrap();
 
-fn action_symbol(name: &'static str) -> Expr {
-    Expr::Symbol(Symbol::qualified("component-builder/action", name))
+        assert_eq!(ArtisticMapping::KIND, "artistic-mapping");
+        assert_eq!(session.content.artistic_mapping, Some(mapping));
+    }
+
+    #[test]
+    fn unsupported_target_retains_exact_evidence() {
+        let target = ListeningTarget::Unsupported {
+            requested: "studio-orbit".to_owned(),
+            evidence: "no registered EvalFabric site or offline adapter".to_owned(),
+        };
+        let mut session = ListeningSession::new("music:ice-core", None, content()).unwrap();
+        session
+            .append_route_event(RouteEventKind::Fail, target.clone(), "substitution refused")
+            .unwrap();
+        assert_eq!(session.route_events()[0].target, target);
+    }
 }
 ```

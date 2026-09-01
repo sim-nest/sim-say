@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-compute-cli`
 - Canonical key: `crate/sim-lib-compute-cli/feature-sim-compute-compute-cli`
 
-Export a bounded loadable `cli/main/compute` command for inspecting compute devices, probes, profiles, explanations, recipes, and physical acceptance artifacts.
+Export a bounded loadable `cli/main/compute` command for inspecting injected compute devices, profiles, explanations, recipes, and acceptance artifacts.
 
 ## Anchors
 

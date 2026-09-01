@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-stream-host`
 - Canonical key: `crate/sim-lib-stream-host/feature-sim-stream-host-hardware-host-surfaces`
 
-Collect stream-host placement, Viture glasses, Halo glasses, watch bridge, and native FFI adapters as one hardware-facing code feature.
+Collect shared stream placement, Viture glasses semantics, Halo glasses semantics, and watch bridges above capsule-owned physical ports.
 
 ## Anchors
 
@@ -14,7 +14,6 @@ Collect stream-host placement, Viture glasses, Halo glasses, watch bridge, and n
 - `anchor/crate/sim-lib-stream-host`
 - `anchor/crate/sim-lib-stream-viture`
 - `anchor/crate/sim-lib-stream-wristbridge`
-- `anchor/crate/sim-viture-ffi`
 
 ## Surfaces
 
@@ -245,6 +244,7 @@ fn authorized_cx() -> Cx {
     let mut cx = Cx::new(
         std::sync::Arc::new(EagerPolicy),
         std::sync::Arc::new(DefaultFactory),
+        sim_kernel::HandleSeed::new(0x5354_484f),
     );
     cx.grant(stream_host_capability());
     cx

@@ -1,0 +1,126 @@
+{
+  "card_count": 20,
+  "cards": [
+    {
+      "id": "browse/catalog",
+      "kind": "browse-root",
+      "owner": "workspace",
+      "summary": "root browse catalog"
+    },
+    {
+      "id": "cookbook/platform/amazfit",
+      "kind": "cookbook-recipe",
+      "owner": "sim-platform-amazfit",
+      "summary": "Modeled and cross-built Amazfit capsule recipes."
+    },
+    {
+      "id": "cookbook/platform/android",
+      "kind": "cookbook-recipe",
+      "owner": "sim-platform-android",
+      "summary": "Exercise bounded Android capsule services."
+    },
+    {
+      "id": "cookbook/platform/bootstrap",
+      "kind": "cookbook-recipe",
+      "owner": "sim-platform-bootstrap",
+      "summary": "Compose explicit platform bootstrap inputs."
+    },
+    {
+      "id": "cookbook/platform/browser",
+      "kind": "cookbook-recipe",
+      "owner": "sim-platform-browser",
+      "summary": "Exercise browser-owned platform services."
+    },
+    {
+      "id": "cookbook/platform/construction",
+      "kind": "cookbook-recipe",
+      "owner": "sim-platform-construction",
+      "summary": "Realize construction integration ports at the platform boundary."
+    },
+    {
+      "id": "cookbook/platform/core",
+      "kind": "cookbook-recipe",
+      "owner": "sim-platform-core",
+      "summary": "Compose and attest provider-neutral platform records."
+    },
+    {
+      "id": "cookbook/platform/halo",
+      "kind": "cookbook-recipe",
+      "owner": "sim-platform-halo",
+      "summary": "One view-and-input flow across modeled, emulator, and physical placements."
+    },
+    {
+      "id": "cookbook/platform/ios",
+      "kind": "cookbook-recipe",
+      "owner": "sim-platform-ios",
+      "summary": "Exercise bounded iOS capsule services."
+    },
+    {
+      "id": "cookbook/platform/lib",
+      "kind": "cookbook-recipe",
+      "owner": "sim-lib-platform",
+      "summary": "Select platform capabilities through provider-neutral contracts."
+    },
+    {
+      "id": "cookbook/platform/linux",
+      "kind": "cookbook-recipe",
+      "owner": "sim-platform-linux",
+      "summary": "Realize native Linux transport and process mechanics."
+    },
+    {
+      "id": "cookbook/platform/macos",
+      "kind": "cookbook-recipe",
+      "owner": "sim-platform-macos",
+      "summary": "Exercise bounded macOS capsule services."
+    },
+    {
+      "id": "cookbook/platform/model",
+      "kind": "cookbook-recipe",
+      "owner": "sim-platform-model",
+      "summary": "Run deterministic modeled platform services."
+    },
+    {
+      "id": "cookbook/platform/ubuntu-pc",
+      "kind": "cookbook-recipe",
+      "owner": "sim-platform-ubuntu-pc",
+      "summary": "Realize Ubuntu PC compute, process, and sandbox services."
+    },
+    {
+      "id": "cookbook/platform/ubuntu-rpi",
+      "kind": "cookbook-recipe",
+      "owner": "sim-platform-ubuntu-rpi",
+      "summary": "Exercise an explicitly profiled Ubuntu Raspberry Pi capsule."
+    },
+    {
+      "id": "cookbook/platform/wasi",
+      "kind": "cookbook-recipe",
+      "owner": "sim-platform-wasi",
+      "summary": "Exercise bounded WASI capsule services."
+    },
+    {
+      "id": "cookbook/platform/web-shell",
+      "kind": "cookbook-recipe",
+      "owner": "sim-platform-web-shell",
+      "summary": "Realize native services for the generic web shell."
+    },
+    {
+      "id": "cookbook/platform/windows",
+      "kind": "cookbook-recipe",
+      "owner": "sim-platform-windows",
+      "summary": "Exercise bounded Windows capsule services."
+    },
+    {
+      "id": "cookbook/storage/table-fs",
+      "kind": "cookbook-recipe",
+      "owner": "sim-table-fs",
+      "summary": "Host directory reads, writes, edits, and searches through the table surface."
+    },
+    {
+      "id": "registry/catalog",
+      "kind": "browse-registry",
+      "owner": "workspace",
+      "summary": "registry catalog browse card"
+    }
+  ],
+  "generator": "xtask repo-contract v1"
+}

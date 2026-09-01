@@ -6,7 +6,7 @@
 - Subject: `local/sim-storage/crate/sim-table-hash`
 - Canonical key: `crate/sim-table-hash/feature-sim-storage-table-dir-backends`
 
-Provide hash, lazy, override, mounted, and list-backed Table/Dir implementations for reusable storage libraries.
+Provide hash, database, mounted, and view Table/Dir implementations, with honest linearizable compare-exchange where the backend can establish one atomic boundary.
 
 ## Anchors
 
@@ -23,95 +23,200 @@ Provide hash, lazy, override, mounted, and list-backed Table/Dir implementations
 
 ## Specimens
 
-- `spec-test/sim-storage/crates/sim-table-override/src/install`
+- `spec-test/sim-storage/crates/sim-table-hash/src/tests`
 
 ## Worked Example
 
-Specimen `spec-test/sim-storage/crates/sim-table-override/src/install` is checked by `cargo test`.
+Specimen `spec-test/sim-storage/crates/sim-table-hash/src/tests` is checked by `cargo test`.
 
-Source `crates/sim-table-override/src/install.rs`:
+Source `crates/sim-table-hash/src/tests.rs`:
 
 ```rust
-//! Library registration for the override table backend: the [`Lib`] manifest,
-//! class and citizen wiring, and the [`install_override_table_lib`] entry
-//! point.
+// conformance: the hash backend preserves absent, nil, delete, and atomic compare-exchange semantics.
 
 use std::sync::Arc;
 
 use sim_kernel::{
-    AbiVersion, Cx, DefaultFactory, Dependency, Export, Factory, Lib, LibManifest, LibTarget,
-    Linker, LoadCx, Result, Symbol, Version,
+    Cx, DefaultFactory, Expr, HandleSeed, NoopEvalPolicy, ObjectEncoding, Symbol, Table,
+    TableExpected, TableReplacement, read_construct_capability,
 };
 
-use crate::{OverrideTable, class::OverrideTableClass};
+use crate::{
+    HashBackend, HashTable, HashTableDescriptor, HashTableLib, hash_table_class_symbol,
+    install_hash_table_lib,
+};
 
-struct OverrideTableLib;
-
-impl Lib for OverrideTableLib {
-    fn manifest(&self) -> LibManifest {
-        LibManifest {
-            id: Symbol::qualified("table", "override"),
-            version: Version(env!("CARGO_PKG_VERSION").to_owned()),
-            abi: AbiVersion { major: 0, minor: 1 },
-            target: LibTarget::HostRegistered,
-            requires: Vec::<Dependency>::new(),
-            capabilities: Vec::new(),
-            exports: vec![Export::Class {
-                symbol: Symbol::new("OverrideTable"),
-                class_id: None,
-            }],
-        }
-    }
-
-    fn load(&self, _cx: &mut LoadCx, linker: &mut Linker<'_>) -> Result<()> {
-        register_override_table_class(linker)
-    }
+fn test_cx() -> Cx {
+    Cx::new(
+        Arc::new(NoopEvalPolicy),
+        Arc::new(DefaultFactory),
+        HandleSeed::new(1),
+    )
 }
 
-/// Load the override table library into `cx`, registering the `OverrideTable`
-/// class and its read constructor.
-///
-/// Idempotent: if the `table/override` library is already present the call is a
-/// no-op. After installation `OverrideTable` can be called as a class to build
-/// overlays.
-pub fn install_override_table_lib(cx: &mut sim_kernel::Cx) -> Result<()> {
-    let lib_id = Symbol::qualified("table", "override");
-    if cx.registry().lib(&lib_id).is_some() {
-        return Ok(());
-    }
-    cx.load_lib(&OverrideTableLib).map(|_| ())
+#[test]
+fn hash_table_lookup() {
+    let mut cx = test_cx();
+    let one = cx.factory().bool(true).unwrap();
+    let two = cx.factory().nil().unwrap();
+    let table = HashTable::with_entries(vec![
+        (Symbol::new("a"), one.clone()),
+        (Symbol::new("b"), two),
+    ]);
+
+    assert_eq!(table.len(&mut cx).unwrap(), 2);
+    assert!(table.has(&mut cx, Symbol::new("a")).unwrap());
+    assert_eq!(table.get(&mut cx, Symbol::new("a")).unwrap(), one);
 }
 
-fn register_override_table_class(linker: &mut Linker<'_>) -> Result<()> {
-    let symbol = Symbol::new("OverrideTable");
-    let class_id = linker.class(symbol.clone())?;
-    let class = Arc::new(OverrideTableClass::new(class_id));
-    let value = DefaultFactory.opaque(class)?;
-    linker.bind_class_value(class_id, value)
+#[test]
+fn hash_compare_exchange_rejects_stale_owner_and_preserves_nil_presence() {
+    let mut cx = test_cx();
+    let table = HashTable::new();
+    let key = Symbol::new("lease");
+    let owner = cx.factory().string("owner".to_owned()).unwrap();
+    assert!(
+        table
+            .compare_exchange(
+                &mut cx,
+                key.clone(),
+                TableExpected::Absent,
+                TableReplacement::Value(owner)
+            )
+            .unwrap()
+            .exchanged
+    );
+    assert!(
+        !table
+            .compare_exchange(
+                &mut cx,
+                key.clone(),
+                TableExpected::Value(Expr::String("stale".into())),
+                TableReplacement::Delete
+            )
+            .unwrap()
+            .exchanged
+    );
+    let nil = cx.factory().nil().unwrap();
+    table.set(&mut cx, key.clone(), nil).unwrap();
+    assert!(
+        table
+            .compare_exchange(
+                &mut cx,
+                key.clone(),
+                TableExpected::Value(Expr::Nil),
+                TableReplacement::Delete
+            )
+            .unwrap()
+            .exchanged
+    );
+    assert!(!table.has(&mut cx, key).unwrap());
 }
 
-fn install_override_table_citizen(linker: &mut Linker<'_>) -> Result<()> {
-    register_override_table_class(linker)
+#[test]
+fn install_registers_hash_backend() {
+    let mut cx = test_cx();
+    install_hash_table_lib(&mut cx).unwrap();
+    cx.table_registry_mut().set_active("hash").unwrap();
+
+    let backend = cx.table_registry().active();
+    assert_eq!(backend, "hash");
+
+    let name = <HashBackend as sim_kernel::TableBackend>::name(&HashBackend);
+    assert_eq!(name, "hash");
 }
 
-fn conformance_override_table_citizen(cx: &mut Cx) -> Result<()> {
-    let layer = cx.factory().table(vec![(
-        Symbol::new("answer"),
-        cx.factory().string("front".to_owned())?,
-    )])?;
-    let table = OverrideTable::new(vec![layer])?;
-    let value = cx.factory().opaque(Arc::new(table))?;
-    sim_citizen::check_value_fixture(cx, value)
+#[test]
+fn install_is_idempotent_and_manifest_is_stable() {
+    use sim_kernel::Lib;
+
+    let mut cx = test_cx();
+    let lib_id = Symbol::qualified("table", "hash");
+
+    // First install registers the backend and the loadable lib.
+    assert!(cx.registry().lib(&lib_id).is_none());
+    install_hash_table_lib(&mut cx).unwrap();
+    assert!(cx.registry().lib(&lib_id).is_some());
+
+    // Second install is a no-op: it returns early because the lib is present.
+    install_hash_table_lib(&mut cx).unwrap();
+    assert!(cx.registry().lib(&lib_id).is_some());
+
+    // The manifest identity/version comes from the shared constructor and is
+    // stable across calls.
+    let manifest = HashTableLib.manifest();
+    assert_eq!(manifest.id, lib_id);
+    assert_eq!(manifest.version.0, env!("CARGO_PKG_VERSION"));
+    assert_eq!(HashTableLib.manifest().version.0, manifest.version.0);
 }
 
-sim_citizen::inventory::submit! {
-    sim_citizen::CitizenInfo {
-        symbol: "OverrideTable",
-        version: 0,
-        crate_name: env!("CARGO_PKG_NAME"),
-        arity: 1,
-        install: install_override_table_citizen,
-        conformance: conformance_override_table_citizen,
-    }
+#[test]
+fn hash_table_citizen_round_trips_as_descriptor() {
+    let mut cx = test_cx();
+    cx.load_lib(&sim_citizen::CitizenLib::all()).unwrap();
+    cx.grant(read_construct_capability());
+    let value = cx.factory().string("value".to_owned()).unwrap();
+    let table = HashTable::with_entries(vec![(Symbol::new("key"), value)]);
+    let original = cx.factory().opaque(std::sync::Arc::new(table)).unwrap();
+
+    sim_citizen::check_value_fixture(&mut cx, original.clone()).unwrap();
+
+    let ObjectEncoding::Constructor { args, .. } = original
+        .object()
+        .as_object_encoder()
+        .unwrap()
+        .object_encoding(&mut cx)
+        .unwrap()
+    else {
+        panic!("expected constructor encoding");
+    };
+    let args = args
+        .iter()
+        .map(|arg| sim_citizen::value_from_expr(&mut cx, arg))
+        .collect::<sim_kernel::Result<Vec<_>>>()
+        .unwrap();
+    let decoded = cx.read_construct(&hash_table_class_symbol(), args).unwrap();
+
+    assert!(
+        decoded
+            .object()
+            .as_any()
+            .downcast_ref::<HashTableDescriptor>()
+            .is_some()
+    );
+    assert!(decoded.object().as_table_impl().is_none());
+}
+
+#[test]
+fn keys_and_entries_are_deterministically_ordered() {
+    // Regression guard for F39: `keys`/`entries` must not leak the
+    // nondeterministic HashMap order. Insert out of order, expect sorted.
+    let mut cx = test_cx();
+    let value = cx.factory().bool(true).unwrap();
+    let table = HashTable::with_entries(vec![
+        (Symbol::new("delta"), value.clone()),
+        (Symbol::new("alpha"), value.clone()),
+        (Symbol::new("charlie"), value.clone()),
+        (Symbol::new("bravo"), value),
+    ]);
+
+    let expected = vec![
+        Symbol::new("alpha"),
+        Symbol::new("bravo"),
+        Symbol::new("charlie"),
+        Symbol::new("delta"),
+    ];
+
+    assert_eq!(table.keys(&mut cx).unwrap(), expected);
+    // Stable across repeated calls.
+    assert_eq!(table.keys(&mut cx).unwrap(), expected);
+
+    let entry_keys: Vec<Symbol> = table
+        .entries(&mut cx)
+        .unwrap()
+        .into_iter()
+        .map(|(key, _)| key)
+        .collect();
+    assert_eq!(entry_keys, expected);
 }
 ```

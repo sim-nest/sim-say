@@ -24,7 +24,7 @@ as written.
 
 ### Install the sim command
 
-SIM is one command: `sim`, the bootloader that loads codecs and libraries. Install the batteries-included build below and you get `sim repl`, `sim webui`, and `sim mcp` -- one install, nothing else to add. (Embedders who want only the thin bootloader can `cargo install sim-run` for the separate `sim-run` binary; the `sim` command always comes from `sim-nest`.)
+Install the host-neutral batteries build below to get `sim repl` and `sim mcp`. Device-facing commands such as WebUI are supplied by a platform bundle so the portable SDK never hides sockets, files, clocks, entropy, or process behavior. (Embedders who want only the thin bootloader can `cargo install sim-run` for the separate `sim-run` binary; the `sim` command always comes from `sim-nest`.)
 
 ```shell
 cargo install sim-nest --features serve-cli   # installs the `sim` command
@@ -205,6 +205,7 @@ The full constellation, generated from each repo's pinned contract files:
 - [sim-compute](docs/repos/sim-compute.md)
 - [sim-construction](docs/repos/sim-construction.md)
 - [sim-discrete](docs/repos/sim-discrete.md)
+- [sim-estate](docs/repos/sim-estate.md)
 - [sim-expr-tree](docs/repos/sim-expr-tree.md)
 - [sim-femm](docs/repos/sim-femm.md)
 - [sim-foundation](docs/repos/sim-foundation.md)
@@ -214,6 +215,8 @@ The full constellation, generated from each repo's pinned contract files:
 - [sim-music](docs/repos/sim-music.md)
 - [sim-numbers](docs/repos/sim-numbers.md)
 - [sim-office](docs/repos/sim-office.md)
+- [sim-physics](docs/repos/sim-physics.md)
+- [sim-platform](docs/repos/sim-platform.md)
 - [sim-run](docs/repos/sim-run.md)
 - [sim-runtime](docs/repos/sim-runtime.md)
 - [sim-sdk](docs/repos/sim-sdk.md)
@@ -226,7 +229,7 @@ The full constellation, generated from each repo's pinned contract files:
 
 See also: [repository map](docs/site/repos.md), [crate ownership](docs/site/crate-ownership.md), [agent-card catalog](docs/site/agent-card-catalog.md), [SIM Index features](docs/site/index-features.md), [constellation diagram](docs/site/constellation.md).
 
-The SIM Index contributes 224 feature rows and 229 surface rows to this navigation.
+The SIM Index contributes 416 feature rows and 276 surface rows to this navigation.
 
 The two SIM entry points -- sim-say = this generated public welcome; sim-sdk = the developer entry point and umbrella `sim` crate.
 

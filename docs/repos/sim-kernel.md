@@ -1,10 +1,11 @@
 # sim-kernel
 
-Published commit: `e5a315aa151a021c49426537403583d701f306ae`.
+Published commit: `5a162141bfa85b26e46f39247dde594e5aa5e849`.
 
 ## Crates
 
 - `sim-kernel`
+- `xtask`
 
 ## Contracts
 

@@ -1,6 +1,6 @@
 # sim-audio-daw
 
-Published commit: `9323841e365f068071fa119d3a152254528a73d2`.
+Published commit: `095e79be896f5f25dc815c230699edeb122067cd`.
 
 ## Crates
 
@@ -20,6 +20,7 @@ Published commit: `9323841e365f068071fa119d3a152254528a73d2`.
 - `sim-lib-stream-jack-provider`
 - `sim-lib-stream-pipewire`
 - `sim-lib-stream-portaudio`
+- `sim-audio-ports`
 
 ## Contracts
 

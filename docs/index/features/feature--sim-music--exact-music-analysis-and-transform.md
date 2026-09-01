@@ -11,7 +11,6 @@ Convert exact score forms with loss and identity evidence, decode harmonic seque
 ## Anchors
 
 - `anchor/crate/sim-lib-music-analysis`
-- `anchor/crate/sim-lib-music-core`
 - `anchor/crate/sim-lib-music-lift`
 - `anchor/crate/sim-lib-music-lower`
 - `anchor/crate/sim-lib-music-shapes`

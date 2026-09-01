@@ -137,4 +137,5 @@ fn datum_display(datum: &Datum) -> String {
 fn term_display(term: &Term) -> String {
     format!("term:{term:?}")
 }
+// conformance: Scheme conformance tests prove language semantics and runtime boundaries.
 ```

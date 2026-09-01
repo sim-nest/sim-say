@@ -1,6 +1,6 @@
 # sim-ledger
 
-Published commit: `bce81480bdbf89af4e884c343d793dc3b9fa3895`.
+Published commit: `5011bd096401b88cdc88056fbff4f9dbba2fde94`.
 
 ## Crates
 
@@ -9,6 +9,8 @@ Published commit: `bce81480bdbf89af4e884c343d793dc3b9fa3895`.
 - `sim-lib-ledger-books`
 - `sim-lib-ledger-close`
 - `sim-ledger-odb`
+- `sim-ledger-test-support`
+- `sim-ledger-store-port`
 
 ## Contracts
 

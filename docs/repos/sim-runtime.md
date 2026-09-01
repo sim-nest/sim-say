@@ -1,6 +1,6 @@
 # sim-runtime
 
-Published commit: `21725aae2ee2616da5ca9fcc5ad5a5240445e8a5`.
+Published commit: `e665c072b2a4d235b85529af121d9fd99fdfa14d`.
 
 ## Crates
 
@@ -36,6 +36,8 @@ Published commit: `21725aae2ee2616da5ca9fcc5ad5a5240445e8a5`.
 - `sim-lib-pattern`
 - `sim-lib-sequence`
 - `sim-lib-standard-core`
+- `sim-lib-operation-gate`
+- `sim-lib-study`
 
 ## Contracts
 

@@ -6,7 +6,7 @@
 - Subject: `local/sim-tooling/crate/xtask`
 - Canonical key: `crate/xtask/feature-sim-tooling-generated-docs`
 
-Generate repo contracts, feature maps, card indexes, index fragments, and managed vault note namespaces through xtask.
+Generate repo contracts, feature maps, card indexes, index fragments and claim certificates, and managed vault note namespaces through xtask; selected repo-contract artifacts can also be emitted without mutating source.
 
 ## Anchors
 
@@ -25,7 +25,7 @@ Generate repo contracts, feature maps, card indexes, index fragments, and manage
 ## Specimens
 
 - `spec-test/sim-tooling/src/index_render_tests`
-- `spec-test/sim-tooling/src/index_vault_write_tests`
+- `spec-test/sim-tooling/src/repo_contract_tests`
 
 ## Worked Example
 
@@ -251,6 +251,7 @@ fn fixture_doc() -> IndexDoc {
         schema: "sim.index".to_owned(),
         generated_by: "test".to_owned(),
         visibility: Visibility::Public,
+        source_units: Vec::new(),
         subjects: vec![SubjectRecord {
             id: SubjectId::new("crate/demo"),
             kind: "crate".to_owned(),

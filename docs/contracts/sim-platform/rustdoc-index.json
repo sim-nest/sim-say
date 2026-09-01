@@ -1,0 +1,166 @@
+{
+  "generator": "xtask repo-contract v1",
+  "packages": [
+    {
+      "crate_name": "sim_lib_platform",
+      "group": "workspace",
+      "manifest": "crates/sim-lib-platform/Cargo.toml",
+      "package": "sim-lib-platform",
+      "summary": "The closed, provider-neutral platform API."
+    },
+    {
+      "crate_name": "sim_platform_amazfit",
+      "group": "workspace",
+      "manifest": "crates/sim-platform-amazfit/Cargo.toml",
+      "package": "sim-platform-amazfit",
+      "summary": "Bounded Amazfit proxy state machine hosted by the Android capsule."
+    },
+    {
+      "crate_name": "sim_platform_android",
+      "group": "workspace",
+      "manifest": "crates/sim-platform-android/Cargo.toml",
+      "package": "sim-platform-android",
+      "summary": "Android AOT platform capsule and thin shell contract"
+    },
+    {
+      "crate_name": "sim_platform_audio",
+      "group": "workspace",
+      "manifest": "crates/sim-platform-audio/Cargo.toml",
+      "package": "sim-platform-audio",
+      "summary": "Native media realization owned by the platform capsule."
+    },
+    {
+      "crate_name": "sim_platform_bootstrap",
+      "group": "workspace",
+      "manifest": "crates/sim-platform-bootstrap/Cargo.toml",
+      "package": "sim-platform-bootstrap",
+      "summary": "The sole, bounded host rind used to admit the first platform capsule."
+    },
+    {
+      "crate_name": "sim_platform_browser",
+      "group": "workspace",
+      "manifest": "crates/sim-platform-browser/Cargo.toml",
+      "package": "sim-platform-browser",
+      "summary": "Capability-honest browser Wasm capsule and byte-frame host membrane"
+    },
+    {
+      "crate_name": "sim_platform_construction",
+      "group": "workspace",
+      "manifest": "crates/sim-platform-construction/Cargo.toml",
+      "package": "sim-platform-construction",
+      "summary": "Platform-capsule implementations of construction-owned integration ports."
+    },
+    {
+      "crate_name": "sim_platform_core",
+      "group": "workspace",
+      "manifest": "crates/sim-platform-core/Cargo.toml",
+      "package": "sim-platform-core",
+      "summary": "Pure, fail-closed manifest contracts for the sole SIM platform owner."
+    },
+    {
+      "crate_name": "sim_platform_halo",
+      "group": "workspace",
+      "manifest": "crates/sim-platform-halo/Cargo.toml",
+      "package": "sim-platform-halo",
+      "summary": "Host-owned Halo proxy over the official SDK transport model."
+    },
+    {
+      "crate_name": "sim_platform_ios",
+      "group": "workspace",
+      "manifest": "crates/sim-platform-ios/Cargo.toml",
+      "package": "sim-platform-ios",
+      "summary": "iOS AOT platform capsule and thin shell contract"
+    },
+    {
+      "crate_name": "sim_platform_linux",
+      "group": "workspace",
+      "manifest": "crates/sim-platform-linux/Cargo.toml",
+      "package": "sim-platform-linux",
+      "summary": "Bounded Linux mechanics. Native paths and portal calls cannot escape this package."
+    },
+    {
+      "crate_name": "sim_platform_macos",
+      "group": "workspace",
+      "manifest": "crates/sim-platform-macos/Cargo.toml",
+      "package": "sim-platform-macos",
+      "summary": "macOS capsule policy, packaging, and testable native membrane."
+    },
+    {
+      "crate_name": "sim_platform_midi",
+      "group": "workspace",
+      "manifest": "crates/sim-platform-midi/Cargo.toml",
+      "package": "sim-platform-midi",
+      "summary": "Capsule-owned native MIDI selection and realization."
+    },
+    {
+      "crate_name": "sim_platform_model",
+      "group": "workspace",
+      "manifest": "crates/sim-platform-model/Cargo.toml",
+      "package": "sim-platform-model",
+      "summary": "Deterministic, host-free platform model and the standard platform site."
+    },
+    {
+      "crate_name": "sim_platform_sqlite",
+      "group": "workspace",
+      "manifest": "crates/sim-platform-sqlite/Cargo.toml",
+      "package": "sim-platform-sqlite",
+      "summary": "Attesting SQLite realization behind the provider-neutral relation site."
+    },
+    {
+      "crate_name": "sim_platform_ubuntu_pc",
+      "group": "workspace",
+      "manifest": "crates/sim-platform-ubuntu-pc/Cargo.toml",
+      "package": "sim-platform-ubuntu-pc",
+      "summary": "Ubuntu PC capsule registration and sanitized evidence contracts."
+    },
+    {
+      "crate_name": "sim_platform_ubuntu_rpi",
+      "group": "workspace",
+      "manifest": "crates/sim-platform-ubuntu-rpi/Cargo.toml",
+      "package": "sim-platform-ubuntu-rpi",
+      "summary": "Headless Ubuntu Raspberry Pi capsule with profile-owned native facts."
+    },
+    {
+      "crate_name": "sim_platform_wasi",
+      "group": "workspace",
+      "manifest": "crates/sim-platform-wasi/Cargo.toml",
+      "package": "sim-platform-wasi",
+      "summary": "Least-authority WASI capsule."
+    },
+    {
+      "crate_name": "sim-web-shell",
+      "group": "workspace",
+      "manifest": "crates/sim-platform-web-shell/Cargo.toml",
+      "package": "sim-platform-web-shell",
+      "summary": "Native Linux process capsule for the host-neutral SIM web shell."
+    },
+    {
+      "crate_name": "sim_platform_windows",
+      "group": "workspace",
+      "manifest": "crates/sim-platform-windows/Cargo.toml",
+      "package": "sim-platform-windows",
+      "summary": "Windows capsule policy, bounded native membrane, and package description."
+    },
+    {
+      "crate_name": "sim_table_fs",
+      "group": "workspace",
+      "manifest": "crates/sim-table-fs/Cargo.toml",
+      "package": "sim-table-fs",
+      "summary": "Filesystem-backed table store for SIM."
+    },
+    {
+      "crate_name": "sim_viture_ffi",
+      "group": "workspace",
+      "manifest": "crates/sim-viture-ffi/Cargo.toml",
+      "package": "sim-viture-ffi",
+      "summary": "Unsafe-isolated dynamic loader for VITURE glasses SDK entry points."
+    },
+    {
+      "crate_name": "xtask",
+      "group": "workspace",
+      "manifest": "xtask/Cargo.toml",
+      "package": "xtask",
+      "summary": "Repository-local structural gates."
+    }
+  ]
+}

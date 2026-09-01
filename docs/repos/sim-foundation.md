@@ -1,6 +1,6 @@
 # sim-foundation
 
-Published commit: `f2fb2f270e4131dc748f6dd6e8b793d3e26f4b26`.
+Published commit: `5ea91f8904286d197dcca66475d76e6107da5bd4`.
 
 ## Crates
 
@@ -13,6 +13,19 @@ Published commit: `f2fb2f270e4131dc748f6dd6e8b793d3e26f4b26`.
 - `sim-table-core`
 - `sim-text`
 - `sim-value`
+- `sim-cookbook-build`
+- `sim-host-core`
+- `sim-cancel`
+- `sim-index-vault-core`
+- `sim-lib-net-http`
+- `sim-lib-protected-state`
+- `sim-lib-search-core`
+- `sim-lib-web-core`
+- `sim-relation-core`
+- `sim-relation-migrate`
+- `sim-relation-plan`
+- `sim-relation-schema`
+- `sim-study-core`
 
 ## Contracts
 

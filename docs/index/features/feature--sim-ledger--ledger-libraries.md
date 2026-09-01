@@ -6,12 +6,14 @@
 - Subject: `crate/sim-ledger`
 - Canonical key: `crate/sim-ledger/feature-sim-ledger-ledger-libraries`
 
-Provide voucher storage, book construction, and closing libraries for ledger workflows.
+Provide mount-backed voucher storage, exact book construction, and closing libraries for ledger workflows.
 
 ## Anchors
 
 - `anchor/crate/sim-ledger`
 - `anchor/crate/sim-ledger-odb`
+- `anchor/crate/sim-ledger-store-port`
+- `anchor/crate/sim-ledger-test-support`
 - `anchor/crate/sim-lib-ledger-books`
 - `anchor/crate/sim-lib-ledger-close`
 

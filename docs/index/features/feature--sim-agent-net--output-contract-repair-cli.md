@@ -16,6 +16,7 @@ Repair model output contracts with the checked runner-core fixture command.
 ## Surfaces
 
 - `cli/sim-lib-agent-runner-core-recipe-output-contract-repair`
+- `model/sim-lib-agent-runner-core-recipe-output-contract-repair`
 
 ## Specimens
 

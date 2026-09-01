@@ -17,7 +17,9 @@ Start product commands through the shared bootloader and loaded runtime librarie
 - `anchor/export/sim-run/codec/lisp`
 - `anchor/runtime-lib/sim-run/boot-codec`
 - `anchor/rustdoc/sim-run-core/bootloader`
+- `anchor/rustdoc/sim-run-core/run_supplied_bootstrap`
 - `anchor/rustdoc/sim-run-core/run_with_session`
+- `local/sim-run/anchor/bin/sim`
 
 ## Surfaces
 

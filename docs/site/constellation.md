@@ -15,6 +15,7 @@
         | sim-compute
         | sim-construction
         | sim-discrete
+        | sim-estate
         | sim-expr-tree
         | sim-femm
         | sim-foundation
@@ -24,6 +25,8 @@
         | sim-music
         | sim-numbers
         | sim-office
+        | sim-physics
+        | sim-platform
         | sim-run
         | sim-runtime
         | sim-sdk

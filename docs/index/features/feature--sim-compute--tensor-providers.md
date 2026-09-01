@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-compute-model`
 - Canonical key: `crate/sim-lib-compute-model/feature-sim-compute-tensor-providers`
 
-Run canonical Tensor requests through modeled, automatic, probe-backed wgpu, optional CUDA/cuBLAS, and optional ROCm/rocBLAS compute sites.
+Run canonical Tensor requests through modeled, automatic, and capsule-probed wgpu, CUDA/cuBLAS, or ROCm/rocBLAS compute sites.
 
 ## Anchors
 

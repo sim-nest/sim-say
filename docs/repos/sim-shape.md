@@ -1,10 +1,11 @@
 # sim-shape
 
-Published commit: `1049c2a948ed61f2c68c851c9ef2e93ead765f90`.
+Published commit: `97826335463000bc3b520d0c8a581fdf77674077`.
 
 ## Crates
 
 - `sim-shape`
+- `sim-relation-shape`
 
 ## Contracts
 

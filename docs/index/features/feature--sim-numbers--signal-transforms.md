@@ -12,7 +12,6 @@ Transform with Fourier or wavelet plans, smooth and differentiate polynomials, s
 
 - `anchor/crate/sim-lib-numbers-signal`
 - `anchor/runtime-lib/sim-lib-numbers-signal/signal-numbers-lib`
-- `anchor/rustdoc/sim-lib-numbers-signal/analytic-signal`
 - `anchor/rustdoc/sim-lib-numbers-signal/analytic-signal-plan`
 - `anchor/rustdoc/sim-lib-numbers-signal/analytic-signal-report`
 - `anchor/rustdoc/sim-lib-numbers-signal/analytic_envelope`

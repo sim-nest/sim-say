@@ -6,14 +6,14 @@
 - Subject: `local/sim-tooling/crate/xtask`
 - Canonical key: `crate/xtask/feature-sim-tooling-benchmark-cli`
 
-Run exact process benchmarks and compare, inspect, or policy-check durable reports whose raw durations and workload counters are derived from one verified report object.
+Run distinct immutable process benchmark arms and compare, inspect, or policy-check durable reports whose identities, raw durations, and workload counters are derived from one verified report object.
 
 ## Anchors
 
-- `anchor/rustdoc/xtask/command-spec`
-- `anchor/rustdoc/xtask/counter-sample`
-- `anchor/rustdoc/xtask/report-view`
-- `anchor/rustdoc/xtask/run-request`
+- `anchor/rustdoc/xtask/bench/cli/command-spec`
+- `anchor/rustdoc/xtask/bench/cli/report-view`
+- `anchor/rustdoc/xtask/bench/cli/run-request`
+- `anchor/rustdoc/xtask/bench/report/counter-sample`
 
 ## Specimens
 

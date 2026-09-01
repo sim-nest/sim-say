@@ -8,17 +8,6 @@
 
 Replay content-addressed stream-fabric fixtures through the loadable fixture command.
 
-## Anchors
-
-- `anchor/cli/sim-fabric-cadr-fixture`
-- `anchor/cli/sim-lib-stream-fabric`
-- `anchor/export/sim-lib-stream-fabric/cli/main/sim-fabric-cadr-fixture`
-
-## Surfaces
-
-- `cli/sim-fabric-cadr-fixture`
-- `cli/sim-lib-stream-fabric`
-
 ## Specimens
 
 - `spec-test/sim-agent-net/crates/sim-lib-stream-fabric/tests/cassette_replay`

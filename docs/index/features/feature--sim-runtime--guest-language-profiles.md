@@ -248,4 +248,5 @@ mod tests {
         }));
     }
 }
+// conformance: Lua conformance tests prove language semantics and runtime boundaries.
 ```
