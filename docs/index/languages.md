@@ -61,7 +61,6 @@
 | `specimen` | `codec` | crates/sim-conformance/tests/web_search_offline.rs |
 | `specimen` | `codec` | crates/sim-lib-lang-javascript/src/lib.rs |
 | `specimen` | `codec` | crates/sim-lib-lang-python/src/lib.rs |
-| `specimen` | `codec` | crates/sim-platform-wasi/src/lib.rs |
 | `specimen` | `codec` | crates/sim-run-loaders/src/native/codec_proxy_tests.rs |
 | `specimen` | `config` | crates/sim-codec-config/recipes/01-basics/per-lib-config/recipe.toml |
 | `specimen` | `doc` | crates/sim-codec-doc/src/html.rs |
@@ -783,7 +782,6 @@
 | `specimen` | `shape` | src/citizen_tests.rs |
 | `specimen` | `shape` | src/device_tests.rs |
 | `specimen` | `shape` | src/feature_contract_tests.rs |
-| `specimen` | `shape` | src/lib.rs |
 | `specimen` | `shape` | src/loaders/tests/registry.rs |
 | `specimen` | `shape` | src/runtime/tests/browse_conformance.rs |
 | `specimen` | `shape` | tests/device_authority.rs |
