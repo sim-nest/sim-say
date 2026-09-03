@@ -1,6 +1,6 @@
 # sim-platform
 
-Published commit: `0b3289efa84166528ffc68bcc5eb83bb93ab4e67`.
+Published commit: `743dd02b912ea12e85e2d80ed47db57ab5971f18`.
 
 ## Crates
 
