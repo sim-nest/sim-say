@@ -6,7 +6,7 @@
 - Subject: `crate/sim-nest`
 - Canonical key: `crate/sim-nest/feature-sim-sdk-model-test-facade`
 
-Expose the canonical model-test domain and loadable product behind one granular non-default SDK feature.
+Expose the canonical model-test domain and loadable product through the non-default study domain bundle.
 
 ## Anchors
 
