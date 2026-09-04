@@ -33,6 +33,6 @@ Source `recipes/atelier/expedition-first-light/recipe.toml`:
 title = "First light after deleting every convenience"
 kind = "rust"
 entry = "../../../tests/expedition_first_light.rs"
-required_features = ["continuity"]
+required_features = ["agent"]
 book = "sim-sdk"
 ```

@@ -6,7 +6,7 @@
 - Subject: `crate/sim-nest`
 - Canonical key: `crate/sim-nest/feature-sim-sdk-layered-physics-facade`
 
-Curates one-way feature closures from quantities and physics core through audit, proof, studies, findings, and explicit adapters.
+Curates quantities, physics core, audit, proof, studies, findings, and explicit adapters as one coherent domain bundle.
 
 ## Anchors
 

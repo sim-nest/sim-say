@@ -6,7 +6,7 @@
 - Subject: `crate/sim-nest`
 - Canonical key: `crate/sim-nest/feature-sim-sdk-agent-conduct-composition`
 
-Opt into pure conduct records or certified topology-backed conduct packages through direct canonical re-exports.
+Expose pure conduct records and certified topology-backed conduct packages through the existing agent domain bundle.
 
 ## Specimens
 
@@ -19,7 +19,7 @@ Specimen `spec-test/sim-sdk/tests/agent_conduct_exports` is checked by `cargo te
 Source `tests/agent_conduct_exports.rs`:
 
 ```rust
-#![cfg(all(feature = "agent-conduct", feature = "agent-conduct-core"))]
+#![cfg(feature = "agent")]
 
 use sim::{
     agent_conduct, agent_conduct_core,

@@ -6,7 +6,7 @@
 - Subject: `crate/sim-nest`
 - Canonical key: `crate/sim-nest/feature-sim-sdk-estate-facade`
 
-Opt-in features re-export estate core, authoring, organ, projection, provider, and Surface crates without enabling private controller bindings by default.
+One opt-in domain bundle re-exports estate core, authoring, organ, projection, provider, and Surface crates without enabling private controller bindings by default.
 
 ## Specimens
 
