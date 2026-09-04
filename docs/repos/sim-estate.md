@@ -1,6 +1,6 @@
 # sim-estate
 
-Published commit: `6a4a0c8b049f4ab9bf006e8f141a4cfcc3502c3e`.
+Published commit: `1562a4af01c3729d74ea76698ae7f8cf4c68c27b`.
 
 ## Crates
 
