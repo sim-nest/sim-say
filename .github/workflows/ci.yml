@@ -1,5 +1,5 @@
 # GitHub Actions CI for sim-say -- the generated, code-free front page.
-# No Rust here; this just enforces what sim-say IS: code-free and ASCII-only.
+# No Rust here; this enforces a code-free surface and ASCII-only authored files.
 name: ci
 on:
   pull_request: {}
@@ -18,9 +18,12 @@ jobs:
           if [ -n "$hits" ]; then
             echo "Rust/Cargo content found (R1 violation):"; echo "$hits"; exit 1
           fi
-      - name: ASCII-only
+      - name: ASCII-only authored and structural files
         run: |
-          hits=$(git ls-files -z | xargs -0 -r grep -lIP '[^\x00-\x7F]' || true)
+          # Generated feature pages embed checked source specimens verbatim;
+          # Unicode is evidence there, not authored Markdown prose.
+          hits=$(git ls-files -z | grep -zv '^docs/index/features/' | \
+            xargs -0 -r grep -lIP '[^\x00-\x7F]' || true)
           if [ -n "$hits" ]; then
             echo "non-ASCII characters found in:"; echo "$hits"; exit 1
           fi
