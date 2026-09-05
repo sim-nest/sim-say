@@ -1,6 +1,6 @@
 # sim-construction
 
-Published commit: `82ce5fabc3567b656eaf0b3a1732623d0a9c1999`.
+Published commit: `77bf36cd608f1473d10e7d740a4bb9351adc6f99`.
 
 ## Crates
 
