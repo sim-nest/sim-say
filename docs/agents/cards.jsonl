@@ -163,12 +163,14 @@
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-femm"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-foundation"}
 {"card": {"id": "cookbook/cancel", "kind": "cookbook-recipe", "owner": "sim-cancel", "summary": "Executor-neutral request lifetime composition."}, "repo": "sim-foundation"}
+{"card": {"id": "cookbook/conformance-core", "kind": "cookbook-recipe", "owner": "sim-conformance-core", "summary": "Immutable ownership, scope, invocation, and receipt descriptors."}, "repo": "sim-foundation"}
 {"card": {"id": "cookbook/net-core", "kind": "cookbook-recipe", "owner": "sim-lib-net-core", "summary": "Side-effect-free HTTP and stream parsing descriptors."}, "repo": "sim-foundation"}
 {"card": {"id": "cookbook/net-http", "kind": "cookbook-recipe", "owner": "sim-lib-net-http", "summary": "Bounded requests over injected capsule connectors."}, "repo": "sim-foundation"}
 {"card": {"id": "cookbook/protected-state", "kind": "cookbook-recipe", "owner": "sim-lib-protected-state", "summary": "Opaque state protection with explicit capabilities and optional single-use claims."}, "repo": "sim-foundation"}
 {"card": {"id": "cookbook/search-core", "kind": "cookbook-recipe", "owner": "sim-lib-search-core", "summary": "Network-free provider claims, observations, and checked citations."}, "repo": "sim-foundation"}
 {"card": {"id": "cookbook/surface/card", "kind": "cookbook-recipe", "owner": "sim-lib-surface-card", "summary": "Codec-neutral surface descriptors and external naming policy."}, "repo": "sim-foundation"}
 {"card": {"id": "cookbook/web-core", "kind": "cookbook-recipe", "owner": "sim-lib-web-core", "summary": "Network-free immutable representation and selector descriptors."}, "repo": "sim-foundation"}
+{"card": {"id": "cookbook/work-core", "kind": "cookbook-recipe", "owner": "sim-work-core", "summary": "Deterministic work-envelope and implementation-packet descriptors."}, "repo": "sim-foundation"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-foundation"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-interference"}
 {"card": {"id": "cookbook/interference-compute", "kind": "cookbook-recipe", "owner": "sim-lib-interference-compute", "summary": "Route certified interference studies through scoped Tensor executors."}, "repo": "sim-interference"}
@@ -632,6 +634,7 @@
 {"card": {"id": "codec/lisp", "kind": "surface-card", "owner": "sim", "summary": ".siml"}, "repo": "sim-sdk"}
 {"card": {"id": "codec/positions", "kind": "surface-card", "owner": "sim", "summary": "codec position behavior facet"}, "repo": "sim-sdk"}
 {"card": {"id": "cookbook/sim-conformance", "kind": "cookbook-recipe", "owner": "sim-conformance", "summary": "Recipes that show how the executable architecture contract is run."}, "repo": "sim-sdk"}
+{"card": {"id": "cookbook/sim-conformance-packs", "kind": "cookbook-recipe", "owner": "sim-conformance-packs", "summary": ""}, "repo": "sim-sdk"}
 {"card": {"id": "cookbook/sim-sdk", "kind": "cookbook-recipe", "owner": "sim-nest", "summary": "Small recipes for booting and checking the umbrella SIM facade."}, "repo": "sim-sdk"}
 {"card": {"id": "core/Card", "kind": "browse-reflection", "owner": "sim", "summary": "Card fixed-field browse envelope"}, "repo": "sim-sdk"}
 {"card": {"id": "core/args", "kind": "browse-reflection", "owner": "sim", "summary": "projects one stable Card field for a subject"}, "repo": "sim-sdk"}
@@ -671,6 +674,7 @@
 {"card": {"id": "cookbook/sim-shape", "kind": "cookbook-recipe", "owner": "sim-shape", "summary": "Runnable shape matching examples."}, "repo": "sim-shape"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-shape"}
 {"card": {"id": "browse/catalog", "kind": "browse-root", "owner": "workspace", "summary": "root browse catalog"}, "repo": "sim-storage"}
+{"card": {"id": "cookbook/artifact-facet", "kind": "cookbook-recipe", "owner": "sim-artifact-facet", "summary": "Role-safe pure three-way artifact comparison descriptors."}, "repo": "sim-storage"}
 {"card": {"id": "cookbook/storage/table-http", "kind": "cookbook-recipe", "owner": "sim-table-http", "summary": "Direct HTTP resources addressed through the table directory surface."}, "repo": "sim-storage"}
 {"card": {"id": "cookbook/storage/table-mount", "kind": "cookbook-recipe", "owner": "sim-table-mount", "summary": "Compose independently owned Table and Dir backends behind one directory view."}, "repo": "sim-storage"}
 {"card": {"id": "cookbook/storage/table-sealed", "kind": "cookbook-recipe", "owner": "sim-table-sealed", "summary": "Use authenticated encrypted lanes through the ordinary Table/Dir surface."}, "repo": "sim-storage"}

@@ -155,6 +155,7 @@
 | `sim-lib-femm-solve` | [sim-femm](../repos/sim-femm.md) |
 | `sim-lib-femm-space` | [sim-femm](../repos/sim-femm.md) |
 | `sim-lib-femm-tape` | [sim-femm](../repos/sim-femm.md) |
+| `sim-conformance-core` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-config` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-cookbook` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-index-core` | [sim-foundation](../repos/sim-foundation.md) |
@@ -177,6 +178,7 @@
 | `sim-relation-plan` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-relation-schema` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-study-core` | [sim-foundation](../repos/sim-foundation.md) |
+| `sim-work-core` | [sim-foundation](../repos/sim-foundation.md) |
 | `sim-lib-interference-compute` | [sim-interference](../repos/sim-interference.md) |
 | `sim-lib-interference-core` | [sim-interference](../repos/sim-interference.md) |
 | `sim-lib-interference-runtime` | [sim-interference](../repos/sim-interference.md) |
@@ -377,8 +379,10 @@
 | `sim-lib-study` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-nest` | [sim-sdk](../repos/sim-sdk.md) |
 | `sim-conformance` | [sim-sdk](../repos/sim-sdk.md) |
+| `sim-conformance-packs` | [sim-sdk](../repos/sim-sdk.md) |
 | `sim-shape` | [sim-shape](../repos/sim-shape.md) |
 | `sim-relation-shape` | [sim-shape](../repos/sim-shape.md) |
+| `sim-artifact-facet` | [sim-storage](../repos/sim-storage.md) |
 | `sim-list-cell` | [sim-storage](../repos/sim-storage.md) |
 | `sim-list-lazy` | [sim-storage](../repos/sim-storage.md) |
 | `sim-table-db` | [sim-storage](../repos/sim-storage.md) |

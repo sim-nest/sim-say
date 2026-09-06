@@ -150,7 +150,9 @@
 | [`feature/sim-femm/linear-solvers`](features/feature--sim-femm--linear-solvers.md) | `crate/sim-lib-femm-solve` | 1 |
 | [`feature/sim-femm/physics-audit-adapter`](features/feature--sim-femm--physics-audit-adapter.md) | `crate/sim-lib-femm-physics` | 1 |
 | [`feature/sim-foundation/blocking-http-client`](features/feature--sim-foundation--blocking-http-client.md) | `crate/sim-lib-net-http` | 1 |
+| [`feature/sim-foundation/bounded-work-core`](features/feature--sim-foundation--bounded-work-core.md) | `crate/sim-work-core` | 1 |
 | [`feature/sim-foundation/cancellation`](features/feature--sim-foundation--cancellation.md) | `crate/sim-cancel` | 1 |
+| [`feature/sim-foundation/conformance-core`](features/feature--sim-foundation--conformance-core.md) | `crate/sim-conformance-core` | 1 |
 | [`feature/sim-foundation/contract-emitter`](features/feature--sim-foundation--contract-emitter.md) | `local/sim-foundation/crate/xtask` | 0 |
 | [`feature/sim-foundation/cookbook`](features/feature--sim-foundation--cookbook.md) | `crate/sim-cookbook` | 1 |
 | [`feature/sim-foundation/cookbook-build-tool`](features/feature--sim-foundation--cookbook-build-tool.md) | `crate/sim-cookbook-build` | 1 |
@@ -360,6 +362,7 @@
 | [`feature/sim-sdk/media-edge-music-vertical`](features/feature--sim-sdk--media-edge-music-vertical.md) | `crate/sim-nest` | 1 |
 | [`feature/sim-sdk/model-test-facade`](features/feature--sim-sdk--model-test-facade.md) | `crate/sim-nest` | 1 |
 | [`feature/sim-sdk/music-algorithm-composition`](features/feature--sim-sdk--music-algorithm-composition.md) | `crate/sim-nest` | 1 |
+| [`feature/sim-sdk/neutral-conformance-packs`](features/feature--sim-sdk--neutral-conformance-packs.md) | `crate/sim-conformance-packs` | 1 |
 | [`feature/sim-sdk/platform-composition`](features/feature--sim-sdk--platform-composition.md) | `crate/sim-nest` | 1 |
 | [`feature/sim-sdk/private-observation-pack`](features/feature--sim-sdk--private-observation-pack.md) | `crate/sim-nest` | 2 |
 | [`feature/sim-sdk/python-composition`](features/feature--sim-sdk--python-composition.md) | `crate/sim-nest` | 1 |
@@ -380,6 +383,7 @@
 | [`feature/sim-shape/relation-shape`](features/feature--sim-shape--relation-shape.md) | `crate/sim-relation-shape` | 1 |
 | [`feature/sim-shape/shape`](features/feature--sim-shape--shape.md) | `local/sim-shape/crate/sim-shape` | 1 |
 | [`feature/sim-shape/shape-recipes`](features/feature--sim-shape--shape-recipes.md) | `crate/sim-shape-recipe-exact-bool-shape` | 0 |
+| [`feature/sim-storage/artifact-facet-law`](features/feature--sim-storage--artifact-facet-law.md) | `crate/sim-artifact-facet` | 1 |
 | [`feature/sim-storage/atomic-content-journal`](features/feature--sim-storage--atomic-content-journal.md) | `crate/sim-lib-journal` | 1 |
 | [`feature/sim-storage/bounded-relation-site`](features/feature--sim-storage--bounded-relation-site.md) | `crate/sim-relation-site` | 1 |
 | [`feature/sim-storage/contract-emitter`](features/feature--sim-storage--contract-emitter.md) | `local/sim-storage/crate/xtask` | 0 |
@@ -401,6 +405,7 @@
 | [`feature/sim-tooling/benchmark-environment-compatibility`](features/feature--sim-tooling--benchmark-environment-compatibility.md) | `local/sim-tooling/crate/xtask` | 1 |
 | [`feature/sim-tooling/benchmark-process-isolation`](features/feature--sim-tooling--benchmark-process-isolation.md) | `local/sim-tooling/crate/xtask` | 1 |
 | [`feature/sim-tooling/benchmark-sampling`](features/feature--sim-tooling--benchmark-sampling.md) | `local/sim-tooling/crate/xtask` | 1 |
+| [`feature/sim-tooling/conformance-pack-invocation`](features/feature--sim-tooling--conformance-pack-invocation.md) | `local/sim-tooling/crate/xtask` | 1 |
 | [`feature/sim-tooling/generated-docs`](features/feature--sim-tooling--generated-docs.md) | `local/sim-tooling/crate/xtask` | 2 |
 | [`feature/sim-tooling/host-tool-boundary`](features/feature--sim-tooling--host-tool-boundary.md) | `local/sim-tooling/crate/xtask` | 1 |
 | [`feature/sim-tooling/robust-benchmark-comparison`](features/feature--sim-tooling--robust-benchmark-comparison.md) | `local/sim-tooling/crate/xtask` | 1 |

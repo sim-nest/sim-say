@@ -13,7 +13,7 @@
 | [sim-estate](../repos/sim-estate.md) | 3 | [card-index.json](../contracts/sim-estate/card-index.json) |
 | [sim-expr-tree](../repos/sim-expr-tree.md) | 6 | [card-index.json](../contracts/sim-expr-tree/card-index.json) |
 | [sim-femm](../repos/sim-femm.md) | 21 | [card-index.json](../contracts/sim-femm/card-index.json) |
-| [sim-foundation](../repos/sim-foundation.md) | 9 | [card-index.json](../contracts/sim-foundation/card-index.json) |
+| [sim-foundation](../repos/sim-foundation.md) | 11 | [card-index.json](../contracts/sim-foundation/card-index.json) |
 | [sim-interference](../repos/sim-interference.md) | 7 | [card-index.json](../contracts/sim-interference/card-index.json) |
 | [sim-kernel](../repos/sim-kernel.md) | 2 | [card-index.json](../contracts/sim-kernel/card-index.json) |
 | [sim-ledger](../repos/sim-ledger.md) | 3 | [card-index.json](../contracts/sim-ledger/card-index.json) |
@@ -24,9 +24,9 @@
 | [sim-platform](../repos/sim-platform.md) | 20 | [card-index.json](../contracts/sim-platform/card-index.json) |
 | [sim-run](../repos/sim-run.md) | 3 | [card-index.json](../contracts/sim-run/card-index.json) |
 | [sim-runtime](../repos/sim-runtime.md) | 33 | [card-index.json](../contracts/sim-runtime/card-index.json) |
-| [sim-sdk](../repos/sim-sdk.md) | 303 | [card-index.json](../contracts/sim-sdk/card-index.json) |
+| [sim-sdk](../repos/sim-sdk.md) | 304 | [card-index.json](../contracts/sim-sdk/card-index.json) |
 | [sim-shape](../repos/sim-shape.md) | 3 | [card-index.json](../contracts/sim-shape/card-index.json) |
-| [sim-storage](../repos/sim-storage.md) | 6 | [card-index.json](../contracts/sim-storage/card-index.json) |
+| [sim-storage](../repos/sim-storage.md) | 7 | [card-index.json](../contracts/sim-storage/card-index.json) |
 | [sim-stream](../repos/sim-stream.md) | 12 | [card-index.json](../contracts/sim-stream/card-index.json) |
 | [sim-stream-host](../repos/sim-stream-host.md) | 3 | [card-index.json](../contracts/sim-stream-host/card-index.json) |
 | [sim-tooling](../repos/sim-tooling.md) | 2 | [card-index.json](../contracts/sim-tooling/card-index.json) |

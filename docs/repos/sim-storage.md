@@ -1,9 +1,10 @@
 # sim-storage
 
-Published commit: `7ea44163e245159f9392dd7a6e22c41eccc22a7a`.
+Published commit: `63c817a49e987eadae1e6c671fa1f326c9634090`.
 
 ## Crates
 
+- `sim-artifact-facet`
 - `sim-list-cell`
 - `sim-list-lazy`
 - `sim-table-db`

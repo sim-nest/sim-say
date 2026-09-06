@@ -32,6 +32,7 @@
 | `crate/physics-sweep-to-finding-recipe` | `crate` | physics-sweep-to-finding-recipe | 0 |
 | `crate/serial-workbench` | `crate` | serial-workbench | 0 |
 | `crate/sim` | `crate` | sim | 0 |
+| `crate/sim-artifact-facet` | `crate` | sim-artifact-facet | 0 |
 | `crate/sim-audio-ports` | `crate` | sim-audio-ports | 0 |
 | `crate/sim-auto` | `crate` | sim-auto | 1 |
 | `crate/sim-cancel` | `crate` | sim-cancel | 0 |
@@ -67,6 +68,8 @@
 | `crate/sim-codec-uds` | `crate` | sim-codec-uds | 1 |
 | `crate/sim-config` | `crate` | sim-config | 0 |
 | `crate/sim-conformance` | `crate` | sim-conformance | 0 |
+| `crate/sim-conformance-core` | `crate` | sim-conformance-core | 0 |
+| `crate/sim-conformance-packs` | `crate` | sim-conformance-packs | 0 |
 | `crate/sim-construction` | `crate` | sim-construction | 0 |
 | `crate/sim-cookbook` | `crate` | sim-cookbook | 0 |
 | `crate/sim-cookbook-build` | `crate` | sim-cookbook-build | 0 |
@@ -398,6 +401,7 @@
 | `crate/sim-view-tty` | `crate` | sim-view-tty | 1 |
 | `crate/sim-viture-ffi` | `crate` | sim-viture-ffi | 0 |
 | `crate/sim-wasm-abi` | `crate` | sim-wasm-abi | 1 |
+| `crate/sim-work-core` | `crate` | sim-work-core | 0 |
 | `crate/switched-two-port` | `crate` | switched-two-port | 0 |
 | `doc-set/sim-agent-net/generated` | `doc-set` | sim-agent-net generated docs | 0 |
 | `doc-set/sim-audio-daw/generated` | `doc-set` | sim-audio-daw generated docs | 0 |
@@ -612,7 +616,7 @@
 | `repo/sim-estate` | `repo` | sim-estate | 12 |
 | `repo/sim-expr-tree` | `repo` | sim-expr-tree | 10 |
 | `repo/sim-femm` | `repo` | sim-femm | 21 |
-| `repo/sim-foundation` | `repo` | sim-foundation | 24 |
+| `repo/sim-foundation` | `repo` | sim-foundation | 26 |
 | `repo/sim-interference` | `repo` | sim-interference | 7 |
 | `repo/sim-kernel` | `repo` | sim-kernel | 3 |
 | `repo/sim-ledger` | `repo` | sim-ledger | 9 |
@@ -623,9 +627,9 @@
 | `repo/sim-platform` | `repo` | sim-platform | 25 |
 | `repo/sim-run` | `repo` | sim-run | 9 |
 | `repo/sim-runtime` | `repo` | sim-runtime | 36 |
-| `repo/sim-sdk` | `repo` | sim-sdk | 76 |
+| `repo/sim-sdk` | `repo` | sim-sdk | 77 |
 | `repo/sim-shape` | `repo` | sim-shape | 6 |
-| `repo/sim-storage` | `repo` | sim-storage | 17 |
+| `repo/sim-storage` | `repo` | sim-storage | 18 |
 | `repo/sim-stream` | `repo` | sim-stream | 12 |
 | `repo/sim-stream-host` | `repo` | sim-stream-host | 6 |
 | `repo/sim-tooling` | `repo` | sim-tooling | 2 |
