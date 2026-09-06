@@ -32,6 +32,7 @@
 | `crate/physics-sweep-to-finding-recipe` | `crate` | physics-sweep-to-finding-recipe |
 | `crate/serial-workbench` | `crate` | serial-workbench |
 | `crate/sim` | `crate` | sim |
+| `crate/sim-artifact-facet` | `crate` | sim-artifact-facet |
 | `crate/sim-audio-ports` | `crate` | sim-audio-ports |
 | `crate/sim-auto` | `crate` | sim-auto |
 | `crate/sim-cancel` | `crate` | sim-cancel |
@@ -67,6 +68,8 @@
 | `crate/sim-codec-uds` | `crate` | sim-codec-uds |
 | `crate/sim-config` | `crate` | sim-config |
 | `crate/sim-conformance` | `crate` | sim-conformance |
+| `crate/sim-conformance-core` | `crate` | sim-conformance-core |
+| `crate/sim-conformance-packs` | `crate` | sim-conformance-packs |
 | `crate/sim-construction` | `crate` | sim-construction |
 | `crate/sim-cookbook` | `crate` | sim-cookbook |
 | `crate/sim-cookbook-build` | `crate` | sim-cookbook-build |
@@ -398,6 +401,7 @@
 | `crate/sim-view-tty` | `crate` | sim-view-tty |
 | `crate/sim-viture-ffi` | `crate` | sim-viture-ffi |
 | `crate/sim-wasm-abi` | `crate` | sim-wasm-abi |
+| `crate/sim-work-core` | `crate` | sim-work-core |
 | `crate/switched-two-port` | `crate` | switched-two-port |
 | `doc-set/sim-agent-net/generated` | `doc-set` | sim-agent-net generated docs |
 | `doc-set/sim-audio-daw/generated` | `doc-set` | sim-audio-daw generated docs |

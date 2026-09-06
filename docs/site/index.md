@@ -8,5 +8,5 @@
 - [Constellation diagram](constellation.md)
 
 Published repo count: 29.
-Index feature rows: 416.
+Index feature rows: 421.
 Index surface rows: 276.

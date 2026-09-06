@@ -1,9 +1,10 @@
 # sim-foundation
 
-Published commit: `fd9563d9248d95c88ce232c33a159111d4dc57c7`.
+Published commit: `52de9cca656d308a7dcce91dc8d8d513b4b1a666`.
 
 ## Crates
 
+- `sim-conformance-core`
 - `sim-config`
 - `sim-cookbook`
 - `sim-index-core`
@@ -26,6 +27,7 @@ Published commit: `fd9563d9248d95c88ce232c33a159111d4dc57c7`.
 - `sim-relation-plan`
 - `sim-relation-schema`
 - `sim-study-core`
+- `sim-work-core`
 
 ## Contracts
 
