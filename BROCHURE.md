@@ -175,6 +175,7 @@ piece gives you.
 - **sim-citizen-derive** -- A one-line marker that writes all the wiring needed to make your data type a full SIM value for you.
 - **sim-cancel** -- Executor-neutral hierarchical cancellation for SIM request lifetimes.
 - **sim-config** -- layered SIM settings stay inspectable because every source becomes the same table-shaped data before it is merged.
+- **sim-conformance-core** -- Keep every conformance claim tied to its exact owner, subject, scope, evidence, and revocation authority.
 - **sim-cookbook** -- The engine behind SIM's built-in lessons that teach each library from the inside.
 - **sim-cookbook-build** -- Portable host build tool for embedding SIM cookbook recipes.
 - **sim-host-core** -- Neutral host-port contracts for SIM domain libraries.
@@ -195,6 +196,7 @@ piece gives you.
 - **sim-table-core** -- The shared rulebook for naming and requesting table data across SIM.
 - **sim-text** -- One lossless home for exact text that may contain code units which ordinary Unicode strings cannot represent.
 - **sim-value** -- A friendly toolkit for building and reading the small data shapes that flow through SIM.
+- **sim-work-core** -- Turn a bounded change request into deterministic work whose inputs, limits, dependencies, and finish condition are explicit.
 - **sim-relation-shape** -- Shape projection and runtime admission for SIM relational records.
 - **sim-shape** -- it is the single component that decides whether a piece of data fits a described pattern, and tells you exactly what it found inside.
 
@@ -319,6 +321,7 @@ piece gives you.
 - **sim-lib-sequence** -- It works with collections of items -- even endless ones -- without copying them over and over.
 - **sim-lib-standard-core** -- It is the batteries-included default bundle that makes SIM useful the moment it starts.
 - **sim-lib-study** -- Domain-neutral durable study lifecycle over sealed coordinates.
+- **sim-artifact-facet** -- Preserve independent edits while changing only the exact artifact region owned by the caller.
 - **sim-lib-journal** -- Domain-free atomic content journal contract for SIM.
 - **sim-lib-relation-cli** -- Loadable, checked relational command surface for SIM.
 - **sim-list-cell** -- A classic linked-list store that holds items in order so a program can keep and change sequences.
@@ -369,6 +372,7 @@ piece gives you.
 - **sim-run-loaders** -- The pieces that let SIM pull in source files, packs, and outside plug-ins.
 - **sim-view-tty** -- The library that draws SIM in your terminal and reads your keystrokes.
 - **sim-conformance** -- the runnable checklist that proves SIM actually behaves the way its architecture promises.
+- **sim-conformance-packs** -- Run named SIM conformance checks over explicit facts and receive exact, reproducible evidence identities.
 - **sim-nest** -- the single starting point a developer adds to reach every part of the SIM runtime.
 - **sim-codec-odf** -- LibreOffice files can carry local office documents without hiding what falls outside the portable model.
 - **sim-codec-ooxml** -- Office file packages can move through SIM without hiding what the portable model cannot keep.
@@ -1368,6 +1372,12 @@ layered SIM settings stay inspectable because every source becomes the same tabl
 
 `sim-config` gives SIM a common base for configuration without inventing a second settings world. Built-in defaults, probed defaults, home files, working-directory files, and explicit overrides all land in one directory of library tables. The merge result carries where each effective field came from, so a loader, command line, report, or agent can show why the current setting has that value.
 
+#### sim-conformance-core
+
+Keep every conformance claim tied to its exact owner, subject, scope, evidence, and revocation authority.
+
+`sim-conformance-core` gives systems a durable vocabulary for declaring who owns a rule, which checks may judge it, and what a passing result actually covers. It keeps design activation separate from delivered behavior, prevents narrow evidence from being reused as a broader claim, and detects circular support before work begins. Exact identities make repeated checks comparable while preserving the difference between semantic meaning and stored bytes.
+
 #### sim-cookbook
 
 The engine behind SIM's built-in lessons that teach each library from the inside.
@@ -1487,6 +1497,12 @@ Some language and file formats must preserve UTF-16 code units exactly, includin
 A friendly toolkit for building and reading the small data shapes that flow through SIM.
 
 SIM moves information around as compact data forms -- numbers, words, lists, and named fields. On their own those forms are bare and awkward to work with. This crate gives you a tidy, consistent set of helpers for making them and reading them back: build a value, look up a field by name, replace one field while leaving its siblings untouched, or walk into a nested spot by a simple address. Everything is done by copying rather than altering shared state, so a change never surprises code that still holds the older value. One shared home means every part of SIM speaks the same small vocabulary instead of each corner inventing its own.
+
+#### sim-work-core
+
+Turn a bounded change request into deterministic work whose inputs, limits, dependencies, and finish condition are explicit.
+
+`sim-work-core` gives orchestrators one precise envelope for local code work, model work, and other bounded tasks. It verifies exact declared inputs, keeps intended targets distinct from trusted dependencies, measures full input before dispatch, and records what counts as completion. Host authority stays outside the envelope, so an implementation proposal remains reviewable data until an authorized adapter acts on it.
 
 ### sim-interference
 
@@ -2698,6 +2714,12 @@ the runnable checklist that proves SIM actually behaves the way its architecture
 
 This is the executable test suite that holds the whole runtime to its stated contract. Every big claim SIM makes about itself becomes a check you can run: that codecs faithfully round-trip every expression, that classes act as callable functions, that number parsing and promotion can be swapped out, that reading input never quietly runs code unless a host allows it, that named evaluation strategies work, that libraries can be installed and cleanly removed, that a boot receipt replays the same way, and that placement across machines behaves. It exercises the public entry crate exactly as an outside developer would, so the promises are tested through the same door you use.
 
+#### sim-conformance-packs
+
+Run named SIM conformance checks over explicit facts and receive exact, reproducible evidence identities.
+
+`sim-conformance-packs` provides a public catalog of checkers for retirement guards, semantic identity, ownership, architecture boundaries, work packets, artifact facets, and release claims. Every invocation names its checker, scope, subject, input facts, implementation identity, and result. The checkers observe only the facts supplied by the caller, so the same accepted input yields the same passing-result identity on every host. The catalog also exposes narrow ports for checking packet and facet implementations owned by other crates. Unsupported checker names and scopes fail closed with typed errors. The crate performs no process execution, repository mutation, network access, or receipt storage.
+
 #### sim-nest
 
 the single starting point a developer adds to reach every part of the SIM runtime.
@@ -2719,6 +2741,12 @@ it is the single component that decides whether a piece of data fits a described
 sim-shape gives SIM one shared way to describe the form a value should take and then check any value against that description. A shape can say "any number", "exactly this word", "a list of these", or a named class, and it can be combined with and, or, and not to build richer descriptions. When a value is checked, the shape does two jobs at once: it reports whether the value matches, and it captures the interesting parts by name so the rest of the system can use them. The same descriptions also compare against each other, so you can tell when one pattern is stricter than another. Because one engine does all this, matching stays consistent everywhere it is used.
 
 ### sim-storage
+
+#### sim-artifact-facet
+
+Preserve independent edits while changing only the exact artifact region owned by the caller.
+
+`sim-artifact-facet` gives change tools a shared, deterministic answer to whether a proposal is already true, unchanged, directly applicable, safely mergeable, or conflicting. It binds ownership and region before comparison, keeps base, observed, and intended content in separate roles, and preserves disjoint work under explicit limits. Generated regions remain under their generator's authority.
 
 #### sim-lib-journal
 
