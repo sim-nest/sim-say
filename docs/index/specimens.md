@@ -523,7 +523,7 @@
 | `` | `recipe/sim-platform/crates/sim-platform-windows/01-basics/process-cancellation` | `crate/sim-platform-windows` | `recipe` | `crates/sim-platform-windows/recipes/01-basics/process-cancellation/recipe.toml` | `` | `` | `false` | `false` |
 | `` | `recipe/sim-platform/crates/sim-table-fs/01-basics/grep-tree` | `local/sim-platform/crate/sim-table-fs` | `recipe` | `crates/sim-table-fs/recipes/01-basics/grep-tree/recipe.toml` | `lisp` | `` | `false` | `false` |
 | `` | `recipe/sim-platform/crates/sim-table-fs/01-basics/read-edit-file` | `local/sim-platform/crate/sim-table-fs` | `recipe` | `crates/sim-table-fs/recipes/01-basics/read-edit-file/recipe.toml` | `lisp` | `` | `false` | `false` |
-| `feature/sim-run/repl` | `recipe/sim-run/01-basics/hello` | `crate/sim-run` | `recipe` | `recipes/01-basics/hello/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
+| `` | `recipe/sim-run/01-basics/hello` | `crate/sim-run` | `recipe` | `recipes/01-basics/hello/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
 | `feature/sim-run/bootloader` | `recipe/sim-run/01-basics/version` | `crate/sim-run` | `recipe` | `recipes/01-basics/version/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
 | `feature/sim-run/bootloader` | `recipe/sim-run/02-scenarios/boot-lisp-eval` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/boot-lisp-eval/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
 | `` | `recipe/sim-run/02-scenarios/bytes-lib` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/bytes-lib/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
@@ -1037,6 +1037,7 @@
 | `feature/sim-run/expression-tree-command` | `spec-test/sim-run/crates/sim-run/tests/expr_tree` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/expr_tree.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/glasses` | `spec-test/sim-run/crates/sim-run/tests/glasses` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/glasses.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/jvm-command` | `spec-test/sim-run/crates/sim-run/tests/jvm_product` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/jvm_product.rs` | `` | `cargo test` | `true` | `true` |
+| `feature/sim-run/repl` | `spec-test/sim-run/crates/sim-run/tests/native_dynamic_repl` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/native_dynamic_repl.rs` | `shape` | `cargo test` | `true` | `true` |
 | `feature/sim-run/physics-library-selection` | `spec-test/sim-run/crates/sim-run/tests/physics` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/physics.rs` | `lisp` | `cargo test` | `true` | `true` |
 | `feature/sim-run/watch` | `spec-test/sim-run/crates/sim-run/tests/watch` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/watch.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-runtime/incremental-query-core` | `spec-test/sim-runtime/crates/sim-incremental-core/src/tests` | `crate/sim-incremental-core` | `spec-test` | `crates/sim-incremental-core/src/tests.rs` | `` | `cargo test` | `true` | `true` |

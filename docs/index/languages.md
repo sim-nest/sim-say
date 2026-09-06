@@ -783,6 +783,7 @@
 | `specimen` | `shape` | crates/sim-relation-schema/tests/schema_contract.rs |
 | `specimen` | `shape` | crates/sim-relation-shape/src/tests.rs |
 | `specimen` | `shape` | crates/sim-roadmap-exec-core/src/tests.rs |
+| `specimen` | `shape` | crates/sim-run/tests/native_dynamic_repl.rs |
 | `specimen` | `shape` | crates/sim-site-estate-command/src/lib.rs |
 | `specimen` | `shape` | crates/sim-study-core/tests/study_contract.rs |
 | `specimen` | `shape` | crates/sim-value/src/tests.rs |
