@@ -11,6 +11,7 @@ Expose all 21 checker entrypoints with pure bootstrap scenarios, canonical resul
 ## Anchors
 
 - `anchor/crate/sim-conformance-packs`
+- `anchor/export/sim-conformance-packs/shape/proposal`
 
 ## Specimens
 

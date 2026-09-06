@@ -22,12 +22,12 @@
 | [sim-office](../repos/sim-office.md) | `fcfa477e906ea1ec83b79e1356add951280825c2` | [JSON](../contracts/sim-office/repo-contract.json) |
 | [sim-physics](../repos/sim-physics.md) | `b06f878eceb9f69f6ff928eff39412a65d850334` | [JSON](../contracts/sim-physics/repo-contract.json) |
 | [sim-platform](../repos/sim-platform.md) | `697f9231622ec436d6e253494261a6da4062802a` | [JSON](../contracts/sim-platform/repo-contract.json) |
-| [sim-run](../repos/sim-run.md) | `1aebdf78e34b2c90a7c6aa4f00840f6341586afe` | [JSON](../contracts/sim-run/repo-contract.json) |
+| [sim-run](../repos/sim-run.md) | `2d2f845bdee7587e946d700fa4c21f2e928462b1` | [JSON](../contracts/sim-run/repo-contract.json) |
 | [sim-runtime](../repos/sim-runtime.md) | `47a3ed7a57d0ee3ebf917bcf7d16390616943e81` | [JSON](../contracts/sim-runtime/repo-contract.json) |
-| [sim-sdk](../repos/sim-sdk.md) | `635b68e0ba888011ef92c3ba80ab0cba3af658b8` | [JSON](../contracts/sim-sdk/repo-contract.json) |
+| [sim-sdk](../repos/sim-sdk.md) | `77bef23ef69d995d1421a929c8b3a4874a0219bb` | [JSON](../contracts/sim-sdk/repo-contract.json) |
 | [sim-shape](../repos/sim-shape.md) | `f144228b9cb0d5f9986ba5282d595d62ba6d7c1e` | [JSON](../contracts/sim-shape/repo-contract.json) |
 | [sim-storage](../repos/sim-storage.md) | `63c817a49e987eadae1e6c671fa1f326c9634090` | [JSON](../contracts/sim-storage/repo-contract.json) |
 | [sim-stream](../repos/sim-stream.md) | `d0c1524d2b7c282d9f05a919ea3d31116a1ac3e2` | [JSON](../contracts/sim-stream/repo-contract.json) |
 | [sim-stream-host](../repos/sim-stream-host.md) | `f4dfcd739248c221a69d44eaad083f221cb443be` | [JSON](../contracts/sim-stream-host/repo-contract.json) |
-| [sim-tooling](../repos/sim-tooling.md) | `103eb3c8bb3ae62c6862f82d01a193ec8beb8c2e` | [JSON](../contracts/sim-tooling/repo-contract.json) |
+| [sim-tooling](../repos/sim-tooling.md) | `7f21202fd8d509313ae11f6fd2ee6dbdf47e1468` | [JSON](../contracts/sim-tooling/repo-contract.json) |
 | [sim-web](../repos/sim-web.md) | `641eb0784c238be609b13e74442269af58c4fdfb` | [JSON](../contracts/sim-web/repo-contract.json) |
