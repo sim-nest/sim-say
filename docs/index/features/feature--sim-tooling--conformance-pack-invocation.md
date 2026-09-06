@@ -8,10 +8,6 @@
 
 Invoke one statically bound public conformance pack over a bounded canonical evidence projection, recompute its checked-subject identity, and emit one verified typed invocation and receipt.
 
-## Anchors
-
-- `local/sim-tooling/anchor/cli/xtask`
-
 ## Specimens
 
 - `spec-test/sim-tooling/src/check_pack`
