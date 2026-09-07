@@ -275,6 +275,7 @@
 | [`feature/sim-platform/platform-policy`](features/feature--sim-platform--platform-policy.md) | `crate/sim-platform-core` | 1 |
 | [`feature/sim-platform/process-realization`](features/feature--sim-platform--process-realization.md) | `crate/sim-platform-ubuntu-pc` | 1 |
 | [`feature/sim-platform/product-membrane`](features/feature--sim-platform--product-membrane.md) | `crate/sim-lib-platform` | 1 |
+| [`feature/sim-platform/real-local-check-adapter`](features/feature--sim-platform--real-local-check-adapter.md) | `crate/sim-platform-ubuntu-pc` | 1 |
 | [`feature/sim-platform/transport-realization`](features/feature--sim-platform--transport-realization.md) | `crate/sim-platform-linux` | 1 |
 | [`feature/sim-platform/ubuntu-bwrap-sandbox`](features/feature--sim-platform--ubuntu-bwrap-sandbox.md) | `crate/sim-platform-ubuntu-pc` | 1 |
 | [`feature/sim-platform/ubuntu-pc-capsule`](features/feature--sim-platform--ubuntu-pc-capsule.md) | `crate/sim-platform-ubuntu-pc` | 1 |
@@ -314,7 +315,7 @@
 | [`feature/sim-runtime/function-organ`](features/feature--sim-runtime--function-organ.md) | `crate/sim-lib-function` | 6 |
 | [`feature/sim-runtime/gc-tracing`](features/feature--sim-runtime--gc-tracing.md) | `crate/sim-lib-gc-tracing` | 1 |
 | [`feature/sim-runtime/generic-dispatch-organ`](features/feature--sim-runtime--generic-dispatch-organ.md) | `crate/sim-lib-dispatch` | 1 |
-| [`feature/sim-runtime/guarded-operations`](features/feature--sim-runtime--guarded-operations.md) | `crate/sim-lib-operation-gate` | 3 |
+| [`feature/sim-runtime/guarded-operations`](features/feature--sim-runtime--guarded-operations.md) | `crate/sim-lib-operation-gate` | 4 |
 | [`feature/sim-runtime/guest-host-service-boundary`](features/feature--sim-runtime--guest-host-service-boundary.md) | `repo/sim-runtime` | 1 |
 | [`feature/sim-runtime/guest-language-profiles`](features/feature--sim-runtime--guest-language-profiles.md) | `local/sim-runtime/crate/sim-lib-standard-core` | 2 |
 | [`feature/sim-runtime/host-exec`](features/feature--sim-runtime--host-exec.md) | `crate/sim-lib-exec` | 1 |
@@ -325,6 +326,7 @@
 | [`feature/sim-runtime/julia-generic-adapter`](features/feature--sim-runtime--julia-generic-adapter.md) | `crate/sim-lib-lang-julia` | 1 |
 | [`feature/sim-runtime/jvm-loadable-profile`](features/feature--sim-runtime--jvm-loadable-profile.md) | `crate/sim-lib-lang-jvm` | 9 |
 | [`feature/sim-runtime/library-loading`](features/feature--sim-runtime--library-loading.md) | `local/sim-runtime/crate/sim-lib-standard-core` | 1 |
+| [`feature/sim-runtime/local-check-contract`](features/feature--sim-runtime--local-check-contract.md) | `crate/sim-lib-exec` | 1 |
 | [`feature/sim-runtime/machine-contract`](features/feature--sim-runtime--machine-contract.md) | `crate/sim-lib-machine` | 4 |
 | [`feature/sim-runtime/mutation-organ`](features/feature--sim-runtime--mutation-organ.md) | `local/sim-runtime/crate/sim-lib-mutation` | 2 |
 | [`feature/sim-runtime/namespace-organ`](features/feature--sim-runtime--namespace-organ.md) | `crate/sim-lib-namespace` | 2 |

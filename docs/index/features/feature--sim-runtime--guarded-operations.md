@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-operation-gate`
 - Canonical key: `crate/sim-lib-operation-gate/feature-sim-runtime-guarded-operations`
 
-Guard domain-neutral operations with explicit capability and exact approval, then durably retain canonical intent, separate grants and attempts, dispatch-before-performance, and raw performer receipts.
+Guard domain-neutral operations with explicit capability and exact approval, then reconcile durable fenced dispatch against independent postcondition evidence.
 
 ## Anchors
 
@@ -17,6 +17,7 @@ Guard domain-neutral operations with explicit capability and exact approval, the
 - `recipe/sim-runtime/crates/sim-lib-operation-gate/01-basics/crash-matrix`
 - `recipe/sim-runtime/crates/sim-lib-operation-gate/01-basics/two-manifests`
 - `spec-test/sim-runtime/crates/sim-lib-operation-gate/src/durable_tests`
+- `spec-test/sim-runtime/crates/sim-lib-operation-gate/src/lifecycle_tests`
 
 ## Worked Example
 
