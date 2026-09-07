@@ -1020,7 +1020,7 @@
 | `` | `spec-test/sim-platform/crates/sim-table-fs/src/tests/table` | `local/sim-platform/crate/sim-table-fs` | `spec-test` | `crates/sim-table-fs/src/tests/table.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-platform/host-directory-realization` | `spec-test/sim-platform/crates/sim-table-fs/tests/host_dir_port` | `local/sim-platform/crate/sim-table-fs` | `spec-test` | `crates/sim-table-fs/tests/host_dir_port.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-platform/device-physical-port` | `spec-test/sim-platform/crates/sim-viture-ffi/src/tests` | `crate/sim-viture-ffi` | `spec-test` | `crates/sim-viture-ffi/src/tests.rs` | `` | `cargo test` | `true` | `true` |
-| `feature/sim-run/immutable-native-build` | `spec-test/sim-run/crates/sim-lib-hotload/src/admission` | `crate/sim-lib-hotload` | `spec-test` | `crates/sim-lib-hotload/src/admission.rs` | `` | `cargo test` | `true` | `true` |
+| `feature/sim-run/immutable-native-build` | `spec-test/sim-run/crates/sim-lib-hotload/src/admission` | `crate/sim-lib-hotload` | `spec-test` | `crates/sim-lib-hotload/src/admission.rs` | `shape` | `cargo test` | `true` | `true` |
 | `feature/sim-run/immutable-native-build` | `spec-test/sim-run/crates/sim-lib-hotload/src/build` | `crate/sim-lib-hotload` | `spec-test` | `crates/sim-lib-hotload/src/build.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/immutable-native-build` | `spec-test/sim-run/crates/sim-lib-hotload/src/compatibility` | `crate/sim-lib-hotload` | `spec-test` | `crates/sim-lib-hotload/src/compatibility.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/immutable-native-build` | `spec-test/sim-run/crates/sim-lib-hotload/src/preflight` | `crate/sim-lib-hotload` | `spec-test` | `crates/sim-lib-hotload/src/preflight.rs` | `` | `cargo test` | `true` | `true` |
@@ -1230,7 +1230,7 @@
 | `feature/sim-index/core` | `spec-test/sim-tooling/src/index_fixpoint_tests` | `local/sim-tooling/crate/xtask` | `spec-test` | `src/index_fixpoint_tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-tooling/generated-docs` | `spec-test/sim-tooling/src/index_render_tests` | `local/sim-tooling/crate/xtask` | `spec-test` | `src/index_render_tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-index/vault-export` | `spec-test/sim-tooling/src/index_vault_tests` | `local/sim-tooling/crate/xtask` | `spec-test` | `src/index_vault_tests.rs` | `` | `cargo test` | `true` | `true` |
-| `feature/sim-index/vault-export` | `spec-test/sim-tooling/src/index_vault_write_tests` | `local/sim-tooling/crate/xtask` | `spec-test` | `src/index_vault_write_tests.rs` | `` | `cargo test` | `true` | `true` |
+| `feature/sim-index/vault-export` | `spec-test/sim-tooling/src/index_vault_write_tests` | `local/sim-tooling/crate/xtask` | `spec-test` | `src/index_vault_write_tests.rs` | `codec` | `cargo test` | `true` | `true` |
 | `feature/sim-tooling/host-tool-boundary` | `spec-test/sim-tooling/src/platform_inventory_tests` | `local/sim-tooling/crate/xtask` | `spec-test` | `src/platform_inventory_tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-tooling/generated-docs` | `spec-test/sim-tooling/src/repo_contract_tests` | `local/sim-tooling/crate/xtask` | `spec-test` | `src/repo_contract_tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-web/stateful-tree-scenes` | `spec-test/sim-web/crates/sim-lib-scene/src/tests` | `local/sim-web/crate/sim-lib-scene` | `spec-test` | `crates/sim-lib-scene/src/tests.rs` | `shape` | `cargo test` | `true` | `true` |
