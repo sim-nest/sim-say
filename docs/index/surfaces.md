@@ -188,6 +188,7 @@
 | `site/sim-lib-compute-rocm` | `site` | `crate/sim-lib-compute-rocm` |
 | `site/sim-lib-compute-wgpu` | `site` | `crate/sim-lib-compute-wgpu` |
 | `site/sim-lib-expr-tree-server` | `site` | `crate/sim-lib-expr-tree-server` |
+| `site/sim-lib-hotload` | `site` | `crate/sim-lib-hotload` |
 | `site/sim-lib-numbers-f64` | `site` | `local/sim-numbers/crate/sim-lib-numbers-f64` |
 | `site/sim-lib-numbers-tensor` | `site` | `local/sim-numbers/crate/sim-lib-numbers-tensor` |
 | `site/sim-lib-stream-cpal` | `site` | `crate/sim-lib-stream-cpal` |

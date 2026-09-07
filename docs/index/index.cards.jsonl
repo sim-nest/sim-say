@@ -1709,7 +1709,7 @@
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-platform/crates/sim-table-fs/src/tests/table","kind":"specimen","language":null,"path":"crates/sim-table-fs/src/tests/table.rs","runnable":true,"specimen_kind":"spec-test","subject":"local/sim-platform/crate/sim-table-fs"}
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-platform/crates/sim-table-fs/tests/host_dir_port","kind":"specimen","language":null,"path":"crates/sim-table-fs/tests/host_dir_port.rs","runnable":true,"specimen_kind":"spec-test","subject":"local/sim-platform/crate/sim-table-fs"}
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-platform/crates/sim-viture-ffi/src/tests","kind":"specimen","language":null,"path":"crates/sim-viture-ffi/src/tests.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-viture-ffi"}
-{"checked":true,"checked_by":"cargo test","id":"spec-test/sim-run/crates/sim-lib-hotload/src/admission","kind":"specimen","language":null,"path":"crates/sim-lib-hotload/src/admission.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-lib-hotload"}
+{"checked":true,"checked_by":"cargo test","id":"spec-test/sim-run/crates/sim-lib-hotload/src/admission","kind":"specimen","language":"shape","path":"crates/sim-lib-hotload/src/admission.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-lib-hotload"}
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-run/crates/sim-lib-hotload/src/build","kind":"specimen","language":null,"path":"crates/sim-lib-hotload/src/build.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-lib-hotload"}
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-run/crates/sim-lib-hotload/src/compatibility","kind":"specimen","language":null,"path":"crates/sim-lib-hotload/src/compatibility.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-lib-hotload"}
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-run/crates/sim-lib-hotload/src/preflight","kind":"specimen","language":null,"path":"crates/sim-lib-hotload/src/preflight.rs","runnable":true,"specimen_kind":"spec-test","subject":"crate/sim-lib-hotload"}
@@ -1919,7 +1919,7 @@
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-tooling/src/index_fixpoint_tests","kind":"specimen","language":null,"path":"src/index_fixpoint_tests.rs","runnable":true,"specimen_kind":"spec-test","subject":"local/sim-tooling/crate/xtask"}
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-tooling/src/index_render_tests","kind":"specimen","language":null,"path":"src/index_render_tests.rs","runnable":true,"specimen_kind":"spec-test","subject":"local/sim-tooling/crate/xtask"}
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-tooling/src/index_vault_tests","kind":"specimen","language":null,"path":"src/index_vault_tests.rs","runnable":true,"specimen_kind":"spec-test","subject":"local/sim-tooling/crate/xtask"}
-{"checked":true,"checked_by":"cargo test","id":"spec-test/sim-tooling/src/index_vault_write_tests","kind":"specimen","language":null,"path":"src/index_vault_write_tests.rs","runnable":true,"specimen_kind":"spec-test","subject":"local/sim-tooling/crate/xtask"}
+{"checked":true,"checked_by":"cargo test","id":"spec-test/sim-tooling/src/index_vault_write_tests","kind":"specimen","language":"codec","path":"src/index_vault_write_tests.rs","runnable":true,"specimen_kind":"spec-test","subject":"local/sim-tooling/crate/xtask"}
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-tooling/src/platform_inventory_tests","kind":"specimen","language":null,"path":"src/platform_inventory_tests.rs","runnable":true,"specimen_kind":"spec-test","subject":"local/sim-tooling/crate/xtask"}
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-tooling/src/repo_contract_tests","kind":"specimen","language":null,"path":"src/repo_contract_tests.rs","runnable":true,"specimen_kind":"spec-test","subject":"local/sim-tooling/crate/xtask"}
 {"checked":true,"checked_by":"cargo test","id":"spec-test/sim-web/crates/sim-lib-scene/src/tests","kind":"specimen","language":"shape","path":"crates/sim-lib-scene/src/tests.rs","runnable":true,"specimen_kind":"spec-test","subject":"local/sim-web/crate/sim-lib-scene"}
@@ -3017,6 +3017,7 @@
 {"id":"site/sim-lib-compute-rocm","kind":"surface","subject":"crate/sim-lib-compute-rocm","surface_kind":"site"}
 {"id":"site/sim-lib-compute-wgpu","kind":"surface","subject":"crate/sim-lib-compute-wgpu","surface_kind":"site"}
 {"id":"site/sim-lib-expr-tree-server","kind":"surface","subject":"crate/sim-lib-expr-tree-server","surface_kind":"site"}
+{"id":"site/sim-lib-hotload","kind":"surface","subject":"crate/sim-lib-hotload","surface_kind":"site"}
 {"id":"site/sim-lib-numbers-f64","kind":"surface","subject":"local/sim-numbers/crate/sim-lib-numbers-f64","surface_kind":"site"}
 {"id":"site/sim-lib-numbers-tensor","kind":"surface","subject":"local/sim-numbers/crate/sim-lib-numbers-tensor","surface_kind":"site"}
 {"id":"site/sim-lib-stream-cpal","kind":"surface","subject":"crate/sim-lib-stream-cpal","surface_kind":"site"}

@@ -62,6 +62,7 @@
 | `specimen` | `codec` | crates/sim-lib-lang-javascript/src/lib.rs |
 | `specimen` | `codec` | crates/sim-lib-lang-python/src/lib.rs |
 | `specimen` | `codec` | crates/sim-run-loaders/src/native/codec_proxy_tests.rs |
+| `specimen` | `codec` | src/index_vault_write_tests.rs |
 | `specimen` | `config` | crates/sim-codec-config/recipes/01-basics/per-lib-config/recipe.toml |
 | `specimen` | `doc` | crates/sim-codec-doc/src/html.rs |
 | `specimen` | `doc` | crates/sim-codec-doc/tests/conformance.rs |
@@ -723,6 +724,7 @@
 | `specimen` | `shape` | crates/sim-lib-function/tests/contract_shape.rs |
 | `specimen` | `shape` | crates/sim-lib-function/tests/neutral_language_specimen.rs |
 | `specimen` | `shape` | crates/sim-lib-function/tests/ownership_guard.rs |
+| `specimen` | `shape` | crates/sim-lib-hotload/src/admission.rs |
 | `specimen` | `shape` | crates/sim-lib-hotload/src/surface.rs |
 | `specimen` | `shape` | crates/sim-lib-incremental/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-interference-compute/src/hardware_tests.rs |
