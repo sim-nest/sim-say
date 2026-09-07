@@ -390,6 +390,7 @@
 | [`feature/sim-storage/host-storage-primitives`](features/feature--sim-storage--host-storage-primitives.md) | `crate/sim-storage-port` | 1 |
 | [`feature/sim-storage/mounted-table-dir-namespace`](features/feature--sim-storage--mounted-table-dir-namespace.md) | `crate/sim-table-mount` | 1 |
 | [`feature/sim-storage/mutual-copied-projection`](features/feature--sim-storage--mutual-copied-projection.md) | `crate/sim-mutual-projection` | 1 |
+| [`feature/sim-storage/persistent-semantic-objects`](features/feature--sim-storage--persistent-semantic-objects.md) | `crate/sim-lib-journal` | 1 |
 | [`feature/sim-storage/relation-command`](features/feature--sim-storage--relation-command.md) | `crate/sim-lib-relation-cli` | 1 |
 | [`feature/sim-storage/relation-table-dir-projection`](features/feature--sim-storage--relation-table-dir-projection.md) | `crate/sim-table-relation` | 2 |
 | [`feature/sim-storage/sealed-table-decorator`](features/feature--sim-storage--sealed-table-decorator.md) | `crate/sim-table-sealed` | 1 |
