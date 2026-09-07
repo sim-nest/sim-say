@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-journal`
 - Canonical key: `crate/sim-lib-journal/feature-sim-storage-atomic-content-journal`
 
-Crash-durably publish immutable content and atomically advance one gapless, fenced journal head with bounded verified reopen and disposable read-only projections.
+Crash-durably publish immutable content and atomically advance one gapless, fenced journal head with bounded verified reopen, internally consistent semantic snapshots, and disposable read-only projections.
 
 ## Anchors
 
@@ -75,6 +75,29 @@ fn replay_survives_deleting_every_projection() {
         vec![first, second]
     );
     assert_eq!(journal.verify().unwrap().object_ids.len(), 2);
+}
+
+#[test]
+fn verified_snapshot_binds_entries_and_semantic_payloads_to_one_read() {
+    let journal = Journal::new(MemoryBackend::new());
+    let lease = journal.acquire_lease().unwrap();
+    let value = Datum::Node {
+        tag: Symbol::qualified("example", "semantic-value-v1"),
+        fields: vec![(Symbol::new("answer"), Datum::String("forty-two".into()))],
+    };
+    let object = JournalObject::from_datum(value.clone()).unwrap();
+    let fact = entry(0, None, &object);
+    let expected_id = object.id.clone();
+    let expected_entry = fact.clone();
+    journal
+        .publish(&lease, None, vec![object], vec![fact])
+        .unwrap();
+
+    let snapshot = journal.verified_snapshot().unwrap();
+    assert_eq!(snapshot.entries(), &[expected_entry]);
+    assert_eq!(snapshot.datum(&expected_id), Some(&value));
+    assert_eq!(snapshot.datums().len(), 1);
+    assert_eq!(snapshot.head().unwrap().sequence, 0);
 }
 
 #[test]
