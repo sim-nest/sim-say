@@ -629,6 +629,7 @@
 | `specimen` | `rust` | crates/sim-lib-numbers-stats/recipes/01-basics/clustering-evidence/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-numbers-stats/recipes/01-basics/robust-benchmark-statistics/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-numbers-stats/recipes/01-basics/space-filling-evidence/recipe.toml |
+| `specimen` | `rust` | crates/sim-lib-operation-gate/recipes/01-basics/crash-matrix/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-operation-gate/recipes/01-basics/two-manifests/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-pitch-serial/recipes/01-basics/row-class-analysis/recipe.toml |
 | `specimen` | `rust` | crates/sim-lib-pitch-serial/recipes/01-basics/row-family-matrix/recipe.toml |

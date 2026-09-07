@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-operation-gate`
 - Canonical key: `crate/sim-lib-operation-gate/feature-sim-runtime-guarded-operations`
 
-Guard domain-neutral operations with explicit capability, execution mode, exact-subject approval, atomic approval use, effect replay, and auditable sink policy.
+Guard domain-neutral operations with explicit capability and exact approval, then durably retain canonical intent, separate grants and attempts, dispatch-before-performance, and raw performer receipts.
 
 ## Anchors
 
@@ -14,26 +14,28 @@ Guard domain-neutral operations with explicit capability, execution mode, exact-
 
 ## Specimens
 
+- `recipe/sim-runtime/crates/sim-lib-operation-gate/01-basics/crash-matrix`
 - `recipe/sim-runtime/crates/sim-lib-operation-gate/01-basics/two-manifests`
+- `spec-test/sim-runtime/crates/sim-lib-operation-gate/src/durable_tests`
 
 ## Worked Example
 
-Specimen `recipe/sim-runtime/crates/sim-lib-operation-gate/01-basics/two-manifests` is checked by `sh scripts/check-recipes.sh`.
+Specimen `recipe/sim-runtime/crates/sim-lib-operation-gate/01-basics/crash-matrix` is checked by `sh scripts/check-recipes.sh`.
 
-Source `crates/sim-lib-operation-gate/recipes/01-basics/two-manifests/recipe.toml`:
+Source `crates/sim-lib-operation-gate/recipes/01-basics/crash-matrix/recipe.toml`:
 
 ```toml
-id = "two-manifests"
-title = "Declare two unrelated guarded operations"
+id = "crash-matrix"
+title = "Recover without repeating a dispatched operation"
 codec = "rust"
 setup = "src/main.rs"
 purpose = "README.md"
 expected = "expected.txt"
-order = 10
-tags = ["operation", "gate", "manifest", "domain-neutral", "rust"]
-requires = ["sim-lib-operation-gate", "sim-kernel"]
+order = 20
+tags = ["operation", "journal", "crash", "at-most-once", "rust"]
+requires = ["sim-lib-operation-gate", "sim-lib-journal", "sim-kernel"]
 
 [[expect]]
 form = 0
-result = "warehouse mode: Recorded\nmicroscope mode: Reviewed\nautomotive assumptions: 0"
+result = "first state: dispatched\nreopened state: dispatched\nperformer invocations: 1\noperation identity stable: true\nreal effects: 0"
 ```

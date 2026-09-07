@@ -314,7 +314,7 @@
 | [`feature/sim-runtime/function-organ`](features/feature--sim-runtime--function-organ.md) | `crate/sim-lib-function` | 6 |
 | [`feature/sim-runtime/gc-tracing`](features/feature--sim-runtime--gc-tracing.md) | `crate/sim-lib-gc-tracing` | 1 |
 | [`feature/sim-runtime/generic-dispatch-organ`](features/feature--sim-runtime--generic-dispatch-organ.md) | `crate/sim-lib-dispatch` | 1 |
-| [`feature/sim-runtime/guarded-operations`](features/feature--sim-runtime--guarded-operations.md) | `crate/sim-lib-operation-gate` | 1 |
+| [`feature/sim-runtime/guarded-operations`](features/feature--sim-runtime--guarded-operations.md) | `crate/sim-lib-operation-gate` | 3 |
 | [`feature/sim-runtime/guest-host-service-boundary`](features/feature--sim-runtime--guest-host-service-boundary.md) | `repo/sim-runtime` | 1 |
 | [`feature/sim-runtime/guest-language-profiles`](features/feature--sim-runtime--guest-language-profiles.md) | `local/sim-runtime/crate/sim-lib-standard-core` | 2 |
 | [`feature/sim-runtime/host-exec`](features/feature--sim-runtime--host-exec.md) | `crate/sim-lib-exec` | 1 |
