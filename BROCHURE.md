@@ -2680,7 +2680,7 @@ As a program grows, many parts want to use short, natural names, and those names
 
 Domain-neutral capability and exact-approval gate for effectful SIM operations.
 
-A domain-neutral gate for content-identified operations. Callers provide the required capability, the exact operation request, and an approval bound to that request; mismatched, stale, missing, or over-broad authority fails closed before an effect adapter runs. Approval cannot silently drift to a different operation. Capability checks and human review remain separate, inspectable facts. Domain libraries reuse one gate instead of inventing approval policy. This runtime organ sits immediately before effectful adapters. It owns admission records and checks, never the effect itself. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+A domain-neutral gate and durable handoff for content-identified operations. Callers provide the required capability, exact semantic intent, and approval bound to that request; mismatched, stale, missing, or over-broad authority fails closed before an effect adapter runs. Canonical intent binds the target, intended result, and replay policy while grants, attempts, and writer leases stay separate. The journal records dispatch before an injected performer runs and retains its raw acknowledgement. Reopening a recorded dispatch never repeats it, so acknowledgement loss remains visible uncertainty instead of retry authority. Capability checks, human review, durability, and later reconciliation remain separate, inspectable facts.
 
 #### sim-lib-pattern
 
@@ -2752,7 +2752,7 @@ Preserve independent edits while changing only the exact artifact region owned b
 
 Domain-free atomic content journal contract for SIM.
 
-`sim-lib-journal` gives every SIM domain the same small foundation for immutable objects, fenced writers, atomic batches, verified replay, and disposable read-only projections. A deterministic memory backend is supplied as a law reference, never as durable production storage. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+`sim-lib-journal` gives every SIM domain the same small foundation for immutable objects, fenced writers, atomic batches, verified replay, internally consistent semantic snapshots, and disposable read-only projections. A deterministic memory backend is supplied as a law reference, never as durable production storage. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
 
 #### sim-lib-relation-cli
 
