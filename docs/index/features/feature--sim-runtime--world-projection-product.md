@@ -10,7 +10,12 @@ Load open qualified projectors and expose pure project, diff, and why operations
 
 ## Anchors
 
+- `anchor/card/cookbook/world`
+- `anchor/cli/world`
 - `anchor/crate/sim-lib-world`
+- `anchor/export/sim-lib-world/cli/main/world`
+- `anchor/export/sim-lib-world/shape/world-config-v1`
+- `anchor/runtime-lib/sim-lib-world/world-command-lib`
 
 ## Specimens
 
