@@ -1144,6 +1144,7 @@
 | `` | `spec-test/sim-sdk/crates/sim-conformance-packs/src/packs/succession` | `crate/sim-conformance-packs` | `spec-test` | `crates/sim-conformance-packs/src/packs/succession.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance-packs/src/packs/work` | `crate/sim-conformance-packs` | `spec-test` | `crates/sim-conformance-packs/src/packs/work.rs` | `shape` | `cargo test` | `true` | `true` |
 | `feature/sim-sdk/neutral-conformance-packs` | `spec-test/sim-sdk/crates/sim-conformance-packs/tests/bootstrap_packs` | `crate/sim-conformance-packs` | `spec-test` | `crates/sim-conformance-packs/tests/bootstrap_packs.rs` | `` | `cargo test` | `true` | `true` |
+| `` | `spec-test/sim-sdk/crates/sim-conformance-packs/tests/bootstrap_packs/nv12_05` | `crate/sim-conformance-packs` | `spec-test` | `crates/sim-conformance-packs/tests/bootstrap_packs/nv12_05.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/src/lib` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/src/lib.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/agents30` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/agents30.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/atelier_self_hosting` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/atelier_self_hosting.rs` | `` | `cargo test` | `true` | `true` |

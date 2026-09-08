@@ -2418,7 +2418,7 @@ Run the same checked relational plans against memory or durable preopened SQLite
 
 Ubuntu PC reference platform capsule.
 
-One bounded, physically evidenced membrane for Ubuntu desktop and headless PCs. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
+One bounded, physically evidenced membrane for Ubuntu desktop and headless PCs. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration. The capsule's `LocalCheckAdapter` connects exact runtime `CommandSpec` entries to the durable M5 operation lifecycle. It supports trusted `ProcessPort` mechanics and fully confined `BwrapLauncher` execution, while the released checker-facing port exposes no native paths or command construction. Each run binds an owned checkout, explicit inputs, outputs and scratch roots, a sealed environment, time and output limits, descendant cleanup, and an independent postcondition observation.
 
 #### sim-platform-ubuntu-rpi
 
@@ -2542,7 +2542,7 @@ This library lets one named operation have many implementations and choose the f
 
 It lets a trusted host run a specific outside process with clear permission and tight limits.
 
-Some useful work belongs outside the runtime: a formatter, a compiler, a small command-line helper, or another tool the host already trusts. This crate gives that work a narrow gate. The caller supplies a boot-trusted program reference, whole arguments, an opaque project root, and an empty-by-default sealed environment. The physical capsule resolves native resources; portable callers never receive a host path.
+Some useful work belongs outside the runtime: a formatter, a compiler, a small command-line helper, or another tool the host already trusts. This crate gives that work a narrow gate. The caller supplies a boot-trusted program reference, whole arguments, an opaque project root, and an empty-by-default sealed environment. The physical capsule resolves native resources; portable callers never receive a host path. For implementation checks, an immutable `CommandSpec` binds the executable or interpreter, unchanged script bytes, cwd, environment, source and writable resources, timeout, output contract, network authority, and cleanup policy into one `CommandId`. A `LocalCheckRequest` names an installed id instead of carrying mutable command text, and `LocalCheckPort` is the portable seam used by packet tooling.
 
 #### sim-lib-function
 
@@ -2680,7 +2680,7 @@ As a program grows, many parts want to use short, natural names, and those names
 
 Domain-neutral capability and exact-approval gate for effectful SIM operations.
 
-A domain-neutral gate and durable handoff for content-identified operations. Callers provide the required capability, exact semantic intent, and approval bound to that request; mismatched, stale, missing, or over-broad authority fails closed before an effect adapter runs. Canonical intent binds the target, intended result, and replay policy while grants, attempts, and writer leases stay separate. The journal records dispatch before an injected performer runs and retains its raw acknowledgement. Reopening a recorded dispatch never repeats it, so acknowledgement loss remains visible uncertainty instead of retry authority. Capability checks, human review, durability, and later reconciliation remain separate, inspectable facts.
+A domain-neutral gate and durable handoff for content-identified operations. Callers provide the required capability, exact semantic intent, and approval bound to that request; mismatched, stale, missing, or over-broad authority fails closed before an effect adapter runs. Canonical intent binds the target, intended result, and replay policy while grants, attempts, and bounded writer-fenced leases stay separate. The journal records dispatch before an injected performer runs and retains its raw acknowledgement. Recovery observes the postcondition independently before deciding whether anything may run. `ExactlyOnce` never repeats a durable dispatch. `Idempotent` permits another attempt only after the old lease expires and the observer proves the intended state absent. The result remains `AlreadyTrue`, `Verified`, `Diverged`, or `Uncertain`; acknowledgement loss never becomes assumed failure or success.
 
 #### sim-lib-pattern
 
@@ -2718,7 +2718,7 @@ This is the executable test suite that holds the whole runtime to its stated con
 
 Run named SIM conformance checks over explicit facts and receive exact, reproducible evidence identities.
 
-`sim-conformance-packs` provides a public catalog of checkers for retirement guards, semantic identity, ownership, architecture boundaries, work packets, artifact facets, and release claims. Every invocation names its checker, scope, subject, input facts, implementation identity, and result. The checkers observe only the facts supplied by the caller, so the same accepted input yields the same passing-result identity on every host. The catalog also exposes narrow ports for checking packet and facet implementations owned by other crates. Unsupported checker names and scopes fail closed with typed errors. The crate performs no process execution, repository mutation, network access, or receipt storage.
+`sim-conformance-packs` provides a public catalog of checkers for retirement guards, semantic identity, scoped ownership, architecture boundaries, work packets, durable operation recovery, exact local command effects, artifact facets, and release claims. Every invocation names its checker, scope, subject, input facts, implementation identity, and result. The checkers observe only the facts supplied by the caller, so the same accepted input yields the same passing-result identity on every host. The catalog also exposes narrow ports for checking packet and facet implementations owned by other crates. Unsupported checker names and scopes fail closed with typed errors. The crate performs no process execution, repository mutation, network access, or receipt storage.
 
 #### sim-nest
 
