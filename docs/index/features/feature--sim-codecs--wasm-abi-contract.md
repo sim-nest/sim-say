@@ -6,7 +6,7 @@
 - Subject: `crate/sim-wasm-abi`
 - Canonical key: `crate/sim-wasm-abi/feature-sim-codecs-wasm-abi-contract`
 
-Describe wasm manifests, byte frames, imports, and exports without observing the host that carries them.
+Describe wasm manifests, byte frames, imports, exports, and closed deterministic projector admission without observing the host that carries them.
 
 ## Anchors
 
@@ -16,6 +16,7 @@ Describe wasm manifests, byte frames, imports, and exports without observing the
 ## Specimens
 
 - `spec-test/sim-codecs/crates/sim-codec-compare/src/platform_roundtrip_tests`
+- `spec-test/sim-codecs/crates/sim-wasm-abi/src/tests/projection`
 - `spec-test/sim-codecs/crates/sim-wasm-abi/src/tests/roundtrip`
 
 ## Worked Example

@@ -365,6 +365,7 @@
 {"card": {"id": "cookbook/runtime/exec", "kind": "cookbook-recipe", "owner": "sim-lib-exec", "summary": "Permission-gated host process runs with time and output limits."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/standard/core", "kind": "cookbook-recipe", "owner": "sim-lib-standard-core", "summary": "Language profiles, fidelity badges, conformance helpers, and strict migration characterization."}, "repo": "sim-runtime"}
 {"card": {"id": "cookbook/study", "kind": "cookbook-recipe", "owner": "sim-lib-study", "summary": "Seal, schedule, execute, and reconstruct bounded domain-neutral studies."}, "repo": "sim-runtime"}
+{"card": {"id": "cookbook/world", "kind": "cookbook-recipe", "owner": "sim-lib-world", "summary": "Pure projections, exact invalidation, and causal explanations."}, "repo": "sim-runtime"}
 {"card": {"id": "registry/catalog", "kind": "browse-registry", "owner": "workspace", "summary": "registry catalog browse card"}, "repo": "sim-runtime"}
 {"card": {"id": "agent/effects", "kind": "surface-card", "owner": "sim", "summary": "agent effect requirement surface"}, "repo": "sim-sdk"}
 {"card": {"id": "agent/memory", "kind": "surface-card", "owner": "sim", "summary": "agent memory surface"}, "repo": "sim-sdk"}

@@ -71,6 +71,7 @@
 | `cli/study` | `cli` | `crate/sim-lib-study` |
 | `cli/switched-two-port` | `cli` | `crate/switched-two-port` |
 | `cli/watch` | `cli` | `crate/sim-run` |
+| `cli/world` | `cli` | `crate/sim-lib-world` |
 | `docs/sim-agent-net/generated` | `docs` | `doc-set/sim-agent-net/generated` |
 | `docs/sim-audio-daw/generated` | `docs` | `doc-set/sim-audio-daw/generated` |
 | `docs/sim-auto/generated` | `docs` | `doc-set/sim-auto/generated` |
