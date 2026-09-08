@@ -92,7 +92,7 @@
 | [`feature/sim-codecs/searxng-search-wire`](features/feature--sim-codecs--searxng-search-wire.md) | `crate/sim-codec-search-searxng` | 1 |
 | [`feature/sim-codecs/sql-projection`](features/feature--sim-codecs--sql-projection.md) | `crate/sim-codec-sql` | 1 |
 | [`feature/sim-codecs/typescript-syntax`](features/feature--sim-codecs--typescript-syntax.md) | `crate/sim-codec-typescript` | 1 |
-| [`feature/sim-codecs/wasm-abi-contract`](features/feature--sim-codecs--wasm-abi-contract.md) | `crate/sim-wasm-abi` | 2 |
+| [`feature/sim-codecs/wasm-abi-contract`](features/feature--sim-codecs--wasm-abi-contract.md) | `crate/sim-wasm-abi` | 3 |
 | [`feature/sim-codecs/wire-protocol-grammars`](features/feature--sim-codecs--wire-protocol-grammars.md) | `local/sim-codecs/crate/sim-codec` | 1 |
 | [`feature/sim-compute/compute-cli`](features/feature--sim-compute--compute-cli.md) | `crate/sim-lib-compute-cli` | 1 |
 | [`feature/sim-compute/femm-resident-solvers`](features/feature--sim-compute--femm-resident-solvers.md) | `crate/sim-lib-compute-femm` | 2 |
@@ -304,6 +304,7 @@
 | [`feature/sim-run/study-command`](features/feature--sim-run--study-command.md) | `crate/sim-run` | 1 |
 | [`feature/sim-run/terminal-surface`](features/feature--sim-run--terminal-surface.md) | `crate/sim-view-tty` | 1 |
 | [`feature/sim-run/watch`](features/feature--sim-run--watch.md) | `crate/sim-run` | 1 |
+| [`feature/sim-run/world-command`](features/feature--sim-run--world-command.md) | `crate/sim-run` | 1 |
 | [`feature/sim-runtime/binding-organ`](features/feature--sim-runtime--binding-organ.md) | `crate/sim-lib-binding` | 1 |
 | [`feature/sim-runtime/capabilities-read-eval`](features/feature--sim-runtime--capabilities-read-eval.md) | `crate/sim-lib-core` | 2 |
 | [`feature/sim-runtime/characterization-captures`](features/feature--sim-runtime--characterization-captures.md) | `local/sim-runtime/crate/sim-lib-standard-core` | 2 |
@@ -339,6 +340,7 @@
 | [`feature/sim-runtime/sandbox-exec`](features/feature--sim-runtime--sandbox-exec.md) | `crate/sim-lib-exec` | 1 |
 | [`feature/sim-runtime/typed-lazy-typeclass-dictionaries`](features/feature--sim-runtime--typed-lazy-typeclass-dictionaries.md) | `crate/sim-lib-lang-typed-lazy` | 1 |
 | [`feature/sim-runtime/typescript-notation-profile`](features/feature--sim-runtime--typescript-notation-profile.md) | `crate/sim-lib-lang-typescript` | 1 |
+| [`feature/sim-runtime/world-projection-product`](features/feature--sim-runtime--world-projection-product.md) | `crate/sim-lib-world` | 1 |
 | [`feature/sim-sdk/agent-conduct-composition`](features/feature--sim-sdk--agent-conduct-composition.md) | `crate/sim-nest` | 1 |
 | [`feature/sim-sdk/atelier-room-packs`](features/feature--sim-sdk--atelier-room-packs.md) | `crate/sim-nest` | 1 |
 | [`feature/sim-sdk/calm-flock-care-pack`](features/feature--sim-sdk--calm-flock-care-pack.md) | `crate/sim-nest` | 2 |
@@ -364,7 +366,7 @@
 | [`feature/sim-sdk/media-edge-music-vertical`](features/feature--sim-sdk--media-edge-music-vertical.md) | `crate/sim-nest` | 1 |
 | [`feature/sim-sdk/model-test-facade`](features/feature--sim-sdk--model-test-facade.md) | `crate/sim-nest` | 1 |
 | [`feature/sim-sdk/music-algorithm-composition`](features/feature--sim-sdk--music-algorithm-composition.md) | `crate/sim-nest` | 1 |
-| [`feature/sim-sdk/neutral-conformance-packs`](features/feature--sim-sdk--neutral-conformance-packs.md) | `crate/sim-conformance-packs` | 1 |
+| [`feature/sim-sdk/neutral-conformance-packs`](features/feature--sim-sdk--neutral-conformance-packs.md) | `crate/sim-conformance-packs` | 2 |
 | [`feature/sim-sdk/platform-composition`](features/feature--sim-sdk--platform-composition.md) | `crate/sim-nest` | 1 |
 | [`feature/sim-sdk/private-observation-pack`](features/feature--sim-sdk--private-observation-pack.md) | `crate/sim-nest` | 2 |
 | [`feature/sim-sdk/python-composition`](features/feature--sim-sdk--python-composition.md) | `crate/sim-nest` | 1 |

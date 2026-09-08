@@ -6,7 +6,7 @@
 - Subject: `crate/sim-conformance-packs`
 - Canonical key: `crate/sim-conformance-packs/feature-sim-sdk-neutral-conformance-packs`
 
-Expose all 21 checker entrypoints with pure evidence-driven scenarios, canonical results, and typed unavailable outcomes for scopes whose funded phase has not shipped, including canonical identity, native journal, durable operation reconciliation, and the real local checker boundary.
+Expose all 21 checker entrypoints with pure evidence-driven scenarios, canonical results, and typed unavailable outcomes for scopes whose funded phase has not shipped, including canonical identity, native journal, durable operation reconciliation, semantic projection, disclosure scoping, and the real local checker boundary.
 
 ## Anchors
 
@@ -16,6 +16,7 @@ Expose all 21 checker entrypoints with pure evidence-driven scenarios, canonical
 ## Specimens
 
 - `spec-test/sim-sdk/crates/sim-conformance-packs/tests/bootstrap_packs`
+- `spec-test/sim-sdk/crates/sim-conformance-packs/tests/projection_reference`
 
 ## Worked Example
 
@@ -417,6 +418,8 @@ fn nv12_04_operation_log_scope_checks_the_crash_safe_boundary() {
 
 #[path = "bootstrap_packs/nv12_05.rs"]
 mod nv12_05;
+#[path = "bootstrap_packs/nv12_06.rs"]
+mod nv12_06;
 
 #[test]
 fn nv12_04_release_scope_requires_the_complete_release_gate() {

@@ -604,6 +604,7 @@
 | `` | `recipe/sim-runtime/crates/sim-lib-sequence/01-basics/map-square` | `local/sim-runtime/crate/sim-lib-sequence` | `recipe` | `crates/sim-lib-sequence/recipes/01-basics/map-square/recipe.toml` | `lisp` | `sh scripts/check-recipes.sh` | `true` | `true` |
 | `feature/sim-runtime/characterization-captures` | `recipe/sim-runtime/crates/sim-lib-standard-core/01-basics/characterize-migration` | `local/sim-runtime/crate/sim-lib-standard-core` | `recipe` | `crates/sim-lib-standard-core/recipes/01-basics/characterize-migration/recipe.toml` | `lisp` | `sh scripts/check-recipes.sh` | `true` | `true` |
 | `` | `recipe/sim-runtime/crates/sim-lib-standard-core/01-basics/profile-fidelity` | `local/sim-runtime/crate/sim-lib-standard-core` | `recipe` | `crates/sim-lib-standard-core/recipes/01-basics/profile-fidelity/recipe.toml` | `lisp` | `sh scripts/check-recipes.sh` | `true` | `true` |
+| `feature/sim-runtime/world-projection-product` | `recipe/sim-runtime/crates/sim-lib-world/01-projection/world-explain` | `crate/sim-lib-world` | `recipe` | `crates/sim-lib-world/recipes/01-projection/world-explain/recipe.toml` | `` | `sh scripts/check-recipes.sh` | `true` | `true` |
 | `` | `recipe/sim-sdk/01-basics/boot-runtime` | `crate/sim-nest` | `recipe` | `recipes/01-basics/boot-runtime/recipe.toml` | `lisp` | `xtask check-recipes` | `true` | `true` |
 | `feature/sim-sdk/device-recipes` | `recipe/sim-sdk/atelier/expedition-first-light` | `crate/sim-nest` | `recipe` | `recipes/atelier/expedition-first-light/recipe.toml` | `` | `xtask check-recipes` | `true` | `true` |
 | `feature/sim-sdk/reversible-atelier-product` | `recipe/sim-sdk/atelier/reversible-product` | `crate/sim-nest` | `recipe` | `recipes/atelier/reversible-product/recipe.toml` | `` | `xtask check-recipes` | `true` | `true` |
@@ -796,6 +797,7 @@
 | `feature/sim-codecs/sql-projection` | `spec-test/sim-codecs/crates/sim-codec-sql/src/tests` | `crate/sim-codec-sql` | `spec-test` | `crates/sim-codec-sql/src/tests.rs` | `codec` | `cargo test` | `true` | `true` |
 | `feature/sim-codecs/typescript-syntax` | `spec-test/sim-codecs/crates/sim-codec-typescript/src/tests` | `crate/sim-codec-typescript` | `spec-test` | `crates/sim-codec-typescript/src/tests.rs` | `codec` | `cargo test` | `true` | `true` |
 | `feature/sim-codecs/codec` | `spec-test/sim-codecs/crates/sim-codec/src/implementation/runtime` | `local/sim-codecs/crate/sim-codec` | `spec-test` | `crates/sim-codec/src/implementation/runtime.rs` | `codec` | `cargo test` | `true` | `true` |
+| `feature/sim-codecs/wasm-abi-contract` | `spec-test/sim-codecs/crates/sim-wasm-abi/src/tests/projection` | `crate/sim-wasm-abi` | `spec-test` | `crates/sim-wasm-abi/src/tests/projection.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-codecs/wasm-abi-contract` | `spec-test/sim-codecs/crates/sim-wasm-abi/src/tests/roundtrip` | `crate/sim-wasm-abi` | `spec-test` | `crates/sim-wasm-abi/src/tests/roundtrip.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-compute/tensor-providers` | `spec-test/sim-compute/crates/sim-lib-compute-auto/src/tests` | `crate/sim-lib-compute-auto` | `spec-test` | `crates/sim-lib-compute-auto/src/tests.rs` | `shape` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-compute/crates/sim-lib-compute-cli/src/tests` | `crate/sim-lib-compute-cli` | `spec-test` | `crates/sim-lib-compute-cli/src/tests.rs` | `` | `cargo test` | `true` | `true` |
@@ -1035,6 +1037,7 @@
 | `feature/sim-run/relation-command` | `spec-test/sim-run/crates/sim-run/src/relation` | `crate/sim-run` | `spec-test` | `crates/sim-run/src/relation.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/search-command` | `spec-test/sim-run/crates/sim-run/src/search` | `crate/sim-run` | `spec-test` | `crates/sim-run/src/search.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/study-command` | `spec-test/sim-run/crates/sim-run/src/study` | `crate/sim-run` | `spec-test` | `crates/sim-run/src/study.rs` | `` | `cargo test` | `true` | `true` |
+| `feature/sim-run/world-command` | `spec-test/sim-run/crates/sim-run/src/world` | `crate/sim-run` | `spec-test` | `crates/sim-run/src/world.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/compute` | `spec-test/sim-run/crates/sim-run/tests/compute` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/compute.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/continuity-command` | `spec-test/sim-run/crates/sim-run/tests/continuity` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/continuity.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/expression-tree-command` | `spec-test/sim-run/crates/sim-run/tests/expr_tree` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/expr_tree.rs` | `` | `cargo test` | `true` | `true` |
@@ -1043,6 +1046,7 @@
 | `feature/sim-run/repl` | `spec-test/sim-run/crates/sim-run/tests/native_dynamic_repl` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/native_dynamic_repl.rs` | `shape` | `cargo test` | `true` | `true` |
 | `feature/sim-run/physics-library-selection` | `spec-test/sim-run/crates/sim-run/tests/physics` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/physics.rs` | `lisp` | `cargo test` | `true` | `true` |
 | `feature/sim-run/watch` | `spec-test/sim-run/crates/sim-run/tests/watch` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/watch.rs` | `` | `cargo test` | `true` | `true` |
+| `` | `spec-test/sim-run/crates/sim-run/tests/world` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/world.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-runtime/incremental-query-core` | `spec-test/sim-runtime/crates/sim-incremental-core/src/tests` | `crate/sim-incremental-core` | `spec-test` | `crates/sim-incremental-core/src/tests.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-runtime/incremental-query-core` | `spec-test/sim-runtime/crates/sim-incremental-core/tests/definite_assignment_specimen` | `crate/sim-incremental-core` | `spec-test` | `crates/sim-incremental-core/tests/definite_assignment_specimen.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-runtime/incremental-query-core` | `spec-test/sim-runtime/crates/sim-incremental-core/tests/ownership_guard` | `crate/sim-incremental-core` | `spec-test` | `crates/sim-incremental-core/tests/ownership_guard.rs` | `` | `cargo test` | `true` | `true` |
@@ -1122,7 +1126,7 @@
 | `` | `spec-test/sim-sdk/crates/sim-conformance-packs/src/harness` | `crate/sim-conformance-packs` | `spec-test` | `crates/sim-conformance-packs/src/harness.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance-packs/src/lib` | `crate/sim-conformance-packs` | `spec-test` | `crates/sim-conformance-packs/src/lib.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance-packs/src/packs/authoring` | `crate/sim-conformance-packs` | `spec-test` | `crates/sim-conformance-packs/src/packs/authoring.rs` | `` | `cargo test` | `true` | `true` |
-| `` | `spec-test/sim-sdk/crates/sim-conformance-packs/src/packs/boundary` | `crate/sim-conformance-packs` | `spec-test` | `crates/sim-conformance-packs/src/packs/boundary.rs` | `` | `cargo test` | `true` | `true` |
+| `` | `spec-test/sim-sdk/crates/sim-conformance-packs/src/packs/boundary` | `crate/sim-conformance-packs` | `spec-test` | `crates/sim-conformance-packs/src/packs/boundary.rs` | `shape` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance-packs/src/packs/closure` | `crate/sim-conformance-packs` | `spec-test` | `crates/sim-conformance-packs/src/packs/closure.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance-packs/src/packs/control` | `crate/sim-conformance-packs` | `spec-test` | `crates/sim-conformance-packs/src/packs/control.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance-packs/src/packs/convergence` | `crate/sim-conformance-packs` | `spec-test` | `crates/sim-conformance-packs/src/packs/convergence.rs` | `` | `cargo test` | `true` | `true` |
@@ -1145,6 +1149,8 @@
 | `` | `spec-test/sim-sdk/crates/sim-conformance-packs/src/packs/work` | `crate/sim-conformance-packs` | `spec-test` | `crates/sim-conformance-packs/src/packs/work.rs` | `shape` | `cargo test` | `true` | `true` |
 | `feature/sim-sdk/neutral-conformance-packs` | `spec-test/sim-sdk/crates/sim-conformance-packs/tests/bootstrap_packs` | `crate/sim-conformance-packs` | `spec-test` | `crates/sim-conformance-packs/tests/bootstrap_packs.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance-packs/tests/bootstrap_packs/nv12_05` | `crate/sim-conformance-packs` | `spec-test` | `crates/sim-conformance-packs/tests/bootstrap_packs/nv12_05.rs` | `` | `cargo test` | `true` | `true` |
+| `` | `spec-test/sim-sdk/crates/sim-conformance-packs/tests/bootstrap_packs/nv12_06` | `crate/sim-conformance-packs` | `spec-test` | `crates/sim-conformance-packs/tests/bootstrap_packs/nv12_06.rs` | `shape` | `cargo test` | `true` | `true` |
+| `feature/sim-sdk/neutral-conformance-packs` | `spec-test/sim-sdk/crates/sim-conformance-packs/tests/projection_reference` | `crate/sim-conformance-packs` | `spec-test` | `crates/sim-conformance-packs/tests/projection_reference.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/src/lib` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/src/lib.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/agents30` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/agents30.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-sdk/crates/sim-conformance/tests/atelier_self_hosting` | `crate/sim-conformance` | `spec-test` | `crates/sim-conformance/tests/atelier_self_hosting.rs` | `` | `cargo test` | `true` | `true` |

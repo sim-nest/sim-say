@@ -6,7 +6,7 @@
 - Subject: `crate/sim-incremental-core`
 - Canonical key: `crate/sim-incremental-core/feature-sim-runtime-incremental-query-core`
 
-Provide the generic memo graph and the one proof-producing dataflow fixpoint engine that runtime organs can wrap without depending on SIM value surfaces.
+Provide the generic memo graph, the one proof-producing dataflow fixpoint engine, and qualified semantic projection over canonical SIM facts.
 
 ## Anchors
 

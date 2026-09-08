@@ -338,6 +338,7 @@
 | `crate/sim-lib-web-bridge` | `crate` | sim-lib-web-bridge | 0 |
 | `crate/sim-lib-web-core` | `crate` | sim-lib-web-core | 0 |
 | `crate/sim-lib-web-fetch` | `crate` | sim-lib-web-fetch | 0 |
+| `crate/sim-lib-world` | `crate` | sim-lib-world | 1 |
 | `crate/sim-macros` | `crate` | sim-macros | 0 |
 | `crate/sim-mcp-server` | `crate` | sim-mcp-server | 0 |
 | `crate/sim-music` | `crate` | sim-music | 0 |
@@ -626,7 +627,7 @@
 | `repo/sim-physics` | `repo` | sim-physics | 19 |
 | `repo/sim-platform` | `repo` | sim-platform | 25 |
 | `repo/sim-run` | `repo` | sim-run | 9 |
-| `repo/sim-runtime` | `repo` | sim-runtime | 36 |
+| `repo/sim-runtime` | `repo` | sim-runtime | 37 |
 | `repo/sim-sdk` | `repo` | sim-sdk | 77 |
 | `repo/sim-shape` | `repo` | sim-shape | 6 |
 | `repo/sim-storage` | `repo` | sim-storage | 18 |

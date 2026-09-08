@@ -683,7 +683,9 @@
 | `specimen` | `shape` | crates/sim-conformance-core/src/identity.rs |
 | `specimen` | `shape` | crates/sim-conformance-core/tests/bootstrap_contract.rs |
 | `specimen` | `shape` | crates/sim-conformance-packs/src/catalog.rs |
+| `specimen` | `shape` | crates/sim-conformance-packs/src/packs/boundary.rs |
 | `specimen` | `shape` | crates/sim-conformance-packs/src/packs/work.rs |
+| `specimen` | `shape` | crates/sim-conformance-packs/tests/bootstrap_packs/nv12_06.rs |
 | `specimen` | `shape` | crates/sim-conformance/tests/shape_grammar.rs |
 | `specimen` | `shape` | crates/sim-conformance/tests/spec.rs |
 | `specimen` | `shape` | crates/sim-conformance/tests/spec/expr_tree.rs |

@@ -377,6 +377,7 @@
 | `sim-lib-standard-core` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-operation-gate` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-study` | [sim-runtime](../repos/sim-runtime.md) |
+| `sim-lib-world` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-nest` | [sim-sdk](../repos/sim-sdk.md) |
 | `sim-conformance` | [sim-sdk](../repos/sim-sdk.md) |
 | `sim-conformance-packs` | [sim-sdk](../repos/sim-sdk.md) |

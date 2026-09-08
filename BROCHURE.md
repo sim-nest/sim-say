@@ -287,7 +287,7 @@ piece gives you.
 
 ### runtime
 
-- **sim-incremental-core** -- It is the small, generic calculation engine that remembers what a query read and recomputes only the parts whose evidence changed.
+- **sim-incremental-core** -- It remembers what a calculation read and names exactly which semantic facts can affect a conclusion.
 - **sim-lib-binding** -- It keeps track of what every name in a program stands for, and exactly where that meaning holds.
 - **sim-lib-class** -- It gives SIM language-neutral classes with bounded lineage, checked member views, and cache invalidation tied to real descriptor revisions.
 - **sim-lib-control** -- It manages how a running program moves -- pausing, resuming, retrying, and recovering when something goes wrong.
@@ -321,6 +321,7 @@ piece gives you.
 - **sim-lib-sequence** -- It works with collections of items -- even endless ones -- without copying them over and over.
 - **sim-lib-standard-core** -- It is the batteries-included default bundle that makes SIM useful the moment it starts.
 - **sim-lib-study** -- Domain-neutral durable study lifecycle over sealed coordinates.
+- **sim-lib-world** -- Ask which supplied facts matter, compare their semantic effect, and receive an exact causal path without granting observation or mutation.
 - **sim-artifact-facet** -- Preserve independent edits while changing only the exact artifact region owned by the caller.
 - **sim-lib-journal** -- Domain-free atomic content journal contract for SIM.
 - **sim-lib-relation-cli** -- Loadable, checked relational command surface for SIM.
@@ -1014,7 +1015,7 @@ Every format in this family needs to prove the same thing: that a value written 
 
 It is the shared handshake that lets SIM pass values to and from sandboxed WebAssembly modules.
 
-WebAssembly lets code from elsewhere run safely inside a sandbox, and this is the agreed way for SIM and such a module to talk. It defines the exact byte frames that carry values, descriptions, and lists of what a module offers, so both sides read and write them the same way. With that handshake in place, a guest module can be brought in and its offerings surfaced to the runtime as if they were part of it, ready to be called. This handles only the crossing itself -- the framing and the passing of values back and forth -- and leaves what the guest actually does inside its own walls. The result is a clean, well-defined border between the host and any code loaded into the sandbox.
+WebAssembly lets code from elsewhere run safely inside a sandbox, and this is the agreed way for SIM and such a module to talk. It defines the exact byte frames that carry values, descriptions, and lists of what a module offers, so both sides read and write them the same way. With that handshake in place, a guest module can be brought in and its offerings surfaced to the runtime as if they were part of it, ready to be called. This handles only the crossing itself -- the framing and the passing of values back and forth -- and leaves what the guest actually does inside its own walls. The result is a clean, well-defined border between the host and any code loaded into the sandbox. For semantic projection, it also supplies a closed admission route. The verifier inspects exact module bytes before instantiation, compares the complete import set with policy, rejects every ambient or nondeterministic host surface, binds fuel and memory/table limits, checks start behavior, and identifies the module content. The projection driver creates and drops a fresh Wasmi instance for every call so mutable guest state cannot cross requests.
 
 ### sim-compute
 
@@ -2418,7 +2419,7 @@ Run the same checked relational plans against memory or durable preopened SQLite
 
 Ubuntu PC reference platform capsule.
 
-One bounded, physically evidenced membrane for Ubuntu desktop and headless PCs. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration. The capsule's `LocalCheckAdapter` connects exact runtime `CommandSpec` entries to the durable M5 operation lifecycle. It supports trusted `ProcessPort` mechanics and fully confined `BwrapLauncher` execution, while the released checker-facing port exposes no native paths or command construction. Each run binds an owned checkout, explicit inputs, outputs and scratch roots, a sealed environment, time and output limits, descendant cleanup, and an independent postcondition observation.
+One bounded, physically evidenced membrane for Ubuntu desktop and headless PCs. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration. The capsule's `LocalCheckAdapter` connects exact runtime `CommandSpec` entries to the durable M5 operation lifecycle. It supports trusted `ProcessPort` mechanics and fully confined `BwrapLauncher` execution, while the released checker-facing port exposes no native paths or command construction. Each run binds an owned checkout, explicit inputs, outputs and scratch roots, a sealed environment, time and output limits, descendant cleanup, and an independent postcondition observation. `BwrapLauncher::confinement_status` separately reports whether the exact boot-resolved bubblewrap and limit mechanics are live. That record deliberately sets `purity_qualified` to false. Anonymous roots, namespace isolation, and bounded resources constrain effects; mounted inputs, `/proc`, `/dev`, and host process observations mean they do not prove a native function depends only on declared semantic inputs.
 
 #### sim-platform-ubuntu-rpi
 
@@ -2480,7 +2481,7 @@ This is the loadable back-and-forth prompt for SIM. You type one line, the syste
 
 The `sim` program you launch from a terminal to start a SIM session.
 
-This is the small starting program that turns the SIM system on. You run one command, `sim`, and it reads the options you type, then hands control to whatever behavior you asked for. The program itself stays thin on purpose: it bakes in no language surface and no built-in tricks. It simply understands how to bring a library to life and pass your request along. You choose what gets loaded from the outside, so the same starting program serves many jobs. It stays quiet and honest: when you ask for something it cannot find, it tells you plainly instead of guessing. Think of it as the front door to everything else in the system.
+This is the small starting program that turns the SIM system on. You run one command, `sim`, and it reads the options you type, then hands control to whatever behavior you asked for. The program itself stays thin on purpose: it bakes in no language surface and no built-in tricks. It simply understands how to bring a library to life and pass your request along. You choose what gets loaded from the outside, so the same starting program serves many jobs. It stays quiet and honest: when you ask for something it cannot find, it tells you plainly instead of guessing. Think of it as the front door to everything else in the system. For semantic inspection, `sim world project`, `diff`, and `why` load the read-only world library through that same door.
 
 #### sim-run-core
 
@@ -2504,9 +2505,9 @@ This is the terminal face of SIM. It takes a scene the system wants to show and 
 
 #### sim-incremental-core
 
-It is the small, generic calculation engine that remembers what a query read and recomputes only the parts whose evidence changed.
+It remembers what a calculation read and names exactly which semantic facts can affect a conclusion.
 
-This crate lets a runtime component register named queries, read other queries from inside a query frame, and record external observations such as missing names, directory listings, policy revisions, or backend epochs. The engine keeps reverse dependency edges, invalidates dependents deterministically, and reuses memoized values when dependency stamps and fingerprints still match.
+This crate lets a runtime component register named queries, read other queries from inside a query frame, and record external observations such as missing names, directory listings, policy revisions, or backend epochs. The engine keeps reverse dependency edges, invalidates dependents deterministically, and reuses memoized values when dependency stamps and fingerprints still match. It also owns open semantic projection. A loaded provider receives only a Shape-checked immutable selection of canonical facts. Admission binds the exact provider code and policy through either reviewed native source plus dependencies or a closed deterministic Wasm universe. Semantic digests exclude diagnostic envelopes, while federated owner graphs return exact invalidation and causal paths. Explicit logical path, glob, and ignore rules reject host path aliases.
 
 #### sim-lib-binding
 
@@ -2706,6 +2707,12 @@ Domain-neutral durable study lifecycle over sealed coordinates.
 
 Seal an exact experiment matrix once, resume it after failure, and inject any effect owner through one object-safe executor. Fenced claims, closure revalidation, content-bound replies, explicit retries, and replay-derived projections prevent duplicate samples and accidental reinterpretation. The contract keeps inputs, outputs, limits, and refusal cases explicit, so callers can compose the capability without acquiring unrelated host, transport, or product authority. Stable records make the result suitable for tests, inspection, and deterministic integration.
 
+#### sim-lib-world
+
+Ask which supplied facts matter, compare their semantic effect, and receive an exact causal path without granting observation or mutation.
+
+`sim world project`, `sim world diff`, and `sim world why` expose the first read-only world surface through the SIM bootloader. Open providers consume immutable caller-selected facts under a checked Shape, exact code and policy qualification, and bounded output rules. Projection identity excludes diagnostic envelopes while binding every semantic input. Owner-local dependency graphs seal into one closure and produce exact affected conclusions and explanation paths.
+
 ### sim-sdk
 
 #### sim-conformance
@@ -2718,7 +2725,7 @@ This is the executable test suite that holds the whole runtime to its stated con
 
 Run named SIM conformance checks over explicit facts and receive exact, reproducible evidence identities.
 
-`sim-conformance-packs` provides a public catalog of checkers for retirement guards, semantic identity, scoped ownership, architecture boundaries, work packets, durable operation recovery, exact local command effects, artifact facets, and release claims. Every invocation names its checker, scope, subject, input facts, implementation identity, and result. The checkers observe only the facts supplied by the caller, so the same accepted input yields the same passing-result identity on every host. The catalog also exposes narrow ports for checking packet and facet implementations owned by other crates. Unsupported checker names and scopes fail closed with typed errors. The crate performs no process execution, repository mutation, network access, or receipt storage.
+`sim-conformance-packs` provides a public catalog of checkers for retirement guards, semantic identity, scoped ownership, architecture boundaries, work packets, durable operation recovery, exact local command effects, artifact facets, qualified semantic projection, disclosure scoping, the read-only world product, measured query latency, and release claims. Every invocation names its checker, scope, subject, input facts, implementation identity, and result. The checkers observe only the facts supplied by the caller, so the same accepted input yields the same passing-result identity on every host. The catalog also exposes narrow ports for checking packet and facet implementations owned by other crates. Unsupported checker names and scopes fail closed with typed errors. The crate performs no process execution, repository mutation, network access, or receipt storage.
 
 #### sim-nest
 
