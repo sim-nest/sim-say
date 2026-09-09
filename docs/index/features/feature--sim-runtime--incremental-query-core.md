@@ -6,7 +6,7 @@
 - Subject: `crate/sim-incremental-core`
 - Canonical key: `crate/sim-incremental-core/feature-sim-runtime-incremental-query-core`
 
-Provide the generic memo graph, the one proof-producing dataflow fixpoint engine, and qualified semantic projection over canonical SIM facts.
+Provide the generic memo graph, the one proof-producing dataflow fixpoint engine, qualified semantic projection, and prediction-only closure assays over canonical SIM facts.
 
 ## Anchors
 
