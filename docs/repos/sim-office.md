@@ -1,6 +1,6 @@
 # sim-office
 
-Published commit: `ca71788d744491baa2e03e5be49459441bf21336`.
+Published commit: `e0ce6af37e43f43563133119bbeea0764634ff69`.
 
 ## Crates
 

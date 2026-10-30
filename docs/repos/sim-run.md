@@ -1,9 +1,10 @@
 # sim-run
 
-Published commit: `81a42aa2222678d28bfe1f64cf030550bb16e175`.
+Published commit: `54d278b40dfd985e3b7181511606cf8ecd049a2d`.
 
 ## Crates
 
+- `sim-cli-core`
 - `sim-run`
 - `sim-run-core`
 - `sim-run-loaders`
@@ -11,6 +12,8 @@ Published commit: `81a42aa2222678d28bfe1f64cf030550bb16e175`.
 - `sim-lib-repl`
 - `sim-view-tty`
 - `sim-lib-hotload`
+- `sim-projection-admission`
+- `sim-world-runner`
 
 ## Contracts
 

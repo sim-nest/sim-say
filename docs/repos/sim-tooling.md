@@ -1,9 +1,13 @@
 # sim-tooling
 
-Published commit: `e55a38f6be1ec8f275f0c8daeae56cbdd352ea0a`.
+Published commit: `fb98ee7293312a210c1e63f307788887cedb11fb`.
 
 ## Crates
 
+- `sim-check-pack`
+- `sim-check-pack-ubuntu-pc`
+- `sim-check-pack-xtask`
+- `simdoc`
 - `xtask`
 
 ## Contracts

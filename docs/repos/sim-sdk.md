@@ -1,12 +1,13 @@
 # sim-sdk
 
-Published commit: `7025306188ad250dd040f0832523c8fb75aab0cd`.
+Published commit: `984b6bd2d46260ef467fadf82d027d0292509048`.
 
 ## Crates
 
 - `sim-nest`
 - `sim-conformance`
 - `sim-conformance-packs`
+- `sim-projection-admission-protocol`
 
 ## Contracts
 

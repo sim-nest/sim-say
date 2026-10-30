@@ -328,6 +328,7 @@
 | `sim-platform-linux` | [sim-platform](../repos/sim-platform.md) |
 | `sim-platform-macos` | [sim-platform](../repos/sim-platform.md) |
 | `sim-platform-midi` | [sim-platform](../repos/sim-platform.md) |
+| `sim-platform-ubuntu-projection` | [sim-platform](../repos/sim-platform.md) |
 | `sim-platform-ubuntu-pc` | [sim-platform](../repos/sim-platform.md) |
 | `sim-platform-ubuntu-rpi` | [sim-platform](../repos/sim-platform.md) |
 | `sim-platform-wasi` | [sim-platform](../repos/sim-platform.md) |
@@ -336,6 +337,7 @@
 | `sim-table-fs` | [sim-platform](../repos/sim-platform.md) |
 | `sim-viture-ffi` | [sim-platform](../repos/sim-platform.md) |
 | `sim-platform-sqlite` | [sim-platform](../repos/sim-platform.md) |
+| `sim-cli-core` | [sim-run](../repos/sim-run.md) |
 | `sim-run` | [sim-run](../repos/sim-run.md) |
 | `sim-run-core` | [sim-run](../repos/sim-run.md) |
 | `sim-run-loaders` | [sim-run](../repos/sim-run.md) |
@@ -343,6 +345,8 @@
 | `sim-lib-repl` | [sim-run](../repos/sim-run.md) |
 | `sim-view-tty` | [sim-run](../repos/sim-run.md) |
 | `sim-lib-hotload` | [sim-run](../repos/sim-run.md) |
+| `sim-projection-admission` | [sim-run](../repos/sim-run.md) |
+| `sim-world-runner` | [sim-run](../repos/sim-run.md) |
 | `sim-incremental-core` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-incremental` | [sim-runtime](../repos/sim-runtime.md) |
 | `sim-lib-binding` | [sim-runtime](../repos/sim-runtime.md) |
@@ -381,6 +385,7 @@
 | `sim-nest` | [sim-sdk](../repos/sim-sdk.md) |
 | `sim-conformance` | [sim-sdk](../repos/sim-sdk.md) |
 | `sim-conformance-packs` | [sim-sdk](../repos/sim-sdk.md) |
+| `sim-projection-admission-protocol` | [sim-sdk](../repos/sim-sdk.md) |
 | `sim-shape` | [sim-shape](../repos/sim-shape.md) |
 | `sim-relation-shape` | [sim-shape](../repos/sim-shape.md) |
 | `sim-artifact-facet` | [sim-storage](../repos/sim-storage.md) |
@@ -413,6 +418,10 @@
 | `sim-lib-stream-halo` | [sim-stream-host](../repos/sim-stream-host.md) |
 | `sim-lib-stream-viture` | [sim-stream-host](../repos/sim-stream-host.md) |
 | `sim-lib-stream-wristbridge` | [sim-stream-host](../repos/sim-stream-host.md) |
+| `sim-check-pack` | [sim-tooling](../repos/sim-tooling.md) |
+| `sim-check-pack-ubuntu-pc` | [sim-tooling](../repos/sim-tooling.md) |
+| `sim-check-pack-xtask` | [sim-tooling](../repos/sim-tooling.md) |
+| `simdoc` | [sim-tooling](../repos/sim-tooling.md) |
 | `xtask` | [sim-tooling](../repos/sim-tooling.md) |
 | `sim-lib-intent` | [sim-web](../repos/sim-web.md) |
 | `sim-lib-scene` | [sim-web](../repos/sim-web.md) |
