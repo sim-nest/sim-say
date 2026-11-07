@@ -1,6 +1,6 @@
 # sim-platform
 
-Published commit: `462db7dd1f32af7291d6230045d7c4964271a2a3`.
+Published commit: `bcfe0423fa50d276a26a3649b61ef6e16e969130`.
 
 ## Crates
 
@@ -18,6 +18,7 @@ Published commit: `462db7dd1f32af7291d6230045d7c4964271a2a3`.
 - `sim-platform-linux`
 - `sim-platform-macos`
 - `sim-platform-midi`
+- `sim-platform-ubuntu-projection`
 - `sim-platform-ubuntu-pc`
 - `sim-platform-ubuntu-rpi`
 - `sim-platform-wasi`
