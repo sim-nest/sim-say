@@ -14,21 +14,35 @@ Build diminished source requests through the canonical runtime authority, broker
 
 ## Specimens
 
-- `recipe/sim-sdk/source-authority/dynamic-text`
+- `spec-test/sim-sdk/tests/source_authority`
 
 ## Worked Example
 
-Specimen `recipe/sim-sdk/source-authority/dynamic-text` is checked by `xtask check-recipes`.
+Specimen `spec-test/sim-sdk/tests/source_authority` is checked by `cargo test`.
 
-Source `recipes/source-authority/dynamic-text/recipe.toml`:
+Source `tests/source_authority.rs`:
 
-```toml
-id = "dynamic-text-source-authority"
-title = "Admit dynamic text with shared source authority"
-codec = "rust"
-setup = "setup.rs"
-purpose = "purpose.md"
-order = 10
-tags = ["source", "authority", "read-eval", "capability", "sdk"]
-requires = ["core", "shape", "codec-lisp"]
+```rust
+// SPDX-License-Identifier: MPL-2.0
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+// conformance: the SDK source-authority facade admits dynamic text only after the caller power is granted.
+
+#![cfg(all(feature = "core", feature = "shape", feature = "codec-lisp"))]
+
+mod recipe {
+    include!(concat!(
+        env!("CARGO_MANIFEST_DIR"),
+        "/",
+        "recipes/source-authority/dynamic-text/setup.rs"
+    ));
+}
+
+#[test]
+fn dynamic_text_source_authority_admits_only_after_the_caller_power() {
+    recipe::dynamic_text_source_authority()
+        .expect("dynamic text source authority should admit 42 after the caller power");
+}
 ```

@@ -10,23 +10,22 @@ Compose existing workshop and stewardship contracts into reviewable adoption, ep
 
 ## Specimens
 
-- `recipe/sim-sdk/stewardship/adopt-subtract-composition`
 - `spec-test/sim-sdk/tests/validate_adopt_subtract_composition`
 
 ## Worked Example
 
-Specimen `recipe/sim-sdk/stewardship/adopt-subtract-composition` is checked by `xtask check-recipes`.
+Specimen `spec-test/sim-sdk/tests/validate_adopt_subtract_composition` is checked by `cargo test`.
 
-Source `recipes/stewardship/adopt-subtract-composition/recipe.toml`:
+Source `tests/validate_adopt_subtract_composition.rs`:
 
-```toml
-id = "adopt-subtract-composition"
-title = "Adopt and subtract a stewardship composition"
-codec = "lisp"
-setup = "input.lisp"
-purpose = "README.md"
-order = 70
-tags = ["sdk", "stewardship", "workshop", "adoption", "subtraction", "offline"]
-requires = ["atelier", "continuity", "claims"]
-network = false
+```rust
+// conformance: stewardship adoption rebuilds without ephemeral state and subtracts retired parts.
+
+#[path = "support/python_conformance.rs"]
+mod python_conformance;
+
+#[test]
+fn validate_adopt_subtract_composition() {
+    python_conformance::run("tests/validate_adopt_subtract_composition.py");
+}
 ```

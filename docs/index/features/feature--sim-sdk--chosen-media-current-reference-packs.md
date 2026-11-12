@@ -10,23 +10,22 @@ Compose explicitly selected media traces, Mia-authored meanings, current jurisdi
 
 ## Specimens
 
-- `recipe/sim-sdk/stewardship/chosen-media-traces`
 - `spec-test/sim-sdk/tests/validate_media_reference_packs`
 
 ## Worked Example
 
-Specimen `recipe/sim-sdk/stewardship/chosen-media-traces` is checked by `xtask check-recipes`.
+Specimen `spec-test/sim-sdk/tests/validate_media_reference_packs` is checked by `cargo test`.
 
-Source `recipes/stewardship/chosen-media-traces/recipe.toml`:
+Source `tests/validate_media_reference_packs.rs`:
 
-```toml
-id = "chosen-media-traces"
-title = "Keep only chosen media traces"
-codec = "lisp"
-setup = "input.lisp"
-purpose = "README.md"
-order = 50
-tags = ["sdk", "stewardship", "media", "offline", "privacy"]
-requires = ["core", "codec/lisp"]
-network = false
+```rust
+// conformance: media references preserve authored meaning, currency, and removal semantics.
+
+#[path = "support/python_conformance.rs"]
+mod python_conformance;
+
+#[test]
+fn validate_media_reference_packs() {
+    python_conformance::run("tests/validate_media_reference_packs.py");
+}
 ```

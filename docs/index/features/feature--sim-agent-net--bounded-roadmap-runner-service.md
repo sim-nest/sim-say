@@ -23,6 +23,11 @@ Specimen `spec-test/sim-agent-net/crates/sim-lib-roadmap-runner/src/tests` is ch
 Source `crates/sim-lib-roadmap-runner/src/tests.rs`:
 
 ```rust
+// SPDX-License-Identifier: MPL-2.0
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
 // conformance: durable roadmap runner journal and replay laws.
 
 use std::sync::Arc;
@@ -43,6 +48,7 @@ fn pins(n: u8) -> ExecutionPins {
 }
 
 mod bounded_service {
+    use super::super::drive_harness::advance_one_effect;
     use std::sync::{Arc, Mutex};
 
     use sim_kernel::{ContentId, Symbol};
@@ -104,6 +110,9 @@ mod bounded_service {
             policy,
             mutation: MutationPlan::new(MutationId::new("mutation").unwrap(), vec![], vec![])
                 .unwrap(),
+            resources: vec![],
+            direction: None,
+            handoff: None,
         }
     }
     struct Ready(PhaseId);
@@ -126,6 +135,7 @@ mod bounded_service {
             identity: &ExecutionIdentity,
             phase: &PhaseId,
             _: &sim_roadmap_exec_core::Transition,
+            _: Option<&sim_kernel::Symbol>,
         ) -> Result<ExecutionEvent, ServiceError> {
             let event = ExecutionEvent {
                 execution: identity.execution.clone(),
@@ -153,7 +163,14 @@ mod bounded_service {
             Limits::default(),
         )
         .unwrap();
-        let inspected = service.advance_one_effect().unwrap();
+        let driven = advance_one_effect(
+            &mut service,
+            &InputBatch::conduct(),
+            &CapabilityGrant::default(),
+        )
+        .unwrap();
+        let inspected = service.inspect().unwrap();
+        assert_eq!(inspected.drive, driven);
         assert_eq!(inspected.transition.state, PhaseRunState::Running);
         assert!(matches!(
             inspected.journal.records[1],

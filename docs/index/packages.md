@@ -36,8 +36,12 @@
 | `crate/sim-audio-ports` | `crate` | sim-audio-ports |
 | `crate/sim-auto` | `crate` | sim-auto |
 | `crate/sim-cancel` | `crate` | sim-cancel |
+| `crate/sim-check-pack` | `crate` | sim-check-pack |
+| `crate/sim-check-pack-ubuntu-pc` | `crate` | sim-check-pack-ubuntu-pc |
+| `crate/sim-check-pack-xtask` | `crate` | sim-check-pack-xtask |
 | `crate/sim-citizen` | `crate` | sim-citizen |
 | `crate/sim-citizen-derive` | `crate` | sim-citizen-derive |
+| `crate/sim-cli-core` | `crate` | sim-cli-core |
 | `crate/sim-codec-algol` | `crate` | sim-codec-algol |
 | `crate/sim-codec-binary` | `crate` | sim-codec-binary |
 | `crate/sim-codec-binary-base64` | `crate` | sim-codec-binary-base64 |
@@ -364,6 +368,7 @@
 | `crate/sim-platform-wasi` | `crate` | sim-platform-wasi |
 | `crate/sim-platform-web-shell` | `crate` | sim-platform-web-shell |
 | `crate/sim-platform-windows` | `crate` | sim-platform-windows |
+| `crate/sim-projection-admission-protocol` | `crate` | sim-projection-admission-protocol |
 | `crate/sim-relation-core` | `crate` | sim-relation-core |
 | `crate/sim-relation-migrate` | `crate` | sim-relation-migrate |
 | `crate/sim-relation-plan` | `crate` | sim-relation-plan |
@@ -403,6 +408,7 @@
 | `crate/sim-viture-ffi` | `crate` | sim-viture-ffi |
 | `crate/sim-wasm-abi` | `crate` | sim-wasm-abi |
 | `crate/sim-work-core` | `crate` | sim-work-core |
+| `crate/simdoc` | `crate` | simdoc |
 | `crate/switched-two-port` | `crate` | switched-two-port |
 | `doc-set/sim-agent-net/generated` | `doc-set` | sim-agent-net generated docs |
 | `doc-set/sim-audio-daw/generated` | `doc-set` | sim-audio-daw generated docs |

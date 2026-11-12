@@ -76,6 +76,8 @@
 | `specimen` | `json` | crates/sim-web-shell/src/tests.rs |
 | `specimen` | `lisp` | crates/sim-artifact-facet/recipes/01-basics/pure-three-way/recipe.toml |
 | `specimen` | `lisp` | crates/sim-cancel/recipes/01-basics/request-lifetime/recipe.toml |
+| `specimen` | `lisp` | crates/sim-check-pack-ubuntu-pc/recipes/01-compose/operation-local/recipe.toml |
+| `specimen` | `lisp` | crates/sim-check-pack/recipes/01-native/operation-local/recipe.toml |
 | `specimen` | `lisp` | crates/sim-codec-binary-base64/recipes/01-basics/text-wrapper/recipe.toml |
 | `specimen` | `lisp` | crates/sim-codec-binary/recipes/01-basics/frame-descriptor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-codec-bitwise-base64/recipes/01-basics/text-wrapper/recipe.toml |
@@ -681,10 +683,19 @@
 | `specimen` | `shape` | crates/sim-citizen/src/tests.rs |
 | `specimen` | `shape` | crates/sim-conformance-core/src/checker.rs |
 | `specimen` | `shape` | crates/sim-conformance-core/src/identity.rs |
+| `specimen` | `shape` | crates/sim-conformance-core/src/live_authority.rs |
 | `specimen` | `shape` | crates/sim-conformance-core/tests/bootstrap_contract.rs |
 | `specimen` | `shape` | crates/sim-conformance-packs/src/catalog.rs |
+| `specimen` | `shape` | crates/sim-conformance-packs/src/executor.rs |
+| `specimen` | `shape` | crates/sim-conformance-packs/src/executor_support.rs |
+| `specimen` | `shape` | crates/sim-conformance-packs/src/harness.rs |
 | `specimen` | `shape` | crates/sim-conformance-packs/src/packs/boundary.rs |
+| `specimen` | `shape` | crates/sim-conformance-packs/src/packs/consumer_seam_cases.rs |
 | `specimen` | `shape` | crates/sim-conformance-packs/src/packs/work.rs |
+| `specimen` | `shape` | crates/sim-conformance-packs/src/projection_authority.rs |
+| `specimen` | `shape` | crates/sim-conformance-packs/src/projection_compiler_review.rs |
+| `specimen` | `shape` | crates/sim-conformance-packs/src/projection_native_admission.rs |
+| `specimen` | `shape` | crates/sim-conformance-packs/src/projection_source_review.rs |
 | `specimen` | `shape` | crates/sim-conformance-packs/tests/bootstrap_packs/nv12_06.rs |
 | `specimen` | `shape` | crates/sim-conformance/tests/shape_grammar.rs |
 | `specimen` | `shape` | crates/sim-conformance/tests/spec.rs |
@@ -768,7 +779,11 @@
 | `specimen` | `shape` | crates/sim-lib-physics-power/tests/work.rs |
 | `specimen` | `shape` | crates/sim-lib-platform/src/runtime.rs |
 | `specimen` | `shape` | crates/sim-lib-provider/src/conformance.rs |
+| `specimen` | `shape` | crates/sim-lib-roadmap-runner/src/author_more_tests.rs |
+| `specimen` | `shape` | crates/sim-lib-roadmap-runner/src/converge_gate_tests.rs |
+| `specimen` | `shape` | crates/sim-lib-roadmap-runner/src/drive_more_tests.rs |
 | `specimen` | `shape` | crates/sim-lib-roadmap-runner/src/local_command.rs |
+| `specimen` | `shape` | crates/sim-lib-roadmap-runner/src/packet_work_tests.rs |
 | `specimen` | `shape` | crates/sim-lib-roadmap-runner/src/proof.rs |
 | `specimen` | `shape` | crates/sim-lib-roadmap-runner/src/refiner.rs |
 | `specimen` | `shape` | crates/sim-lib-roadmap-runner/src/tests.rs |
@@ -783,6 +798,7 @@
 | `specimen` | `shape` | crates/sim-lib-view-estate/src/lib.rs |
 | `specimen` | `shape` | crates/sim-lib-view/src/surface_tests.rs |
 | `specimen` | `shape` | crates/sim-lib-view/src/universal_tests.rs |
+| `specimen` | `shape` | crates/sim-lib-world/src/tests.rs |
 | `specimen` | `shape` | crates/sim-mutual-projection/src/tests.rs |
 | `specimen` | `shape` | crates/sim-relation-core/tests/domain_and_rows.rs |
 | `specimen` | `shape` | crates/sim-relation-schema/tests/schema_contract.rs |
@@ -793,6 +809,9 @@
 | `specimen` | `shape` | crates/sim-study-core/tests/study_contract.rs |
 | `specimen` | `shape` | crates/sim-value/src/tests.rs |
 | `specimen` | `shape` | crates/sim-work-core/tests/packet_contract.rs |
+| `specimen` | `shape` | crates/simdoc/src/repo_contract/exclusion_witness_tests.rs |
+| `specimen` | `shape` | crates/simdoc/src/resolver_input_tests.rs |
+| `specimen` | `shape` | crates/simdoc/src/workflow_yaml_tests.rs |
 | `specimen` | `shape` | src/check_pack.rs |
 | `specimen` | `shape` | src/citizen/inventory.rs |
 | `specimen` | `shape` | src/citizen_tests.rs |
@@ -801,6 +820,8 @@
 | `specimen` | `shape` | src/loaders/tests/registry.rs |
 | `specimen` | `shape` | src/runtime/tests/browse_conformance.rs |
 | `specimen` | `shape` | tests/device_authority.rs |
+| `specimen` | `shape` | tests/source_authority.rs |
+| `specimen` | `shell` | crates/sim-cli-core/recipes/01-basics/entrypoint/recipe.toml |
 | `specimen` | `shell` | crates/sim-conformance/recipes/01-basics/run-contract/recipe.toml |
 | `specimen` | `shell` | recipes/01-basics/hello/recipe.toml |
 | `specimen` | `shell` | recipes/01-basics/version/recipe.toml |

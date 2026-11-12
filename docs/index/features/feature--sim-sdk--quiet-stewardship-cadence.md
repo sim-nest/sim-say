@@ -10,23 +10,22 @@ Compose separate daily, weekly, monthly, and seasonal projections from minimum c
 
 ## Specimens
 
-- `recipe/sim-sdk/stewardship/quiet-cadence`
 - `spec-test/sim-sdk/tests/validate_cadence_pack`
 
 ## Worked Example
 
-Specimen `recipe/sim-sdk/stewardship/quiet-cadence` is checked by `xtask check-recipes`.
+Specimen `spec-test/sim-sdk/tests/validate_cadence_pack` is checked by `cargo test`.
 
-Source `recipes/stewardship/quiet-cadence/recipe.toml`:
+Source `tests/validate_cadence_pack.rs`:
 
-```toml
-id = "quiet-cadence"
-title = "Compose a quiet week from copied claims"
-codec = "toml"
-setup = "week.toml"
-purpose = "README.md"
-order = 60
-tags = ["sdk", "stewardship", "cadence", "offline", "privacy"]
-requires = ["continuity", "attention", "mission"]
-network = false
+```rust
+// conformance: stewardship cadence preserves source isolation and interaction ceilings.
+
+#[path = "support/python_conformance.rs"]
+mod python_conformance;
+
+#[test]
+fn validate_cadence_pack() {
+    python_conformance::run("tests/validate_cadence_pack.py");
+}
 ```

@@ -10,23 +10,22 @@ Compose opt-in exact observations, explicit missingness and concurrency, sealed 
 
 ## Specimens
 
-- `recipe/sim-sdk/stewardship/private-observation`
 - `spec-test/sim-sdk/tests/validate_private_observation_pack`
 
 ## Worked Example
 
-Specimen `recipe/sim-sdk/stewardship/private-observation` is checked by `xtask check-recipes`.
+Specimen `spec-test/sim-sdk/tests/validate_private_observation_pack` is checked by `cargo test`.
 
-Source `recipes/stewardship/private-observation/recipe.toml`:
+Source `tests/validate_private_observation_pack.rs`:
 
-```toml
-id = "private-observation"
-title = "Keep and erase a private observation"
-codec = "lisp"
-setup = "input.lisp"
-purpose = "README.md"
-order = 40
-tags = ["sdk", "stewardship", "private-observation", "offline", "sealed"]
-requires = ["core", "codec/lisp", "sealed-storage", "exact-rational"]
-network = false
+```rust
+// conformance: private observations preserve consent, missingness, erasure, and export review.
+
+#[path = "support/python_conformance.rs"]
+mod python_conformance;
+
+#[test]
+fn validate_private_observation_pack() {
+    python_conformance::run("tests/validate_private_observation_pack.py");
+}
 ```

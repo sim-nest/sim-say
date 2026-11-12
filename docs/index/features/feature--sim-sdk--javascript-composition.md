@@ -10,21 +10,34 @@ Compose the JavaScript codec, direct profile, and tracing collector through ordi
 
 ## Specimens
 
-- `recipe/sim-sdk/javascript/bounded-module`
+- `spec-test/sim-sdk/tests/javascript`
 
 ## Worked Example
 
-Specimen `recipe/sim-sdk/javascript/bounded-module` is checked by `xtask check-recipes`.
+Specimen `spec-test/sim-sdk/tests/javascript` is checked by `cargo test`.
 
-Source `recipes/javascript/bounded-module/recipe.toml`:
+Source `tests/javascript.rs`:
 
-```toml
-id = "bounded-javascript-module"
-title = "Evaluate a bounded JavaScript module"
-codec = "rust"
-setup = "setup.rs"
-purpose = "purpose.md"
-order = 10
-tags = ["javascript", "sdk", "module", "promise", "fidelity"]
-requires = ["javascript"]
+```rust
+// SPDX-License-Identifier: MPL-2.0
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+// conformance: the SDK JavaScript composition runs the bounded module recipe.
+
+#![cfg(feature = "javascript")]
+
+mod recipe {
+    include!(concat!(
+        env!("CARGO_MANIFEST_DIR"),
+        "/",
+        "recipes/javascript/bounded-module/setup.rs"
+    ));
+}
+
+#[test]
+fn bounded_javascript_module_recipe_runs() {
+    recipe::bounded_javascript_module().expect("JavaScript SDK recipe should pass");
+}
 ```

@@ -23,6 +23,11 @@ Specimen `spec-test/sim-platform/crates/sim-lib-platform/src/runtime` is checked
 Source `crates/sim-lib-platform/src/runtime.rs`:
 
 ```rust
+// SPDX-License-Identifier: MPL-2.0
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
 // conformance: product runtime composition keeps the platform membrane explicit.
 
 use std::{sync::Arc, time::Duration};
@@ -347,7 +352,7 @@ mod tests {
             PlatformFunction(PlatformFunctionKind::Card).call(cx, Args::default())
         })
         .unwrap();
-        assert!(outer.0.lock().unwrap().is_empty());
+        assert_eq!(outer.0.lock().unwrap().len(), 0);
         assert_eq!(inner.0.lock().unwrap().len(), 1);
     }
 
@@ -363,7 +368,7 @@ mod tests {
             .call(&mut cx, Args::new(vec![arg]))
             .unwrap_err();
         assert!(matches!(error, Error::CapabilityDenied { .. }));
-        assert!(site.0.lock().unwrap().is_empty());
+        assert_eq!(site.0.lock().unwrap().len(), 0);
         cx.grant_named("platform.clipboard.read");
         let arg = cx
             .factory()

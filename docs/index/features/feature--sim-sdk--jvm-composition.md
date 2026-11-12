@@ -14,19 +14,61 @@ Expose the classfile decoder, bounded JVM profile, source authority, invocation 
 
 ## Specimens
 
-- `recipe/sim-sdk/jvm/lambda-interop`
-- `recipe/sim-sdk/jvm/product-surface`
 - `spec-test/sim-sdk/tests/jvm_exports`
 
 ## Worked Example
 
-Specimen `recipe/sim-sdk/jvm/lambda-interop` is checked by `xtask check-recipes`.
+Specimen `spec-test/sim-sdk/tests/jvm_exports` is checked by `cargo test`.
 
-Source `recipes/jvm/lambda-interop/recipe.toml`:
+Source `tests/jvm_exports.rs`:
 
-```toml
-title = "Reach both JVM lambda interop directions"
-kind = "rust"
-entry = "setup.rs"
-required_features = ["standard-jvm"]
+```rust
+// SPDX-License-Identifier: MPL-2.0
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+// conformance: the standard JVM facade exports the complete public front door.
+
+#![cfg(feature = "standard-jvm")]
+
+#[test]
+fn sdk_exports_caller_selected_jvm_execution() {
+    use sim::kernel::{Cx, DefaultFactory, NoopEvalPolicy};
+    use std::sync::Arc;
+    let mut cx = Cx::new(
+        Arc::new(NoopEvalPolicy),
+        Arc::new(DefaultFactory),
+        sim_kernel::HandleSeed::new(0xeb0e_7cc2_fd7b_f38d),
+    );
+    cx.grant(sim::lib_lang_jvm::class_load_capability());
+    cx.grant(sim::lib_lang_jvm::jvm_invoke_capability());
+    let request = sim::lib_lang_jvm::JvmExecutionRequest {
+        classfile: include_str!("../recipes/jvm/StaticInt.hex")
+            .trim()
+            .as_bytes()
+            .as_chunks::<2>()
+            .0
+            .iter()
+            .map(|pair| u8::from_str_radix(std::str::from_utf8(pair).unwrap(), 16).unwrap())
+            .collect(),
+        class: "StaticInt".into(),
+        member: "wholePipeline".into(),
+        descriptor: "(II)I".into(),
+        arguments: vec![8, 2],
+    };
+    let surface = sim::lib_lang_jvm::JvmSurface::new(1 << 20);
+    assert!(matches!(
+        surface.execute_i32(&mut cx, request),
+        sim::lib_lang_jvm::JvmExecutionOutcome::Value(20)
+    ));
+    let (preparation, drive) = surface
+        .last_drive_receipts()
+        .expect("SDK invocation must reach the prepared machine driver");
+    assert_eq!(surface.decode_count(), 1);
+    assert_eq!(preparation.instructions, drive.work.len());
+    assert!(!drive.work.is_empty());
+    assert!(drive.cleaned_up);
+    assert_eq!(surface.live_frame_leases(), 0);
+}
 ```

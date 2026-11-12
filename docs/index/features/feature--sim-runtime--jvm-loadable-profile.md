@@ -15,11 +15,6 @@ Decode caller-authorized classfile bytes and execute caller-selected exact class
 
 ## Specimens
 
-- `recipe/sim-runtime/crates/sim-lib-lang-jvm/01-basics/authorized-static-call`
-- `recipe/sim-runtime/crates/sim-lib-lang-jvm/01-basics/java-lambda`
-- `recipe/sim-runtime/crates/sim-lib-lang-jvm/01-basics/method-reference`
-- `recipe/sim-runtime/crates/sim-lib-lang-jvm/01-basics/performance-evidence`
-- `recipe/sim-runtime/crates/sim-lib-lang-jvm/01-basics/sim-functional-interface`
 - `spec-test/sim-runtime/crates/sim-lib-lang-jvm/tests/baseline`
 - `spec-test/sim-runtime/crates/sim-lib-lang-jvm/tests/ownership_guard`
 - `spec-test/sim-runtime/crates/sim-lib-lang-jvm/tests/product_specimen`
@@ -27,13 +22,167 @@ Decode caller-authorized classfile bytes and execute caller-selected exact class
 
 ## Worked Example
 
-Specimen `recipe/sim-runtime/crates/sim-lib-lang-jvm/01-basics/authorized-static-call` is checked by `sh scripts/check-recipes.sh`.
+Specimen `spec-test/sim-runtime/crates/sim-lib-lang-jvm/tests/baseline` is checked by `cargo test`.
 
-Source `crates/sim-lib-lang-jvm/recipes/01-basics/authorized-static-call/recipe.toml`:
+Source `crates/sim-lib-lang-jvm/tests/baseline.rs`:
 
-```toml
-title = "Define authorized class bytes and call a static method"
-kind = "lisp"
-entry = "setup.siml"
-purpose = "purpose.md"
+```rust
+// conformance: the bounded JVM baseline exercises every shared ownership seam.
+
+use sim_codec_classfile::{OPCODES, inspect_classfile};
+use sim_kernel::CodecId;
+
+#[test]
+fn manifests_freeze_the_supported_baseline() {
+    let supported: toml::Value = sim_lib_lang_jvm::SUPPORTED_RUNTIME.parse().unwrap();
+    assert_eq!(
+        supported["classfile_versions"]["minimum_major"].as_integer(),
+        Some(45)
+    );
+    assert_eq!(
+        supported["classfile_versions"]["maximum_major"].as_integer(),
+        Some(69)
+    );
+    assert_eq!(supported["unsupported"].as_array().unwrap().len(), 5);
+    assert_eq!(
+        supported["unsupported"][1]["includes"]
+            .as_array()
+            .unwrap()
+            .len(),
+        4
+    );
+
+    let intrinsics: toml::Value = sim_lib_lang_jvm::INTRINSIC_MANIFEST.parse().unwrap();
+    let manifest_members = intrinsics["members"].as_array().unwrap();
+    assert_eq!(
+        manifest_members.len(),
+        sim_lib_lang_jvm::INTRINSIC_TABLE.len()
+    );
+    for (manifest, compiled) in manifest_members
+        .iter()
+        .zip(sim_lib_lang_jvm::INTRINSIC_TABLE)
+    {
+        assert_eq!(manifest["class"].as_str(), Some(compiled.class));
+        assert_eq!(manifest["name"].as_str(), Some(compiled.name));
+        assert_eq!(manifest["descriptor"].as_str(), Some(compiled.descriptor));
+        assert_eq!(
+            manifest["arguments_shape"].as_str(),
+            Some(compiled.arguments_shape)
+        );
+        assert_eq!(
+            manifest["result_shape"].as_str(),
+            Some(compiled.result_shape)
+        );
+        assert_eq!(manifest["capability"].as_str(), Some(compiled.capability));
+        assert_eq!(manifest["effect"].as_str(), Some(compiled.effect));
+        assert_eq!(manifest["work"].as_integer(), Some(compiled.work.into()));
+        assert_eq!(
+            manifest["support"].as_str(),
+            Some(match compiled.support {
+                sim_lib_lang_jvm::IntrinsicSupport::Supported => "supported",
+                sim_lib_lang_jvm::IntrinsicSupport::Unsupported => "unsupported",
+            })
+        );
+    }
+
+    let ledger: toml::Value = sim_lib_lang_jvm::REUSE_LEDGER.parse().unwrap();
+    let capabilities = ledger["organ"]
+        .as_array()
+        .unwrap()
+        .iter()
+        .map(|row| row["capability"].as_str().unwrap())
+        .collect::<Vec<_>>();
+    assert_eq!(
+        capabilities,
+        [
+            "characterization",
+            "SIM Index",
+            "managed graph",
+            "UTF-16 text",
+            "bounded machine",
+            "classfile codec",
+            "JVM dynamic linkage",
+            "dataflow",
+            "class descriptors",
+            "function plans",
+            "KERNEL",
+            "DISPATCH",
+            "CODECS",
+            "raised exceptions",
+        ]
+    );
+}
+
+#[test]
+fn performance_proof_is_wired_to_the_single_acceptance_file() {
+    let reference: toml::Value = include_str!("../bytecode-speed-acceptance.toml")
+        .parse()
+        .unwrap();
+    assert_eq!(reference["owner_repository"].as_str(), Some("sim-tooling"));
+    assert_eq!(
+        reference["path"].as_str(),
+        Some("benchmarks/bytecode-speed-4/acceptance.toml")
+    );
+    assert_eq!(
+        reference["proof"].as_str(),
+        Some("accepted benchmark report with distinct cold-preparation and warm-execution arms")
+    );
+}
+
+#[test]
+fn generated_coverage_differs_from_manifests_by_zero() {
+    let intrinsics: toml::Value = sim_lib_lang_jvm::INTRINSIC_MANIFEST.parse().unwrap();
+    let intrinsic_manifest_total = intrinsics["members"].as_array().unwrap().len();
+    assert_eq!(
+        intrinsic_manifest_total.abs_diff(sim_lib_lang_jvm::INTRINSIC_TABLE.len()),
+        0
+    );
+
+    // OPCODES is itself generated from sim-codec-classfile's opcode-manifest.tsv;
+    // JVM policy consumes that complete byte-indexed table instead of restating it.
+    let opcode_manifest_total = OPCODES.len();
+    let opcode_coverage_total = (u8::MIN..=u8::MAX)
+        .filter(|byte| OPCODES[usize::from(*byte)].opcode as u8 == *byte)
+        .count();
+    assert_eq!(opcode_manifest_total.abs_diff(opcode_coverage_total), 0);
+    assert_eq!(
+        sim_lib_lang_jvm::VERIFIER_COVERAGE.opcode_rows,
+        OPCODES.len()
+    );
+    assert_eq!(sim_lib_lang_jvm::VERIFIER_COVERAGE.rule_families, 5);
+}
+
+#[test]
+fn verification_failures_are_readable_without_internal_state() {
+    let explanation = sim_lib_lang_jvm::VerificationExplanation::for_method(
+        &sim_lib_lang_jvm::MethodVerificationError::UnreachableHandler { row: 7 },
+    );
+    assert_eq!(explanation.code, "unreachable-handler");
+    assert!(explanation.reason.contains("row 7"));
+}
+
+#[test]
+fn verification_frames_have_bounded_read_only_views() {
+    let mut frame =
+        sim_lib_lang_jvm::VerificationFrame::new(sim_lib_lang_jvm::FrameKind::Locals, 3);
+    frame
+        .set_local(0, sim_lib_lang_jvm::VerificationType::Int)
+        .unwrap();
+    let view = sim_lib_lang_jvm::VerificationFrameView::bounded(&frame, 1);
+    assert!(view.reachable);
+    assert_eq!(view.capacity, 3);
+    assert_eq!(view.slots.as_ref(), &[Some("Int".into())]);
+    assert_eq!(view.omitted, 2);
+}
+
+#[test]
+fn frozen_fixtures_decode_through_the_shared_classfile_organ() {
+    let javac = include_bytes!("../fixtures/javac/StaticInt.class");
+    assert_eq!(&javac[6..8], &52_u16.to_be_bytes());
+    inspect_classfile(CodecId(139), javac.to_vec(), 4_096).unwrap();
+
+    let hand_built = include_bytes!("../fixtures/hand-built/Minimal.class");
+    assert_eq!(&hand_built[6..8], &45_u16.to_be_bytes());
+    inspect_classfile(CodecId(139), hand_built.to_vec(), 4_096).unwrap();
+}
 ```

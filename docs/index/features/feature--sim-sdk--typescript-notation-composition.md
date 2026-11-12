@@ -10,21 +10,34 @@ TypeScript notation; does not type-check. Compose bounded syntax, JavaScript era
 
 ## Specimens
 
-- `recipe/sim-sdk/typescript-notation/admitted-notation`
+- `spec-test/sim-sdk/tests/typescript_notation`
 
 ## Worked Example
 
-Specimen `recipe/sim-sdk/typescript-notation/admitted-notation` is checked by `xtask check-recipes`.
+Specimen `spec-test/sim-sdk/tests/typescript_notation` is checked by `cargo test`.
 
-Source `recipes/typescript-notation/admitted-notation/recipe.toml`:
+Source `tests/typescript_notation.rs`:
 
-```toml
-id = "admitted-notation"
-title = "Evaluate and browse TypeScript notation"
-codec = "rust"
-setup = "setup.rs"
-purpose = "purpose.md"
-order = 10
-tags = ["typescript", "notation", "javascript", "shape", "checker-gap"]
-requires = ["language/typescript-notation"]
+```rust
+// SPDX-License-Identifier: MPL-2.0
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+// conformance: the SDK TypeScript notation composition runs the admitted notation recipe.
+
+#![cfg(feature = "typescript")]
+
+mod recipe {
+    include!(concat!(
+        env!("CARGO_MANIFEST_DIR"),
+        "/",
+        "recipes/typescript-notation/admitted-notation/setup.rs"
+    ));
+}
+
+#[test]
+fn admitted_typescript_notation_recipe_runs() {
+    recipe::admitted_typescript_notation().expect("TypeScript notation SDK recipe should pass");
+}
 ```
