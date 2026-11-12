@@ -23,6 +23,11 @@ Specimen `spec-test/sim-platform/crates/sim-platform-ios/src/tests` is checked b
 Source `crates/sim-platform-ios/src/tests.rs`:
 
 ```rust
+// SPDX-License-Identifier: MPL-2.0
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
 #![allow(unsafe_code)]
 
 // conformance: iOS AOT bindings preserve lifecycle, authority, and refusal semantics.
@@ -352,6 +357,6 @@ fn expired_grants_pressure_and_unavailable_services_refuse_without_retention() {
         .accepted
     );
     assert!(!capsule.background_allowed);
-    assert!(capsule.document_grants.is_empty());
+    assert_eq!(capsule.document_grants.len(), 0);
 }
 ```

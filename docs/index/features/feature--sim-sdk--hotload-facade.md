@@ -14,24 +14,25 @@ Expose immutable native build, admission, compatibility, atomic activation, and 
 
 ## Specimens
 
-- `recipe/sim-sdk/hotload/conversational-instrument-adoption`
-- `recipe/sim-sdk/hotload/public-generation-loop`
 - `spec-test/sim-sdk/tests/conversational_instrument_adoption`
 - `spec-test/sim-sdk/tests/hotload_generation`
 
 ## Worked Example
 
-Specimen `recipe/sim-sdk/hotload/conversational-instrument-adoption` is checked by `xtask check-recipes`.
+Specimen `spec-test/sim-sdk/tests/conversational_instrument_adoption` is checked by `cargo test`.
 
-Source `recipes/hotload/conversational-instrument-adoption/recipe.toml`:
+Source `tests/conversational_instrument_adoption.rs`:
 
-```toml
-id = "conversational-instrument-adoption"
-title = "Adopt a conversationally proposed instrument reproducibly"
-codec = "rust"
-setup = "setup.rs"
-purpose = "purpose.md"
-order = 20
-tags = ["agent", "bridge", "change-capsule", "pack", "hotload", "offline", "reproducible"]
-requires = ["agent", "hotload"]
+```rust
+#![cfg(all(feature = "agent", feature = "hotload"))]
+
+#[path = "../recipes/hotload/conversational-instrument-adoption/setup.rs"]
+mod recipe;
+
+#[test]
+fn checked_recipe_uses_the_public_adoption_surface() {
+    let function = recipe::adopt_reproduced_instrument;
+    let _ = function;
+}
+// conformance: instrument adoption rebuilds from frozen inputs and rolls back atomically.
 ```

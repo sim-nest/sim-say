@@ -36,8 +36,12 @@
 | `crate/sim-audio-ports` | `crate` | sim-audio-ports | 0 |
 | `crate/sim-auto` | `crate` | sim-auto | 1 |
 | `crate/sim-cancel` | `crate` | sim-cancel | 0 |
+| `crate/sim-check-pack` | `crate` | sim-check-pack | 0 |
+| `crate/sim-check-pack-ubuntu-pc` | `crate` | sim-check-pack-ubuntu-pc | 0 |
+| `crate/sim-check-pack-xtask` | `crate` | sim-check-pack-xtask | 0 |
 | `crate/sim-citizen` | `crate` | sim-citizen | 2 |
 | `crate/sim-citizen-derive` | `crate` | sim-citizen-derive | 0 |
+| `crate/sim-cli-core` | `crate` | sim-cli-core | 0 |
 | `crate/sim-codec-algol` | `crate` | sim-codec-algol | 1 |
 | `crate/sim-codec-binary` | `crate` | sim-codec-binary | 1 |
 | `crate/sim-codec-binary-base64` | `crate` | sim-codec-binary-base64 | 1 |
@@ -139,7 +143,7 @@
 | `crate/sim-lib-estate` | `crate` | sim-lib-estate | 0 |
 | `crate/sim-lib-estate-book` | `crate` | sim-lib-estate-book | 0 |
 | `crate/sim-lib-estate-serve` | `crate` | sim-lib-estate-serve | 0 |
-| `crate/sim-lib-exec` | `crate` | sim-lib-exec | 0 |
+| `crate/sim-lib-exec` | `crate` | sim-lib-exec | 2 |
 | `crate/sim-lib-expedition-book` | `crate` | sim-lib-expedition-book | 0 |
 | `crate/sim-lib-expr-tree-serve` | `crate` | sim-lib-expr-tree-serve | 1 |
 | `crate/sim-lib-expr-tree-server` | `crate` | sim-lib-expr-tree-server | 1 |
@@ -338,7 +342,7 @@
 | `crate/sim-lib-web-bridge` | `crate` | sim-lib-web-bridge | 0 |
 | `crate/sim-lib-web-core` | `crate` | sim-lib-web-core | 0 |
 | `crate/sim-lib-web-fetch` | `crate` | sim-lib-web-fetch | 0 |
-| `crate/sim-lib-world` | `crate` | sim-lib-world | 1 |
+| `crate/sim-lib-world` | `crate` | sim-lib-world | 2 |
 | `crate/sim-macros` | `crate` | sim-macros | 0 |
 | `crate/sim-mcp-server` | `crate` | sim-mcp-server | 0 |
 | `crate/sim-music` | `crate` | sim-music | 0 |
@@ -364,6 +368,7 @@
 | `crate/sim-platform-wasi` | `crate` | sim-platform-wasi | 0 |
 | `crate/sim-platform-web-shell` | `crate` | sim-platform-web-shell | 0 |
 | `crate/sim-platform-windows` | `crate` | sim-platform-windows | 0 |
+| `crate/sim-projection-admission-protocol` | `crate` | sim-projection-admission-protocol | 0 |
 | `crate/sim-relation-core` | `crate` | sim-relation-core | 0 |
 | `crate/sim-relation-migrate` | `crate` | sim-relation-migrate | 0 |
 | `crate/sim-relation-plan` | `crate` | sim-relation-plan | 0 |
@@ -403,6 +408,7 @@
 | `crate/sim-viture-ffi` | `crate` | sim-viture-ffi | 0 |
 | `crate/sim-wasm-abi` | `crate` | sim-wasm-abi | 1 |
 | `crate/sim-work-core` | `crate` | sim-work-core | 0 |
+| `crate/simdoc` | `crate` | simdoc | 0 |
 | `crate/switched-two-port` | `crate` | switched-two-port | 0 |
 | `doc-set/sim-agent-net/generated` | `doc-set` | sim-agent-net generated docs | 0 |
 | `doc-set/sim-audio-daw/generated` | `doc-set` | sim-audio-daw generated docs | 0 |
@@ -626,12 +632,12 @@
 | `repo/sim-office` | `repo` | sim-office | 19 |
 | `repo/sim-physics` | `repo` | sim-physics | 19 |
 | `repo/sim-platform` | `repo` | sim-platform | 25 |
-| `repo/sim-run` | `repo` | sim-run | 9 |
+| `repo/sim-run` | `repo` | sim-run | 10 |
 | `repo/sim-runtime` | `repo` | sim-runtime | 37 |
-| `repo/sim-sdk` | `repo` | sim-sdk | 77 |
+| `repo/sim-sdk` | `repo` | sim-sdk | 78 |
 | `repo/sim-shape` | `repo` | sim-shape | 6 |
 | `repo/sim-storage` | `repo` | sim-storage | 18 |
 | `repo/sim-stream` | `repo` | sim-stream | 12 |
 | `repo/sim-stream-host` | `repo` | sim-stream-host | 6 |
-| `repo/sim-tooling` | `repo` | sim-tooling | 2 |
+| `repo/sim-tooling` | `repo` | sim-tooling | 6 |
 | `repo/sim-web` | `repo` | sim-web | 23 |

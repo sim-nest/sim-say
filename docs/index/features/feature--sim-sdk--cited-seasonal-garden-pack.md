@@ -10,23 +10,22 @@ Compose independent garden Shapes, dated jurisdictional guidance, optional weath
 
 ## Specimens
 
-- `recipe/sim-sdk/stewardship/cited-seasonal-garden`
 - `spec-test/sim-sdk/tests/validate_garden_pack`
 
 ## Worked Example
 
-Specimen `recipe/sim-sdk/stewardship/cited-seasonal-garden` is checked by `xtask check-recipes`.
+Specimen `spec-test/sim-sdk/tests/validate_garden_pack` is checked by `cargo test`.
 
-Source `recipes/stewardship/cited-seasonal-garden/recipe.toml`:
+Source `tests/validate_garden_pack.rs`:
 
-```toml
-id = "cited-seasonal-garden"
-title = "Rebuild a cited garden season"
-codec = "lisp"
-setup = "input.lisp"
-purpose = "README.md"
-order = 20
-tags = ["sdk", "stewardship", "garden", "offline", "seasonal"]
-requires = ["core", "codec/lisp", "numbers/rational", "claims"]
-network = false
+```rust
+// conformance: garden plans separate observations, guidance, questions, and copied claims.
+
+#[path = "support/python_conformance.rs"]
+mod python_conformance;
+
+#[test]
+fn validate_garden_pack() {
+    python_conformance::run("tests/validate_garden_pack.py");
+}
 ```

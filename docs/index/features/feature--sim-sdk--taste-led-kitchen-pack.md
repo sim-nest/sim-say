@@ -10,23 +10,22 @@ Compose exact quantities, freshness-bounded claims, questions, preparation optio
 
 ## Specimens
 
-- `recipe/sim-sdk/stewardship/taste-led-kitchen`
 - `spec-test/sim-sdk/tests/validate_kitchen_pack`
 
 ## Worked Example
 
-Specimen `recipe/sim-sdk/stewardship/taste-led-kitchen` is checked by `xtask check-recipes`.
+Specimen `spec-test/sim-sdk/tests/validate_kitchen_pack` is checked by `cargo test`.
 
-Source `recipes/stewardship/taste-led-kitchen/recipe.toml`:
+Source `tests/validate_kitchen_pack.rs`:
 
-```toml
-id = "taste-led-kitchen"
-title = "Prepare a taste-led shopping draft"
-codec = "lisp"
-setup = "input.lisp"
-purpose = "README.md"
-order = 10
-tags = ["sdk", "stewardship", "kitchen", "offline", "exact"]
-requires = ["core", "codec/lisp", "numbers/rational", "claims"]
-network = false
+```rust
+// conformance: kitchen plans preserve units, freshness, and source-room isolation.
+
+#[path = "support/python_conformance.rs"]
+mod python_conformance;
+
+#[test]
+fn validate_kitchen_pack() {
+    python_conformance::run("tests/validate_kitchen_pack.py");
+}
 ```

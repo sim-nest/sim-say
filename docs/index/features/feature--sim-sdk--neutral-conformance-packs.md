@@ -6,7 +6,7 @@
 - Subject: `crate/sim-conformance-packs`
 - Canonical key: `crate/sim-conformance-packs/feature-sim-sdk-neutral-conformance-packs`
 
-Expose all 21 checker entrypoints with pure evidence-driven scenarios, canonical results, and typed unavailable outcomes for scopes whose funded phase has not shipped, including canonical identity, native journal, durable operation reconciliation, semantic projection, disclosure scoping, and the real local checker boundary.
+Expose all 21 checker entrypoints. Funded source, closure, control, drive, and convergence scopes call the frozen executor through injected ports only when the evidence is the support record that executor issued for the subject. The support record is a qualified receipt the live checker owner issued for the support proof that ran, resolved through that same owner. A fact-only copy is refused, and a record issued for another subject is refused. Exact source and build identities, a host-bound operation/local owner, canonical results, and typed unavailable outcomes remain for scopes whose funded phase has not shipped, including predicted-closure sensitivity and native drive.
 
 ## Anchors
 
@@ -16,7 +16,10 @@ Expose all 21 checker entrypoints with pure evidence-driven scenarios, canonical
 ## Specimens
 
 - `spec-test/sim-sdk/crates/sim-conformance-packs/tests/bootstrap_packs`
-- `spec-test/sim-sdk/crates/sim-conformance-packs/tests/projection_reference`
+- `spec-test/sim-sdk/crates/sim-conformance-packs/tests/portability_consumer_seams`
+- `spec-test/sim-sdk/crates/sim-conformance-packs/tests/portability_foreign`
+- `spec-test/sim-sdk/crates/sim-conformance-packs/tests/release_nv12_27`
+- `spec-test/sim-sdk/crates/sim-conformance-packs/tests/revocation_policy`
 
 ## Worked Example
 
@@ -420,6 +423,8 @@ fn nv12_04_operation_log_scope_checks_the_crash_safe_boundary() {
 mod nv12_05;
 #[path = "bootstrap_packs/nv12_06.rs"]
 mod nv12_06;
+#[path = "bootstrap_packs/nv12_07.rs"]
+mod nv12_07;
 
 #[test]
 fn nv12_04_release_scope_requires_the_complete_release_gate() {
@@ -567,7 +572,7 @@ fn one_static_binding_yields_four_exact_invocation_ids() {
         for scope in scopes.clone() {
             let invocation = binding
                 .instantiate(
-                    sid("sim-conformance-packs@0.2.0"),
+                    spec.checker_code_id().unwrap(),
                     spec.pack_id().unwrap(),
                     subject.clone(),
                     scope,

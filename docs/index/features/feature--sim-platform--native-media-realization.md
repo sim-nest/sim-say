@@ -23,6 +23,11 @@ Specimen `spec-test/sim-platform/crates/sim-platform-audio/src/tests` is checked
 Source `crates/sim-platform-audio/src/tests.rs`:
 
 ```rust
+// SPDX-License-Identifier: MPL-2.0
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
 // conformance: media realization exposes only explicit native bindings and bounded callbacks.
 
 use super::*;
@@ -115,6 +120,6 @@ fn hotplug_is_deterministic_and_drained_once() {
         capsule.poll_hotplug().unwrap(),
         vec![DeviceEvent::Removed(id)]
     );
-    assert!(capsule.poll_hotplug().unwrap().is_empty());
+    assert_eq!(capsule.poll_hotplug().unwrap().len(), 0);
 }
 ```

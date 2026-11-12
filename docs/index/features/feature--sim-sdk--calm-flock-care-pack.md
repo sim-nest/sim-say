@@ -10,23 +10,22 @@ Compose a twenty-second common-care capture, flock-level normal observation, fac
 
 ## Specimens
 
-- `recipe/sim-sdk/stewardship/calm-flock-care`
 - `spec-test/sim-sdk/tests/validate_flock_pack`
 
 ## Worked Example
 
-Specimen `recipe/sim-sdk/stewardship/calm-flock-care` is checked by `xtask check-recipes`.
+Specimen `spec-test/sim-sdk/tests/validate_flock_pack` is checked by `cargo test`.
 
-Source `recipes/stewardship/calm-flock-care/recipe.toml`:
+Source `tests/validate_flock_pack.rs`:
 
-```toml
-id = "calm-flock-care"
-title = "Record calm flock care"
-codec = "lisp"
-setup = "input.lisp"
-purpose = "README.md"
-order = 30
-tags = ["sdk", "stewardship", "flock", "offline", "attention"]
-requires = ["core", "codec/lisp", "claims"]
-network = false
+```rust
+// conformance: flock care preserves unknowns and refuses diagnosis or automated care.
+
+#[path = "support/python_conformance.rs"]
+mod python_conformance;
+
+#[test]
+fn validate_flock_pack() {
+    python_conformance::run("tests/validate_flock_pack.py");
+}
 ```

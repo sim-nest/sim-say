@@ -10,21 +10,34 @@ Compose the Python source codec, thin runtime profile, and tracing collector thr
 
 ## Specimens
 
-- `recipe/sim-sdk/python/capability-scoped`
+- `spec-test/sim-sdk/tests/python`
 
 ## Worked Example
 
-Specimen `recipe/sim-sdk/python/capability-scoped` is checked by `xtask check-recipes`.
+Specimen `spec-test/sim-sdk/tests/python` is checked by `cargo test`.
 
-Source `recipes/python/capability-scoped/recipe.toml`:
+Source `tests/python.rs`:
 
-```toml
-id = "capability-scoped-python"
-title = "Evaluate capability-scoped embedded Python"
-codec = "rust"
-setup = "setup.rs"
-purpose = "purpose.md"
-order = 10
-tags = ["python", "sdk", "eval", "exec", "capability", "fidelity"]
-requires = ["python"]
+```rust
+// SPDX-License-Identifier: MPL-2.0
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+// conformance: the SDK Python composition runs the capability-scoped recipe.
+
+#![cfg(feature = "python")]
+
+mod recipe {
+    include!(concat!(
+        env!("CARGO_MANIFEST_DIR"),
+        "/",
+        "recipes/python/capability-scoped/setup.rs"
+    ));
+}
+
+#[test]
+fn capability_scoped_python_recipe_runs() {
+    recipe::capability_scoped_python().expect("Python SDK recipe should pass");
+}
 ```

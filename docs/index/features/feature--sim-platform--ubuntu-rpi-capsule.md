@@ -25,6 +25,11 @@ Specimen `spec-test/sim-platform/crates/sim-platform-ubuntu-rpi/tests/conformanc
 Source `crates/sim-platform-ubuntu-rpi/tests/conformance.rs`:
 
 ```rust
+// SPDX-License-Identifier: MPL-2.0
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
 use sim_platform_ubuntu_rpi::{
     Binding, BuildEvidence, PiRefusal, PiService, TargetAttestation, hostile_model_profile,
     register,
@@ -65,8 +70,8 @@ fn hostile_profile_observed_services_exactly_equal_card() {
 #[test]
 fn ubuntu_derivation_does_not_inherit_linux_services() {
     let profile = sim_platform_ubuntu_rpi::UbuntuRpiProfile::from_ubuntu_headless("c03115");
-    assert!(profile.bindings.is_empty());
-    assert!(profile.permissions.is_empty());
+    assert_eq!(profile.bindings.len(), 0);
+    assert_eq!(profile.permissions.len(), 0);
     assert_eq!(register(profile).unwrap().card.services, Vec::new());
 }
 

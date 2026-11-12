@@ -6,7 +6,7 @@
 - Subject: `crate/sim-conformance-core`
 - Canonical key: `crate/sim-conformance-core/feature-sim-foundation-conformance-core`
 
-Bind ownership, checker code, subjects, scopes, calls, evidence, and revocation into canonical acyclic records without acquiring host authority.
+Bind ownership, checker code, subjects, scopes, calls, evidence, and owner-issued current revocation observations into canonical acyclic records without acquiring host authority.
 
 ## Anchors
 
@@ -23,12 +23,20 @@ Specimen `spec-test/sim-foundation/crates/sim-conformance-core/tests/bootstrap_c
 Source `crates/sim-conformance-core/tests/bootstrap_contract.rs`:
 
 ```rust
+// SPDX-License-Identifier: MPL-2.0
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
 use std::collections::BTreeSet;
 
 // conformance: neutral checker binding, identity, support graph, and receipt contract.
 
 use sim_conformance_core::*;
 use sim_kernel::{Datum, NumberLiteral, Symbol};
+
+#[path = "bootstrap_contract/revocation.rs"]
+mod revocation;
 
 fn sid<K: IdKind>(value: &str) -> SemanticId<K> {
     SemanticId::from_text(value).unwrap()
@@ -115,6 +123,30 @@ fn checker_binding(owner: OwnerBindingId) -> CheckerBinding {
         template,
     )
     .unwrap()
+}
+
+fn revocation_selection(
+    binding: &CheckerBinding,
+    invocation: &CheckInvocation,
+    status: RevocationStatus,
+    head: &str,
+) -> CheckerRevocationSelection {
+    let key = CheckerRevocationKey::for_invocation(binding.revocation_source().clone(), invocation)
+        .unwrap();
+    let decisions = if status == RevocationStatus::Unknown {
+        Vec::new()
+    } else {
+        vec![CheckerRevocationDecision::new(key.clone(), status).unwrap()]
+    };
+    CheckerRevocationSet::from_owner_snapshot(
+        binding.owner().clone(),
+        binding.revocation_source().clone(),
+        sid("policy/v1"),
+        sid(head),
+        decisions,
+    )
+    .unwrap()
+    .lookup(&key)
 }
 
 #[test]
@@ -208,24 +240,39 @@ fn wrong_scope_substitution_and_unknown_revocation_fail_closed() {
     );
     let invocation_a = build("subject/a", "scope/x");
     let invocation_b = build("subject/b", "scope/x");
+    let selected = revocation_selection(
+        &binding,
+        &invocation_a,
+        RevocationStatus::Current,
+        "head/one",
+    );
     let receipt = CheckerReceipt::passing(
+        &binding,
         &invocation_a,
         sid("result/pass"),
         EvidenceGrade::Bootstrap,
         sid("provenance/local"),
         sid("policy/v1"),
         sid("support/empty"),
-        RevocationStatus::Current,
+        &selected,
     )
     .unwrap();
+    let observed = selected.bind_receipt(receipt.id().clone());
     assert_eq!(
-        receipt.verify(&binding, &invocation_b, RevocationStatus::Current),
+        receipt.verify(&binding, &invocation_b, &observed),
         Err(ConformanceError::InvocationMismatch(
             "binding or invocation"
         ))
     );
+    let unknown = revocation_selection(
+        &binding,
+        &invocation_a,
+        RevocationStatus::Unknown,
+        "head/two",
+    )
+    .bind_receipt(receipt.id().clone());
     assert_eq!(
-        receipt.verify(&binding, &invocation_a, RevocationStatus::Unknown),
+        receipt.verify(&binding, &invocation_a, &unknown),
         Err(ConformanceError::RevocationUnknownOrActive)
     );
 }
