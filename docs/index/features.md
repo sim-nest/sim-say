@@ -307,6 +307,7 @@
 | [`feature/sim-run/prove-command`](features/feature--sim-run--prove-command.md) | `crate/sim-run` | 2 |
 | [`feature/sim-run/relation-command`](features/feature--sim-run--relation-command.md) | `crate/sim-run` | 1 |
 | [`feature/sim-run/repl`](features/feature--sim-run--repl.md) | `crate/sim-lib-repl` | 1 |
+| [`feature/sim-run/roadmap-command`](features/feature--sim-run--roadmap-command.md) | `crate/sim-run` | 1 |
 | [`feature/sim-run/runtime-index`](features/feature--sim-run--runtime-index.md) | `crate/sim-lib-index` | 0 |
 | [`feature/sim-run/search-command`](features/feature--sim-run--search-command.md) | `crate/sim-run` | 1 |
 | [`feature/sim-run/study-command`](features/feature--sim-run--study-command.md) | `crate/sim-run` | 1 |

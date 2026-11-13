@@ -24,6 +24,11 @@ Specimen `spec-test/sim-agent-net/crates/sim-lib-roadmap-runner/src/local_comman
 Source `crates/sim-lib-roadmap-runner/src/local_command.rs`:
 
 ```rust
+// SPDX-License-Identifier: MPL-2.0
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
 //! Public, local-only command surface for the roadmap runner.
 // conformance: loadable local-only roadmap command boundary.
 
@@ -253,7 +258,7 @@ impl Lib for LocalRoadmapRunnerLib {
             })
             .collect::<Vec<_>>();
         exports.push(Export::Function {
-            symbol: Symbol::qualified("cli/main", "roadmap"),
+            symbol: command_symbol(),
             function_id: None,
         });
         Self::manifest_value(exports)
@@ -275,7 +280,7 @@ impl Lib for LocalRoadmapRunnerLib {
             )?;
         }
         linker.function_value(
-            Symbol::qualified("cli/main", "roadmap"),
+            command_symbol(),
             cx.factory().opaque(Arc::new(LocalCommand {
                 port: self.port.clone(),
             }))?,
@@ -371,7 +376,7 @@ impl Callable for LocalCommand {
             })
             .collect::<Vec<_>>();
         let verb = text.get(1).map(String::as_str).unwrap_or("status");
-        let request = parse_cli(verb, &text[2..])?;
+        let request = parse_cli(verb, text.get(2..).unwrap_or_default())?;
         invoke(cx, &*self.port, request)
     }
 }
@@ -438,37 +443,7 @@ fn dummy_cx() -> Cx {
 fn invoke(cx: &mut Cx, port: &dyn LocalRoadmapPort, request: LocalRoadmapRequest) -> Result<Value> {
     let generation = GenerationHandle::acquire(request.identity.runner_generation.clone());
     let receipt = port.invoke(&request, generation).map_err(Error::Eval)?;
-    cx.factory().table(vec![
-        (
-            Symbol::new("outcome"),
-            cx.factory().string(receipt.outcome)?,
-        ),
-        (
-            Symbol::new("execution"),
-            cx.factory().string(receipt.identity.execution)?,
-        ),
-        (
-            Symbol::new("conduct"),
-            cx.factory().string(receipt.identity.conduct)?,
-        ),
-        (
-            Symbol::new("model-pick"),
-            cx.factory().string(receipt.identity.model_pick)?,
-        ),
-        (
-            Symbol::new("proof-catalog"),
-            cx.factory().string(receipt.identity.proof_catalog)?,
-        ),
-        (
-            Symbol::new("runner-generation"),
-            cx.factory().string(receipt.identity.runner_generation)?,
-        ),
-        (
-            Symbol::new("journal-acknowledged"),
-            cx.factory().bool(receipt.journal_acknowledged)?,
-        ),
-        (Symbol::new("detail"), cx.factory().string(receipt.detail)?),
-    ])
+    crate::local_emit::command_value(cx, receipt)
 }
 
 struct ContractShape {
@@ -505,6 +480,10 @@ fn contract_shape(verb: &str, args: bool) -> Value {
     let symbol = shape_symbol(verb, if args { "Args" } else { "Result" });
     shape_value(symbol.clone(), Arc::new(ContractShape { symbol, args }))
 }
+fn command_symbol() -> Symbol {
+    Symbol::qualified("cli", "main/roadmap")
+}
+
 fn op_symbol(verb: &str) -> Symbol {
     Symbol::qualified("roadmap", verb)
 }
