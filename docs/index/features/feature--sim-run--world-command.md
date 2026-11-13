@@ -6,7 +6,7 @@
 - Subject: `crate/sim-run`
 - Canonical key: `crate/sim-run/feature-sim-run-world-command`
 
-Select the world verb and delegate pure project, diff, and why behavior to sim-lib-world.
+Select the world verb and delegate pure project, diff, why, and deliver behavior to sim-lib-world.
 
 ## Specimens
 

@@ -293,6 +293,7 @@
 | [`feature/sim-run/bootloader`](features/feature--sim-run--bootloader.md) | `crate/sim-run-core` | 0 |
 | [`feature/sim-run/compute`](features/feature--sim-run--compute.md) | `crate/sim-run` | 1 |
 | [`feature/sim-run/continuity-command`](features/feature--sim-run--continuity-command.md) | `crate/sim-run` | 1 |
+| [`feature/sim-run/deliver-command`](features/feature--sim-run--deliver-command.md) | `crate/sim-run` | 1 |
 | [`feature/sim-run/estate-command`](features/feature--sim-run--estate-command.md) | `crate/sim-run` | 1 |
 | [`feature/sim-run/expression-tree-command`](features/feature--sim-run--expression-tree-command.md) | `crate/sim-run` | 1 |
 | [`feature/sim-run/glasses`](features/feature--sim-run--glasses.md) | `crate/sim-run` | 1 |

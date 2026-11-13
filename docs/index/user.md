@@ -293,6 +293,7 @@
 | [`feature/sim-run/bootloader`](features/feature--sim-run--bootloader.md) | `crate/sim-run-core` | Start product commands through the shared bootloader and loaded runtime libraries. | 0 |
 | [`feature/sim-run/compute`](features/feature--sim-run--compute.md) | `crate/sim-run` | Start modeled and automatic compute inspection through the shared command bootloader. | 1 |
 | [`feature/sim-run/continuity-command`](features/feature--sim-run--continuity-command.md) | `crate/sim-run` | Compose continuity plans, platform capsules, sites, phone surfaces, and optional providers through the generic bootloader registry. | 1 |
+| [`feature/sim-run/deliver-command`](features/feature--sim-run--deliver-command.md) | `crate/sim-run` | Select world deliver and delegate the delivery record to sim-lib-world. | 1 |
 | [`feature/sim-run/estate-command`](features/feature--sim-run--estate-command.md) | `crate/sim-run` | The sim bootloader selects the estate command library only for the estate verb and forwards fixed subcommands as typed organ calls. | 1 |
 | [`feature/sim-run/expression-tree-command`](features/feature--sim-run--expression-tree-command.md) | `crate/sim-run` | Load the standard expression-tree product recipe through the shared command bootloader. | 1 |
 | [`feature/sim-run/glasses`](features/feature--sim-run--glasses.md) | `crate/sim-run` | Start modeled or hardware-backed glasses plans through the shared command bootloader. | 1 |
@@ -314,7 +315,7 @@
 | [`feature/sim-run/succession-command`](features/feature--sim-run--succession-command.md) | `crate/sim-run` | Select world succeed and world fresh and delegate one exported change to sim-lib-world. | 1 |
 | [`feature/sim-run/terminal-surface`](features/feature--sim-run--terminal-surface.md) | `crate/sim-view-tty` | Render and interpret terminal view intents through the loaded TTY surface library. | 0 |
 | [`feature/sim-run/watch`](features/feature--sim-run--watch.md) | `crate/sim-run` | Start modeled, imported, or live watch plans through the shared command bootloader. | 1 |
-| [`feature/sim-run/world-command`](features/feature--sim-run--world-command.md) | `crate/sim-run` | Select the world verb and delegate pure project, diff, and why behavior to sim-lib-world. | 1 |
+| [`feature/sim-run/world-command`](features/feature--sim-run--world-command.md) | `crate/sim-run` | Select the world verb and delegate pure project, diff, why, and deliver behavior to sim-lib-world. | 1 |
 | [`feature/sim-runtime/binding-organ`](features/feature--sim-runtime--binding-organ.md) | `crate/sim-lib-binding` | Bind declared calls and maintain lexical, dynamic, recursive, and live binding cells without guest-language ownership. | 1 |
 | [`feature/sim-runtime/capabilities-read-eval`](features/feature--sim-runtime--capabilities-read-eval.md) | `crate/sim-lib-core` | Gate diminished read-eval and surface packing through explicit runtime libraries and capability checks. | 2 |
 | [`feature/sim-runtime/characterization-captures`](features/feature--sim-runtime--characterization-captures.md) | `local/sim-runtime/crate/sim-lib-standard-core` | Intern bounded semantic scenario observations as immutable evidence and compare migrations with exact canonical differences. | 1 |

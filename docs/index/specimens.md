@@ -1069,6 +1069,7 @@
 | `feature/sim-run/world-command` | `spec-test/sim-run/crates/sim-run/src/world` | `crate/sim-run` | `spec-test` | `crates/sim-run/src/world.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/compute` | `spec-test/sim-run/crates/sim-run/tests/compute` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/compute.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/continuity-command` | `spec-test/sim-run/crates/sim-run/tests/continuity` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/continuity.rs` | `` | `cargo test` | `true` | `true` |
+| `feature/sim-run/deliver-command` | `spec-test/sim-run/crates/sim-run/tests/deliver_gate` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/deliver_gate.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/expression-tree-command` | `spec-test/sim-run/crates/sim-run/tests/expr_tree` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/expr_tree.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/glasses` | `spec-test/sim-run/crates/sim-run/tests/glasses` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/glasses.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/jvm-command` | `spec-test/sim-run/crates/sim-run/tests/jvm_product` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/jvm_product.rs` | `` | `cargo test` | `true` | `true` |
