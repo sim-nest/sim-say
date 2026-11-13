@@ -18,28 +18,3 @@ Explore merged SIM Index graph and public source facts through the bootloader as
 ## Surfaces
 
 - `cli/index`
-
-## Specimens
-
-- `recipe/sim-run/02-scenarios/index-examples`
-- `recipe/sim-run/02-scenarios/index-find-codec`
-- `recipe/sim-run/02-scenarios/index-list-languages`
-- `recipe/sim-run/02-scenarios/index-trace-cli`
-
-## Worked Example
-
-Specimen `recipe/sim-run/02-scenarios/index-examples` is checked by `xtask check-recipes`.
-
-Source `recipes/02-scenarios/index-examples/recipe.toml`:
-
-```toml
-id = "index-examples"
-title = "Index Feature Examples"
-codec = "shell"
-setup = "setup.sh"
-purpose = "purpose.md"
-order = 73
-tags = ["cli", "index", "examples", "offline", "deterministic"]
-requires = ["sim-run", "sim-lib-index"]
-network = false
-```

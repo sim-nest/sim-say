@@ -19,6 +19,11 @@ Specimen `spec-test/sim-run/crates/sim-run/tests/compute` is checked by `cargo t
 Source `crates/sim-run/tests/compute.rs`:
 
 ```rust
+// SPDX-License-Identifier: MPL-2.0
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
 use std::process::Command;
 
 // conformance: compute command boots through the shared loader and loadable compute CLI.
@@ -77,7 +82,7 @@ fn compute_acceptance_verify_reports_artifact_defects() {
             "verify",
             "--source",
             "0123456789abcdef0123456789abcdef01234567",
-            "/tmp/missing-sim-compute-acceptance.sx",
+            "missing-sim-compute-acceptance.sx",
         ])
         .output()
         .expect("run sim compute acceptance verify");
