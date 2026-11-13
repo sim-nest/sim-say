@@ -21,17 +21,34 @@ Run caller-supplied classfile bytes, exact class, member, descriptor, and intege
 
 ## Specimens
 
-- `recipe/sim-run/02-scenarios/jvm-product`
 - `spec-test/sim-run/crates/sim-run/tests/jvm_product`
 
 ## Worked Example
 
-Specimen `recipe/sim-run/02-scenarios/jvm-product` is checked by `xtask check-recipes`.
+Specimen `spec-test/sim-run/crates/sim-run/tests/jvm_product` is checked by `cargo test`.
 
-Source `recipes/02-scenarios/jvm-product/recipe.toml`:
+Source `crates/sim-run/tests/jvm_product.rs`:
 
-```toml
-title = "Run the bounded JVM product specimen"
-kind = "shell"
-entry = "setup.sh"
+```rust
+// conformance: the published bootloader reaches the host-registered JVM product specimen.
+
+#![cfg(not(any(feature = "dynamic-native", feature = "wasm")))]
+
+use std::process::Command;
+
+#[test]
+fn published_binary_runs_caller_selected_bytecode() {
+    let hex = include_str!("fixtures/StaticInt.hex").trim();
+    let output = Command::new(env!("CARGO_BIN_EXE_sim"))
+        .args(["jvm", hex, "StaticInt", "wholePipeline", "(II)I", "5", "6"])
+        .output()
+        .unwrap();
+    assert!(
+        output.status.success(),
+        "{}",
+        String::from_utf8_lossy(&output.stderr)
+    );
+    let stdout = String::from_utf8(output.stdout).unwrap();
+    assert!(stdout.contains("JVM value: 22"), "{stdout}");
+}
 ```

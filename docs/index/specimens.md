@@ -524,28 +524,28 @@
 | `` | `recipe/sim-platform/crates/sim-platform-windows/01-basics/process-cancellation` | `crate/sim-platform-windows` | `recipe` | `crates/sim-platform-windows/recipes/01-basics/process-cancellation/recipe.toml` | `` | `` | `false` | `false` |
 | `` | `recipe/sim-platform/crates/sim-table-fs/01-basics/grep-tree` | `local/sim-platform/crate/sim-table-fs` | `recipe` | `crates/sim-table-fs/recipes/01-basics/grep-tree/recipe.toml` | `lisp` | `` | `false` | `false` |
 | `` | `recipe/sim-platform/crates/sim-table-fs/01-basics/read-edit-file` | `local/sim-platform/crate/sim-table-fs` | `recipe` | `crates/sim-table-fs/recipes/01-basics/read-edit-file/recipe.toml` | `lisp` | `` | `false` | `false` |
-| `` | `recipe/sim-run/01-basics/hello` | `crate/sim-run` | `recipe` | `recipes/01-basics/hello/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
-| `feature/sim-run/bootloader` | `recipe/sim-run/01-basics/version` | `crate/sim-run` | `recipe` | `recipes/01-basics/version/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
-| `feature/sim-run/bootloader` | `recipe/sim-run/02-scenarios/boot-lisp-eval` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/boot-lisp-eval/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
-| `` | `recipe/sim-run/02-scenarios/bytes-lib` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/bytes-lib/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
-| `` | `recipe/sim-run/02-scenarios/config-cookbook-override` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/config-cookbook-override/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
-| `` | `recipe/sim-run/02-scenarios/config-effective` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/config-effective/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
-| `` | `recipe/sim-run/02-scenarios/config-status` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/config-status/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
-| `` | `recipe/sim-run/02-scenarios/fake-crates-io` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/fake-crates-io/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
-| `feature/sim-run/terminal-surface` | `recipe/sim-run/02-scenarios/host-verb` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/host-verb/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
-| `feature/sim-run/loadable-hot-generation` | `recipe/sim-run/02-scenarios/hotload-generation-lifecycle` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/hotload-generation-lifecycle/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
-| `feature/sim-run/runtime-index` | `recipe/sim-run/02-scenarios/index-examples` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/index-examples/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
-| `feature/sim-run/runtime-index` | `recipe/sim-run/02-scenarios/index-find-codec` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/index-find-codec/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
-| `feature/sim-run/runtime-index` | `recipe/sim-run/02-scenarios/index-list-languages` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/index-list-languages/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
-| `feature/sim-run/runtime-index` | `recipe/sim-run/02-scenarios/index-trace-cli` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/index-trace-cli/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
-| `` | `recipe/sim-run/02-scenarios/inspect-manifest` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/inspect-manifest/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
-| `feature/sim-run/jvm-command` | `recipe/sim-run/02-scenarios/jvm-product` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/jvm-product/recipe.toml` | `` | `xtask check-recipes` | `true` | `true` |
-| `` | `recipe/sim-run/02-scenarios/loadable-site` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/loadable-site/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
-| `` | `recipe/sim-run/02-scenarios/placement-report` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/placement-report/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
-| `` | `recipe/sim-run/02-scenarios/server-verb` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/server-verb/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
-| `` | `recipe/sim-run/crates/sim-cli-core/01-basics/entrypoint` | `crate/sim-cli-core` | `recipe` | `crates/sim-cli-core/recipes/01-basics/entrypoint/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
-| `` | `recipe/sim-run/estate-reviewed-model` | `crate/sim-run` | `recipe` | `recipes/estate-reviewed-model/recipe.toml` | `` | `xtask check-recipes` | `true` | `true` |
-| `feature/sim-run/index` | `recipe/sim-run/publish-readiness/package-list` | `crate/sim-run` | `recipe` | `recipes/publish-readiness/package-list/recipe.toml` | `shell` | `xtask check-recipes` | `true` | `true` |
+| `` | `recipe/sim-run/01-basics/hello` | `crate/sim-run` | `recipe` | `recipes/01-basics/hello/recipe.toml` | `shell` | `` | `false` | `false` |
+| `` | `recipe/sim-run/01-basics/version` | `crate/sim-run` | `recipe` | `recipes/01-basics/version/recipe.toml` | `shell` | `` | `false` | `false` |
+| `` | `recipe/sim-run/02-scenarios/boot-lisp-eval` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/boot-lisp-eval/recipe.toml` | `shell` | `` | `false` | `false` |
+| `` | `recipe/sim-run/02-scenarios/bytes-lib` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/bytes-lib/recipe.toml` | `shell` | `` | `false` | `false` |
+| `` | `recipe/sim-run/02-scenarios/config-cookbook-override` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/config-cookbook-override/recipe.toml` | `shell` | `` | `false` | `false` |
+| `` | `recipe/sim-run/02-scenarios/config-effective` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/config-effective/recipe.toml` | `shell` | `` | `false` | `false` |
+| `` | `recipe/sim-run/02-scenarios/config-status` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/config-status/recipe.toml` | `shell` | `` | `false` | `false` |
+| `` | `recipe/sim-run/02-scenarios/fake-crates-io` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/fake-crates-io/recipe.toml` | `shell` | `` | `false` | `false` |
+| `` | `recipe/sim-run/02-scenarios/host-verb` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/host-verb/recipe.toml` | `shell` | `` | `false` | `false` |
+| `` | `recipe/sim-run/02-scenarios/hotload-generation-lifecycle` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/hotload-generation-lifecycle/recipe.toml` | `shell` | `` | `false` | `false` |
+| `` | `recipe/sim-run/02-scenarios/index-examples` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/index-examples/recipe.toml` | `shell` | `` | `false` | `false` |
+| `` | `recipe/sim-run/02-scenarios/index-find-codec` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/index-find-codec/recipe.toml` | `shell` | `` | `false` | `false` |
+| `` | `recipe/sim-run/02-scenarios/index-list-languages` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/index-list-languages/recipe.toml` | `shell` | `` | `false` | `false` |
+| `` | `recipe/sim-run/02-scenarios/index-trace-cli` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/index-trace-cli/recipe.toml` | `shell` | `` | `false` | `false` |
+| `` | `recipe/sim-run/02-scenarios/inspect-manifest` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/inspect-manifest/recipe.toml` | `shell` | `` | `false` | `false` |
+| `` | `recipe/sim-run/02-scenarios/jvm-product` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/jvm-product/recipe.toml` | `` | `` | `false` | `false` |
+| `` | `recipe/sim-run/02-scenarios/loadable-site` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/loadable-site/recipe.toml` | `shell` | `` | `false` | `false` |
+| `` | `recipe/sim-run/02-scenarios/placement-report` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/placement-report/recipe.toml` | `shell` | `` | `false` | `false` |
+| `` | `recipe/sim-run/02-scenarios/server-verb` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/server-verb/recipe.toml` | `shell` | `` | `false` | `false` |
+| `` | `recipe/sim-run/crates/sim-cli-core/01-basics/entrypoint` | `crate/sim-cli-core` | `recipe` | `crates/sim-cli-core/recipes/01-basics/entrypoint/recipe.toml` | `shell` | `` | `false` | `false` |
+| `` | `recipe/sim-run/estate-reviewed-model` | `crate/sim-run` | `recipe` | `recipes/estate-reviewed-model/recipe.toml` | `` | `` | `false` | `false` |
+| `` | `recipe/sim-run/publish-readiness/package-list` | `crate/sim-run` | `recipe` | `recipes/publish-readiness/package-list/recipe.toml` | `shell` | `` | `false` | `false` |
 | `` | `recipe/sim-runtime/crates/sim-lib-binding/01-basics/let-square` | `crate/sim-lib-binding` | `recipe` | `crates/sim-lib-binding/recipes/01-basics/let-square/recipe.toml` | `lisp` | `` | `false` | `false` |
 | `` | `recipe/sim-runtime/crates/sim-lib-class/01-basics/neutral-class` | `crate/sim-lib-class` | `recipe` | `crates/sim-lib-class/recipes/01-basics/neutral-class/recipe.toml` | `` | `` | `false` | `false` |
 | `` | `recipe/sim-runtime/crates/sim-lib-control/01-basics/if-branch` | `local/sim-runtime/crate/sim-lib-control` | `recipe` | `crates/sim-lib-control/recipes/01-basics/if-branch/recipe.toml` | `lisp` | `` | `false` | `false` |
@@ -1060,6 +1060,7 @@
 | `feature/sim-run/loaders` | `spec-test/sim-run/crates/sim-run-loaders/src/native/codec_proxy_tests` | `crate/sim-run-loaders` | `spec-test` | `crates/sim-run-loaders/src/native/codec_proxy_tests.rs` | `codec` | `cargo test` | `true` | `true` |
 | `feature/sim-run/estate-command` | `spec-test/sim-run/crates/sim-run/src/estate` | `crate/sim-run` | `spec-test` | `crates/sim-run/src/estate.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/platform-command` | `spec-test/sim-run/crates/sim-run/src/platform` | `crate/sim-run` | `spec-test` | `crates/sim-run/src/platform.rs` | `` | `cargo test` | `true` | `true` |
+| `feature/sim-run/prove-command` | `spec-test/sim-run/crates/sim-run/src/prove` | `crate/sim-run` | `spec-test` | `crates/sim-run/src/prove.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/relation-command` | `spec-test/sim-run/crates/sim-run/src/relation` | `crate/sim-run` | `spec-test` | `crates/sim-run/src/relation.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/search-command` | `spec-test/sim-run/crates/sim-run/src/search` | `crate/sim-run` | `spec-test` | `crates/sim-run/src/search.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/study-command` | `spec-test/sim-run/crates/sim-run/src/study` | `crate/sim-run` | `spec-test` | `crates/sim-run/src/study.rs` | `` | `cargo test` | `true` | `true` |
@@ -1071,6 +1072,7 @@
 | `feature/sim-run/jvm-command` | `spec-test/sim-run/crates/sim-run/tests/jvm_product` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/jvm_product.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/repl` | `spec-test/sim-run/crates/sim-run/tests/native_dynamic_repl` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/native_dynamic_repl.rs` | `shape` | `cargo test` | `true` | `true` |
 | `feature/sim-run/physics-library-selection` | `spec-test/sim-run/crates/sim-run/tests/physics` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/physics.rs` | `lisp` | `cargo test` | `true` | `true` |
+| `feature/sim-run/prove-command` | `spec-test/sim-run/crates/sim-run/tests/prove_gate` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/prove_gate.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/watch` | `spec-test/sim-run/crates/sim-run/tests/watch` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/watch.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-run/crates/sim-run/tests/world` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/world.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-runtime/incremental-query-core` | `spec-test/sim-runtime/crates/sim-incremental-core/src/tests` | `crate/sim-incremental-core` | `spec-test` | `crates/sim-incremental-core/src/tests.rs` | `` | `cargo test` | `true` | `true` |
