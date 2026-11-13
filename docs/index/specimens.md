@@ -544,6 +544,7 @@
 | `` | `recipe/sim-run/02-scenarios/placement-report` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/placement-report/recipe.toml` | `shell` | `` | `false` | `false` |
 | `` | `recipe/sim-run/02-scenarios/roadmap-status` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/roadmap-status/recipe.toml` | `shell` | `` | `false` | `false` |
 | `` | `recipe/sim-run/02-scenarios/server-verb` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/server-verb/recipe.toml` | `shell` | `` | `false` | `false` |
+| `` | `recipe/sim-run/02-scenarios/succession-fresh` | `crate/sim-run` | `recipe` | `recipes/02-scenarios/succession-fresh/recipe.toml` | `shell` | `` | `false` | `false` |
 | `` | `recipe/sim-run/crates/sim-cli-core/01-basics/entrypoint` | `crate/sim-cli-core` | `recipe` | `crates/sim-cli-core/recipes/01-basics/entrypoint/recipe.toml` | `shell` | `` | `false` | `false` |
 | `` | `recipe/sim-run/estate-reviewed-model` | `crate/sim-run` | `recipe` | `recipes/estate-reviewed-model/recipe.toml` | `` | `` | `false` | `false` |
 | `` | `recipe/sim-run/publish-readiness/package-list` | `crate/sim-run` | `recipe` | `recipes/publish-readiness/package-list/recipe.toml` | `shell` | `` | `false` | `false` |
@@ -1075,6 +1076,7 @@
 | `feature/sim-run/physics-library-selection` | `spec-test/sim-run/crates/sim-run/tests/physics` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/physics.rs` | `lisp` | `cargo test` | `true` | `true` |
 | `feature/sim-run/prove-command` | `spec-test/sim-run/crates/sim-run/tests/prove_gate` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/prove_gate.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/roadmap-command` | `spec-test/sim-run/crates/sim-run/tests/roadmap` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/roadmap.rs` | `` | `cargo test` | `true` | `true` |
+| `feature/sim-run/succession-command` | `spec-test/sim-run/crates/sim-run/tests/succession_gate` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/succession_gate.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-run/watch` | `spec-test/sim-run/crates/sim-run/tests/watch` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/watch.rs` | `` | `cargo test` | `true` | `true` |
 | `` | `spec-test/sim-run/crates/sim-run/tests/world` | `crate/sim-run` | `spec-test` | `crates/sim-run/tests/world.rs` | `` | `cargo test` | `true` | `true` |
 | `feature/sim-runtime/incremental-query-core` | `spec-test/sim-runtime/crates/sim-incremental-core/src/tests` | `crate/sim-incremental-core` | `spec-test` | `crates/sim-incremental-core/src/tests.rs` | `` | `cargo test` | `true` | `true` |

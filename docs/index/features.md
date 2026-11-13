@@ -311,6 +311,7 @@
 | [`feature/sim-run/runtime-index`](features/feature--sim-run--runtime-index.md) | `crate/sim-lib-index` | 0 |
 | [`feature/sim-run/search-command`](features/feature--sim-run--search-command.md) | `crate/sim-run` | 1 |
 | [`feature/sim-run/study-command`](features/feature--sim-run--study-command.md) | `crate/sim-run` | 1 |
+| [`feature/sim-run/succession-command`](features/feature--sim-run--succession-command.md) | `crate/sim-run` | 1 |
 | [`feature/sim-run/terminal-surface`](features/feature--sim-run--terminal-surface.md) | `crate/sim-view-tty` | 0 |
 | [`feature/sim-run/watch`](features/feature--sim-run--watch.md) | `crate/sim-run` | 1 |
 | [`feature/sim-run/world-command`](features/feature--sim-run--world-command.md) | `crate/sim-run` | 1 |

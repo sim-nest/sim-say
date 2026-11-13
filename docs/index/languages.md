@@ -842,6 +842,7 @@
 | `specimen` | `shell` | recipes/02-scenarios/placement-report/recipe.toml |
 | `specimen` | `shell` | recipes/02-scenarios/roadmap-status/recipe.toml |
 | `specimen` | `shell` | recipes/02-scenarios/server-verb/recipe.toml |
+| `specimen` | `shell` | recipes/02-scenarios/succession-fresh/recipe.toml |
 | `specimen` | `shell` | recipes/publish-readiness/package-list/recipe.toml |
 | `specimen` | `text` | recipes/stewardship/memo-acceptance/recipe.toml |
 | `specimen` | `toml` | recipes/device/revision-4-constellation/recipe.toml |

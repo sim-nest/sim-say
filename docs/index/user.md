@@ -311,6 +311,7 @@
 | [`feature/sim-run/runtime-index`](features/feature--sim-run--runtime-index.md) | `crate/sim-lib-index` | Explore merged SIM Index graph and public source facts through the bootloader as stable Table/Dir rows and structured query output. | 0 |
 | [`feature/sim-run/search-command`](features/feature--sim-run--search-command.md) | `crate/sim-run` | Select the search verb and delegate canonical query, fetch, research, and show behavior to sim-lib-search. | 1 |
 | [`feature/sim-run/study-command`](features/feature--sim-run--study-command.md) | `crate/sim-run` | Dispatch the loadable study product through sim study without adding study behavior to the bootloader. | 1 |
+| [`feature/sim-run/succession-command`](features/feature--sim-run--succession-command.md) | `crate/sim-run` | Select world succeed and world fresh and delegate one exported change to sim-lib-world. | 1 |
 | [`feature/sim-run/terminal-surface`](features/feature--sim-run--terminal-surface.md) | `crate/sim-view-tty` | Render and interpret terminal view intents through the loaded TTY surface library. | 0 |
 | [`feature/sim-run/watch`](features/feature--sim-run--watch.md) | `crate/sim-run` | Start modeled, imported, or live watch plans through the shared command bootloader. | 1 |
 | [`feature/sim-run/world-command`](features/feature--sim-run--world-command.md) | `crate/sim-run` | Select the world verb and delegate pure project, diff, and why behavior to sim-lib-world. | 1 |
