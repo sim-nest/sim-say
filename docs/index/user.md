@@ -307,6 +307,7 @@
 | [`feature/sim-run/prove-command`](features/feature--sim-run--prove-command.md) | `crate/sim-run` | Select the prove verb and delegate cold proof, status, and frontier reads to sim-lib-world. | 2 |
 | [`feature/sim-run/relation-command`](features/feature--sim-run--relation-command.md) | `crate/sim-run` | Register the standard loadable relation command and hand the relation verb to storage-owned behavior. | 1 |
 | [`feature/sim-run/repl`](features/feature--sim-run--repl.md) | `crate/sim-lib-repl` | Run a SIM read-eval-print loop through the loaded REPL library and command surface. | 1 |
+| [`feature/sim-run/roadmap-command`](features/feature--sim-run--roadmap-command.md) | `crate/sim-run` | Select the roadmap verb and delegate local status to the published runner. | 1 |
 | [`feature/sim-run/runtime-index`](features/feature--sim-run--runtime-index.md) | `crate/sim-lib-index` | Explore merged SIM Index graph and public source facts through the bootloader as stable Table/Dir rows and structured query output. | 0 |
 | [`feature/sim-run/search-command`](features/feature--sim-run--search-command.md) | `crate/sim-run` | Select the search verb and delegate canonical query, fetch, research, and show behavior to sim-lib-search. | 1 |
 | [`feature/sim-run/study-command`](features/feature--sim-run--study-command.md) | `crate/sim-run` | Dispatch the loadable study product through sim study without adding study behavior to the bootloader. | 1 |
