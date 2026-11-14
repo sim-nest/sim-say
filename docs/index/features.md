@@ -290,7 +290,8 @@
 | [`feature/sim-platform/wasi-capsule`](features/feature--sim-platform--wasi-capsule.md) | `crate/sim-platform-wasi` | 1 |
 | [`feature/sim-platform/web-shell-realization`](features/feature--sim-platform--web-shell-realization.md) | `crate/sim-platform-web-shell` | 1 |
 | [`feature/sim-platform/windows-capsule`](features/feature--sim-platform--windows-capsule.md) | `crate/sim-platform-windows` | 1 |
-| [`feature/sim-run/bootloader`](features/feature--sim-run--bootloader.md) | `crate/sim-run-core` | 0 |
+| [`feature/sim-run/bootloader`](features/feature--sim-run--bootloader.md) | `crate/sim-run-core` | 1 |
+| [`feature/sim-run/command-entry`](features/feature--sim-run--command-entry.md) | `crate/sim-cli-core` | 1 |
 | [`feature/sim-run/compute`](features/feature--sim-run--compute.md) | `crate/sim-run` | 1 |
 | [`feature/sim-run/continuity-command`](features/feature--sim-run--continuity-command.md) | `crate/sim-run` | 1 |
 | [`feature/sim-run/deliver-command`](features/feature--sim-run--deliver-command.md) | `crate/sim-run` | 1 |
@@ -309,11 +310,11 @@
 | [`feature/sim-run/relation-command`](features/feature--sim-run--relation-command.md) | `crate/sim-run` | 1 |
 | [`feature/sim-run/repl`](features/feature--sim-run--repl.md) | `crate/sim-lib-repl` | 1 |
 | [`feature/sim-run/roadmap-command`](features/feature--sim-run--roadmap-command.md) | `crate/sim-run` | 1 |
-| [`feature/sim-run/runtime-index`](features/feature--sim-run--runtime-index.md) | `crate/sim-lib-index` | 0 |
+| [`feature/sim-run/runtime-index`](features/feature--sim-run--runtime-index.md) | `crate/sim-lib-index` | 1 |
 | [`feature/sim-run/search-command`](features/feature--sim-run--search-command.md) | `crate/sim-run` | 1 |
 | [`feature/sim-run/study-command`](features/feature--sim-run--study-command.md) | `crate/sim-run` | 1 |
 | [`feature/sim-run/succession-command`](features/feature--sim-run--succession-command.md) | `crate/sim-run` | 1 |
-| [`feature/sim-run/terminal-surface`](features/feature--sim-run--terminal-surface.md) | `crate/sim-view-tty` | 0 |
+| [`feature/sim-run/terminal-surface`](features/feature--sim-run--terminal-surface.md) | `crate/sim-view-tty` | 1 |
 | [`feature/sim-run/watch`](features/feature--sim-run--watch.md) | `crate/sim-run` | 1 |
 | [`feature/sim-run/world-command`](features/feature--sim-run--world-command.md) | `crate/sim-run` | 1 |
 | [`feature/sim-runtime/binding-organ`](features/feature--sim-runtime--binding-organ.md) | `crate/sim-lib-binding` | 1 |

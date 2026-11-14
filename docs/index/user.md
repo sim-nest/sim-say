@@ -290,7 +290,8 @@
 | [`feature/sim-platform/wasi-capsule`](features/feature--sim-platform--wasi-capsule.md) | `crate/sim-platform-wasi` | Inspect a closed WASI import surface and realize it through explicit Table/Dir and canonical platform or domain ports. | 1 |
 | [`feature/sim-platform/web-shell-realization`](features/feature--sim-platform--web-shell-realization.md) | `crate/sim-platform-web-shell` | Realize the host-neutral web shell through Linux-owned process, transport, mount, time, entropy, and external-open services. | 1 |
 | [`feature/sim-platform/windows-capsule`](features/feature--sim-platform--windows-capsule.md) | `crate/sim-platform-windows` | Realize frozen platform and domain ports through bounded Win32 and WinRT mechanics and one content-bound package. | 1 |
-| [`feature/sim-run/bootloader`](features/feature--sim-run--bootloader.md) | `crate/sim-run-core` | Start product commands through the shared bootloader and loaded runtime libraries. | 0 |
+| [`feature/sim-run/bootloader`](features/feature--sim-run--bootloader.md) | `crate/sim-run-core` | Start product commands through the shared bootloader and loaded runtime libraries. | 1 |
+| [`feature/sim-run/command-entry`](features/feature--sim-run--command-entry.md) | `crate/sim-cli-core` | Share one command-entry naming contract between loaded libraries and the bootloader. | 1 |
 | [`feature/sim-run/compute`](features/feature--sim-run--compute.md) | `crate/sim-run` | Start modeled and automatic compute inspection through the shared command bootloader. | 1 |
 | [`feature/sim-run/continuity-command`](features/feature--sim-run--continuity-command.md) | `crate/sim-run` | Compose continuity plans, platform capsules, sites, phone surfaces, and optional providers through the generic bootloader registry. | 1 |
 | [`feature/sim-run/deliver-command`](features/feature--sim-run--deliver-command.md) | `crate/sim-run` | Select world deliver and delegate the delivery record to sim-lib-world. | 1 |
@@ -309,11 +310,11 @@
 | [`feature/sim-run/relation-command`](features/feature--sim-run--relation-command.md) | `crate/sim-run` | Register the standard loadable relation command and hand the relation verb to storage-owned behavior. | 1 |
 | [`feature/sim-run/repl`](features/feature--sim-run--repl.md) | `crate/sim-lib-repl` | Run a SIM read-eval-print loop through the loaded REPL library and command surface. | 1 |
 | [`feature/sim-run/roadmap-command`](features/feature--sim-run--roadmap-command.md) | `crate/sim-run` | Select the roadmap verb and delegate local status to the published runner. | 1 |
-| [`feature/sim-run/runtime-index`](features/feature--sim-run--runtime-index.md) | `crate/sim-lib-index` | Explore merged SIM Index graph and public source facts through the bootloader as stable Table/Dir rows and structured query output. | 0 |
+| [`feature/sim-run/runtime-index`](features/feature--sim-run--runtime-index.md) | `crate/sim-lib-index` | Explore merged SIM Index graph and public source facts through the bootloader as stable Table/Dir rows and structured query output. | 1 |
 | [`feature/sim-run/search-command`](features/feature--sim-run--search-command.md) | `crate/sim-run` | Select the search verb and delegate canonical query, fetch, research, and show behavior to sim-lib-search. | 1 |
 | [`feature/sim-run/study-command`](features/feature--sim-run--study-command.md) | `crate/sim-run` | Dispatch the loadable study product through sim study without adding study behavior to the bootloader. | 1 |
 | [`feature/sim-run/succession-command`](features/feature--sim-run--succession-command.md) | `crate/sim-run` | Select world succeed and world fresh and delegate one exported change to sim-lib-world. | 1 |
-| [`feature/sim-run/terminal-surface`](features/feature--sim-run--terminal-surface.md) | `crate/sim-view-tty` | Render and interpret terminal view intents through the loaded TTY surface library. | 0 |
+| [`feature/sim-run/terminal-surface`](features/feature--sim-run--terminal-surface.md) | `crate/sim-view-tty` | Render and interpret terminal view intents through the loaded TTY surface library. | 1 |
 | [`feature/sim-run/watch`](features/feature--sim-run--watch.md) | `crate/sim-run` | Start modeled, imported, or live watch plans through the shared command bootloader. | 1 |
 | [`feature/sim-run/world-command`](features/feature--sim-run--world-command.md) | `crate/sim-run` | Select the world verb and delegate pure project, diff, why, and deliver behavior to sim-lib-world. | 1 |
 | [`feature/sim-runtime/binding-organ`](features/feature--sim-runtime--binding-organ.md) | `crate/sim-lib-binding` | Bind declared calls and maintain lexical, dynamic, recursive, and live binding cells without guest-language ownership. | 1 |
