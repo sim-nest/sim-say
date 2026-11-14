@@ -6,7 +6,7 @@
 - Subject: `crate/sim-lib-world`
 - Canonical key: `crate/sim-lib-world/feature-sim-runtime-world-projection-product`
 
-Load open qualified projectors and expose pure project, diff, why, compose, read-only custody, resident cached status and why, stop acknowledgement, projection sensitivity, a sealed proof plan, explicit domain-port snapshots over sealed model batches, and an offline seal of the owning resolver inputs.
+Load open qualified projectors and expose pure project, diff, why, compose, read-only custody, resident cached status and why, stop acknowledgement, cleanup beats, missed-beat classification, projection sensitivity, a sealed proof plan, explicit domain-port snapshots over sealed model batches, and an offline seal of the owning resolver inputs.
 
 ## Anchors
 
