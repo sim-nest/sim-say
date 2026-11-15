@@ -11,25 +11,3 @@ Validate authority metadata and run resource-bound PKCE authorization-code trans
 ## Anchors
 
 - `anchor/crate/sim-lib-oauth-core`
-
-## Specimens
-
-- `recipe/sim-agent-net/crates/sim-lib-oauth-core/01-basics/authorization-code`
-
-## Worked Example
-
-Specimen `recipe/sim-agent-net/crates/sim-lib-oauth-core/01-basics/authorization-code` is checked by `xtask check-recipes`.
-
-Source `crates/sim-lib-oauth-core/recipes/01-basics/authorization-code/recipe.toml`:
-
-```toml
-id = "oauth-authorization-code"
-title = "Build a resource-bound authorization request"
-summary = "Compose injected entropy, consent, browser, storage, PKCE S256, state, issuer, least scopes, and one exact resource."
-codec = "lisp"
-setup = "setup.siml"
-purpose = "purpose.md"
-order = 10
-tags = ["oauth", "pkce", "client", "sandbox-descriptor"]
-requires = ["oauth-core"]
-```

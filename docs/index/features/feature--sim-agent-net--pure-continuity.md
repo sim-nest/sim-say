@@ -17,29 +17,3 @@ Validate versioned continuity plans and deterministically reduce hostile, reorde
 ## Surfaces
 
 - `cli/sim-lib-continuity-recipe-hostile-replay`
-
-## Specimens
-
-- `recipe/sim-agent-net/crates/sim-lib-continuity/01-basics/hostile-replay`
-
-## Worked Example
-
-Specimen `recipe/sim-agent-net/crates/sim-lib-continuity/01-basics/hostile-replay` is checked by `xtask check-recipes`.
-
-Source `crates/sim-lib-continuity/recipes/01-basics/hostile-replay/recipe.toml`:
-
-```toml
-id = "hostile-replay"
-title = "Replay a hostile intermittent trace"
-codec = "rust"
-setup = "src/main.rs"
-purpose = "purpose.md"
-expected = "expected.txt"
-order = 10
-tags = ["continuity", "journal", "pure", "replay", "rust"]
-requires = ["sim-lib-continuity"]
-
-[[expect]]
-form = 0
-result = "stable turns: 2; stable intents: 2"
-```
