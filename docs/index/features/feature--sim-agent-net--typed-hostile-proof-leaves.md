@@ -8,6 +8,11 @@
 
 Admit grounded catalog leaves, execute bounded commands through the shared sandbox, and replay normalized proof receipts without duplicate effects.
 
+## Anchors
+
+- `anchor/export/sim-lib-roadmap-runner/shape/check-receipt`
+- `anchor/export/sim-lib-roadmap-runner/shape/check-result`
+
 ## Specimens
 
 - `spec-test/sim-agent-net/crates/sim-lib-roadmap-runner/src/proof`
