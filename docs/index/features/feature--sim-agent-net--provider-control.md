@@ -46,24 +46,3 @@ Register open provider families, preserve independently selectable seats, valida
 ## Surfaces
 
 - `cli/provider`
-
-## Specimens
-
-- `recipe/sim-agent-net/crates/sim-lib-provider/01-basics/open-seat`
-
-## Worked Example
-
-Specimen `recipe/sim-agent-net/crates/sim-lib-provider/01-basics/open-seat` is checked by `xtask check-recipes`.
-
-Source `crates/sim-lib-provider/recipes/01-basics/open-seat/recipe.toml`:
-
-```toml
-id = "open-seat"
-title = "Open provider seat"
-codec = "lisp"
-setup = "setup.siml"
-purpose = "purpose.md"
-order = 10
-tags = ["provider", "seat", "setup", "model-runner"]
-requires = ["core", "codec/lisp"]
-```

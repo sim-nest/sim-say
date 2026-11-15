@@ -11,24 +11,3 @@ A bounded HTTP effect owner turns any SearchWireCodec into ordinary Retriever an
 ## Anchors
 
 - `anchor/crate/sim-lib-search-http`
-
-## Specimens
-
-- `recipe/sim-agent-net/crates/sim-lib-search-http/01-basics/fixture-site`
-
-## Worked Example
-
-Specimen `recipe/sim-agent-net/crates/sim-lib-search-http/01-basics/fixture-site` is checked by `xtask check-recipes`.
-
-Source `crates/sim-lib-search-http/recipes/01-basics/fixture-site/recipe.toml`:
-
-```toml
-id = "fixture-site"
-title = "Provider-neutral fixture search site"
-codec = "lisp"
-setup = "setup.siml"
-purpose = "purpose.md"
-order = 10
-tags = ["search", "http", "skill", "cassette", "fixture"]
-requires = ["search-http", "net/http"]
-```
