@@ -705,12 +705,15 @@
 | `specimen` | `shape` | crates/sim-conformance/tests/spec/support.rs |
 | `specimen` | `shape` | crates/sim-estate-project/src/lib.rs |
 | `specimen` | `shape` | crates/sim-ledger/src/reconciliation.rs |
+| `specimen` | `shape` | crates/sim-lib-agent-conduct-core/src/tests.rs |
+| `specimen` | `shape` | crates/sim-lib-agent-conduct/src/catalog_tests.rs |
 | `specimen` | `shape` | crates/sim-lib-agent-conduct/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-agent-runner-http/src/runner.rs |
 | `specimen` | `shape` | crates/sim-lib-agent-runner-local/tests/load_register.rs |
 | `specimen` | `shape` | crates/sim-lib-agent/src/agents/model/types.rs |
 | `specimen` | `shape` | crates/sim-lib-agent/src/atelier/channel.rs |
 | `specimen` | `shape` | crates/sim-lib-agent/src/atelier/instrument_adoption_tests.rs |
+| `specimen` | `shape` | crates/sim-lib-agent/src/cli.rs |
 | `specimen` | `shape` | crates/sim-lib-agent/src/tests/agent_ai_placement_swap.rs |
 | `specimen` | `shape` | crates/sim-lib-agent/src/tests/agent_ai_tools.rs |
 | `specimen` | `shape` | crates/sim-lib-agent/src/tests/standard_steps.rs |
@@ -726,6 +729,7 @@
 | `specimen` | `shape` | crates/sim-lib-compute-wgpu/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-construction-project/src/citizen.rs |
 | `specimen` | `shape` | crates/sim-lib-construction-project/src/outcome_tests.rs |
+| `specimen` | `shape` | crates/sim-lib-continuity/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-discrete-graph/src/assignment/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-discrete/src/forms.rs |
 | `specimen` | `shape` | crates/sim-lib-doc-ledger/src/reconciliation.rs |
