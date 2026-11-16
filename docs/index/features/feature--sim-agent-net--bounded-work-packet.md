@@ -8,6 +8,10 @@
 
 Derive one work packet from canonical input and admit it through the typed builder at the receiving worker.
 
+## Anchors
+
+- `anchor/export/sim-lib-roadmap-runner/shape/proposal`
+
 ## Specimens
 
 - `spec-test/sim-agent-net/crates/sim-lib-roadmap-runner/src/packet_work_more_tests`
