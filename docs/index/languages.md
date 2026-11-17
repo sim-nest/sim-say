@@ -50,6 +50,7 @@
 | `specimen` | `codec` | crates/sim-codec-mcp/src/wire_authority.rs |
 | `specimen` | `codec` | crates/sim-codec-mcp/src/wire_authority/helpers.rs |
 | `specimen` | `codec` | crates/sim-codec-mcp/tests/schema_oracle.rs |
+| `specimen` | `codec` | crates/sim-codec-mspdi/src/tests.rs |
 | `specimen` | `codec` | crates/sim-codec-odf/src/tests.rs |
 | `specimen` | `codec` | crates/sim-codec-pratt/src/tests.rs |
 | `specimen` | `codec` | crates/sim-codec-python/src/tests.rs |
@@ -103,6 +104,7 @@
 | `specimen` | `lisp` | crates/sim-codec-search-searxng/recipes/01-basics/request-response/recipe.toml |
 | `specimen` | `lisp` | crates/sim-codec/recipes/01-basics/positions-and-limits/recipe.toml |
 | `specimen` | `lisp` | crates/sim-conformance-core/recipes/01-basics/scoped-receipt/recipe.toml |
+| `specimen` | `lisp` | crates/sim-conformance-core/src/neutral_input/table.rs |
 | `specimen` | `lisp` | crates/sim-expr-tree-calc/src/tests.rs |
 | `specimen` | `lisp` | crates/sim-expr-tree-calc/src/tests/face_budget.rs |
 | `specimen` | `lisp` | crates/sim-expr-tree-core/src/tests.rs |
@@ -239,6 +241,7 @@
 | `specimen` | `lisp` | crates/sim-lib-doc-web/recipes/01-basics/capture-to-citation/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-doc-web/recipes/01-basics/parallel-reading/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-exec/recipes/01-basics/bounded-process/recipe.toml |
+| `specimen` | `lisp` | crates/sim-lib-expr-tree-server/src/tests/web.rs |
 | `specimen` | `lisp` | crates/sim-lib-expr-tree/recipes/01-basics/finite-tree/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-expr-tree/recipes/02-calculation/automatic-and-directed/recipe.toml |
 | `specimen` | `lisp` | crates/sim-lib-expr-tree/src/tests.rs |
@@ -565,6 +568,7 @@
 | `specimen` | `lisp` | crates/sim-transport-ports/recipes/01-basics/transport-port-descriptor/recipe.toml |
 | `specimen` | `lisp` | crates/sim-web-shell/recipes/01-basics/open-workspace/recipe.toml |
 | `specimen` | `lisp` | crates/sim-work-core/recipes/01-basics/bounded-packet/recipe.toml |
+| `specimen` | `lisp` | crates/simdoc/src/publication_tests.rs |
 | `specimen` | `lisp` | recipes/01-basics/boot-runtime/recipe.toml |
 | `specimen` | `lisp` | recipes/01-basics/fake-backend/recipe.toml |
 | `specimen` | `lisp` | recipes/03-server/web-session/recipe.toml |
@@ -684,6 +688,15 @@
 | `specimen` | `shape` | crates/sim-conformance-core/src/checker.rs |
 | `specimen` | `shape` | crates/sim-conformance-core/src/identity.rs |
 | `specimen` | `shape` | crates/sim-conformance-core/src/live_authority.rs |
+| `specimen` | `shape` | crates/sim-conformance-core/src/neutral_input/decode.rs |
+| `specimen` | `shape` | crates/sim-conformance-core/src/neutral_input/grammar.rs |
+| `specimen` | `shape` | crates/sim-conformance-core/src/neutral_input/mod.rs |
+| `specimen` | `shape` | crates/sim-conformance-core/src/neutral_input/tests.rs |
+| `specimen` | `shape` | crates/sim-conformance-core/src/neutral_input/tests/admission.rs |
+| `specimen` | `shape` | crates/sim-conformance-core/src/neutral_input/tests/oracle_guards.rs |
+| `specimen` | `shape` | crates/sim-conformance-core/src/neutral_input/tests/regions.rs |
+| `specimen` | `shape` | crates/sim-conformance-core/src/neutral_input/tests/row_guards.rs |
+| `specimen` | `shape` | crates/sim-conformance-core/src/neutral_input/types.rs |
 | `specimen` | `shape` | crates/sim-conformance-core/tests/bootstrap_contract.rs |
 | `specimen` | `shape` | crates/sim-conformance-packs/src/catalog.rs |
 | `specimen` | `shape` | crates/sim-conformance-packs/src/executor.rs |
@@ -762,8 +775,10 @@
 | `specimen` | `shape` | crates/sim-lib-mcp/tests/serve_mcp.rs |
 | `specimen` | `shape` | crates/sim-lib-model-test-packs/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-model-test/src/protocol_tests.rs |
+| `specimen` | `shape` | crates/sim-lib-music-analysis/src/foundry/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-music-counterpoint/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-music-notation/src/tests.rs |
+| `specimen` | `shape` | crates/sim-lib-music-shapes/tests/third_party_adaptation.rs |
 | `specimen` | `shape` | crates/sim-lib-mutation/src/managed_tests.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-cas/src/implementation/citizen.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-complex/src/implementation/literal.rs |
@@ -781,6 +796,7 @@
 | `specimen` | `shape` | crates/sim-lib-numbers-tensor/src/implementation/citizen.rs |
 | `specimen` | `shape` | crates/sim-lib-numbers-tensor/src/tests/execution.rs |
 | `specimen` | `shape` | crates/sim-lib-physics-power/tests/work.rs |
+| `specimen` | `shape` | crates/sim-lib-physics-study/tests/study.rs |
 | `specimen` | `shape` | crates/sim-lib-platform/src/runtime.rs |
 | `specimen` | `shape` | crates/sim-lib-provider/src/conformance.rs |
 | `specimen` | `shape` | crates/sim-lib-roadmap-runner/src/author_more_tests.rs |
@@ -800,6 +816,7 @@
 | `specimen` | `shape` | crates/sim-lib-stream-wrist/src/citizen.rs |
 | `specimen` | `shape` | crates/sim-lib-stream-xr/src/citizen.rs |
 | `specimen` | `shape` | crates/sim-lib-view-estate/src/lib.rs |
+| `specimen` | `shape` | crates/sim-lib-view-interference/src/tests.rs |
 | `specimen` | `shape` | crates/sim-lib-view/src/surface_tests.rs |
 | `specimen` | `shape` | crates/sim-lib-view/src/universal_tests.rs |
 | `specimen` | `shape` | crates/sim-lib-world/src/tests.rs |

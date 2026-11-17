@@ -14,29 +14,32 @@ Freeze row instances, row ordinals, roles, parent evidence, simultaneous groups,
 
 ## Specimens
 
-- `recipe/sim-music/crates/sim-lib-music-serial/01-basics/arrays-time-points`
-- `recipe/sim-music/crates/sim-lib-music-serial/01-basics/immutable-plan`
-- `recipe/sim-music/crates/sim-lib-music-serial/01-basics/strict-row-realization`
-- `recipe/sim-music/crates/sim-lib-music-serial/02-techniques/counter-voices`
-- `recipe/sim-music/crates/sim-lib-music-serial/02-techniques/derived-invariant-practice`
-- `recipe/sim-music/crates/sim-lib-music-serial/02-techniques/referential-subsets`
-- `recipe/sim-music/crates/sim-lib-music-serial/02-techniques/simultaneous-forms`
-- `recipe/sim-music/crates/sim-lib-music-serial/03-parameters/integral-parameters`
+- `spec-test/sim-music/crates/sim-lib-music-serial/tests/arrays_time_points_recipe`
+- `spec-test/sim-music/crates/sim-lib-music-serial/tests/counter_voices_recipe`
+- `spec-test/sim-music/crates/sim-lib-music-serial/tests/derived_invariant_practice_recipe`
+- `spec-test/sim-music/crates/sim-lib-music-serial/tests/immutable_plan_recipe`
+- `spec-test/sim-music/crates/sim-lib-music-serial/tests/integral_parameters_recipe`
+- `spec-test/sim-music/crates/sim-lib-music-serial/tests/referential_subsets_recipe`
+- `spec-test/sim-music/crates/sim-lib-music-serial/tests/simultaneous_forms_recipe`
+- `spec-test/sim-music/crates/sim-lib-music-serial/tests/strict_row_realization_recipe`
 
 ## Worked Example
 
-Specimen `recipe/sim-music/crates/sim-lib-music-serial/01-basics/arrays-time-points` is checked by `sh scripts/check-recipes.sh`.
+Specimen `spec-test/sim-music/crates/sim-lib-music-serial/tests/arrays_time_points_recipe` is checked by `cargo test`.
 
-Source `crates/sim-lib-music-serial/recipes/01-basics/arrays-time-points/recipe.toml`:
+Source `crates/sim-lib-music-serial/tests/arrays_time_points_recipe.rs`:
 
-```toml
-id = "arrays-time-points"
-title = "Analyze serial arrays and time-point rows"
-codec = "rust"
-setup = "setup.rs"
-summary = "Keep horizontal row order, vertical aggregate evidence, and onset order explicit without collapsing them into one score model."
-category = "Rust"
-tags = ["music", "serial", "array", "time-point", "analysis", "rust", "framework"]
-requires = ["music-serial", "pitch-serial", "serial-core", "music-core"]
-purpose = "purpose.md"
+```rust
+// SPDX-License-Identifier: MPL-2.0
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+// conformance: serial arrays and time points keep the immutable plan's temporal evidence.
+include!("../recipes/01-basics/arrays-time-points/setup.rs");
+
+#[test]
+fn public_arrays_time_points_recipe_runs() {
+    arrays_time_points().expect("arrays and time points scenario");
+}
 ```

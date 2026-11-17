@@ -15,12 +15,14 @@ Model host audio devices and load JACK, cpal, PipeWire, ALSA, ASIO, CoreAudio, a
 - `anchor/crate/sim-lib-stream-coreaudio`
 - `anchor/crate/sim-lib-stream-cpal`
 - `anchor/crate/sim-lib-stream-jack`
+- `anchor/crate/sim-lib-stream-jack-provider`
 - `anchor/crate/sim-lib-stream-pipewire`
 - `anchor/crate/sim-lib-stream-portaudio`
 - `anchor/runtime-lib/sim-lib-stream-alsa/alsa-lib`
 - `anchor/runtime-lib/sim-lib-stream-asio/asio-lib`
 - `anchor/runtime-lib/sim-lib-stream-coreaudio/core-audio-lib`
 - `anchor/runtime-lib/sim-lib-stream-cpal/cpal-provider-modeled`
+- `anchor/runtime-lib/sim-lib-stream-jack-provider/jack-provider-modeled`
 - `anchor/runtime-lib/sim-lib-stream-jack/fixture-provider-lib`
 - `anchor/runtime-lib/sim-lib-stream-jack/jack-lib`
 - `anchor/runtime-lib/sim-lib-stream-pipewire/pipe-wire-lib`

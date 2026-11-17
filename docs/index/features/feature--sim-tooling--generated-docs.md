@@ -10,18 +10,27 @@ Generate repo contracts, feature maps, card indexes, index fragments and claim c
 
 ## Anchors
 
+- `anchor/cli/simdoc`
 - `anchor/crate/simdoc`
 - `anchor/export/simdoc/browse/catalog`
 - `anchor/export/simdoc/codec/json`
 - `anchor/export/simdoc/codec/lisp`
+- `anchor/export/simdoc/registry/cache`
 - `anchor/export/simdoc/registry/catalog`
+- `anchor/export/simdoc/registry/index`
 - `anchor/export/xtask/codec-lisp`
 - `anchor/export/xtask/doc/chunk-recursive`
+- `anchor/export/xtask/registry/cache`
+- `anchor/export/xtask/registry/index`
 - `local/sim-tooling/anchor/crate/xtask`
 - `local/sim-tooling/anchor/doc/generated/card-index`
 - `local/sim-tooling/anchor/doc/generated/feature-map`
 - `local/sim-tooling/anchor/doc/generated/repo-contract`
 - `local/sim-tooling/anchor/doc/generated/sim-index-fragment`
+
+## Surfaces
+
+- `cli/simdoc`
 
 ## Specimens
 

@@ -197,6 +197,7 @@
 | `site/sim-lib-numbers-tensor` | `site` | `local/sim-numbers/crate/sim-lib-numbers-tensor` |
 | `site/sim-lib-stream-cpal` | `site` | `crate/sim-lib-stream-cpal` |
 | `site/sim-lib-stream-host` | `site` | `crate/sim-lib-stream-host` |
+| `site/sim-lib-stream-jack-provider` | `site` | `crate/sim-lib-stream-jack-provider` |
 | `site/sim-lib-topology` | `site` | `local/sim-stream/crate/sim-lib-topology` |
 | `site/sim-macros` | `site` | `crate/sim-macros` |
 | `site/sim-nest` | `site` | `crate/sim-nest` |

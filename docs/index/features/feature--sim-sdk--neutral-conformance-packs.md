@@ -11,6 +11,12 @@ Expose all 21 checker entrypoints. Funded source, closure, control, drive, and c
 ## Anchors
 
 - `anchor/crate/sim-conformance-packs`
+- `anchor/crate/sim-projection-admission-protocol`
+- `anchor/export/sim-conformance-packs/model/direction`
+- `anchor/export/sim-conformance-packs/model/landing`
+- `anchor/export/sim-conformance-packs/model/snapshot`
+- `anchor/export/sim-conformance-packs/shape/check-receipt`
+- `anchor/export/sim-conformance-packs/shape/check-result`
 - `anchor/export/sim-conformance-packs/shape/proposal`
 
 ## Specimens
