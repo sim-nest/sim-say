@@ -10,22 +10,25 @@ Filter bounded additive completion candidates through serial allowances, preserv
 
 ## Specimens
 
-- `recipe/sim-music/crates/sim-lib-music-serial/02-adaptation/serial-consonance-completion`
+- `spec-test/sim-music/crates/sim-lib-music-serial/tests/serial_completion_recipe`
 
 ## Worked Example
 
-Specimen `recipe/sim-music/crates/sim-lib-music-serial/02-adaptation/serial-consonance-completion` is checked by `sh scripts/check-recipes.sh`.
+Specimen `spec-test/sim-music/crates/sim-lib-music-serial/tests/serial_completion_recipe` is checked by `cargo test`.
 
-Source `crates/sim-lib-music-serial/recipes/02-adaptation/serial-consonance-completion/recipe.toml`:
+Source `crates/sim-lib-music-serial/tests/serial_completion_recipe.rs`:
 
-```toml
-id = "serial-consonance-completion"
-title = "Serial completion with structural ledgers"
-codec = "rust"
-setup = "setup.rs"
-purpose = "purpose.md"
-summary = "Filter additive completion candidates through serial allowances, preserve the structural plan, and audit the result through structural and all-sounding ledgers."
-category = "Rust"
-tags = ["music", "serial", "completion", "bounded-search", "reversible", "framework", "rust"]
-requires = ["music-serial", "discrete-search", "music-transform"]
+```rust
+// SPDX-License-Identifier: MPL-2.0
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+// conformance: additive completion preserves the structural ledger and records all-sounding material separately.
+include!("../recipes/02-adaptation/serial-consonance-completion/setup.rs");
+
+#[test]
+fn public_serial_completion_recipe_runs() {
+    serial_consonance_completion().expect("serial completion recipe");
+}
 ```

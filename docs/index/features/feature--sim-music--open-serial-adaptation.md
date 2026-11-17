@@ -10,23 +10,26 @@ Land immutable serial plans onto modal or caller-defined scales while preserving
 
 ## Specimens
 
-- `recipe/sim-music/crates/sim-lib-music-serial/02-adaptation/modal-spine`
-- `recipe/sim-music/crates/sim-lib-music-serial/02-adaptation/third-party-adaptation`
+- `spec-test/sim-music/crates/sim-lib-music-serial/tests/modal_spine_recipe`
+- `spec-test/sim-music/crates/sim-lib-music-shapes/tests/third_party_adaptation`
 
 ## Worked Example
 
-Specimen `recipe/sim-music/crates/sim-lib-music-serial/02-adaptation/modal-spine` is checked by `sh scripts/check-recipes.sh`.
+Specimen `spec-test/sim-music/crates/sim-lib-music-serial/tests/modal_spine_recipe` is checked by `cargo test`.
 
-Source `crates/sim-lib-music-serial/recipes/02-adaptation/modal-spine/recipe.toml`:
+Source `crates/sim-lib-music-serial/tests/modal_spine_recipe.rs`:
 
-```toml
-id = "modal-spine"
-title = "Modal spine realization"
-codec = "rust"
-setup = "setup.rs"
-purpose = "purpose.md"
-summary = "Land one immutable serial plan onto modal and caller-defined scales while preserving ordinal identity and reporting aggregate relaxation explicitly."
-category = "Rust"
-tags = ["music", "serial", "modal", "adaptation", "realization", "rust", "framework"]
-requires = ["music-serial", "pitch-scale", "music-core"]
+```rust
+// SPDX-License-Identifier: MPL-2.0
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+// conformance: modal and caller-defined spines land one immutable plan without claiming a strict aggregate.
+include!("../recipes/02-adaptation/modal-spine/setup.rs");
+
+#[test]
+fn public_modal_spine_recipe_runs() {
+    modal_spine().expect("modal spine scenario");
+}
 ```

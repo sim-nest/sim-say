@@ -10,9 +10,15 @@ Prepare one statically bound public conformance pack over bounded canonical evid
 
 ## Anchors
 
+- `anchor/cli/sim-check-pack-xtask`
 - `anchor/crate/sim-check-pack`
+- `anchor/crate/sim-check-pack-xtask`
 - `anchor/rustdoc/sim-check-pack/invoke_operation_local`
 - `anchor/rustdoc/sim-check-pack/prepare_operation_local`
+
+## Surfaces
+
+- `cli/sim-check-pack-xtask`
 
 ## Specimens
 

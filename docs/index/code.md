@@ -315,7 +315,7 @@
 | `crate/sim-lib-stream-halo` | `crate` | sim-lib-stream-halo | 0 |
 | `crate/sim-lib-stream-host` | `crate` | sim-lib-stream-host | 0 |
 | `crate/sim-lib-stream-jack` | `crate` | sim-lib-stream-jack | 2 |
-| `crate/sim-lib-stream-jack-provider` | `crate` | sim-lib-stream-jack-provider | 0 |
+| `crate/sim-lib-stream-jack-provider` | `crate` | sim-lib-stream-jack-provider | 1 |
 | `crate/sim-lib-stream-midi` | `crate` | sim-lib-stream-midi | 0 |
 | `crate/sim-lib-stream-pipewire` | `crate` | sim-lib-stream-pipewire | 1 |
 | `crate/sim-lib-stream-portaudio` | `crate` | sim-lib-stream-portaudio | 1 |

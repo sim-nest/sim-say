@@ -19,24 +19,53 @@ Assemble one immutable row plan, registry-selected realization components, rever
 
 ## Specimens
 
-- `recipe/sim-music/serial-workbench/01-end-to-end/row-to-audition`
+- `spec-test/sim-music/recipes/serial-workbench/src/main`
 
 ## Worked Example
 
-Specimen `recipe/sim-music/serial-workbench/01-end-to-end/row-to-audition` is checked by `sh scripts/check-recipes.sh`.
+Specimen `spec-test/sim-music/recipes/serial-workbench/src/main` is checked by `cargo test`.
 
-Source `recipes/serial-workbench/01-end-to-end/row-to-audition/recipe.toml`:
+Source `recipes/serial-workbench/src/main.rs`:
 
-```toml
-title = "Run a serial music workbench from row to audition"
-summary = "Load replaceable realization components, build a row plan, realize it strictly and modally, complete it reversibly, audit ledgers, export MIDI and LilyPond notation, and audition it."
-category = "Rust"
-tags = ["music", "serial", "workbench", "end-to-end", "notation", "midi", "rust", "framework"]
-requires = [
-  "music-serial",
-  "music-notation",
-  "music-transform",
-  "pitch-scale",
-]
-purpose = "purpose.md"
+```rust
+// SPDX-License-Identifier: MPL-2.0
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+// conformance: the serial workbench runs strict and modal realization, reversible completion, and audition export.
+#[path = "../01-end-to-end/row-to-audition/setup.rs"]
+mod setup;
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let outcome = setup::row_to_audition()?;
+    println!(
+        "serial-workbench: OK strict_notes={} modal_notes={} midi_bytes={} lilypond_chars={} audition_events={}",
+        outcome.strict_note_count,
+        outcome.modal_note_count,
+        outcome.midi_bytes,
+        outcome.lilypond_chars,
+        outcome.audition_events,
+    );
+    Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::setup;
+
+    #[test]
+    fn fixture_manifest_is_complete_and_public_safe() {
+        setup::validate_fixture_manifest().expect("fixture manifest");
+    }
+
+    #[test]
+    fn end_to_end_workbench_recipe_runs() {
+        let outcome = setup::row_to_audition().expect("workbench");
+        assert!(outcome.strict_note_count > 0);
+        assert!(outcome.modal_note_count > 0);
+        assert!(outcome.midi_bytes > 4);
+        assert!(outcome.lilypond_chars > 0);
+    }
+}
 ```
