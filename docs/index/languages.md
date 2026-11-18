@@ -704,6 +704,8 @@
 | `specimen` | `shape` | crates/sim-conformance-packs/src/harness.rs |
 | `specimen` | `shape` | crates/sim-conformance-packs/src/packs/boundary.rs |
 | `specimen` | `shape` | crates/sim-conformance-packs/src/packs/consumer_seam_cases.rs |
+| `specimen` | `shape` | crates/sim-conformance-packs/src/packs/release_replay.rs |
+| `specimen` | `shape` | crates/sim-conformance-packs/src/packs/release_source.rs |
 | `specimen` | `shape` | crates/sim-conformance-packs/src/packs/work.rs |
 | `specimen` | `shape` | crates/sim-conformance-packs/src/projection_authority.rs |
 | `specimen` | `shape` | crates/sim-conformance-packs/src/projection_compiler_review.rs |
