@@ -17,15 +17,18 @@ Load open qualified projectors and expose pure project, diff, why, compose, read
 - `anchor/export/sim-lib-world/model/ci/sim-kernel`
 - `anchor/export/sim-lib-world/model/ci/sim-run`
 - `anchor/export/sim-lib-world/model/ci/sim-sdk`
+- `anchor/export/sim-lib-world/model/direction`
 - `anchor/export/sim-lib-world/model/git/branch/canary-1`
 - `anchor/export/sim-lib-world/model/git/branch/main`
 - `anchor/export/sim-lib-world/model/git/branch/topic`
 - `anchor/export/sim-lib-world/model/git/direct/v1`
 - `anchor/export/sim-lib-world/model/git/peeled/v1`
 - `anchor/export/sim-lib-world/model/git/tag/v1`
+- `anchor/export/sim-lib-world/model/landing`
 - `anchor/export/sim-lib-world/model/mirror/sim-kernel`
 - `anchor/export/sim-lib-world/model/mirror/sim-private`
 - `anchor/export/sim-lib-world/model/registry/checksum/sim-kernel`
+- `anchor/export/sim-lib-world/model/snapshot`
 - `anchor/export/sim-lib-world/registry/checksum/sim-kernel`
 - `anchor/export/sim-lib-world/registry/index`
 - `anchor/export/sim-lib-world/shape/check-receipt`
@@ -33,6 +36,7 @@ Load open qualified projectors and expose pure project, diff, why, compose, read
 - `anchor/export/sim-lib-world/shape/other`
 - `anchor/export/sim-lib-world/shape/proposal`
 - `anchor/export/sim-lib-world/shape/world-config-v1`
+- `anchor/runtime-lib/sim-lib-world/session-boot-host`
 - `anchor/runtime-lib/sim-lib-world/world-command-lib`
 
 ## Specimens
