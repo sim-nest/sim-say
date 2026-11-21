@@ -342,7 +342,7 @@
 | `crate/sim-lib-web-bridge` | `crate` | sim-lib-web-bridge | 0 |
 | `crate/sim-lib-web-core` | `crate` | sim-lib-web-core | 0 |
 | `crate/sim-lib-web-fetch` | `crate` | sim-lib-web-fetch | 0 |
-| `crate/sim-lib-world` | `crate` | sim-lib-world | 2 |
+| `crate/sim-lib-world` | `crate` | sim-lib-world | 3 |
 | `crate/sim-macros` | `crate` | sim-macros | 0 |
 | `crate/sim-mcp-server` | `crate` | sim-mcp-server | 0 |
 | `crate/sim-music` | `crate` | sim-music | 0 |
