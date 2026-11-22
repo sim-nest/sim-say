@@ -707,6 +707,7 @@
 | `specimen` | `shape` | crates/sim-conformance-packs/src/packs/boundary.rs |
 | `specimen` | `shape` | crates/sim-conformance-packs/src/packs/consumer_seam_cases.rs |
 | `specimen` | `shape` | crates/sim-conformance-packs/src/packs/release_consumers.rs |
+| `specimen` | `shape` | crates/sim-conformance-packs/src/packs/release_foreign.rs |
 | `specimen` | `shape` | crates/sim-conformance-packs/src/packs/release_receipt.rs |
 | `specimen` | `shape` | crates/sim-conformance-packs/src/packs/release_replay.rs |
 | `specimen` | `shape` | crates/sim-conformance-packs/src/packs/release_roundtrip.rs |
